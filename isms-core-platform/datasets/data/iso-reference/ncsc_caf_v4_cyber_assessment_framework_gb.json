@@ -1,0 +1,98 @@
+[
+  {
+    "clause_id": "chunk-0000",
+    "title": "NCSC CAF v4 Cyber Assessment Framework GB — section 1",
+    "text": "{\"@context\": \"https://schema.org\",\"@graph\": [{\"@type\": \"Organization\",\"url\": \"https://www.ncsc.gov.uk/\",\"name\": \"National Cyber Security Centre - NCSC.GOV.UK\"}]\n}Cyber Assessment Framework | National Cyber Security Centre - NCSC.GOV.UK(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-P53HXRL7'); \n:root {\n--no-js: true;\n}\n:root {\n--no-js: true;\n}\n   icons/chevron/16px/black .cls-2{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:3px}       Skip to main content      Please enable JavaScript in your web browser to get the best experience.     Home    About NCSC   Report an incident   Contact us        Open Search        Menu     Advice & guidance          BackAdvice & guidanceOur advice & guidance covers a broad range of topics   Find information for...     You & your family     Small & medium sized organisations     Large organisations     Self employed & sole traders     Public sector     Cyber secur",
+    "standard": "NCSC CAF v4 Cyber Assessment Framework GB",
+    "language": "en",
+    "source_file": "NCSC_CAF_v4_Cyber_Assessment_Framework_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0001",
+    "title": "NCSC CAF v4 Cyber Assessment Framework GB — section 2",
+    "text": "You & your family     Small & medium sized organisations     Large organisations     Self employed & sole traders     Public sector     Cyber security professionals     All advice and guidance articles     Popular topics     Active Cyber Defence     Critical National Infrastructure (CNI)     Passwords     Phishing     All topics     Other resources     Glossary of terms     Infographics     Verify an NCSC contact     Heightened cyber threat information     Cyber Governance for Boards     Respond to a cyber attack          BackRespond to a cyber attackResources for individuals and organisations in the UK who have experienced an online scam or cyber attack.   Affecting you or your family     Overview     Hacked account     Suspicious messages     Lost money online     Device behaving strangely     View more...     Affecting your small business     Overview     Suspicious messages     Hacked account     Business payment fraud     Infected device     View more...     Affecting your organisation     Overview     Ransomware attack     Brand impersonation     Denial of service (DoS) attack     Malware     View more...     Find a product or service          BackFind a product or service",
+    "standard": "NCSC CAF v4 Cyber Assessment Framework GB",
+    "language": "en",
+    "source_file": "NCSC_CAF_v4_Cyber_Assessment_Framework_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0002",
+    "title": "NCSC CAF v4 Cyber Assessment Framework GB — section 3",
+    "text": "and impersonation     Denial of service (DoS) attack     Malware     View more...     Find a product or service          BackFind a product or serviceFind a range of products & services from NCSC and certified 3rd party suppliers   In this section     Overview     Browse cyber security services     NCSC assured services     Assuring technology     Search assured providers     Cyber Essentials     Useful links     Active Cyber Defence services     MyNCSC     Education & skills          BackEducation & skillsWorking with industry, government and academia to support the next generation of researchers, students and cyber security professionals   Find information for...     Schools     Higher education     Professional skills training     Working with the NCSC     Research & academia     Education & academia resources     CyberFirst     CyberSprinters (7-11 year olds)     CyberFirst Navigators (11-14 year olds)     Training resources for school staff     Resources for higher education institutions     Cyber Security Body of Knowledge (CyBOK)     Industry & skill resources     CYBERUK 2026     NCSC for StartUps     Industry 100     Cyber League     News          BackNewsAll the latest in",
+    "standard": "NCSC CAF v4 Cyber Assessment Framework GB",
+    "language": "en",
+    "source_file": "NCSC_CAF_v4_Cyber_Assessment_Framework_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0003",
+    "title": "NCSC CAF v4 Cyber Assessment Framework GB — section 4",
+    "text": "K)     Industry & skill resources     CYBERUK 2026     NCSC for StartUps     Industry 100     Cyber League     News          BackNewsAll the latest information to help you keep track of what&#039;s happening   In this section     News     Blogs     Speeches     Reports & advisories     Malware analysis reports     CYBERUK 2026     Stay up to date     Subscribe     About NCSC   Report an incident   Contact us         Close Search  Search Please enter a search term       Search  Popular Searches Cyber Essentials CYBERUK 2026 Passwords Phishing Artificial intelligence    GuidanceCyber Assessment Framework The CAF is a collection of cyber security guidance for organisations that play a vital role in the day-to-day life of the UK, with a focus on essential functions.Pages   Cyber Assessment Framework   Introduction to the CAF Collection   Introduction to the Cyber Assessment Framework   CAF Objective A - Managing Security Risk        Principle A1 Governance   Principle A2 Risk Management   Principle A3 Asset Management   Principle A4 Supply Chain   CAF Objective B - Protecting against cyber attacks        Principle B1 Service protection policies, processes and procedures   Principle B2",
+    "standard": "NCSC CAF v4 Cyber Assessment Framework GB",
+    "language": "en",
+    "source_file": "NCSC_CAF_v4_Cyber_Assessment_Framework_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0004",
+    "title": "NCSC CAF v4 Cyber Assessment Framework GB — section 5",
+    "text": "y Chain   CAF Objective B - Protecting against cyber attacks        Principle B1 Service protection policies, processes and procedures   Principle B2 Identity and Access Control   Principle B3 Data security   Principle B4 System security   Principle B5 Resilient networks and systems   Principle B6 Staff awareness and training   CAF Objective C - Detecting cyber security events        Principle C1 Security monitoring   Principle C2 Threat Hunting   CAF Objective D - Minimising the impact of cyber security incidents        Principle D1 Response and recovery planning   Principle D2 Lessons Learned   Supplementary information   Consolidated view of CAF Guidance   CAF Terms and Definitions   Cyber Assessment Framework (CAF) changelog  Page 1 of 25  iStock.com/ThinkNeo Cyber Security and Resilience Bill to strengthen regulation of critical sectorsThe NCSC welcomes the introduction of the Cyber Security and Resilience Bill to Parliament and its potential in closing the widening gap between the cyber threats the UK faces and our ability to defend against them in critical sectors.Read the blog by Jonathan Ellison, NCSC Director of National Resilience exploring how the Cyber Security and Res",
+    "standard": "NCSC CAF v4 Cyber Assessment Framework GB",
+    "language": "en",
+    "source_file": "NCSC_CAF_v4_Cyber_Assessment_Framework_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0005",
+    "title": "NCSC CAF v4 Cyber Assessment Framework GB — section 6",
+    "text": "fend against them in critical sectors.Read the blog by Jonathan Ellison, NCSC Director of National Resilience exploring how the Cyber Security and Resilience Bill will support affected sectors. Learn more On this page:IntroductionWhat is the CAF?Who is the CAF for?The CAF collectionChangelog, latest and previous CAF versions  IntroductionCyber incidents can result in a number of different consequences, depending on the nature of the network and information systems targeted and intention of the perpetrators. Circumstances in which the possible consequences of cyber incidents are extremely serious or even, perhaps catastrophic, generally require very robust levels of cyber security and resilience. It is for these circumstances that the NCSC has developed the Cyber Assessment Framework (CAF) collection.The CAF collection consists of the CAF itself together with a range of linked guidance and some background on its intended use. It is aimed at helping an organisation achieve and demonstrate an appropriate level of cyber resilience in relation to certain specified vitally important functions performed by that organisation, functions that are at risk of disruption as a result of a seriou",
+    "standard": "NCSC CAF v4 Cyber Assessment Framework GB",
+    "language": "en",
+    "source_file": "NCSC_CAF_v4_Cyber_Assessment_Framework_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0006",
+    "title": "NCSC CAF v4 Cyber Assessment Framework GB — section 7",
+    "text": "tion to certain specified vitally important functions performed by that organisation, functions that are at risk of disruption as a result of a serious cyber incident.  What is the CAF?The Cyber Assessment Framework (CAF) is a tool to help organisations assess and improve their cyber security and resilience, managing cyber risks and protecting essential services from cyber threats.   Who is the CAF for?The CAF is primarily designed for organisations operating essential services, in sectors such as energy, healthcare, transport, digital infrastructure and government. It supports both internal assessments and external oversight bodies, helping organisations meet legal and regulatory requirements like the NIS Regulations. It does this by providing a framework for assessing how well an organisation is meeting expected cyber security and resilience outcomes described within a CAF Profile.A CAF Profile is a target level for cyber security and resilience in response to threat actors with a particular level of attack capability. There are two types of CAF Profiles, Basic and Enhanced. The Basic Profile sets out the target level for all sectors when faced with attackers with a basic level o",
+    "standard": "NCSC CAF v4 Cyber Assessment Framework GB",
+    "language": "en",
+    "source_file": "NCSC_CAF_v4_Cyber_Assessment_Framework_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0007",
+    "title": "NCSC CAF v4 Cyber Assessment Framework GB — section 8",
+    "text": "types of CAF Profiles, Basic and Enhanced. The Basic Profile sets out the target level for all sectors when faced with attackers with a basic level of attack capability. This typically includes attack scenarios that would involve common cyber attacks. An Enhanced Profile is different as it is sector specific and builds upon the Basic Profile by representing a cyber security and resilience target level appropriate for situations where an organisation typically faces attackers that are more capable, better resourced and can undertake more sophisticated attacks.    The CAF collectionThe CAF collection is for all organisations that are responsible for securing critical network and information systems that keep our businesses, citizens and public services protected.More particularly:Organisations subject to the Network and Information (NIS) RegulationsOrganisations within the UK Critical National Infrastructure (CNI)Organisations managing cyber-related risks to public safetyPublic sector organisations that support core government functionsOther organisations / sectors that may find the CAF a useful toolIt is intended that the CAF collection will be of particular interest to cyber overs",
+    "standard": "NCSC CAF v4 Cyber Assessment Framework GB",
+    "language": "en",
+    "source_file": "NCSC_CAF_v4_Cyber_Assessment_Framework_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0008",
+    "title": "NCSC CAF v4 Cyber Assessment Framework GB — section 9",
+    "text": "sOther organisations / sectors that may find the CAF a useful toolIt is intended that the CAF collection will be of particular interest to cyber oversight bodies, organisations (such as cyber regulators) that have responsibility for the cyber security and resilience of a sector. The CAF collection is intended to assist such organisations to carry out some of their core oversight responsibilities. Any oversight body considering the use of the CAF in their sector is invited to contact the NCSC to discuss possible additional available support through the Support to Regulation mailbox.This collection contains:     An overview and introduction of the CAF collection      An introduction to the CAF including guidance on the use of the CAF     The wider context of the CAF when considering the Network and Information Systems (NIS) Regulations, CNI, how the NCSC works with cyber regulators and GovAssure     The CAF – a set of objectives and underlying principles, outcomes and indicators of good practice (IGPs)     Relevant guidance on the application of the objectives and principles     Additional linked guidance and references  Changelog, latest and previous CAF versionsThe latest version o",
+    "standard": "NCSC CAF v4 Cyber Assessment Framework GB",
+    "language": "en",
+    "source_file": "NCSC_CAF_v4_Cyber_Assessment_Framework_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0009",
+    "title": "NCSC CAF v4 Cyber Assessment Framework GB — section 10",
+    "text": "cation of the objectives and principles     Additional linked guidance and references  Changelog, latest and previous CAF versionsThe latest version of the CAF, and all previous versions are available to download on the Changelog page.Links to guidance that complement the CAF have been included and can be found in the consolidated view of CAF guidance and in the additional information section of the individual principles.   Downloads  Pdf615.02 KB Cyber Assessment Framework version 4.0Fourth iteration of the Framework used to assess the cyber security of UK CNI and related sectors    Next page:Introduction to the CAF Collection     Topics   Cyber Assessment Framework    PublishedPublish date 18 April 2024Reviewed 6 August 2025Version 4.0Written forWritten for Public sector Cyber security professionals Large organisationsShare and print this article      Share   Share      Close share options       Share onFacebook      Share onLinkedIn      Share onX      Copy Link  Was this article helpful?  Yes the article was helpful   No the article was not helpful        Close Feedback Form        Back to top   Share      Close share options       Share onFacebook      Share onLinkedIn      Sh",
+    "standard": "NCSC CAF v4 Cyber Assessment Framework GB",
+    "language": "en",
+    "source_file": "NCSC_CAF_v4_Cyber_Assessment_Framework_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0010",
+    "title": "NCSC CAF v4 Cyber Assessment Framework GB — section 11",
+    "text": "le was not helpful        Close Feedback Form        Back to top   Share      Close share options       Share onFacebook      Share onLinkedIn      Share onX      Copy Link Also see   Blog Post Publish date 6 Aug 2025Cyber Assessment Framework v4.0 released in response to growing threat Updates to the CAF helps providers of essential services to better manage their cyber risks.    Blog Post Publish date 30 Oct 2024Cyber Resilience Audit (CRA) scheme launches for assured CAF-based audits NCSC-assured CRA service now offering Cyber Assessment Framework based audits and more applications invited from potential service providers.    Blog Post Publish date 15 Aug 2024Cyber Resilience Audit scheme open to applications A new NCSC scheme assuring providers of CAF-based audits is now open for potential members.      Home Follow us      X      LinkedIn      Instagram      Threads      RSS  About this website   Privacy notice   Cookies   Accessibility   Terms & conditions   Social media policy  Contact the NCSC   Report an incident   Report suspicious messages or websites   Verify an NCSC contact   Report a vulnerability   Contact the press office   Can&#039;t find what you&#039;re looking fo",
+    "standard": "NCSC CAF v4 Cyber Assessment Framework GB",
+    "language": "en",
+    "source_file": "NCSC_CAF_v4_Cyber_Assessment_Framework_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0011",
+    "title": "NCSC CAF v4 Cyber Assessment Framework GB — section 12",
+    "text": "icious messages or websites   Verify an NCSC contact   Report a vulnerability   Contact the press office   Can&#039;t find what you&#039;re looking for?  Useful links   GCHQ   MI5   SIS   NPSA   GOV.UK  {\"path\":{\"baseUrl\":\"\\/\",\"pathPrefix\":\"\",\"currentPath\":\"node\\/209\",\"currentPathIsAdmin\":false,\"isFront\":false,\"currentLanguage\":\"en\"},\"pluralDelimiter\":\"\\u0003\",\"suppressDeprecationErrors\":true,\"ajaxPageState\":{\"libraries\":\"eJyVkutuwyAMhV8ohEeKDHESL-YiMM3y9nOrTlUn0XZ_QPg7Ngdjnwpan0JOEaPUkWHHagwwFhl8BxYhz2hqpJxRak_nmkiKPTqnI3KC-R03JBh6oiUlwdKjG5bUY-T71ijAij0YMLZXzITGQlUwf6YyDvz-pld_Mpji_qE0pn-IMxSlhuLSbVtswWFRu8zYHZAn0cv_K-Q3I_jdLSWwdhFC1VtYvVPsqo6z0nGuw5JKmBrZubQMPN6Po-b6_Zwq6jjMUM4pwmW4pdqVkwM21RfKOuTPQTn5eql2DNYCeau_hR-RscXcnNrbcB4KVjVW6YKTgGOcFmKdXPuIm1t8qKd-RbBO3zZcCI9qb-sY0twUH-iu1u19H-ELvn8ASXhyzg\",\"theme\":\"ennerdale\",\"theme_token\":null},\"ajaxTrustedUrl\":[],\"user\":{\"uid\":0,\"permissionsHash\":\"c17de436d9a28ffdc21baf246cbfc60e6c6e136a43615b1f50f1425fde81f8b6\"}}",
+    "standard": "NCSC CAF v4 Cyber Assessment Framework GB",
+    "language": "en",
+    "source_file": "NCSC_CAF_v4_Cyber_Assessment_Framework_GB.txt"
+  }
+]

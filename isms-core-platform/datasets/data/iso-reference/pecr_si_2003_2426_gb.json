@@ -1,0 +1,906 @@
+[
+  {
+    "clause_id": "chunk-0000",
+    "title": "PECR SI 2003 2426 GB — section 1",
+    "text": "http://www.legislation.gov.uk/uksi/2003/2426The Privacy and Electronic Communications (EC Directive) Regulations 2003texttext/xmlenStatute Law DatabaseELECTRONIC COMMUNICATIONS2026-02-10Expert Participation2026-02-05\n\t\t\t\t\tThese Regulations implement Articles 2, 4, 5(3), 6 to 13, 15 and 16 of Directive 2002/58/EC of the European Parliament and of the Council of 12 July 2002 concerning the processing of personal data and the protection of privacy in the electronic communications sector (Directive on privacy and electronic communications) (“the Directive”).\n\t\t\t\t2003 No. 2426ELECTRONIC COMMUNICATIONSThe Privacy and Electronic Communications (EC Directive) Regulations 2003Made18th September 2003Laid before Parliament18th September 2003Coming into force11th December 2003The Secretary of State, being a Minister designated  for the purposes of section 2(2) of the European Communities Act 1972  in respect of matters relating to electronic communications, in exercise of the powers conferred upon her by that section, hereby makes the following Regulations:Citation and commencement1These Regulations may be cited as the Privacy and Electronic Communications (EC Directive) Regulations 2003",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0001",
+    "title": "PECR SI 2003 2426 GB — section 2",
+    "text": "ing Regulations:Citation and commencement1These Regulations may be cited as the Privacy and Electronic Communications (EC Directive) Regulations 2003 and shall come into force on 11th December 2003.Interpretation21In these Regulations—“bill” includes an invoice, account, statement or other document of similar character and  “billing” shall be construed accordingly;“call” means a connection established by means of a telephone service available to the public allowing two-way communication in real time , and a reference to making a call includes a reference to attempting to establish such a connection;“communication” means any information transmitted to a finite number of parties by means of a public electronic communications service, but does not include information transmitted as part of a programme service, except to the extent that such information can be related to the identifiable subscriber or user receiving the information;“communications provider” has the meaning given by section 405 of the Communications Act 2003 ; “consent” by a user or subscriber corresponds to the data subject’s consent in the  UK GDPR  (as defined in section 3(10) of the Data Protection Act 2018); “corpo",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0002",
+    "title": "PECR SI 2003 2426 GB — section 3",
+    "text": "a user or subscriber corresponds to the data subject’s consent in the  UK GDPR  (as defined in section 3(10) of the Data Protection Act 2018); “corporate subscriber” means a subscriber who is—a company within the meaning of section 735(1) of the Companies Act 1985 ;a company incorporated in pursuance of a royal charter or letters patent;a partnership in Scotland;a corporation sole; orany other body corporate or entity which is a legal person distinct from its members; “direct marketing” means the communication (by whatever means) of advertising or marketing material which is directed to particular individuals; “the Directive” means Directive 2002/58/EC of the European Parliament and of the Council of 12 July 2002 concerning the processing of personal data and the protection of privacy in the electronic communications sector (Directive on privacy and electronic communications) ;“electronic communications network” has the meaning given by section 32 of the Communications Act 2003 ;“electronic communications service” has the meaning given by section 32 of the Communications Act 2003;“electronic mail” means any text, voice, sound or image message sent over a public electronic communic",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0003",
+    "title": "PECR SI 2003 2426 GB — section 4",
+    "text": "en by section 32 of the Communications Act 2003;“electronic mail” means any text, voice, sound or image message sent over a public electronic communications network which can be stored in the network or in the recipient’s terminal equipment until it is collected by the recipient and includes messages sent using a short message service;“enactment” includes an enactment comprised in, or in an instrument made under, an Act of the Scottish Parliament;“individual” means a living individual and includes an unincorporated body of such individuals;“the Information Commissioner” and  “the Commissioner” both mean the Commissioner appointed under  the Data Protection Act 2018;“information society service” has the meaning given in regulation 2(1) of the Electronic Commerce (EC Directive) Regulations 2002 ;“location data” means any data processed in an electronic communications network or by an electronic communications service  indicating the geographical position of the terminal equipment of a user of a public electronic communications service, including data relating to—the latitude, longitude or altitude of the terminal equipment;the direction of travel of the user; orthe time the location",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0004",
+    "title": "PECR SI 2003 2426 GB — section 5",
+    "text": "including data relating to—the latitude, longitude or altitude of the terminal equipment;the direction of travel of the user; orthe time the location information was recorded;“OFCOM” means the Office of Communications as established by section 1 of the Office of Communications Act 2002 ; “personal data breach” means a breach of security leading to the accidental or unlawful destruction, loss, alteration, unauthorised disclosure of, or access to, personal data transmitted, stored or otherwise processed in connection with the provision of a public electronic communications service; “programme service” has the meaning given in section 201 of the Broadcasting Act 1990 ;“public communications provider” means a provider of a public electronic communications network or a public electronic communications service;“public electronic communications network” has the meaning given in section 151 of the Communications Act 2003 ;“public electronic communications service” has the meaning given in section 151 of the Communications Act 2003;“subscriber” means a person who is a party to a contract with a provider of public electronic communications services for the supply of such services;“traffic da",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0005",
+    "title": "PECR SI 2003 2426 GB — section 6",
+    "text": "” means a person who is a party to a contract with a provider of public electronic communications services for the supply of such services;“traffic data” means any data processed for the purpose of the conveyance of a communication on an electronic communications network or for the billing in respect of that communication and includes data relating to the routing, duration or time of a communication;“user” means any individual using a public electronic communications service; and“value added service” means any service which requires the processing of traffic data or location data beyond that which is necessary for the transmission of a communication or the billing in respect of that communication.1AIn the application of these Regulations in relation to—ainformation that is sent but not received,ba communication that is transmitted but not received,can electronic mail that is sent but not received, ordan unsuccessful attempt to make a call,a reference to the recipient of the information, communication, electronic mail or call is to be read as a reference to the intended recipient.2Expressions used in these Regulations that are not defined in paragraph (1) and are defined in the Data",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0006",
+    "title": "PECR SI 2003 2426 GB — section 7",
+    "text": "read as a reference to the intended recipient.2Expressions used in these Regulations that are not defined in paragraph (1) and are defined in the Data Protection Act 1998 shall have the same meaning as in that Act.3. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .4Any reference in these Regulations to a line shall ... be construed as including a reference to anything that performs the function of a line, and  “connected”, in relation to a line, is to be construed accordingly.5References in these Regulations to a period expressed in hours, days, weeks, months or years are to be interpreted in accordance with Article 3 of the Periods of Time Regulation, except that Article 3(4) of that Regulation does not apply to the interpretation of a reference to a period in regulation 16A.6In paragraph (5), “the Periods of Time Regulation” means Regulation (EEC, Euratom) No. 1182/71 of the Council of 3 June 1971 determining the rules applicable to periods, dates and time limits.Revocation of the Telecommunications (Data Protection and Privacy) Regulations 19993The Telecommunications (Data Protection and Privacy) Regulations 1999  and the Telecommunications (Data Protection and Priv",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0007",
+    "title": "PECR SI 2003 2426 GB — section 8",
+    "text": "Privacy) Regulations 19993The Telecommunications (Data Protection and Privacy) Regulations 1999  and the Telecommunications (Data Protection and Privacy) (Amendment) Regulations 2000  are hereby revoked.Relationship between these Regulations and  the data protection legislation\n                     4 1 Nothing in these Regulations shall relieve a person of his obligations under  the data protection legislation  in relation to the processing of personal data.2In this regulation—“the data protection legislation” has the same meaning as in the Data Protection Act 2018 (see section 3 of that Act);“personal data” and  “processing” have the same meaning as in Parts 5 to 7 of that Act (see section 3(2), (4) and (14) of that Act).3Regulation 2(2) and (3) (meaning of certain expressions) do not apply for the purposes of this regulation.Security of public electronic communications services51Subject to paragraph (2), a provider of a public electronic communications service (“the service provider”) shall take appropriate technical and organisational measures to safeguard the security of that service.1AThe measures referred to in paragraph (1) shall at least—aensure that personal data can be a",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0008",
+    "title": "PECR SI 2003 2426 GB — section 9",
+    "text": "onal measures to safeguard the security of that service.1AThe measures referred to in paragraph (1) shall at least—aensure that personal data can be accessed only by authorised personnel for legally authorised purposes;bprotect personal data stored or transmitted against accidental or unlawful destruction, accidental loss or alteration, and unauthorised or unlawful storage, processing, access or disclosure; andcensure the implementation of a security policy with respect to the processing of personal data.2If necessary, the measures required by paragraph (1) may be taken by the service provider in conjunction with the provider of the electronic communications network by means of which the service is provided, and that network provider shall comply with any reasonable requests made by the service provider for these purposes.3Where, notwithstanding the taking of measures as required by paragraph (1), there remains a significant risk to the security of the public electronic communications service, the service provider shall inform the subscribers concerned of—athe nature of that risk;bany appropriate measures that the subscriber may take to safeguard against that risk; andcthe likely c",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0009",
+    "title": "PECR SI 2003 2426 GB — section 10",
+    "text": "scribers concerned of—athe nature of that risk;bany appropriate measures that the subscriber may take to safeguard against that risk; andcthe likely costs to the subscriber involved in the taking of such measures.4For the purposes of paragraph (1), a measure shall only be taken to be appropriate if, having regard to—athe state of technological developments, andbthe cost of implementing it,it is proportionate to the risks against which it would safeguard.5Information provided for the purposes of paragraph (3) shall be provided to the subscriber free of any charge other than the cost to the subscriber of receiving or collecting the information.6. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .Personal data breach5A1In this regulation and in regulations 5B and 5C, “service provider” has the meaning given in regulation 5(1).2If a personal data breach occurs, the service provider shall, without undue delay and, where feasible, not later than 72 hours after having become aware of it, notify that breach to the Information Commissioner.3Subject to paragraph (6), if a personal data breach is likely to adversely affect the personal data or privacy of a subscriber or user, the s",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0010",
+    "title": "PECR SI 2003 2426 GB — section 11",
+    "text": "ssioner.3Subject to paragraph (6), if a personal data breach is likely to adversely affect the personal data or privacy of a subscriber or user, the service provider shall also, without undue delay, notify that breach to the subscriber or user concerned.3AWhere notification under paragraph (2) is not made within 72 hours, it must be accompanied by reasons for the delay.4The notification referred to in paragraph (2) shall contain at least a description of—athe nature of the breach;bthe consequences of the breach; andcthe measures taken or proposed to be taken by the provider to address the breach.5The notification referred to the paragraph (3) shall contain at least—aa description of the nature of the breach;binformation about contact points within the service provider’s organisation from which more information may be obtained; andcrecommendations of measures to allow the subscriber to mitigate the possible adverse impacts of the breach.6The notification referred to in paragraph (3) is not required if the service provider has demonstrated, to the satisfaction of the Information Commissioner that—ait has implemented appropriate technological protection measures which render the data",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0011",
+    "title": "PECR SI 2003 2426 GB — section 12",
+    "text": "ted, to the satisfaction of the Information Commissioner that—ait has implemented appropriate technological protection measures which render the data unintelligible to any person who is not authorised to access it, andbthat those measures were applied to the data concerned in that breach.7If the service provider has not notified the subscriber or user in compliance with paragraph (3), the Information Commissioner may, having considered the likely adverse effects of the breach, require it to do so.8Service providers shall maintain an inventory of personal data breaches comprising —athe facts surrounding the breach,bthe effects of that breach, andcremedial action takenwhich shall be sufficient to enable the Information Commissioner to verify compliance with the provisions of this regulation. The inventory shall only include information necessary for this purpose.9. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . Personal data breach: audit5B. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .Personal data breach: enforcement5C1If a service provider fails to comply with the notification requirements of regulation 5A, the Information Commissioner may issue a fi",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0012",
+    "title": "PECR SI 2003 2426 GB — section 13",
+    "text": ": enforcement5C1If a service provider fails to comply with the notification requirements of regulation 5A, the Information Commissioner may issue a fixed monetary penalty notice in respect of that failure.2The amount of a fixed monetary penalty under this regulation shall be £1,000.3Before serving such a notice, the Information Commissioner must serve the service provider with a notice of intent.4The notice of intent must—astate the name and address of the service provider;bstate the nature of the breach;cindicate the amount of the fixed monetary penalty;dinclude a statement informing the service provider of the opportunity to discharge liability for the fixed monetary penalty;eindicate the date on which the Information Commissioner proposes to serve the fixed monetary penalty notice; andfinform the service provider that he may make written representations in relation to the proposal to serve a fixed monetary penalty notice within the period of 21 days  beginning when the notice of intent is served.5A service provider may discharge liability for the fixed monetary penalty if he pays to the Information Commissioner the amount of £800 within  the period of 21 days beginning when the",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0013",
+    "title": "PECR SI 2003 2426 GB — section 14",
+    "text": "ability for the fixed monetary penalty if he pays to the Information Commissioner the amount of £800 within  the period of 21 days beginning when the notice of intent is received.6The Information Commissioner may not serve a fixed monetary penalty notice until the time within which representations may be made has expired.7The fixed monetary penalty notice must state—athe name and address of the service provider;bdetails of the notice of intent served on the service provider;cwhether there have been any written representations;ddetails of any early payment discounts;ethe grounds on which the Information Commissioner imposes the fixed monetary penalty;fthe date by which the fixed monetary penalty is to be paid; andgdetails of, including the time limit for, the service provider’s right of appeal against the imposition of the fixed monetary penalty.8A service provider on whom a fixed monetary penalty is served may appeal to the Tribunal against the issue of the fixed monetary penalty notice.9Any sum received by the Information Commissioner by virtue of this regulation must be paid into the Consolidated Fund.10In England and Wales ..., the penalty is recoverable—aif the county court so",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0014",
+    "title": "PECR SI 2003 2426 GB — section 15",
+    "text": "r by virtue of this regulation must be paid into the Consolidated Fund.10In England and Wales ..., the penalty is recoverable—aif the county court so orders, as if it were payable under an order of that court;bif the High Court so orders, as if it were payable under an order of that court.11In Scotland, the penalty may be enforced in the same manner as an extract registered decree arbitral bearing a warrant for execution issued by the sheriff court of any sheriffdom in Scotland.12In Northern Ireland, the penalty is recoverable—aif a county court so orders, as if it were payable under an order of that court;bif the High Court so orders, as if it were payable under an order of that court.13The Secretary of State may by regulations made by statutory instrument amend this regulation so as to substitute a different amount for the amount for the time being specified in paragraph (2) or (5).14Regulations under paragraph (13) may make transitional provision.15Before making regulations under paragraph (13), the Secretary of State must consult—athe Information Commissioner, andbsuch other persons as the Secretary of State considers appropriate.16A statutory instrument containing regulations",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0015",
+    "title": "PECR SI 2003 2426 GB — section 16",
+    "text": "athe Information Commissioner, andbsuch other persons as the Secretary of State considers appropriate.16A statutory instrument containing regulations under this regulation may not be made unless a draft of the instrument has been laid before, and approved by a resolution of, each House of Parliament.Storing information in the terminal equipment of a subscriber or user61Subject to Schedule A1, a person must not store information, or gain access to information stored, in the terminal equipment of a subscriber or user.2In paragraph (1) and Schedule A1—aa reference (however expressed) to storing information, or gaining access to information stored, in the terminal equipment of a subscriber or user includes a reference to instigating the storage or access, andbexcept as otherwise provided, a reference (however expressed) to gaining access to information stored in the terminal equipment of a subscriber or user includes a reference to collecting or monitoring information automatically emitted by the terminal equipment.Power to provide exceptions to regulation 6(1)6A1The Secretary of State may by regulations made by statutory instrument—aamend these Regulations—iby adding an exception to t",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0016",
+    "title": "PECR SI 2003 2426 GB — section 17",
+    "text": "ions to regulation 6(1)6A1The Secretary of State may by regulations made by statutory instrument—aamend these Regulations—iby adding an exception to the prohibition in regulation 6(1), oriiby omitting or varying an exception to that prohibition, andbmake consequential, supplementary, incidental, transitional, transitory or saving provision, including provision amending these Regulations.2Regulations under paragraph (1) may make different provision for different purposes.3Before making regulations under paragraph (1), the Secretary of State must consult—athe Information Commissioner, andbsuch other persons as the Secretary of State considers appropriate.4A statutory instrument containing regulations under paragraph (1) may not be made unless a draft of the instrument has been laid before, and approved by a resolution of, each House of Parliament.Restrictions on the processing of certain traffic data71Subject to paragraphs (2) and (3), traffic data relating to subscribers or users which are processed and stored by a public communications provider shall, when no longer required for the purpose of the transmission of a communication, be—aerased;bin the case of an individual, modified s",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0017",
+    "title": "PECR SI 2003 2426 GB — section 18",
+    "text": "s provider shall, when no longer required for the purpose of the transmission of a communication, be—aerased;bin the case of an individual, modified so that they cease to constitute personal data of that subscriber or user; orcin the case of a corporate subscriber, modified so that they cease to be data that would be personal data if that subscriber was an individual.2Traffic data held by a public communications provider for purposes connected with the payment of charges by a subscriber or in respect of interconnection payments may be processed and stored by that provider until the time specified in paragraph (5).3Traffic data relating to a subscriber or user may be processed and stored by a provider of a public electronic communications service if—asuch processing and storage are for the purpose of marketing electronic communications services, or for the provision of value added services to that subscriber or user; andbthe subscriber or user to whom the traffic data relate has  previously notified the provider that he consents  to such processing or storage; andcsuch processing and storage are undertaken only for the duration necessary for the purposes specified in subparagraph (a",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0018",
+    "title": "PECR SI 2003 2426 GB — section 19",
+    "text": "ch processing or storage; andcsuch processing and storage are undertaken only for the duration necessary for the purposes specified in subparagraph (a).4Where a user or subscriber has given his consent in accordance with paragraph (3), he shall be able to withdraw it at any time.5The time referred to in paragraph (2) is the end of the period during which legal proceedings may be brought in respect of payments due or alleged to be due or, where such proceedings are brought within that period, the time when those proceedings are finally determined.6Legal proceedings shall not be taken to be finally determined—auntil the conclusion of the ordinary period during which an appeal may be brought by either party (excluding any possibility of an extension of that period, whether by order of a court or otherwise), if no appeal is brought within that period; orbif an appeal is brought, until the conclusion of that appeal.7References in paragraph (6) to an appeal include references to an application for permission to appeal.Further provisions relating to the processing of traffic data under regulation 781Processing of traffic data in accordance with regulation 7(2) or (3) shall not be undertak",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0019",
+    "title": "PECR SI 2003 2426 GB — section 20",
+    "text": "ating to the processing of traffic data under regulation 781Processing of traffic data in accordance with regulation 7(2) or (3) shall not be undertaken by a public communications provider unless the subscriber or user to whom the data relate has been provided with information regarding the types of traffic data which are to be processed and the duration of such processing and, in the case of processing in accordance with regulation 7(3), he has been provided with that information before his consent has been obtained.2Processing of traffic data in accordance with regulation 7 shall be restricted to what is required for the purposes of one or more of the activities listed in paragraph (3) and shall be carried out only by the public communications provider or by a person acting under his authority.3The activities referred to in paragraph (2) are activities relating to—athe management of billing or traffic;bcustomer enquiries;cthe prevention or detection of fraud;dthe marketing of electronic communications services; orethe provision of a value added service.4Nothing in these Regulations shall prevent the furnishing of traffic data to a person who is a competent authority for the purpo",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0020",
+    "title": "PECR SI 2003 2426 GB — section 21",
+    "text": "value added service.4Nothing in these Regulations shall prevent the furnishing of traffic data to a person who is a competent authority for the purposes of any provision relating to the settling of disputes (by way of legal proceedings or otherwise) which is contained in, or made by virtue of, any enactment.Itemised billing and privacy91At the request of a subscriber, a provider of a public electronic communications service shall provide that subscriber with bills that are not itemised.2OFCOM shall have a duty, when exercising their functions under Chapter 1 of Part 2 of the Communications Act 2003, to have regard to the need to reconcile the rights of subscribers receiving itemised bills with the rights to privacy of calling users and called subscribers, including the need for sufficient alternative privacy-enhancing methods of communications or payments to be available to such users and subscribers.Prevention of calling line identification – outgoing calls101This regulation applies, subject to regulations 15 and 16, to outgoing calls where a facility enabling the presentation of calling line identification is available.2The provider of a public electronic communications service",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0021",
+    "title": "PECR SI 2003 2426 GB — section 22",
+    "text": "ls where a facility enabling the presentation of calling line identification is available.2The provider of a public electronic communications service shall provide users originating a call by means of that service with a simple means to prevent presentation of the identity of the calling line on the connected line as respects that call.3The provider of a public electronic communications service shall provide subscribers to the service, as respects their line and all calls originating from that line, with a simple means of preventing presentation of the identity of that subscriber’s line on any connected line.4The measures to be provided under paragraphs (2) and (3) shall be provided free of charge.Prevention of calling or connected line identification – incoming calls111This regulation applies to incoming calls.2Where a facility enabling the presentation of calling line identification is available, the provider of a public electronic communications service shall provide the called subscriber with a simple means to prevent, free of charge for reasonable use of the facility, presentation of the identity of the calling line on the connected line.3Where a facility enabling the presenta",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0022",
+    "title": "PECR SI 2003 2426 GB — section 23",
+    "text": "rge for reasonable use of the facility, presentation of the identity of the calling line on the connected line.3Where a facility enabling the presentation of calling line identification prior to the call being established is available, the provider of a public electronic communications service shall provide the called subscriber with a simple means of rejecting incoming calls where the presentation of the calling line identification has been prevented by the calling user or subscriber.4Where a facility enabling the presentation of connected line identification is available, the provider of a public electronic communications service shall provide the called subscriber with a simple means to prevent, without charge, presentation of the identity of the connected line on any calling line.5In this regulation  “called subscriber” means the subscriber receiving a call by means of the service in question whose line is the called line (whether or not it is also the connected line).Publication of information for the purposes of regulations 10 and 1112Where a provider of a public electronic communications service provides facilities for calling or connected line identification, he shall provi",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0023",
+    "title": "PECR SI 2003 2426 GB — section 24",
+    "text": "nd 1112Where a provider of a public electronic communications service provides facilities for calling or connected line identification, he shall provide information to the public regarding the availability of such facilities, including information regarding the options to be made available for the purposes of regulations 10 and 11.Co-operation of communications providers for the purposes of regulations 10 and 1113For the purposes of regulations 10 and 11, a communications provider shall comply with any reasonable requests made by the provider of the public electronic communications service by means of which facilities for calling or connected line identification are provided.Restrictions on the processing of location data141This regulation shall not apply to the processing of traffic data.2Location data relating to a user or subscriber of a public electronic communications network or a public electronic communications service may only be processed—awhere that user or subscriber cannot be identified from such data; orbwhere necessary for the provision of a value added service, with the consent of that user or subscriber.3Prior to obtaining the consent of the user or subscriber under",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0024",
+    "title": "PECR SI 2003 2426 GB — section 25",
+    "text": "or the provision of a value added service, with the consent of that user or subscriber.3Prior to obtaining the consent of the user or subscriber under paragraph (2)(b), the public communications provider in question must provide the following information to the user or subscriber to whom the data relate—athe types of location data that will be processed;bthe purposes and duration of the processing of those data; andcwhether the data will be transmitted to a third party for the purpose of providing the value added service.4A user or subscriber who has given his consent to the processing of data under paragraph (2)(b) shall—abe able to withdraw such consent at any time, andbin respect of each connection to the public electronic communications network in question or each transmission of a communication, be given the opportunity to withdraw such consent, using a simple means and free of charge.5Processing of location data in accordance with this regulation shall—aonly be carried out by—ithe public communications provider in question;iithe third party providing the value added service in question; oriiia person acting under the authority of a person falling within (i) or (ii); andbwhere",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0025",
+    "title": "PECR SI 2003 2426 GB — section 26",
+    "text": "third party providing the value added service in question; oriiia person acting under the authority of a person falling within (i) or (ii); andbwhere the processing is carried out for the purposes of the provision of a value added service, be restricted to what is necessary for those purposes.Tracing of malicious or nuisance calls151A communications provider may override anything done to prevent the presentation of the identity of a calling line where—aa subscriber has requested the tracing of malicious or nuisance calls received on his line; andbthe provider is satisfied that such action is necessary and expedient for the purposes of tracing such calls.2Any term of a contract for the provision of public electronic communications services which relates to such prevention shall have effect subject to the provisions of paragraph (1).3Nothing in these Regulations shall prevent a communications provider, for the purposes of any action relating to the tracing of malicious or nuisance calls, from storing and making available to a person with a legitimate interest data containing the identity of a calling subscriber which were obtained while paragraph (1) applied.Emergency calls161For th",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0026",
+    "title": "PECR SI 2003 2426 GB — section 27",
+    "text": "th a legitimate interest data containing the identity of a calling subscriber which were obtained while paragraph (1) applied.Emergency calls161For the purposes of this regulation,  “emergency calls” means calls to either the national emergency call number 999 or the single European emergency call number 112.2In order to facilitate responses to emergency calls—aall such calls shall be excluded from the requirements of regulation 10;bno person shall be entitled to prevent the presentation on the connected line of the identity of the calling line; andcthe restriction on the processing of location data under regulation 14(2) shall be disregarded.Emergency alerts16A1A relevant public communications provider (P) may, for the purpose of providing an emergency alert service, disregard the restrictions on the processing of data relating to users or subscribers set out in paragraph (2) if the conditions set out in paragraph (3) are met.2The restrictions are—athe restrictions on the processing of traffic data under regulations 7(1) and 8(2); andbthe restrictions on the processing of location data under regulations 14(2) and 14(5).3The conditions are—aP is notified by a relevant public author",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0027",
+    "title": "PECR SI 2003 2426 GB — section 28",
+    "text": "dbthe restrictions on the processing of location data under regulations 14(2) and 14(5).3The conditions are—aP is notified by a relevant public authority that—ian emergency within the meaning of section 1(1) of the Civil Contingencies Act 2004 has occurred, is occurring or is about to occur; andiiit is expedient to use an emergency alert service;bP is directed by the relevant public authority to convey a specified communication over a specified time period to users or subscribers of P’s public electronic communications network whom P considers—iare in one or more specified places in the United Kingdom which is or may be affected by the emergency; oriihave been in a specified place affected by the emergency since the emergency occurred but are no longer in the place; andcP complies with that direction.4P may, for the purpose of testing an emergency alert service, disregard the restrictions on the processing of data relating to users or subscribers set out in paragraph (2) if the conditions set out in paragraph (5) are met.5The conditions are—aP is notified by a Minister of the Crown that, in the Minister’s opinion, it is necessary to test an emergency alert service for the purpose o",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0028",
+    "title": "PECR SI 2003 2426 GB — section 29",
+    "text": "ns are—aP is notified by a Minister of the Crown that, in the Minister’s opinion, it is necessary to test an emergency alert service for the purpose of ensuring that the service is maintained in good working order and is an effective means of communicating with users and subscribers in an emergency;bthe Minister gives directions as to how the test is to be conducted; andcP complies with the directions in sub-paragraph (b).6Traffic data or location data which relate to users or subscribers of a public electronic communications network and are processed in accordance with this regulation must, within  the period of 7 days beginning with the day on which the time period specified by the relevant public authority pursuant to paragraph (3)(b) expires  or, as the case may be, within 48 hours of receipt of the Minister’s directions pursuant to paragraph (5)(b), be—aerased; orbiin the case of an individual, modified so that they cease to constitute personal data of that user or subscriber; oriiin the case of a corporate subscriber, modified so that they cease to be data that would be personal data if that user or subscriber was an individual.7The processing of traffic data or location data",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0029",
+    "title": "PECR SI 2003 2426 GB — section 30",
+    "text": "o that they cease to be data that would be personal data if that user or subscriber was an individual.7The processing of traffic data or location data in accordance with this regulation shall be carried out only by P or by a person acting under P’s authority.8For the purposes of this regulation—a“emergency alert service” means a service comprising one or more communications to mobile telecommunications devices over a public electronic communications network to warn, advise or inform users or subscribers in relation to an aspect or effect of an emergency which may affect or have affected them by reason of their location;b“relevant public authority” means—ia Minister of the Crown;iithe Scottish Ministers;iiithe Welsh Ministers;iva Northern Ireland department;va chief officer of police within the meaning of section 101(1) of the Police Act 1996;vithe chief constable of the Police Service of Scotland;viithe chief constable of the Police Service of Northern Ireland;viiithe chief constable of the British Transport Police Force;ixthe Environment Agency;xthe Scottish Environment Protection Agency;xithe Natural Resources Body for Wales;c“relevant public communications provider” means a pers",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0030",
+    "title": "PECR SI 2003 2426 GB — section 31",
+    "text": "ment Agency;xthe Scottish Environment Protection Agency;xithe Natural Resources Body for Wales;c“relevant public communications provider” means a person who—iprovides a public electronic communications network;iiprovides cellular mobile electronic communications services; andiiiholds a wireless telegraphy licence granted under section 8 of the Wireless Telegraphy Act 2006.Termination of automatic call forwarding171Where—acalls originally directed to another line are being automatically forwarded to a subscriber’s line as a result of action taken by a third party, andbthe subscriber requests his provider of electronic communications services (“the subscriber’s provider”) to stop the forwarding of those calls,the subscriber’s provider shall ensure, free of charge, that the forwarding is stopped without any avoidable delay.2For the purposes of paragraph (1), every other communications provider shall comply with any reasonable requests made by the subscriber’s provider to assist in the prevention of that forwarding.Directories of subscribers181This regulation applies in relation to a directory of subscribers, whether in printed or electronic form, which is made available to members of",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0031",
+    "title": "PECR SI 2003 2426 GB — section 32",
+    "text": "ers181This regulation applies in relation to a directory of subscribers, whether in printed or electronic form, which is made available to members of the public or a section of the public, including by means of a directory enquiry service.2The personal data of an individual subscriber shall not be included in a directory unless that subscriber has, free of charge, been—ainformed by the collector of the personal data of the purposes of the directory in which his personal data are to be included, andbgiven the opportunity to determine whether such of his personal data as are considered relevant by the producer of the directory should be included in the directory.3Where personal data of an individual subscriber are to be included in a directory with facilities which enable users of that directory to obtain access to that data solely on the basis of a telephone number—athe information to be provided under paragraph (2)(a) shall include information about those facilities; andbfor the purposes of paragraph (2)(b), the express consent of the subscriber to the inclusion of his data in a directory with such facilities must be obtained.4Data relating to a corporate subscriber shall not be in",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0032",
+    "title": "PECR SI 2003 2426 GB — section 33",
+    "text": "subscriber to the inclusion of his data in a directory with such facilities must be obtained.4Data relating to a corporate subscriber shall not be included in a directory where that subscriber has advised the producer of the directory that it does not want its data to be included in that directory.5Where the data of an individual subscriber have been included in a directory, that subscriber shall, without charge, be able to verify, correct or withdraw those data at any time.6Where a request has been made under paragraph (5) for data to be withdrawn from or corrected in a directory, that request shall be treated as having no application in relation to an edition of a directory that was produced before the producer of the directory received the request.7For the purposes of paragraph (6), an edition of a directory which is revised after it was first produced shall be treated as a new edition.8In this regulation,  “telephone number” has the same meaning as in section 56(5) of the Communications Act 2003  but does not include any number which is used as an internet domain name, an internet address or an address or identifier incorporating either an internet domain name or an internet a",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0033",
+    "title": "PECR SI 2003 2426 GB — section 34",
+    "text": "hich is used as an internet domain name, an internet address or an address or identifier incorporating either an internet domain name or an internet address, including an electronic mail address.Use of automated calling systems191A person shall neither transmit, nor instigate the transmission of, communications comprising recorded matter for direct marketing purposes by means of an automated calling  or communication system except in the circumstances referred to in paragraph (2).2Those circumstances are where—athe called line is that of a subscriber who has previously notified the caller that for the time being he consents to such communications being sent by, or at the instigation of, the caller on that line; andbthe person transmitting, or instigating the transmission of, such communications—idoes not prevent presentation of the identity of the calling line on the called line; oriipresents the identity of a line on which he can be contacted.3A subscriber shall not permit his line to be used in contravention of paragraph (1).4For the purposes of this regulation, an automated calling system is a system which is capable of—aautomatically initiating a sequence of calls to more than",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0034",
+    "title": "PECR SI 2003 2426 GB — section 35",
+    "text": "e purposes of this regulation, an automated calling system is a system which is capable of—aautomatically initiating a sequence of calls to more than one destination in accordance with instructions stored in that system; andbtransmitting sounds which are not live speech for reception by persons at some or all of the destinations so called.Use of facsimile machines for direct marketing purposes201A person shall neither transmit, nor instigate the transmission of, unsolicited communications for direct marketing purposes by means of a facsimile machine where the called line is that of—aan individual subscriber, except in the circumstances referred to in paragraph (2);ba corporate subscriber who has previously notified the caller that such communications should not be sent on that line; orca subscriber and the number allocated to that line is listed in the register kept under regulation 25.2The circumstances referred to in paragraph (1)(a) are that the individual subscriber has previously notified the caller that he consents for the time being to such communications being sent by, or at the instigation of, the caller.3A subscriber shall not permit his line to be used in contravention o",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0035",
+    "title": "PECR SI 2003 2426 GB — section 36",
+    "text": "being to such communications being sent by, or at the instigation of, the caller.3A subscriber shall not permit his line to be used in contravention of paragraph (1).4A person shall not be held to have contravened paragraph (1)(c) where the number allocated to the called line has been listed on the register for less than 28 days preceding that on which the communication is made.5Where a subscriber who has caused a number allocated to a line of his to be listed in the register kept under regulation 25 has notified a caller that he does not, for the time being, object to such communications being sent on that line by that caller, such communications may be sent by that caller on that line, notwithstanding that the number allocated to that line is listed in the said register.6Where a subscriber has given a caller notification pursuant to paragraph (5) in relation to a line of his—athe subscriber shall be free to withdraw that notification at any time, andbwhere such notification is withdrawn, the caller shall not send such communications on that line.7The provisions of this regulation are without prejudice to the provisions of regulation 19. Calls for direct marketing purposes 21A1A p",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0036",
+    "title": "PECR SI 2003 2426 GB — section 37",
+    "text": "on that line.7The provisions of this regulation are without prejudice to the provisions of regulation 19. Calls for direct marketing purposes 21A1A person shall neither use, nor instigate the use of, a public electronic communications service for the purposes of making calls (whether solicited or unsolicited) for direct marketing purposes except where that person—adoes not prevent presentation of the identity of the calling line on the called line; orbpresents the identity of a line on which he can be contacted.1A person shall neither use, nor instigate the use of, a public electronic communications service for the purposes of making unsolicited calls for direct marketing purposes where—athe called line is that of a subscriber who has previously notified the caller that such calls should not for the time being be made on that line; orbthe number allocated to a subscriber in respect of the called line is one listed in the register kept under regulation 26.2A subscriber shall not permit his line to be used in contravention of  paragraphs (A1) or (1).3A person shall not be held to have contravened paragraph (1)(b) where the number allocated to the called line has been listed on the r",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0037",
+    "title": "PECR SI 2003 2426 GB — section 38",
+    "text": "hs (A1) or (1).3A person shall not be held to have contravened paragraph (1)(b) where the number allocated to the called line has been listed on the register for less than 28 days preceding that on which the call is made.4Where a subscriber who has caused a number allocated to a line of his to be listed in the register kept under regulation 26 has notified a caller that he does not, for the time being, object to such calls being made on that line by that caller, such calls may be made by that caller on that line, notwithstanding that the number allocated to that line is listed in the said register.5Where a subscriber has given a caller notification pursuant to paragraph (4) in relation to a line of his—athe subscriber shall be free to withdraw that notification at any time, andbwhere such notification is withdrawn, the caller shall not make such calls on that line.6Paragraph (1) does not apply to a case falling within regulation 21A or 21B.Calls for direct marketing of claims management services21A1A person must not use, or instigate the use of, a public electronic communications service to make unsolicited calls for the purposes of direct marketing in relation to claims management",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0038",
+    "title": "PECR SI 2003 2426 GB — section 39",
+    "text": "the use of, a public electronic communications service to make unsolicited calls for the purposes of direct marketing in relation to claims management services except in the circumstances referred to in paragraph (2).2Those circumstances are where the called line is that of a subscriber who has previously notified the caller that for the time being the subscriber consents to such calls being made by, or at the instigation of, the caller on that line.3A subscriber must not permit the subscriber's line to be used in contravention of paragraph (1).4In this regulation,  “claims management services” means the following services in relation to the making of a claim—aadvice;bfinancial services or assistance;cacting on behalf of, or representing, a person;dthe referral or introduction of one person to another;ethe making of inquiries.5In paragraph (4),  “claim” means a claim for compensation, restitution, repayment or any other remedy or relief in respect of loss or damage or in respect of an obligation, whether the claim is made or could be made—aby way of legal proceedings,bin accordance with a scheme of regulation (whether voluntary or compulsory), orcin pursuance of a voluntary underta",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0039",
+    "title": "PECR SI 2003 2426 GB — section 40",
+    "text": "made—aby way of legal proceedings,bin accordance with a scheme of regulation (whether voluntary or compulsory), orcin pursuance of a voluntary undertaking.Calls for direct marketing in relation to pension schemes21B1A person must not use, or instigate the use of, a public electronic communications service to make unsolicited calls to an individual for the purpose of direct marketing in relation to occupational pension schemes or personal pension schemes, except where paragraph (2) or (3) applies.2This paragraph applies where—athe caller is an authorised person or a person who is the trustee or manager of an occupational pension scheme or a personal pension scheme; andbthe called line is that of an individual who has previously notified the caller that for the time being the individual consents to such calls being made by the caller on that line.3This paragraph applies where—athe caller is an authorised person or a person who is the trustee or manager of an occupational pension scheme or a personal pension scheme;bthe recipient of the call has an existing client relationship with the caller on the line and the relationship is such that the recipient might reasonably envisage receivi",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0040",
+    "title": "PECR SI 2003 2426 GB — section 41",
+    "text": "call has an existing client relationship with the caller on the line and the relationship is such that the recipient might reasonably envisage receiving unsolicited calls for the purpose of direct marketing in relation to occupational pension schemes or personal pension schemes; andcthe recipient of the call has been given a simple means of refusing (free of charge except for the costs of the transmission of the refusal) the use of the recipient’s contact details for the purpose of such direct marketing, at the time that the details were initially collected and, where the recipient did not initially refuse the use of the details, at the time of each subsequent communication.4A subscriber must not permit the subscriber’s line to be used in contravention of paragraph (1).5In this regulation—a“authorised person” has the meaning given in section 31 of the Financial Services and Markets Act 2000;b“direct marketing in relation to occupational pension schemes or personal pension schemes” includes—ithe marketing of a product or service to be acquired using funds held, or previously held, in an occupational pension scheme or a personal pension scheme,iithe offer of any advice or other servi",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0041",
+    "title": "PECR SI 2003 2426 GB — section 42",
+    "text": "acquired using funds held, or previously held, in an occupational pension scheme or a personal pension scheme,iithe offer of any advice or other service that promotes, or promotes the consideration of, the withdrawal or transfer of funds from an occupational pension scheme or a personal pension scheme, andiiithe offer of any advice or other service to enable the assessment of the performance of an occupational pension scheme or a personal pension scheme (including its performance in comparison with other forms of investment);c“existing client relationship” does not include a relationship established at the instigation of the caller primarily for the purpose of avoiding the restriction in paragraph (1); andd“occupational pension scheme” and “personal pension scheme” have the meanings given in section 1(1) of the Pension Schemes Act 1993.Use of electronic mail for direct marketing purposes221This regulation applies to the transmission of unsolicited communications by means of electronic mail to individual subscribers.2Except in the circumstances referred to in paragraph (3) or (3A), a person shall neither transmit, nor instigate the transmission of, unsolicited communications for the",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0042",
+    "title": "PECR SI 2003 2426 GB — section 43",
+    "text": "umstances referred to in paragraph (3) or (3A), a person shall neither transmit, nor instigate the transmission of, unsolicited communications for the purposes of direct marketing by means of electronic mail unless the recipient of the electronic mail has previously notified the sender that he consents for the time being to such communications being sent by, or at the instigation of, the sender.3A person may send or instigate the sending of electronic mail for the purposes of direct marketing where—athat person has obtained the contact details of the recipient of that electronic mail in the course of the sale or negotiations for the sale of a product or service to that recipient;bthe direct marketing is in respect of that person’s similar products and services only; andcthe recipient has been given a simple means of refusing (free of charge except for the costs of the transmission of the refusal) the use of his contact details for the purposes of such direct marketing, at the time that the details were initially collected, and, where he did not initially refuse the use of the details, at the time of each subsequent communication.3AA charity may send or instigate the sending of elec",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0043",
+    "title": "PECR SI 2003 2426 GB — section 44",
+    "text": "he did not initially refuse the use of the details, at the time of each subsequent communication.3AA charity may send or instigate the sending of electronic mail for the purposes of direct marketing where—athe sole purpose of the direct marketing is to further one or more of the charity’s charitable purposes;bthe charity obtained the contact details of the recipient of the electronic mail in the course of the recipient—iexpressing an interest in one or more of the purposes that were the charity’s charitable purposes at that time; oriioffering or providing support to further one or more of those purposes; andcthe recipient has been given a simple means of refusing (free of charge except for the costs of the transmission of the refusal) the use of their contact details for the purposes of direct marketing by the charity, at the time that the details were initially collected, and, where the recipient did not initially refuse the use of the details, at the time of each subsequent communication.4A subscriber shall not permit his line to be used in contravention of paragraph (2).5In this regulation, “charity” means—aa charity as defined in section 1(1) of the Charities Act 2011,ba charit",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0044",
+    "title": "PECR SI 2003 2426 GB — section 45",
+    "text": "used in contravention of paragraph (2).5In this regulation, “charity” means—aa charity as defined in section 1(1) of the Charities Act 2011,ba charity as defined in section 1(1) of the Charities Act (Northern Ireland) 2008 (c. 12 (N.I.)), including an institution treated as such a charity for the purposes of that Act by virtue of the Charities Act 2008 (Transitional Provision) Order (Northern Ireland) 2013 (S.R. (N.I.) 2013 No. 211), andca body entered in the Scottish Charity Register, other than a body which no longer meets the charity test in section 7 of the Charities and Trustee Investment (Scotland) Act 2005 (asp 10),and, in relation to such a charity, institution or body, “charitable purpose” has the meaning given in the relevant Act.Use of electronic mail for direct marketing purposes where the identity or address of the sender is concealed23A person shall neither transmit, nor instigate the transmission of, a communication for the purposes of direct marketing by means of electronic mail—awhere the identity of the person on whose behalf the communication has been sent has been disguised or concealed; ...bwhere a valid address to which the recipient of the communication may",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0045",
+    "title": "PECR SI 2003 2426 GB — section 46",
+    "text": "ose behalf the communication has been sent has been disguised or concealed; ...bwhere a valid address to which the recipient of the communication may send a request that such communications cease has not been provided;cwhere that electronic mail would contravene regulation 7 of the Electronic Commerce (EC Directive) Regulations 2002; ordwhere that electronic mail encourages recipients to visit websites which contravene that regulation.Information to be provided for the purposes of regulations 19 to 21A 241Where a public electronic communications service is used for the transmission of a communication for direct marketing purposes the person using, or instigating the use of, the service shall ensure that the following information is provided with that communication—ain relation to a communication to which regulations 19 (automated calling systems) and 20 (facsimile machines) apply, the particulars mentioned in paragraph (2)(a) and (b);bin relation to a communication to which regulation 21  or 21A (telephone calls) applies, the particulars mentioned in paragraph (2)(a) and, if the recipient of the call so requests, those mentioned in paragraph (2)(b).2The particulars referred to in p",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0046",
+    "title": "PECR SI 2003 2426 GB — section 47",
+    "text": "ars mentioned in paragraph (2)(a) and, if the recipient of the call so requests, those mentioned in paragraph (2)(b).2The particulars referred to in paragraph (1) are—athe name of the person;beither the address of the person or a telephone number on which he can be reached free of charge.Register to be kept for the purposes of regulation 20251For the purposes of regulation 20  the Commissioner  shall maintain and keep up-to-date, in printed or electronic form, a register of the numbers allocated to subscribers, in respect of particular lines, who have notified  the Commissioner or, prior to 30thDecember 2016, OFCOM  (notwithstanding, in the case of individual subscribers, that they enjoy the benefit of regulation 20(1)(a) and (2)) that they do not for the time being wish to receive unsolicited communications for direct marketing purposes by means of facsimile machine on the lines in question.2 The Commissioner  shall remove a number from the register maintained under paragraph (1) where  the Commissioner has reason to believe that it has ceased to be allocated to the subscriber by whom  the Commissioner was or, prior to 30th December 2016, OFCOM were  notified pursuant to paragraph",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0047",
+    "title": "PECR SI 2003 2426 GB — section 48",
+    "text": "has ceased to be allocated to the subscriber by whom  the Commissioner was or, prior to 30th December 2016, OFCOM were  notified pursuant to paragraph (1).3On the request of—aa person wishing to send, or instigate the sending of, such communications as are mentioned in paragraph (1), orba subscriber wishing to permit the use of his line for the sending of such communications,for information derived from the register kept under paragraph (1),  the Commissioner  shall, unless it is not reasonably practicable so to do, on the payment to  the Commissioner  of such fee as is, subject to paragraph (4), required by  the Commissioner, make the information requested available to that person or that subscriber.4For the purposes of paragraph (3)  the Commissioner  may require different fees—afor making available information derived from the register in different forms or manners, orbfor making available information derived from the whole or from different parts of the register,but the fees required by  the Commissioner shall be ones in relation to which the Secretary of State has notified  the Commissioner  that he is satisfied that they are designed to secure, as nearly as may be and taking",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0048",
+    "title": "PECR SI 2003 2426 GB — section 49",
+    "text": "to which the Secretary of State has notified  the Commissioner  that he is satisfied that they are designed to secure, as nearly as may be and taking one year with another, that the aggregate fees received, or reasonably expected to be received, equal the costs incurred, or reasonably expected to be incurred, by  the Commissioner  in discharging  the Commissioner’s  duties under paragraphs (1), (2) and (3).5The functions of  the Commissioner  under paragraphs (1), (2) and (3), other than the function of determining the fees to be required for the purposes of paragraph (3), may be discharged on  the Commissioner’s  behalf by some other person in pursuance of arrangements made by  the Commissioner  with that other person.Register to be kept for the purposes of regulation 21261For the purposes of regulation 21  the Commissioner  shall maintain and keep up-to-date, in printed or electronic form, a register of the numbers allocated to ... subscribers, in respect of particular lines, who have notified  the Commissioner or, prior to 30thDecember 2016, OFCOM  that they do not for the time being wish to receive unsolicited calls for direct marketing purposes on the lines in question.1ANotif",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0049",
+    "title": "PECR SI 2003 2426 GB — section 50",
+    "text": "mber 2016, OFCOM  that they do not for the time being wish to receive unsolicited calls for direct marketing purposes on the lines in question.1ANotifications to  the Commissioner made for the purposes of paragraph (1) by corporate subscribers shall be in writing.2 The Commissioner  shall remove a number from the register maintained under paragraph (1) where  the Commissioner has  reason to believe that it has ceased to be allocated to the subscriber by whom  the Commissioner was or, prior to 30th December 2016, OFCOM were  notified pursuant to paragraph (1).2AWhere a number allocated to a corporate subscriber is listed in the register maintained under paragraph (1),  the Commissioner  shall, within the period of 28 days following each anniversary of the date of that number being first listed in the register, send to the subscriber a written reminder that the number is listed in the register.3On the request of—aa person wishing to make, or instigate the making of, such calls as are mentioned in paragraph (1), orba subscriber wishing to permit the use of his line for the making of such calls,for information derived from the register kept under paragraph (1),  the Commissioner shall,",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0050",
+    "title": "PECR SI 2003 2426 GB — section 51",
+    "text": "o permit the use of his line for the making of such calls,for information derived from the register kept under paragraph (1),  the Commissioner shall, unless it is not reasonably practicable so to do, on the payment to  the Commissioner  of such fee as is, subject to paragraph (4), required by  the Commissioner, make the information requested available to that person or that subscriber.4For the purposes of paragraph (3)  the Commissioner  may require different fees—afor making available information derived from the register in different forms or manners, orbfor making available information derived from the whole or from different parts of the register,but the fees required by  the Commissioner  shall be ones in relation to which the Secretary of State has notified  the Commissioner  that he is satisfied that they are designed to secure, as nearly as may be and taking one year with another, that the aggregate fees received, or reasonably expected to be received, equal the costs incurred, or reasonably expected to be incurred, by  the Commissioner  in discharging  the Commissioner’s  duties under paragraphs (1), (2) and (3).5The functions of  the Commissioner  under paragraphs (1), (",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0051",
+    "title": "PECR SI 2003 2426 GB — section 52",
+    "text": "ommissioner  in discharging  the Commissioner’s  duties under paragraphs (1), (2) and (3).5The functions of  the Commissioner  under paragraphs (1), (2)  , (2A) and (3), other than the function of determining the fees to be required for the purposes of paragraph (3), may be discharged on  the Commissioner’s  behalf by some other person in pursuance of arrangements made by  the Commissioner  with that other person.Modification of contracts27To the extent that any term in a contract between a subscriber to and the provider of a public electronic communications service or such a provider and the provider of an electronic communications network would be inconsistent with a requirement of these Regulations, that term shall be void.National security281Nothing in these Regulations shall require a communications provider to do, or refrain from doing, anything (including the processing of data) if exemption from the requirement in question is required for the purpose of safeguarding national security.2Subject to paragraph (4), a certificate signed by a Minister of the Crown certifying that exemption from any requirement of these Regulations is or at any time was required for the purpose of",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0052",
+    "title": "PECR SI 2003 2426 GB — section 53",
+    "text": "gned by a Minister of the Crown certifying that exemption from any requirement of these Regulations is or at any time was required for the purpose of safeguarding national security shall be conclusive evidence of that fact.3A certificate under paragraph (2) may identify the circumstances in which it applies by means of a general description and may be expressed to have prospective effect.4Any person directly affected by the issuing of a certificate under paragraph (2) may appeal to the Tribunal against the issuing of the certificate.5If, on an appeal under paragraph (4), the Tribunal finds that, applying the principles applied by a court on an application for judicial review, the Minister did not have reasonable grounds for issuing the certificate, the Tribunal may allow the appeal and quash the certificate.6Where, in any proceedings under or by virtue of these Regulations, it is claimed by a communications provider that a certificate under paragraph (2) which identifies the circumstances in which it applies by means of a general description applies in the circumstances in question, any other party to the proceedings may appeal to the Tribunal on the ground that the certificate doe",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0053",
+    "title": "PECR SI 2003 2426 GB — section 54",
+    "text": "ription applies in the circumstances in question, any other party to the proceedings may appeal to the Tribunal on the ground that the certificate does not apply in those circumstances and, subject to any determination under paragraph (7), the certificate shall be conclusively presumed so to apply.7On any appeal under paragraph (6), the Tribunal may determine that the certificate does not so apply.8In this regulation—a“the Tribunal”, in relation to any appeal under this regulation, means—ithe Upper Tribunal, in any case where it is determined by or under Tribunal Procedure Rules that the Upper Tribunal is to hear the appeal; oriithe First-tier Tribunal, in any other case;bSubsections (8), (9), (10) and (12) of section 28 of and Schedule 6 to that Act apply for the purposes of this regulation as they apply for the purposes of section 28;csection 58 of that Act shall apply for the purposes of this regulation as if the reference in that section to the functions of the Tribunal under that Act included a reference to the functions of the Tribunal under paragraphs (4) to (7) of this regulation; anddsubsections (1), (2) and (5)(f) of section 67 of that Act shall apply in respect of the ma",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0054",
+    "title": "PECR SI 2003 2426 GB — section 55",
+    "text": "ribunal under paragraphs (4) to (7) of this regulation; anddsubsections (1), (2) and (5)(f) of section 67 of that Act shall apply in respect of the making of rules relating to the functions of the Tribunal under this regulation.Legal requirements, law enforcement etc.291Nothing in these Regulations shall require a communications provider to do, or refrain from doing, anything (including the processing of data)—aif compliance with the requirement in question—iwould be inconsistent with any requirement imposed by or under an enactment or by a court order; oriiwould be likely to prejudice the prevention or detection of crime or the apprehension or prosecution of offenders; orbif exemption from the requirement in question—iis required for the purposes of, or in connection with, any legal proceedings (including prospective legal proceedings);iiis necessary for the purposes of obtaining legal advice; oriiiis otherwise necessary for the purposes of establishing, exercising or defending legal rights.29A1Where regulations 28 and 29 apply, communications providers must establish and maintain internal procedures for responding to requests for access to users’ personal data.2Communications pro",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0055",
+    "title": "PECR SI 2003 2426 GB — section 56",
+    "text": "unications providers must establish and maintain internal procedures for responding to requests for access to users’ personal data.2Communications providers shall on demand provide the Information Commissioner with information about—athose procedures;bthe number of requests received;cthe legal justification for the request; anddthe communications provider’s response.Proceedings for compensation for failure to comply with requirements of the Regulations301A person who suffers damage by reason of any contravention of any of the requirements of these Regulations by any other person shall be entitled to bring proceedings for compensation from that other person for that damage.2In proceedings brought against a person by virtue of this regulation it shall be a defence to prove that he had taken such care as in all the circumstances was reasonably required to comply with the relevant requirement.3The provisions of this regulation are without prejudice to those of regulation 31.Information Commissioner’s enforcement powers311Schedule 1 provides for certain provisions of Parts 5 to 7 of the Data Protection Act 2018 to apply with modifications for the purposes of enforcing these Regulations.",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0056",
+    "title": "PECR SI 2003 2426 GB — section 57",
+    "text": "es for certain provisions of Parts 5 to 7 of the Data Protection Act 2018 to apply with modifications for the purposes of enforcing these Regulations.2In regulations 32 and 33, “enforcement functions” means the functions of the Information Commissioner under those provisions, as applied by that Schedule.Enforcement: third party information notices31A. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .Enforcement: appeals31B. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .Request that the Commissioner exercise his enforcement functions32Where it is alleged that there has been a contravention of any of the requirements of these Regulations either OFCOM or a person aggrieved by the alleged contravention may request the Commissioner to exercise his enforcement functions in respect of that contravention, but those functions shall be exercisable by the Commissioner whether or not he has been so requested.Codes of conduct32A1The Commissioner must encourage representative bodies to produce codes of conduct intended to contribute to compliance with these Regulations.2Under paragraph (1), the Commissioner must encourage representative bodies to produce codes which ta",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0057",
+    "title": "PECR SI 2003 2426 GB — section 58",
+    "text": "contribute to compliance with these Regulations.2Under paragraph (1), the Commissioner must encourage representative bodies to produce codes which take account of, among other things, the specific features of different sectors.3A code of conduct described in paragraph (1) may, for example, make provision with regard to—arights and obligations under these Regulations;bout-of-court proceedings and other dispute resolution procedures for resolving disputes arising in connection with these Regulations.4The Commissioner must encourage representative bodies to submit codes of conduct described in paragraph (1) to the Commissioner in draft.5Where a representative body does so, the Commissioner must—aprovide the representative body with an opinion on whether the code correctly reflects the requirements of these Regulations,bdecide whether to approve the code, andcif the code is approved, register and publish the code.6The Commissioner may only approve a code if, among other things—athe code contains a mechanism for monitoring whether persons who undertake to apply the code comply with its provisions, andbin relation to persons other than public bodies, the mechanism involves monitoring by",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0058",
+    "title": "PECR SI 2003 2426 GB — section 59",
+    "text": "who undertake to apply the code comply with its provisions, andbin relation to persons other than public bodies, the mechanism involves monitoring by a body which is accredited for that purpose by the Commissioner under regulation 32B.7In relation to amendments of a code of conduct that is for the time being approved under this regulation—aparagraphs (4) and (5) apply as they apply in relation to a code, andbthe requirements in paragraph (6) must be satisfied by the code as amended.8A code of conduct described in paragraph (1) may be contained in the same document as a code of conduct described in Article 40 of the UK GDPR (and a provision contained in such a document may be a provision of both codes).9In this regulation—“public body” has the meaning given in section 7 of the Data Protection Act 2018 (for the purposes of the UK GDPR);“representative body” means an association or other body representing categories of—communications providers, orother persons engaged in activities regulated by these Regulations;“the UK GDPR” has the meaning given in section 3(10) of the Data Protection Act 2018.Accreditation of bodies monitoring compliance with codes of conduct32B1The Commissioner m",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0059",
+    "title": "PECR SI 2003 2426 GB — section 60",
+    "text": "aning given in section 3(10) of the Data Protection Act 2018.Accreditation of bodies monitoring compliance with codes of conduct32B1The Commissioner may, in accordance with this regulation, accredit a body for the purpose of monitoring whether persons other than public bodies comply with a code of conduct described in regulation 32A(1).2The Commissioner may accredit a body only where the Commissioner is satisfied that the body has—ademonstrated its independence,bdemonstrated that it has an appropriate level of expertise in relation to the subject matter of the code,cestablished procedures which allow it—ito assess a person’s eligibility to apply the code,iito monitor compliance with the code, andiiito review the operation of the code periodically,destablished procedures and structures to handle complaints about infringements of the code or about the manner in which the code has been, or is being, implemented by a person,emade arrangements to publish information about the procedures and structures described in sub-paragraph (d), andfdemonstrated that it does not have a conflict of interest.3The Commissioner must prepare and publish guidance about how the Commissioner proposes to tak",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0060",
+    "title": "PECR SI 2003 2426 GB — section 61",
+    "text": "monstrated that it does not have a conflict of interest.3The Commissioner must prepare and publish guidance about how the Commissioner proposes to take decisions about accreditation under this regulation.4A body accredited under this regulation in relation to a code must take appropriate action where a person infringes the code.5If the action taken by a body under paragraph (4) consists of suspending or excluding a person from the code, the body must inform the Commissioner, giving reasons for taking that action.6The Commissioner must revoke the accreditation of a body under this regulation if the Commissioner considers that the body—ano longer meets the requirements for accreditation, orbhas failed, or is failing, to comply with paragraph (4) or (5).7In this regulation, “public body” has the same meaning as in regulation 32A.Effect of codes of conduct32CAdherence to a code of conduct approved under regulation 32A may be used by a person as a means of demonstrating compliance with these Regulations.Technical advice to the Commissioner33OFCOM shall comply with any reasonable request made by the Commissioner ... for advice on technical and similar matters relating to electronic commu",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0061",
+    "title": "PECR SI 2003 2426 GB — section 62",
+    "text": "33OFCOM shall comply with any reasonable request made by the Commissioner ... for advice on technical and similar matters relating to electronic communications  where the request is made in connection with—athe Commissioner’s enforcement functions, orbthe Commissioner’s functions under regulation 32A or 32B (codes of conduct).Amendment to the Telecommunications (Lawful Business Practice) (Interception of Communications) Regulations 200034In regulation 3 of the Telecommunications (Lawful Business Practice) (Interception of Communications) Regulations 2000 , for paragraph (3), there shall be substituted—3Conduct falling within paragraph (1)(a)(i) above is authorised only to the extent that Article 5 of Directive 2002/58/EC of the European Parliament and of the Council of 12 July 2002 concerning the processing of personal data and the protection of privacy in the electronic communications sector so permits..Amendment to the Electronic Communications (Universal Service) Order 2003351In paragraphs 2(2) and 3(2) of the Schedule to the Electronic Communications (Universal Service) Order 2003 , for the words  “Telecommunications (Data Protection and Privacy) Regulations 1999” there shall b",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0062",
+    "title": "PECR SI 2003 2426 GB — section 63",
+    "text": "ronic Communications (Universal Service) Order 2003 , for the words  “Telecommunications (Data Protection and Privacy) Regulations 1999” there shall be substituted “\n                Privacy and Electronic Communications (EC Directive) Regulations 2003\n              ”.2Paragraph (1) shall have effect notwithstanding the provisions of section 65 of the Communications Act 2003 \n\t\t\t\t\t(which provides for the modification of the Universal Service Order made under that section).Transitional provisions36The provisions in Schedule 2 shall have effect.Review of implementation371Before the end of each review period, the Secretary of State must—acarry out a review of the  implementing provisions;bset out the conclusions of the review in a report; andcpublish the report.1A“The implementing provisions” means the provisions contained in or made under an Act that were relied on by the United Kingdom immediately before exit day to implement the Directive, so far as those provisions remain in force.2. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .3The report must in particular—aset out the objectives intended to be achieved by the  implementing provisions;bassess the extent to which t",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0063",
+    "title": "PECR SI 2003 2426 GB — section 64",
+    "text": ". . . . .3The report must in particular—aset out the objectives intended to be achieved by the  implementing provisions;bassess the extent to which those objectives are achieved; andcassess whether those objectives remain appropriate and, if so, the extent to which they could be achieved with a system that imposes less regulation.4“Review period” means—athe period of five years beginning with the 26th May 2011; andbsubject to paragraph (5), each successive period of 5 years.5If a report under this regulation is published before the last day of the review period to which it relates, the following review period is to being with the day on which that report is published.Stephen Timms,Minister of State for Energy, E-Commerce and Postal Services,Department of Trade and IndustrySchedule A1Storing information in the terminal equipment of a subscriber or userRegulation 6Interpretation11In this Schedule, “website” includes a mobile application and any other platform by means of which an information society service is provided.2For further provision about the interpretation of this Schedule, see regulation 6(2).Consent21Regulation 6(1) does not prevent a person storing information, or gaini",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0064",
+    "title": "PECR SI 2003 2426 GB — section 65",
+    "text": "vision about the interpretation of this Schedule, see regulation 6(2).Consent21Regulation 6(1) does not prevent a person storing information, or gaining access to information stored, in the terminal equipment of a subscriber or user if the subscriber or user—ais provided with clear and comprehensive information about the purpose of the storage or access, andbgives consent to the storage or access.2Where an electronic communications network is used by the same person to store or access information in the terminal equipment of a subscriber or user for the same purpose on more than one occasion, it is sufficient that the requirements of sub-paragraph (1) are met in respect of the initial use.3For the purposes of sub-paragraph (1)(b), the means by which the subscriber or user may signify consent include—aamending or setting controls on the internet browser which the subscriber or user uses;busing another application or programme.Transmission of a communication over an electronic communications network3Regulation 6(1) does not apply to—atechnical storage of information in the terminal equipment of a subscriber or user, orbtechnical access to information stored in such equipment,for the",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0065",
+    "title": "PECR SI 2003 2426 GB — section 66",
+    "text": "chnical storage of information in the terminal equipment of a subscriber or user, orbtechnical access to information stored in such equipment,for the sole purpose of carrying out the transmission of a communication over an electronic communications network.Storage or access strictly necessary to provide an information society service41Regulation 6(1) does not apply to—atechnical storage of information in the terminal equipment of a subscriber or user, orbtechnical access to information stored in such equipment,where the storage or access is strictly necessary for the provision of an information society service requested by the subscriber or user.2For the purposes of this paragraph, the technical storage of, or technical access to, information is strictly necessary for the provision of an information society service requested by the subscriber or user if, for example, the storage or access is strictly necessary—ato protect information provided in connection with, or relating to, the provision of the service requested,bto ensure that the security of the terminal equipment of the subscriber or user is not adversely affected by the provision of the service requested,cto prevent or dete",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0066",
+    "title": "PECR SI 2003 2426 GB — section 67",
+    "text": "e security of the terminal equipment of the subscriber or user is not adversely affected by the provision of the service requested,cto prevent or detect fraud in connection with the provision of the service requested,dto prevent or detect technical faults in connection with the provision of the service requested, oreto enable either of the following things to be done where necessary for the provision of the service requested—iautomatically authenticating the identity of the subscriber or user, oriimaintaining a record of selections made on a website, or information put into a website, by the subscriber or user.Collecting information for statistical purposes51Regulation 6(1) does not prevent a person storing information, or gaining access to information stored, in the terminal equipment of a subscriber or user if—athe person provides an information society service,bthe sole purpose of the storage or access is to enable the person—ito collect information for statistical purposes about how the service is used with a view to making improvements to the service, oriito collect information for statistical purposes about how a website by means of which the service is provided is used with",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0067",
+    "title": "PECR SI 2003 2426 GB — section 68",
+    "text": "ements to the service, oriito collect information for statistical purposes about how a website by means of which the service is provided is used with a view to making improvements to the website,cany information that the storage or access enables the person to collect is not shared with any other person except for the purpose of enabling that other person to assist with making improvements to the service or website,dthe subscriber or user is provided with clear and comprehensive information about the purpose of the storage or access, andethe subscriber or user is given a simple means of objecting, free of charge, to the storage or access and does not object.2In sub-paragraph (1), the reference to gaining access to information stored in the terminal equipment of a subscriber or user does not include a reference to collecting or monitoring information automatically emitted by the terminal equipment.3Where an electronic communications network is used by the same person to store or access information in the terminal equipment of a subscriber or user for the same purpose on more than one occasion, it is sufficient that the requirements of sub-paragraph (1)(d) and (e) are met in respect",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0068",
+    "title": "PECR SI 2003 2426 GB — section 69",
+    "text": "ber or user for the same purpose on more than one occasion, it is sufficient that the requirements of sub-paragraph (1)(d) and (e) are met in respect of the initial use.Website appearance etc61Regulation 6(1) does not prevent a person storing information, or gaining access to information stored, in the terminal equipment of a subscriber or user if—athe person provides an information society service by means of a website,bthe sole purpose of the storage or access is—ito enable the way the website appears or functions when displayed on, or accessed by, the terminal equipment to adapt to the preferences of the subscriber or user, oriito otherwise enable an enhancement of the appearance or functionality of the website when displayed on, or accessed by, the terminal equipment,cthe subscriber or user is provided with clear and comprehensive information about the purpose of the storage or access, anddthe subscriber or user is given a simple means of objecting, free of charge, to the storage or access and does not object.2Where an electronic communications network is used by the same person to store or access information in the terminal equipment of a subscriber or user for the same purpos",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0069",
+    "title": "PECR SI 2003 2426 GB — section 70",
+    "text": "communications network is used by the same person to store or access information in the terminal equipment of a subscriber or user for the same purpose on more than one occasion, it is sufficient that the requirements of sub-paragraph (1)(c) and (d) are met in respect of the initial use.Emergency assistance7Regulation 6(1) does not prevent a person storing information, or gaining access to information stored, in the terminal equipment of a subscriber or user if—athe person receives a communication from the terminal equipment,bthe communication is a request from the subscriber or user for emergency assistance or otherwise indicates that the subscriber or user is in need of emergency assistance, andcthe sole purpose of the storage or access is to enable the geographical position of the subscriber or user to be ascertained with a view to the emergency assistance being provided.SCHEDULE 1Information Commissioner’s enforcement powersRegulation 31Provisions applied for enforcement purposes1For the purposes of enforcing these Regulations, the following provisions of Parts 5 to 7 of the Data Protection Act 2018 apply with the modifications set out in paragraphs 2 to 29—section 140 (publica",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0070",
+    "title": "PECR SI 2003 2426 GB — section 71",
+    "text": "e following provisions of Parts 5 to 7 of the Data Protection Act 2018 apply with the modifications set out in paragraphs 2 to 29—section 140 (publication by the Commissioner);section 141A (notices from the Commissioner);section 142 (information notices);section 143 (information notices: restrictions);section 144 (false statements made in response to an information notice);section 145 (information orders);section 146 (assessment notices);section 146A (assessment notices: approval of person to prepare report);section 147 (assessment notices: restrictions);section 148 (destroying or falsifying information and documents etc);section 148A (interview notices);section 148B (interview notices: restrictions);section 148C (false statements made in response to interview notices);section 149 (enforcement notices);section 150 (enforcement notices: supplementary);section 152 (enforcement notices: restrictions);section 153 (enforcement notices: cancellation and variation);section 154 and Schedule 15 (powers of entry and inspection);section 155 and Schedule 16 (penalty notices);section 156 (penalty notices: restrictions);section 157 (maximum amount of penalty);section 159 (amount of penalties: su",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0071",
+    "title": "PECR SI 2003 2426 GB — section 72",
+    "text": "Schedule 16 (penalty notices);section 156 (penalty notices: restrictions);section 157 (maximum amount of penalty);section 159 (amount of penalties: supplementary);section 160 (guidance about regulatory action);section 161 (approval of first guidance about regulatory action);section 162 (rights of appeal);section 163 (determination of appeals);section 164 (applications in respect of urgent notices);section 180 (jurisdiction);section 181 (interpretation of Part 6);section 182 (regulations and consultation);section 196 (penalties for offences);section 197(1) and (2) (prosecution);section 198 (liability of directors etc);section 200 (guidance about PACE codes of practice);section 202 (proceedings in the First-tier Tribunal: contempt);section 203 (Tribunal Procedure Rules).General modification of references to the Data Protection Act 20182The provisions listed in paragraph 1 have effect as if—areferences to the Data Protection Act 2018 or to a Part of that Act were references to the provisions of that Act or that Part as applied by these Regulations;breferences to a particular provision of that Act were references to that provision as applied by these Regulations.Modification of section",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0072",
+    "title": "PECR SI 2003 2426 GB — section 73",
+    "text": "egulations;breferences to a particular provision of that Act were references to that provision as applied by these Regulations.Modification of section 142 (information notices)3Section 142 has effect as if—ain subsection (1), for paragraphs (a) and (b) there were substituted—arequire any person to provide the Commissioner with information or documents that the Commissioner reasonably requires for the purposes of determining whether that person has complied or is complying with the requirements of the PEC Regulations,brequire a communications provider to provide the Commissioner with information or documents relating to another person’s use of an electronic communications network or electronic communications service for the purposes of determining whether that other person has complied or is complying with the requirements of the PEC Regulations, orcrequire any person to provide the Commissioner with information or documents that the Commissioner reasonably requires for the purposes of investigating a suspected failure by another person to comply with the requirements of the PEC Regulations.;bin subsection (2)(a), for “(b)(i) or (b)(ii)” there were substituted “(b) or (c)”;cafter su",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0073",
+    "title": "PECR SI 2003 2426 GB — section 74",
+    "text": "n to comply with the requirements of the PEC Regulations.;bin subsection (2)(a), for “(b)(i) or (b)(ii)” there were substituted “(b) or (c)”;cafter subsection (8) there were inserted—8ASubsections (8B) and (8C) apply if an information notice given to a person under subsection (1)(b) or (c) contains—aa statement that a duty of confidentiality applies in relation to the notice, andban explanation of the effects of subsections (8B) and (8C).8BThe person to whom the information notice is given, and any person employed or engaged for the purpose of that person’s business, must not disclose the existence of the notice without reasonable excuse.8CSubsection (8B) does not prevent—aa disclosure to a person employed or engaged for the purpose of the business of the person to whom the notice is given,ba disclosure made with the permission of the Commissioner (whether the permission is contained in the information notice or otherwise), orca disclosure made for the purpose of obtaining legal advice.;dsubsections (9) and (10) were omitted.Modification of section 143 (information notices: restrictions)41Section 143 has effect as if subsections (1) and (9) were omitted.2In that section—asubsection",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0074",
+    "title": "PECR SI 2003 2426 GB — section 75",
+    "text": "ion of section 143 (information notices: restrictions)41Section 143 has effect as if subsections (1) and (9) were omitted.2In that section—asubsections (3)(b) and (4)(b) have effect as if for “the data protection legislation” there were substituted “the PEC Regulations”;bsubsection (7)(a) has effect as if for “this Act” there were substituted “section 144, 148 or 148C or paragraph 15 of Schedule 15”;csubsection (8) has effect as if for “this Act (other than an offence under section 144)” there were substituted “section 148 or 148C or paragraph 15 of Schedule 15”.Modification of section 145 (information orders)5Section 145(2)(b) has effect as if for “section 142(2)(b)” there were substituted “section 142(2)”.Modification of section 146 (assessment notices)6Section 146 has effect as if—ain subsection (1)—ifor “a controller or processor” there were substituted “a person within subsection (1A)”;iifor “the controller or processor” there were substituted “the person”;iiifor “the data protection legislation” there were substituted “the requirements of the PEC Regulations”;bafter subsection (1) there were inserted—1AA person is within this subsection if the person—ais a communications prov",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0075",
+    "title": "PECR SI 2003 2426 GB — section 76",
+    "text": "rements of the PEC Regulations”;bafter subsection (1) there were inserted—1AA person is within this subsection if the person—ais a communications provider, orbis engaged in any activity regulated by the PEC Regulations.;cin subsection (2)—ifor “controller or processor” there were substituted “person to whom it is given”;iiin paragraph (h), for “the processing of personal data” there were substituted “any activity regulated by the PEC Regulations”;iiiin paragraph (i), for “process personal data on behalf of the controller” there were substituted “are involved in any such activity on behalf of the person to whom the notice is given”;din subsection (3A), for “controller or processor” there were substituted “person”;ein subsection (7), for “controller or processor” there were substituted “person to whom the notice is given”;fin subsection (8)—iin paragraph (a), for “controller or processor” there were substituted “person to whom the notice is given”;iiin the words after paragraph (c), for “controller or processor” there were substituted “person”;gin subsection (9)—iin paragraph (a), for the words from “a controller” to “this Act” there were substituted “the person to whom the notice is",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0076",
+    "title": "PECR SI 2003 2426 GB — section 77",
+    "text": "person”;gin subsection (9)—iin paragraph (a), for the words from “a controller” to “this Act” there were substituted “the person to whom the notice is given has failed or is failing to comply with the requirements of the PEC Regulations or that an offence under section 144, 148 or 148C or paragraph 15 of Schedule 15”;iiin paragraph (d), for “controller or processor” there were substituted “person”;hin subsection (10), for “controller or processor” there were substituted “person”;isubsection (11) were omitted;jin subsection (11A)—ifor “controller or processor”, in the first place it occurs, there were substituted “person to whom it is given”;iifor “controller or processor”, in the second place it occurs, there were substituted “the person”.Modification of section 146A (assessment notices: approval of person to prepare report)7Section 146A has effect as if—ain subsection (1), for “a controller or processor” there were substituted “a person (“P”)”;bin subsection (2), for “The controller or processor” there were substituted “P”;cin subsections (3) to (6), for “the controller or processor” (in each place) there were substituted “P”.Modification of section 147 (assessment notices: restri",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0077",
+    "title": "PECR SI 2003 2426 GB — section 78",
+    "text": "tions (3) to (6), for “the controller or processor” (in each place) there were substituted “P”.Modification of section 147 (assessment notices: restrictions)81Section 147 has effect as if subsection (5) were omitted.2In that section, subsections (2)(b) and (3)(b) have effect as if for “the data protection legislation” there were substituted “the PEC Regulations”.Modification of section 148A (interview notices)9Section 148A has effect as if—ain subsection (1)—ifor “a controller or processor” there were substituted “a person”;iiin paragraph (a), for “as described in section 149(2)” there were substituted “to comply with a requirement of the PEC Regulations”;iiiin paragraph (b), for “this Act” there were substituted “section 144, 148 or 148C or paragraph 15 of Schedule 15”;bin subsection (3)—iin paragraph (a), for “the controller or processor” there were substituted “the person mentioned in subsection (1)”;iiin paragraph (b), for “the controller or processor” there were substituted “that person”;iiiin paragraph (c), for “the controller or processor” there were substituted “that person”.Modification of section 148B (interview notices: restrictions)101Section 148B has effect as if subse",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0078",
+    "title": "PECR SI 2003 2426 GB — section 79",
+    "text": "r processor” there were substituted “that person”.Modification of section 148B (interview notices: restrictions)101Section 148B has effect as if subsections (8) and (9) were omitted.2In that section—asubsections (2)(b) and (3)(b) have effect as if for “the data protection legislation” there were substituted “the PEC Regulations”;bsubsection (6)(a) has effect as if for “this Act” there were substituted “section 144, 148 or 148C or paragraph 15 of Schedule 15”;csubsection (7) has effect as if for “this Act (other than an offence under section 148C)” there were substituted “section 144 or 148 or paragraph 15 of Schedule 15”.Modification of section 149 (enforcement notices)111Section 149 has effect as if subsections (2) to (5A) and (7) to (9) were omitted.2In that section—asubsection (1) has effect as if—ifor “as described in subsections (2), (3), (4), (5) or (5A)” there were substituted “to comply with a requirement of the PEC Regulations”;iifor “sections 150 and 151” there were substituted “section 150”;bsubsection (6) has effect as if the words “given in reliance on subsection (2), (3), (5) or (5A)” were omitted.Modification of section 150 (enforcement notices: supplementary)121Sect",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0079",
+    "title": "PECR SI 2003 2426 GB — section 80",
+    "text": "the words “given in reliance on subsection (2), (3), (5) or (5A)” were omitted.Modification of section 150 (enforcement notices: supplementary)121Section 150 has effect as if subsection (3) were omitted.2In that section, subsection (2) has effect as if the words “in reliance on section 149(2)” were omitted.Modification of section 152 (enforcement notices: restrictions)13Section 152 has effect as if subsections (1), (2) and (4) were omitted.Modification of Schedule 15 (powers of entry and inspection)141Schedule 15 has effect as if paragraph 3 were omitted.2Paragraph 1(1) of that Schedule (issue of warrants in connection with non-compliance and offences) has effect as if for paragraph (a) (but not the final “and”) there were substituted—athere are reasonable grounds for suspecting that—ia person has failed or is failing to comply with a requirement of the PEC Regulations, oriian offence under section 144, 148, or 148C or paragraph 15 of this Schedule has been or is being committed,.3Paragraph 2 of that Schedule (issue of warrants in connection with assessment notices) has effect as if—ain sub-paragraphs (1) and (2), for “controller or processor” there were substituted “person”;bin su",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0080",
+    "title": "PECR SI 2003 2426 GB — section 81",
+    "text": "nection with assessment notices) has effect as if—ain sub-paragraphs (1) and (2), for “controller or processor” there were substituted “person”;bin sub-paragraph (2), for “the data protection legislation” there were substituted “the PEC Regulations”.4Paragraph 5 of that Schedule (content of warrants) has effect as if—ain sub-paragraph (1)(c), for “the processing of personal data” there were substituted “an activity regulated by the PEC Regulations”;bin sub-paragraph (2)(d), for the words from “controller or processor” to the end there were substituted “person mentioned in paragraph 1(1)(a) has failed or is failing to comply with a requirement of the PEC Regulations”;cin sub-paragraph (3)(a) and (d)—ifor “controller or processor” there were substituted “person mentioned in paragraph 2(1)”;iifor “the data protection legislation” there were substituted “the requirements of the PEC Regulations”.5Paragraph 11 of that Schedule (privileged communications) has effect as if, in sub-paragraphs (1)(b) and (2)(b), for “the data protection legislation” there were substituted “the PEC Regulations”.Modification of section 155 (penalty notices)15Section 155 has effect as if—ain subsection (1)—iin",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0081",
+    "title": "PECR SI 2003 2426 GB — section 82",
+    "text": "tion” there were substituted “the PEC Regulations”.Modification of section 155 (penalty notices)15Section 155 has effect as if—ain subsection (1)—iin paragraph (a), for “as described in section 149(2), (3), (4), (5) or (5A)” there were substituted “to comply with a requirement of the PEC Regulations”;iiafter paragraph (c), there were inserted , ordhas failed to comply with the prohibition in section 142(8B),;bafter subsection (1) there were inserted—1ABut the Commissioner may not give a penalty notice to a person in respect of a failure to comply with regulation 5A of the PEC Regulations.;cfor subsection (2) there were substituted—2When deciding whether to give a penalty notice to a person and determining the amount of the penalty, the Commission must have regard to the matters listed in subsection (3), so far as relevant.;din subsection (3)—ifor “the controller or processor” (in each place) there were substituted “the person”;iiin paragraph (c), for the words from “data subjects” to the end there were substituted “subscribers or users”;iiiin paragraph (d), for the words “in accordance with section 57, 66, 103 or 107” there were substituted “with a view to securing compliance with",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0082",
+    "title": "PECR SI 2003 2426 GB — section 83",
+    "text": "s”;iiiin paragraph (d), for the words “in accordance with section 57, 66, 103 or 107” there were substituted “with a view to securing compliance with the requirements of the PEC Regulations”;ivparagraph (g) were omitted;vin paragraph (j), the words “or certification mechanism” were omitted;esubsection (4) were omitted;fafter subsection (4) there were inserted—4AIf a penalty notice is given to a body in respect of a failure to comply with any of regulations 19 to 24 of the PEC Regulations, the Commissioner may also give a penalty notice to an officer of the body if the Commissioner is satisfied that the failure—atook place with the consent or connivance of the officer, orbwas attributable to any neglect on the part of the officer.4BIn subsection (4A)—“body” means a body corporate or a Scottish partnership;“officer”, in relation to a body, means—in relation to a body corporate—a director, manager, secretary or other similar officer of the body or any person purporting to act in such capacity, andwhere the affairs of the body are managed by its members, a member; orin relation to a Scottish partnership, a partner or any person purporting to act as a partner.;gsubsections (6) to (8) we",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0083",
+    "title": "PECR SI 2003 2426 GB — section 84",
+    "text": "by its members, a member; orin relation to a Scottish partnership, a partner or any person purporting to act as a partner.;gsubsections (6) to (8) were omitted.Modification of Schedule 16 (penalties)16Schedule 16 has effect as if paragraphs 3(2)(b) and 5(2)(b) were omitted.Modification of section 156 (penalty notices: restrictions)171Section 156 has effect as if subsections (1), (2), (4)(b) and (5) were omitted.2In that section, subsection (3) has effect as if for the words from “controller” to “determined by or” there were substituted “penalty notice to a person who acts”.Modification of section 157 (maximum amount of penalty)18Section 157 has effect as if—asubsection (1) were omitted;bin subsection (2)—ifor “Part 3 of this Act” there were substituted “the PEC Regulations”;iiin paragraph (a), for the words from “section 35” to “or 78” there were substituted “regulation 5, 6, 7, 8, 14, 19, 20, 21, 21A, 21B, 22, 23  , 24 or 32B(4) or (5)”;csubsections (3) and (4A) were omitted;dafter subsection (4A) there were inserted—4BIn relation to an infringement of section 142(8B) of this Act, the maximum amount of the penalty that may be imposed by a penalty notice is the higher maximum amou",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0084",
+    "title": "PECR SI 2003 2426 GB — section 85",
+    "text": "o an infringement of section 142(8B) of this Act, the maximum amount of the penalty that may be imposed by a penalty notice is the higher maximum amount.Modification of section 159 (amount of penalties: supplementary)19Section 159 has effect as if—ain subsection (1), the words “Article 83 of the UK GDPR and” were omitted;bin subsection (2), the words “Article 83 of the UK GDPR,” and “and section 158” were omitted.Modification of section 160 (guidance)20Section 160 has effect as if, in subsection (4)(f), for “controllers and processors” there were substituted “persons”.Modification of section 162 (rights of appeal)21Section 162 has effect as if subsection (4) were omitted.Modification of section 163 (determination of appeals)22Section 163 has effect as if subsection (6) were omitted.Modification of section 180 (jurisdiction)231Section 180 has effect as if subsections (2)(b), (c), (d) and (e) and (3) were omitted.2Subsection (1) of that section has effect as if for “subsections (3) and (4)” there were substituted “subsection (4)”.Modification of section 181 (interpretation of Part 6)24Section 181 has effect as if the definition of “certification provider” were omitted.Modification of",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0085",
+    "title": "PECR SI 2003 2426 GB — section 86",
+    "text": "cation of section 181 (interpretation of Part 6)24Section 181 has effect as if the definition of “certification provider” were omitted.Modification of section 182 (regulations and consultation)251Section 182 has effect as if subsections (3), (6), (8), (11), (12) and (14) were omitted.2Subsection (13) of that section has effect as if for “provision comes into force” there were substituted “coming into force of section 115 of the Data (Use and Access) Act 2025”.Modification of section 196 (penalties for offences)261Section 196 has effect as if subsections (3) to (5) were omitted.2In that section—asubsection (1) has effect as if the words “section 119 or 173 or” were omitted;bsubsection (2) has effect as if for “section 132, 144, 148, 148C, 170, 171 or 184” there were substituted “section 144, 148 or 148C”.Modification of section 200 (guidance about PACE codes of practice)27Section 200 has effect as if, in subsection (1), for “this Act” there were substituted “section 144, 148 and 148C and paragraph 15 of Schedule 15”.Modification of section 202 (proceedings in the First-tier Tribunal: contempt)28Section 202 has effect as if, in subsection (1)(a), for sub-paragraphs (i) and (ii) there",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0086",
+    "title": "PECR SI 2003 2426 GB — section 87",
+    "text": "tion 202 (proceedings in the First-tier Tribunal: contempt)28Section 202 has effect as if, in subsection (1)(a), for sub-paragraphs (i) and (ii) there were substituted “on an appeal under section 162”.Modification of section 203 (tribunal procedure rules)29Section 203 has effect as if—ain subsection (1), for paragraphs (a) and (b) there were substituted “the exercise of the rights of appeal conferred by section 162”;bin subsection (2)—iin paragraph (a), for “the processing of personal data” there were substituted “any activity regulated by the PEC Regulations”;iiin paragraph (b), for “the processing of personal data” there were substituted “any such activity”.Interpretation30In this Schedule, “the PEC Regulations” means these Regulations.SCHEDULE 2Transitional provisionsRegulation 36Interpretation1In this Schedule  “the 1999 Regulations” means the Telecommunications (Data Protection and Privacy) Regulations 1999 and  “caller” has the same meaning as in regulation 21 of the 1999 Regulations.Directories21Regulation 18 of these Regulations shall not apply in relation to editions of directories first published before 11th December 2003.2Where the personal data of a subscriber have been",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0087",
+    "title": "PECR SI 2003 2426 GB — section 88",
+    "text": "ns shall not apply in relation to editions of directories first published before 11th December 2003.2Where the personal data of a subscriber have been included in a directory in accordance with Part IV of the 1999 Regulations, the personal data of that subscriber may remain included in that directory provided that the subscriber—ahas been provided with information in accordance with regulation 18 of these Regulations; andbhas not requested that his data be withdrawn from that directory.3Where a request has been made under subparagraph (2) for data to be withdrawn from a directory, that request shall be treated as having no application in relation to an edition of a directory that was produced before the producer of the directory received the request.4For the purposes of subparagraph (3), an edition of a directory, which is revised after it was first produced, shall be treated as a new edition.Notifications31A notification of consent given to a caller by a subscriber for the purposes of regulation 22(2) of the 1999 Regulations is to have effect on and after 11th December 2003 as a notification given by that subscriber for the purposes of regulation 19(2) of these Regulations.2A noti",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0088",
+    "title": "PECR SI 2003 2426 GB — section 89",
+    "text": "ve effect on and after 11th December 2003 as a notification given by that subscriber for the purposes of regulation 19(2) of these Regulations.2A notification given to a caller by a corporate subscriber for the purposes of regulation 23(2)(a) of the 1999 Regulations is to have effect on and after 11th December 2003 as a notification given by that subscriber for the purposes of regulation 20(1)(b) of these Regulations.3A notification of consent given to a caller by an individual subscriber for the purposes of regulation 24(2) of the 1999 Regulations is to have effect on and after 11th December 2003 as a notification given by that subscriber for the purposes of regulation 20(2) of these Regulations.4A notification given to a caller by an individual subscriber for the purposes of regulation 25(2)(a) of the 1999 Regulations is to have effect on and after the 11th December 2003 as a notification given by that subscriber for the purposes of regulation 21(1) of these Regulations.Registers kept under regulations 25 and 2641A notification given by a subscriber pursuant to regulation 23(4)(a) of the 1999 Regulations to the Director General of Telecommunications (or to such other person as is",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0089",
+    "title": "PECR SI 2003 2426 GB — section 90",
+    "text": "n by a subscriber pursuant to regulation 23(4)(a) of the 1999 Regulations to the Director General of Telecommunications (or to such other person as is discharging his functions under regulation 23(4) of the 1999 Regulations on his behalf by virtue of an arrangement made under regulation 23(6) of those Regulations) is to have effect on or after 11th December 2003 as a notification given pursuant to regulation 25(1) of these Regulations.2A notification given by a subscriber who is an individual pursuant to regulation 25(4)(a) of the 1999 Regulations to the Director General of Telecommunications (or to such other person as is discharging his functions under regulation 25(4) of the 1999 Regulations on his behalf by virtue of an arrangement made under regulation 25(6) of those Regulations) is to have effect on or after 11th December 2003 as a notification given pursuant to regulation 26(1) of these Regulations.References in these Regulations to OFCOM5In relation to times before an order made under section 411  of the Communications Act 2003 brings any of the provisions of Part 2 of Chapter 1 of that Act into force for the purpose of conferring on OFCOM the functions contained in those p",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0090",
+    "title": "PECR SI 2003 2426 GB — section 91",
+    "text": "3 brings any of the provisions of Part 2 of Chapter 1 of that Act into force for the purpose of conferring on OFCOM the functions contained in those provisions, references to OFCOM in these Regulations are to be treated as references to the Director General of Telecommunications.(This note is not part of the Regulations)These Regulations implement Articles 2, 4, 5(3), 6 to 13, 15 and 16 of Directive 2002/58/EC of the European Parliament and of the Council of 12 July 2002 concerning the processing of personal data and the protection of privacy in the electronic communications sector (Directive on privacy and electronic communications) (“the Directive”).The Directive repeals and replaces Directive 97/66/EC of the European Parliament and of the Council of 15 December 1997 concerning the processing of personal data and the protection of privacy in the telecommunications sector which was implemented in the UK by the Telecommunications (Data Protection and Privacy) Regulations 1999. Those Regulations are revoked by regulation 3 of these Regulations.Regulation 2 sets out the definitions which apply for the purposes of the Regulations.Regulation 4 provides that nothing in these Regulations",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0091",
+    "title": "PECR SI 2003 2426 GB — section 92",
+    "text": "ulations.Regulation 2 sets out the definitions which apply for the purposes of the Regulations.Regulation 4 provides that nothing in these Regulations relieves a person of any of his obligations under the Data Protection Act 1998.Regulation 5 imposes a duty on a provider of a public electronic communications service to take measures, if necessary in conjunction with the provider of the electronic communications network by means of which the service is provided, to safeguard the security of the service, and requires the provider of the electronic communications network to comply with the service provider’s reasonable requests made for the purposes of taking the measures (“public electronic communications service” has the meaning given by section 151 of the Communications Act 2003 and  “electronic communications network” has the meaning given by section 32 of that Act). Regulation 5 further requires the service provider, where there remains a significant risk to the security of the service, to provide subscribers to that service with certain information (“subscriber” is defined as  “a person who is a party to a contract with a provider of public electronic communications services for",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0092",
+    "title": "PECR SI 2003 2426 GB — section 93",
+    "text": "rtain information (“subscriber” is defined as  “a person who is a party to a contract with a provider of public electronic communications services for the supply of such services”).Regulation 6 provides that an electronic communications network may not be used to store or gain access to information in the terminal equipment of a subscriber or user (“user” is defined as  “any individual using a public electronic communications service”) unless the subscriber or user is provided with certain information and is given the opportunity to refuse the storage of or access to the information in his terminal equipment.Regulations 7 and 8 set out certain restrictions on the processing of traffic data relating to a subscriber or user by a public communications provider.  “Traffic data” is defined as  “any data processed for the purpose of the conveyance of a communication on an electronic communications network or for the billing in respect of that communication”.  “Public communications provider” is defined as  “a provider of a public electronic communications network or a public electronic communications service”.Regulation 9 requires providers of public electronic communications services to",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0093",
+    "title": "PECR SI 2003 2426 GB — section 94",
+    "text": "communications network or a public electronic communications service”.Regulation 9 requires providers of public electronic communications services to provide subscribers with non-itemised bills on request and requires OFCOM to have regard to certain matters when exercising their functions under Chapter 1 of Part 2 of the Communications Act 2003.Regulation 10 requires a provider of a public electronic communications service to provide users of the service with a means of preventing the presentation of calling line identification on a call-by-call basis, and to provide subscribers to the service with a means of preventing the presentation of such identification on a per-line basis. This regulation is subject to regulations 15 and 16. Regulation 11 requires the provider of a public electronic communications service to provide subscribers to that service with certain facilities where facilities enabling the presentation of connected line identification or calling line identification are available.Regulation 12 requires a public electronic communications service provider to provide certain information to the public for the purposes of regulations 10 and 11, and regulation 13 requires c",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0094",
+    "title": "PECR SI 2003 2426 GB — section 95",
+    "text": "c communications service provider to provide certain information to the public for the purposes of regulations 10 and 11, and regulation 13 requires communications providers (the term  “communications provider” has the meaning given by section 405 of the Communications Act 2003) to co-operate with reasonable requests made by providers of public electronic communications services for the purposes of those regulations.Regulation 14 imposes certain restrictions on the processing of location data, which is defined as  “any data processed in an electronic communications network indicating the geographical position of the terminal equipment of a user of a public electronic communications service, including data relating to the latitude, longitude or altitude of the terminal equipment; the direction of travel of the user; or the time the location information was recorded.”Regulation 15 makes provision in relation to the tracing of malicious or nuisance calls and regulation 16 makes provision in relation to emergency calls, which are defined in regulation 16(1) as calls to the national emergency number 999 or the European emergency call number 112.Regulation 17 requires the provider of an",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0095",
+    "title": "PECR SI 2003 2426 GB — section 96",
+    "text": "in regulation 16(1) as calls to the national emergency number 999 or the European emergency call number 112.Regulation 17 requires the provider of an electronic communications service to a subscriber to stop, on request, the automatic forwarding of calls to that subscriber’s line and also requires other communications providers to comply with reasonable requests made by the subscriber’s provider to assist in the prevention of that forwarding.Regulation 18 applies to directories of subscribers, and sets out requirements that must be satisfied where data relating to subscribers is included in such directories. It also gives subscribers the right to verify, correct or withdraw their data in directories.Regulation 19 provides that a person may not transmit communications comprising recorded matter for direct marketing purposes by an automated calling system unless the line called is that of a subscriber who has notified the caller that he consents to such communications being made.Regulations 20, 21 and 22 set out the circumstances in which persons may transmit, or instigate the transmission of, unsolicited communications for the purposes of direct marketing by means of facsimile machi",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0096",
+    "title": "PECR SI 2003 2426 GB — section 97",
+    "text": "ch persons may transmit, or instigate the transmission of, unsolicited communications for the purposes of direct marketing by means of facsimile machine, make unsolicited calls for those purposes, or transmit unsolicited communications by means of electronic mail for those purposes. Regulation 22 (electronic mail) applies only to transmissions to individual subscribers (the term  “individual” means  “a living individual” and includes  “an unincorporated body of such individuals”).Regulation 23 prohibits the sending of communications by means of electronic mail for the purposes of direct marketing where the identity of the person on whose behalf the communication is made has been disguised or concealed or an address to which requests for such communications to cease may be sent has not been provided.Regulation 24 sets out certain information that must be provided for the purposes of regulations 19, 20 and 21.Regulation 25 imposes a duty on OFCOM, for the purposes of regulation 20, to maintain and keep up-to-date a register of numbers allocated to subscribers who do not wish to receive unsolicited communications by means of facsimile machine for the purposes of direct marketing. Regu",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0097",
+    "title": "PECR SI 2003 2426 GB — section 98",
+    "text": "llocated to subscribers who do not wish to receive unsolicited communications by means of facsimile machine for the purposes of direct marketing. Regulation 26 imposes a similar obligation for the purposes of regulation 21 in respect of individual subscribers who do not wish to receive calls for the purposes of direct marketing.Regulation 27 provides that terms in certain contracts which are inconsistent with these Regulations shall be void.Regulation 28 exempts communications providers from the requirements of these Regulations where exemption is required for the purpose of safeguarding national security and further provides that a certificate signed by a Minister of the Crown to the effect that exemption from a requirement is necessary for the purpose of safeguarding national security shall be conclusive evidence of that fact. It also provides for certain questions relating to such certificates to be determined by the Information Tribunal referred to in section 6 of the Data Protection Act 1998.Regulation 29 provides that a communications provider shall not be required by these Regulations to do, or refrain from doing, anything if complying with the requirement in question would",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0098",
+    "title": "PECR SI 2003 2426 GB — section 99",
+    "text": "ations provider shall not be required by these Regulations to do, or refrain from doing, anything if complying with the requirement in question would be inconsistent with a requirement imposed by or under an enactment or by a court order, or if exemption from the requirement is necessary in connection with legal proceedings, for the purposes of obtaining legal advice or is otherwise necessary to establish, exercise or defend legal rights.Regulation 30 allows a claim for damages to be brought in respect of contraventions of the Regulations.Regulations 31 and 32 make provision in connection with the enforcement of the Regulations by the Information Commissioner (who is the Commissioner appointed under section 6 of the Data Protection Act 1998).Regulation 33 imposes a duty on OFCOM to comply with any reasonable request made by the Commissioner for advice on technical matters relating to electronic communications.Regulation 34 amends the Telecommunications (Lawful Business Practice) (Interception of Communications) Regulations 2000 and regulation 35 amends the Electronic Communications (Universal Service) Order 2003.Regulation 36 provides for the transitional provisions in Schedule 2 t",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0099",
+    "title": "PECR SI 2003 2426 GB — section 100",
+    "text": "gulation 35 amends the Electronic Communications (Universal Service) Order 2003.Regulation 36 provides for the transitional provisions in Schedule 2 to have effect.A transposition note setting out how the main elements of the Directive are transposed into law and a regulatory impact assessment have been placed in the libraries of both Houses of Parliament. Copies are also available from the Department of Trade and Industry, Bay 202, 151 Buckingham Palace Road, London SW1W 9SS and can also be found on www.dti.gov.uk.S.I. 2001/3495.1972 c. 68.2003 c. 21; for the commencement of section 405, see section 411(2) and (3) of the same Act.1985 c. 6.OJ No L 201, 31.07.02, p. 37.For the commencement of section 32, see article 2(1) of S.I. 2003/1900 (C. 77).S.I. 2002/2013.2002 c. 11.1990 c. 42; section 201 was amended by section 148(1) of and paragraph 11 of Schedule 10 to the Broadcasting Act 1996 (c. 55).For the commencement of section 151, see article 2(1) of S.I. 2003/1900 (C. 77).S.I. 1999/2093.S.I. 2000/157.2003 c. 21; for the commencement of section 56(5), see article 2(1) of S.I. 2003/1900 (C. 77).S.I. 2000/2699.S.I. 2003/1094.2003 c. 21; for the commencement of section 65, see articl",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0100",
+    "title": "PECR SI 2003 2426 GB — section 101",
+    "text": "of section 56(5), see article 2(1) of S.I. 2003/1900 (C. 77).S.I. 2000/2699.S.I. 2003/1094.2003 c. 21; for the commencement of section 65, see article 2(1) of S.I. 2003/1900 (C. 77).For the commencement of section 411, see section 411(2) and (3) of the Communications Act 2003 (c. 21).Reg. 26(1A) inserted (25.6.2004) by The Privacy and Electronic Communications (EC Directive) (Amendment) Regulations 2004 (S.I. 2004/1039), regs. 1, 2(3)Reg. 26(2A) inserted (25.6.2004) by The Privacy and Electronic Communications (EC Directive) (Amendment) Regulations 2004 (S.I. 2004/1039), regs. 1, 2(4)Word in reg. 26(1) omitted (25.6.2004) by virtue of The Privacy and Electronic Communications (EC Directive) (Amendment) Regulations 2004 (S.I. 2004/1039), regs. 1, 2(2)Word in reg. 26(5) inserted (25.6.2004) by The Privacy and Electronic Communications (EC Directive) (Amendment) Regulations 2004 (S.I. 2004/1039), regs. 1, 2(5)Reg. 28(8)(a) substituted (18.1.2010) by The Transfer of Tribunal Functions Order 2010 (S.I. 2010/22), art. 1(1), Sch. 3 para. 40Regs. 5A-5C inserted (26.5.2011) by The Privacy and Electronic Communications (EC Directive) (Amendment) Regulations 2011 (S.I. 2011/1208), regs. 1(1)",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0101",
+    "title": "PECR SI 2003 2426 GB — section 102",
+    "text": "Regs. 5A-5C inserted (26.5.2011) by The Privacy and Electronic Communications (EC Directive) (Amendment) Regulations 2011 (S.I. 2011/1208), regs. 1(1), 5Reg. 29A inserted (26.5.2011) by The Privacy and Electronic Communications (EC Directive) (Amendment) Regulations 2011 (S.I. 2011/1208), regs. 1(1), 10Reg. 37 inserted (26.5.2011) by The Privacy and Electronic Communications (EC Directive) (Amendment) Regulations 2011 (S.I. 2011/1208), regs. 1(1), 13Words in reg. 2 inserted (26.5.2011) by The Privacy and Electronic Communications (EC Directive) (Amendment) Regulations 2011 (S.I. 2011/1208), regs. 1(1), 3(a)Words in reg. 2 inserted (26.5.2011) by The Privacy and Electronic Communications (EC Directive) (Amendment) Regulations 2011 (S.I. 2011/1208), regs. 1(1), 3(b)Reg. 5(1A) inserted (26.5.2011) by The Privacy and Electronic Communications (EC Directive) (Amendment) Regulations 2011 (S.I. 2011/1208), regs. 1(1), 4(1)Words in reg. 7(3)(b) substituted (26.5.2011) by The Privacy and Electronic Communications (EC Directive) (Amendment) Regulations 2011 (S.I. 2011/1208), regs. 1(1), 7Words in reg. 19(1) inserted (26.5.2011) by The Privacy and Electronic Communications (EC Directive) (Ame",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0102",
+    "title": "PECR SI 2003 2426 GB — section 103",
+    "text": "ulations 2011 (S.I. 2011/1208), regs. 1(1), 7Words in reg. 19(1) inserted (26.5.2011) by The Privacy and Electronic Communications (EC Directive) (Amendment) Regulations 2011 (S.I. 2011/1208), regs. 1(1), 8Word in reg. 23(a) omitted (26.5.2011) by virtue of The Privacy and Electronic Communications (EC Directive) (Amendment) Regulations 2011 (S.I. 2011/1208), regs. 1(1), 9(1)Reg. 23(c)(d) inserted (26.5.2011) by The Privacy and Electronic Communications (EC Directive) (Amendment) Regulations 2011 (S.I. 2011/1208), regs. 1(1), 9(2)Reg. 16A inserted (6.4.2015) by The Privacy and Electronic Communications (EC Directive) (Amendment) Regulations 2015 (S.I. 2015/355), regs. 1, 2(2)Reg. 19(2) substituted (16.5.2016) by The Privacy and Electronic Communications (EC Directive) (Amendment) Regulations 2016 (S.I. 2016/524), regs. 1, 2(2)Reg. 21(A1) inserted (16.5.2016) by The Privacy and Electronic Communications (EC Directive) (Amendment) Regulations 2016 (S.I. 2016/524), regs. 1, 2(3)(a)Words in reg. 21 heading substituted (16.5.2016) by The Privacy and Electronic Communications (EC Directive) (Amendment) Regulations 2016 (S.I. 2016/524), regs. 1, 2(3)(c)Words in reg. 21(2) substituted (16.",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0103",
+    "title": "PECR SI 2003 2426 GB — section 104",
+    "text": "rivacy and Electronic Communications (EC Directive) (Amendment) Regulations 2016 (S.I. 2016/524), regs. 1, 2(3)(c)Words in reg. 21(2) substituted (16.5.2016) by The Privacy and Electronic Communications (EC Directive) (Amendment) Regulations 2016 (S.I. 2016/524), regs. 1, 2(3)(b)Words in reg. 25 substituted (30.12.2016) by The Privacy and Electronic Communications (EC Directive) (Amendment) (No. 2) Regulations 2016 (S.I. 2016/1177), regs. 1(1), 2(2)(a) (with reg. 3)Words in reg. 25(1) substituted (30.12.2016) by The Privacy and Electronic Communications (EC Directive) (Amendment) (No. 2) Regulations 2016 (S.I. 2016/1177), regs. 1(1), 2(2)(b) (with reg. 3)Words in reg. 25(2) substituted (30.12.2016) by The Privacy and Electronic Communications (EC Directive) (Amendment) (No. 2) Regulations 2016 (S.I. 2016/1177), regs. 1(1), 2(2)(c) (with reg. 3)Words in reg. 25(2) substituted (30.12.2016) by The Privacy and Electronic Communications (EC Directive) (Amendment) (No. 2) Regulations 2016 (S.I. 2016/1177), regs. 1(1), 2(2)(d) (with reg. 3)Words in reg. 25(3)(4) substituted (30.12.2016) by The Privacy and Electronic Communications (EC Directive) (Amendment) (No. 2) Regulations 2016 (S.I.",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0104",
+    "title": "PECR SI 2003 2426 GB — section 105",
+    "text": "ords in reg. 25(3)(4) substituted (30.12.2016) by The Privacy and Electronic Communications (EC Directive) (Amendment) (No. 2) Regulations 2016 (S.I. 2016/1177), regs. 1(1), 2(2)(e) (with reg. 3)Words in reg. 25(4)(5) substituted (30.12.2016) by The Privacy and Electronic Communications (EC Directive) (Amendment) (No. 2) Regulations 2016 (S.I. 2016/1177), regs. 1(1), 2(2)(f) (with reg. 3)Words in reg. 26 substituted (30.12.2016) by The Privacy and Electronic Communications (EC Directive) (Amendment) (No. 2) Regulations 2016 (S.I. 2016/1177), regs. 1(1), 2(2)(a) (with reg. 3)Words in reg. 26(1) substituted (30.12.2016) by The Privacy and Electronic Communications (EC Directive) (Amendment) (No. 2) Regulations 2016 (S.I. 2016/1177), regs. 1(1), 2(2)(b) (with reg. 3)Words in reg. 26(2) substituted (30.12.2016) by The Privacy and Electronic Communications (EC Directive) (Amendment) (No. 2) Regulations 2016 (S.I. 2016/1177), regs. 1(1), 2(2)(c) (with reg. 3)Words in reg. 26(2) substituted (30.12.2016) by The Privacy and Electronic Communications (EC Directive) (Amendment) (No. 2) Regulations 2016 (S.I. 2016/1177), regs. 1(1), 2(2)(d) (with reg. 3)Words in reg. 26(3)(4) substituted (30.1",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0105",
+    "title": "PECR SI 2003 2426 GB — section 106",
+    "text": "ations (EC Directive) (Amendment) (No. 2) Regulations 2016 (S.I. 2016/1177), regs. 1(1), 2(2)(d) (with reg. 3)Words in reg. 26(3)(4) substituted (30.12.2016) by The Privacy and Electronic Communications (EC Directive) (Amendment) (No. 2) Regulations 2016 (S.I. 2016/1177), regs. 1(1), 2(2)(e) (with reg. 3)Words in reg. 26(4)(5) substituted (30.12.2016) by The Privacy and Electronic Communications (EC Directive) (Amendment) (No. 2) Regulations 2016 (S.I. 2016/1177), regs. 1(1), 2(2)(f) (with reg. 3)Regulations power to apply (with modifications) conferred (10.5.2018) by Financial Guidance and Claims Act 2018 (c. 10), s. 21(d)Instrument applied (25.5.2018) by Data Protection Act 2018 (c. 12), ss. 122(a), 212(1) (with ss. 117, 209, 210); S.I. 2018/625, reg. 2(1)(e)Words in reg. 2(1) substituted (25.5.2018) by Data Protection Act 2018 (c. 12), s. 212(1), Sch. 19 para. 292 (with ss. 117, 209, 210); S.I. 2018/625, reg. 2(1)(g)Reg. 4(1): reg. 4 renumbered as reg. 4(1) (25.5.2018) by Data Protection Act 2018 (c. 12), s. 212(1), Sch. 19 para. 293(2) (with ss. 117, 209, 210); S.I. 2018/625, reg. 2(1)(g)Reg. 4(2)(3) inserted (25.5.2018) by Data Protection Act 2018 (c. 12), s. 212(1), Sch. 19 p",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0106",
+    "title": "PECR SI 2003 2426 GB — section 107",
+    "text": "93(2) (with ss. 117, 209, 210); S.I. 2018/625, reg. 2(1)(g)Reg. 4(2)(3) inserted (25.5.2018) by Data Protection Act 2018 (c. 12), s. 212(1), Sch. 19 para. 293(4) (with ss. 117, 209, 210); S.I. 2018/625, reg. 2(1)(g)Words in reg. 4 heading substituted (25.5.2018) by Data Protection Act 2018 (c. 12), s. 212(1), Sch. 19 para. 293(5) (with ss. 117, 209, 210); S.I. 2018/625, reg. 2(1)(g)Words in reg. 4(1) substituted (25.5.2018) by Data Protection Act 2018 (c. 12), s. 212(1), Sch. 19 para. 293(3) (with ss. 117, 209, 210); S.I. 2018/625, reg. 2(1)(g)Reg. 21A inserted (8.9.2018) by Financial Guidance and Claims Act 2018 (c. 10), ss. 35(3), 37(5); S.I. 2018/987, reg. 3 (with reg. 4)Reg. 21(6) inserted (8.9.2018) by Financial Guidance and Claims Act 2018 (c. 10), ss. 35(2), 37(5); S.I. 2018/987, reg. 3 (with reg. 4)Words in reg. 24 heading substituted (8.9.2018) by Financial Guidance and Claims Act 2018 (c. 10), ss. 35(4)(a), 37(5); S.I. 2018/987, reg. 3 (with reg. 4)Words in reg. 24(1)(b) inserted (8.9.2018) by Financial Guidance and Claims Act 2018 (c. 10), ss. 35(4)(b), 37(5); S.I. 2018/987, reg. 3 (with reg. 4)Reg. 21B inserted (9.1.2019) by The Privacy and Electronic Communications (Am",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0107",
+    "title": "PECR SI 2003 2426 GB — section 108",
+    "text": "ct 2018 (c. 10), ss. 35(4)(b), 37(5); S.I. 2018/987, reg. 3 (with reg. 4)Reg. 21B inserted (9.1.2019) by The Privacy and Electronic Communications (Amendment) (No. 2) Regulations 2018 (S.I. 2018/1396), regs. 1(1), 2(3)Words in reg. 21(6) inserted (9.1.2019) by The Privacy and Electronic Communications (Amendment) (No. 2) Regulations 2018 (S.I. 2018/1396), regs. 1(1), 2(2)Words in reg. 2(1) inserted (29.3.2019) by The Data Protection, Privacy and Electronic Communications (Amendments etc) (EU Exit) Regulations 2019 (S.I. 2019/419), regs. 1(3), 8(2)Reg. 2(3) omitted (29.3.2019) by virtue of The Data Protection, Privacy and Electronic Communications (Amendments etc) (EU Exit) Regulations 2019 (S.I. 2019/419), regs. 1(3), 8(3)Words in reg. 2(1) substituted (31.12.2020) by The Data Protection, Privacy and Electronic Communications (Amendments etc) (EU Exit) Regulations 2019 (S.I. 2019/419), reg. 1(2), Sch. 3 para. 44 (with Sch. 3 para. 112); 2020 c. 1, Sch. 5 para. 1(1)Words in reg. 37(1)(a) substituted (31.12.2020) by The Electronic Communications (Amendment etc.) (EU Exit) Regulations 2019 (S.I. 2019/919), regs. 1(2), 3(2); 2020 c. 1, Sch. 5 para. 1(1)Reg. 37(1A) inserted (31.12.2020)",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0108",
+    "title": "PECR SI 2003 2426 GB — section 109",
+    "text": "nications (Amendment etc.) (EU Exit) Regulations 2019 (S.I. 2019/919), regs. 1(2), 3(2); 2020 c. 1, Sch. 5 para. 1(1)Reg. 37(1A) inserted (31.12.2020) by The Electronic Communications (Amendment etc.) (EU Exit) Regulations 2019 (S.I. 2019/919), regs. 1(2), 3(3); 2020 c. 1, Sch. 5 para. 1(1)Reg. 37(2) omitted (31.12.2020) by virtue of The Electronic Communications (Amendment etc.) (EU Exit) Regulations 2019 (S.I. 2019/919), regs. 1(2), 3(4); 2020 c. 1, Sch. 5 para. 1(1)Words in reg. 37(3)(a) substituted (31.12.2020) by The Electronic Communications (Amendment etc.) (EU Exit) Regulations 2019 (S.I. 2019/919), regs. 1(2), 3(5); 2020 c. 1, Sch. 5 para. 1(1)Reg. 5A(9) omitted (14.10.2024) by virtue of Investigatory Powers (Amendment) Act 2024 (c. 9), ss. 11(5), 32(2); S.I. 2024/1021, reg. 2(k)Words in reg. 2(1) inserted (20.8.2025) by Data (Use and Access) Act 2025 (c. 18), ss. 110(2)(c), 142(1); S.I. 2025/904, reg. 2(o)Words in reg. 2(4) omitted (20.8.2025) by virtue of Data (Use and Access) Act 2025 (c. 18), ss. 110(4), 142(1); S.I. 2025/904, reg. 2(o)Reg. 2(5)(6) inserted (20.8.2025) by Data (Use and Access) Act 2025 (c. 18), ss. 110(5), 142(1); S.I. 2025/904, reg. 2(o)Reg. 5A(3A) in",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0109",
+    "title": "PECR SI 2003 2426 GB — section 110",
+    "text": "/904, reg. 2(o)Reg. 2(5)(6) inserted (20.8.2025) by Data (Use and Access) Act 2025 (c. 18), ss. 110(5), 142(1); S.I. 2025/904, reg. 2(o)Reg. 5A(3A) inserted (20.8.2025) by Data (Use and Access) Act 2025 (c. 18), ss. 111(1)(b), 142(1); S.I. 2025/904, reg. 2(p)Words in reg. 5A(2) inserted (20.8.2025) by Data (Use and Access) Act 2025 (c. 18), ss. 111(1)(a), 142(1); S.I. 2025/904, reg. 2(p)Words in reg. 5C(4)(f) substituted (20.8.2025) by Data (Use and Access) Act 2025 (c. 18), ss. 111(2)(a), 142(1); S.I. 2025/904, reg. 2(p)Words in reg. 5C(5) substituted (20.8.2025) by Data (Use and Access) Act 2025 (c. 18), ss. 111(2)(b), 142(1); S.I. 2025/904, reg. 2(p)Words in reg. 16A(6) substituted (20.8.2025) by Data (Use and Access) Act 2025 (c. 18), ss. 113, 142(1); S.I. 2025/904, reg. 2(q)Reg. 5C(12)-(16) inserted (19.6.2025 for specified purposes, 5.2.2026 in so far as not already in force) by Data (Use and Access) Act 2025 (c. 18), ss. 115(4)(b), 142(1)(2)(h) (with s. 115(10)); S.I. 2026/82, reg. 2(y) (with regs. 8-11)Reg. 6A inserted (19.6.2025 for specified purposes, 5.2.2026 in so far as not already in force) by Data (Use and Access) Act 2025 (c. 18), ss. 112(3), 142(1)(2)(h) (with s. 1",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0110",
+    "title": "PECR SI 2003 2426 GB — section 111",
+    "text": "025 for specified purposes, 5.2.2026 in so far as not already in force) by Data (Use and Access) Act 2025 (c. 18), ss. 112(3), 142(1)(2)(h) (with s. 112(5)); S.I. 2026/82, reg. 2(w)Regs. 32A-32C inserted (5.2.2026) by Data (Use and Access) Act 2025 (c. 18), ss. 116(2), 142(1); S.I. 2026/82, reg. 2(z)Sch. 1  substituted (5.2.2026) by Data (Use and Access) Act 2025 (c. 18), s. 142(1), Sch. 13; S.I. 2026/82, reg. 2(z14) (with regs. 8-11)Sch. A1 inserted (5.2.2026) by Data (Use and Access) Act 2025 (c. 18), s. 142(1), Sch. 12; S.I. 2026/82, reg. 2(z13)Word in reg. 2(1) substituted (5.2.2026) by Data (Use and Access) Act 2025 (c. 18), ss. 110(2)(b)(ii), 142(1); S.I. 2026/82, reg. 2(v)Reg. 2(1A) inserted (5.2.2026) by Data (Use and Access) Act 2025 (c. 18), ss. 110(3), 142(1); S.I. 2026/82, reg. 2(v)Words in reg. 2(1) inserted (5.2.2026) by Data (Use and Access) Act 2025 (c. 18), ss. 110(2)(a), 142(1); S.I. 2026/82, reg. 2(v)Words in reg. 2(1) substituted (5.2.2026) by Data (Use and Access) Act 2025 (c. 18), ss. 110(2)(b)(i), 142(1); S.I. 2026/82, reg. 2(v)Reg. 5(6) omitted (5.2.2026) by virtue of Data (Use and Access) Act 2025 (c. 18), ss. 115(2), 142(1); S.I. 2026/82, reg. 2(y) (with r",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0111",
+    "title": "PECR SI 2003 2426 GB — section 112",
+    "text": "026/82, reg. 2(v)Reg. 5(6) omitted (5.2.2026) by virtue of Data (Use and Access) Act 2025 (c. 18), ss. 115(2), 142(1); S.I. 2026/82, reg. 2(y) (with regs. 8-11)Reg. 5B omitted (5.2.2026) by virtue of Data (Use and Access) Act 2025 (c. 18), ss. 115(3), 142(1); S.I. 2026/82, reg. 2(y) (with regs. 8-11)Words in reg. 5C(10) omitted (5.2.2026) by virtue of Data (Use and Access) Act 2025 (c. 18), ss. 115(4)(a)(i), 142(1); S.I. 2026/82, reg. 2(y) (with regs. 8-11)Words in reg. 5C(10)(a) substituted (5.2.2026) by Data (Use and Access) Act 2025 (c. 18), ss. 115(4)(a)(ii), 142(1); S.I. 2026/82, reg. 2(y) (with regs. 8-11)Reg. 6  substituted (5.2.2026) by Data (Use and Access) Act 2025 (c. 18), ss. 112(2), 142(1); S.I. 2026/82, reg. 2(w)Reg. 22(3A) inserted (5.2.2026) by Data (Use and Access) Act 2025 (c. 18), ss. 114(3), 142(1); S.I. 2026/82, reg. 2(x)Reg. 22(5) inserted (5.2.2026) by Data (Use and Access) Act 2025 (c. 18), ss. 114(4), 142(1); S.I. 2026/82, reg. 2(x)Words in reg. 22(2) inserted (5.2.2026) by Data (Use and Access) Act 2025 (c. 18), ss. 114(2), 142(1); S.I. 2026/82, reg. 2(x)Reg. 31  substituted (5.2.2026) by Data (Use and Access) Act 2025 (c. 18), ss. 115(5), 142(1); S.I. 202",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0112",
+    "title": "PECR SI 2003 2426 GB — section 113",
+    "text": "8), ss. 114(2), 142(1); S.I. 2026/82, reg. 2(x)Reg. 31  substituted (5.2.2026) by Data (Use and Access) Act 2025 (c. 18), ss. 115(5), 142(1); S.I. 2026/82, reg. 2(y) (with regs. 8-11)Reg. 31A omitted (5.2.2026) by virtue of Data (Use and Access) Act 2025 (c. 18), ss. 115(6), 142(1); S.I. 2026/82, reg. 2(y) (with regs. 8-11)Reg. 31B omitted (5.2.2026) by virtue of Data (Use and Access) Act 2025 (c. 18), ss. 115(7), 142(1); S.I. 2026/82, reg. 2(y) (with regs. 8-11)Words in reg. 33 omitted (5.2.2026) by virtue of Data (Use and Access) Act 2025 (c. 18), ss. 116(3)(a), 142(1); S.I. 2026/82, reg. 2(z)Words in reg. 33 inserted (5.2.2026) by Data (Use and Access) Act 2025 (c. 18), ss. 116(3)(b), 142(1); S.I. 2026/82, reg. 2(z)Words in Sch. 1 para. 18(b)(ii) substituted (5.2.2026) by Data (Use and Access) Act 2025 (c. 18), ss. 116(4), 142(1); S.I. 2026/82, reg. 2(z)",
+    "standard": "PECR SI 2003 2426 GB",
+    "language": "en",
+    "source_file": "PECR_SI_2003-2426_GB.txt"
+  }
+]

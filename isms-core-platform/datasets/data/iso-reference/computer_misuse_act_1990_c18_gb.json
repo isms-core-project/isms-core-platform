@@ -1,0 +1,346 @@
+[
+  {
+    "clause_id": "chunk-0000",
+    "title": "Computer Misuse Act 1990 c18 GB — section 1",
+    "text": "http://www.legislation.gov.uk/ukpga/1990/18Computer Misuse Act 1990An Act to make provision for securing computer material against unauthorised access or modification; and for connected purposes.1990-06-29texttext/xmlenStatute Law Database2023-02-27Expert Participation2023-02-07\n\t\t\t\t\tComputer Misuse Act 1990s. 14(1)Courts Act 2003Sch. 4 para. 7s. 110(1)Computer Misuse Act 1990s. 2(2)(b)Criminal Justice and Courts Services Act 2000Criminal Justice and Court Services Act 2000Sch. 7 para. 98s. 80(1)\n\t\t\t\tComputer Misuse Act 19901990 c. 18An Act to make provision for securing computer material against unauthorised access or modification; and for connected purposes.[29th June 1990]Be it enacted by the Queen’s most Excellent Majesty, by and with the advice and consent of the Lords Spiritual and Temporal, and Commons, in this present Parliament assembled, and by the authority of the same, as follows:— Computer misuse offences Unauthorised access to computer material.11A person is guilty of an offence if—ahe causes a computer to perform any function with intent to secure access to any program or data held in any computer , or to enable any such access to be secured;bthe access he inten",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0001",
+    "title": "Computer Misuse Act 1990 c18 GB — section 2",
+    "text": "ny function with intent to secure access to any program or data held in any computer , or to enable any such access to be secured;bthe access he intends to secure , or to enable to be secured,  is unauthorised; andche knows at the time when he causes the computer to perform the function that that is the case.2The intent a person has to have to commit an offence under this section need not be directed at—aany particular program or data;ba program or data of any particular kind; orca program or data held in any particular computer.3A person guilty of an offence under this section shall be liable—aon summary conviction in England and Wales, to imprisonment for a term not exceeding  the general limit in a magistrates’ court  or to a fine not exceeding the statutory maximum or to both;bon summary conviction in Scotland, to imprisonment for a term not exceeding 12 months or to a fine not exceeding the statutory maximum or to both;con conviction on indictment, to imprisonment for a term not exceeding two years or to a fine or to both. Unauthorised access with intent to commit or facilitate commission of further offences.21A person is guilty of an offence under this section if he commits a",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0002",
+    "title": "Computer Misuse Act 1990 c18 GB — section 3",
+    "text": "orised access with intent to commit or facilitate commission of further offences.21A person is guilty of an offence under this section if he commits an offence under section 1 above (“the unauthorised access offence”) with intent—ato commit an offence to which this section applies; orbto facilitate the commission of such an offence (whether by himself or by any other person);and the offence he intends to commit or facilitate is referred to below in this section as the further offence.2This section applies to offences—afor which the sentence is fixed by law; orbfor which a person who has attained the age of twenty-one years (eighteen in relation to England and Wales) and has no previous convictions may be sentenced to imprisonment for a term of five years (or, in England and Wales, might be so sentenced but for the restrictions imposed by section 33 of the Magistrates’ Courts Act 1980).3It is immaterial for the purposes of this section whether the further offence is to be committed on the same occasion as the unauthorised access offence or on any future occasion.4A person may be guilty of an offence under this section even though the facts are such that the commission of the further",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0003",
+    "title": "Computer Misuse Act 1990 c18 GB — section 4",
+    "text": "e or on any future occasion.4A person may be guilty of an offence under this section even though the facts are such that the commission of the further offence is impossible.5A person guilty of an offence under this section shall be liable—aon summary conviction in England and Wales, to imprisonment for a term not exceeding  the general limit in a magistrates’ court  or to a fine not exceeding the statutory maximum or to both;bon summary conviction in Scotland, to imprisonment for a term not exceeding 12 months or to a fine not exceeding the statutory maximum or to both;con conviction on indictment, to imprisonment for a term not exceeding five years or to a fine or to both.\nUnauthorised acts with intent to impair, or with recklessness as to impairing, operation of computer, \netc.\n31A person is guilty of an offence if—ahe does any unauthorised act in relation to a computer;bat the time when he does the act he knows that it is unauthorised; andceither subsection (2) or subsection (3) below applies.2This subsection applies if the person intends by doing the act—ato impair the operation of any computer;bto prevent or hinder access to any program or data held in any computer;  orcto imp",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0004",
+    "title": "Computer Misuse Act 1990 c18 GB — section 5",
+    "text": "intends by doing the act—ato impair the operation of any computer;bto prevent or hinder access to any program or data held in any computer;  orcto impair the operation of any such program or the reliability of any such data;  ordto enable any of the things mentioned in paragraphs (a) to (c) above to be done.3This subsection applies if the person is reckless as to whether the act will do any of the things mentioned in paragraphs (a)\n\t\t\t\t\t to (d)to (c) of subsection (2) above.4The intention referred to in subsection (2) above, or the recklessness referred to in subsection (3) above, need not relate to—aany particular computer;bany particular program or data; orca program or data of any particular kind.5In this section—aa reference to doing an act includes a reference to causing an act to be done;b“act” includes a series of acts;ca reference to impairing, preventing or hindering something includes a reference to doing so temporarily.6A person guilty of an offence under this section shall be liable—aon summary conviction in England and Wales, to imprisonment for a term not exceeding  the general limit in a magistrates’ court  or to a fine not exceeding the statutory maximum or to both;",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0005",
+    "title": "Computer Misuse Act 1990 c18 GB — section 6",
+    "text": "les, to imprisonment for a term not exceeding  the general limit in a magistrates’ court  or to a fine not exceeding the statutory maximum or to both;bon summary conviction in Scotland, to imprisonment for a term not exceeding 12 months or to a fine not exceeding the statutory maximum or to both;con conviction on indictment, to imprisonment for a term not exceeding ten years or to a fine or to both.Unauthorised acts causing, or creating risk of, serious damage3ZA1A person is guilty of an offence if—athe person does any unauthorised act in relation to a computer;bat the time of doing the act the person knows that it is unauthorised;cthe act causes, or creates a significant risk of, serious damage of a material kind; anddthe person intends by doing the act to cause serious damage of a material kind or is reckless as to whether such damage is caused.2Damage is of a  “material kind” for the purposes of this section if it is—adamage to human welfare in any place;bdamage to the environment of any place;cdamage to the economy of any country; orddamage to the national security of any country.3For the purposes of subsection (2)(a) an act causes damage to human welfare only if it causes—alos",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0006",
+    "title": "Computer Misuse Act 1990 c18 GB — section 7",
+    "text": "orddamage to the national security of any country.3For the purposes of subsection (2)(a) an act causes damage to human welfare only if it causes—aloss to human life;bhuman illness or injury;cdisruption of a supply of money, food, water, energy or fuel;ddisruption of a system of communication;edisruption of facilities for transport; orfdisruption of services relating to health.4It is immaterial for the purposes of subsection (2) whether or not an act causing damage—adoes so directly;bis the only or main cause of the damage.5In this section—aa reference to doing an act includes a reference to causing an act to be done;b“act” includes a series of acts;ca reference to a country includes a reference to a territory, and to any place in, or part or region of, a country or territory.6A person guilty of an offence under this section is (unless subsection (7) applies) liable, on conviction on indictment, to imprisonment for a term not exceeding 14 years, or to a fine, or to both.7Where an offence under this section is committed as a result of an act causing or creating a significant risk of—aserious damage to human welfare of the kind mentioned in subsection (3)(a) or (3)(b), orbserious dam",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0007",
+    "title": "Computer Misuse Act 1990 c18 GB — section 8",
+    "text": "an act causing or creating a significant risk of—aserious damage to human welfare of the kind mentioned in subsection (3)(a) or (3)(b), orbserious damage to national security,a person guilty of the offence is liable, on conviction on indictment, to imprisonment for life, or to a fine, or to both.Making, supplying or obtaining articles for use in offence under section 1, 3 or 3ZA3A1A person is guilty of an offence if he makes, adapts, supplies or offers to supply any article intending it to be used to commit, or to assist in the commission of, an offence under section 1, 3 or 3ZA.2A person is guilty of an offence if he supplies or offers to supply any article believing that it is likely to be used to commit, or to assist in the commission of, an offence under section 1, 3 or 3ZA.3A person is guilty of an offence if he obtains any article—\n              aintending to use it to commit, or to assist in the commission of, an offence under section 1, 3 or 3ZA, orbwith a view to its being supplied for use to commit, or to assist in the commission of, an offence under section 1, 3 or 3ZA.4\nIn this section  “\narticle\n” includes any program or data held in electronic form.\n5A person guilty o",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0008",
+    "title": "Computer Misuse Act 1990 c18 GB — section 9",
+    "text": "ssion of, an offence under section 1, 3 or 3ZA.4\nIn this section  “\narticle\n” includes any program or data held in electronic form.\n5A person guilty of an offence under this section shall be liable—aon summary conviction in England and Wales, to imprisonment for a term not exceeding  the general limit in a magistrates’ court  or to a fine not exceeding the statutory maximum or to both;bon summary conviction in Scotland, to imprisonment for a term not exceeding 12 months or to a fine not exceeding the statutory maximum or to both;con conviction on indictment, to imprisonment for a term not exceeding two years or to a fine or to both. Jurisdiction Territorial scope of   offences under this Act.41Except as provided below in this section, it is immaterial for the purposes of any offence under section 1, 3 or 3ZA above—awhether any act or other event proof of which is required for conviction of the offence occurred in the home country concerned; orbwhether the accused was in the home country concerned at the time of any such act or event.2Subject to subsection (3) below, in the case of such an offence at least one significant link with domestic jurisdiction must exist in the circumstanc",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0009",
+    "title": "Computer Misuse Act 1990 c18 GB — section 10",
+    "text": "Subject to subsection (3) below, in the case of such an offence at least one significant link with domestic jurisdiction must exist in the circumstances of the case for the offence to be committed.3There is no need for any such link to exist for the commission of an offence under section 1 above to be established in proof of an allegation to that effect in proceedings for an offence under section 2 above.4Subject to section 8 below, where—aany such link does in fact exist in the case of an offence under section 1 above; andbcommission of that offence is alleged in proceedings for an offence under section 2 above;section 2 above shall apply as if anything the accused intended to do or facilitate in any place outside the home country concerned which would be an offence to which section 2 applies if it took place in the home country concerned were the offence in question.4AIt is immaterial for the purposes of an offence under section 3A whether the accused was in the home country concerned at the time of any act or other event proof of which is required for conviction of the offence if there is a significant link with domestic jurisdiction in relation to the offence.5This section is w",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0010",
+    "title": "Computer Misuse Act 1990 c18 GB — section 11",
+    "text": "hich is required for conviction of the offence if there is a significant link with domestic jurisdiction in relation to the offence.5This section is without prejudice to any jurisdiction exercisable by a court in Scotland apart from this section.6References in this Act to the home country concerned are references—ain the application of this Act to England and Wales, to England and Wales;bin the application of this Act to Scotland, to Scotland; andcin the application of this Act to Northern Ireland, to Northern Ireland. Significant links with domestic jurisdiction.51The following provisions of this section apply for the interpretation of section 4 above.1AIn relation to an offence under section 1, 3, 3ZA or 3A, where the accused was in a country outside the United Kingdom at the time of the act constituting the offence there is a significant link with domestic jurisdiction if—athe accused was a United Kingdom national at that time; andbthe act constituted an offence under the law of the country in which it occurred.1BIn subsection (1A)—“country” includes territory;“United Kingdom national” means an individual who is—a British citizen, a British overseas territories citizen, a Britis",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0011",
+    "title": "Computer Misuse Act 1990 c18 GB — section 12",
+    "text": "—“country” includes territory;“United Kingdom national” means an individual who is—a British citizen, a British overseas territories citizen, a British National (Overseas) or a British Overseas citizen;a person who under the British Nationality Act 1981 is a British subject; ora British protected person within the meaning of that Act.2In relation to an offence under section 1, either of the following is a significant link with domestic jurisdiction—athat the accused was in the home country concerned at the time when he did the act which caused the computer to perform the function; orbthat any computer containing any program or data to which the accused secured or intended to secure unauthorised access by doing that act was in the home country concerned at that time.bthat any computer containing any program or data to which the accused by doing that act secured or intended to secure unauthorised access, or enabled or intended to enable unauthorised access to be secured, was in the home country concerned at that time.3In relation to an offence under section 3, either of the following is a significant link with domestic jurisdiction—athat the accused was in the home country concerned",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0012",
+    "title": "Computer Misuse Act 1990 c18 GB — section 13",
+    "text": "offence under section 3, either of the following is a significant link with domestic jurisdiction—athat the accused was in the home country concerned at the time when  he did the unauthorised act (or caused it to be done) ; orbthat the unauthorised act was done in relation to a computer in the home country concerned.3AIn relation to an offence under section 3ZA, any of the following is also a significant link with domestic jurisdiction—athat the accused was in the home country concerned at the time when he did the unauthorised act (or caused it to be done);bthat the unauthorised act was done in relation to a computer in the home country concerned;cthat the unauthorised act caused, or created a significant risk of, serious damage of a material kind (within the meaning of that section) in the home country concerned. Territorial scope of inchoate offences related to   offences under this Act.61On a charge of conspiracy to commit an  offence under this Act  the following questions are immaterial to the accused’s guilt—athe question where any person became a party to the conspiracy; andbthe question whether any act, omission or other event occurred in the home country concerned.2On a ch",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0013",
+    "title": "Computer Misuse Act 1990 c18 GB — section 14",
+    "text": "any person became a party to the conspiracy; andbthe question whether any act, omission or other event occurred in the home country concerned.2On a charge of attempting to commit an offence under this Act the following questions are immaterial to the accused’s guilt—athe question where the attempt was made; andbthe question whether it had an effect in the home country concerned.3. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .4This section does not extend to Scotland. Territorial scope of inchoate offences related to offences under external law corresponding to   offences under sections 1 to 3.71. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .2. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .3The following subsections shall be inserted after section 1(1) of the Criminal Attempts Act 1981—1ASubject to section 8 of the Computer Misuse Act 1990 (relevance of external law), if this subsection applies to an act, what the person doing it had in view shall be treated as an offence to which this section applies.1BSubsection (1A) above applies to an act if—ait is done in England and Wales; andbit would fall within subsection (1) above as more than",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0014",
+    "title": "Computer Misuse Act 1990 c18 GB — section 15",
+    "text": "tion applies.1BSubsection (1A) above applies to an act if—ait is done in England and Wales; andbit would fall within subsection (1) above as more than merely preparatory to the commission of an offence under section 3 of the Computer Misuse Act 1990 but for the fact that the offence, if completed, would not be an offence triable in England and Wales..4. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . Relevance of external law.81A person is guilty of an offence triable by virtue of section 4(4) above only if what he intended to do or facilitate would involve the commission of an offence under the law in force where the whole or any part of it was intended to take place.2. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .3A person is guilty of an offence triable by virtue of section 1(1A) of the Criminal Attempts Act 1981 . . .   only if what he had in view would involve the commission of an offence under the law in force where the whole or any part of it was intended to take place.4Conduct punishable under the law in force in any place is an offence under that law for the purposes of this section, however it is described in that law.5Subject to subsection (",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0015",
+    "title": "Computer Misuse Act 1990 c18 GB — section 16",
+    "text": "law in force in any place is an offence under that law for the purposes of this section, however it is described in that law.5Subject to subsection (7) below, a condition specified in subsection (1) or (3) above shall be taken to be satisfied unless not later than rules of court may provide the defence serve on the prosecution a notice—astating that, on the facts as alleged with respect to the relevant conduct, the condition is not in their opinion satisfied;bshowing their grounds for that opinion; andcrequiring the prosecution to show that it is satisfied.6In subsection (5) above “the relevant conduct” means—awhere the condition in subsection (1) above is in question, what the accused intended to do or facilitate;b. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .cwhere the condition in subsection (3) above is in question, what the accused had in view.7The court, if it thinks fit, may permit the defence to require the prosecution to show that the condition is satisfied without the prior service of a notice under subsection (5) above.8If by virtue of subsection (7) above a court of solemn jurisdiction in Scotland permits the defence to require the prosecution to show",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0016",
+    "title": "Computer Misuse Act 1990 c18 GB — section 17",
+    "text": "ion (5) above.8If by virtue of subsection (7) above a court of solemn jurisdiction in Scotland permits the defence to require the prosecution to show that the condition is satisfied, it shall be competent for the prosecution for that purpose to examine any witness or to put in evidence any production not included in the lists lodged by it.9In the Crown Court the question whether the condition is satisfied shall be decided by the judge alone.10In the High Court of Justiciary and in the sheriff court the question whether the condition is satisfied shall be decided by the judge or, as the case may be, the sheriff alone. British citizenship immaterial.91Except as provided by section 5(1A),In any proceedings brought in England and Wales in respect of any offence to which this section applies it is immaterial to guilt whether or not the accused was a British citizen at the time of any act, omission or other event proof of which is required for conviction of the offence.2This section applies to the following offences—aany  offence under this Act ;b. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .cany attempt to commit an offence under this Act; andd. . . . . . . . . . . . .",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0017",
+    "title": "Computer Misuse Act 1990 c18 GB — section 18",
+    "text": "Act ;b. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .cany attempt to commit an offence under this Act; andd. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . Miscellaneous and general Savings10Sections 1 to 3A have effect without prejudice to the operation—in England and Wales of any enactment relating to powers of inspection, search or seizureor of any other enactment by virtue of which the conduct in question is authorised or required; andin Scotland of any enactment or rule of law relating to powers of examination, search or seizureor of any other enactment or rule of law by virtue of which the conduct in question is authorised or requiredand nothing designed to indicate a withholding of consent to access to any program or data from persons as enforcement officers shall have effect to make access unauthorised for the purposes of any of those sections.\nIn this section— \n“\nenactment\n” means any enactment, whenever passed or made, contained in—\nan Act of Parliament;an Act of the Scottish Parliament;a Measure or Act of the National Assembly for Wales;an instrument made under any such Act or Measure;any other subordinate legislation (within the meaning o",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0018",
+    "title": "Computer Misuse Act 1990 c18 GB — section 19",
+    "text": "ure or Act of the National Assembly for Wales;an instrument made under any such Act or Measure;any other subordinate legislation (within the meaning of the Interpretation Act 1978);\n“\nenforcement officer\n” means\na constable or other person charged with the duty of investigating offences; and withholding consent from a person “as” an enforcement officer of any description includes the operation, by the person entitled to control access, of rules whereby enforcement officers of that description are, as such, disqualified from membership of a class of persons who are authorised to have access.\n Proceedings for offences under section 1.11. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . Conviction of an offence under section 1 in proceedings for an offence under section 2 or 3.12. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . Proceedings in Scotland.131A sheriff shall have jurisdiction in respect of an offence under section 1 or 2 above if—athe accused was in the sheriffdom at the time when he did the act which caused the computer to perform the function; orbany computer containing any program or data to which the accused by doing that act secured or inten",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0019",
+    "title": "Computer Misuse Act 1990 c18 GB — section 20",
+    "text": "ch caused the computer to perform the function; orbany computer containing any program or data to which the accused by doing that act secured or intended to secure unauthorised access, or enabled or intended to enable unauthorised access to be secured, was in the sheriffdom at that time.2A sheriff shall have jurisdiction in respect of an offence under section 3 above if—athe accused was in the sheriffdom at the time when  he did the unauthorised act (or caused it to be done) ; orbthe unauthorised act was done in relation to a computer in the sheriffdom.2AA sheriff shall have jurisdiction in respect of an offence under section 3ZA above if—athe accused was in the sheriffdom at the time when he did the unauthorised act (or caused it to be done), orbthe computer in relation to which the unauthorised act was done was in the sheriffdom at that time.2BA sheriff shall have jurisdiction in respect of an offence under section 3A above if—athe accused was in the sheriffdom at the time when—ihe made, adapted, supplied or offered to supply the article intending it to be used as mentioned in subsection (1) of that section,iihe supplied or offered to supply the article believing that it would be",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0020",
+    "title": "Computer Misuse Act 1990 c18 GB — section 21",
+    "text": "ticle intending it to be used as mentioned in subsection (1) of that section,iihe supplied or offered to supply the article believing that it would be used as mentioned in subsection (2) of that section, oriiihe obtained the article intending to use it, or with a view to its being supplied for use, as mentioned in subsection (3) of that section; orbthe offence related to the commission of an offence under section 1, 3 or 3ZA above (in the way described in subsections (1) to (3) of section 3A above) and any computer as mentioned in subsection (1)(b), (2)(b) or (2A)(b) of this section was in the sheriffdom at the time the accused carried out the act constituting the offence under section 3A above.3. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .4. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .5. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .6. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .7. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .8In proceedings in which a person is charged with an offence under section 2 or 3 above and is found not guilty or is acquitted of that charge, he may be found guilty of an off",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0021",
+    "title": "Computer Misuse Act 1990 c18 GB — section 22",
+    "text": "person is charged with an offence under section 2 or 3 above and is found not guilty or is acquitted of that charge, he may be found guilty of an offence under section 1 above if on the facts shown he could have been found guilty of that offence in proceedings for that offence . . .   .9Subsection (8) above shall apply whether or not an offence under section 1 above has been libelled in the complaint or indictment.10A person found guilty of an offence under section 1 above by virtue of subsection (8) above shall be liable, in respect of that offence, only to the penalties set out in section 1.10AWhere an offence under section 1, 3, 3ZA or 3A above is committed outside Scotland, the person committing the offence may be prosecuted, tried and punished for the offence—ain any sheriff court district in Scotland in which the person is apprehended or is in custody, orbin such sheriff court district as the Lord Advocate may direct,as if the offence had been committed in that district; and the offence is, for all purposes incidental to or consequential on the trial or punishment, deemed to have been committed in that district.11This section extends to Scotland only. Search warrants for off",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0022",
+    "title": "Computer Misuse Act 1990 c18 GB — section 23",
+    "text": "sequential on the trial or punishment, deemed to have been committed in that district.11This section extends to Scotland only. Search warrants for offences under section 1.14. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . Extradition where Schedule 1 to the Extradition Act 1989 applies.15. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . Application to Northern Ireland.161The following provisions of this section have effect for applying this Act in relation to Northern Ireland with the modifications there mentioned.1AIn section 1(3)(a)—athe reference to England and Wales shall be read as a reference to Northern Ireland; andbthe reference to  the general limit in a magistrates’ court  shall be read as a reference to six months.2In section 2(2)(b)—athe reference to England and Wales shall be read as a reference to Northern Ireland; andbthe reference to section 33 of the Magistrates’ Courts Act 1980 shall be read as a reference to Article 46(4) of the Magistrates’ Courts (Northern Ireland) Order 1981.2AIn section 2(5)(a)—athe reference to England and Wales shall be read as a reference to Northern Ireland; andbthe reference to  the general limit in a magist",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0023",
+    "title": "Computer Misuse Act 1990 c18 GB — section 24",
+    "text": "tion 2(5)(a)—athe reference to England and Wales shall be read as a reference to Northern Ireland; andbthe reference to  the general limit in a magistrates’ court  shall be read as a reference to six months.3. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .3AIn section 3(6)(a)—athe reference to England and Wales shall be read as a reference to Northern Ireland; andbthe reference to  the general limit in a magistrates’ court  shall be read as a reference to six months.3BIn section 3A(5)(a)—athe reference to England and Wales shall be read as a reference to Northern Ireland; andbthe reference to  the general limit in a magistrates’ court  shall be read as a reference to six months.4Subsection (7) below shall apply in substitution for subsection (3) of section 7; . . . .5. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .6. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .7The following paragraphs shall be inserted after Article 3(1) of that Order—1ASubject to section 8 of the Computer Misuse Act 1990 (relevance of external law), if this paragraph applies to an act, what the person doing it had in view shall be treated as an offence to which this",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0024",
+    "title": "Computer Misuse Act 1990 c18 GB — section 25",
+    "text": "0 (relevance of external law), if this paragraph applies to an act, what the person doing it had in view shall be treated as an offence to which this Article applies.1BParagraph (1A) above applies to an act if—ait is done in Northern Ireland; andbit would fall within paragraph (1) as more than merely preparatory to the commission of an offence under section 3 of the Computer Misuse Act 1990 but for the fact that the offence, if completed, would not be an offence triable in Northern Ireland..8In section 8—a . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .bthe reference in subsection (3) to section 1(1A) of the Criminal Attempts Act 1981 shall be read as a reference to Article 3(1A) of that Order.9The references in sections 9(1) and 10 to England and Wales shall be read as references to Northern Ireland.9AIn section 10 the definition of  “enactment” shall be read as including a reference to an enactment, whenever passed or made, contained in Northern Ireland legislation or in an instrument made under such legislation.10. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .11. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .12. . . . . . . . . . .",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0025",
+    "title": "Computer Misuse Act 1990 c18 GB — section 26",
+    "text": ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .11. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .12. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .Northern Ireland: search warrants for offences under section 116A1Where a county court judge is satisfied by information on oath given by a constable that there are reasonable grounds for believing—athat an offence under section 1 above has been or is about to be committed in any premises, andbthat evidence that such an offence has been or is about to be committed is in those premises,he may issue a warrant authorising a constable to enter and search the premises, using such reasonable force as is necessary.2The power conferred by subsection (1) above does not extend to authorising a search for material of the kinds mentioned in Article 11(2) of the Police and Criminal Evidence (Northern Ireland) Order 1989 (privileged, excluded and special procedure material).3A warrant under this section—amay authorise persons to accompany any constable executing the warrant; andbremains in force for twenty-eight days from the date of its issue.4In exercising a warrant issued under this section a constable ma",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0026",
+    "title": "Computer Misuse Act 1990 c18 GB — section 27",
+    "text": "g the warrant; andbremains in force for twenty-eight days from the date of its issue.4In exercising a warrant issued under this section a constable may seize an article if he reasonably believes that it is evidence that an offence under section 1 above has been or is about to be committed.5\nIn this section  “\npremises\n” includes land, buildings, movable structures, vehicles, vessels, aircraft and hovercraft.\n6This section extends only to Northern Ireland. Interpretation.171The following provisions of this section apply for the interpretation of this Act.2A person secures access to any program or data held in a computer if by causing a computer to perform any function he—aalters or erases the program or data;bcopies or moves it to any storage medium other than that in which it is held or to a different location in the storage medium in which it is held;cuses it; ordhas it output from the computer in which it is held (whether by having it displayed or in any other manner);and references to access to a program or data (and to an intent to secure such access  or to enable such access to be secured) shall be read accordingly.3For the purposes of subsection (2)(c) above a person uses a p",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0027",
+    "title": "Computer Misuse Act 1990 c18 GB — section 28",
+    "text": "o secure such access  or to enable such access to be secured) shall be read accordingly.3For the purposes of subsection (2)(c) above a person uses a program if the function he causes the computer to perform—acauses the program to be executed; orbis itself a function of the program.4For the purposes of subsection (2)(d) above—aa program is output if the instructions of which it consists are output; andbthe form in which any such instructions or any other data is output (and in particular whether or not it represents a form in which, in the case of instructions, they are capable of being executed or, in the case of data, it is capable of being processed by a computer) is immaterial.5Access of any kind by any person to any program or data held in a computer is unauthorised if—ahe is not himself entitled to control access of the kind in question to the program or data; andbhe does not have consent to access by him of the kind in question to the program or data from any person who is so entitled but this subsection is subject to section 10.6References to any program or data held in a computer include references to any program or data held in any removable storage medium which is for the",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0028",
+    "title": "Computer Misuse Act 1990 c18 GB — section 29",
+    "text": ".6References to any program or data held in a computer include references to any program or data held in any removable storage medium which is for the time being in the computer; and a computer is to be regarded as containing any program or data held in any such medium.7. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .8An act done in relation to a computer is unauthorised if the person doing the act (or causing it to be done)—ais not himself a person who has responsibility for the computer and is entitled to determine whether the act may be done; andbdoes not have consent to the act from any such person.\nIn this subsection  “\nact\n” includes a series of acts.\n9References to the home country concerned shall be read in accordance with section 4(6) above.10References to a program include references to part of a program. Citation, commencement etc.181This Act may be cited as the Computer Misuse Act 1990.2This Act shall come into force at the end of the period of two months beginning with the day on which it is passed.3An offence is not committed under this Act unless every act or other event proof of which is required for conviction of the offence takes place after this Ac",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0029",
+    "title": "Computer Misuse Act 1990 c18 GB — section 30",
+    "text": "nce is not committed under this Act unless every act or other event proof of which is required for conviction of the offence takes place after this Act comes into force.Words in s. 1(1)(a) inserted (S.) (1.10.2007) by Police and Justice Act 2006 (c. 48), ss. 35(2)(a), 53 (with s. 38(1)); S.S.I. 2007/434, art. 2  (the inserting provision being repealed for E.W.N.I. (1.10.2008) by 2007 c. 27, ss. 61(2), 92, 94, Sch. 14 (with Sch. 13 para. 5); S.I. 2008/2504, art. 2(a)(i)(viii))Words in s. 1(1)(b) inserted (S.) (1.10.2007) by Police and Justice Act 2006 (c. 48), ss. 35(2)(b), 53 (with s. 38(1)); S.S.I. 2007/434, art. 2 (the inserting provision being repealed for E.W.N.I. (1.10.2008) by 2007 c. 27, ss. 61(2), 92, 94, Sch. 14 (with Sch. 13 para. 5); S.I. 2008/2504, art. 2(a)(i)(viii))S. 1(3) substituted (1.10.2007 for S. and 1.10.2008 otherwise) by Police and Justice Act 2006 (c. 48), ss. 35(3), 53 (with s. 38(2)(6)); S.S.I. 2007/434, art. 2; S.I. 2008/2503, art. 2(a)1980 c. 43. S. 2(5) substituted (1.10.2007 for S. and 1.10.2008 otherwise) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 17 (with s. 38(6)); S.S.I. 2007/434, art. 2; S.I. 2008/2503, art. 2(c)S. 3 substit",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0030",
+    "title": "Computer Misuse Act 1990 c18 GB — section 31",
+    "text": ") by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 17 (with s. 38(6)); S.S.I. 2007/434, art. 2; S.I. 2008/2503, art. 2(c)S. 3 substituted (1.10.2007 for S. and 1.10.2008 otherwise) by Police and Justice Act 2006 (c. 48), ss. 36, 53 (with s. 38(3)(4)(6)); S.S.I. 2007/434, art. 2; S.I. 2008/2503, art. 2 (the substituting provision being amended for E.W.N.I. (1.10.2008) by 2007 c. 27, ss. 61(3), 94 (with Sch. 13 para. 5); S.I. 2008/2504, art. 2(a))Word at the end of s. 3(2)(b) inserted (E.W.N.I.) (1.10.2008) by virtue of Serious Crime Act 2007 (c. 27), ss. 61(3)(a)(i), 94 (with Sch. 13 para. 5); S.I. 2008/2504, art. 2(a)S. 3(2)(d) and preceding word repealed (E.W.N.I.) (1.10.2008) by virtue of Serious Crime Act 2007 (c. 27), ss. 61(3)(a)(ii), 92, 94, Sch. 14 (with Sch. 13 para. 5); S.I. 2008/2504, art. 2(a)(i)(viii)S. 3(3): Words \"to (c)\" substituted for words \"to (d)\" (E.W.N.I.) (1.10.2008) by virtue of Serious Crime Act 2007 (c. 27), ss. 61(3)(b), 94 (with Sch. 13 para. 5); S.I. 2008/2504, art. 2(a)S. 3A inserted (1.10.2007 for S. and 1.10.2008 otherwise) by Police and Justice Act 2006 (c. 48), ss. 37, 53 (with s. 38(5)(6)); S.S.I. 2007/434, art. 2; S.I. 2008/2503,",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0031",
+    "title": "Computer Misuse Act 1990 c18 GB — section 32",
+    "text": ".2007 for S. and 1.10.2008 otherwise) by Police and Justice Act 2006 (c. 48), ss. 37, 53 (with s. 38(5)(6)); S.S.I. 2007/434, art. 2; S.I. 2008/2503, art. 2(a)S. 4 heading: words substituted (1.10.2007 for S. and 1.10.2008 otherwise) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 18; S.S.I. 2007/434, art. 2; S.I. 2008/2503, art. 2S. 5(2)(b) (as second appearing) substituted (S.) (1.10.2007) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 19(2) (with s. 38(1)); S.S.I. 2007/434, art. 2 (the substituting provision being repealed for E.W.N.I. (1.10.2008) by 2007 c. 27, ss. 61(5), 92, 94, Sch. 14 (with Sch. 13 para. 5); S.I. 2008/2504, art. 2(a))Words in s. 5(3)(a) substituted (1.10.2007 for S. and 1.10.2008 otherwise) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 19(3)(a) (with s. 38(4)); S.S.I. 2007/434, art. 2; S.I. 2008/2503, art. 2S. 5(3)(b) substituted (1.10.2007 for S. and 1.10.2008 otherwise) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 19(3)(b) (with s. 38(4)); S.S.I. 2007/434, art. 2; S.I. 2008/2503, art. 2S. 6 heading: words substituted (1.10.2008) by Police and Justice Act 2006 (c. 48), ss. 52, 53,",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0032",
+    "title": "Computer Misuse Act 1990 c18 GB — section 33",
+    "text": "38(4)); S.S.I. 2007/434, art. 2; S.I. 2008/2503, art. 2S. 6 heading: words substituted (1.10.2008) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 20(a); S.I. 2008/2503, art. 2Words in s. 6(1) substituted (1.10.2008) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 20(b); S.I. 2008/2503, art. 2S. 6(3) repealed (1.10.2008) by Serious Crime Act 2007 (c. 27), ss. 63(1)(2), 92, 94, Sch. 6 para. 59(2), Sch. 14 (with Sch. 13 para. 5); S.I. 2008/2504, art. 2S. 7 heading: words substituted (1.10.2008) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 21(a); S.I. 2008/2503, art. 2S. 7(1)(2) repealed (4.9.1998) by 1998 c. 40, s. 9(2), Sch. 2 Pt. II (with s. 9(3))1981 c. 47. S. 7(4) repealed (1.10.2008) by Serious Crime Act 2007 (c. 27), ss. 63(1)(2), 92, 94, Sch. 6 para. 59(3), Sch. 14 (with Sch. 13 para. 5); S.I. 2008/2504, art. 2S. 8(2)(6)(b) repealed (4.9.1998) by 1998 c. 40, s. 9(2), Sch. 1 Pt. II para. 6(1)(a)(c), Sch. 2 Pt. II (with s. 9(3))1981 c. 47. Words in s. 8(3) repealed (1.10.2008) by Serious Crime Act 2007 (c. 27), ss. 63(1)(2), 92, 94, Sch. 6 para. 59(4), Sch. 14 (with Sch. 13 para. 5); S.I. 2008/2504, art. 2Words in s. 8(5)",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0033",
+    "title": "Computer Misuse Act 1990 c18 GB — section 34",
+    "text": ") by Serious Crime Act 2007 (c. 27), ss. 63(1)(2), 92, 94, Sch. 6 para. 59(4), Sch. 14 (with Sch. 13 para. 5); S.I. 2008/2504, art. 2Words in s. 8(5) substituted (4.9.1998) by 1998 c. 40, s. 9(1), Sch. 1 Pt. II para. 6(1)(b) (with s. 9(3))Words in s. 9(2)(a) substituted (1.10.2008) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 22; S.I. 2008/2503, art. 2S. 9(2)(b) repealed (4.9.1998) by 1998 c. 40, s. 9(1)(2), Sch. 1 Pt. II para. 6(2), Sch. 2 Pt. II (with s. 9(3))S. 9(2)(d) repealed (1.10.2008) by Serious Crime Act 2007 (c. 27), ss. 63(1)(2), 92, 94, Sch. 6 para. 59(5), Sch. 14 (with Sch. 13 para. 5); S.I. 2008/2504, art. 2Words in s. 10 inserted (3.2.1995) by 1994 c. 33, s. 162(1); S.I. 1995/127, art. 2(1), Sch. 1S. 11 repealed (1.10.2008) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 23, Sch. 15 Pt. 4 (with s. 38(2)); S.I. 2008/2503, art. 2S. 12 repealed (1.10.2008) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 24, Sch. 15 Pt. 4 (with s. 38(2)); S.I. 2008/2503, art. 2S. 13(1)(b) substituted (1.10.2007) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 25(2) (with s. 38(1)); S.S.I. 2007/434, art. 2Words in",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0034",
+    "title": "Computer Misuse Act 1990 c18 GB — section 35",
+    "text": ")(b) substituted (1.10.2007) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 25(2) (with s. 38(1)); S.S.I. 2007/434, art. 2Words in s. 13(2)(a) substituted (1.10.2007) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 25(3)(a) (with s. 38(4)); S.S.I. 2007/434, art. 2S. 13(2)(b) substituted (1.10.2007) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 25(3)(b) (with s. 38(4)); S.S.I. 2007/434, art. 2S. 13(3)-(7) repealed (1.10.2007) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 25(4), Sch. 15 Pt. 4 (with s. 38(2)(4)); S.S.I. 2007/434, art. 2Words in s. 13(8) repealed (1.10.2007) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 25(5), Sch. 15 Pt. 4 (with s. 38(2)(4)); S.S.I. 2007/434, art. 2S. 14 repealed (1.10.2008) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 26, Sch. 15 Pt. 4 (with s. 38(2)); S.I. 2008/2503, art. 2S. 15 repealed (1.1.2004) by Extradition Act 2003 (c. 41), ss. 219, 220, 221, Sch. 3 para. 7, Sch. 4; S.I. 2003/3103, art. 2 (subject to savings in order arts 3-5 as amended by S.I. 2003/3312 and S.I. 2003/3258)S. 16(1A) inserted (1.10.2008) by Police and Justice A",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0035",
+    "title": "Computer Misuse Act 1990 c18 GB — section 36",
+    "text": "3, art. 2 (subject to savings in order arts 3-5 as amended by S.I. 2003/3312 and S.I. 2003/3258)S. 16(1A) inserted (1.10.2008) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 27(2) (with s. 38(2)); S.I. 2008/2503, art. 21980 c. 43. S.I. 1981/1675 (N.I.26). S. 16(2A) inserted (1.10.2008) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 27(3); S.I. 2008/2503, art. 2S. 16(3) repealed (1.10.2008) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 27(4), Sch. 15 Pt. 4 (with s. 38(4)); S.I. 2008/2503, art. 2S. 16(3A) inserted (1.10.2008) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 27(5) (with s. 38(4)); S.I. 2008/2503, art. 2S. 16(3B) inserted (1.10.2008) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 27(6); S.I. 2008/2503, art. 2Words in s. 16(4) substituted (4.9.1998) by 1998 c. 40, s. 9(1), Sch. 1 Pt. II para. 6(3)(a) (with s. 9(3))Words in s. 16(4) repealed (1.10.2008) by Serious Crime Act 2007 (c. 27), ss. 63(1)(2), 92, 94, Sch. 6 para. 59(6), Sch. 14 (with Sch. 13 para. 5); S.I. 2008/2504, art. 2S. 16(5)(6)(8)(a) repealed (4.9.1998) by 1998 c. 40, s. 9(1)(2), Sch. 1 Pt. II para. 6(3)(b), Sch.",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0036",
+    "title": "Computer Misuse Act 1990 c18 GB — section 37",
+    "text": "h. 14 (with Sch. 13 para. 5); S.I. 2008/2504, art. 2S. 16(5)(6)(8)(a) repealed (4.9.1998) by 1998 c. 40, s. 9(1)(2), Sch. 1 Pt. II para. 6(3)(b), Sch. 2 Pt. II (with s. 9(3))1981 c. 47. S. 16(10)(11)(12) repealed (1.10.2008) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 27(4), Sch. 15 Pt. 4 (with s. 38(2)); S.I. 2008/2503, art. 2Words in s. 17(2) inserted (S.) (1.10.2007) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 29(2) (with s. 38(1)); S.S.I. 2007/434, art. 2 (the inserting provision being repealed for E.W.N.I. (1.10.2008) by 2007 c. 27, ss. 61(5), 92, 94, Sch. 14 (with Sch. 13 para. 5); S.I. 2008/2504, art. 2(a)(i)(viii))Words in s. 17(5)(b) inserted (3.2.1995) by 1994 c. 33, s. 162(2); S.I. 1995/127, art. 2(1), Sch. 1S. 17(7) repealed (1.10.2007 for S. and 1.10.2008 otherwise) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 29(3), Sch. 15 Pt. 4 (with s. 38(4)); S.S.I. 2007/434, art. 2; S.I. 2008/2503, art. 2S. 17(8) substituted (1.10.2007 for S. and 1.10.2008 otherwise) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 29(4) (with s. 38(4)); S.S.I. 2007/434, art. 2; S.I. 2008/2503, art. 2S. 16A inserted",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0037",
+    "title": "Computer Misuse Act 1990 c18 GB — section 38",
+    "text": "y Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 29(4) (with s. 38(4)); S.S.I. 2007/434, art. 2; S.I. 2008/2503, art. 2S. 16A inserted (1.10.2008) by Police and Justice Act 2006 (c. 48), ss. 52, 53, Sch. 14 para. 28 (with s. 38(2)); S.I. 2008/2503, art. 3(b)Words in s. 3A heading substituted (3.5.2015) by Serious Crime Act 2015 (c. 9), s. 88(1), Sch. 4 para. 8; S.I. 2015/820, reg. 2(r)(iii)Words in s. 4 heading substituted (3.5.2015) by Serious Crime Act 2015 (c. 9), s. 88(1), Sch. 4 para. 9; S.I. 2015/820, reg. 2(r)(iii)Words in s. 6 heading substituted (3.5.2015) by Serious Crime Act 2015 (c. 9), s. 88(1), Sch. 4 para. 10(2) (with s. 86(6)); S.I. 2015/820, reg. 2(r)(iii)S. 10 heading substituted (3.5.2015) by Serious Crime Act 2015 (c. 9), s. 88(1), Sch. 4 para. 12; S.I. 2015/820, reg. 2(r)(iii)S. 3ZA inserted (3.5.2015) by Serious Crime Act 2015 (c. 9), ss. 41(2), 88(1); S.I. 2015/820, reg. 2(a)Word in s. 1(3)(b) substituted (3.5.2015) by Serious Crime Act 2015 (c. 9), s. 88(1), Sch. 4 para. 7(a); S.I. 2015/820, reg. 2(r)(iii)Word in s. 2(5)(b) substituted (3.5.2015) by Serious Crime Act 2015 (c. 9), s. 88(1), Sch. 4 para. 7(b); S.I. 2015/820, reg. 2(r)(iii)Word",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0038",
+    "title": "Computer Misuse Act 1990 c18 GB — section 39",
+    "text": ". 2(r)(iii)Word in s. 2(5)(b) substituted (3.5.2015) by Serious Crime Act 2015 (c. 9), s. 88(1), Sch. 4 para. 7(b); S.I. 2015/820, reg. 2(r)(iii)Word in s. 3(6)(b) substituted (3.5.2015) by Serious Crime Act 2015 (c. 9), s. 88(1), Sch. 4 para. 7(c); S.I. 2015/820, reg. 2(r)(iii)Words in s. 3A(1) substituted (3.5.2015) by Serious Crime Act 2015 (c. 9), ss. 41(3), 88(1); S.I. 2015/820, reg. 2(a)Words in s. 3A(2) substituted (3.5.2015) by Serious Crime Act 2015 (c. 9), ss. 41(3), 88(1); S.I. 2015/820, reg. 2(a)Words in s. 3A(3) substituted (3.5.2015) by Serious Crime Act 2015 (c. 9), ss. 41(3), 88(1); S.I. 2015/820, reg. 2(a)Word in s. 3A(5)(b) substituted (3.5.2015) by Serious Crime Act 2015 (c. 9), s. 88(1), Sch. 4 para. 7(d); S.I. 2015/820, reg. 2(r)(iii)Words in s. 3A(3) substituted (3.5.2015) by Serious Crime Act 2015 (c. 9), ss. 42, 88(1) (with s. 86(5)); S.I. 2015/820, reg. 2(b)S. 4(4A) inserted (3.5.2015) by Serious Crime Act 2015 (c. 9), ss. 43(3), 88(1) (with s. 86(10)); S.I. 2015/820, reg. 2(c)Words in s. 4(1) substituted (3.5.2015) by Serious Crime Act 2015 (c. 9), ss. 43(2), 88(1) (with s. 86(10)); S.I. 2015/820, reg. 2(c)S. 5(1A)(1B) inserted (3.5.2015) by Serious Crime",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0039",
+    "title": "Computer Misuse Act 1990 c18 GB — section 40",
+    "text": ".2015) by Serious Crime Act 2015 (c. 9), ss. 43(2), 88(1) (with s. 86(10)); S.I. 2015/820, reg. 2(c)S. 5(1A)(1B) inserted (3.5.2015) by Serious Crime Act 2015 (c. 9), ss. 43(4), 88(1) (with s. 86(10)); S.I. 2015/820, reg. 2(c)S. 5(3A) inserted (3.5.2015) by Serious Crime Act 2015 (c. 9), ss. 43(5), 88(1) (with s. 86(10)); S.I. 2015/820, reg. 2(c)Words in s. 6(1) substituted (3.5.2015) by Serious Crime Act 2015 (c. 9), s. 88(1), Sch. 4 para. 10(3) (with s. 86(6)); S.I. 2015/820, reg. 2(r)(iii)Words in s. 6(2) substituted (3.5.2015) by Serious Crime Act 2015 (c. 9), s. 88(1), Sch. 4 para. 10(4) (with s. 86(6)); S.I. 2015/820, reg. 2(r)(iii)Words in s. 9(2)(a) substituted (3.5.2015) by Serious Crime Act 2015 (c. 9), s. 88(1), Sch. 4 para. 11(3); S.I. 2015/820, reg. 2(r)(iii)Words in s. 9(1) inserted (3.5.2015) by Serious Crime Act 2015 (c. 9), s. 88(1), Sch. 4 para. 11(2); S.I. 2015/820, reg. 2(r)(iii)Words in s. 9(2)(c) substituted (3.5.2015) by Serious Crime Act 2015 (c. 9), s. 88(1), Sch. 4 para. 11(4); S.I. 2015/820, reg. 2(r)(iii)Words in s. 10 substituted (3.5.2015) by Serious Crime Act 2015 (c. 9), ss. 44(2)(a), 88(1); S.I. 2015/820, reg. 2(d)Words in s. 10 substituted (3.5.201",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0040",
+    "title": "Computer Misuse Act 1990 c18 GB — section 41",
+    "text": "rds in s. 10 substituted (3.5.2015) by Serious Crime Act 2015 (c. 9), ss. 44(2)(a), 88(1); S.I. 2015/820, reg. 2(d)Words in s. 10 substituted (3.5.2015) by Serious Crime Act 2015 (c. 9), ss. 44(2)(d), 88(1); S.I. 2015/820, reg. 2(d)Words in s. 10 substituted (3.5.2015) by Serious Crime Act 2015 (c. 9), ss. 44(2)(e), 88(1); S.I. 2015/820, reg. 2(d)Words in s. 10(a) inserted (3.5.2015) by Serious Crime Act 2015 (c. 9), ss. 44(2)(b), 88(1); S.I. 2015/820, reg. 2(d)Words in s. 10(b) inserted (3.5.2015) by Serious Crime Act 2015 (c. 9), ss. 44(2)(c), 88(1); S.I. 2015/820, reg. 2(d)S. 13(2A)(2B) inserted (3.5.2015) by Serious Crime Act 2015 (c. 9), ss. 43(6), 88(1) (with s. 86(10)); S.I. 2015/820, reg. 2(c)S. 13(10A) inserted (3.5.2015) by Serious Crime Act 2015 (c. 9), ss. 43(7), 88(1) (with s. 86(10)); S.I. 2015/820, reg. 2(c)S. 16(9A) inserted (3.5.2015) by Serious Crime Act 2015 (c. 9), ss. 44(3), 88(1); S.I. 2015/820, reg. 2(d)Words in s. 1(3)(a) substituted (7.2.2023 at 12.00 p.m.) by The Judicial Review and Courts Act 2022 (Magistrates’ Court Sentencing Powers) Regulations 2023 (S.I. 2023/149), regs. 1(2), 2(1), Sch. Pt. 1 tableWords in s. 2(5)(a) substituted (7.2.2023 at 12.00 p.",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0041",
+    "title": "Computer Misuse Act 1990 c18 GB — section 42",
+    "text": "es’ Court Sentencing Powers) Regulations 2023 (S.I. 2023/149), regs. 1(2), 2(1), Sch. Pt. 1 tableWords in s. 2(5)(a) substituted (7.2.2023 at 12.00 p.m.) by The Judicial Review and Courts Act 2022 (Magistrates’ Court Sentencing Powers) Regulations 2023 (S.I. 2023/149), regs. 1(2), 2(1), Sch. Pt. 1 tableWords in s. 3(6)(a) substituted (7.2.2023 at 12.00 p.m.) by The Judicial Review and Courts Act 2022 (Magistrates’ Court Sentencing Powers) Regulations 2023 (S.I. 2023/149), regs. 1(2), 2(1), Sch. Pt. 1 tableWords in s. 3A(5)(a) substituted (7.2.2023 at 12.00 p.m.) by The Judicial Review and Courts Act 2022 (Magistrates’ Court Sentencing Powers) Regulations 2023 (S.I. 2023/149), regs. 1(2), 2(1), Sch. Pt. 1 tableWords in s. 16(1A)(b) substituted (7.2.2023 at 12.00 p.m.) by The Judicial Review and Courts Act 2022 (Magistrates’ Court Sentencing Powers) Regulations 2023 (S.I. 2023/149), regs. 1(2), 2(1), Sch. Pt. 1 tableWords in s. 16(2A)(b) substituted (7.2.2023 at 12.00 p.m.) by The Judicial Review and Courts Act 2022 (Magistrates’ Court Sentencing Powers) Regulations 2023 (S.I. 2023/149), regs. 1(2), 2(1), Sch. Pt. 1 tableWords in s. 16(3A)(b) substituted (7.2.2023 at 12.00 p.m.) by T",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0042",
+    "title": "Computer Misuse Act 1990 c18 GB — section 43",
+    "text": "Sentencing Powers) Regulations 2023 (S.I. 2023/149), regs. 1(2), 2(1), Sch. Pt. 1 tableWords in s. 16(3A)(b) substituted (7.2.2023 at 12.00 p.m.) by The Judicial Review and Courts Act 2022 (Magistrates’ Court Sentencing Powers) Regulations 2023 (S.I. 2023/149), regs. 1(2), 2(1), Sch. Pt. 1 tableWords in s. 16(3B)(b) substituted (7.2.2023 at 12.00 p.m.) by The Judicial Review and Courts Act 2022 (Magistrates’ Court Sentencing Powers) Regulations 2023 (S.I. 2023/149), regs. 1(2), 2(1), Sch. Pt. 1 table",
+    "standard": "Computer Misuse Act 1990 c18 GB",
+    "language": "en",
+    "source_file": "Computer_Misuse_Act_1990_c18_GB.txt"
+  }
+]

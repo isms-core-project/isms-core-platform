@@ -1,0 +1,170 @@
+[
+  {
+    "clause_id": "chunk-0000",
+    "title": "PRA SS2 21 Outsourcing Third Party Risk GB — section 1",
+    "text": "SS2/21 – Outsourcing and third party risk management | Bank of England\n\tvar CheckCookies = {\n\t\tgetCookie: function (cname) {\n\t\t\tvar name = cname + \"=\";\n\t\t\tvar decodedCookie = decodeURIComponent(document.cookie);\n\t\t\tvar ca = decodedCookie.split(';');\n\t\t\tfor (var i = 0; i < ca.length; i++) {\n\t\t\t\tvar c = ca[i];\n\t\t\t\twhile (c.charAt(0) === ' ') {\n\t\t\t\t\tc = c.substring(1);\n\t\t\t\t}\n\t\t\t\tif (c.indexOf(name) === 0) {\n\t\t\t\t\treturn c.substring(name.length, c.length);\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn \"\";\n\t\t}\n\t};\n\tvar SetAnalytics = {\n\t\tsetTagManager: function () {\n\t\t\tvar hasConsentAnalytics = CheckCookies.getCookie('boeconsent');\n\t\t\tif (hasConsentAnalytics === \"analytics\") {\n\t\t\t\t(function (w, d, s, l, i) {\n\t\t\t\t\tw[l] = w[l] || []; w[l].push({\n\t\t\t\t\t\t'gtm.start':\n\t\t\t\t\t\t\tnew Date().getTime(), event: 'gtm.js'\n\t\t\t\t\t}); var f = d.getElementsByTagName(s)[0],\n\t\t\t\t\t\tj = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =\n\t\t\t\t\t\t\t'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);\n\t\t\t\t})(window, document, 'script', 'dataLayer', 'GTM-5H35J9');\n\t\t\t}\n\t\t},\n\t}\n\tSetAnalytics.setTagManager();\n\t\tvar el = document.getElementsByTagName('html')[0];\n\t\tif (el.classLi",
+    "standard": "PRA SS2 21 Outsourcing Third Party Risk GB",
+    "language": "en",
+    "source_file": "PRA_SS2-21_Outsourcing_Third_Party_Risk_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0001",
+    "title": "PRA SS2 21 Outsourcing Third Party Risk GB — section 2",
+    "text": "script', 'dataLayer', 'GTM-5H35J9');\n\t\t\t}\n\t\t},\n\t}\n\tSetAnalytics.setTagManager();\n\t\tvar el = document.getElementsByTagName('html')[0];\n\t\tif (el.classList) {\n\t\t\tel.classList.remove('no-js');\n\t\t} else {\n\t\t\tel.className = el.className.replace('no-js', '');\n\t\t}\n(window.BOOMR_mq=window.BOOMR_mq||[]).push([\"addVar\",{\"rua.upush\":\"false\",\"rua.cpush\":\"false\",\"rua.upre\":\"false\",\"rua.cpre\":\"false\",\"rua.uprl\":\"false\",\"rua.cprl\":\"false\",\"rua.cprf\":\"false\",\"rua.trans\":\"\",\"rua.cook\":\"false\",\"rua.ims\":\"false\",\"rua.ufprl\":\"false\",\"rua.cfprl\":\"false\",\"rua.isuxp\":\"false\",\"rua.texp\":\"norulematch\",\"rua.ceh\":\"false\",\"rua.ueh\":\"false\",\"rua.ieh.st\":\"0\"}]);\n                              !function(a){var e=\"https://s.go-mpulse.net/boomerang/\",t=\"addEventListener\";if(\"False\"==\"True\")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e=\"https://s2.go-mpulse.net/boomerang/\";if(window.BOOMR_API_key=\"9R3WH-S6EDC-8JGQW-55286-CGTTF\",function(){function n(e){a.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement",
+    "standard": "PRA SS2 21 Outsourcing Third Party Risk GB",
+    "language": "en",
+    "source_file": "PRA_SS2-21_Outsourcing_Third_Party_Risk_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0002",
+    "title": "PRA SS2 21 Outsourcing Third Party Risk GB — section 3",
+    "text": ").getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement(\"iframe\");if(a[t])a[t](\"load\",n,!1);else if(a.attachEvent)a.attachEvent(\"onload\",n);r.src=\"javascript:void(0)\",r.title=\"\",r.role=\"presentation\",(r.frameElement||r).style.cssText=\"width:0;height:0;border:0;display:none;\",o=document.getElementsByTagName(\"script\")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src=\"javascript:var d=document.open();d.domain='\"+i+\"';void(0);\",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement(\"script\");if(i)this.domain=i;a.id=\"boomr-if-as\",a.src=e+\"9R3WH-S6EDC-8JGQW-55286-CGTTF\",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write(\"'),_.close()}}(),\"\".length>0)if(a&&\"performance\"in a&&a.performance&&\"function\"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e=\"\"==\"true\"?1:0,t=\"\",n=\"wlcei6accqivo2oripjq-f-0ef330f33-clientnsv4-s.akamaihd.net\",i=\"false\"==\"true\"?2:1,_={\"ak.v\":\"39\",\"ak.cp\":\"445",
+    "standard": "PRA SS2 21 Outsourcing Third Party Risk GB",
+    "language": "en",
+    "source_file": "PRA_SS2-21_Outsourcing_Third_Party_Risk_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0003",
+    "title": "PRA SS2 21 Outsourcing Third Party Risk GB — section 4",
+    "text": "plugins.AK){var e=\"\"==\"true\"?1:0,t=\"\",n=\"wlcei6accqivo2oripjq-f-0ef330f33-clientnsv4-s.akamaihd.net\",i=\"false\"==\"true\"?2:1,_={\"ak.v\":\"39\",\"ak.cp\":\"445139\",\"ak.ai\":parseInt(\"286733\",10),\"ak.ol\":\"0\",\"ak.cr\":3,\"ak.ipv\":4,\"ak.proto\":\"h2\",\"ak.rid\":\"8f25dc1\",\"ak.r\":31048,\"ak.a2\":e,\"ak.m\":\"a\",\"ak.n\":\"essl\",\"ak.bpcip\":\"178.196.68.0\",\"ak.cport\":59578,\"ak.gh\":\"80.67.82.7\",\"ak.quicv\":\"\",\"ak.tlsv\":\"tls1.3\",\"ak.0rtt\":\"\",\"ak.0rtt.ed\":\"\",\"ak.csrc\":\"-\",\"ak.acc\":\"\",\"ak.t\":\"1775322067\",\"ak.ak\":\"hOBiQwZUYzCg5VSAfCLimQ==yWFe/XgxRAJeNNmNDCMCbfYzQMqA9/h8Z8F/EAHA03CRK1kQTRmPJyhScjPY/If0eQNYz0M+9tsIAUUJ4XT96D+yj/xzgiED3eimnQVW44HCsbnQ/OBlId9+lnuM5NFdtLdcgqW4zCG7V3LMehQuXItPHhTc/XupZe+e9lvmJneMZrTGXz9gSxCA9TjV1mn1Lkr/9xq0Ko1gu+zhZxv+5Tja1osKkOp+hgpiCVRA6aIZoUZxZ6JoKjENo1W95AaTyeE3ljbt8Zlhhsyx9BL8Jx3GfCphoH5F/JIq32SamV7YAboibYJwBcXBmaedImrk2j6Ya/0SC040E5cKe+v96v9gBa29A/BHWwEw7Td60K14f7+H7ta575n1NOkLydvYHaqQrfQ/uBkDE/oqB+a+tYjT6ahI5iDABjkrn4dKNWc=\",\"ak.pv\":\"344\",\"ak.dpoabenc\":\"\",\"ak.tf\":i};if(\"\"!==t)_[\"ak.ruds\"]=t;var o={i:!1,av:function(e){var t=\"http.initiator\";if(e&&(!e[t]||\"spa_hard\"===e[t]))_[\"ak.feo\"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(_)},rv:function(){var a=[\"ak.bpcip\",\"ak.cport\",\"ak.cr\",\"ak.csr",
+    "standard": "PRA SS2 21 Outsourcing Third Party Risk GB",
+    "language": "en",
+    "source_file": "PRA_SS2-21_Outsourcing_Third_Party_Risk_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0004",
+    "title": "PRA SS2 21 Outsourcing Third Party Risk GB — section 5",
+    "text": "r\";if(e&&(!e[t]||\"spa_hard\"===e[t]))_[\"ak.feo\"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(_)},rv:function(){var a=[\"ak.bpcip\",\"ak.cport\",\"ak.cr\",\"ak.csrc\",\"ak.gh\",\"ak.ipv\",\"ak.m\",\"ak.n\",\"ak.ol\",\"ak.proto\",\"ak.quicv\",\"ak.tlsv\",\"ak.0rtt\",\"ak.0rtt.ed\",\"ak.r\",\"ak.acc\",\"ak.t\",\"ak.tf\"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:_,akDNSPreFetchDomain:n,init:function(){if(!o.i){var a=BOOMR.subscribe;a(\"before_beacon\",o.av,null,null),a(\"onbeacon\",o.rv,null,null),o.i=!0}return this},is_complete:function(){return!0}}}}()}(window);\n\t\t\tOur use of cookies\n\t\t\tWe use necessary cookies to make our site work (for example, to manage your session). We&rsquo;d also like to use some non-essential cookies (including third-party cookies) to help us improve the site. By clicking &lsquo;Accept recommended settings&rsquo; on this banner, you accept our use of optional cookies.\n\t\t\t\t\t\tNecessary cookies\n\t\t\t\t\t\t\t\t\t\t\tAnalytics cookies\n\t\t\t\t\t\t\t\t\t\t\t \n\t\t\t\t\tYes\n\t\t\t\t\tYes\n\t\t\t\t\t\tAccept recommended cookies\n\t\t\t\t\tYes\n\t\t\t\t\tNo\n\t\t\t\t\tProceed with necessary cookies only\n\t\t\t\tNecessary cookies\n\t\t\t\tNecessary cookies enable core functionality on our website such as security, network management, and accessibility. You may disable the",
+    "standard": "PRA SS2 21 Outsourcing Third Party Risk GB",
+    "language": "en",
+    "source_file": "PRA_SS2-21_Outsourcing_Third_Party_Risk_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0005",
+    "title": "PRA SS2 21 Outsourcing Third Party Risk GB — section 6",
+    "text": "ry cookies\n\t\t\t\tNecessary cookies enable core functionality on our website such as security, network management, and accessibility. You may disable these by changing your browser settings, but this may affect how the website functions. \n\t\t\t\t\t\t\tAnalytics cookies\n\t\t\t\tWe use analytics cookies so we can keep track of the number of visitors to various parts of the site and understand how our website is used. For more information on how these cookies work please see our Cookie policy.\n\t\t\tSkip to main content\n                        Main menu\n                        Close main menu\n        Topics\n\t\t\tOpen Topics sub menu\n                Back to main menu\n                        Banknotes\n                        Open Banknotes sub menu\n                                Back to main menu\n                                    Counterfeit banknotes \n                                    Current banknotes \n                                    Damaged and contaminated banknotes \n                                    Exchanging old banknotes \n                                    Note Circulation Scheme \n                                    Advice for retailers and businesses",
+    "standard": "PRA SS2 21 Outsourcing Third Party Risk GB",
+    "language": "en",
+    "source_file": "PRA_SS2-21_Outsourcing_Third_Party_Risk_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0006",
+    "title": "PRA SS2 21 Outsourcing Third Party Risk GB — section 7",
+    "text": "Note Circulation Scheme \n                                    Advice for retailers and businesses \n                                    Scottish and Northern Ireland banknotes \n                                    Using images of banknotes \n                                    Wholesale cash supervision \n                                    Withdrawn banknotes \n                        Careers\n                        Open Careers sub menu\n                                Back to main menu\n                                    Application tips \n                                    Career Returner Programme \n                                    Future talent \n                                    Our locations \n                                    Research careers \n                                    We value diversity and inclusion \n                                    What we offer you \n                                    Why you should join us \n                        Climate change\n                        Digital pound\n                        Education\n                        Open Education sub menu\n                                Back to main menu",
+    "standard": "PRA SS2 21 Outsourcing Third Party Risk GB",
+    "language": "en",
+    "source_file": "PRA_SS2-21_Outsourcing_Third_Party_Risk_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0007",
+    "title": "PRA SS2 21 Outsourcing Third Party Risk GB — section 8",
+    "text": "Education\n                        Open Education sub menu\n                                Back to main menu\n                                    Competitions \n                                    Education resources \n                                    Research support programme \n                                    Request a speaker for your school \n                        Financial stability\n                        Open Financial stability sub menu\n                                Back to main menu\n                                    Digital Securities Sandbox (DSS) \n                                    Financial market infrastructure supervision \n                                    Operational resilience of the financial sector \n                                    Resolution \n                                    Trade Repository (TR) Data Collections \n                        Gold\n                        Markets\n                        Open Markets sub menu\n                                Back to main menu\n                                    Bank of England Market Operations Guide \n                                    Eligible collateral",
+    "standard": "PRA SS2 21 Outsourcing Third Party Risk GB",
+    "language": "en",
+    "source_file": "PRA_SS2-21_Outsourcing_Third_Party_Risk_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0008",
+    "title": "PRA SS2 21 Outsourcing Third Party Risk GB — section 9",
+    "text": "Bank of England Market Operations Guide \n                                    Eligible collateral \n                                    Fair and Effective Markets  \n                                    Foreign currency reserves \n                                    Greening our Corporate Bond Purchase Scheme (CBPS) \n                                    Market intelligence \n                                    Money Markets Committee and UK Money Markets Code \n                                    Settlement and collateral management \n                                    SONIA interest rate benchmark \n                                    The Sterling Bond Portfolio \n                                    Transition from LIBOR to risk-free rates \n                        Monetary policy\n                        Open Monetary policy sub menu\n                                Back to main menu\n                                    Inflation and the 2% target \n                                    Quantitative easing \n                                    Interest rates and Bank Rate \n                        Payment and settlement\n                        Open Payment and settlement sub men",
+    "standard": "PRA SS2 21 Outsourcing Third Party Risk GB",
+    "language": "en",
+    "source_file": "PRA_SS2-21_Outsourcing_Third_Party_Risk_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0009",
+    "title": "PRA SS2 21 Outsourcing Third Party Risk GB — section 10",
+    "text": "Interest rates and Bank Rate \n                        Payment and settlement\n                        Open Payment and settlement sub menu\n                                Back to main menu\n                                    Banking services \n                                    CHAPS \n                                    Cross-border payments \n                                    Payment and settlement statistics \n                                    RTGS Renewal Programme \n                        Prudential regulation\n                        Open Prudential regulation sub menu\n                                Back to main menu\n                                    Authorisations \n                                    New Bank Start-up Unit \n                                    New Insurer Start-up Unit \n                                    Policy \n                                    Prudential and Resolution Policy Index \n                                    Regulatory reporting \n                                    Our secondary objectives \n                                    Supervision \n                                    The Bank of England’s approach to enforcement",
+    "standard": "PRA SS2 21 Outsourcing Third Party Risk GB",
+    "language": "en",
+    "source_file": "PRA_SS2-21_Outsourcing_Third_Party_Risk_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0010",
+    "title": "PRA SS2 21 Outsourcing Third Party Risk GB — section 11",
+    "text": "jectives \n                                    Supervision \n                                    The Bank of England’s approach to enforcement \n                        Research\n                        Open Research sub menu\n                                Back to main menu\n                                    Bank of England Agenda for Research, 2025-2028 \n                                    Fintech \n                                    The Future of Finance - our response \n                                    Research Visitor Programme \n                                    Research funding and fellowships \n                                    Researchers \n                        Statistics\n                        Open Statistics sub menu\n                                Back to main menu\n                                    Banknote statistics \n                                    Bankstats tables \n                                    Data collection \n                                    Exchange rates \n                                    Gold statistics \n                                    Gross Domestic Product Real-Time Database \n                                    Research datasets",
+    "standard": "PRA SS2 21 Outsourcing Third Party Risk GB",
+    "language": "en",
+    "source_file": "PRA_SS2-21_Outsourcing_Third_Party_Risk_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0011",
+    "title": "PRA SS2 21 Outsourcing Third Party Risk GB — section 12",
+    "text": "tatistics \n                                    Gross Domestic Product Real-Time Database \n                                    Research datasets \n                                    Statistics requested by users \n                                    Yield curves \n                About\n\t\t\t\t\tOpen About sub menu\n\t\t\t\t\t\t\tBack to main menu\n                                Get involved\n                                Open Get involved sub menu\n                                        Back to main menu\n                                                Citizens’ Forum\n                                                Community Forum\n                                                Partners\n                                                Youth Voice\n                                Governance and funding\n                                Open Governance and funding sub menu\n                                        Back to main menu\n                                                Staff codes and policies\n                                History\n                                Our people\n                                Open Our people sub menu\n                                        Back to main menu",
+    "standard": "PRA SS2 21 Outsourcing Third Party Risk GB",
+    "language": "en",
+    "source_file": "PRA_SS2-21_Outsourcing_Third_Party_Risk_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0012",
+    "title": "PRA SS2 21 Outsourcing Third Party Risk GB — section 13",
+    "text": "Our people\n                                Open Our people sub menu\n                                        Back to main menu\n                                                Agents\n                                                Chief Cashiers\n                                                Court of Directors\n                                                Executive Directors\n                                                Financial Policy Committee\n                                                Financial Market Infrastructure Committee\n                                                Governors\n                                                Monetary Policy Committee\n                                                Prudential Regulation Committee\n                News and publications\n\t\t\t\t\tOpen News and publications sub menu\n\t\t\t\t\t\t\tBack to main menu\n                                Events\n                                News and minutes\n                                Prudential regulation publications\n                                Publications\n                                Speeches\n                                Statistical releases",
+    "standard": "PRA SS2 21 Outsourcing Third Party Risk GB",
+    "language": "en",
+    "source_file": "PRA_SS2-21_Outsourcing_Third_Party_Risk_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0013",
+    "title": "PRA SS2 21 Outsourcing Third Party Risk GB — section 14",
+    "text": "Publications\n                                Speeches\n                                Statistical releases\n                                Upcoming\n                Museum\n                Contact\n\tvar cludo_engineId = 9479; \n\tvar cludo_language = 'en'; \n\tvar cludo_searchUrl = 'https://www.bankofengland.co.uk/search'; \n            Search\n    Nothing searched for. Please enter a search term.\n\t\t\t\tHome\n\t\t\t\tPrudential regulation\n\t\t\tSS2/21 – Outsourcing and third party risk management\n\t\t\t\tSS2/21 – Outsourcing and third party risk management\n                            Supervisory statement 2/21\n            First published on 29 March 2021\nThis supervisory statement (SS) sets out the Prudential Regulation Authority’s (PRA) expectations of how PRA-regulated firms should comply with regulatory requirements and expectations relating to outsourcing and third party risk management.\nThe aims of this SS are to:\n    complement the requirements and expectations on operational resilience [in the PRA Rulebook; SS1/21 ‘Operational resilience: Impact tolerances for important business services’; and the Statement of Policy (SoP) ‘Operational resilience’]; \n    ‘facilitate greater resilien",
+    "standard": "PRA SS2 21 Outsourcing Third Party Risk GB",
+    "language": "en",
+    "source_file": "PRA_SS2-21_Outsourcing_Third_Party_Risk_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0014",
+    "title": "PRA SS2 21 Outsourcing Third Party Risk GB — section 15",
+    "text": "ce: Impact tolerances for important business services’; and the Statement of Policy (SoP) ‘Operational resilience’]; \n    ‘facilitate greater resilience and adoption of the cloud and other new technologies’ as set out in the Bank of England (the Bank)’s response to the ‘Future of Finance’ report; and\n    implement the:\n    European Banking Authority (EBA) ‘Guidelines on outsourcing arrangements’ (EBA Outsourcing GL). This SS clarifies how the PRA expects banks to approach the EBA Outsourcing GL in the context of its requirements and expectations. In addition, certain chapters in this SS expand on the expectations in the EBA Outsourcing GL, for instance Chapters 7 (Data security) and 10 (Business continuity and exit plans).\n    relevant sections of the EBA ‘Guidelines on ICT and security risk management’ (EBA ICT GL).\nThis SS is relevant to all:\n    UK banks, building societies, and PRA-designated investment firms;\n    insurance and reinsurance firms and groups in scope of Solvency II, including the Society of Lloyd’s and managing agents; and \n    UK branches of overseas banks and insurers (hereafter third-country branches). \nSome of the requirements and expectations referred to in",
+    "standard": "PRA SS2 21 Outsourcing Third Party Risk GB",
+    "language": "en",
+    "source_file": "PRA_SS2-21_Outsourcing_Third_Party_Risk_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0015",
+    "title": "PRA SS2 21 Outsourcing Third Party Risk GB — section 16",
+    "text": "ts; and \n    UK branches of overseas banks and insurers (hereafter third-country branches). \nSome of the requirements and expectations referred to in this SS also apply to credit unions and non-directive firms (NDFs). \n            Current version\nPublished on 15 November 2024. Effective from 31 December 2024.\n                   Supervisory statement 2/21 – November 2024 (PDF)\n     - Following PS15/24 – Review of Solvency II: Restatement of Assimilated Law\nFuture version\nPublished on 18 March 2026. Effective from 18 March 2027.\n                   Supervisory statement 2/21 – March 2026  (PDF)\n     - Following PS7/26 – Operational resilience: Operational incident and third-party reporting\n            Past version\nPublished 29 March 2021. Effective from 31 March 2022.\n    Supervisory Statement 2/21 – March 2021 (PDF)\n- following PS7/21 ‘Outsourcing and third party risk management'. \nFirst publication of SS.\n\t\tConvert this page to PDF\n\t\tOther prudential regulation releases\n        Prudential Regulation // PRA Regulatory Digest\n\t\t\t\t\t\t\t01 April 2026\n\t\t\t\tPRA Regulatory Digest – March 2026\n\t\t\t\tPRA Regulatory Digest – March 2026\n        Prudential Regulation // Consultation paper\n\t\t\t\t\t\t\t01",
+    "standard": "PRA SS2 21 Outsourcing Third Party Risk GB",
+    "language": "en",
+    "source_file": "PRA_SS2-21_Outsourcing_Third_Party_Risk_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0016",
+    "title": "PRA SS2 21 Outsourcing Third Party Risk GB — section 17",
+    "text": "pril 2026\n\t\t\t\tPRA Regulatory Digest – March 2026\n\t\t\t\tPRA Regulatory Digest – March 2026\n        Prudential Regulation // Consultation paper\n\t\t\t\t\t\t\t01 April 2026\n\t\t\t\tCP6/26 – High loan to income lending\n\t\t\t\tCP6/26 – High loan to income lending\n        Prudential Regulation // Policy statement\n\t\t\t\t\t\t\t31 March 2026\n\t\t\t\tPS8/26 – Financial Services Compensation...\n\t\t\t\tPS8/26 – Financial Services Compensation Scheme – Management Expenses Levy Limit (MELL) 2026/27\n        Prudential Regulation // Supervisory statement\n\t\t\t\t\t\t\t26 March 2026\n\t\t\t\tSS9/17 - Recovery planning\n\t\t\t\tSS9/17 - Recovery planning\n\t\tView more Other prudential regulation releases\n\t\t\t\t\t\t\t\tBack to top\n\t\t\t\t\t\t\tFollow us\n\t\t\t\t\t\t\t\tFollow us\n                    <a class=\"social-link \"\n                        href=\"https://www.linkedin.com/company/bank-of-england/\"\n                        target=\"_blank\"\n\t\t\t\t\t\ttitle=\"Opens in a new window\">\n                        Connect with us on LinkedIn\n                    <a class=\"social-link \"\n                        href=\"https://x.com/bankofengland\"\n                        target=\"_blank\"\n\t\t\t\t\t\ttitle=\"Opens in a new window\">\n                        Follow us on Twitter",
+    "standard": "PRA SS2 21 Outsourcing Third Party Risk GB",
+    "language": "en",
+    "source_file": "PRA_SS2-21_Outsourcing_Third_Party_Risk_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0017",
+    "title": "PRA SS2 21 Outsourcing Third Party Risk GB — section 18",
+    "text": "ofengland\"\n                        target=\"_blank\"\n\t\t\t\t\t\ttitle=\"Opens in a new window\">\n                        Follow us on Twitter\n                    <a class=\"social-link \"\n                        href=\"https://www.facebook.com/bankofengland.co.uk\"\n                        target=\"_blank\"\n\t\t\t\t\t\ttitle=\"Opens in a new window\">\n                        Add us on Facebook\n                    <a class=\"social-link \"\n                        href=\"https://www.instagram.com/bankofengland\"\n                        target=\"_blank\"\n\t\t\t\t\t\t>\n                        Follow us on Instagram\n                    <a class=\"social-link \"\n                        href=\"https://www.threads.com/@bankofengland\"\n                        target=\"_blank\"\n\t\t\t\t\t\t>\n                        Follow us on Threads\n                    <a class=\"social-link \"\n                        href=\"https://tiktok.com/@bankofengland\"\n                        target=\"_blank\"\n\t\t\t\t\t\t>\n                        Follow us on TikTok\n                    <a class=\"social-link \"\n                        href=\"https://www.youtube.com/user/bankofenglanduk\"\n                        target=\"_blank\"\n\t\t\t\t\t\ttitle=\"Opens in a new window\">",
+    "standard": "PRA SS2 21 Outsourcing Third Party Risk GB",
+    "language": "en",
+    "source_file": "PRA_SS2-21_Outsourcing_Third_Party_Risk_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0018",
+    "title": "PRA SS2 21 Outsourcing Third Party Risk GB — section 19",
+    "text": "href=\"https://www.youtube.com/user/bankofenglanduk\"\n                        target=\"_blank\"\n\t\t\t\t\t\ttitle=\"Opens in a new window\">\n                        Watch us on Youtube\n                    <a class=\"social-link \"\n                        href=\"https://www.flickr.com/photos/bankofengland/albums\"\n                        target=\"_blank\"\n\t\t\t\t\t\ttitle=\"Opens in a new window\">\n                        Find us on Flickr\n\t\tMuseum\n                    <a class=\"social-link \"\n                        href=\"https://www.facebook.com/boemuseum\"\n                        target=\"_blank\"\n\t\t\t\t\t\ttitle=\"Opens in a new window\">\n                        Like the Bank of England museum on Facebook\n                    <a class=\"social-link \"\n                        href=\"https://instagram.com/boemuseum\"\n                        target=\"_blank\"\n\t\t\t\t\t\ttitle=\"Opens in a new window\">\n                        Follow the Bank of England museum on Instagram\n                    <a class=\"social-link \"\n                        href=\"https://www.threads.net/@boemuseum\"\n                        target=\"_blank\"\n\t\t\t\t\t\t>\n                        Follow the Bank of England museum on Threads\n                    <a clas",
+    "standard": "PRA SS2 21 Outsourcing Third Party Risk GB",
+    "language": "en",
+    "source_file": "PRA_SS2-21_Outsourcing_Third_Party_Risk_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0019",
+    "title": "PRA SS2 21 Outsourcing Third Party Risk GB — section 20",
+    "text": "seum\"\n                        target=\"_blank\"\n\t\t\t\t\t\t>\n                        Follow the Bank of England museum on Threads\n                    <a class=\"social-link \"\n                        href=\"http://www.tiktok.com/@boemuseum.uk\"\n                        target=\"_blank\"\n\t\t\t\t\t\t>\n                        Follow the Bank of England museum on TikTok\n                    Useful links\n                    Useful links\n                                    About us\n                                    Archive\n                                    Careers\n                                    Contact us\n                                    Explainers\n                                    FAQs\n                                    Freedom of Information\n                                    Glossary\n                                    Museum\n                                    Subscribe to emails\nBank of England\n    Threadneedle Street, London, EC2R 8AH\n    Switchboard: +44(0)20 3461 4444\n    Enquiries: +44(0)20 3461 4878\nBank of England Museum\n    Bartholomew Lane, London, EC2R 8AH\nAccessibility statement\t\t\t    \nCookies\t\t\t    \n\t\t\t\t\t\t\tCymraeg\nLegal\t\t\t    \nPrivacy\t\t\t    \nSitemap\t\t\t    \n&#169;2026 Bank of",
+    "standard": "PRA SS2 21 Outsourcing Third Party Risk GB",
+    "language": "en",
+    "source_file": "PRA_SS2-21_Outsourcing_Third_Party_Risk_GB.txt"
+  },
+  {
+    "clause_id": "chunk-0020",
+    "title": "PRA SS2 21 Outsourcing Third Party Risk GB — section 21",
+    "text": "mew Lane, London, EC2R 8AH\nAccessibility statement\t\t\t    \nCookies\t\t\t    \n\t\t\t\t\t\t\tCymraeg\nLegal\t\t\t    \nPrivacy\t\t\t    \nSitemap\t\t\t    \n&#169;2026 Bank of England",
+    "standard": "PRA SS2 21 Outsourcing Third Party Risk GB",
+    "language": "en",
+    "source_file": "PRA_SS2-21_Outsourcing_Third_Party_Risk_GB.txt"
+  }
+]

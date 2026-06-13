@@ -1,10 +1,16 @@
 {
   "files": [
     {
-      "file": "c5_2020.json",
-      "source": "C5_2020.pdf",
-      "standard": "BSI C5:2020",
-      "chunks": 305
+      "file": "nisg_2024_at.json",
+      "source": "NISG_2024_AT.txt",
+      "standard": "NISG 2024 AT",
+      "chunks": 142
+    },
+    {
+      "file": "nis2_transposition_loi_2024_be.json",
+      "source": "NIS2_Transposition_Loi_2024_BE.txt",
+      "standard": "NIS2 Transposition Loi 2024 BE",
+      "chunks": 372
     },
     {
       "file": "basic_security.json",
@@ -43,48 +49,6 @@
       "chunks": 61
     },
     {
-      "file": "federal_government_cybersecurity_incident_and_vulnerability_response_playbooks_508c.json",
-      "source": "Federal_Government_Cybersecurity_Incident_and_Vulnerability_Response_Playbooks_508C.pdf",
-      "standard": "CISA Incident & Vulnerability Response Playbooks",
-      "chunks": 101
-    },
-    {
-      "file": "stopransomware_guide_508.json",
-      "source": "StopRansomware-Guide 508.pdf",
-      "standard": "CISA StopRansomware Guide",
-      "chunks": 67
-    },
-    {
-      "file": "cloud_security_technical_reference_architecture_2.json",
-      "source": "cloud_security_technical_reference_architecture_2.pdf",
-      "standard": "CISA Cloud Security TRA v2",
-      "chunks": 204
-    },
-    {
-      "file": "zero_trust_maturity_model_v2_508.json",
-      "source": "zero_trust_maturity_model_v2_508.pdf",
-      "standard": "CISA Zero Trust Maturity Model v2.0",
-      "chunks": 72
-    },
-    {
-      "file": "20250203_pssi_ia.json",
-      "source": "20250203-PSSI-IA.pdf",
-      "standard": "CLUSIF PSSI-IA 2025",
-      "chunks": 59
-    },
-    {
-      "file": "20250926_cybersecurity_guide_ot_ics_2025.json",
-      "source": "20250926-Cybersecurity_Guide_OT_ICS-2025.pdf",
-      "standard": "CLUSIF Cybersecurity Guide OT/ICS 2025",
-      "chunks": 264
-    },
-    {
-      "file": "security_guidance_v4_0.json",
-      "source": "Security-Guidance-v4.0.pdf",
-      "standard": "CSA Security Guidance v4.0",
-      "chunks": 371
-    },
-    {
       "file": "methode_csrm_2025_en.json",
       "source": "Methode-CSRM-2025-EN.txt",
       "standard": "CSRM 2025",
@@ -97,28 +61,16 @@
       "chunks": 22
     },
     {
-      "file": "the_diamond_model_of_intrusion_analysis.json",
-      "source": "The_Diamond_Model_of_Intrusion_Analysis.pdf",
-      "standard": "Diamond Model of Intrusion Analysis",
-      "chunks": 132
+      "file": "bafin_bait_rundschreiben_10_2021_de.json",
+      "source": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt",
+      "standard": "BaFin BAIT Rundschreiben 10 2021 DE",
+      "chunks": 59
     },
     {
-      "file": "dod_control_systems_srg.json",
-      "source": "DoD_Control_Systems_SRG.pdf",
-      "standard": "DoD Control Systems SRG",
-      "chunks": 303
-    },
-    {
-      "file": "zt_operationaltechnologyactivitiesoutcomes.json",
-      "source": "ZT-OperationalTechnologyActivitiesOutcomes.pdf",
-      "standard": "DoD Zero Trust OT Activities",
-      "chunks": 115
-    },
-    {
-      "file": "wp2016_3_1_2_ics_scada_dependencies.json",
-      "source": "WP2016 3-1 2 ICS SCADA Dependencies.pdf",
-      "standard": "ENISA ICS/SCADA Dependencies",
-      "chunks": 191
+      "file": "nis2_umsetzungsgesetz_nis2umsucg_de.json",
+      "source": "NIS2_Umsetzungsgesetz_NIS2UmsuCG_DE.txt",
+      "standard": "NIS2 Umsetzungsgesetz NIS2UmsuCG DE",
+      "chunks": 27
     },
     {
       "file": "cloud_sovereignty_framework.json",
@@ -145,88 +97,130 @@
       "chunks": 56
     },
     {
-      "file": "osstmm_3.json",
-      "source": "OSSTMM.3.pdf",
-      "standard": "OSSTMM 3 (ISECOM)",
-      "chunks": 425
+      "file": "acpr_notice_risque_informatique_20210707_fr.json",
+      "source": "ACPR_Notice_Risque_Informatique_20210707_FR.txt",
+      "standard": "ACPR Notice Risque Informatique 20210707 FR",
+      "chunks": 99
     },
     {
-      "file": "27001_2023_auflistung_controls.json",
-      "source": "27001-2023_Auflistung Controls.docx",
-      "standard": "ISO 27001 Controls Listing",
-      "chunks": 35
+      "file": "computer_misuse_act_1990_c18_gb.json",
+      "source": "Computer_Misuse_Act_1990_c18_GB.txt",
+      "standard": "Computer Misuse Act 1990 c18 GB",
+      "chunks": 43
     },
     {
-      "file": "27002_2022_controls_umsetzungshinweise.json",
-      "source": "27002-2022_Controls_Umsetzungshinweise.pdf",
-      "standard": "ISO 27002:2022",
-      "chunks": 249
+      "file": "dsit_ai_regulation_white_paper_2023_gb.json",
+      "source": "DSIT_AI_Regulation_White_Paper_2023_GB.txt",
+      "standard": "DSIT AI Regulation White Paper 2023 GB",
+      "chunks": 23
     },
     {
-      "file": "iso_27001_controlli_sicurezza_cloud_27017_27018.json",
-      "source": "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf",
-      "standard": "ISO 27017",
-      "chunks": 55
+      "file": "data_protection_act_2018_c12_gb.json",
+      "source": "Data_Protection_Act_2018_c12_GB.txt",
+      "standard": "Data Protection Act 2018 c12 GB",
+      "chunks": 1012
     },
     {
-      "file": "iso_iec_27000_2018_en.json",
-      "source": "ISO_IEC_27000_2018(en).docx",
-      "standard": "ISO 27000:2018",
-      "chunks": 3
+      "file": "data_use_access_act_2025_gb.json",
+      "source": "Data_Use_Access_Act_2025_GB.txt",
+      "standard": "Data Use Access Act 2025 GB",
+      "chunks": 196
     },
     {
-      "file": "iso_iec_27001_2022_en.json",
-      "source": "ISO_IEC_27001_2022(en).pdf",
-      "standard": "ISO 27001:2022",
-      "chunks": 97
+      "file": "fca_ps21_3_building_operational_resilience_gb.json",
+      "source": "FCA_PS21-3_Building_Operational_Resilience_GB.txt",
+      "standard": "FCA PS21 3 Building Operational Resilience GB",
+      "chunks": 83
     },
     {
-      "file": "iso_iec_27001_2022_amd_1_2024_en.json",
-      "source": "ISO_IEC_27001_2022_Amd_1_2024(en).docx",
-      "standard": "ISO 27001:2022+Amd1",
-      "chunks": 5
+      "file": "fca_ps24_16_critical_third_parties_gb.json",
+      "source": "FCA_PS24-16_Critical_Third_Parties_GB.txt",
+      "standard": "FCA PS24 16 Critical Third Parties GB",
+      "chunks": 82
     },
     {
-      "file": "iso_iec_27002_2022_en.json",
-      "source": "ISO_IEC_27002_2022(en).pdf",
-      "standard": "ISO 27002:2022",
-      "chunks": 225
+      "file": "fca_ps26_2_operational_incident_third_party_reporting_gb.json",
+      "source": "FCA_PS26-2_Operational_Incident_Third_Party_Reporting_GB.txt",
+      "standard": "FCA PS26 2 Operational Incident Third Party Reporting GB",
+      "chunks": 83
     },
     {
-      "file": "iso_iec_27018_2025_en.json",
-      "source": "ISO_IEC_27018_2025(en).pdf",
-      "standard": "ISO 27018:2025",
-      "chunks": 129
+      "file": "ico_accountability_framework_gb.json",
+      "source": "ICO_Accountability_Framework_GB.txt",
+      "standard": "ICO Accountability Framework GB",
+      "chunks": 21
     },
     {
-      "file": "iso_iec_27701_2025_en.json",
-      "source": "ISO_IEC_27701_2025(en).pdf",
-      "standard": "ISO 27701:2025",
-      "chunks": 62
+      "file": "ico_guide_uk_gdpr_gb.json",
+      "source": "ICO_Guide_UK_GDPR_GB.txt",
+      "standard": "ICO Guide UK GDPR GB",
+      "chunks": 32
     },
     {
-      "file": "gaining_the_advantage_cyber_kill_chain.json",
-      "source": "Gaining_the_Advantage_Cyber_Kill_Chain.pdf",
-      "standard": "Lockheed Martin Cyber Kill Chain",
+      "file": "investigatory_powers_act_2016_c25_gb.json",
+      "source": "Investigatory_Powers_Act_2016_c25_GB.txt",
+      "standard": "Investigatory Powers Act 2016 c25 GB",
+      "chunks": 884
+    },
+    {
+      "file": "ncsc_caf_v4_cyber_assessment_framework_gb.json",
+      "source": "NCSC_CAF_v4_Cyber_Assessment_Framework_GB.txt",
+      "standard": "NCSC CAF v4 Cyber Assessment Framework GB",
       "chunks": 12
     },
     {
-      "file": "the_unified_kill_chain.json",
-      "source": "The-Unified-Kill-Chain.pdf",
-      "standard": "Unified Kill Chain",
-      "chunks": 40
+      "file": "nis_regulations_2018_si_2018_506_gb.json",
+      "source": "NIS_Regulations_2018_SI_2018-506_GB.txt",
+      "standard": "NIS Regulations 2018 SI 2018 506 GB",
+      "chunks": 147
+    },
+    {
+      "file": "pecr_si_2003_2426_gb.json",
+      "source": "PECR_SI_2003-2426_GB.txt",
+      "standard": "PECR SI 2003 2426 GB",
+      "chunks": 113
+    },
+    {
+      "file": "pra_ss1_21_operational_resilience_gb.json",
+      "source": "PRA_SS1-21_Operational_Resilience_GB.txt",
+      "standard": "PRA SS1 21 Operational Resilience GB",
+      "chunks": 20
+    },
+    {
+      "file": "pra_ss2_21_outsourcing_third_party_risk_gb.json",
+      "source": "PRA_SS2-21_Outsourcing_Third_Party_Risk_GB.txt",
+      "standard": "PRA SS2 21 Outsourcing Third Party Risk GB",
+      "chunks": 21
+    },
+    {
+      "file": "uk_gdpr_regulation_eu_2016_679_retained_gb.json",
+      "source": "UK_GDPR_Regulation_EU_2016-679_retained_GB.txt",
+      "standard": "UK GDPR Regulation EU 2016 679 retained GB",
+      "chunks": 417
+    },
+    {
+      "file": "acn_linee_guida_cyber_risk_management_security_by_design_it.json",
+      "source": "ACN_Linee_Guida_Cyber_Risk_Management_Security_by_Design_IT.txt",
+      "standard": "ACN Linee Guida Cyber Risk Management Security by Design IT",
+      "chunks": 48
+    },
+    {
+      "file": "nis2_transposition_dlgs_138_2024_it.json",
+      "source": "NIS2_Transposition_DLgs_138-2024_IT.txt",
+      "standard": "NIS2 Transposition DLgs 138 2024 IT",
+      "chunks": 3
+    },
+    {
+      "file": "cssf_circulaire_20_750_ict_security_risk_lu.json",
+      "source": "CSSF_Circulaire_20-750_ICT_Security_Risk_LU.txt",
+      "standard": "CSSF Circulaire 20 750 ICT Security Risk LU",
+      "chunks": 51
     },
     {
       "file": "nist_fips_199.json",
       "source": "NIST.FIPS.199.txt",
       "standard": "NIST FIPS 199",
       "chunks": 25
-    },
-    {
-      "file": "nist_ai_100_1.json",
-      "source": "nist.ai.100-1.pdf",
-      "standard": "NIST AI RMF 1.0",
-      "chunks": 102
     },
     {
       "file": "nist_cswp_32_ipd.json",
@@ -241,186 +235,6 @@
       "chunks": 47
     },
     {
-      "file": "nistspecialpublication800_115.json",
-      "source": "nistspecialpublication800-115.pdf",
-      "standard": "NIST SP 800-115",
-      "chunks": 244
-    },
-    {
-      "file": "nist_sp_800_128.json",
-      "source": "NIST.SP.800-128.pdf",
-      "standard": "NIST SP 800-128",
-      "chunks": 272
-    },
-    {
-      "file": "nistspecialpublication800_137.json",
-      "source": "nistspecialpublication800-137.pdf",
-      "standard": "NIST SP 800-137",
-      "chunks": 221
-    },
-    {
-      "file": "nistspecialpublication800_145.json",
-      "source": "nistspecialpublication800-145.pdf",
-      "standard": "NIST SP 800-145",
-      "chunks": 11
-    },
-    {
-      "file": "nistspecialpublication800_146.json",
-      "source": "nistspecialpublication800-146.pdf",
-      "standard": "NIST SP 800-146",
-      "chunks": 223
-    },
-    {
-      "file": "nist_sp_800_160v1r1.json",
-      "source": "NIST.SP.800-160v1r1.pdf",
-      "standard": "NIST SP 800-160",
-      "chunks": 501
-    },
-    {
-      "file": "nist_sp_800_160v2r1.json",
-      "source": "NIST.SP.800-160v2r1.pdf",
-      "standard": "NIST SP 800-160",
-      "chunks": 590
-    },
-    {
-      "file": "nist_sp_800_161r1_upd1.json",
-      "source": "NIST.SP.800-161r1-upd1.pdf",
-      "standard": "NIST SP 800-161r1",
-      "chunks": 521
-    },
-    {
-      "file": "nist_sp_800_171r3.json",
-      "source": "NIST.SP.800-171r3.pdf",
-      "standard": "NIST SP 800-171r3",
-      "chunks": 251
-    },
-    {
-      "file": "nist_sp_800_171ar3.json",
-      "source": "NIST.SP.800-171Ar3.pdf",
-      "standard": "NIST SP 800-171Ar3",
-      "chunks": 205
-    },
-    {
-      "file": "nist_sp_800_190.json",
-      "source": "NIST.SP.800-190.pdf",
-      "standard": "NIST SP 800-190",
-      "chunks": 156
-    },
-    {
-      "file": "nist_sp_800_207.json",
-      "source": "NIST.SP.800-207.pdf",
-      "standard": "NIST SP 800-207",
-      "chunks": 150
-    },
-    {
-      "file": "nist_sp_800_207a.json",
-      "source": "NIST.SP.800-207A.pdf",
-      "standard": "NIST SP 800-207A",
-      "chunks": 66
-    },
-    {
-      "file": "nist_sp_800_218.json",
-      "source": "nist.sp.800-218.pdf",
-      "standard": "NIST SP 800-218 (SSDF)",
-      "chunks": 103
-    },
-    {
-      "file": "nistspecialpublication800_30r1.json",
-      "source": "nistspecialpublication800-30r1.pdf",
-      "standard": "NIST SP 800-30r1",
-      "chunks": 317
-    },
-    {
-      "file": "nistspecialpublication800_34r1.json",
-      "source": "nistspecialpublication800-34r1.pdf",
-      "standard": "NIST SP 800-34r1",
-      "chunks": 382
-    },
-    {
-      "file": "nist_sp_800_37r2.json",
-      "source": "NIST.SP.800-37r2.docx",
-      "standard": "NIST SP 800-37r2",
-      "chunks": 453
-    },
-    {
-      "file": "nistspecialpublication800_39.json",
-      "source": "nistspecialpublication800-39.pdf",
-      "standard": "NIST SP 800-39",
-      "chunks": 327
-    },
-    {
-      "file": "nist_sp_800_40r4.json",
-      "source": "NIST.SP.800-40r4.pdf",
-      "standard": "NIST SP 800-40r4",
-      "chunks": 72
-    },
-    {
-      "file": "nist_sp_800_47r1.json",
-      "source": "NIST.SP.800-47r1.pdf",
-      "standard": "NIST SP 800-47r1",
-      "chunks": 140
-    },
-    {
-      "file": "nist_sp_800_53r5.json",
-      "source": "NIST.SP.800-53r5.pdf",
-      "standard": "NIST SP 800-53r5",
-      "chunks": 659
-    },
-    {
-      "file": "nist_sp_800_53ar5.json",
-      "source": "NIST.SP.800-53Ar5.pdf",
-      "standard": "NIST SP 800-53Ar5",
-      "chunks": 531
-    },
-    {
-      "file": "nist_sp_800_61r3.json",
-      "source": "NIST.SP.800-61r3.pdf",
-      "standard": "NIST SP 800-61r3",
-      "chunks": 103
-    },
-    {
-      "file": "nist_sp_800_63_4.json",
-      "source": "NIST.SP.800-63-4.pdf",
-      "standard": "NIST SP 800-63-4",
-      "chunks": 188
-    },
-    {
-      "file": "nist_sp_800_63b_4.json",
-      "source": "NIST.SP.800-63B-4.pdf",
-      "standard": "NIST SP 800-63B-4",
-      "chunks": 276
-    },
-    {
-      "file": "nist_sp_800_82r3.json",
-      "source": "NIST.SP.800-82r3.pdf",
-      "standard": "NIST SP 800-82r3",
-      "chunks": 480
-    },
-    {
-      "file": "nistspecialpublication800_86.json",
-      "source": "nistspecialpublication800-86.pdf",
-      "standard": "NIST SP 800-86",
-      "chunks": 373
-    },
-    {
-      "file": "nist_sp_800_88r2.json",
-      "source": "NIST.SP.800-88r2.pdf",
-      "standard": "NIST SP 800-88r2",
-      "chunks": 108
-    },
-    {
-      "file": "nistspecialpublication800_92.json",
-      "source": "nistspecialpublication800-92.pdf",
-      "standard": "NIST SP 800-92",
-      "chunks": 185
-    },
-    {
-      "file": "information_assurance_technical_framework__iatf___release_3_1.json",
-      "source": "Information Assurance Technical Framework (IATF). Release 3.1.pdf",
-      "standard": "NSA IATF 3.1",
-      "chunks": 522
-    },
-    {
       "file": "pci_dss_v4_0_1.json",
       "source": "PCI-DSS-v4_0_1.txt",
       "standard": "PCI DSS v4 0 1",
@@ -431,467 +245,127 @@
       "source": "Rosenthal-M365-Anwaltskanzlei.txt",
       "standard": "M365 Security Guide (Rosenthal)",
       "chunks": 29
-    },
-    {
-      "file": "at_dsg.json",
-      "source": "DSG_Datenschutzgesetz_AT.txt",
-      "standard": "AT DSG (Datenschutzgesetz)",
-      "language": "de",
-      "chunks": 312
-    },
-    {
-      "file": "at_nisg_2024.json",
-      "source": "NISG_2024_AT.txt",
-      "standard": "AT NISG 2024",
-      "language": "de",
-      "chunks": 149
-    },
-    {
-      "file": "be_cyfun_2025.json",
-      "source": "CyFun_Cyberfundamentals_Framework_2025_BE.txt",
-      "standard": "BE CyFun 2025",
-      "language": "en",
-      "chunks": 464
-    },
-    {
-      "file": "be_nis2_2024.json",
-      "source": "NIS2_Transposition_Loi_2024_BE.txt",
-      "standard": "BE NIS2 Transposition 2024",
-      "language": "fr",
-      "chunks": 417
-    },
-    {
-      "file": "de_bdsg_en.json",
-      "source": "BDSG_Bundesdatenschutzgesetz_EN.txt",
-      "standard": "DE BDSG (English)",
-      "language": "en",
-      "chunks": 151
-    },
-    {
-      "file": "de_bafin_bait.json",
-      "source": "BaFin_BAIT_Rundschreiben_10-2021_DE.txt",
-      "standard": "DE BaFin BAIT",
-      "language": "de",
-      "chunks": 65
-    },
-    {
-      "file": "de_nis2umsucg.json",
-      "source": "NIS2_Umsetzungsgesetz_NIS2UmsuCG_DE.txt",
-      "standard": "DE NIS2UmsuCG",
-      "language": "de",
-      "chunks": 210
-    },
-    {
-      "file": "eu_dora.json",
-      "source": "DORA_Regulation_2022-2554_EN.txt",
-      "standard": "EU DORA",
-      "language": "en",
-      "chunks": 350
-    },
-    {
-      "file": "eu_enisa_5g.json",
-      "source": "ENISA_5G_Security_Controls_Matrix.txt",
-      "standard": "ENISA 5G Security Controls",
-      "language": "en",
-      "chunks": 9
-    },
-    {
-      "file": "eu_gdpr.json",
-      "source": "GDPR_Regulation_2016-679_EN.txt",
-      "standard": "EU GDPR",
-      "language": "en",
-      "chunks": 397
-    },
-    {
-      "file": "eu_nis2_directive.json",
-      "source": "NIS2_Directive_2022-2555_EN.txt",
-      "standard": "EU NIS2 Directive",
-      "language": "en",
-      "chunks": 315
-    },
-    {
-      "file": "fr_acpr_risque_info.json",
-      "source": "ACPR_Notice_Risque_Informatique_20210707_FR.txt",
-      "standard": "FR ACPR Notice Risque Informatique",
-      "language": "fr",
-      "chunks": 118
-    },
-    {
-      "file": "fr_anssi_hygiene.json",
-      "source": "ANSSI_Guide_Hygiene_Informatique_FR.txt",
-      "standard": "FR ANSSI Guide Hygiène Informatique",
-      "language": "fr",
-      "chunks": 83
-    },
-    {
-      "file": "fr_cnil_guide_2024.json",
-      "source": "CNIL_Guide_Securite_Donnees_Personnelles_2024_FR.txt",
-      "standard": "FR CNIL Guide Sécurité 2024",
-      "language": "fr",
-      "chunks": 143
-    },
-    {
-      "file": "fr_hds.json",
-      "source": "HDS_Healthcare_Data_Hosting_Requirements_FR.txt",
-      "standard": "FR HDS Requirements",
-      "language": "fr",
-      "chunks": 5
-    },
-    {
-      "file": "fr_nis2_sren.json",
-      "source": "NIS2_SREN_Loi_2024-449_21mai2024_FR.txt",
-      "standard": "FR NIS2/SREN Loi 2024-449",
-      "language": "fr",
-      "chunks": 97
-    },
-    {
-      "file": "fr_nis2_sren_jorf.json",
-      "source": "NIS2_SREN_Loi_2024-449_JORF_22mai2024_FR.txt",
-      "standard": "FR NIS2/SREN JORF 2024",
-      "language": "fr",
-      "chunks": 273
-    },
-    {
-      "file": "fr_nis2_transposition.json",
-      "source": "NIS2_Transposition_Loi_2024-449_FR.txt",
-      "standard": "FR NIS2 Transposition 2024",
-      "language": "fr",
-      "chunks": 3
-    },
-    {
-      "file": "fr_osac_aviation.json",
-      "source": "OSAC_Aviation_Cyber_Framework_FR.txt",
-      "standard": "FR OSAC Aviation Cyber Framework",
-      "language": "fr",
-      "chunks": 145
-    },
-    {
-      "file": "fr_rgs.json",
-      "source": "RGS_Referentiel_General_Securite_FR.txt",
-      "standard": "FR RGS",
-      "language": "fr",
-      "chunks": 4
-    },
-    {
-      "file": "gb_computer_misuse_act.json",
-      "source": "Computer_Misuse_Act_1990_c18_GB.txt",
-      "standard": "UK Computer Misuse Act 1990",
-      "language": "en",
-      "chunks": 46
-    },
-    {
-      "file": "gb_dsit_ai_2023.json",
-      "source": "DSIT_AI_Regulation_White_Paper_2023_GB.txt",
-      "standard": "UK DSIT AI Regulation White Paper",
-      "language": "en",
-      "chunks": 640
-    },
-    {
-      "file": "gb_dpa_2018.json",
-      "source": "Data_Protection_Act_2018_c12_GB.txt",
-      "standard": "UK DPA 2018",
-      "language": "en",
-      "chunks": 974
-    },
-    {
-      "file": "gb_dua_2025.json",
-      "source": "Data_Use_Access_Act_2025_GB.txt",
-      "standard": "UK Data Use and Access Act 2025",
-      "language": "en",
-      "chunks": 198
-    },
-    {
-      "file": "gb_fca_ps21_3.json",
-      "source": "FCA_PS21-3_Building_Operational_Resilience_GB.txt",
-      "standard": "UK FCA PS21/3 Operational Resilience",
-      "language": "en",
-      "chunks": 78
-    },
-    {
-      "file": "gb_fca_ps24_16.json",
-      "source": "FCA_PS24-16_Critical_Third_Parties_GB.txt",
-      "standard": "UK FCA PS24/16 Critical Third Parties",
-      "language": "en",
-      "chunks": 78
-    },
-    {
-      "file": "gb_fca_ps26_2.json",
-      "source": "FCA_PS26-2_Operational_Incident_Third_Party_Reporting_GB.txt",
-      "standard": "UK FCA PS26/2 Incident Reporting",
-      "language": "en",
-      "chunks": 78
-    },
-    {
-      "file": "gb_ico_accountability.json",
-      "source": "ICO_Accountability_Framework_GB.txt",
-      "standard": "UK ICO Accountability Framework",
-      "language": "en",
-      "chunks": 18
-    },
-    {
-      "file": "gb_ico_uk_gdpr.json",
-      "source": "ICO_Guide_UK_GDPR_GB.txt",
-      "standard": "UK ICO Guide UK GDPR",
-      "language": "en",
-      "chunks": 25
-    },
-    {
-      "file": "gb_ipa_2016.json",
-      "source": "Investigatory_Powers_Act_2016_c25_GB.txt",
-      "standard": "UK Investigatory Powers Act 2016",
-      "language": "en",
-      "chunks": 800
-    },
-    {
-      "file": "gb_ncsc_caf_v4.json",
-      "source": "NCSC_CAF_v4_Cyber_Assessment_Framework_GB.txt",
-      "standard": "UK NCSC CAF v4",
-      "language": "en",
-      "chunks": 12
-    },
-    {
-      "file": "gb_ncsc_cyber_essentials.json",
-      "source": "NCSC_Cyber_Essentials_v3-2_Overview_GB.txt",
-      "standard": "UK NCSC Cyber Essentials v3.2",
-      "language": "en",
-      "chunks": 8
-    },
-    {
-      "file": "gb_nis_regs_2018.json",
-      "source": "NIS_Regulations_2018_SI_2018-506_GB.txt",
-      "standard": "UK NIS Regulations 2018",
-      "language": "en",
-      "chunks": 140
-    },
-    {
-      "file": "gb_pecr_2003.json",
-      "source": "PECR_SI_2003-2426_GB.txt",
-      "standard": "UK PECR 2003",
-      "language": "en",
-      "chunks": 106
-    },
-    {
-      "file": "gb_pra_ss1_21.json",
-      "source": "PRA_SS1-21_Operational_Resilience_GB.txt",
-      "standard": "UK PRA SS1/21 Operational Resilience",
-      "language": "en",
-      "chunks": 14
-    },
-    {
-      "file": "gb_pra_ss2_21.json",
-      "source": "PRA_SS2-21_Outsourcing_Third_Party_Risk_GB.txt",
-      "standard": "UK PRA SS2/21 Outsourcing",
-      "language": "en",
-      "chunks": 14
-    },
-    {
-      "file": "gb_uk_gdpr.json",
-      "source": "UK_GDPR_Regulation_EU_2016-679_retained_GB.txt",
-      "standard": "UK GDPR",
-      "language": "en",
-      "chunks": 426
-    },
-    {
-      "file": "it_acn_linee_guida.json",
-      "source": "ACN_Linee_Guida_Cyber_Risk_Management_Security_by_Design_IT.txt",
-      "standard": "IT ACN Linee Guida Cyber Risk",
-      "language": "it",
-      "chunks": 54
-    },
-    {
-      "file": "it_bancaitalia_circ285_agg50.json",
-      "source": "BancaItalia_Circ285_Aggiornamento50_26ago2025.txt",
-      "standard": "IT Banca d'Italia Circ. 285 (50° Aggiornamento)",
-      "language": "it",
-      "chunks": 423
-    },
-    {
-      "file": "it_bancaitalia_circ285_agg51.json",
-      "source": "BancaItalia_Circ285_Aggiornamento51_03feb2026.txt",
-      "standard": "IT Banca d'Italia Circ. 285 (51° Aggiornamento)",
-      "language": "it",
-      "chunks": 347
-    },
-    {
-      "file": "it_bancaitalia_circ285_atto50.json",
-      "source": "BancaItalia_Circ285_AttoEmanazione50_26ago2025.txt",
-      "standard": "IT Banca d'Italia Circ. 285 Atto 50",
-      "language": "it",
-      "chunks": 32
-    },
-    {
-      "file": "it_bancaitalia_circ285_atto51.json",
-      "source": "BancaItalia_Circ285_AttoEmanazione51_03feb2026.txt",
-      "standard": "IT Banca d'Italia Circ. 285 Atto 51",
-      "language": "it",
-      "chunks": 9
-    },
-    {
-      "file": "it_bancaitalia_circ285_testo.json",
-      "source": "BancaItalia_Circ285_Testo_Integrale_50Aggiornamento.txt",
-      "standard": "IT Banca d'Italia Circ. 285 Testo Integrale",
-      "language": "it",
-      "chunks": 2158
-    },
-    {
-      "file": "it_dlgs101_2018.json",
-      "source": "DLgs101-2018_GDPR_Adaptation_IT.txt",
-      "standard": "IT D.Lgs. 101/2018 GDPR Adaptation",
-      "language": "it",
-      "chunks": 154
-    },
-    {
-      "file": "it_dlgs196_2003.json",
-      "source": "DLgs196-2003.txt",
-      "standard": "IT D.Lgs. 196/2003 Codice Privacy",
-      "language": "it",
-      "chunks": 399
-    },
-    {
-      "file": "it_dlgs51_2018.json",
-      "source": "DLgs51-2018_LED_LawEnforcement_IT.txt",
-      "standard": "IT D.Lgs. 51/2018 LED",
-      "language": "it",
-      "chunks": 81
-    },
-    {
-      "file": "it_nis2_dlgs138.json",
-      "source": "NIS2_Transposition_DLgs_138-2024_IT.txt",
-      "standard": "IT NIS2 D.Lgs. 138/2024",
-      "language": "it",
-      "chunks": 412
-    },
-    {
-      "file": "lu_cssf_20_750.json",
-      "source": "CSSF_Circulaire_20-750_ICT_Security_Risk_LU.txt",
-      "standard": "LU CSSF Circulaire 20/750",
-      "language": "fr",
-      "chunks": 54
-    },
-    {
-      "file": "lu_lpd_2018.json",
-      "source": "LPD-LU_Loi_01aout2018_CNPD_RGPD_LU.txt",
-      "standard": "LU LPD 2018",
-      "language": "fr",
-      "chunks": 58
-    },
-    {
-      "file": "lu_nis2_2024.json",
-      "source": "NIS2_Transposition_Loi_2024_LU.txt",
-      "standard": "LU NIS2 Transposition 2024",
-      "language": "fr",
-      "chunks": 5
-    },
-    {
-      "file": "lu_eprivacy_2005.json",
-      "source": "ePrivacy_Loi_30mai2005_consolide_20201225_LU.txt",
-      "standard": "LU ePrivacy Loi 2005",
-      "language": "fr",
-      "chunks": 52
-    },
-    {
-      "file": "iso_iec_22123-1_2023_en.json",
-      "source": "ISO_IEC_22123-1_2023(en).pdf",
-      "standard": "ISO/IEC 22123-1:2023",
-      "language": "en",
-      "chunks": 15
-    },
-    {
-      "file": "iso_iec_22123-2_2023_en.json",
-      "source": "ISO_IEC_22123-2_2023(en).pdf",
-      "standard": "ISO/IEC 22123-2:2023",
-      "language": "en",
-      "chunks": 15
-    },
-    {
-      "file": "iso_iec_22123-3_2023_en.json",
-      "source": "ISO_IEC_22123-3_2023(en).pdf",
-      "standard": "ISO/IEC 22123-3:2023",
-      "language": "en",
-      "chunks": 12
-    },
-    {
-      "file": "grc_skill_fedramp.json",
-      "chunks": 21,
-      "standard": "FedRAMP (NIST 800-53 Rev 5)"
-    },
-    {
-      "file": "grc_skill_gdpr_compliance.json",
-      "chunks": 16,
-      "standard": "GDPR EU 2016/679"
-    },
-    {
-      "file": "grc_skill_hipaa_compliance.json",
-      "chunks": 39,
-      "standard": "HIPAA Privacy & Security Rules"
-    },
-    {
-      "file": "grc_skill_iso27001.json",
-      "chunks": 21,
-      "standard": "ISO 27001:2022"
-    },
-    {
-      "file": "grc_skill_iso42001.json",
-      "chunks": 33,
-      "standard": "ISO 42001:2023 (AI Management)"
-    },
-    {
-      "file": "grc_skill_nist_csf.json",
-      "chunks": 28,
-      "standard": "NIST Cybersecurity Framework 2.0"
-    },
-    {
-      "file": "grc_skill_pci_compliance.json",
-      "chunks": 39,
-      "standard": "PCI DSS v4.0.1"
-    },
-    {
-      "file": "grc_skill_soc2.json",
-      "chunks": 33,
-      "standard": "SOC 2 Trust Services Criteria"
-    },
-    {
-      "file": "grc_skill_tsa_compliance.json",
-      "chunks": 32,
-      "standard": "TSA Security Directives"
-    },
-    {
-      "file": "iso_iec_22989_2022_en.json",
-      "source": "ISO_IEC_22989_2022(en).pdf",
-      "standard": "ISO/IEC 22989:2022",
-      "chunks": 9
-    },
-    {
-      "file": "iso_iec_19395_2015_en.json",
-      "source": "ISO_IEC_19395_2015(en).pdf",
-      "standard": "ISO/IEC 19395:2015",
-      "chunks": 3
-    },
-    {
-      "file": "iso_iec_30141_2024_en.json",
-      "source": "ISO_IEC_30141_2024(en).pdf",
-      "standard": "ISO/IEC 30141:2024",
-      "chunks": 4
-    },
-    {
-      "file": "iso_iec_24091_2019_en.json",
-      "source": "ISO_IEC_24091_2019(en).pdf",
-      "standard": "ISO/IEC 24091:2019",
-      "chunks": 3
-    },
-    {
-      "file": "agentic_ai_guidance.json",
-      "source": "careful_adoption_of_agentic_ai_services.pdf",
-      "standard": "ASD/ACSC — Careful Adoption of Agentic AI Services (2026)",
-      "language": "en",
-      "chunks": 30
     }
   ],
-  "total_chunks": 13867,
-  "total_files_processed": 136,
+  "total_chunks": 5270,
+  "total_files_processed": 158,
   "failed_files": [
-    "AI-Act-Compliance-Checker-Flowchart-v1.0_compressed.docx"
-  ],
-  "updated": "2026-05-02T00:00:00.000000+00:00",
-  "total_files": 136
+    "DSG_Datenschutzgesetz_AT.pdf",
+    "CyFun_Cyberfundamentals_Framework_2025_BE.pdf",
+    "C5_2020.pdf",
+    "C3A_Cloud_Computing_Autonomy.pdf",
+    "C5_2026_en.pdf",
+    "HV-Benchmark-kompakt.pdf",
+    "KW42_RL_CySec-Rail_V1.1_de.pdf",
+    "RS-128-01102025-FR.pdf",
+    "Federal_Government_Cybersecurity_Incident_and_Vulnerability_Response_Playbooks_508C.pdf",
+    "StopRansomware-Guide 508.pdf",
+    "cloud_security_technical_reference_architecture_2.pdf",
+    "zero_trust_maturity_model_v2_508.pdf",
+    "20250203-PSSI-IA.pdf",
+    "20250926-Cybersecurity_Guide_OT_ICS-2025.pdf",
+    "COBIT 2019 Executive Summary_v1.1 .pdf",
+    "COBIT 2019 Major Differences with COBIT 5_v1.1.pdf",
+    "COBIT 2019 Overview_v1.1.pdf",
+    "COBITlaminate_online_RD3.pdf",
+    "GENERAL_COBIT_2019_FAQ _v1.1 110718.pdf",
+    "Security-Guidance-v4.0.pdf",
+    "mythosreadyv9.pdf",
+    "The_Diamond_Model_of_Intrusion_Analysis.pdf",
+    "BDSG_Bundesdatenschutzgesetz_EN.pdf",
+    "C3A_Cloud_Computing_Autonomy.pdf",
+    "DoD_Control_Systems_SRG.pdf",
+    "ZT-OperationalTechnologyActivitiesOutcomes.pdf",
+    "2602.14313v1.pdf",
+    "WP2016 3-1 2 ICS SCADA Dependencies.pdf",
+    "AI-Act-Compliance-Checker-Flowchart-v1.0_compressed.docx",
+    "DORA_Regulation_2022-2554_EN.pdf",
+    "ENISA_5G_Security_Controls_Matrix.pdf",
+    "GDPR_Regulation_2016-679_EN.pdf",
+    "NIS2_Directive_2022-2555_EN.pdf",
+    "20260317_NIS_V2_ReCyF_v2.5.pdf",
+    "ANSSI_Guide_Hygiene_Informatique_FR.pdf",
+    "CNIL_Guide_Securite_Donnees_Personnelles_2024_FR.pdf",
+    "NIS2_SREN_Loi_2024-449_21mai2024_FR.pdf",
+    "NIS2_SREN_Loi_2024-449_JORF_22mai2024_FR.pdf",
+    "OSAC_Aviation_Cyber_Framework_FR.pdf",
+    "NCSC-Cyber-Assessment-Framework-4.0.pdf",
+    "OSSTMM.3.pdf",
+    "27001-2023_Auflistung Controls.docx",
+    "27002-2022_Controls_Umsetzungshinweise.pdf",
+    "ISO 27001 - Controlli Sicurezza CLOUD 27017-27018.pdf",
+    "ISO_IEC 42001;2023 ed.1 - id.81230 Publication PDF (en).pdf",
+    "ISO_IEC 42005;2025 ed.1 - id.44545 Publication PDF (en).pdf",
+    "ISO_IEC_19395_2015(en).pdf",
+    "ISO_IEC_22123-1_2023(en).pdf",
+    "ISO_IEC_22123-2_2023(en).pdf",
+    "ISO_IEC_22123-3_2023(en).pdf",
+    "ISO_IEC_22989_2022(en).pdf",
+    "ISO_IEC_24091_2019(en).pdf",
+    "ISO_IEC_27000_2018(en).docx",
+    "ISO_IEC_27001_2022(en).pdf",
+    "ISO_IEC_27001_2022_Amd_1_2024(en).docx",
+    "ISO_IEC_27002_2022(en).pdf",
+    "ISO_IEC_27018_2025(en).pdf",
+    "ISO_IEC_27701_2025(en).pdf",
+    "ISO_IEC_30141_2024(en).pdf",
+    "BancaItalia_Circ285_Aggiornamento50_26ago2025.pdf",
+    "BancaItalia_Circ285_Aggiornamento51_03feb2026.pdf",
+    "BancaItalia_Circ285_AttoEmanazione50_26ago2025.pdf",
+    "BancaItalia_Circ285_AttoEmanazione51_03feb2026.pdf",
+    "BancaItalia_Circ285_Testo_Integrale_50Aggiornamento.pdf",
+    "DLgs101-2018_GDPR_Adaptation_IT.pdf",
+    "DLgs196-2003.pdf",
+    "DLgs51-2018_LED_LawEnforcement_IT.pdf",
+    "Linee guida per la definizione dei processi di cyber risk management e security by design.pdf",
+    "StrategiaNazionaleEesilienzaSoggettiCritici_EN.pdf",
+    "StrategiaNazionaleResilienzaSoggettiCritici.pdf",
+    "LPD-LU_Loi_01aout2018_CNPD_RGPD_LU.pdf",
+    "ePrivacy_Loi_30mai2005_consolide_20201225_LU.pdf",
+    "Gaining_the_Advantage_Cyber_Kill_Chain.pdf",
+    "The-Unified-Kill-Chain.pdf",
+    "security-privileged-access-workstations.pdf",
+    "MITRE_ATTACK_Brand_Guide_2023.pdf",
+    "04122023aiframeworknistcrosswalk.pdf",
+    "AI_RMF_Playbook.pdf",
+    "NIST.AI.100-1.pdf",
+    "NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf",
+    "ai-2025-00108_ISO_IEC_42005_to_NIST_AI_RMF_Crosswalk.pdf",
+    "ai-2025-00109_revised_ISO_IEC_23894_Crosswalk_to_the_NIST_AI_RMF.pdf",
+    "crosswalk_AI_RMF_1_0_OECD_EO_AIA_BoR.pdf",
+    "nistspecialpublication800-115.pdf",
+    "NIST.SP.800-128.pdf",
+    "nistspecialpublication800-137.pdf",
+    "nistspecialpublication800-145.pdf",
+    "nistspecialpublication800-146.pdf",
+    "NIST.SP.800-160v1r1.pdf",
+    "NIST.SP.800-160v2r1.pdf",
+    "NIST.SP.800-161r1-upd1.pdf",
+    "NIST.SP.800-171r3.pdf",
+    "NIST.SP.800-171Ar3.pdf",
+    "NIST.SP.800-172r3.pdf",
+    "NIST.SP.800-172Ar3.pdf",
+    "NIST.SP.800-190.pdf",
+    "NIST.SP.800-207.pdf",
+    "NIST.SP.800-207A.pdf",
+    "nist.sp.800-218.pdf",
+    "nistspecialpublication800-30r1.pdf",
+    "nistspecialpublication800-34r1.pdf",
+    "NIST.SP.800-37r2.docx",
+    "nistspecialpublication800-39.pdf",
+    "NIST.SP.800-40r4.pdf",
+    "NIST.SP.800-47r1.pdf",
+    "NIST.SP.800-53r5.pdf",
+    "NIST.SP.800-53Ar5.pdf",
+    "NIST.SP.800-61r3.pdf",
+    "NIST.SP.800-63-4.pdf",
+    "NIST.SP.800-63B-4.pdf",
+    "NIST.SP.800-82r3.pdf",
+    "nistspecialpublication800-86.pdf",
+    "NIST.SP.800-88r2.pdf",
+    "nistspecialpublication800-92.pdf",
+    "careful_adoption_of_agentic_ai_services.pdf",
+    "Information Assurance Technical Framework (IATF). Release 3.1.pdf",
+    "fsibriefs30.pdf"
+  ]
 }
