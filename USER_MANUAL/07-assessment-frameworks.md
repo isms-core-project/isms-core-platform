@@ -6,7 +6,7 @@
 
 ## Overview
 
-The platform includes 25 compliance framework assessment modules. These cover regulatory obligations, industry standards, and sector-specific requirements that organisations running an ISO 27001 ISMS commonly need to demonstrate compliance with alongside their ISO certification.
+The platform includes 29 compliance framework assessment modules. These cover regulatory obligations, industry standards, and sector-specific requirements that organisations running an ISO 27001 ISMS commonly need to demonstrate compliance with alongside their ISO certification.
 
 Framework assessments are global — they are not scoped to a specific project but cover your organisation's overall compliance posture.
 
@@ -59,12 +59,15 @@ Navigate to any framework from the **Compliance** section of the sidebar or from
 | **COBIT 2019** | ISACA COBIT 2019 | 40 governance and management objectives. IT governance capability scoring (0–4). |
 | **TISAX** | VDA ISA 6.0 | 53 requirements across 12 domains: Information Security, Physical Security, Prototype Protection, and more. Automotive industry standard (VDA/ENX). Maturity 0–4. |
 | **BSI IT-Grundschutz** | BSI Kompendium | 68 Bausteine across 10 layers. German Federal Office for Information Security baseline. ISO 27001 + ISO 27701 + ISO 27018 crosswalk: 269 total mappings. |
+| **BSI C5:2026** | BSI Cloud Computing Compliance Criteria Catalogue 2026 | 130+ criteria across 17 domains. German Federal Office for Information Security cloud security standard, 2026 edition. Successor to BSI C5:2020. |
+| **BSI C3A** | BSI Cybersecurity and Cloud Criteria for AI 2025 | AI-specific cloud security criteria overlaying BSI C5. For cloud-based AI deployments. |
+| **PCI DSS v4.0.1** | PCI SSC Payment Card Industry Data Security Standard | 12 requirements across 323 sub-requirements with 6 prioritised milestones. Applies to organisations that handle cardholder data. Maturity 0–4. |
 
 ---
 
 ## Using a Framework Assessment
 
-The experience is consistent across all 23 frameworks.
+The experience is consistent across all 29 frameworks.
 
 ### Opening an Assessment
 

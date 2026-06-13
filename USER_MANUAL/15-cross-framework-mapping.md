@@ -82,6 +82,8 @@ This view is a starting point, not a compliance certificate. Inferred scores nee
 | OWASP ASVS | ~60 | ISO 27001 → ASVS requirements |
 | ISO 42001 → NIST AI RMF | 32 | ISO 42001 → NIST AI RMF |
 | ISO 42001 → EU AI Act | 31 | ISO 42001 → AI Act articles |
+| ISO 42001 → EU GDPR | 19 | ISO 42001 → GDPR articles (Art. 5/24/25/28/30/35/36/44) |
+| ISO 42001 → CH nDSG | 21 | ISO 42001 → Swiss nDSG provisions |
 | ISO 42001 → OECD AI | 14 | ISO 42001 → OECD AI Principles |
 | ISO 42001 → ISO 42005 | 5 | ISO 42001 → ISO 42005 |
 | EU country frameworks | 351 | ISO 27001 → AT/BE/DE/FR/IT/LU/GB |
@@ -105,5 +107,22 @@ The crosswalk export shows exactly which ISO controls map to which regulatory re
 If you have an internal framework, sector-specific standard, or a framework not yet in the platform, you can upload it as a **Custom Framework** using a YAML template.
 
 Navigate to **Tools → Custom Frameworks**. Download the YAML template, fill in your framework controls and any ISO 27001 mappings, and upload. The custom framework is then available in the Coverage Matrix and as an assessment module.
+
+---
+
+## Content Coverage Gaps
+
+The **Content Coverage Gaps** section is available on the Coverage page for the **ISMS product only**. It shows which ISO 27001 Annex A control groups are missing artefacts — policies, implementation guides (UG/TG), or assessment checklists.
+
+Two views are available via the FW / OP toggle:
+
+| View | Checks for |
+|------|-----------|
+| **FW (Framework)** | Policy + UG + TG + assessment checklist |
+| **OP (Operational)** | Policy + assessment checklist |
+
+If all control groups have complete artefacts, a green banner confirms full coverage. Otherwise, the gap table lists each control group with the artefact types missing.
+
+This section is not available for Privacy, Cloud, or AI products — those products have their own artefact structures managed separately.
 
 <!-- QA_VERIFIED: 2026-04-16 -->
