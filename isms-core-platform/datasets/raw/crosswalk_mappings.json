@@ -31,11 +31,11 @@
     "ISO27017 ↔ ISO27001_2022": 32,
     "ISO27018 ↔ ISO27001_2022": 66,
     "ISO27701 ↔ NIS2": 52,
-    "ISO27701 ↔ NIST_CSF_2.0": 41,
+    "ISO27701 ↔ NIST_CSF_2.0": 84,
     "ISO27701 ↔ DORA": 32,
     "ISO27701 ↔ NIST_800_53_R5": 38,
     "ISO27701 ↔ PCI_DSS_4.0.1": 12,
-    "ISO27018 ↔ NIST_CSF_2.0": 23,
+    "ISO27018 ↔ NIST_CSF_2.0": 37,
     "ISO27018 ↔ CSA_CCM_V4_1": 29,
     "ISO27018 ↔ NIS2": 28,
     "ISO27018 ↔ CH_NDSG": 19,
@@ -44,7 +44,10 @@
     "ISO42005 ↔ EU_GDPR": 14,
     "ISO42005 ↔ NIST_CSF_2.0": 14,
     "ISO27018 ↔ FINMA": 14,
-    "ISO27701 ↔ FINMA": 21
+    "ISO27701 ↔ FINMA": 21,
+    "ISO27018 ↔ DORA": 20,
+    "ISO42001 ↔ PCI_DSS_4.0.1": 9,
+    "ISO27701 ↔ CH_NDSG": 7
   },
   "mappings": [
     {
@@ -38546,6 +38549,936 @@
       "confidence": 0.8,
       "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
       "notes": "Independent review of IS — FINMA 2018/3 V.F audit and supervision rights"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.2.1",
+      "target_framework": "DORA",
+      "target_id": "Art. 30",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
+      "notes": "Cooperation on PII principal rights — DORA Art.30 audit and information access obligations"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.3.1",
+      "target_framework": "DORA",
+      "target_id": "Art. 30",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
+      "notes": "PII processor's purpose — DORA Art.30 mandatory purpose-limitation contractual provision"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.3.2",
+      "target_framework": "DORA",
+      "target_id": "Art. 30",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
+      "notes": "Commercial use restriction — DORA Art.30 data security and prohibited use provisions"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.6.1",
+      "target_framework": "DORA",
+      "target_id": "Art. 14",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
+      "notes": "PII disclosure notification — DORA Art.14 communication obligations during ICT incidents"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.6.2",
+      "target_framework": "DORA",
+      "target_id": "Art. 9",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
+      "notes": "Recording of PII disclosures — DORA Art.9 data protection records and controls"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.8.1",
+      "target_framework": "DORA",
+      "target_id": "Art. 29",
+      "mapping_type": "related",
+      "confidence": 0.9,
+      "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
+      "notes": "Disclosure of sub-contracted PII processing — DORA Art.29 ICT concentration risk; sub-processors are sub-outsourcing chains"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.10.1",
+      "target_framework": "DORA",
+      "target_id": "Art. 17",
+      "mapping_type": "related",
+      "confidence": 0.9,
+      "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
+      "notes": "Data breach notification to controller — DORA Art.17 ICT incident management; PII breaches qualifying as ICT incidents"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.10.3",
+      "target_framework": "DORA",
+      "target_id": "Art. 30",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
+      "notes": "PII return, transfer and disposal — DORA Art.30 exit strategy and termination provisions"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.1",
+      "target_framework": "DORA",
+      "target_id": "Art. 9",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
+      "notes": "Confidentiality agreements — DORA Art.9 ICT security; staff NDAs for PII access"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.3",
+      "target_framework": "DORA",
+      "target_id": "Art. 12",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
+      "notes": "Control and logging of data restoration — DORA Art.12 backup integrity and controlled restoration"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.4",
+      "target_framework": "DORA",
+      "target_id": "Art. 9",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
+      "notes": "Storage media leaving premises — DORA Art.9 physical ICT asset protection"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.5",
+      "target_framework": "DORA",
+      "target_id": "Art. 9",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
+      "notes": "Prohibition on unencrypted portable storage — DORA Art.9 encryption requirements"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.6",
+      "target_framework": "DORA",
+      "target_id": "Art. 9",
+      "mapping_type": "related",
+      "confidence": 0.9,
+      "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
+      "notes": "Encryption of PII in transit — DORA Art.9 network security and encryption"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.8",
+      "target_framework": "DORA",
+      "target_id": "Art. 9",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
+      "notes": "Unique user IDs — DORA Art.9 identity and access management requirements"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.9",
+      "target_framework": "DORA",
+      "target_id": "Art. 9",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
+      "notes": "User ID management — DORA Art.9 account lifecycle management"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.10",
+      "target_framework": "DORA",
+      "target_id": "Art. 9",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
+      "notes": "Records of authorised users — DORA Art.9 access monitoring and control"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.11",
+      "target_framework": "DORA",
+      "target_id": "Art. 30",
+      "mapping_type": "related",
+      "confidence": 0.9,
+      "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
+      "notes": "Contract measures — DORA Art.30 mandatory contract clauses; DPA and DORA Art.30 overlap on security, audit, breach notification, sub-processor management"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.12",
+      "target_framework": "DORA",
+      "target_id": "Art. 29",
+      "mapping_type": "related",
+      "confidence": 0.9,
+      "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
+      "notes": "Sub-contracted PII processing — DORA Art.29 ICT concentration risk; sub-processor change notifications"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.12.1",
+      "target_framework": "DORA",
+      "target_id": "Art. 30",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
+      "notes": "Geographical location of PII — DORA Art.30 data processing location contractual provision"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.12.2",
+      "target_framework": "DORA",
+      "target_id": "Art. 30",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "ENISA DORA Implementation Guidance + ISO27018 Annex A cloud PII processor controls",
+      "notes": "Intended destination of PII — DORA Art.30 data transfer and location provisions"
+    },
+    {
+      "source_framework": "ISO42001",
+      "source_id": "A.2.2-4",
+      "target_framework": "PCI_DSS_4.0.1",
+      "target_id": "Req. 12",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "PCI DSS v4.0 Secure Development + Governance requirements cross-referenced with ISO42001 Annex A",
+      "notes": "AI policy framework — PCI DSS Req.12 comprehensive information security policy and programme"
+    },
+    {
+      "source_framework": "ISO42001",
+      "source_id": "A.3.2-3",
+      "target_framework": "PCI_DSS_4.0.1",
+      "target_id": "Req. 12",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "PCI DSS v4.0 Secure Development + Governance requirements cross-referenced with ISO42001 Annex A",
+      "notes": "AI roles and responsibilities — PCI DSS Req.12 security programme accountability and management"
+    },
+    {
+      "source_framework": "ISO42001",
+      "source_id": "A.4.2-6",
+      "target_framework": "PCI_DSS_4.0.1",
+      "target_id": "Req. 12",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "PCI DSS v4.0 Secure Development + Governance requirements cross-referenced with ISO42001 Annex A",
+      "notes": "AI system resources — PCI DSS Req.12.3 targeted risk analysis for in-scope AI systems and models"
+    },
+    {
+      "source_framework": "ISO42001",
+      "source_id": "A.5.2-5",
+      "target_framework": "PCI_DSS_4.0.1",
+      "target_id": "Req. 12",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "PCI DSS v4.0 Secure Development + Governance requirements cross-referenced with ISO42001 Annex A",
+      "notes": "AI impact assessment — PCI DSS Req.12.2 annual risk assessment for AI components processing cardholder data"
+    },
+    {
+      "source_framework": "ISO42001",
+      "source_id": "A.6.1",
+      "target_framework": "PCI_DSS_4.0.1",
+      "target_id": "Req. 6",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "PCI DSS v4.0 Secure Development + Governance requirements cross-referenced with ISO42001 Annex A",
+      "notes": "AI development governance — PCI DSS Req.6 secure systems and software; secure coding, testing, and change control for AI applications"
+    },
+    {
+      "source_framework": "ISO42001",
+      "source_id": "A.6.2",
+      "target_framework": "PCI_DSS_4.0.1",
+      "target_id": "Req. 6",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "PCI DSS v4.0 Secure Development + Governance requirements cross-referenced with ISO42001 Annex A",
+      "notes": "AI system lifecycle monitoring — PCI DSS Req.6.3 vulnerability management and Req.10 logging for AI system access and outputs"
+    },
+    {
+      "source_framework": "ISO42001",
+      "source_id": "A.7.2-6",
+      "target_framework": "PCI_DSS_4.0.1",
+      "target_id": "Req. 3",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "PCI DSS v4.0 Secure Development + Governance requirements cross-referenced with ISO42001 Annex A",
+      "notes": "Data for AI systems — PCI DSS Req.3 protect stored account data; AI training data minimisation, masking, and tokenisation when PAN is in scope"
+    },
+    {
+      "source_framework": "ISO42001",
+      "source_id": "A.9.2-4",
+      "target_framework": "PCI_DSS_4.0.1",
+      "target_id": "Req. 7",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "PCI DSS v4.0 Secure Development + Governance requirements cross-referenced with ISO42001 Annex A",
+      "notes": "Responsible use of AI — PCI DSS Req.7 restrict access by business need; human oversight and least-privilege access for AI systems in CDE"
+    },
+    {
+      "source_framework": "ISO42001",
+      "source_id": "A.10.2-4",
+      "target_framework": "PCI_DSS_4.0.1",
+      "target_id": "Req. 12",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "PCI DSS v4.0 Secure Development + Governance requirements cross-referenced with ISO42001 Annex A",
+      "notes": "Third-party AI relationships — PCI DSS Req.12.8 TPSP management; AI provider agreements, monitoring, and compliance confirmation"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.2.5",
+      "target_framework": "CH_NDSG",
+      "target_id": "CON.2",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "Swiss nDSG Art. 9 processor obligations + Art. 24 accountability aligned with ISO27701 Annex A processor controls",
+      "notes": "Obligation to flag non-compliant controller instructions implied by nDSG Art.9 processor obligation"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.5",
+      "target_framework": "CH_NDSG",
+      "target_id": "ENF.1",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "Swiss nDSG Art. 9 processor obligations + Art. 24 accountability aligned with ISO27701 Annex A processor controls",
+      "notes": "Notification of PII disclosure requests — government access may require FDPIC notification"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.7",
+      "target_framework": "CH_NDSG",
+      "target_id": "CON.2",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "Swiss nDSG Art. 9 processor obligations + Art. 24 accountability aligned with ISO27701 Annex A processor controls",
+      "notes": "Disclosure of subcontractors — nDSG Art.9 sub-processor obligations in DPAs"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.11",
+      "target_framework": "CH_NDSG",
+      "target_id": "SEC.2",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "Swiss nDSG Art. 9 processor obligations + Art. 24 accountability aligned with ISO27701 Annex A processor controls",
+      "notes": "Incident management planning directly supports nDSG breach notification to FDPIC (Art.24)"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.12",
+      "target_framework": "CH_NDSG",
+      "target_id": "SEC.2",
+      "mapping_type": "related",
+      "confidence": 0.9,
+      "source_reference": "Swiss nDSG Art. 9 processor obligations + Art. 24 accountability aligned with ISO27701 Annex A processor controls",
+      "notes": "Incident response implements nDSG breach notification to FDPIC within required timeline"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.12",
+      "target_framework": "CH_NDSG",
+      "target_id": "SEC.3",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "Swiss nDSG Art. 9 processor obligations + Art. 24 accountability aligned with ISO27701 Annex A processor controls",
+      "notes": "Incident response implements nDSG breach notification to data subjects where required"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.13",
+      "target_framework": "CH_NDSG",
+      "target_id": "ENF.2",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "Swiss nDSG Art. 9 processor obligations + Art. 24 accountability aligned with ISO27701 Annex A processor controls",
+      "notes": "Legal/regulatory requirements tracking implements nDSG accountability obligation (Art.8)"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.2",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.OC-03",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Identify and document purpose — legal/regulatory requirements for PII processing"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.4",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.PO-02",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Determine how consent is obtained — consent policy documented per GV.PO-02"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.5",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.PO-02",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Obtain and record consent — consent records implement GV.PO-02 policy tracking"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.6",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "ID.RA-03",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "PIA identifies threats — ID.RA-03 internal and external threats to the organisation"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.7",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.SC-04",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Contracts with PII processors — GV.SC-04 suppliers known and prioritised by criticality"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.3.2",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.OC-03",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Obligations to PII principals — data subject rights as legal/regulatory requirements"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.3.5",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.OC-03",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Mechanism to modify/withdraw consent — regulatory compliance under GV.OC-03"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.3.7",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.OC-03",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Access, correction or erasure rights — data subject rights as legal requirements"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.3.10",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.OC-03",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Handling DSAR requests — regulatory compliance obligation under GV.OC-03"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.3.11",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.OC-03",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Automated decision making obligations — GDPR/nDSG legal requirements under GV.OC-03"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.2",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "PR.DS-01",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Limit collection — data minimisation implements PR.DS-01 data-at-rest protection"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.3",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "PR.DS-01",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Limit processing — processing limitation implements PR.DS-01 and PR.DS-10"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.4",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "PR.DS-10",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Accuracy and quality — data integrity directly implements PR.DS-10"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.6",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "PR.DS-01",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "De-identification and deletion — implements PR.DS-01 data-at-rest protection"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.7",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "PR.DS-01",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Temporary files — secure erasure of temp files implements PR.DS-01"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.8",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.PO-02",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Retention — data retention policies are information policy obligations under GV.PO-02"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.9",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "PR.DS-01",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Disposal — secure disposal directly implements PR.DS-01"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.5.2",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.OC-03",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Identify basis for PII transfer — cross-border transfer legal basis is regulatory compliance"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.5.3",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.OC-03",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Countries for PII transfer — transfer destination documentation is a regulatory requirement"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.5.4",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "ID.AM-07",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Records of PII transfer — transfer records contribute to data inventory ID.AM-07"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.5.5",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "ID.AM-07",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Records of PII disclosures — disclosure records contribute to data flow inventory"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.2.3",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.SC-07",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Organisation's purposes — purpose limitation is a supplier obligation under GV.SC-07"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.2.4",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.SC-07",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Marketing/advertising use prohibition — commercial use prohibition under GV.SC-07"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.2.5",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.SC-07",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Infringing instruction — obligation to flag non-compliant instructions implements GV.SC-07"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.2.6",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.SC-04",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Customer obligations — processor information obligations to controller implement GV.SC-04"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.7",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.SC-06",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Disclosure of subcontractors — sub-processor management implements GV.SC-06"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.8",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.SC-06",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Engagement of subcontractor — sub-processor engagement implements GV.SC-06"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.9",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.SC-06",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Change of subcontractor — sub-processor change notification implements GV.SC-06"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.5",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "ID.AM-07",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Classification of information — PII classification contributes to data inventory ID.AM-07"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.6",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "ID.AM-07",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Labelling of information — PII labelling supports data inventory ID.AM-07"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.7",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "PR.DS-02",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Information transfer — PII transfer controls implement PR.DS-02 data-in-transit protection"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.10",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.SC-04",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Supplier security agreements — implement GV.SC-04 supplier prioritisation"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.14",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "PR.DS-11",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Protection of records — implements PR.DS-11 data destroyed according to policy"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.18",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.RR-03",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Confidentiality agreements — NDAs implement GV.RR-03 adequate resources for cybersecurity"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.19",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "PR.PS-01",
+      "mapping_type": "related",
+      "confidence": 0.75,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Clear desk and clear screen — physical security implement PR.PS-01 configuration management"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.20",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "PR.DS-01",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Storage media — implements PR.DS-01 data-at-rest protection"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.21",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "PR.DS-11",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Secure disposal of equipment — implements PR.DS-11 data destroyed according to policy"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.22",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "PR.PS-01",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "User endpoint devices — implements PR.PS-01 device configuration management"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.27",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "PR.PS-06",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Secure development lifecycle — implements PR.PS-06 only authorised software"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.28",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "PR.PS-06",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Application security requirements — implements PR.PS-06"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.29",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "PR.PS-06",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Secure system architecture — implements PR.PS-06 secure development principles"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.30",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.SC-07",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Outsourced development — implements GV.SC-07 due diligence on suppliers"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.31",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "PR.DS-01",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27701 Annex A privacy controls",
+      "notes": "Test information — test data controls implement PR.DS-01 data-at-rest protection"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.2.1",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.OC-03",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
+      "notes": "Cooperation on PII principal rights — regulatory compliance obligation under GV.OC-03"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.3.2",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.SC-07",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
+      "notes": "Commercial use prohibition — supplier constraint under GV.SC-07"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.4",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "PR.DS-01",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
+      "notes": "Collection limitation — minimise collection = minimise data-at-rest exposure PR.DS-01"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.5",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "PR.DS-01",
+      "mapping_type": "related",
+      "confidence": 0.9,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
+      "notes": "Data minimisation — anonymisation/pseudonymisation implement PR.DS-01"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.6",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "PR.DS-11",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
+      "notes": "Use, retention and disclosure limitation — retention and controlled disclosure implement PR.DS-11"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.7",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "PR.DS-10",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
+      "notes": "Accuracy and quality — data accuracy directly implements PR.DS-10 data integrity"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.8",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.OC-02",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
+      "notes": "Openness and transparency — sub-processor and location transparency implements GV.OC-02"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.9",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.OC-03",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
+      "notes": "Individual participation and access — DSAR support = regulatory compliance GV.OC-03"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.10",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.PO-02",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
+      "notes": "Accountability — processing records and accountability mechanisms implement GV.PO-02"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.1",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.RR-03",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
+      "notes": "Confidentiality agreements — staff NDAs implement GV.RR-03 adequate resources for cybersecurity"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.2",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "PR.PS-01",
+      "mapping_type": "related",
+      "confidence": 0.75,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
+      "notes": "Hardcopy restriction — print controls implement PR.PS-01 configuration management"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.7",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "PR.DS-11",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
+      "notes": "Secure disposal of hardcopy — implements PR.DS-11 data destruction"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.11",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.SC-04",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
+      "notes": "Contract measures — DPA mandatory terms implement GV.SC-04 supplier management"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.12",
+      "target_framework": "NIST_CSF_2.0",
+      "target_id": "GV.OC-03",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "NIST Privacy Framework (NIST IR 8323) + NIST CSF 2.0 alignment with ISO27018 Annex A cloud PII controls",
+      "notes": "Privacy compliance — data residency laws are regulatory requirements under GV.OC-03"
     }
   ]
 }
