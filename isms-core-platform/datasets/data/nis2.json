@@ -12,7 +12,7 @@
     "jurisdiction": "EU",
     "description": "NIS2 Directive (EU 2022/2555)"
   },
-  "generated_at": "2026-03-07T09:32:16Z",
+  "generated_at": "2026-06-13T12:07:17Z",
   "generator": "generate_regulatory.py",
   "content_hash": "860089976ba7f8cf6665f9f0cd812be6fec562d5a84c16ba7c18d983325ebba2",
   "objects_count": 15,

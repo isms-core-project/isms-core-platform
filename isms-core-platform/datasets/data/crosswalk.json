@@ -7,7 +7,7 @@
     "version": "1.0",
     "description": "Mapping relationships between ISO 27001:2022 and NIST, CIS, MITRE, OWASP, and regulatory frameworks"
   },
-  "generated_at": "2026-06-13T11:56:56Z",
+  "generated_at": "2026-06-13T12:07:29Z",
   "generator": "generate_crosswalk.py",
   "content_hash": "fc63f9681feec186d8fbf40b1b55b284a8a330ba3250260b107540199d7279f4",
   "objects_count": 3943,

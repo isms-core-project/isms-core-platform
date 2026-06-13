@@ -10,20 +10,12 @@
     "publisher": "ISO/IEC",
     "source_url": "https://www.iso.org/standard/43757.html",
     "jurisdiction": null,
-    "description": "Code of practice for information security controls based on ISO/IEC 27002 for cloud services. Provides cloud-specific guidance on ISO 27002 controls and introduces 7 new cloud-specific controls (CLD prefix).",
-    "pending_update": {
-      "ref": "ISO/IEC 27017 Ed. 2",
-      "iso_project": "82878",
-      "stage": "FDIS (50.00)",
-      "stage_date": "2026-01-14",
-      "expected_publication": "mid-2026",
-      "note": "Second edition is at Final Draft International Standard stage. Will align control structure to ISO/IEC 27002:2022 (four-theme layout: Organisational/People/Physical/Technological), replacing the current 2015 edition which follows ISO/IEC 27002:2013 clause numbering. Dataset requires full rewrite on publication."
-    }
+    "description": "Code of practice for information security controls based on ISO/IEC 27002 for cloud services. Provides cloud-specific guidance on ISO 27002 controls and introduces 7 new cloud-specific controls (CLD prefix)."
   },
-  "generated_at": "2026-03-08T11:14:40Z",
+  "generated_at": "2026-06-13T12:07:17Z",
   "generator": "generate_regulatory.py",
-  "content_hash": "b74be4dc2c54c962066294eef1b0d4e588329add",
-  "objects_count": 12,
+  "content_hash": "44f92a12724a139f6d26e5dbffcecca69b4a2a838ffac90d71fc40aa1f5d4cf8",
+  "objects_count": 15,
   "relationships_count": 12,
   "objects": [
     {
@@ -445,116 +437,6 @@
       "source_id": "52d0b0b2-93be-525a-a4a7-ff981b0f2895",
       "target_id": "09c58ed6-a21c-52cb-a74f-d5624bd68d4d",
       "relationship_type": "part-of"
-    }
-  ],
-  "controls": [
-    {
-      "id": "f276923b-7c1d-5597-9c80-8a7841286f7f",
-      "control_id": "CLD.6.3.1",
-      "title": "Shared roles and responsibilities within a cloud computing environment",
-      "category": "New Cloud Controls",
-      "description": "Roles and responsibilities of cloud service providers and cloud service customers shall be defined, documented and communicated. Both parties must understand who is responsible for each security function within the shared responsibility model.",
-      "applicability": "CSP and Customer",
-      "notes": "New control — not present in ISO 27002. Unique to cloud environments."
-    },
-    {
-      "id": "1024db5f-56b7-5856-9a6a-f2909a441ce3",
-      "control_id": "CLD.8.1.5",
-      "title": "Removal and return of assets upon contract termination",
-      "category": "New Cloud Controls",
-      "description": "When a cloud service contract ends, the cloud service provider shall return or securely destroy the cloud service customer's assets. Procedures for asset return, secure deletion, and data remanence prevention shall be agreed contractually.",
-      "applicability": "CSP and Customer",
-      "notes": "New control — not present in ISO 27002."
-    },
-    {
-      "id": "87a79f9d-59ba-5b50-af90-463fd71becae",
-      "control_id": "CLD.9.5.1",
-      "title": "Segregation in virtual computing environments",
-      "category": "New Cloud Controls",
-      "description": "Virtual computing environments shall be protected and segregated to prevent unauthorised access between cloud service customers. Isolation mechanisms shall ensure one customer cannot access another customer's environment or data.",
-      "applicability": "CSP",
-      "notes": "New control — not present in ISO 27002."
-    },
-    {
-      "id": "1a1a691c-be06-531f-baa0-f98c5cbb70ee",
-      "control_id": "CLD.9.5.2",
-      "title": "Virtual machine hardening",
-      "category": "New Cloud Controls",
-      "description": "Virtual machine images shall be hardened in accordance with organisation policy before deployment. Hardening shall cover removal of unnecessary services, application of security baselines, and validation of configuration integrity.",
-      "applicability": "CSP and Customer",
-      "notes": "New control — not present in ISO 27002."
-    },
-    {
-      "id": "e4ac2cde-c069-5717-b188-2425e44f8976",
-      "control_id": "CLD.12.1.5",
-      "title": "Administrator's operational security",
-      "category": "New Cloud Controls",
-      "description": "Administrative operations and procedures in cloud environments shall be documented and applied consistently. Privileged administrative access shall be controlled, logged and regularly reviewed to prevent unauthorised operations.",
-      "applicability": "CSP",
-      "notes": "New control — not present in ISO 27002."
-    },
-    {
-      "id": "667fbad7-7002-58b5-a040-6b16a18c0974",
-      "control_id": "CLD.12.4.5",
-      "title": "Monitoring of cloud services",
-      "category": "New Cloud Controls",
-      "description": "Cloud service customers shall have the ability to monitor their use of cloud services. Providers shall make available sufficient logging and monitoring data to allow customers to verify security status and investigate incidents.",
-      "applicability": "CSP and Customer",
-      "notes": "New control — not present in ISO 27002."
-    },
-    {
-      "id": "eab0281b-1bab-52b8-8c79-b8984d5969ba",
-      "control_id": "CLD.13.1.4",
-      "title": "Alignment of security management for virtual and physical networks",
-      "category": "New Cloud Controls",
-      "description": "Security management for virtual networks shall be aligned with physical network security policies and procedures. Network segregation, access control, and monitoring shall apply consistently across physical and virtual network boundaries.",
-      "applicability": "CSP",
-      "notes": "New control — not present in ISO 27002."
-    },
-    {
-      "id": "61e8dbce-e1ff-5409-ab17-fba50a2a5cab",
-      "control_id": "CSP.6.1",
-      "title": "Information security roles and responsibilities in cloud environments",
-      "category": "Cloud-Adapted Controls",
-      "description": "Information security roles and responsibilities shall be defined and allocated with explicit consideration of cloud-specific functions, including responsibilities under the shared responsibility model for the cloud deployment type in use.",
-      "applicability": "CSP",
-      "notes": "Cloud-specific implementation of ISO 27002 organisational controls."
-    },
-    {
-      "id": "a48a8ffa-d831-5c27-8d83-91160220ee5d",
-      "control_id": "CSC.9.1",
-      "title": "Access control policy for cloud service customers",
-      "category": "Cloud-Adapted Controls",
-      "description": "Cloud service customers shall implement access control policies appropriate for cloud environments, including identity and access management for cloud resources, privileged access management, and federated identity where applicable.",
-      "applicability": "Customer",
-      "notes": "Cloud-specific implementation of ISO 27002 access control."
-    },
-    {
-      "id": "e5453923-76eb-5b2f-8172-473e02a1bfb2",
-      "control_id": "CSP.12.1",
-      "title": "Capacity and availability management for cloud services",
-      "category": "Cloud-Adapted Controls",
-      "description": "Cloud service providers shall manage capacity to ensure agreed service availability levels. Resource allocation, elasticity mechanisms, and availability monitoring shall be implemented and communicated to cloud service customers.",
-      "applicability": "CSP",
-      "notes": "Cloud-specific implementation of ISO 27002 operations security."
-    },
-    {
-      "id": "4c258392-14b8-5ee8-8f07-6d8d84b35485",
-      "control_id": "CSP.16.1",
-      "title": "Notification of security incidents affecting cloud customers",
-      "category": "Cloud-Adapted Controls",
-      "description": "Cloud service providers shall notify affected cloud service customers of security incidents without undue delay. Notification shall include sufficient information for customers to assess impact and take protective action on their own systems.",
-      "applicability": "CSP",
-      "notes": "Cloud-specific implementation of ISO 27002 incident management."
-    },
-    {
-      "id": "52d0b0b2-93be-525a-a4a7-ff981b0f2895",
-      "control_id": "CSC.13.1",
-      "title": "Protection of data in cloud services",
-      "category": "Cloud-Adapted Controls",
-      "description": "Cloud service customers shall identify and implement appropriate controls to protect data stored in and transmitted to/from cloud services, including encryption, data residency controls, and secure deletion procedures.",
-      "applicability": "Customer",
-      "notes": "Cloud-specific implementation of ISO 27002 communications security."
     }
   ]
 }

@@ -9,25 +9,2276 @@
     "source_url": "https://www.pcisecuritystandards.org/document_library/"
   },
   "control_objectives": [
-    {"id": "CO1", "name": "Build and Maintain a Secure Network and Systems", "requirements": ["1", "2"]},
-    {"id": "CO2", "name": "Protect Account Data", "requirements": ["3", "4"]},
-    {"id": "CO3", "name": "Maintain a Vulnerability Management Program", "requirements": ["5", "6"]},
-    {"id": "CO4", "name": "Implement Strong Access Control Measures", "requirements": ["7", "8", "9"]},
-    {"id": "CO5", "name": "Regularly Monitor and Test Networks", "requirements": ["10", "11"]},
-    {"id": "CO6", "name": "Maintain an Information Security Policy", "requirements": ["12"]}
+    {
+      "id": "CO1",
+      "name": "Build and Maintain a Secure Network and Systems",
+      "requirements": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "id": "CO2",
+      "name": "Protect Account Data",
+      "requirements": [
+        "3",
+        "4"
+      ]
+    },
+    {
+      "id": "CO3",
+      "name": "Maintain a Vulnerability Management Program",
+      "requirements": [
+        "5",
+        "6"
+      ]
+    },
+    {
+      "id": "CO4",
+      "name": "Implement Strong Access Control Measures",
+      "requirements": [
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    {
+      "id": "CO5",
+      "name": "Regularly Monitor and Test Networks",
+      "requirements": [
+        "10",
+        "11"
+      ]
+    },
+    {
+      "id": "CO6",
+      "name": "Maintain an Information Security Policy",
+      "requirements": [
+        "12"
+      ]
+    }
   ],
   "requirements": [
-    {"id": "Req. 1", "title": "Install and Maintain Network Security Controls", "description": "Establish and manage firewalls, routers, and network segmentation to block unauthorised access into the CDE.", "sub_requirements": ["1.1", "1.2", "1.3", "1.4", "1.5"]},
-    {"id": "Req. 2", "title": "Apply Secure Configurations to All System Components", "description": "Eliminate vendor-supplied defaults. Remove unnecessary software, functions, accounts. Disable unneeded services.", "sub_requirements": ["2.1", "2.2", "2.3"]},
-    {"id": "Req. 3", "title": "Protect Stored Account Data", "description": "Encrypt, truncate, mask, or tokenise PAN. Strong key management. Data retention policies must minimise storage.", "sub_requirements": ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7"]},
-    {"id": "Req. 4", "title": "Protect Cardholder Data with Strong Cryptography During Transmission", "description": "Use strong cryptography (TLS 1.2+) when transmitting payment data across public networks.", "sub_requirements": ["4.1", "4.2"]},
-    {"id": "Req. 5", "title": "Protect All Systems and Networks from Malicious Software", "description": "Deploy and regularly update anti-malware solutions. Periodic scans and real-time monitoring.", "sub_requirements": ["5.1", "5.2", "5.3", "5.4"]},
-    {"id": "Req. 6", "title": "Develop and Maintain Secure Systems and Software", "description": "Secure coding practices, vulnerability management, timely patching, WAFs, and change control.", "sub_requirements": ["6.1", "6.2", "6.3", "6.4", "6.5"]},
-    {"id": "Req. 7", "title": "Restrict Access by Business Need to Know", "description": "Least-privilege and need-to-know access control. All access documented and audited. RBAC required.", "sub_requirements": ["7.1", "7.2", "7.3"]},
-    {"id": "Req. 8", "title": "Identify Users and Authenticate Access", "description": "Unique user IDs. MFA for remote and CDE access. Strong password policies (min 12 chars). Inactive accounts disabled within 90 days.", "sub_requirements": ["8.1", "8.2", "8.3", "8.4", "8.5", "8.6"]},
-    {"id": "Req. 9", "title": "Restrict Physical Access to Cardholder Data", "description": "Building entry controls, secure server rooms, surveillance, visitor management, media destruction, POI device security.", "sub_requirements": ["9.1", "9.2", "9.3", "9.4", "9.5"]},
-    {"id": "Req. 10", "title": "Log and Monitor All Access to System Components and Cardholder Data", "description": "Track and analyse all network and system activity. Logs retained 12 months (3 months immediately available).", "sub_requirements": ["10.1", "10.2", "10.3", "10.4", "10.5", "10.6", "10.7"]},
-    {"id": "Req. 11", "title": "Test Security of Systems and Networks Regularly", "description": "Quarterly ASV scans, internal scans, annual penetration testing, IDS/IPS, file integrity monitoring.", "sub_requirements": ["11.1", "11.2", "11.3", "11.4", "11.5", "11.6"]},
-    {"id": "Req. 12", "title": "Support Information Security with Organisational Policies and Programs", "description": "Comprehensive security policy. Annual risk assessment. Security awareness training. Incident response plan. TPM management.", "sub_requirements": ["12.1", "12.2", "12.3", "12.4", "12.5", "12.6", "12.7", "12.8", "12.9", "12.10"]}
+    {
+      "id": "Req. 1",
+      "title": "Install and Maintain Network Security Controls",
+      "description": "Establish and manage firewalls, routers, and network segmentation to block unauthorised access into the CDE.",
+      "sub_requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5"
+      ]
+    },
+    {
+      "id": "Req. 2",
+      "title": "Apply Secure Configurations to All System Components",
+      "description": "Eliminate vendor-supplied defaults. Remove unnecessary software, functions, accounts. Disable unneeded services.",
+      "sub_requirements": [
+        "2.1",
+        "2.2",
+        "2.3"
+      ]
+    },
+    {
+      "id": "Req. 3",
+      "title": "Protect Stored Account Data",
+      "description": "Encrypt, truncate, mask, or tokenise PAN. Strong key management. Data retention policies must minimise storage.",
+      "sub_requirements": [
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "3.7"
+      ]
+    },
+    {
+      "id": "Req. 4",
+      "title": "Protect Cardholder Data with Strong Cryptography During Transmission",
+      "description": "Use strong cryptography (TLS 1.2+) when transmitting payment data across public networks.",
+      "sub_requirements": [
+        "4.1",
+        "4.2"
+      ]
+    },
+    {
+      "id": "Req. 5",
+      "title": "Protect All Systems and Networks from Malicious Software",
+      "description": "Deploy and regularly update anti-malware solutions. Periodic scans and real-time monitoring.",
+      "sub_requirements": [
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4"
+      ]
+    },
+    {
+      "id": "Req. 6",
+      "title": "Develop and Maintain Secure Systems and Software",
+      "description": "Secure coding practices, vulnerability management, timely patching, WAFs, and change control.",
+      "sub_requirements": [
+        "6.1",
+        "6.2",
+        "6.3",
+        "6.4",
+        "6.5"
+      ]
+    },
+    {
+      "id": "Req. 7",
+      "title": "Restrict Access by Business Need to Know",
+      "description": "Least-privilege and need-to-know access control. All access documented and audited. RBAC required.",
+      "sub_requirements": [
+        "7.1",
+        "7.2",
+        "7.3"
+      ]
+    },
+    {
+      "id": "Req. 8",
+      "title": "Identify Users and Authenticate Access",
+      "description": "Unique user IDs. MFA for remote and CDE access. Strong password policies (min 12 chars). Inactive accounts disabled within 90 days.",
+      "sub_requirements": [
+        "8.1",
+        "8.2",
+        "8.3",
+        "8.4",
+        "8.5",
+        "8.6"
+      ]
+    },
+    {
+      "id": "Req. 9",
+      "title": "Restrict Physical Access to Cardholder Data",
+      "description": "Building entry controls, secure server rooms, surveillance, visitor management, media destruction, POI device security.",
+      "sub_requirements": [
+        "9.1",
+        "9.2",
+        "9.3",
+        "9.4",
+        "9.5"
+      ]
+    },
+    {
+      "id": "Req. 10",
+      "title": "Log and Monitor All Access to System Components and Cardholder Data",
+      "description": "Track and analyse all network and system activity. Logs retained 12 months (3 months immediately available).",
+      "sub_requirements": [
+        "10.1",
+        "10.2",
+        "10.3",
+        "10.4",
+        "10.5",
+        "10.6",
+        "10.7"
+      ]
+    },
+    {
+      "id": "Req. 11",
+      "title": "Test Security of Systems and Networks Regularly",
+      "description": "Quarterly ASV scans, internal scans, annual penetration testing, IDS/IPS, file integrity monitoring.",
+      "sub_requirements": [
+        "11.1",
+        "11.2",
+        "11.3",
+        "11.4",
+        "11.5",
+        "11.6"
+      ]
+    },
+    {
+      "id": "Req. 12",
+      "title": "Support Information Security with Organisational Policies and Programs",
+      "description": "Comprehensive security policy. Annual risk assessment. Security awareness training. Incident response plan. TPM management.",
+      "sub_requirements": [
+        "12.1",
+        "12.2",
+        "12.3",
+        "12.4",
+        "12.5",
+        "12.6",
+        "12.7",
+        "12.8",
+        "12.9",
+        "12.10"
+      ]
+    }
+  ],
+  "sub_requirements": [
+    {
+      "id": "1.1",
+      "parent": "Req. 1",
+      "title": "Processes and mechanisms for installing and maintaining network security controls are defined and understood",
+      "level": 2
+    },
+    {
+      "id": "1.1.1",
+      "parent": "1.1",
+      "title": "All security policies and operational procedures that are identified in Requirement 1 are:",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "1.1.2",
+      "parent": "1.1",
+      "title": "Roles and responsibilities for performing activities in Requirement 1 are documented, assigned, and understood",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "1.2",
+      "parent": "Req. 1",
+      "title": "Network security controls (NSCs) are configured and maintained",
+      "level": 2
+    },
+    {
+      "id": "1.2.1",
+      "parent": "1.2",
+      "title": "Configuration standards for NSC rulesets are:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "1.2.2",
+      "parent": "1.2",
+      "title": "All changes to network connections and to configurations of NSCs are approved and managed in accordance with the change control process defined at Requirement 6.5.1",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "1.2.3",
+      "parent": "1.2",
+      "title": "An accurate network diagram(s) is maintained that shows all connections between the CDE and other networks, including any wireless networks",
+      "level": 3,
+      "milestone": 1
+    },
+    {
+      "id": "1.2.4",
+      "parent": "1.2",
+      "title": "An accurate data-flow diagram(s) is maintained that meets the following:",
+      "level": 3,
+      "milestone": 1
+    },
+    {
+      "id": "1.2.5",
+      "parent": "1.2",
+      "title": "All services, protocols, and ports allowed are identified, approved, and have a defined business need",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "1.2.6",
+      "parent": "1.2",
+      "title": "Security features are defined and implemented for all services, protocols, and ports that are in use and considered to be insecure, such that the risk is mitigated",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "1.2.7",
+      "parent": "1.2",
+      "title": "Configurations of NSCs are reviewed at least once every six months to confirm they are relevant and effective",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "1.2.8",
+      "parent": "1.2",
+      "title": "Configuration files for NSCs are:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "1.3",
+      "parent": "Req. 1",
+      "title": "Network access to and from the cardholder data environment is restricted",
+      "level": 2
+    },
+    {
+      "id": "1.3.1",
+      "parent": "1.3",
+      "title": "Inbound traffic to the CDE is restricted as follows:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "1.3.2",
+      "parent": "1.3",
+      "title": "Outbound traffic from the CDE is restricted as follows:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "1.3.3",
+      "parent": "1.3",
+      "title": "NSCs are installed between all wireless networks and the CDE, regardless of whether the wireless network is a CDE, such that:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "1.4",
+      "parent": "Req. 1",
+      "title": "Network connections between trusted and untrusted networks are controlled",
+      "level": 2
+    },
+    {
+      "id": "1.4.1",
+      "parent": "1.4",
+      "title": "NSCs are implemented between trusted and untrusted networks",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "1.4.2",
+      "parent": "1.4",
+      "title": "Inbound traffic from untrusted networks to trusted networks is restricted to:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "1.4.3",
+      "parent": "1.4",
+      "title": "Anti-spoofing measures are implemented to detect and block forged source IP addresses from entering the trusted network",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "1.4.4",
+      "parent": "1.4",
+      "title": "System components that store cardholder data are not directly accessible from untrusted networks",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "1.4.5",
+      "parent": "1.4",
+      "title": "The disclosure of internal IP addresses and routing information is limited to only authorized parties",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "1.5",
+      "parent": "Req. 1",
+      "title": "Risks to the CDE from computing devices that are able to connect to both untrusted networks and the CDE are mitigated",
+      "level": 2
+    },
+    {
+      "id": "1.5.1",
+      "parent": "1.5",
+      "title": "Security controls are implemented on any computing devices, including company- and employee-owned devices, that connect to both untrusted networks (including the Internet) and the CDE as follows:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "2.1",
+      "parent": "Req. 2",
+      "title": "Processes and mechanisms for applying secure configurations to all system components are defined and understood",
+      "level": 2
+    },
+    {
+      "id": "2.1.1",
+      "parent": "2.1",
+      "title": "All security policies and operational procedures that are identified in Requirement 2 are:",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "2.1.2",
+      "parent": "2.1",
+      "title": "Roles and responsibilities for performing activities in Requirement 2 are documented, assigned, and understood",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "2.2",
+      "parent": "Req. 2",
+      "title": "System components are configured and managed securely",
+      "level": 2
+    },
+    {
+      "id": "2.2.1",
+      "parent": "2.2",
+      "title": "Configuration standards are developed, implemented, and maintained to:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "2.2.2",
+      "parent": "2.2",
+      "title": "Vendor default accounts are managed as follows:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "2.2.3",
+      "parent": "2.2",
+      "title": "Primary functions requiring different security levels are managed as follows:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "2.2.4",
+      "parent": "2.2",
+      "title": "Only necessary services, protocols, daemons, and functions are enabled, and all unnecessary functionality is removed or disabled",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "2.2.5",
+      "parent": "2.2",
+      "title": "If any insecure services, protocols, or daemons are present:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "2.2.6",
+      "parent": "2.2",
+      "title": "System security parameters are configured to prevent misuse",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "2.2.7",
+      "parent": "2.2",
+      "title": "All non-console administrative access is encrypted using strong cryptography",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "2.3",
+      "parent": "Req. 2",
+      "title": "Wireless environments are configured and managed securely",
+      "level": 2
+    },
+    {
+      "id": "2.3.1",
+      "parent": "2.3",
+      "title": "For wireless environments connected to the CDE or transmitting account data, all wireless vendor defaults are changed at installation or are confirmed to be secure, including but not limited to:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "2.3.2",
+      "parent": "2.3",
+      "title": "For wireless environments connected to the CDE or transmitting account data, wireless encryption keys are changed as follows:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "3.1",
+      "parent": "Req. 3",
+      "title": "Processes and mechanisms for protecting stored account data are defined and understood",
+      "level": 2
+    },
+    {
+      "id": "3.1.1",
+      "parent": "3.1",
+      "title": "All security policies and operational procedures that are identified in Requirement 3 are:",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "3.1.2",
+      "parent": "3.1",
+      "title": "Roles and responsibilities for performing activities in Requirement 3 are documented, assigned, and understood",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "3.2",
+      "parent": "Req. 3",
+      "title": "Storage of account data is kept to a minimum",
+      "level": 2
+    },
+    {
+      "id": "3.2.1",
+      "parent": "3.2",
+      "title": "Account data storage is kept to a minimum through implementation of data retention and disposal policies, procedures, and processes that include at least the following:",
+      "level": 3,
+      "milestone": 1
+    },
+    {
+      "id": "3.3",
+      "parent": "Req. 3",
+      "title": "Sensitive authentication data (SAD) is not stored after authorization",
+      "level": 2
+    },
+    {
+      "id": "3.3.1",
+      "parent": "3.3",
+      "title": "SAD is not stored after authorization, even if encrypted. All sensitive authentication data received is rendered unrecoverable upon completion of the authorization process",
+      "level": 3,
+      "milestone": 1
+    },
+    {
+      "id": "3.3.1.1",
+      "parent": "3.3.1",
+      "title": "The full contents of any track are not stored upon completion of the authorization process",
+      "level": 4,
+      "milestone": 1
+    },
+    {
+      "id": "3.3.1.2",
+      "parent": "3.3.1",
+      "title": "The card verification code is not stored upon completion of the authorization process",
+      "level": 4,
+      "milestone": 1
+    },
+    {
+      "id": "3.3.1.3",
+      "parent": "3.3.1",
+      "title": "The personal identification number (PIN) and the PIN block are not stored upon completion of the authorization process",
+      "level": 4,
+      "milestone": 1
+    },
+    {
+      "id": "3.3.2",
+      "parent": "3.3",
+      "title": "SAD that is stored electronically prior to completion of authorization is encrypted using strong cryptography",
+      "level": 3,
+      "milestone": 1
+    },
+    {
+      "id": "3.3.3",
+      "parent": "3.3",
+      "title": "Additional requirement for issuers and companies that support issuing services and store sensitive authentication data: Any storage of sensitive authentication data is:",
+      "level": 3,
+      "milestone": 1
+    },
+    {
+      "id": "3.4",
+      "parent": "Req. 3",
+      "title": "Access to displays of full PAN and ability to copy PAN are restricted",
+      "level": 2
+    },
+    {
+      "id": "3.4.1",
+      "parent": "3.4",
+      "title": "PAN is masked when displayed (the BIN and last four digits are the maximum number of digits to be displayed), such that only personnel with a legitimate business need can see more than the BIN and last four digits of the PAN",
+      "level": 3,
+      "milestone": 5
+    },
+    {
+      "id": "3.4.2",
+      "parent": "3.4",
+      "title": "When using remote-access technologies, technical controls prevent copy and/or relocation of PAN for all personnel, except for those with documented, explicit authorization and a legitimate, defined business need",
+      "level": 3,
+      "milestone": 5
+    },
+    {
+      "id": "3.5",
+      "parent": "Req. 3",
+      "title": "Primary account number (PAN) is secured wherever it is stored",
+      "level": 2
+    },
+    {
+      "id": "3.5.1",
+      "parent": "3.5",
+      "title": "PAN is rendered unreadable anywhere it is stored by using any of the following approaches:",
+      "level": 3,
+      "milestone": 5
+    },
+    {
+      "id": "3.5.1.1",
+      "parent": "3.5.1",
+      "title": "Hashes used to render PAN unreadable (per the first bullet of Requirement 3.5.1) are keyed cryptographic hashes of the entire PAN, with associated key-management processes and procedures in accordance with Requirements 3.6 and 3.7",
+      "level": 4,
+      "milestone": 5
+    },
+    {
+      "id": "3.5.1.2",
+      "parent": "3.5.1",
+      "title": "If disk-level or partition-level encryption (rather than file-, column-, or field-level database encryption) is used to render PAN unreadable, it is implemented only as follows:",
+      "level": 4,
+      "milestone": 5
+    },
+    {
+      "id": "3.5.1.3",
+      "parent": "3.5.1",
+      "title": "If disk-level or partition-level encryption is used (rather than file-, column-, or field-level database encryption) to render PAN unreadable, it is managed as follows:",
+      "level": 4,
+      "milestone": 5
+    },
+    {
+      "id": "3.6",
+      "parent": "Req. 3",
+      "title": "Cryptographic keys used to protect stored account data are secured",
+      "level": 2
+    },
+    {
+      "id": "3.6.1",
+      "parent": "3.6",
+      "title": "Procedures are defined and implemented to protect cryptographic keys used to protect stored account data against disclosure and misuse that include:",
+      "level": 3,
+      "milestone": 5
+    },
+    {
+      "id": "3.6.1.1",
+      "parent": "3.6.1",
+      "title": "Additional requirement for service providers only: A documented description of the cryptographic architecture is maintained that includes:",
+      "level": 4,
+      "milestone": 5
+    },
+    {
+      "id": "3.6.1.2",
+      "parent": "3.6.1",
+      "title": "Secret and private keys used to protect stored account data are stored in one (or more) of the following forms at all times:",
+      "level": 4,
+      "milestone": 5
+    },
+    {
+      "id": "3.6.1.3",
+      "parent": "3.6.1",
+      "title": "Access to cleartext cryptographic key components is restricted to the fewest number of custodians necessary",
+      "level": 4,
+      "milestone": 5
+    },
+    {
+      "id": "3.6.1.4",
+      "parent": "3.6.1",
+      "title": "Cryptographic keys are stored in the fewest possible locations",
+      "level": 4,
+      "milestone": 5
+    },
+    {
+      "id": "3.7",
+      "parent": "Req. 3",
+      "title": "Where cryptography is used to protect stored account data, key management processes and procedures covering all aspects of the key lifecycle are defined and implemented",
+      "level": 2
+    },
+    {
+      "id": "3.7.1",
+      "parent": "3.7",
+      "title": "Key-management policies and procedures are implemented to include generation of strong cryptographic keys used to protect stored account data",
+      "level": 3,
+      "milestone": 5
+    },
+    {
+      "id": "3.7.2",
+      "parent": "3.7",
+      "title": "Key-management policies and procedures are implemented to include secure distribution of cryptographic keys used to protect stored account data",
+      "level": 3,
+      "milestone": 5
+    },
+    {
+      "id": "3.7.3",
+      "parent": "3.7",
+      "title": "Key-management policies and procedures are implemented to include secure storage of cryptographic keys used to protect stored account data",
+      "level": 3,
+      "milestone": 5
+    },
+    {
+      "id": "3.7.5",
+      "parent": "3.7",
+      "title": "Key management policies procedures are implemented to include the retirement, replacement, or destruction of keys used to protect stored account data, as deemed necessary when:",
+      "level": 3,
+      "milestone": 5
+    },
+    {
+      "id": "3.7.6",
+      "parent": "3.7",
+      "title": "Where manual cleartext cryptographic key-management operations are performed by personnel, key-management policies and procedures are implemented, including managing these operations using split knowledge and dual control",
+      "level": 3,
+      "milestone": 5
+    },
+    {
+      "id": "3.7.7",
+      "parent": "3.7",
+      "title": "Key management policies and procedures are implemented to include the prevention of unauthorized substitution of cryptographic keys",
+      "level": 3,
+      "milestone": 5
+    },
+    {
+      "id": "3.7.8",
+      "parent": "3.7",
+      "title": "Key management policies and procedures are implemented to include that cryptographic key custodians formally acknowledge (in writing or electronically) that they understand and accept their key-custodian responsibilities",
+      "level": 3,
+      "milestone": 5
+    },
+    {
+      "id": "4.1",
+      "parent": "Req. 4",
+      "title": "Processes and mechanisms for protecting cardholder data with strong cryptography during transmission over open, public networks are defined and understood",
+      "level": 2
+    },
+    {
+      "id": "4.1.1",
+      "parent": "4.1",
+      "title": "All security policies and operational procedures that are identified in Requirement 4 are:",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "4.1.2",
+      "parent": "4.1",
+      "title": "Roles and responsibilities for performing activities in Requirement 4 are documented, assigned, and understood",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "4.2",
+      "parent": "Req. 4",
+      "title": "PAN is protected with strong cryptography during transmission",
+      "level": 2
+    },
+    {
+      "id": "4.2.1",
+      "parent": "4.2",
+      "title": "Strong cryptography and security protocols are implemented as follows to safeguard PAN during transmission over open, public networks:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "4.2.1.1",
+      "parent": "4.2.1",
+      "title": "An inventory of the entitys trusted keys and certificates used to protect PAN during transmission is maintained",
+      "level": 4,
+      "milestone": 2
+    },
+    {
+      "id": "4.2.1.2",
+      "parent": "4.2.1",
+      "title": "Wireless networks transmitting PAN or connected to the CDE use industry best practices to implement strong cryptography for authentication and transmission",
+      "level": 4,
+      "milestone": 2
+    },
+    {
+      "id": "4.2.2",
+      "parent": "4.2",
+      "title": "PAN is secured with strong cryptography whenever it is sent via end-user messaging technologies",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "5.1",
+      "parent": "Req. 5",
+      "title": "Processes and mechanisms for protecting all systems and networks from malicious software are defined and understood",
+      "level": 2
+    },
+    {
+      "id": "5.1.1",
+      "parent": "5.1",
+      "title": "All security policies and operational procedures that are identified in Requirement 5 are:",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "5.1.2",
+      "parent": "5.1",
+      "title": "Roles and responsibilities for performing activities in Requirement 5 are documented, assigned, and understood",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "5.2",
+      "parent": "Req. 5",
+      "title": "Malicious software (malware) is prevented, or detected and addressed",
+      "level": 2
+    },
+    {
+      "id": "5.2.1",
+      "parent": "5.2",
+      "title": "An anti-malware solution(s) is deployed on all system components, except for those system components identified in periodic evaluations per Requirement 5.2.3 that concludes the system components are not at risk from malware",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "5.2.2",
+      "parent": "5.2",
+      "title": "The deployed anti-malware solution(s):",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "5.2.3",
+      "parent": "5.2",
+      "title": "Any system components that are not at risk for malware are evaluated periodically to include the following:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "5.2.3.1",
+      "parent": "5.2.3",
+      "title": "The frequency of periodic evaluations of system components identified as not at risk for malware is defined in the entitys targeted risk analysis, which is performed according to all elements specified in Requirement 12.3.1",
+      "level": 4,
+      "milestone": 2
+    },
+    {
+      "id": "5.3",
+      "parent": "Req. 5",
+      "title": "Anti-malware mechanisms and processes are active, maintained, and monitored",
+      "level": 2
+    },
+    {
+      "id": "5.3.1",
+      "parent": "5.3",
+      "title": "The anti-malware solution(s) is kept current via automatic updates",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "5.3.2",
+      "parent": "5.3",
+      "title": "The anti-malware solution(s):",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "5.3.2.1",
+      "parent": "5.3.2",
+      "title": "If periodic malware scans are performed to meet Requirement 5.3.2, the frequency of scans is defined in the entitys targeted risk analysis, which is performed according to all elements specified in Requirement 12.3.1",
+      "level": 4,
+      "milestone": 2
+    },
+    {
+      "id": "5.3.3",
+      "parent": "5.3",
+      "title": "For removable electronic media, the anti-malware solution(s):",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "5.3.4",
+      "parent": "5.3",
+      "title": "Audit logs for the anti-malware solution(s) are enabled and retained in accordance with Requirement 10.5.1",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "5.3.5",
+      "parent": "5.3",
+      "title": "Anti-malware mechanisms cannot be disabled or altered by users, unless specifically documented, and authorized by management on a case-by-case basis for a limited time period",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "5.4",
+      "parent": "Req. 5",
+      "title": "Anti-phishing mechanisms protect users against phishing attacks",
+      "level": 2
+    },
+    {
+      "id": "5.4.1",
+      "parent": "5.4",
+      "title": "Processes and automated mechanisms are in place to detect and protect personnel against phishing attacks",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "6.1",
+      "parent": "Req. 6",
+      "title": "Processes and mechanisms for developing and maintaining secure systems and software are defined and understood",
+      "level": 2
+    },
+    {
+      "id": "6.1.1",
+      "parent": "6.1",
+      "title": "All security policies and operational procedures that are identified in Requirement 6 are:",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "6.1.2",
+      "parent": "6.1",
+      "title": "Roles and responsibilities for performing activities in Requirement 6 are documented, assigned, and understood",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "6.2",
+      "parent": "Req. 6",
+      "title": "Bespoke and custom software are developed securely",
+      "level": 2
+    },
+    {
+      "id": "6.2.1",
+      "parent": "6.2",
+      "title": "Bespoke and custom software are developed securely, as follows:",
+      "level": 3,
+      "milestone": 3
+    },
+    {
+      "id": "6.2.2",
+      "parent": "6.2",
+      "title": "Software development personnel working on bespoke and custom software are trained at least once every 12 months as follows:",
+      "level": 3,
+      "milestone": 3
+    },
+    {
+      "id": "6.2.3",
+      "parent": "6.2",
+      "title": "Bespoke and custom software is reviewed prior to being released into production or to customers, to identify and correct potential coding vulnerabilities, as follows:",
+      "level": 3,
+      "milestone": 3
+    },
+    {
+      "id": "6.2.3.1",
+      "parent": "6.2.3",
+      "title": "If manual code reviews are performed for bespoke and custom software prior to release to production, code changes are:",
+      "level": 4,
+      "milestone": 3
+    },
+    {
+      "id": "6.3",
+      "parent": "Req. 6",
+      "title": "Security vulnerabilities are identified and addressed",
+      "level": 2
+    },
+    {
+      "id": "6.3.1",
+      "parent": "6.3",
+      "title": "Security vulnerabilities are identified and managed as follows:",
+      "level": 3,
+      "milestone": 3
+    },
+    {
+      "id": "6.3.2",
+      "parent": "6.3",
+      "title": "An inventory of bespoke and custom software, and third-party software components incorporated into bespoke and custom software is maintained to facilitate vulnerability and patch management",
+      "level": 3,
+      "milestone": 3
+    },
+    {
+      "id": "6.3.3",
+      "parent": "6.3",
+      "title": "All system components are protected from known vulnerabilities by installing applicable security patches/updates as follows:",
+      "level": 3,
+      "milestone": 3
+    },
+    {
+      "id": "6.4",
+      "parent": "Req. 6",
+      "title": "Public-facing web applications are protected against attacks",
+      "level": 2
+    },
+    {
+      "id": "6.4.1",
+      "parent": "6.4",
+      "title": "For public-facing web applications, new threats and vulnerabilities are addressed on an ongoing basis and these applications are protected against known attacks as follows:",
+      "level": 3,
+      "milestone": 3
+    },
+    {
+      "id": "6.4.2",
+      "parent": "6.4",
+      "title": "For public-facing web applications, an automated technical solution is deployed that continually detects and prevents web-based attacks, with at least the following:",
+      "level": 3,
+      "milestone": 3
+    },
+    {
+      "id": "6.4.3",
+      "parent": "6.4",
+      "title": "All payment page scripts that are loaded and executed in the consumers browser are managed as follows:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "6.5",
+      "parent": "Req. 6",
+      "title": "Changes to all system components are managed securely",
+      "level": 2
+    },
+    {
+      "id": "6.5.1",
+      "parent": "6.5",
+      "title": "Changes to all system components in the production environment are made according to established procedures that include:",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "6.5.2",
+      "parent": "6.5",
+      "title": "Upon completion of a significant change, all applicable PCI DSS requirements are confirmed to be in place on all new or changed systems and networks, and documentation is updated as applicable",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "6.5.3",
+      "parent": "6.5",
+      "title": "Pre-production environments are separated from production environments and the separation is enforced with access controls",
+      "level": 3,
+      "milestone": 3
+    },
+    {
+      "id": "6.5.4",
+      "parent": "6.5",
+      "title": "Roles and functions are separated between production and pre-production environments to provide accountability such that only reviewed and approved changes are deployed",
+      "level": 3,
+      "milestone": 3
+    },
+    {
+      "id": "6.5.5",
+      "parent": "6.5",
+      "title": "Live PANs are not used in pre-production environments, except where those environments are included in the CDE and protected in accordance with all applicable PCI DSS requirements",
+      "level": 3,
+      "milestone": 3
+    },
+    {
+      "id": "6.5.6",
+      "parent": "6.5",
+      "title": "Test data and test accounts are removed from system components before the system goes into production",
+      "level": 3,
+      "milestone": 3
+    },
+    {
+      "id": "7.1",
+      "parent": "Req. 7",
+      "title": "Processes and mechanisms for restricting access to system components and cardholder data by business need to know are defined and understood",
+      "level": 2
+    },
+    {
+      "id": "7.1.1",
+      "parent": "7.1",
+      "title": "All security policies and operational procedures that are identified in Requirement 7 are:",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "7.1.2",
+      "parent": "7.1",
+      "title": "Roles and responsibilities for performing activities in Requirement 7 are documented, assigned, and understood",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "7.2",
+      "parent": "Req. 7",
+      "title": "Access to system components and data is appropriately defined and assigned",
+      "level": 2
+    },
+    {
+      "id": "7.2.1",
+      "parent": "7.2",
+      "title": "An access control model is defined and includes granting access as follows:",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "7.2.2",
+      "parent": "7.2",
+      "title": "Access is assigned to users, including privileged users, based on:",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "7.2.3",
+      "parent": "7.2",
+      "title": "Required privileges are approved by authorized personnel",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "7.2.4",
+      "parent": "7.2",
+      "title": "All user accounts and related access privileges, including third-party/vendor accounts, are reviewed as follows:",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "7.2.5",
+      "parent": "7.2",
+      "title": "All application and system accounts and related access privileges are assigned and managed as follows:",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "7.2.5.1",
+      "parent": "7.2.5",
+      "title": "All access by application and system accounts and related access privileges are reviewed as follows:",
+      "level": 4,
+      "milestone": 4
+    },
+    {
+      "id": "7.2.6",
+      "parent": "7.2",
+      "title": "All user access to query repositories of stored cardholder data is restricted as follows:",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "7.3",
+      "parent": "Req. 7",
+      "title": "Access to system components and data is managed via an access control system(s)",
+      "level": 2
+    },
+    {
+      "id": "7.3.1",
+      "parent": "7.3",
+      "title": "An access control system(s) is in place that restricts access based on a users need to know and covers all system components",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "7.3.2",
+      "parent": "7.3",
+      "title": "The access control system(s) is configured to enforce permissions assigned to individuals, applications, and systems based on job classification and function",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "7.3.3",
+      "parent": "7.3",
+      "title": "The access control system(s) is set to \"deny all\" by default",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "8.1",
+      "parent": "Req. 8",
+      "title": "Processes and mechanisms for identifying users and authenticating access to system components are defined and understood",
+      "level": 2
+    },
+    {
+      "id": "8.1.1",
+      "parent": "8.1",
+      "title": "All security policies and operational procedures that are identified in Requirement 8 are:",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "8.1.2",
+      "parent": "8.1",
+      "title": "Roles and responsibilities for performing activities in Requirement 8 are documented, assigned, and understood",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "8.2",
+      "parent": "Req. 8",
+      "title": "User identification and related accounts for users and administrators are strictly managed throughout an accounts lifecycle",
+      "level": 2
+    },
+    {
+      "id": "8.2.1",
+      "parent": "8.2",
+      "title": "All users are assigned a unique ID before access to system components or cardholder data is allowed",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "8.2.2",
+      "parent": "8.2",
+      "title": "Group, shared, or generic IDs, or other shared authentication credentials are only used when necessary on an exception basis, and are managed as follows:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "8.2.3",
+      "parent": "8.2",
+      "title": "Additional requirement for service providers only: Service providers with remote access to customer premises use unique authentication factors for each customer premises",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "8.2.4",
+      "parent": "8.2",
+      "title": "Addition, deletion, and modification of user IDs, authentication factors, and other identifier objects are managed as follows:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "8.2.5",
+      "parent": "8.2",
+      "title": "Access for terminated users is immediately revoked",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "8.2.6",
+      "parent": "8.2",
+      "title": "Inactive user accounts are removed or disabled within 90 days of inactivity",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "8.2.7",
+      "parent": "8.2",
+      "title": "Accounts used by third parties to access, support, or maintain system components via remote access are managed as follows:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "8.2.8",
+      "parent": "8.2",
+      "title": "If a user session has been idle for more than 15 minutes, the user is required to re-authenticate to re-activate the terminal or session",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "8.3",
+      "parent": "Req. 8",
+      "title": "Strong authentication for users and administrators is established and managed",
+      "level": 2
+    },
+    {
+      "id": "8.3.1",
+      "parent": "8.3",
+      "title": "All user access to system components for users and administrators is authenticated via at least one of the following authentication factors:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "8.3.2",
+      "parent": "8.3",
+      "title": "Strong cryptography is used to render all authentication factors unreadable during transmission and storage on all system components",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "8.3.3",
+      "parent": "8.3",
+      "title": "User identity is verified before modifying any authentication factor",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "8.3.4",
+      "parent": "8.3",
+      "title": "Invalid authentication attempts are limited by:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "8.3.5",
+      "parent": "8.3",
+      "title": "If passwords/passphrases are used as authentication factors to meet Requirement 8.3.1, they are set and reset for each user as follows:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "8.3.6",
+      "parent": "8.3",
+      "title": "If passwords/passphrases are used as authentication factors to meet Requirement 8.3.1, they meet the following minimum level of complexity:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "8.3.7",
+      "parent": "8.3",
+      "title": "Individuals are not allowed to submit a new password/passphrase that is the same as any of the last four passwords/passphrases used",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "8.3.8",
+      "parent": "8.3",
+      "title": "Authentication policies and procedures are documented and communicated to all users including:",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "8.3.9",
+      "parent": "8.3",
+      "title": "If passwords/passphrases are used as the only authentication factor for user access (i.e., in any single-factor authentication implementation) then either:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "8.3.10.1",
+      "parent": "8.3.10",
+      "title": "Additional requirement for service providers only: If passwords/passphrases are used as the only authentication factor for customer user access (i.e., in any single-factor authentication implementation) then either:",
+      "level": 4,
+      "milestone": 2
+    },
+    {
+      "id": "8.3.11",
+      "parent": "8.3",
+      "title": "Where authentication factors such as physical or logical security tokens, smart cards, or certificates are used:",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "8.4",
+      "parent": "Req. 8",
+      "title": "Multi-factor authentication (MFA) is implemented to secure access into the CDE",
+      "level": 2
+    },
+    {
+      "id": "8.4.1",
+      "parent": "8.4",
+      "title": "MFA is implemented for all non-console access into the CDE for personnel with administrative access",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "8.4.2",
+      "parent": "8.4",
+      "title": "MFA is implemented for all non-console access into the CDE",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "8.4.3",
+      "parent": "8.4",
+      "title": "MFA is implemented for all remote access originating from outside the entitys network that could access or impact the CDE",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "8.5",
+      "parent": "Req. 8",
+      "title": "Multi-factor authentication (MFA) systems are configured to prevent misuse",
+      "level": 2
+    },
+    {
+      "id": "8.5.1",
+      "parent": "8.5",
+      "title": "MFA systems are implemented as follows:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "8.6",
+      "parent": "Req. 8",
+      "title": "Use of application and system accounts and associated authentication factors is strictly managed",
+      "level": 2
+    },
+    {
+      "id": "8.6.1",
+      "parent": "8.6",
+      "title": "If accounts used by systems or applications can be used for interactive login, they are managed as follows:",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "8.6.2",
+      "parent": "8.6",
+      "title": "Passwords/passphrases for any application and system accounts that can be used for interactive login are not hard coded in scripts, configuration/property files, or bespoke and custom source code",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "8.6.3",
+      "parent": "8.6",
+      "title": "Passwords/passphrases for any application and system accounts are protected against misuse as follows:",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "9.1",
+      "parent": "Req. 9",
+      "title": "Processes and mechanisms for restricting physical access to cardholder data are defined and understood",
+      "level": 2
+    },
+    {
+      "id": "9.1.1",
+      "parent": "9.1",
+      "title": "All security policies and operational procedures that are identified in Requirement 9 are:",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "9.1.2",
+      "parent": "9.1",
+      "title": "Roles and responsibilities for performing activities in Requirement 9 are documented, assigned, and understood",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "9.2",
+      "parent": "Req. 9",
+      "title": "Physical access controls manage entry into facilities and systems containing cardholder data",
+      "level": 2
+    },
+    {
+      "id": "9.2.1",
+      "parent": "9.2",
+      "title": "Appropriate facility entry controls are in place to restrict physical access to systems in the CDE",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "9.2.1.1",
+      "parent": "9.2.1",
+      "title": "Individual physical access to sensitive areas within the CDE is monitored with either video cameras or physical access control mechanisms (or both) as follows:",
+      "level": 4,
+      "milestone": 2
+    },
+    {
+      "id": "9.2.2",
+      "parent": "9.2",
+      "title": "Physical and/or logical controls are implemented to restrict use of publicly accessible network jacks within the facility",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "9.2.3",
+      "parent": "9.2",
+      "title": "Physical access to wireless access points, gateways, networking/communications hardware, and telecommunication lines within the facility is restricted",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "9.2.4",
+      "parent": "9.2",
+      "title": "Access to consoles in sensitive areas is restricted via locking when not in use",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "9.3",
+      "parent": "Req. 9",
+      "title": "Physical access for personnel and visitors is authorized and managed",
+      "level": 2
+    },
+    {
+      "id": "9.3.1",
+      "parent": "9.3",
+      "title": "Procedures are implemented for authorizing and managing physical access of personnel to the CDE, including:",
+      "level": 3,
+      "milestone": 5
+    },
+    {
+      "id": "9.3.1.1",
+      "parent": "9.3.1",
+      "title": "Physical access to sensitive areas within the CDE for personnel is controlled as follows:",
+      "level": 4,
+      "milestone": 2
+    },
+    {
+      "id": "9.3.2",
+      "parent": "9.3",
+      "title": "Procedures are implemented for authorizing and managing visitor access to the CDE, including:",
+      "level": 3,
+      "milestone": 5
+    },
+    {
+      "id": "9.3.3",
+      "parent": "9.3",
+      "title": "Visitor badges or identification are surrendered or deactivated before visitors leave the facility or at the date of expiration",
+      "level": 3,
+      "milestone": 5
+    },
+    {
+      "id": "9.3.4",
+      "parent": "9.3",
+      "title": "Visitor logs are used to maintain a physical record of visitor activity both within the facility and within sensitive areas, including:",
+      "level": 3,
+      "milestone": 5
+    },
+    {
+      "id": "9.4",
+      "parent": "Req. 9",
+      "title": "Media with cardholder data is securely stored, accessed, distributed, and destroyed",
+      "level": 2
+    },
+    {
+      "id": "9.4.1",
+      "parent": "9.4",
+      "title": "All media with cardholder data is physically secured",
+      "level": 3,
+      "milestone": 5
+    },
+    {
+      "id": "9.4.1.1",
+      "parent": "9.4.1",
+      "title": "Offline media backups with cardholder data are stored in a secure location",
+      "level": 4,
+      "milestone": 5
+    },
+    {
+      "id": "9.4.1.2",
+      "parent": "9.4.1",
+      "title": "The security of the offline media backup location(s) with cardholder data is reviewed at least once every 12 months",
+      "level": 4,
+      "milestone": 5
+    },
+    {
+      "id": "9.4.2",
+      "parent": "9.4",
+      "title": "All media with cardholder data is classified in accordance with the sensitivity of the data",
+      "level": 3,
+      "milestone": 5
+    },
+    {
+      "id": "9.4.3",
+      "parent": "9.4",
+      "title": "Media with cardholder data sent outside the facility is secured as follows:",
+      "level": 3,
+      "milestone": 5
+    },
+    {
+      "id": "9.4.4",
+      "parent": "9.4",
+      "title": "Management approves all media with cardholder data that is moved outside the facility (including when media is distributed to individuals)",
+      "level": 3,
+      "milestone": 5
+    },
+    {
+      "id": "9.4.5",
+      "parent": "9.4",
+      "title": "Inventory logs of all electronic media with cardholder data are maintained",
+      "level": 3,
+      "milestone": 5
+    },
+    {
+      "id": "9.4.5.1",
+      "parent": "9.4.5",
+      "title": "Inventories of electronic media with cardholder data are conducted at least once every 12 months",
+      "level": 4,
+      "milestone": 5
+    },
+    {
+      "id": "9.4.6",
+      "parent": "9.4",
+      "title": "Hard-copy materials with cardholder data are destroyed when no longer needed for business or legal reasons, as follows:",
+      "level": 3,
+      "milestone": 1
+    },
+    {
+      "id": "9.4.7",
+      "parent": "9.4",
+      "title": "Electronic media with cardholder data is destroyed when no longer needed for business or legal reasons via one of the following:",
+      "level": 3,
+      "milestone": 1
+    },
+    {
+      "id": "9.5",
+      "parent": "Req. 9",
+      "title": "Point of interaction (POI) devices are protected from tampering and unauthorized substitution",
+      "level": 2
+    },
+    {
+      "id": "9.5.1",
+      "parent": "9.5",
+      "title": "POI devices that capture payment card data via direct physical interaction with the payment card form factor are protected from tampering and unauthorized substitution, including the following:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "9.5.1.1",
+      "parent": "9.5.1",
+      "title": "An up-to-date list of POI devices is maintained, including:",
+      "level": 4,
+      "milestone": 2
+    },
+    {
+      "id": "9.5.1.2",
+      "parent": "9.5.1",
+      "title": "POI device surfaces are periodically inspected to detect tampering and unauthorized substitution",
+      "level": 4,
+      "milestone": 2
+    },
+    {
+      "id": "9.5.1.2.1",
+      "parent": "9.5.1.2",
+      "title": "The frequency of periodic POI device inspections and the type of inspections performed is defined in the entitys targeted risk analysis, which is performed according to all elements specified in Requirement 12.3.1",
+      "level": 5,
+      "milestone": 2
+    },
+    {
+      "id": "9.5.1.3",
+      "parent": "9.5.1",
+      "title": "Training is provided for personnel in POI environments to be aware of attempted tampering or replacement of POI devices, and includes:",
+      "level": 4,
+      "milestone": 2
+    },
+    {
+      "id": "10.1",
+      "parent": "Req. 10",
+      "title": "Processes and mechanisms for logging and monitoring all access to system components and cardholder data are defined and understood",
+      "level": 2
+    },
+    {
+      "id": "10.1.1",
+      "parent": "10.1",
+      "title": "All security policies and operational procedures that are identified in Requirement 10 are:",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "10.1.2",
+      "parent": "10.1",
+      "title": "Roles and responsibilities for performing activities in Requirement 10 are documented, assigned, and understood",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "10.2",
+      "parent": "Req. 10",
+      "title": "Audit logs are implemented to support the detection of anomalies and suspicious activity, and the forensic analysis of events",
+      "level": 2
+    },
+    {
+      "id": "10.2.1",
+      "parent": "10.2",
+      "title": "Audit logs are enabled and active for all system components and cardholder data",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "10.2.1.1",
+      "parent": "10.2.1",
+      "title": "Audit logs capture all individual user access to cardholder data",
+      "level": 4,
+      "milestone": 4
+    },
+    {
+      "id": "10.2.1.2",
+      "parent": "10.2.1",
+      "title": "Audit logs capture all actions taken by any individual with administrative access, including any interactive use of application or system accounts",
+      "level": 4,
+      "milestone": 4
+    },
+    {
+      "id": "10.2.1.3",
+      "parent": "10.2.1",
+      "title": "Audit logs capture all access to audit logs",
+      "level": 4,
+      "milestone": 4
+    },
+    {
+      "id": "10.2.1.4",
+      "parent": "10.2.1",
+      "title": "Audit logs capture all invalid logical access attempts",
+      "level": 4,
+      "milestone": 4
+    },
+    {
+      "id": "10.2.1.5",
+      "parent": "10.2.1",
+      "title": "Audit logs capture all changes to identification and authentication credentials including, but not limited to:",
+      "level": 4,
+      "milestone": 4
+    },
+    {
+      "id": "10.2.1.6",
+      "parent": "10.2.1",
+      "title": "Audit logs capture the following:",
+      "level": 4,
+      "milestone": 4
+    },
+    {
+      "id": "10.2.1.7",
+      "parent": "10.2.1",
+      "title": "Audit logs capture all creation and deletion of system-level objects",
+      "level": 4,
+      "milestone": 4
+    },
+    {
+      "id": "10.2.2",
+      "parent": "10.2",
+      "title": "Audit logs record the following details for each auditable event:",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "10.3",
+      "parent": "Req. 10",
+      "title": "Audit logs are protected from destruction and unauthorized modifications",
+      "level": 2
+    },
+    {
+      "id": "10.3.1",
+      "parent": "10.3",
+      "title": "Read access to audit logs files is limited to those with a job-related need",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "10.3.2",
+      "parent": "10.3",
+      "title": "Audit log files are protected to prevent modifications by individuals",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "10.3.3",
+      "parent": "10.3",
+      "title": "Audit log files, including those for external-facing technologies, are promptly backed up to a secure, central, internal log server(s) or other media that is difficult to modify",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "10.3.4",
+      "parent": "10.3",
+      "title": "File integrity monitoring or change-detection mechanisms is used on audit logs to ensure that existing log data cannot be changed without generating alerts",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "10.4",
+      "parent": "Req. 10",
+      "title": "Audit logs are reviewed to identify anomalies or suspicious activity",
+      "level": 2
+    },
+    {
+      "id": "10.4.1",
+      "parent": "10.4",
+      "title": "The following audit logs are reviewed at least once daily:",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "10.4.1.1",
+      "parent": "10.4.1",
+      "title": "Automated mechanisms are used to perform audit log reviews",
+      "level": 4,
+      "milestone": 4
+    },
+    {
+      "id": "10.4.2",
+      "parent": "10.4",
+      "title": "Logs of all other system components (those not specified in Requirement 10.4.1) are reviewed periodically",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "10.4.2.1",
+      "parent": "10.4.2",
+      "title": "The frequency of periodic log reviews for all other system components (not defined in Requirement 10.4.1) is defined in the entitys targeted risk analysis, which is performed according to all elements specified in Requirement 12.3.1",
+      "level": 4,
+      "milestone": 4
+    },
+    {
+      "id": "10.4.3",
+      "parent": "10.4",
+      "title": "Exceptions and anomalies identified during the review process are addressed",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "10.5",
+      "parent": "Req. 10",
+      "title": "Audit log history is retained and available for analysis",
+      "level": 2
+    },
+    {
+      "id": "10.5.1",
+      "parent": "10.5",
+      "title": "Retain audit log history for at least 12 months, with at least the most recent three months immediately available for analysis",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "10.6",
+      "parent": "Req. 10",
+      "title": "Time-synchronization mechanisms support consistent time settings across all systems",
+      "level": 2
+    },
+    {
+      "id": "10.6.1",
+      "parent": "10.6",
+      "title": "System clocks and time are synchronized using time-synchronization technology",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "10.6.2",
+      "parent": "10.6",
+      "title": "Systems are configured to the correct and consistent time as follows:",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "10.6.3",
+      "parent": "10.6",
+      "title": "Time synchronization settings and data are protected as follows:",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "10.7",
+      "parent": "Req. 10",
+      "title": "Failures of critical security control systems are detected, reported, and responded to promptly",
+      "level": 2
+    },
+    {
+      "id": "10.7.1",
+      "parent": "10.7",
+      "title": "Additional requirement for service providers only: Failures of critical security control systems are detected, alerted, and addressed promptly, including but not limited to failure of the following critical security control systems:",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "10.7.2",
+      "parent": "10.7",
+      "title": "Failures of critical security control systems are detected, alerted, and addressed promptly, including but not limited to failure of the following critical security control systems:",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "10.7.3",
+      "parent": "10.7",
+      "title": "Failures of any critical security control systems are responded to promptly, including but not limited to:",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "11.1",
+      "parent": "Req. 11",
+      "title": "Processes and mechanisms for regularly testing security of systems and networks are defined and understood",
+      "level": 2
+    },
+    {
+      "id": "11.1.1",
+      "parent": "11.1",
+      "title": "All security policies and operational procedures that are identified in Requirement 11 are:",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "11.1.2",
+      "parent": "11.1",
+      "title": "Roles and responsibilities for performing activities in Requirement 11 are documented, assigned, and understood",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "11.2",
+      "parent": "Req. 11",
+      "title": "Wireless access points are identified and monitored, and unauthorized wireless access points are addressed",
+      "level": 2
+    },
+    {
+      "id": "11.2.1",
+      "parent": "11.2",
+      "title": "Authorized and unauthorized wireless access points are managed as follows:",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "11.2.2",
+      "parent": "11.2",
+      "title": "An inventory of authorized wireless access points is maintained, including a documented business justification",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "11.3",
+      "parent": "Req. 11",
+      "title": "External and internal vulnerabilities are regularly identified, prioritized, and addressed",
+      "level": 2
+    },
+    {
+      "id": "11.3.1",
+      "parent": "11.3",
+      "title": "Internal vulnerability scans are performed as follows:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "11.3.1.1",
+      "parent": "11.3.1",
+      "title": "All other applicable vulnerabilities (those not ranked as high-risk vulnerabilities or critical vulnerabilities according to the entitys vulnerability risk rankings defined at Requirement 6.3.1) are managed as follows:",
+      "level": 4,
+      "milestone": 2
+    },
+    {
+      "id": "11.3.1.2",
+      "parent": "11.3.1",
+      "title": "Internal vulnerability scans are performed via authenticated scanning as follows:",
+      "level": 4,
+      "milestone": 2
+    },
+    {
+      "id": "11.3.1.3",
+      "parent": "11.3.1",
+      "title": "Internal vulnerability scans are performed after any significant change as follows:",
+      "level": 4,
+      "milestone": 2
+    },
+    {
+      "id": "11.3.2",
+      "parent": "11.3",
+      "title": "External vulnerability scans are performed as follows:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "11.3.2.1",
+      "parent": "11.3.2",
+      "title": "External vulnerability scans are performed after any significant change as follows:",
+      "level": 4,
+      "milestone": 2
+    },
+    {
+      "id": "11.4",
+      "parent": "Req. 11",
+      "title": "External and internal penetration testing is regularly performed, and exploitable vulnerabilities and security weaknesses are corrected",
+      "level": 2
+    },
+    {
+      "id": "11.4.1",
+      "parent": "11.4",
+      "title": "A penetration testing methodology is defined, documented, and implemented by the entity, and includes:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "11.4.2",
+      "parent": "11.4",
+      "title": "Internal penetration testing is performed:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "11.4.3",
+      "parent": "11.4",
+      "title": "External penetration testing is performed:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "11.4.4",
+      "parent": "11.4",
+      "title": "Exploitable vulnerabilities and security weaknesses found during penetration testing are corrected as follows:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "11.4.5",
+      "parent": "11.4",
+      "title": "If segmentation is used to isolate the CDE from other networks, penetration tests are performed on segmentation controls as follows:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "11.4.6",
+      "parent": "11.4",
+      "title": "Additional requirement for service providers only: If segmentation is used to isolate the CDE from other networks, penetration tests are performed on segmentation controls as follows:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "11.4.7",
+      "parent": "11.4",
+      "title": "Additional requirement for multi-tenant service providers only: Multi-tenant service providers support their customers for external penetration testing per Requirement 11.4.3 and 11.4.4",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "11.5",
+      "parent": "Req. 11",
+      "title": "Network intrusions and unexpected file changes are detected and responded to",
+      "level": 2
+    },
+    {
+      "id": "11.5.1",
+      "parent": "11.5",
+      "title": "Intrusion-detection and/or intrusion-prevention techniques are used to detect and/or prevent intrusions into the network as follows:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "11.5.1.1",
+      "parent": "11.5.1",
+      "title": "Additional requirement for service providers only: Intrusion-detection and/or intrusion-prevention techniques detect, alert on/prevent, and address covert malware communication channels",
+      "level": 4,
+      "milestone": 2
+    },
+    {
+      "id": "11.5.2",
+      "parent": "11.5",
+      "title": "A change-detection mechanism (for example, file integrity monitoring tools) is deployed as follows:",
+      "level": 3,
+      "milestone": 4
+    },
+    {
+      "id": "11.6",
+      "parent": "Req. 11",
+      "title": "Unauthorized changes on payment pages are detected and responded to",
+      "level": 2
+    },
+    {
+      "id": "11.6.1",
+      "parent": "11.6",
+      "title": "A change- and tamper-detection mechanism is deployed as follows:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "12.1",
+      "parent": "Req. 12",
+      "title": "A comprehensive information security policy that governs and provides direction for protection of the entitys information assets is known and current",
+      "level": 2
+    },
+    {
+      "id": "12.1.1",
+      "parent": "12.1",
+      "title": "An overall information security policy is:",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "12.1.2",
+      "parent": "12.1",
+      "title": "The information security policy is:",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "12.1.3",
+      "parent": "12.1",
+      "title": "The security policy clearly defines information security roles and responsibilities for all personnel, and all personnel are aware of and acknowledge their information security responsibilities",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "12.1.4",
+      "parent": "12.1",
+      "title": "Responsibility for information security is formally assigned to a Chief Information Security Officer or other information security knowledgeable member of executive management. ",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "12.2",
+      "parent": "Req. 12",
+      "title": "Acceptable use policies for end-user technologies are defined and implemented",
+      "level": 2
+    },
+    {
+      "id": "12.2.1",
+      "parent": "12.2",
+      "title": "Acceptable use policies for end-user technologies are documented and implemented, including:",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "12.3",
+      "parent": "Req. 12",
+      "title": "Risks to the cardholder data environment are formally identified, evaluated, and managed",
+      "level": 2
+    },
+    {
+      "id": "12.3.1",
+      "parent": "12.3",
+      "title": "For each PCI DSS requirement that specifies completion of a targeted risk analysis, the analysis is documented and includes:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "12.3.2",
+      "parent": "12.3",
+      "title": "A targeted risk analysis is performed for each PCI DSS requirement that the entity meets with the customized approach, to include:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "12.3.3",
+      "parent": "12.3",
+      "title": "Cryptographic cipher suites and protocols in use are documented and reviewed at least once every 12 months, including at least the following:",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "12.3.4",
+      "parent": "12.3",
+      "title": "Hardware and software technologies in use are reviewed at least once every 12 months, including at least the following:",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "12.4",
+      "parent": "Req. 12",
+      "title": "PCI DSS compliance is managed",
+      "level": 2
+    },
+    {
+      "id": "12.4.1",
+      "parent": "12.4",
+      "title": "Additional requirement for service providers only: Responsibility is established by executive management for the protection of cardholder data and a PCI DSS compliance program to include:",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "12.4.2.1",
+      "parent": "12.4.2",
+      "title": "Additional requirement for service providers only: Reviews conducted in accordance with Requirement 12.4.2 are documented to include:",
+      "level": 4,
+      "milestone": 6
+    },
+    {
+      "id": "12.5",
+      "parent": "Req. 12",
+      "title": "PCI DSS scope is documented and validated",
+      "level": 2
+    },
+    {
+      "id": "12.5.1",
+      "parent": "12.5",
+      "title": "An inventory of system components that are in scope for PCI DSS, including a description of function/use, is maintained and kept current",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "12.5.2",
+      "parent": "12.5",
+      "title": "PCI DSS scope is documented and confirmed by the entity at least once every 12 months and upon significant change to the in-scope environment. At a minimum, the scoping validation includes:",
+      "level": 3,
+      "milestone": 1
+    },
+    {
+      "id": "12.6",
+      "parent": "Req. 12",
+      "title": "Security awareness education is an ongoing activity",
+      "level": 2
+    },
+    {
+      "id": "12.6.1",
+      "parent": "12.6",
+      "title": "A formal security awareness program is implemented to make all personnel aware of the entitys information security policy and procedures, and their role in protecting the cardholder data",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "12.6.2",
+      "parent": "12.6",
+      "title": "The security awareness program is:",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "12.6.3",
+      "parent": "12.6",
+      "title": "Personnel receive security awareness training as follows:",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "12.6.3.1",
+      "parent": "12.6.3",
+      "title": "Security awareness training includes awareness of threats and vulnerabilities that could impact the security of cardholder data and/or sensitive authentication data, including but not limited to:",
+      "level": 4,
+      "milestone": 6
+    },
+    {
+      "id": "12.6.3.2",
+      "parent": "12.6.3",
+      "title": "Security awareness training includes awareness about the acceptable use of end-user technologies in accordance with Requirement 12.2.1",
+      "level": 4,
+      "milestone": 6
+    },
+    {
+      "id": "12.7",
+      "parent": "Req. 12",
+      "title": "Personnel are screened to reduce risks from insider threats",
+      "level": 2
+    },
+    {
+      "id": "12.7.1",
+      "parent": "12.7",
+      "title": "Potential personnel who will have access to the CDE are screened, within the constraints of local laws, prior to hire to minimize the risk of attacks from internal sources",
+      "level": 3,
+      "milestone": 6
+    },
+    {
+      "id": "12.8",
+      "parent": "Req. 12",
+      "title": "Risk to information assets associated with third-party service provider (TPSP) relationships is managed",
+      "level": 2
+    },
+    {
+      "id": "12.8.1",
+      "parent": "12.8",
+      "title": "A list of all third-party service providers (TPSPs) with which account data is shared or that could affect the security of account data is maintained, including a description for each of the services provided",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "12.8.2",
+      "parent": "12.8",
+      "title": "Written agreements with TPSPs are maintained as follows:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "12.8.3",
+      "parent": "12.8",
+      "title": "An established process is implemented for engaging TPSPs, including proper due diligence prior to engagement",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "12.8.4",
+      "parent": "12.8",
+      "title": "A program is implemented to monitor TPSPs PCI DSS compliance status at least once every 12 months",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "12.8.5",
+      "parent": "12.8",
+      "title": "Information is maintained about which PCI DSS requirements are managed by each TPSP, which are managed by the entity, and any that are shared between the TPSP and the entity",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "12.9",
+      "parent": "Req. 12",
+      "title": "Third-party service providers (TPSPs) support their customers PCI DSS compliance",
+      "level": 2
+    },
+    {
+      "id": "12.9.2",
+      "parent": "12.9",
+      "title": "Additional requirement for service providers only: TPSPs support their customers requests for information to meet Requirements 12.8.4 and 12.8.5 by providing the following upon customer request:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "12.10",
+      "parent": "Req. 12",
+      "title": "Suspected and confirmed security incidents that could impact the CDE are responded to immediately",
+      "level": 2
+    },
+    {
+      "id": "12.10.1",
+      "parent": "12.10",
+      "title": "An incident response plan exists and is ready to be activated in the event of a suspected or confirmed security incident. The plan includes, but is not limited to:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "12.10.2",
+      "parent": "12.10",
+      "title": "At least once every 12 months, the security incident response plan is:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "12.10.3",
+      "parent": "12.10",
+      "title": "Specific personnel are designated to be available on a 24/7 basis to respond to suspected or confirmed security incidents",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "12.10.4",
+      "parent": "12.10",
+      "title": "Personnel responsible for responding to suspected and confirmed security incidents are appropriately and periodically trained on their incident response responsibilities",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "12.10.4.1",
+      "parent": "12.10.4",
+      "title": "The frequency of periodic training for incident response personnel is defined in the entitys targeted risk analysis, which is performed according to all elements specified in Requirement 12.3.1",
+      "level": 4,
+      "milestone": 2
+    },
+    {
+      "id": "12.10.5",
+      "parent": "12.10",
+      "title": "The security incident response plan includes monitoring and responding to alerts from security monitoring systems, including but not limited to:",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "12.10.6",
+      "parent": "12.10",
+      "title": "The security incident response plan is modified and evolved according to lessons learned and to incorporate industry developments",
+      "level": 3,
+      "milestone": 2
+    },
+    {
+      "id": "12.10.7",
+      "parent": "12.10",
+      "title": "Incident response procedures are in place, to be initiated upon the detection of stored PAN anywhere it is not expected, and include:",
+      "level": 3,
+      "milestone": 2
+    }
   ]
 }
