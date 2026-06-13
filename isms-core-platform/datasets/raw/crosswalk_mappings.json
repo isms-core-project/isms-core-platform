@@ -42,7 +42,9 @@
     "ISO27001_2022 ↔ ISO27701": 49,
     "ISO42001 ↔ DORA": 14,
     "ISO42005 ↔ EU_GDPR": 14,
-    "ISO42005 ↔ NIST_CSF_2.0": 14
+    "ISO42005 ↔ NIST_CSF_2.0": 14,
+    "ISO27018 ↔ FINMA": 14,
+    "ISO27701 ↔ FINMA": 21
   },
   "mappings": [
     {
@@ -38194,6 +38196,356 @@
       "confidence": 0.8,
       "source_reference": "NIST CSF 2.0 ID.RA / GV.RM + ISO42005 IAS process alignment",
       "notes": "Responsibilities — leadership risk management accountability"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.8.1",
+      "target_framework": "FINMA",
+      "target_id": "V.A",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
+      "notes": "Sub-processor list disclosure implements FINMA 2018/3 V.A outsourcing inventory requirement"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.10.1",
+      "target_framework": "FINMA",
+      "target_id": "G3",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
+      "notes": "PII breach notification to controller enabling FINMA 24h cyber reporting (Guidance 03/2024 G3)"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.10.3",
+      "target_framework": "FINMA",
+      "target_id": "V.H",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
+      "notes": "PII return and deletion terms are FINMA 2018/3 V.H written agreement provisions"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.1",
+      "target_framework": "FINMA",
+      "target_id": "V.E",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
+      "notes": "Confidentiality agreements for PII access implement FINMA 2018/3 V.E security requirements"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.6",
+      "target_framework": "FINMA",
+      "target_id": "P3",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
+      "notes": "Encryption in transit implements FINMA 2023/1 P3 cyber risk management (mn. 61-70)"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.8",
+      "target_framework": "FINMA",
+      "target_id": "P3",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
+      "notes": "Unique user IDs implement FINMA 2023/1 P3 access control requirements"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.9",
+      "target_framework": "FINMA",
+      "target_id": "P3",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
+      "notes": "Account lifecycle management implements FINMA 2023/1 P3 cyber risk management"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.11",
+      "target_framework": "FINMA",
+      "target_id": "V.H",
+      "mapping_type": "related",
+      "confidence": 0.9,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
+      "notes": "DPA mandatory terms overlap with FINMA 2018/3 V.H outsourcing contract requirements"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.11.12",
+      "target_framework": "FINMA",
+      "target_id": "V.B",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
+      "notes": "Sub-processor obligations implement FINMA 2018/3 V.B selection and monitoring of service providers"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.12.1",
+      "target_framework": "FINMA",
+      "target_id": "V.G",
+      "mapping_type": "related",
+      "confidence": 0.9,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
+      "notes": "Geographical location of PII directly implements FINMA 2018/3 V.G cross-border outsourcing (access from Switzerland guaranteed; mn. 33-36)"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.12.2",
+      "target_framework": "FINMA",
+      "target_id": "V.G",
+      "mapping_type": "related",
+      "confidence": 0.9,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
+      "notes": "Transfer destination documentation is a FINMA 2018/3 V.G cross-border requirement"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.4",
+      "target_framework": "FINMA",
+      "target_id": "P4",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
+      "notes": "Data minimisation implements FINMA 2023/1 P4 critical data risk management (mn. 71-82)"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.6",
+      "target_framework": "FINMA",
+      "target_id": "P4",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
+      "notes": "Retention and disclosure controls implement FINMA 2023/1 P4 CIA protection of critical data"
+    },
+    {
+      "source_framework": "ISO27018",
+      "source_id": "A.10.2",
+      "target_framework": "FINMA",
+      "target_id": "V.F",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27018 Annex A",
+      "notes": "Policy documentation retention supports FINMA 2018/3 V.F audit rights exercisable at any time"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.3",
+      "target_framework": "FINMA",
+      "target_id": "P1",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
+      "notes": "Policies for IS — FINMA 2023/1 P1 overarching operational risk management (mn. 22-46)"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.4",
+      "target_framework": "FINMA",
+      "target_id": "P1",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
+      "notes": "IS roles and responsibilities — FINMA 2023/1 P1 governance accountability"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.6",
+      "target_framework": "FINMA",
+      "target_id": "P2",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
+      "notes": "PIA as risk assessment component — FINMA 2023/1 P2 ICT risk management (mn. 47-60)"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.9",
+      "target_framework": "FINMA",
+      "target_id": "P2",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
+      "notes": "Access rights for PII systems — FINMA 2023/1 P2 ICT security controls"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.23",
+      "target_framework": "FINMA",
+      "target_id": "P2",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
+      "notes": "Secure authentication — FINMA 2023/1 P2 ICT identity management"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.26",
+      "target_framework": "FINMA",
+      "target_id": "P3",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
+      "notes": "Use of cryptography — FINMA 2023/1 P3 cyber risk management encryption (mn. 61-70)"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.4.10",
+      "target_framework": "FINMA",
+      "target_id": "P3",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
+      "notes": "PII transmission controls — FINMA 2023/1 P3 network encryption requirements"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.4.4",
+      "target_framework": "FINMA",
+      "target_id": "P3",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
+      "notes": "PII transmission controls (processor) — FINMA 2023/1 P3 encryption requirements"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.25",
+      "target_framework": "FINMA",
+      "target_id": "P3",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
+      "notes": "Logging — FINMA 2023/1 P3 cyber risk detection and monitoring"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.11",
+      "target_framework": "FINMA",
+      "target_id": "P2",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
+      "notes": "Incident management planning — FINMA 2023/1 P2 ICT incident management (mn. 58-60)"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.12",
+      "target_framework": "FINMA",
+      "target_id": "P2",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
+      "notes": "Incident response — FINMA 2023/1 P2 ICT incident response"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.12",
+      "target_framework": "FINMA",
+      "target_id": "G3",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
+      "notes": "Incident response — FINMA Guidance 03/2024 G3 detection, response, recovery"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.5",
+      "target_framework": "FINMA",
+      "target_id": "G4",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
+      "notes": "Notification of PII disclosure — FINMA Guidance 03/2024 G4 reporting obligations (24h notification)"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.24",
+      "target_framework": "FINMA",
+      "target_id": "P5",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
+      "notes": "Information backup — FINMA 2023/1 P5 business continuity management (mn. 83-96)"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.1.2.7",
+      "target_framework": "FINMA",
+      "target_id": "V.H",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
+      "notes": "Contracts with PII processors — FINMA 2018/3 V.H written outsourcing agreement requirements"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.2.2",
+      "target_framework": "FINMA",
+      "target_id": "V.H",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
+      "notes": "Customer agreement — FINMA 2018/3 V.H mandatory contract provisions"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.7",
+      "target_framework": "FINMA",
+      "target_id": "V.A",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
+      "notes": "Disclosure of subcontractors — FINMA 2018/3 V.A inventory of outsourced functions"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.8",
+      "target_framework": "FINMA",
+      "target_id": "V.B",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
+      "notes": "Engagement of subcontractor — FINMA 2018/3 V.B selection and monitoring of service providers"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.2.5.9",
+      "target_framework": "FINMA",
+      "target_id": "V.B",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
+      "notes": "Change of subcontractor — FINMA 2018/3 V.B monitoring of service providers"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.10",
+      "target_framework": "FINMA",
+      "target_id": "V.E",
+      "mapping_type": "related",
+      "confidence": 0.85,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
+      "notes": "IS in supplier agreements — FINMA 2018/3 V.E security requirements for outsourced functions"
+    },
+    {
+      "source_framework": "ISO27701",
+      "source_id": "A.3.15",
+      "target_framework": "FINMA",
+      "target_id": "V.F",
+      "mapping_type": "related",
+      "confidence": 0.8,
+      "source_reference": "FINMA Circular 2018/3 + 2023/1 + Guidance 03/2024 cross-reference with ISO27701 Annex A",
+      "notes": "Independent review of IS — FINMA 2018/3 V.F audit and supervision rights"
     }
   ]
 }
