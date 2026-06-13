@@ -477,7 +477,7 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
     .control-title { font-size: .68rem; opacity: .65; line-height: 1.3; }
     .group-code { font-family: monospace; font-size: .72rem; opacity: .65; }
     html[data-theme='light'] .gap-code { color: #185FA5; }
-    html[data-theme='light'] .gaps-all-covered { background: #dff0eb; border-color: rgba(29,158,117,0.35); color: #0a5c43; }
+    html[data-theme='light'] .gaps-all-covered { background: #dff0eb !important; border-color: rgba(29,158,117,0.35) !important; color: #0a5c43 !important; }
 
     /* Mapping chips */
     .mapping-chips { display: flex; flex-wrap: wrap; gap: 4px; }
