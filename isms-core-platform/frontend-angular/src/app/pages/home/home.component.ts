@@ -46,14 +46,12 @@ const COMPLIANCE_TOOLS = [
   { label: 'CIS Controls',       path: '/compliance/CIS-CSC',              icon: 'security' },
   { label: 'BSI Grundschutz',    path: '/compliance/BSI-GRUNDSCHUTZ',      icon: 'shield' },
   { label: 'CSRM (NCSC CH)',     path: '/csrm',                            icon: 'lock_person' },
-  { label: 'TISAX',              path: '/compliance/TISAX',                icon: 'verified' },
   { label: 'Swiss nDSG',         path: '/compliance/NDSG',                 icon: 'lock_person' },
   { label: 'EU CRA',             path: '/compliance/EU-CRA',               icon: 'security' },
   { label: 'EU AI Act',          path: '/compliance/EU-AI-ACT',            icon: 'policy' },
   { label: 'EU Cloud Sov.',      path: '/compliance/EU-CLOUD-SOVEREIGNTY', icon: 'cloud' },
   { label: 'COBIT 2019',         path: '/compliance/COBIT-2019',           icon: 'account_balance' },
-  { label: 'CSA CCM v4.1',       path: '/compliance/CSA-CCM',              icon: 'cloud' },
-  { label: 'CSA AICM',           path: '/compliance/CSA-AICM',             icon: 'policy' },
+  { label: 'PCI DSS 4.0.1',      path: '/compliance/pci-dss',              icon: 'credit_card' },
 ]
 
 const PRODUCT_FAMILIES = ['ISMS', 'PRIVACY', 'CLOUD'] as const
