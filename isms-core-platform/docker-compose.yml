@@ -725,6 +725,7 @@ services:
   isms-core-backup:
     image: offen/docker-volume-backup:v2
     container_name: isms-core-backup
+    profiles: [backup]
     env_file: backup.env
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro

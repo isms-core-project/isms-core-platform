@@ -116,6 +116,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | `isms-core-feeds` | Python 3.12 + schedule | Threat intelligence scheduler — MITRE ATT&CK, MITRE ATLAS, CISA KEV, FIRST EPSS, NVD CVE/CPE, ENISA EUVD, Exploit-DB (~52K exploits daily). Writes to Postgres and OpenSearch. Env: `FEEDS_CVE_ENABLED`, `FEEDS_CPE_FULL`, `FEEDS_EUVD_ENABLED`, `NIST_API_KEY`. |
 | `isms-core-threat-intel` | Python 3.12 + schedule | **Optional** (activate via `COMPOSE_PROFILES=...,threat-intel`) OSINT IOC feed container — 12 sources: CIRCL MISP, Botvrij MISP, AbuseIPDB, URLhaus, ThreatFox, SSLBL, AlienVault OTX, Red Flag Domains, Stopforumspam, MalwareBazaar, Feodo Tracker, Malpedia. VirusTotal enrichment (optional). On-demand trigger server on port 9002. Env: `THREAT_INTEL_ENABLED`, `ABUSEIPDB_API_KEY`, `OTX_API_KEY`, `MALWAREBAZAAR_API_KEY`, `VT_API_KEY`, `SHODAN_API_KEY`, `TI_MISP_IMPORT_FROM_DATE`. |
 | `isms-core-connectors` | Python 3.12 | Automated evidence runner — loads all 44 connectors dynamically, pushes evidence to `connector_evidence` table. Env: `CONNECTORS_WORKER_SECRET`. |
+| `isms-core-backup` | offen/docker-volume-backup v2 | **Optional** (activate via `COMPOSE_PROFILES=...,backup`) Daily volume backup — archives `postgres-data`, `garage-meta`, `garage-data` to `BACKUP_ARCHIVE_PATH` on the host. Runs on cron (default 03:30 UTC), stops postgres briefly for consistency. Config: `backup.env`. No healthcheck (by design). |
 
 > **Access in production:** `https://{HOST_IP}` via nginx. Do NOT access `:3000` or `:8000` directly — those ports are not exposed in production.
 
@@ -133,6 +134,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 > | `opensearch-single,garage` | + Garage S3 object store |
 > | `opensearch-single,mailpit` | + Mailpit local mail catcher (dev only) |
 > | `opensearch-single,smtp-bridge` | + Microsoft 365 SMTP relay |
+> | `opensearch-single,backup` | + Automated daily volume backup (configure `backup.env` first) |
 > | `opensearch-single,threat-intel,dashboards,smtp-bridge` | Full standard stack + OSINT IOC feeds — also set `THREAT_INTEL_ENABLED=true` |
 > | `opensearch-cluster,garage,dashboards,threat-intel,smtp-bridge` | Full enterprise stack + OSINT IOC feeds — also set `THREAT_INTEL_ENABLED=true` |
 >
@@ -406,11 +408,10 @@ isms-core-worker            Up (healthy)
 isms-core-connectors        Up (healthy)
 isms-core-feeds             Up (healthy)
 isms-core-beat              Up
-isms-core-backup            Up
 ```
 
 > `isms-core-beat` shows `Up` without `(healthy)` — this is normal. Celery Beat has no HTTP endpoint.
-> `isms-core-backup` shows `Up` without `(healthy)` — this is normal. The backup container runs on a cron schedule and has no HTTP endpoint.
+> If the `backup` profile is active, `isms-core-backup` also appears as `Up` (no healthcheck — it runs on a cron schedule).
 
 **Alembic migrations run automatically.** The backend applies all pending migrations via `entrypoint.sh` on startup. No manual `alembic upgrade head` needed.
 
@@ -823,7 +824,12 @@ docker compose logs -f isms-core-feeds
 
 ### Automated Volume Backup
 
-The stack includes an **`isms-core-backup`** container ([offen/docker-volume-backup](https://github.com/offen/docker-volume-backup)) that runs on a daily cron schedule.
+**`isms-core-backup`** is an optional profile service ([offen/docker-volume-backup](https://github.com/offen/docker-volume-backup)) that runs on a daily cron schedule.
+
+**Activate:** add `backup` to `COMPOSE_PROFILES` in `.env`:
+```bash
+COMPOSE_PROFILES=opensearch-single,backup
+```
 
 **What it backs up:** `postgres-data`, `garage-meta`, and `garage-data` volumes (OpenSearch data is excluded — ISM snapshots to Garage S3 cover it).
 
