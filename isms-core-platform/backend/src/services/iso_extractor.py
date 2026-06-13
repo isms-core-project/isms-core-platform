@@ -94,6 +94,8 @@ _FILENAME_TO_STANDARD: list[tuple[re.Pattern, str]] = [
     (re.compile(r"OSSTMM",            re.I),   "OSSTMM 3 (ISECOM)"),
     (re.compile(r"Security-Guidance.*v4|CSA.*Security.*Guidance.*4", re.I), "CSA Security Guidance v4.0"),
     (re.compile(r"controlli.*sicurezza|27017.*27018", re.I), "ISO Cloud Security Summary"),
+    (re.compile(r"StrategiaItaliana.*Eesilienz|StrategiaItaliana.*Resilienz|NazionaleEesilienz.*EN|NazionaleResilienz.*EN", re.I), "IT National Resilience Strategy — Critical Entities (EN)"),
+    (re.compile(r"NazionaleResilienz|NazionaleEesilienz|StrategiaNazionale", re.I), "IT Strategia Nazionale per la Resilienza dei Soggetti Critici"),
 ]
 
 # Standards for which we do control-level chunking
