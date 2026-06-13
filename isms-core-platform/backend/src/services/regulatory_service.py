@@ -43,6 +43,8 @@ _ASSESSABLE_LEVEL = {
     "ISO42001": 1,
     "NCSC_CAF": 2,
     "FR_NIS2_RECYF": 1,
+    "BSI_C5_2026": 1,
+    "BSI_C3A": 1,
 }
 
 

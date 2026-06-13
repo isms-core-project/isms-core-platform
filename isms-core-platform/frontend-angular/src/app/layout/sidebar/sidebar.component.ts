@@ -103,9 +103,11 @@ const NAV_FRAMEWORK_REGIONS: NavRegion[] = [
   {
     label: 'Germany',
     items: [
-      { label: 'BaFin BAIT',          path: '/compliance/bafin-bait', icon: 'account_balance' },
-      { label: 'BSI IT-Grundschutz',  path: '/compliance/bsi',        icon: 'shield' },
-      { label: 'TISAX',               path: '/compliance/tisax',      icon: 'verified' },
+      { label: 'BaFin BAIT',          path: '/compliance/bafin-bait',  icon: 'account_balance' },
+      { label: 'BSI IT-Grundschutz',  path: '/compliance/bsi',         icon: 'shield' },
+      { label: 'BSI C5:2026',         path: '/compliance/bsi-c5-2026', icon: 'cloud' },
+      { label: 'BSI C3A',             path: '/compliance/bsi-c3a',     icon: 'verified_user' },
+      { label: 'TISAX',               path: '/compliance/tisax',       icon: 'verified' },
     ],
   },
   {

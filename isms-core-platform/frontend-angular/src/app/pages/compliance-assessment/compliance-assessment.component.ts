@@ -76,6 +76,8 @@ const FRAMEWORK_META: Record<string, FrameworkMeta> = {
   NIST_800_53_R5:         { name: 'NIST SP 800-53 Rev 5',              subtitle: 'NIST SP 800-53',        color: '#00838F', description: 'NIST Special Publication 800-53 Rev 5 — Security and privacy controls for federal information systems.' },
   CSA_CCM_V4_1:           { name: 'CSA Cloud Controls Matrix',         subtitle: 'CCM v4.1',              color: '#0277BD', description: 'Cloud Security Alliance Cloud Controls Matrix v4.1 — security controls for cloud computing.' },
   CSA_AICM_V1:            { name: 'CSA AI Controls Matrix',            subtitle: 'AICM v1',               color: '#6A1B9A', description: 'Cloud Security Alliance AI Controls Matrix v1 — security controls for AI systems.' },
+  BSI_C5_2026:            { name: 'BSI C5:2026',                       subtitle: 'BSI — Cloud Computing Compliance Criteria Catalogue', color: '#C62828', description: 'BSI C5:2026 — 168 criteria across 17 domains for cloud service provider security assurance. Used for third-party attestation audits in Germany and the EU. Replaces C5:2020.' },
+  BSI_C3A:                { name: 'BSI C3A',                            subtitle: 'BSI — Criteria enabling Cloud Computing Autonomy', color: '#AD1457', description: 'BSI C3A v1.0 (2026) — 30 criterion groups across 6 sovereignty domains (Strategic, Legal/Jurisdictional, Data, Operational, Supply Chain, Technology). Companion to C5:2026.' },
 }
 
 const SLUG_TO_CODE: Record<string, string> = {
@@ -140,7 +142,7 @@ function groupRequirements(reqs: Requirement[], frameworkCode: string): GroupedR
   if (frameworkCode === 'EU_CLOUD_SOV') {
     return [{ groupId: 'all', groupTitle: 'Cloud Sovereignty Objectives — SOV-1 to SOV-8', requirements: reqs }]
   }
-  const groupedFrameworks = ['DORA', 'CIS_V8', 'BSI_IT_GRUNDSCHUTZ', 'COBIT_2019', 'NIST_AI_RMF', 'NCSC_CAF']
+  const groupedFrameworks = ['DORA', 'CIS_V8', 'BSI_IT_GRUNDSCHUTZ', 'COBIT_2019', 'NIST_AI_RMF', 'NCSC_CAF', 'BSI_C5_2026', 'BSI_C3A']
   if (groupedFrameworks.includes(frameworkCode)) {
     const map = new Map<string, GroupedReq>()
     for (const r of reqs) {

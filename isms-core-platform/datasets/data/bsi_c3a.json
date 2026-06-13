@@ -1,0 +1,519 @@
+{
+  "bundle_id": "a6357472-a253-5b9c-b153-47e704426677",
+  "bundle_type": "single_framework",
+  "bundle_version": "1.0.0",
+  "framework": {
+    "id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+    "code": "BSI_C3A",
+    "name": "BSI Criteria enabling Cloud Computing Autonomy",
+    "version": "C3A v1.0",
+    "publisher": "Federal Office for Information Security (BSI)",
+    "source_url": "https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Informationen-und-Empfehlungen/Empfehlungen-nach-Angriffszielen/Cloud-Computing/Cloud-Computing-Autonomie-C3A/cloud-computing-autonomie-c3a_node.html",
+    "jurisdiction": "DE",
+    "description": "BSI C3A v1.0 — Criteria enabling Cloud Computing Autonomy (27.04.2026). 6 sovereignty domains (Strategic, Legal/Jurisdictional, Data, Operational, Supply Chain, Technology) with 30 criterion groups. Companion framework to BSI C5:2026 — presupposes C5 compliance. Based on EU Cloud Sovereignty Framework (EU CSF). Covers SOV-1 through SOV-6; SOV-7 (Security) covered by C5:2026; SOV-8 (Environmental) outside BSI scope."
+  },
+  "generated_at": "2026-06-13T00:00:00Z",
+  "generator": "generate_bsi_c3a.py",
+  "objects_count": 36,
+  "relationships_count": 0,
+  "objects": [
+    {
+      "type": "framework_control",
+      "id": "76b2d1cd-ba59-52f0-94c2-51e443f04e2f",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-1",
+      "title": "SOV-1 Strategic Sovereignty",
+      "description": "Strategic sovereignty criteria covering jurisdiction, registered office, CSP effective control, and control change notification.",
+      "level": 0,
+      "sort_order": 10000,
+      "metadata": {
+        "domain": "SOV-1"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "055a1e6d-c8ca-57e9-b43c-58c463ef715e",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-2",
+      "title": "SOV-2 Legal & Jurisdictional Sovereignty",
+      "description": "Legal and jurisdictional sovereignty criteria covering extraterritorial exposure, audit rights, and state of defense takeover provisions.",
+      "level": 0,
+      "sort_order": 20000,
+      "metadata": {
+        "domain": "SOV-2"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "fd90216b-6ecf-56d6-984b-abc831826b9d",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-3",
+      "title": "SOV-3 Data Sovereignty",
+      "description": "Data sovereignty criteria covering data residence, external key management, external identity provider, logging/monitoring, and client-side encryption.",
+      "level": 0,
+      "sort_order": 30000,
+      "metadata": {
+        "domain": "SOV-3"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "bf97f43a-4a77-549b-9b37-9cce5d6e95a9",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-4",
+      "title": "SOV-4 Operational Sovereignty",
+      "description": "Operational sovereignty criteria covering operating personnel, remote work, redundant connectivity, SOC, ingress data control, update threat analysis, data exchange monitoring/gateways, disconnect, and reconnect.",
+      "level": 0,
+      "sort_order": 40000,
+      "metadata": {
+        "domain": "SOV-4"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "8e650746-0b9b-5ec7-965a-203cddd950d4",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-5",
+      "title": "SOV-5 Supply Chain Sovereignty",
+      "description": "Supply chain sovereignty criteria covering software dependencies (SBOM), hardware dependencies, external service dependencies, export restrictions, and capacity management.",
+      "level": 0,
+      "sort_order": 50000,
+      "metadata": {
+        "domain": "SOV-5"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "15f3c0c0-cf39-508a-8eb1-2577166defd8",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-6",
+      "title": "SOV-6 Technology Sovereignty",
+      "description": "Technology sovereignty criteria covering source code availability, continuous service delivery, and software development independence.",
+      "level": 0,
+      "sort_order": 60000,
+      "metadata": {
+        "domain": "SOV-6"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "dcb265db-f3d5-5f5d-b91d-76aec2b0eda4",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-1-01",
+      "title": "SOV-1 Jurisdiction",
+      "description": "CSP MUST operate under EU/German jurisdiction, with contract governance and dispute resolution. Criteria: SOV-1-01-C1 (EU jurisdiction), SOV-1-01-C2 (German jurisdiction).",
+      "level": 1,
+      "parent_id": "76b2d1cd-ba59-52f0-94c2-51e443f04e2f",
+      "sort_order": 10100,
+      "metadata": {
+        "domain": "SOV-1"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "ec94ea5c-1754-5443-87fe-2207dc41410e",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-1-02",
+      "title": "SOV-1 Registered Office",
+      "description": "CSP MUST have a registered head office in the EU or Germany. Subcontractors must also meet the criteria. Criteria: SOV-1-02-C1 (EU HQ), SOV-1-02-C2 (German HQ).",
+      "level": 1,
+      "parent_id": "76b2d1cd-ba59-52f0-94c2-51e443f04e2f",
+      "sort_order": 10200,
+      "metadata": {
+        "domain": "SOV-1"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "da3192fd-7eae-5692-bd8e-39c19aaa0b32",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-1-03",
+      "title": "SOV-1 CSP Effective Control",
+      "description": "CSP MUST be effectively controlled by EU/German corporations. Effective controls must be transparent to cloud service customers. Criteria: SOV-1-03-C1 (EU control), SOV-1-03-C2 (German control).",
+      "level": 1,
+      "parent_id": "76b2d1cd-ba59-52f0-94c2-51e443f04e2f",
+      "sort_order": 10300,
+      "metadata": {
+        "domain": "SOV-1"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "2bade163-8e4c-5cd0-99df-d87be41a0e97",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-1-04",
+      "title": "SOV-1 CSP Control Change",
+      "description": "CSP MUST inform cloud service customers 90 days in advance of any changes affecting CSP control (ownership, shareholding, governance) that could undermine C3A controls. Criterion: SOV-1-04-C.",
+      "level": 1,
+      "parent_id": "76b2d1cd-ba59-52f0-94c2-51e443f04e2f",
+      "sort_order": 10400,
+      "metadata": {
+        "domain": "SOV-1"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "b6aa6c66-8cc7-5061-b096-e3d875d9fbd3",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-2-01",
+      "title": "SOV-2 Extraterritorial Exposure",
+      "description": "CSP MUST identify at least annually any non-EU law with cross-border implications for cloud service availability, confidentiality and integrity of customer data. Structured risk assessment required. Criterion: SOV-2-01-C.",
+      "level": 1,
+      "parent_id": "055a1e6d-c8ca-57e9-b43c-58c463ef715e",
+      "sort_order": 20100,
+      "metadata": {
+        "domain": "SOV-2"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "968f49c2-9bb8-518f-b36b-93823cc3a26d",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-2-02",
+      "title": "SOV-2 Audit Rights",
+      "description": "CSP MUST document procedures allowing relevant federal/national cybersecurity authorities to verify C3A compliance by audit. Criteria: SOV-2-02-C1 (national authority), SOV-2-02-C2 (German federal authority).",
+      "level": 1,
+      "parent_id": "055a1e6d-c8ca-57e9-b43c-58c463ef715e",
+      "sort_order": 20200,
+      "metadata": {
+        "domain": "SOV-2"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "fe3e6fd2-8404-586c-97f5-aa0cddb65721",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-2-03",
+      "title": "SOV-2 State of Defense Takeover",
+      "description": "In the event of a state of defense declaration, CSP MUST enable EU/German authorities to take over the capabilities required to operate the cloud. Criteria: SOV-2-03-C1 (EU member state), SOV-2-03-C2 (Germany).",
+      "level": 1,
+      "parent_id": "055a1e6d-c8ca-57e9-b43c-58c463ef715e",
+      "sort_order": 20300,
+      "metadata": {
+        "domain": "SOV-2"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "4e9f465b-16cf-52ff-9359-2f418ec8e759",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-3-01",
+      "title": "SOV-3 Data Residence",
+      "description": "CSP MUST provide service options ensuring cloud service derived data, customer data and account data are stored and processed exclusively in the EU or Germany. Criteria: SOV-3-01-C1 (visibility), C2 (derived data EU), C3 (customer data EU), C4 (customer data DE), C5 (CSP data EU).",
+      "level": 1,
+      "parent_id": "fd90216b-6ecf-56d6-984b-abc831826b9d",
+      "sort_order": 30100,
+      "metadata": {
+        "domain": "SOV-3"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "91c34c00-92c2-57f1-a2a1-bd2784c74a23",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-3-02",
+      "title": "SOV-3 External Key Management",
+      "description": "CSP MUST allow integration of external encryption key management systems for IaaS/PaaS where keys are created, managed, and stored outside the CSP environment. Additional criterion extends this to SaaS. Criteria: SOV-3-02-C, SOV-3-02-AC.",
+      "level": 1,
+      "parent_id": "fd90216b-6ecf-56d6-984b-abc831826b9d",
+      "sort_order": 30200,
+      "metadata": {
+        "domain": "SOV-3"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "58988aca-895e-5dea-8a42-f3d3134992e0",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-3-03",
+      "title": "SOV-3 External Identity Provider",
+      "description": "CSP MUST support standards-based integration of external identity providers. Additional criteria require open non-proprietary standards, stateless authentication, and dynamic claim-based authorization. Criteria: SOV-3-03-C, SOV-3-03-AC1, SOV-3-03-AC2, SOV-3-03-AC3.",
+      "level": 1,
+      "parent_id": "fd90216b-6ecf-56d6-984b-abc831826b9d",
+      "sort_order": 30300,
+      "metadata": {
+        "domain": "SOV-3"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "3a52353a-705c-5255-bb3f-2d2ca9b18260",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-3-04",
+      "title": "SOV-3 Logging and Monitoring",
+      "description": "CSP MUST provide customers with capability to record, retain, and review logs of management and data access activities. Additional criteria require real-time access via standardized open-source APIs and granular filtering. Criteria: SOV-3-04-C, SOV-3-04-AC1, SOV-3-04-AC2.",
+      "level": 1,
+      "parent_id": "fd90216b-6ecf-56d6-984b-abc831826b9d",
+      "sort_order": 30400,
+      "metadata": {
+        "domain": "SOV-3"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "6998442f-39a2-527a-b1b4-ccc89bca7a57",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-3-05",
+      "title": "SOV-3 Client-Side Encryption",
+      "description": "CSP MUST enable client-side encryption of cloud service customer data with a private key available only to the customer outside the CSP environment. Criterion: SOV-3-05-C.",
+      "level": 1,
+      "parent_id": "fd90216b-6ecf-56d6-984b-abc831826b9d",
+      "sort_order": 30500,
+      "metadata": {
+        "domain": "SOV-3"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "df182956-b8c0-5d1a-89e7-b7457fce8be6",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-4-01",
+      "title": "SOV-4 Operating Personnel",
+      "description": "All personnel with logical/physical infrastructure access, customer support, or management control of the CSP MUST be EU citizens (EU residency or German residency). Additional criterion requires standalone European organization. Criteria: SOV-4-01-C1, SOV-4-01-C2, SOV-4-01-C3.",
+      "level": 1,
+      "parent_id": "bf97f43a-4a77-549b-9b37-9cce5d6e95a9",
+      "sort_order": 40100,
+      "metadata": {
+        "domain": "SOV-4"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "84fbf115-f849-532a-8cb5-915d527c4769",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-4-02",
+      "title": "SOV-4 Remote Work",
+      "description": "CSP MUST ensure administrative access to cloud infrastructure is performed through EU/German access paths. Access from outside EU/Germany must be technically restricted except in narrowly defined controlled scenarios. Criteria: SOV-4-02-C1 (EU paths), SOV-4-02-C2 (German paths).",
+      "level": 1,
+      "parent_id": "bf97f43a-4a77-549b-9b37-9cce5d6e95a9",
+      "sort_order": 40200,
+      "metadata": {
+        "domain": "SOV-4"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "df1aaefe-03c5-5bfa-b2f7-4319f8857f37",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-4-03",
+      "title": "SOV-4 Redundant Connectivity Providers",
+      "description": "CSP MUST ensure redundant and independent connectivity for delivery of the sovereign cloud service, with at least one EU-based connectivity provider. Additional criterion requires at least one provider outside CSP corporate structure. Criteria: SOV-4-03-C, SOV-4-03-AC.",
+      "level": 1,
+      "parent_id": "bf97f43a-4a77-549b-9b37-9cce5d6e95a9",
+      "sort_order": 40300,
+      "metadata": {
+        "domain": "SOV-4"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "d99b8a78-f4dd-5101-9f72-7ff881e6d08f",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-4-04",
+      "title": "SOV-4 Security Operations Centre (SOC)",
+      "description": "CSP MUST ensure SOC capabilities are established and operated within the EU/Germany. In case of a disconnect (SOV-4-10), a standalone equivalent SOC must be provided. Criteria: SOV-4-04-C1 (EU SOC), SOV-4-04-C2 (German SOC).",
+      "level": 1,
+      "parent_id": "bf97f43a-4a77-549b-9b37-9cce5d6e95a9",
+      "sort_order": 40400,
+      "metadata": {
+        "domain": "SOV-4"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "c615be34-d1fc-5912-80e7-b0c5a9e75162",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-4-05",
+      "title": "SOV-4 Ingress Data Control",
+      "description": "All software updates and operational data affecting the cloud service MUST be received, authorized and validated in a secured network area controlled by the CSP. Updates must be checked for known vulnerabilities via controlled change management. Criteria: SOV-4-05-C, SOV-4-05-AC1, SOV-4-05-AC2.",
+      "level": 1,
+      "parent_id": "bf97f43a-4a77-549b-9b37-9cce5d6e95a9",
+      "sort_order": 40500,
+      "metadata": {
+        "domain": "SOV-4"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "4e2d9a09-637a-5d18-a471-ac593f617a2e",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-4-06",
+      "title": "SOV-4 Update Threat Analysis",
+      "description": "When using third-party software, CSP MUST implement risk-based security analysis prior to deployment, detecting and mitigating malicious code, viruses, spyware, and ransomware. Criterion: SOV-4-06-C.",
+      "level": 1,
+      "parent_id": "bf97f43a-4a77-549b-9b37-9cce5d6e95a9",
+      "sort_order": 40600,
+      "metadata": {
+        "domain": "SOV-4"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "cd409b9a-2a64-52f4-90ce-92321e9a2588",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-4-07",
+      "title": "SOV-4 Data Exchange Monitoring",
+      "description": "All cloud service derived data, customer data and account data exchanged with third parties MUST always be monitored, controlled and logged via a documented process, reviewed at least annually. Criterion: SOV-4-07-C.",
+      "level": 1,
+      "parent_id": "bf97f43a-4a77-549b-9b37-9cce5d6e95a9",
+      "sort_order": 40700,
+      "metadata": {
+        "domain": "SOV-4"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "f722850b-02af-5caf-ad13-212f5bb6728c",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-4-08",
+      "title": "SOV-4 Data Exchange Gateways",
+      "description": "CSP MUST document, define and visualize (Data Flow Diagram) all data exchanges with third parties occurring only via known gateways. Documentation reviewed annually. Additional criterion requires DFD disclosure to cybersecurity authority on request. Criteria: SOV-4-08-C, SOV-4-08-AC.",
+      "level": 1,
+      "parent_id": "bf97f43a-4a77-549b-9b37-9cce5d6e95a9",
+      "sort_order": 40800,
+      "metadata": {
+        "domain": "SOV-4"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "13b495ed-6efb-523a-962d-df7d82f9f6e3",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-4-09",
+      "title": "SOV-4 Disconnect",
+      "description": "CSP MUST be able to disconnect all non-EU network connections without impairing availability, integrity, authenticity and confidentiality of the cloud service. Disconnect process must be independent from non-EU entities, documented and tested annually. Criteria: SOV-4-09-C, SOV-4-09-AC.",
+      "level": 1,
+      "parent_id": "bf97f43a-4a77-549b-9b37-9cce5d6e95a9",
+      "sort_order": 40900,
+      "metadata": {
+        "domain": "SOV-4"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "a9e4382f-8cf6-542f-9544-69c9135e0621",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-4-10",
+      "title": "SOV-4 Reconnect",
+      "description": "CSP MUST be able to reestablish all non-EU connections after a disconnect (SOV-4-09) and install updates if disconnected for up to 90 days. Reconnect process must be tested. Criterion: SOV-4-10-C.",
+      "level": 1,
+      "parent_id": "bf97f43a-4a77-549b-9b37-9cce5d6e95a9",
+      "sort_order": 41000,
+      "metadata": {
+        "domain": "SOV-4"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "ab82f29d-d0b3-5c46-b955-c3cf5e87116c",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-5-01",
+      "title": "SOV-5 Software Dependencies",
+      "description": "CSP MUST identify software components (SBOM per TR-03183-2) and their countries of origin for each cloud service, available on demand. Additional criterion requires risk-based process for managing critical software dependencies. Criteria: SOV-5-01-C, SOV-5-01-AC.",
+      "level": 1,
+      "parent_id": "8e650746-0b9b-5ec7-965a-203cddd950d4",
+      "sort_order": 50100,
+      "metadata": {
+        "domain": "SOV-5"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "60e80124-c837-5c5e-b7ea-3f8549eccb94",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-5-02",
+      "title": "SOV-5 Hardware Dependencies",
+      "description": "CSP MUST maintain a documented inventory of hardware components and relevant suppliers with countries of origin, available on demand. Additional criterion requires risk-based process for managing critical hardware dependencies. Criteria: SOV-5-02-C, SOV-5-02-AC.",
+      "level": 1,
+      "parent_id": "8e650746-0b9b-5ec7-965a-203cddd950d4",
+      "sort_order": 50200,
+      "metadata": {
+        "domain": "SOV-5"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "5713b103-3f5d-5727-91bf-9315bd1d7dda",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-5-03",
+      "title": "SOV-5 External Service Dependencies",
+      "description": "CSP MUST maintain a documented inventory of external cloud services necessary for cloud service delivery. Additional criterion requires risk-based management process for critical external service dependencies. Criteria: SOV-5-03-C, SOV-5-03-AC.",
+      "level": 1,
+      "parent_id": "8e650746-0b9b-5ec7-965a-203cddd950d4",
+      "sort_order": 50300,
+      "metadata": {
+        "domain": "SOV-5"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "0fb4aad2-cf90-5fa9-86cc-8cb1c095b550",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-5-04",
+      "title": "SOV-5 Export Restriction",
+      "description": "CSP MUST maintain documented processes for identifying and mitigating risks related to export restrictions or supply chain disruptions affecting software, external services, and hardware. Affected customers must be informed. Criterion: SOV-5-04-C.",
+      "level": 1,
+      "parent_id": "8e650746-0b9b-5ec7-965a-203cddd950d4",
+      "sort_order": 50400,
+      "metadata": {
+        "domain": "SOV-5"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "20e0e5c0-02d8-5a61-815a-c037d9ae3559",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-5-05",
+      "title": "SOV-5 Capacity Management",
+      "description": "Capacity management MUST be performed in the EU (or Germany) in accordance with C5. Criteria: SOV-5-05-C1 (EU capacity management), SOV-5-05-C2 (German capacity management).",
+      "level": 1,
+      "parent_id": "8e650746-0b9b-5ec7-965a-203cddd950d4",
+      "sort_order": 50500,
+      "metadata": {
+        "domain": "SOV-5"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "5d9c47fd-258f-55c3-bf26-747adf4d30f5",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-6-01",
+      "title": "SOV-6 Source Code Availability",
+      "description": "CSP MUST maintain an EU-based backup of source code (max 24 hours old, min 5 versions) including all IaC build-scripts and deployment toolchains, with documentation enabling independent operation without external dependencies. Criterion: SOV-6-01-C.",
+      "level": 1,
+      "parent_id": "15f3c0c0-cf39-508a-8eb1-2577166defd8",
+      "sort_order": 60100,
+      "metadata": {
+        "domain": "SOV-6"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "7d3a208a-a1e0-592f-8950-5a4d7be237cb",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-6-02",
+      "title": "SOV-6 Continuous Service Delivery",
+      "description": "In the event of third-party disconnection, CSP MUST maintain documented contingency strategies ensuring continued secure cloud service delivery. Additional criterion requires capability to remediate vulnerabilities and maintain specialized engineering talent independently. Criteria: SOV-6-02-C, SOV-6-02-AC.",
+      "level": 1,
+      "parent_id": "15f3c0c0-cf39-508a-8eb1-2577166defd8",
+      "sort_order": 60200,
+      "metadata": {
+        "domain": "SOV-6"
+      }
+    },
+    {
+      "type": "framework_control",
+      "id": "04ad4a0f-90fe-5893-acd8-4cd1b70b9777",
+      "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
+      "control_id": "SOV-6-03",
+      "title": "SOV-6 Software Development",
+      "description": "CSP MUST ensure authorised personnel have access to software development tools and environments necessary to maintain and update cloud services, with documented contingency procedures for scenarios where development environment access is disrupted. Criterion: SOV-6-03-C.",
+      "level": 1,
+      "parent_id": "15f3c0c0-cf39-508a-8eb1-2577166defd8",
+      "sort_order": 60300,
+      "metadata": {
+        "domain": "SOV-6"
+      }
+    }
+  ]
+}
