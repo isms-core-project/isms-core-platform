@@ -5,8 +5,8 @@
   "framework": {
     "id": "107e4632-8cb8-5150-884b-0db1bb372f3e",
     "code": "ISO27018",
-    "name": "ISO/IEC 27018:2019 \u2014 PII Protection in Public Cloud",
-    "version": "2019",
+    "name": "ISO/IEC 27018:2025 \u2014 PII Protection in Public Cloud",
+    "version": "2025",
     "publisher": "ISO/IEC",
     "source_url": "https://www.iso.org/standard/76559.html",
     "jurisdiction": null,
@@ -14,7 +14,7 @@
   },
   "generated_at": "2026-06-13T12:07:17Z",
   "generator": "generate_regulatory.py",
-  "content_hash": "ab0aad7c7255bffd5e130750",
+  "content_hash": "ab0aad7c7255bffd5e130751",
   "objects_count": 40,
   "relationships_count": 16,
   "objects": [
