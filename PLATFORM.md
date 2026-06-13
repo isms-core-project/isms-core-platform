@@ -135,8 +135,8 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 > | `opensearch-single,mailpit` | + Mailpit local mail catcher (dev only) |
 > | `opensearch-single,smtp-bridge` | + Microsoft 365 SMTP relay |
 > | `opensearch-single,backup` | + Automated daily volume backup (configure `backup.env` first) |
-> | `opensearch-single,threat-intel,dashboards,smtp-bridge` | Full standard stack + OSINT IOC feeds — also set `THREAT_INTEL_ENABLED=true` |
-> | `opensearch-cluster,garage,dashboards,threat-intel,smtp-bridge` | Full enterprise stack + OSINT IOC feeds — also set `THREAT_INTEL_ENABLED=true` |
+> | `opensearch-single,threat-intel,dashboards,smtp-bridge,backup` | Full standard stack + OSINT IOC feeds — also set `THREAT_INTEL_ENABLED=true` |
+> | `opensearch-cluster,garage,dashboards,threat-intel,smtp-bridge,backup` | Full enterprise stack + OSINT IOC feeds — also set `THREAT_INTEL_ENABLED=true` |
 >
 > **`opensearch-single` and `opensearch-cluster` are mutually exclusive — always include exactly one.**
 >
