@@ -1,4 +1,4 @@
-import { Component, inject, signal, computed } from '@angular/core'
+import { Component, inject, signal, computed, effect } from '@angular/core'
 import { DecimalPipe } from '@angular/common'
 import { FormsModule } from '@angular/forms'
 import { Router } from '@angular/router'
@@ -113,7 +113,7 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
     @if (activeTab() === 0 && covData()) {
       <mat-form-field appearance="outline" class="header-fw-select" subscriptSizing="dynamic">
         <mat-label>Framework</mat-label>
-        <mat-select [(ngModel)]="activeFramework" (ngModelChange)="page.set(0)">
+        <mat-select [ngModel]="activeFramework()" (ngModelChange)="activeFramework.set($event); page.set(0)">
           @for (f of sortedFrameworks(); track f) {
             <mat-option [value]="f">
               {{ f }}
@@ -162,12 +162,12 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
           <div class="fw-pills-heading">All Frameworks</div>
           <div class="fw-pills-row">
             @for (f of sortedFrameworks(); track f) {
-              <div (click)="activeFramework = f; page.set(0)"
+              <div (click)="activeFramework.set(f); page.set(0)"
                 class="fw-pill"
-                [class.fw-pill-active]="f === activeFramework"
-                [class.fw-pill-iso-ext]="isIsoExt(f) && f !== activeFramework"
-                [style.background]="(covData()!.by_framework[f] ?? 0) > 0 && f !== activeFramework ? packColor() + '18' : null"
-                [style.borderColor]="(covData()!.by_framework[f] ?? 0) > 0 && f !== activeFramework ? packColor() + '40' : null">
+                [class.fw-pill-active]="f === activeFramework()"
+                [class.fw-pill-iso-ext]="isIsoExt(f) && f !== activeFramework()"
+                [style.background]="(covData()!.by_framework[f] ?? 0) > 0 && f !== activeFramework() ? packColor() + '18' : null"
+                [style.borderColor]="(covData()!.by_framework[f] ?? 0) > 0 && f !== activeFramework() ? packColor() + '40' : null">
                 {{ f }} <span class="fw-pill-count" [style.opacity]="(covData()!.by_framework[f] ?? 0) > 0 ? '0.8' : '0.35'">· {{ covData()!.by_framework[f] ?? 0 }}</span>
               </div>
             }
@@ -190,7 +190,7 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
             <tr class="thead-row">
               <th class="th-cell th-col-control">{{ sourceLabel() }}</th>
               <th class="th-cell th-col-group">Control Group</th>
-              <th class="th-cell">{{ activeFramework || 'Framework' }} Mappings</th>
+              <th class="th-cell">{{ activeFramework() || 'Framework' }} Mappings</th>
               <th class="th-cell th-col-hit th-center">Hit</th>
             </tr>
           </thead>
@@ -245,7 +245,7 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
             @if (!coverageQuery.isLoading() && filteredRows().length === 0) {
               <tr>
                 <td colspan="4" class="td-empty">
-                  No mappings found{{ activeFramework ? ' for ' + activeFramework : '' }}.
+                  No mappings found{{ activeFramework() ? ' for ' + activeFramework() : '' }}.
                 </td>
               </tr>
             }
@@ -548,13 +548,22 @@ export class CoverageComponent {
 
   // ── State ──────────────────────────────────────────────────────────────────
   activeTab       = signal(0)
-  activeFramework = ''
+  activeFramework = signal('')
   showUnmapped    = signal(false)
   page            = signal(0)
   gapProduct      = signal<'framework' | 'operational'>('framework')
   inferProjectId  = ''
   openInferred    = signal<Record<string, boolean>>({})
   readonly rowsPerPage = ROWS_PER_PAGE
+
+  constructor() {
+    // Reset framework selection when the active product changes (different source framework)
+    effect(() => {
+      this.product.product()
+      this.activeFramework.set('')
+      this.page.set(0)
+    })
+  }
 
   gapBtns = [
     { value: 'framework'   as const, label: 'FW', color: PRODUCT_COLORS.isms },
@@ -603,9 +612,9 @@ export class CoverageComponent {
   filteredRows = computed((): CoverageRow[] => {
     const c = this.covData()
     if (!c) return []
-    if (this.showUnmapped()) return c.rows.filter(row => !row.mappings.some(m => m.framework === this.activeFramework))
-    if (!this.activeFramework) return c.rows
-    return c.rows.filter(row => row.mappings.some(m => m.framework === this.activeFramework))
+    if (this.showUnmapped()) return c.rows.filter(row => !row.mappings.some(m => m.framework === this.activeFramework()))
+    if (!this.activeFramework()) return c.rows
+    return c.rows.filter(row => row.mappings.some(m => m.framework === this.activeFramework()))
   })
 
   pagedRows = computed((): CoverageRow[] => {
@@ -619,7 +628,7 @@ export class CoverageComponent {
     return [
       { label: 'Frameworks',    value: c.frameworks.length },
       { label: 'Total Mappings', value: c.total_mappings.toLocaleString() },
-      { label: this.activeFramework || 'Selected', value: this.activeFramework ? (c.by_framework[this.activeFramework] ?? 0) : '—' },
+      { label: this.activeFramework() || 'Selected', value: this.activeFramework() ? (c.by_framework[this.activeFramework()] ?? 0) : '—' },
       { label: this.showUnmapped() ? 'Unmapped Controls' : 'Controls Shown', value: this.filteredRows().length },
     ]
   })
@@ -644,8 +653,8 @@ export class CoverageComponent {
   getConfColor(c: number): { bg: string; color: string } { return confColor(c, this.isDark()) }
 
   frameworkMappings(row: CoverageRow): CoverageMapping[] {
-    if (!this.activeFramework) return row.mappings
-    return row.mappings.filter(m => m.framework === this.activeFramework)
+    if (!this.activeFramework()) return row.mappings
+    return row.mappings.filter(m => m.framework === this.activeFramework())
   }
 
   // ── Actions ────────────────────────────────────────────────────────────────
