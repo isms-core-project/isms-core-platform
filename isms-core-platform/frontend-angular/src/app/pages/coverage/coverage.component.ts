@@ -259,7 +259,8 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
       }
     </mat-card>
 
-    <!-- Content Coverage Gaps -->
+    <!-- Content Coverage Gaps — ISMS only (ISO 27001 control groups) -->
+    @if (product.product() === 'isms') {
     <div class="gaps-section">
       <div class="gaps-header">
         <h6 class="gaps-title">Content Coverage Gaps</h6>
@@ -279,20 +280,13 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
         }
       </div>
 
-      @if (product.product() !== 'isms') {
-        <div class="gaps-empty-state">
-          <mat-icon>info</mat-icon>
-          <span class="gaps-empty-text">Content coverage gaps will appear here once control groups are imported.</span>
-        </div>
-      }
-
-      @if (product.product() === 'isms' && (gapsQuery.data()?.length ?? 0) === 0 && !gapsQuery.isLoading()) {
+      @if ((gapsQuery.data()?.length ?? 0) === 0 && !gapsQuery.isLoading()) {
         <div class="gaps-all-covered">
           All controls have complete {{ gapProduct() === 'framework' ? 'FW' : 'OP' }} coverage — no artefacts missing.
         </div>
       }
 
-      @if (product.product() === 'isms' && (gapsQuery.data()?.length ?? 0) > 0) {
+      @if ((gapsQuery.data()?.length ?? 0) > 0) {
         <mat-card>
           <div class="table-scroll">
             <table class="cov-table">
@@ -328,6 +322,7 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
         </mat-card>
       }
     </div>
+    }
       </div>
     </mat-tab>
 
