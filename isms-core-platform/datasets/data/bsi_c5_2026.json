@@ -240,7 +240,7 @@
     },
     {
       "type": "framework_control",
-      "id": "771b21a8-09a5-5a07-a2ec-9ab998ffb562",
+      "id": "0f061b26-7112-5c7e-998a-600dad51b494",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OIS-01",
       "title": "Information Security Management System (ISMS)",
@@ -255,7 +255,7 @@
     },
     {
       "type": "framework_control",
-      "id": "33bd971a-9e2f-5253-bada-66fcaff53322",
+      "id": "56b92fd1-120a-5dd6-bbe7-bd723133f868",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OIS-02",
       "title": "Information Security Policy",
@@ -270,7 +270,7 @@
     },
     {
       "type": "framework_control",
-      "id": "a245e7ca-7267-52b7-b87f-89434c91b59f",
+      "id": "5a7082ad-bf3e-56c9-81f7-d0b17ecc66ac",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OIS-03",
       "title": "Interfaces and Dependencies",
@@ -285,7 +285,7 @@
     },
     {
       "type": "framework_control",
-      "id": "090f7c5e-b327-50d6-b57c-b5256d16f43d",
+      "id": "bdcaaeaa-df86-5dbd-a1e4-869118fe4904",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OIS-04",
       "title": "Segregation of Duties",
@@ -300,7 +300,7 @@
     },
     {
       "type": "framework_control",
-      "id": "02af8625-eae4-5f3b-8c95-098bf654b586",
+      "id": "0e6ed939-385e-56e7-b754-dd9687203a37",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OIS-05",
       "title": "Threat Intelligence",
@@ -315,7 +315,7 @@
     },
     {
       "type": "framework_control",
-      "id": "274db510-094b-5e06-978a-25eecd5fe845",
+      "id": "f1284f2a-c395-5cc1-9f96-ae76aac3cc46",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OIS-06",
       "title": "Contact with Relevant Government Agencies and Interest Groups",
@@ -330,7 +330,7 @@
     },
     {
       "type": "framework_control",
-      "id": "b88f5255-7623-5286-95ba-d9b11d1bb5bb",
+      "id": "8c380830-50ca-5024-a264-7de7fca632ef",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OIS-07",
       "title": "Risk Management Policy",
@@ -345,7 +345,7 @@
     },
     {
       "type": "framework_control",
-      "id": "cc24728c-c905-5d5a-b759-35ace4bb92f6",
+      "id": "eb392122-deb1-5883-aa36-4142ddde0ab1",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OIS-08",
       "title": "Application of the Risk Management Policy - Risk Assessment",
@@ -360,7 +360,7 @@
     },
     {
       "type": "framework_control",
-      "id": "00420c17-44f1-59a0-b0fb-bbef9213b02d",
+      "id": "3c7d136b-356d-5d98-8866-fc55ffa5e5f4",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OIS-09",
       "title": "Application of the Risk Management Policy - Risk Treatment",
@@ -375,7 +375,7 @@
     },
     {
       "type": "framework_control",
-      "id": "25a2141f-284c-54bd-b116-bd11e65f6c85",
+      "id": "74ec976e-7c60-55f2-b23e-e138f4f140f8",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OIS-10",
       "title": "Information Security in Project Management",
@@ -390,7 +390,7 @@
     },
     {
       "type": "framework_control",
-      "id": "1eeabeec-dc34-5561-87db-935277184d71",
+      "id": "3a456f2a-fd4e-542c-824e-d0071e844e72",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "SP-01",
       "title": "Documentation, Communication and Provision of Policies and Procedures",
@@ -405,7 +405,7 @@
     },
     {
       "type": "framework_control",
-      "id": "27d802b8-c3f8-5c8c-8be8-b6d303a84464",
+      "id": "a2a942c1-4979-5446-86e2-da315be47acd",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "SP-02",
       "title": "Review and Approval of Policies and Procedures",
@@ -420,7 +420,7 @@
     },
     {
       "type": "framework_control",
-      "id": "b9819170-4836-5e0d-a67b-bde076978b2b",
+      "id": "1880b6c6-cdbb-5640-aff2-8ff5cebbb455",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "SP-03",
       "title": "Exceptions from Existing Policies and Procedures",
@@ -435,7 +435,7 @@
     },
     {
       "type": "framework_control",
-      "id": "0b7b20af-b872-51e5-bd7e-8db552d586cb",
+      "id": "c1b34878-023c-5f73-b4ad-d5b20495f1e6",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "HR-01",
       "title": "Verification of Qualification and Trustworthiness",
@@ -450,7 +450,7 @@
     },
     {
       "type": "framework_control",
-      "id": "3d6167fc-6976-5311-aa91-0778befe5d72",
+      "id": "2bf5b9fa-e340-5713-acdd-0173b2dafdfa",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "HR-02",
       "title": "Employment Terms and Conditions",
@@ -465,7 +465,7 @@
     },
     {
       "type": "framework_control",
-      "id": "f1b26b09-95d1-552d-8adb-910547aea720",
+      "id": "f0858430-c538-556f-b2cd-86f3e4696206",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "HR-03",
       "title": "Security Training and Awareness Programme",
@@ -480,7 +480,7 @@
     },
     {
       "type": "framework_control",
-      "id": "04d6316a-3a94-57ac-9e8c-02ff5d937880",
+      "id": "13472325-a64c-5015-aa42-70d6e99f1ccb",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "HR-04",
       "title": "Disciplinary Measures",
@@ -495,7 +495,7 @@
     },
     {
       "type": "framework_control",
-      "id": "edda5b02-d37d-5381-b53c-8d228302ba55",
+      "id": "09f4464a-10e9-5ed5-bc20-09061c6a9845",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "HR-05",
       "title": "Responsibilities in the Event of Termination or Change of Employment",
@@ -510,7 +510,7 @@
     },
     {
       "type": "framework_control",
-      "id": "1a7a17f6-c5eb-579b-a8d7-d67f59164f30",
+      "id": "2e39c025-0c7c-5a7c-94f7-400d3bae1810",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "HR-06",
       "title": "Non-disclosure Agreements",
@@ -525,7 +525,7 @@
     },
     {
       "type": "framework_control",
-      "id": "2f77848d-ae6a-5d58-a1dc-20b4f3f5fdeb",
+      "id": "aab807da-f074-567e-bae8-3e18465ded30",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "HR-07",
       "title": "Remote Working - Policy",
@@ -540,7 +540,7 @@
     },
     {
       "type": "framework_control",
-      "id": "44eb9118-9e75-57c5-bfea-a3ab7ca1087b",
+      "id": "725cff05-8b10-5d96-b83a-326081d2fd22",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "HR-08",
       "title": "Remote Working - Implementation",
@@ -555,7 +555,7 @@
     },
     {
       "type": "framework_control",
-      "id": "8fdb7e82-9147-521a-9ada-9e0ef4db90dc",
+      "id": "606b7c23-1cb8-57df-b9c3-93b0d69cf361",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "AM-01",
       "title": "Asset Management Framework",
@@ -570,7 +570,7 @@
     },
     {
       "type": "framework_control",
-      "id": "5272d80f-bb2f-575d-8422-9d78bcf6f66e",
+      "id": "91531d83-7145-5c41-9128-676d5588cecf",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "AM-02",
       "title": "Asset Inventory",
@@ -585,7 +585,7 @@
     },
     {
       "type": "framework_control",
-      "id": "cc3cc7bd-5403-5800-a305-1aeec47e2a06",
+      "id": "7737b03d-d254-57ab-bc50-3a264a0e6afe",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "AM-03",
       "title": "Hardware Asset Inventory",
@@ -600,7 +600,7 @@
     },
     {
       "type": "framework_control",
-      "id": "e8455009-e3b1-5f76-8e91-71d997540e58",
+      "id": "e8c97f1f-6659-5578-b186-4c742620275d",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "AM-04",
       "title": "Software Asset Inventory",
@@ -615,7 +615,7 @@
     },
     {
       "type": "framework_control",
-      "id": "19261bbe-8e3a-54dd-b92e-c480d0828b3f",
+      "id": "416a3209-a36e-5f64-8977-9199a4d09560",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "AM-05",
       "title": "Policy for the Proper and Secure Use of Assets",
@@ -630,7 +630,7 @@
     },
     {
       "type": "framework_control",
-      "id": "49ef1179-4e45-5d0e-b0c1-8b857252d133",
+      "id": "85a4ad21-f810-50a5-afc2-3a8fc12c3cd1",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "AM-06",
       "title": "Commissioning of Hardware",
@@ -645,7 +645,7 @@
     },
     {
       "type": "framework_control",
-      "id": "58004d2d-f6e4-5cae-9614-b6f9e966802a",
+      "id": "569b62a9-b132-5cfe-930f-186cd4373c57",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "AM-07",
       "title": "Decommissioning of Hardware",
@@ -660,7 +660,7 @@
     },
     {
       "type": "framework_control",
-      "id": "69451a4c-f38f-59b3-88a6-190e57bf650f",
+      "id": "40b563ed-bfdc-548a-b868-83e8ad9c58fa",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "AM-08",
       "title": "Commitment to Proper Use, Safe and Secure Handling and Return of Assets",
@@ -675,7 +675,7 @@
     },
     {
       "type": "framework_control",
-      "id": "74acff01-4cc9-5725-9f51-2b9d6eb1cda1",
+      "id": "cd9f522f-f772-5a28-b48d-2b96c62d068e",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "AM-09",
       "title": "Asset Classification and Labelling",
@@ -690,7 +690,7 @@
     },
     {
       "type": "framework_control",
-      "id": "4cc4f89d-abb0-5a55-87d0-dbe29ab4e40b",
+      "id": "1079e541-72f2-533a-a5de-1ff34e613d9d",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "AM-10",
       "title": "Protection of Hardware on Hold",
@@ -705,7 +705,7 @@
     },
     {
       "type": "framework_control",
-      "id": "4928a46b-bdf6-5570-b16e-7a481990d028",
+      "id": "6d629b4f-2a52-5a92-8f2f-5b3287698038",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "AM-11",
       "title": "Transfer of Hardware",
@@ -720,7 +720,7 @@
     },
     {
       "type": "framework_control",
-      "id": "b35b3029-c813-5c24-912a-5f65ab28b34b",
+      "id": "55eb6f5a-16b6-5e4e-8409-8e8650be2032",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "AM-12",
       "title": "Removable Media and Endpoint Devices",
@@ -735,7 +735,7 @@
     },
     {
       "type": "framework_control",
-      "id": "91b8b946-9da5-54a7-b4d6-3fd0fb836d81",
+      "id": "b03cbf53-0c2c-503a-b59d-f528c6f16b1f",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "PS-01",
       "title": "Physical Security and Environmental Control Requirements",
@@ -750,7 +750,7 @@
     },
     {
       "type": "framework_control",
-      "id": "ae12a0a2-5264-5883-8056-a5beed24cf58",
+      "id": "cf385204-8772-5dd1-95c7-0ea38b13f48c",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "PS-02",
       "title": "Redundancy Model",
@@ -765,7 +765,7 @@
     },
     {
       "type": "framework_control",
-      "id": "5484a63d-544b-5b29-b73f-f5263769a381",
+      "id": "194cf7b4-e3e6-538d-af94-6229f48d3264",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "PS-03",
       "title": "Perimeter Protection",
@@ -780,7 +780,7 @@
     },
     {
       "type": "framework_control",
-      "id": "eb55ce0d-8a0d-5aca-859a-dec0b279d2b9",
+      "id": "99f6d1cc-db2a-51da-a811-783e47bf45ee",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "PS-04",
       "title": "Physical Site Access Control",
@@ -795,7 +795,7 @@
     },
     {
       "type": "framework_control",
-      "id": "c95f3ce0-2a3d-5b22-bbf3-49af0f8b7687",
+      "id": "aecb7963-69c0-57d5-a0ff-303f897d52e6",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "PS-05",
       "title": "Protection against Threats from Outside and from the Environment",
@@ -810,7 +810,7 @@
     },
     {
       "type": "framework_control",
-      "id": "b7756392-a235-5389-9f2f-04fa07085832",
+      "id": "39c60cf3-392f-50db-9afc-1f2644e4a854",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "PS-06",
       "title": "Protection against Interruptions caused by Power Failures and similar Risks to Supply Facilities",
@@ -825,7 +825,7 @@
     },
     {
       "type": "framework_control",
-      "id": "9c1b7fd6-caee-5816-938f-0f53edac43e0",
+      "id": "3ef77292-6f28-5971-9ab8-88d984aad55e",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "PS-07",
       "title": "Surveillance of Operational and Environmental Parameters",
@@ -840,7 +840,7 @@
     },
     {
       "type": "framework_control",
-      "id": "288d6c96-bb1f-505a-a032-6e85889e8f8a",
+      "id": "fd7f2338-dfe1-5f10-9738-7d932d9aa976",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "PS-08",
       "title": "Workplace Security Requirements",
@@ -855,7 +855,7 @@
     },
     {
       "type": "framework_control",
-      "id": "f17aa4d1-051c-566c-87af-22e03b9cef6c",
+      "id": "82181351-52d3-536b-a495-e75ca8eacf38",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-01",
       "title": "Capacity Management - Planning",
@@ -870,7 +870,7 @@
     },
     {
       "type": "framework_control",
-      "id": "2e797027-3472-529c-97d0-230957bdd8d1",
+      "id": "561804dd-2772-5088-abd0-2ff7bbfd7b45",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-02",
       "title": "Capacity Management - Monitoring",
@@ -885,7 +885,7 @@
     },
     {
       "type": "framework_control",
-      "id": "01edb43d-16ef-5561-a5ca-d411d2b904f9",
+      "id": "f148f477-2de3-52cf-960a-306d213631e6",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-03",
       "title": "Capacity Management - Controlling of Resources",
@@ -900,7 +900,7 @@
     },
     {
       "type": "framework_control",
-      "id": "391d465a-bd04-59a3-81da-ecdc91175f76",
+      "id": "a0e75c6c-4be9-573a-aee9-a554fd38ed99",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-04",
       "title": "Protection Against Malware - Policies and Procedures",
@@ -915,7 +915,7 @@
     },
     {
       "type": "framework_control",
-      "id": "d90df954-ddf9-5a76-91f1-5dbb6f34f236",
+      "id": "30171cd2-aea7-54ad-a6d1-fbe53dfdbfe9",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-05",
       "title": "Protection Against Malware - Implementation",
@@ -930,7 +930,7 @@
     },
     {
       "type": "framework_control",
-      "id": "3fd87c97-0c74-5f61-ae8f-ed8b0e81309d",
+      "id": "1f056045-1147-5d49-88ab-5e0a1edb765f",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-06",
       "title": "Data Backup and Recovery - Policies and Procedures",
@@ -945,7 +945,7 @@
     },
     {
       "type": "framework_control",
-      "id": "e47c7050-8b17-5114-a76a-7f978987f0b5",
+      "id": "bd542183-b0ef-551c-ba76-0e2f1b238e8e",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-07",
       "title": "Data Backup and Recovery - Monitoring",
@@ -960,7 +960,7 @@
     },
     {
       "type": "framework_control",
-      "id": "2ff358e5-4fa6-5369-ab85-9bf02dce6825",
+      "id": "72a856c7-48c8-52ee-bcdd-107013e86dd7",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-08",
       "title": "Data Backup and Recovery - Regular Testing",
@@ -975,7 +975,7 @@
     },
     {
       "type": "framework_control",
-      "id": "a7d43fc4-c679-5521-8f20-73c9b1952483",
+      "id": "e4b40db4-bb49-5d6d-9d82-9073c51565a7",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-09",
       "title": "Data Backup and Recovery - Storage",
@@ -990,7 +990,7 @@
     },
     {
       "type": "framework_control",
-      "id": "4262e069-ecce-5bae-b913-7b57a827b51b",
+      "id": "63ccf5fc-13ef-54a4-a289-9e84b7d4ac54",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-10",
       "title": "Logging and Monitoring - Policies and Procedures",
@@ -1005,7 +1005,7 @@
     },
     {
       "type": "framework_control",
-      "id": "6ee94a92-dab5-5d76-beb6-a9849172e161",
+      "id": "de0b0c7b-9a3d-5c04-82b2-3dc7e9fc0a94",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-11",
       "title": "Logging and Monitoring - Policies and Procedures for Handling Cloud Service Derived Data and Account Data",
@@ -1020,7 +1020,7 @@
     },
     {
       "type": "framework_control",
-      "id": "35f4247f-34d9-5192-b346-003af5bc5d48",
+      "id": "e8541457-d1cb-563a-b8b2-48b798d7496b",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-12",
       "title": "Logging and Monitoring - Access, Retention and Deletion",
@@ -1035,7 +1035,7 @@
     },
     {
       "type": "framework_control",
-      "id": "8804ceaf-27e6-5a3b-8149-9072accc8ae6",
+      "id": "f07ffe3f-8cd1-5d51-b4ef-e4252b9ddb6c",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-13",
       "title": "Logging and Monitoring - Security Information and Event Management",
@@ -1050,7 +1050,7 @@
     },
     {
       "type": "framework_control",
-      "id": "aecdcc16-6ddb-5f89-8fa6-81df6ed6fa3c",
+      "id": "1f149d49-d44a-591b-ba0c-76e067a41fdd",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-14",
       "title": "Logging and Monitoring - Retention of the Logging Data",
@@ -1065,7 +1065,7 @@
     },
     {
       "type": "framework_control",
-      "id": "f80018bf-416b-5056-a8bf-072a64fc2d71",
+      "id": "fbca1ff9-a065-5d91-a979-97f660dceac8",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-15",
       "title": "Logging and Monitoring - Accountability",
@@ -1080,7 +1080,7 @@
     },
     {
       "type": "framework_control",
-      "id": "4b34c7df-0044-5c38-a8fb-5d0003c603a9",
+      "id": "9c2cae53-4902-5ada-bf73-12a519da4929",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-16",
       "title": "Logging and Monitoring - Configuration",
@@ -1095,7 +1095,7 @@
     },
     {
       "type": "framework_control",
-      "id": "aacf94db-1a40-51c7-9c5a-687f1ba9d450",
+      "id": "de3efe43-56f6-5a2d-ab55-b3d5ed6e582f",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-17",
       "title": "Logging and Monitoring - Availability of the Monitoring Software",
@@ -1110,7 +1110,7 @@
     },
     {
       "type": "framework_control",
-      "id": "524e17fd-edbe-519d-990f-902d3a8d4ffd",
+      "id": "7eac760b-5447-57f5-84bb-f24ef8f4c82a",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-18",
       "title": "Managing Vulnerabilities - Policies and Procedures",
@@ -1125,7 +1125,7 @@
     },
     {
       "type": "framework_control",
-      "id": "8ed6bf1d-e154-505b-83c9-83e1892867ca",
+      "id": "7f7845c1-4b5b-56a7-be76-8a5a10083a68",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-19",
       "title": "Managing Incidents and Crashes - Policies and Procedures",
@@ -1140,7 +1140,7 @@
     },
     {
       "type": "framework_control",
-      "id": "7aac1ce2-b16c-5d5f-92db-8dd3e4d27539",
+      "id": "351dc255-af3e-5922-81e3-f207cd8e7d09",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-20",
       "title": "Managing Incidents - Implementation",
@@ -1155,7 +1155,7 @@
     },
     {
       "type": "framework_control",
-      "id": "33f668b6-78a8-5d2a-975c-ec7d5169bd99",
+      "id": "8150a265-5b85-5b6c-a6a2-c1a9c49e4437",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-21",
       "title": "Managing Crashes - Implementation",
@@ -1170,7 +1170,7 @@
     },
     {
       "type": "framework_control",
-      "id": "bce7260a-6f95-5e61-9ce1-4eb95fe55a02",
+      "id": "b6d3eee2-55b2-5d69-b529-065ddedbcb2a",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-22",
       "title": "Managing Vulnerabilities, Incidents and Crashes - Penetration Tests",
@@ -1185,7 +1185,7 @@
     },
     {
       "type": "framework_control",
-      "id": "46769c01-aacb-565e-ba6e-0673b9b9b256",
+      "id": "4be6afd6-8ed2-5817-b457-7ef5fc4b6440",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-23",
       "title": "Managing Vulnerabilities, Incidents and Crashes - Measurements, Analyses and Assessments of Procedures",
@@ -1200,7 +1200,7 @@
     },
     {
       "type": "framework_control",
-      "id": "311e5dec-136b-583e-bfe5-88a274057037",
+      "id": "965177af-772b-5141-bc31-68641138065d",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-24",
       "title": "Involvement of Cloud Service Customers in the Event of Incidents",
@@ -1215,7 +1215,7 @@
     },
     {
       "type": "framework_control",
-      "id": "698e9b13-72af-595a-aa1e-e16417aca90a",
+      "id": "3ec86abf-ef8d-5061-8fb5-3926d495c3ea",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-25",
       "title": "Managing Vulnerabilities, Incidents and Crashes - Vulnerability Scans",
@@ -1230,7 +1230,7 @@
     },
     {
       "type": "framework_control",
-      "id": "223c91f4-57f5-57ef-aee7-f5857bd20905",
+      "id": "43ce2704-7bc0-5feb-9882-781d2ed3de13",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-26",
       "title": "Managing Vulnerabilities, Incidents and Crashes - System Hardening",
@@ -1245,7 +1245,7 @@
     },
     {
       "type": "framework_control",
-      "id": "dbe0e484-61dc-535a-b26c-a5c9692f36a0",
+      "id": "857263a1-3d89-534a-8f44-54dd7ef979dd",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-27",
       "title": "Managing Vulnerabilities - Patch Management Policies and Procedures",
@@ -1260,7 +1260,7 @@
     },
     {
       "type": "framework_control",
-      "id": "0f45040f-f703-5351-a624-5c007a841c98",
+      "id": "3fac705c-423f-514c-8570-7030866e9b63",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-28",
       "title": "Managing Vulnerabilities - Patch Management Implementation",
@@ -1275,7 +1275,7 @@
     },
     {
       "type": "framework_control",
-      "id": "643be21a-0b85-5c30-a0e4-5f0b7752fd08",
+      "id": "025b965c-055f-5ddf-802f-3a41ff9a4c1c",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-29",
       "title": "Managing Vulnerabilities, Incidents and Crashes - Externally Sourced Components",
@@ -1290,7 +1290,7 @@
     },
     {
       "type": "framework_control",
-      "id": "b4d9f766-f433-52d0-a835-c8723dab23a7",
+      "id": "fc5a00b5-2377-5d24-8255-dcffff8fd11f",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-30",
       "title": "Separation of Datasets - Policies and Procedures",
@@ -1305,7 +1305,7 @@
     },
     {
       "type": "framework_control",
-      "id": "9029f40e-a991-5496-a3d9-be01725eed74",
+      "id": "7c339a7a-cc4b-5fbc-b781-27a0f37e8449",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-31",
       "title": "Separation of Datasets - Implementation",
@@ -1320,7 +1320,7 @@
     },
     {
       "type": "framework_control",
-      "id": "57e66cf4-b86c-5581-bb1d-e4be5be3ba9d",
+      "id": "18815b98-8eb8-5fee-9026-571443bac47a",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-32",
       "title": "Confidential Computing - Policies and Procedures",
@@ -1335,7 +1335,7 @@
     },
     {
       "type": "framework_control",
-      "id": "a67899ff-cbf8-5d54-9adf-24ec68b61aa4",
+      "id": "23a1d9de-dd47-5225-96e4-fca7db9b7deb",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-33",
       "title": "Confidential Computing - Remote Attestation",
@@ -1350,7 +1350,7 @@
     },
     {
       "type": "framework_control",
-      "id": "89565b48-0ccf-55f8-a782-fc3112520b1e",
+      "id": "fb7cbe30-cd99-55e4-8a57-a491201d5051",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-34",
       "title": "Container Management - Policies and Procedures",
@@ -1365,7 +1365,7 @@
     },
     {
       "type": "framework_control",
-      "id": "3c05b773-b71c-5cfe-bad4-1ef76d7bebbd",
+      "id": "c9c75da1-66ec-50d4-9564-4e98b86a1f4d",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "OPS-35",
       "title": "Container Management - Implementation",
@@ -1380,7 +1380,7 @@
     },
     {
       "type": "framework_control",
-      "id": "7f83efa3-ce6e-5ede-a1f5-0656fac4f8d6",
+      "id": "a94c5297-1a42-5cc3-ac2b-55a359843ca4",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "IAM-01",
       "title": "Policy for Identities and Access Rights",
@@ -1395,7 +1395,7 @@
     },
     {
       "type": "framework_control",
-      "id": "a514b295-7a40-5dae-aa11-fc72be38a87a",
+      "id": "11d96cff-9846-590a-afba-14edb95feefb",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "IAM-02",
       "title": "Granting and Change of Identities and Access Rights",
@@ -1410,7 +1410,7 @@
     },
     {
       "type": "framework_control",
-      "id": "68d04857-c387-5945-8877-51118248a49f",
+      "id": "e08d4eab-ee87-5805-9944-af559df9e56b",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "IAM-03",
       "title": "Risk-Based Procedure for Locking and Withdrawal of Identities",
@@ -1425,7 +1425,7 @@
     },
     {
       "type": "framework_control",
-      "id": "4fb64c49-7ac0-5b75-b06b-d065fe1d8a82",
+      "id": "0716c59c-132e-5ead-8bb8-1b6cff283fc4",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "IAM-04",
       "title": "Withdrawal or Adjustment of Access Rights as the Task Area Changes",
@@ -1440,7 +1440,7 @@
     },
     {
       "type": "framework_control",
-      "id": "1e6135e3-5971-5c8d-abf9-87ab60f921ac",
+      "id": "91e65ec9-1aaa-5eb3-988c-794b27b8fd3c",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "IAM-05",
       "title": "Regular Review of Access Rights",
@@ -1455,7 +1455,7 @@
     },
     {
       "type": "framework_control",
-      "id": "e37f8ae5-deb8-5574-af0a-20a08f1f98f4",
+      "id": "a731281b-ec96-5f00-8e54-faf00bd9c0e7",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "IAM-06",
       "title": "Privileged Access Rights",
@@ -1470,7 +1470,7 @@
     },
     {
       "type": "framework_control",
-      "id": "a8731d40-27c9-53c0-b590-2bbd873fbf02",
+      "id": "1c7c12da-3291-570e-b78c-abf9a289e79c",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "IAM-07",
       "title": "Access to Cloud Service Customer Data",
@@ -1485,7 +1485,7 @@
     },
     {
       "type": "framework_control",
-      "id": "b7cc5573-5dc8-5684-a163-de096689e60d",
+      "id": "25d279c6-5854-51c3-a467-8a2613f124ed",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "IAM-08",
       "title": "Authentication Mechanisms",
@@ -1500,7 +1500,7 @@
     },
     {
       "type": "framework_control",
-      "id": "f6b6fef6-c239-5bc4-baef-cb6ef13f5c3c",
+      "id": "4b525a00-a257-5a02-ac54-569c7dcc866b",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "IAM-09",
       "title": "Confidentiality of Authentication Information",
@@ -1515,7 +1515,7 @@
     },
     {
       "type": "framework_control",
-      "id": "f9b8e3e9-124d-588c-a234-2208b8a28795",
+      "id": "3c9f7480-78dd-5f97-adf8-26b4de3bc0aa",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "CRY-01",
       "title": "Policy for the Use of Cryptographic Mechanisms",
@@ -1530,7 +1530,7 @@
     },
     {
       "type": "framework_control",
-      "id": "fad23ea1-cb50-5a70-8df4-ba07543c662e",
+      "id": "e827c20a-928c-5816-935c-652c13caf947",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "CRY-02",
       "title": "Cryptographic Change Management",
@@ -1545,7 +1545,7 @@
     },
     {
       "type": "framework_control",
-      "id": "45da8f7c-7964-50ab-9bff-35601993eb36",
+      "id": "d6894fad-b184-56c9-98e5-6a4013cbb8cc",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "CRY-03",
       "title": "Review of Cryptography Practices",
@@ -1560,7 +1560,7 @@
     },
     {
       "type": "framework_control",
-      "id": "fc46be54-220f-5a64-b5d6-59115f5a3b00",
+      "id": "85c0ef2f-3a4a-5556-8e45-4649a7a837d6",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "CRY-04",
       "title": "Protection of Data for Transmission (Transport Protection)",
@@ -1575,7 +1575,7 @@
     },
     {
       "type": "framework_control",
-      "id": "26dfc1ae-ec2b-51d1-ac9f-1aa22d641cdb",
+      "id": "7eafdfe0-ce0a-54dd-b7dd-348cc648e7cb",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "CRY-05",
       "title": "Encryption of Sensitive Data at Rest",
@@ -1590,7 +1590,7 @@
     },
     {
       "type": "framework_control",
-      "id": "c4db1a98-4c49-550f-a775-5f297893bfa0",
+      "id": "95ae7cae-3ac1-5bae-bca4-69c0d6a1d8c7",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "CRY-06",
       "title": "Secure Key Generation",
@@ -1605,7 +1605,7 @@
     },
     {
       "type": "framework_control",
-      "id": "b01c377d-8b11-5ac0-ad9a-795889574996",
+      "id": "22759ef3-6756-5028-bb74-22a052fc66b9",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "CRY-07",
       "title": "Rotation of Cryptographic Keys",
@@ -1620,7 +1620,7 @@
     },
     {
       "type": "framework_control",
-      "id": "8a1c613e-f74b-59e4-bfa7-cc87205e839b",
+      "id": "8114744e-f674-5846-9230-2b6157c75441",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "CRY-08",
       "title": "Public-Key Certificate Issuance",
@@ -1635,7 +1635,7 @@
     },
     {
       "type": "framework_control",
-      "id": "f7bf1cc3-d833-55a2-bda1-24fc8d6da345",
+      "id": "c580dbba-d5d9-50c9-8808-c2e4324cff30",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "CRY-09",
       "title": "Secure Key Provisioning",
@@ -1650,7 +1650,7 @@
     },
     {
       "type": "framework_control",
-      "id": "4a794dd4-9b87-5dda-a19e-15bf70ac7765",
+      "id": "dc082b89-9cc0-5f92-8ecb-ac1b104914e4",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "CRY-10",
       "title": "Secure Storage of Keys",
@@ -1665,7 +1665,7 @@
     },
     {
       "type": "framework_control",
-      "id": "d5afaed0-3d12-5315-8945-bf3c6da03328",
+      "id": "12542e0c-04bb-5baf-8146-e8775ba6801f",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "CRY-11",
       "title": "Cryptographic Key Archival",
@@ -1680,7 +1680,7 @@
     },
     {
       "type": "framework_control",
-      "id": "f1769fde-e0ed-50d6-ace4-7de7a4d527b0",
+      "id": "7be1cfd5-769b-5e2b-915a-f9081cdf3b9d",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "CRY-12",
       "title": "Cryptographic Key Transition Management",
@@ -1695,7 +1695,7 @@
     },
     {
       "type": "framework_control",
-      "id": "b92cbdc5-de02-5e12-8a31-f0ca8054e621",
+      "id": "f5cc1a1b-ecd2-508f-b62b-3d69495bdf78",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "CRY-13",
       "title": "Handling of Compromised Keys",
@@ -1710,7 +1710,7 @@
     },
     {
       "type": "framework_control",
-      "id": "e9da142a-0724-5a50-af37-110e5b206617",
+      "id": "c50a2199-0ac9-56d0-91d9-b508ff7fac0c",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "CRY-14",
       "title": "Secure Deactivation of Cryptographic Keys",
@@ -1725,7 +1725,7 @@
     },
     {
       "type": "framework_control",
-      "id": "7d369913-c6b7-5693-a82f-424064daa61b",
+      "id": "9a26d222-25be-538a-80d1-50018fa93b40",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "CRY-15",
       "title": "Requirements for Pre-Shared Keys",
@@ -1740,7 +1740,7 @@
     },
     {
       "type": "framework_control",
-      "id": "1fdf4993-d08f-5c93-b9f0-05693ff77654",
+      "id": "d941760c-f731-5673-9fc4-533d4b4661a3",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "CRY-16",
       "title": "Operational Continuity for Key Management",
@@ -1755,7 +1755,7 @@
     },
     {
       "type": "framework_control",
-      "id": "70f9e015-f38a-5cd5-b4c4-90d5ce5a49f0",
+      "id": "f7cec1ee-8878-595e-ba29-9fd5f899dafb",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "CRY-17",
       "title": "Cryptographic Key Lifecycle Management",
@@ -1770,7 +1770,7 @@
     },
     {
       "type": "framework_control",
-      "id": "cabb21e4-4998-5ca9-bffd-a87037be6449",
+      "id": "d07a52bb-6d97-5f25-a3e8-2f14de32441e",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "CRY-18",
       "title": "Usage of External Key Management Systems",
@@ -1785,7 +1785,7 @@
     },
     {
       "type": "framework_control",
-      "id": "000ee4bd-21f7-5d6e-9079-33ceff31fe0d",
+      "id": "f4603044-8148-5e48-8cdb-f2de308d6b97",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "CRY-19",
       "title": "Secure Handling of Customer Managed Keys",
@@ -1800,7 +1800,7 @@
     },
     {
       "type": "framework_control",
-      "id": "7cfbe669-219c-597f-a1e3-ed9ef19fe067",
+      "id": "fd0eac74-7cf2-58ce-95c6-a58987d001fa",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "COS-01",
       "title": "Technical Safeguards",
@@ -1815,7 +1815,7 @@
     },
     {
       "type": "framework_control",
-      "id": "1687dd85-d318-5ff3-b8e9-b678e945871b",
+      "id": "7d2ab413-5eef-597d-b45b-044954c89e90",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "COS-02",
       "title": "Security Requirements for Connections in the Cloud Service Provider's Network",
@@ -1830,7 +1830,7 @@
     },
     {
       "type": "framework_control",
-      "id": "d0c341e8-6f1e-53a1-9e85-29363405a37d",
+      "id": "098f3241-381b-5c7d-b0cf-92ca870a67c3",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "COS-03",
       "title": "Monitoring of Connections in the Cloud Service Provider's Network",
@@ -1845,7 +1845,7 @@
     },
     {
       "type": "framework_control",
-      "id": "117c6ca4-e6fa-5d5a-848a-834d6c669f91",
+      "id": "58018c28-7716-5a0c-9cb0-c5c0e2e4e354",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "COS-04",
       "title": "Cross-Network Access",
@@ -1860,7 +1860,7 @@
     },
     {
       "type": "framework_control",
-      "id": "7bf61f77-b7fc-5099-b6dd-9c23da3ecfa1",
+      "id": "1799a7ce-6b6a-528e-a2e6-309cc70b2c50",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "COS-05",
       "title": "Networks for Administration",
@@ -1875,7 +1875,7 @@
     },
     {
       "type": "framework_control",
-      "id": "b16a9664-50e8-5db3-80d0-e897ee6d8a6e",
+      "id": "b45132f3-cc6d-5336-a34f-468aeb31dd3c",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "COS-06",
       "title": "Separation of Data Traffic in Jointly Used Network Environments",
@@ -1890,7 +1890,7 @@
     },
     {
       "type": "framework_control",
-      "id": "be9c7ff0-4fc8-5045-89dc-8591c12adfce",
+      "id": "6910deed-1614-50d0-8917-db1dc9afdbaf",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "COS-07",
       "title": "Documentation of the Network Topology",
@@ -1905,7 +1905,7 @@
     },
     {
       "type": "framework_control",
-      "id": "58b88194-90a9-5cd1-ac8f-d12aa87159c4",
+      "id": "9fc3a6d7-3b4f-50cc-a88e-ae29c403f94b",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "COS-08",
       "title": "Policies for Data Transmission",
@@ -1920,7 +1920,7 @@
     },
     {
       "type": "framework_control",
-      "id": "8499a2e8-8225-51ab-8122-602cdcdb6e43",
+      "id": "b1a7b63e-13f0-5558-a887-ff2651d9baf9",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "PI-01",
       "title": "Safety of Input and Output Interfaces",
@@ -1935,7 +1935,7 @@
     },
     {
       "type": "framework_control",
-      "id": "a9de91ec-dde2-5e19-a208-5ed8b87e6a50",
+      "id": "0054f84c-0e6c-50ff-b37f-a076d004ebaa",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "PI-02",
       "title": "Contractual Agreements for the Provision of Data",
@@ -1950,7 +1950,7 @@
     },
     {
       "type": "framework_control",
-      "id": "c2a6447f-b7b0-55b9-9b97-9edb538a8156",
+      "id": "234f6dec-7229-5081-b812-f64b2980f545",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "PI-03",
       "title": "Secure Deletion of Data",
@@ -1965,7 +1965,7 @@
     },
     {
       "type": "framework_control",
-      "id": "e3085ec6-58b1-5cdc-9f82-1bcc4616b1e1",
+      "id": "0e4e7d49-755b-56d2-a24f-3ef7e5a989ef",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "DEV-01",
       "title": "Policies for the Development/Procurement of System Components",
@@ -1980,7 +1980,7 @@
     },
     {
       "type": "framework_control",
-      "id": "1283dc83-41d9-5402-b97a-306d8a667f9e",
+      "id": "2eb57571-ac71-571e-96bb-6715c10350bb",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "DEV-02",
       "title": "Outsourcing of the Development",
@@ -1995,7 +1995,7 @@
     },
     {
       "type": "framework_control",
-      "id": "baf77b5b-b0b0-5806-aa8d-34251242dad3",
+      "id": "5df57aec-3cd9-5ac8-ac76-9bc423edd7f9",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "DEV-03",
       "title": "Policies for Changes to System Components",
@@ -2010,7 +2010,7 @@
     },
     {
       "type": "framework_control",
-      "id": "a7e70f52-151f-5ba4-a771-c646a710e361",
+      "id": "c07dc079-f5b1-513a-8fb6-3812cf2e2e5c",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "DEV-04",
       "title": "Safety Training and Awareness Programme Regarding Continuous Software Delivery and Associated Systems, Components or Tools",
@@ -2025,7 +2025,7 @@
     },
     {
       "type": "framework_control",
-      "id": "4f5afedb-45fa-54de-871d-a1c7f16fae67",
+      "id": "b0ddf5ad-3d6f-5129-81c1-ca6b605b3205",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "DEV-05",
       "title": "Design Documentation for Security Features",
@@ -2040,7 +2040,7 @@
     },
     {
       "type": "framework_control",
-      "id": "34d8bf31-719f-5ed9-9a92-8109aeebb9be",
+      "id": "2b10833b-8c4d-568b-86c8-7464c06f42ce",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "DEV-06",
       "title": "Risk Assessment, Categorisation and Prioritisation of Changes",
@@ -2055,7 +2055,7 @@
     },
     {
       "type": "framework_control",
-      "id": "4cb9cc4f-c7aa-5ac6-a2db-f4ab3a1d4cb3",
+      "id": "02e1c0e7-19b0-5602-9d3b-1ff8ffc85b60",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "DEV-07",
       "title": "Testing Changes",
@@ -2070,7 +2070,7 @@
     },
     {
       "type": "framework_control",
-      "id": "ef937ba8-d7de-5987-bce3-cf249965ba77",
+      "id": "9b6dc12e-9013-5f50-a76c-c148eacdcf3f",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "DEV-08",
       "title": "Logging of Changes",
@@ -2085,7 +2085,7 @@
     },
     {
       "type": "framework_control",
-      "id": "88ce4df4-85f8-545c-baf9-75896e127ad4",
+      "id": "ecf76f88-cada-5468-8064-d571578400bf",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "DEV-09",
       "title": "Version Control",
@@ -2100,7 +2100,7 @@
     },
     {
       "type": "framework_control",
-      "id": "64bf46c0-c679-5ac2-aa01-a74427ef8bbc",
+      "id": "c4396120-46fa-5af0-a8a0-b8655901b0ce",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "DEV-10",
       "title": "Approvals for Provision in the Production Environment",
@@ -2115,7 +2115,7 @@
     },
     {
       "type": "framework_control",
-      "id": "8bfeab8d-ac9f-5983-b28f-4a9de466e130",
+      "id": "e93b60b1-b587-5bba-942b-8d3e46fb01da",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "DEV-11",
       "title": "Protection of Development and Test Environments",
@@ -2130,7 +2130,7 @@
     },
     {
       "type": "framework_control",
-      "id": "b590e6a3-40fc-5da9-9d29-15b7028d9df6",
+      "id": "2cce3c6f-9a4a-5af9-9f12-82fb8a2fb150",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "DEV-12",
       "title": "Separation of Environments",
@@ -2145,7 +2145,7 @@
     },
     {
       "type": "framework_control",
-      "id": "af1814f4-56e3-5440-9180-ee7c9a8b32ce",
+      "id": "beb35f2b-bdc9-537c-9e12-aaac060cccec",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "DEV-13",
       "title": "Transparency about Software Components",
@@ -2160,7 +2160,7 @@
     },
     {
       "type": "framework_control",
-      "id": "b0d11f90-a28a-5f21-af46-fe5a92548f36",
+      "id": "ed0cd7c3-f911-5c19-9933-f2c707cd7dcc",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "DEV-14",
       "title": "Secure Use of Third Party Hardware and Software",
@@ -2175,7 +2175,7 @@
     },
     {
       "type": "framework_control",
-      "id": "c1f214b2-0fd6-5e78-b683-9d465ca5a47e",
+      "id": "00e7d4c2-1c7c-57f9-9e42-df05c66d8e4a",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "DEV-15",
       "title": "Exceptions to the Change Management Process",
@@ -2190,7 +2190,7 @@
     },
     {
       "type": "framework_control",
-      "id": "14b1724c-643a-55d9-8adf-e42edd44c8cc",
+      "id": "87661317-a5cd-50f8-a0a4-51c0ff4c94ca",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "SSO-01",
       "title": "Policies and Procedures for Controlling and Monitoring Service Organisations",
@@ -2205,7 +2205,7 @@
     },
     {
       "type": "framework_control",
-      "id": "36b8fb98-d827-5f46-8c37-13b4197d84ba",
+      "id": "f45ba3a6-c83d-5540-a0c8-01327a0e0933",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "SSO-02",
       "title": "Risk Assessment of Service Organisations",
@@ -2220,7 +2220,7 @@
     },
     {
       "type": "framework_control",
-      "id": "0f495d77-47a8-5c3f-8db9-8e474f7a02ef",
+      "id": "0f741617-a5dd-57e3-be1a-aea2d437e8d0",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "SSO-03",
       "title": "Data Processing of Service Organisations",
@@ -2235,7 +2235,7 @@
     },
     {
       "type": "framework_control",
-      "id": "a7ad3ce4-9b6d-5498-9864-f958cdf7a58b",
+      "id": "b588504b-b844-5b12-a010-748455874b3e",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "SSO-04",
       "title": "Directory of Service Organisations",
@@ -2250,7 +2250,7 @@
     },
     {
       "type": "framework_control",
-      "id": "9a803797-18c0-58b5-906c-b3f0c0a47330",
+      "id": "7f09e47e-cee7-57f7-b6c6-04a83b740204",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "SSO-05",
       "title": "Monitoring of Compliance with Requirements",
@@ -2265,7 +2265,7 @@
     },
     {
       "type": "framework_control",
-      "id": "a016fe24-d4ad-5f17-92e7-b8ef5818a388",
+      "id": "54bec01b-4f79-55d0-b964-2072c39ca515",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "SSO-06",
       "title": "Contract Termination Strategy for Service Organisations",
@@ -2280,7 +2280,7 @@
     },
     {
       "type": "framework_control",
-      "id": "2cc5c34e-39fc-5864-bb9a-7b6419fde9a9",
+      "id": "72aab394-7edd-50e3-b78a-8181ad136751",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "SSO-07",
       "title": "Ensuring Transparency within Service Organisations",
@@ -2295,7 +2295,7 @@
     },
     {
       "type": "framework_control",
-      "id": "7f6cdf91-421a-5d61-854e-381e36a14a51",
+      "id": "f993a627-3b9b-5a13-a093-5e9af9b9b434",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "SSO-08",
       "title": "Controlling Exchanges with Suppliers of Functional Components",
@@ -2310,7 +2310,7 @@
     },
     {
       "type": "framework_control",
-      "id": "6a3a3539-1d53-5744-ade0-c24142012585",
+      "id": "b6d8da09-f66c-5492-8ebb-dd0acdb13faf",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "SIM-01",
       "title": "Policy for Security Incident Management",
@@ -2325,7 +2325,7 @@
     },
     {
       "type": "framework_control",
-      "id": "b0ff36a1-9669-5fb2-8beb-5166d6f635c5",
+      "id": "d9971061-f5fb-58b4-86fa-8d8b7ef4b9e8",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "SIM-02",
       "title": "Security Incident Response Plans",
@@ -2340,7 +2340,7 @@
     },
     {
       "type": "framework_control",
-      "id": "4fbda0bb-8d9d-5a46-a57d-a6f61c5f7275",
+      "id": "d9db3988-04ee-5a58-a306-0bb91a22a5a3",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "SIM-03",
       "title": "Processing of Security Incidents",
@@ -2355,7 +2355,7 @@
     },
     {
       "type": "framework_control",
-      "id": "b44468ff-2556-5834-9b6f-7393696dcc6c",
+      "id": "b27d5e59-1f51-5d14-a2d0-21468d9b61da",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "SIM-04",
       "title": "Documentation and Reporting of Security Incidents",
@@ -2370,7 +2370,7 @@
     },
     {
       "type": "framework_control",
-      "id": "ba511095-15c9-5280-abb9-d0a63f4f4a0d",
+      "id": "60023eaf-8c03-5b94-9a95-e1166f746322",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "SIM-05",
       "title": "Duty of the Personnel to Report Security Incidents to a Central Body",
@@ -2385,7 +2385,7 @@
     },
     {
       "type": "framework_control",
-      "id": "662ed6af-4062-51ef-82db-b4abf3d9047f",
+      "id": "4d9dc81d-10fe-5941-ad8e-bba412071911",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "SIM-06",
       "title": "Evaluation and Learning Process",
@@ -2400,7 +2400,7 @@
     },
     {
       "type": "framework_control",
-      "id": "38ba5115-aa50-5790-9674-ae74d1823778",
+      "id": "6621c9f5-81cb-5b19-9356-cb023149fedb",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "BCM-01",
       "title": "Business Continuity and Emergency Management System",
@@ -2415,7 +2415,7 @@
     },
     {
       "type": "framework_control",
-      "id": "10d7924e-20b3-573d-a3c4-28c76427c765",
+      "id": "90158ae5-9f38-5a89-962c-c6c6d9594019",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "BCM-02",
       "title": "Business Impact Analysis",
@@ -2430,7 +2430,7 @@
     },
     {
       "type": "framework_control",
-      "id": "8a909ea0-2e2e-51ae-877e-bf099be0d2f7",
+      "id": "0e27123a-491c-53cd-b580-09d0bf29077a",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "BCM-03",
       "title": "Business Continuity Plans",
@@ -2445,7 +2445,7 @@
     },
     {
       "type": "framework_control",
-      "id": "d8f096fd-7032-5e28-b25b-0dd13f3b7fa8",
+      "id": "90edbcd3-a959-5a4a-9190-84335bdf0765",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "BCM-04",
       "title": "Testing Business Continuity",
@@ -2460,7 +2460,7 @@
     },
     {
       "type": "framework_control",
-      "id": "343667d0-5906-52a0-b03b-c6faeb85dcf4",
+      "id": "baa071cd-be8b-509b-8a0a-cad65305a017",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "COM-01",
       "title": "Identification of Applicable Legal, Regulatory, Self-imposed or Contractual Requirements",
@@ -2475,7 +2475,7 @@
     },
     {
       "type": "framework_control",
-      "id": "43048f17-01ad-5f93-952f-a5531eb2ca44",
+      "id": "595c9c1a-7558-524a-b5a4-650fe4646ff9",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "COM-02",
       "title": "Policy for Planning and Conducting Audits",
@@ -2490,7 +2490,7 @@
     },
     {
       "type": "framework_control",
-      "id": "f418c913-7037-50f1-82ad-4973c959dcf5",
+      "id": "cff8cd62-cee7-5703-b017-d7d00e6a87ed",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "COM-03",
       "title": "Internal Audits of the Information Security Management System",
@@ -2505,7 +2505,7 @@
     },
     {
       "type": "framework_control",
-      "id": "4a10c8f5-8563-544e-aca2-87ba0513d377",
+      "id": "534a373f-1d72-54ba-a9bc-d9961e7ea3ce",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "COM-04",
       "title": "Information on Information Security Performance and Management Assessment of the ISMS",
@@ -2520,7 +2520,7 @@
     },
     {
       "type": "framework_control",
-      "id": "6d1c33e3-a3cd-55ff-80dd-e9ed0600c80f",
+      "id": "b1a9c46d-f6a0-50cd-b6b0-1ccfc673b3e7",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "INQ-01",
       "title": "Legal Assessment of Investigation Requests",
@@ -2535,7 +2535,7 @@
     },
     {
       "type": "framework_control",
-      "id": "c411055a-57c5-5936-b94c-749bf2ca3684",
+      "id": "548152fb-74c0-529a-a7e7-e09fd629c3ff",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "INQ-02",
       "title": "Informing Cloud Service Customers about Investigation Requests",
@@ -2550,7 +2550,7 @@
     },
     {
       "type": "framework_control",
-      "id": "b3e04ce0-718b-5c63-9c44-d4c9ce7052c5",
+      "id": "f74b2f06-9f07-5901-9422-08558a62440f",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "INQ-03",
       "title": "Limiting Access to or Disclosure of Data in Investigation Requests",
@@ -2565,7 +2565,7 @@
     },
     {
       "type": "framework_control",
-      "id": "9a6ae787-78a3-55a2-b89c-72a852767a7b",
+      "id": "43835b44-ff18-5221-8209-6d4cd5eeb3ee",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "INQ-04",
       "title": "Communication of Technical Procedures for Data Disclosure in Investigation Requests",
@@ -2580,7 +2580,7 @@
     },
     {
       "type": "framework_control",
-      "id": "464126fb-2892-5041-ba17-c1e3ef9387ae",
+      "id": "8ed380c1-6a60-5546-a59d-98ad97d7a2aa",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "PSS-01",
       "title": "Guidelines and Recommendations for Cloud Service Customers",
@@ -2595,7 +2595,7 @@
     },
     {
       "type": "framework_control",
-      "id": "25357efb-4a9c-5430-87fa-eee966fe042c",
+      "id": "fe3a28df-93b6-5379-b370-0921a8e333f7",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "PSS-02",
       "title": "Identification of Vulnerabilities of the Cloud Service",
@@ -2610,7 +2610,7 @@
     },
     {
       "type": "framework_control",
-      "id": "d279e6ae-1c10-51ba-87c5-c30293696122",
+      "id": "70de9c12-9ad2-5415-ad1c-f234f0e581b5",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "PSS-03",
       "title": "Informing Customers about Known Vulnerabilities",
@@ -2625,7 +2625,7 @@
     },
     {
       "type": "framework_control",
-      "id": "4e02f43e-3b8e-5c58-a992-293317f12df0",
+      "id": "da236161-325e-5e90-ba71-a28d3b56f5f5",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "PSS-04",
       "title": "Error handling and Logging Mechanisms",
@@ -2640,7 +2640,7 @@
     },
     {
       "type": "framework_control",
-      "id": "b8fcc71a-a594-5761-b939-8155d69ac616",
+      "id": "15184867-edb7-5c43-b117-1964055f03ba",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "PSS-05",
       "title": "Authentication Mechanisms",
@@ -2655,7 +2655,7 @@
     },
     {
       "type": "framework_control",
-      "id": "bac87d42-ae35-5c31-9aa1-ab78b7db2d65",
+      "id": "a6a30a0f-721b-5c91-ad92-eee101e67f84",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "PSS-06",
       "title": "Session Management",
@@ -2670,7 +2670,7 @@
     },
     {
       "type": "framework_control",
-      "id": "a5dcf4f4-04cb-5a43-a934-6102b8050438",
+      "id": "1c05986f-36e3-5474-88d0-9926bc93c942",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "PSS-07",
       "title": "Confidentiality of Authentication Information",
@@ -2685,7 +2685,7 @@
     },
     {
       "type": "framework_control",
-      "id": "1af90fcc-5e94-5ce7-99ad-4bae2fabfef8",
+      "id": "c4104fca-17ac-51fb-a99a-fc6faf338efb",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "PSS-08",
       "title": "Roles and Rights Framework",
@@ -2700,7 +2700,7 @@
     },
     {
       "type": "framework_control",
-      "id": "8d14ab67-2ff4-5d48-9107-9365100d58aa",
+      "id": "ad40275b-fe4b-5960-8502-338cdb64e511",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "PSS-09",
       "title": "Authorisation Mechanisms",
@@ -2715,7 +2715,7 @@
     },
     {
       "type": "framework_control",
-      "id": "ff2ef399-e463-5dab-ac0b-b1203ecb30fa",
+      "id": "93147c2a-e852-540e-8190-9213234e64ea",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "PSS-10",
       "title": "Software Defined Networking",
@@ -2730,7 +2730,7 @@
     },
     {
       "type": "framework_control",
-      "id": "bb52e5ac-012e-558e-b146-c331dbdbff8e",
+      "id": "912f8df1-19fd-5bf0-b332-f7c1c8c33153",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "PSS-11",
       "title": "Images for Virtual Machines and Containers",
@@ -2745,7 +2745,7 @@
     },
     {
       "type": "framework_control",
-      "id": "c64ca2d9-7833-5303-bb75-4a9270265e2d",
+      "id": "ce9b79b4-7f95-5bd8-802d-f6e547319bc8",
       "framework_id": "292ee7c9-4dea-537f-ac49-62056ba41fcb",
       "control_id": "PSS-12",
       "title": "Region of Data Processing and Storage",

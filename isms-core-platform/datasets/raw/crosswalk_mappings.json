@@ -27331,6 +27331,1946 @@
       "confidence": 0.75,
       "source_reference": "BSI IT-Grundschutz Zuordnungstabelle — privacy extension (ISMS CORE, 2025)",
       "notes": ""
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.36",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OIS-01",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "ISMS certification and compliance requirement"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.1",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OIS-02",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Information security policy — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.19",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OIS-03",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Cloud service interfaces and external dependencies"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.3",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OIS-04",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Segregation of duties — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.7",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OIS-05",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Threat intelligence — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.5",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OIS-06",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Contact with authorities and interest groups — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.1",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OIS-07",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Risk management policy as information security policy"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.35",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OIS-08",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Independent review covering risk assessment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.36",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OIS-09",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Risk treatment as compliance with security policies"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.8",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OIS-10",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Information security in project management — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.1",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "SP-01",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Documentation and communication of security policies"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.35",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "SP-02",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Review and approval of policies"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.36",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "SP-03",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Exception management for security policies"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.6.1",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "HR-01",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Personnel screening — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.6.2",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "HR-02",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Employment terms and conditions — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.6.3",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "HR-03",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Security awareness and training programme — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.6.4",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "HR-04",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Disciplinary measures — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.6.5",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "HR-05",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Responsibilities after termination — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.6.6",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "HR-06",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Non-disclosure agreements — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.6.7",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "HR-07",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Remote working policy — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.6.7",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "HR-08",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Remote working implementation — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.9",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "AM-01",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Asset management framework — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.9",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "AM-02",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Asset inventory — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.9",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "AM-03",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Hardware asset inventory — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.9",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "AM-04",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Software asset inventory — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.10",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "AM-05",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Acceptable use of assets — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.9",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "AM-06",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Hardware commissioning and inventory tracking"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.14",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "AM-07",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Secure disposal of decommissioned hardware — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.11",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "AM-08",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Return of assets — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.12",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "AM-09",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Asset classification and labelling — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.8",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "AM-10",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Equipment siting and protection for hardware on hold"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.9",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "AM-11",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Security of assets off-premises during hardware transfer"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.10",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "AM-12",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Storage media and removable endpoint devices — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.1",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "PS-01",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Physical security perimeters and environmental controls"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.14",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "PS-02",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Redundancy model for physical infrastructure — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.1",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "PS-03",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Physical perimeter protection — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.2",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "PS-04",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Physical site access control — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.5",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "PS-05",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Protection against physical and environmental threats — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.11",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "PS-06",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Supporting utilities (power supply) — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.4",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "PS-07",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Physical security monitoring of operational parameters — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.7.3",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "PS-08",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Securing workplace and office environments — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.6",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-01",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Capacity management planning — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.6",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-02",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Capacity management monitoring — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.6",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-03",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Capacity management resource control — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.7",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-04",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Protection against malware policy — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.7",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-05",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Protection against malware implementation — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.13",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-06",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Information backup policy — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.13",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-07",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Backup monitoring — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.13",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-08",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Backup regular testing — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.13",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-09",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Backup storage — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.15",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-10",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Logging and monitoring policy — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.15",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-11",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Logging policy for cloud service derived data — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.15",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-12",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Log access, retention and deletion — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.16",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-13",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "SIEM — security monitoring activities — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.15",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-14",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Log data retention — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.15",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-15",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Logging accountability"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.15",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-16",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Logging configuration"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.16",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-17",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Monitoring software availability"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.8",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-18",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Vulnerability management policy — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.24",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-19",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Incident and crash management policy — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.26",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-20",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Incident management implementation — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.29",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-21",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Crash management — information security during disruption"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.29",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-22",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Penetration testing — security testing — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.35",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-23",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Measurements, analyses and assessments — independent review"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.26",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-24",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Customer involvement in incident response"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.8",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-25",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Vulnerability scans — technical vulnerability management — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.9",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-26",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "System hardening — configuration management — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.8",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-27",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Patch management policy — technical vulnerability management — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.8",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-28",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Patch management implementation — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.21",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-29",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Externally sourced components — ICT supply chain — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.22",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-30",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Dataset separation policy — network segregation — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.22",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-31",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Dataset separation implementation — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-32",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Confidential computing — cryptographic isolation"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-33",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Remote attestation — cryptographic verification"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.9",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-34",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Container management policy — configuration management — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.9",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "OPS-35",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Container management implementation — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.15",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "IAM-01",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Access control policy — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.18",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "IAM-02",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Granting and changing access rights — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.18",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "IAM-03",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Risk-based locking and withdrawal of identities — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.18",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "IAM-04",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Access rights withdrawal on role change — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.18",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "IAM-05",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Regular review of access rights — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.2",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "IAM-06",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Privileged access rights — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.3",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "IAM-07",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Information access restriction for customer data — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.5",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "IAM-08",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Authentication mechanisms — secure authentication — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.17",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "IAM-09",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Confidentiality of authentication information — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "CRY-01",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Policy for use of cryptographic mechanisms — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "CRY-02",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Cryptographic change management"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "CRY-03",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Review of cryptography practices"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "CRY-04",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Transport protection — encryption in transit"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "CRY-05",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Encryption of sensitive data at rest"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "CRY-06",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Secure key generation"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "CRY-07",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Cryptographic key rotation management"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "CRY-08",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Public-key certificate issuance"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "CRY-09",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Secure key provisioning"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "CRY-10",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Secure storage of cryptographic keys"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "CRY-11",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Cryptographic key archival"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "CRY-12",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Cryptographic key transition management"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "CRY-13",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Handling of compromised keys"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "CRY-14",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Secure deactivation of cryptographic keys"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "CRY-15",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Requirements for pre-shared keys"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "CRY-16",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Operational continuity for key management"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "CRY-17",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Cryptographic key lifecycle management"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "CRY-18",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Usage of external key management systems"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "CRY-19",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Secure handling of customer managed keys"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.20",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "COS-01",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Technical safeguards for network security — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.21",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "COS-02",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Security requirements for network service connections — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.16",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "COS-03",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Monitoring of network connections"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.22",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "COS-04",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Cross-network access — network segregation — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.22",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "COS-05",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Administration networks — network segregation — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.22",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "COS-06",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Separation of data traffic in shared networks — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.20",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "COS-07",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Network topology documentation — network security"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.14",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "COS-08",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Policies for data transmission — information transfer"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.26",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "PI-01",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Safety of input/output interfaces — application security requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.14",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "PI-02",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Contractual agreements for data provision — information transfer — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.10",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "PI-03",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Secure deletion of data — information deletion — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.25",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "DEV-01",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Development/procurement policies — secure development life cycle — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.30",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "DEV-02",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Outsourcing of development — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.32",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "DEV-03",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Change policies — change management — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.6.3",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "DEV-04",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Security training for DevOps/continuous delivery personnel"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.27",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "DEV-05",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Design documentation for security features — secure architecture — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.32",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "DEV-06",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Risk assessment and prioritisation of changes — change management — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.29",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "DEV-07",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Testing changes — security testing — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.32",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "DEV-08",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Logging of changes — change management — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.32",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "DEV-09",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Version control — change management — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.31",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "DEV-10",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Production approvals — separation of environments — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.31",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "DEV-11",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Protection of development and test environments — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.31",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "DEV-12",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Separation of environments — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.21",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "DEV-13",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Software component transparency (SBOM) — ICT supply chain — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.21",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "DEV-14",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Secure use of third-party hardware/software — ICT supply chain — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.32",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "DEV-15",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Change management exceptions process"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.19",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "SSO-01",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Supplier policies and procedures — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.19",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "SSO-02",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Risk assessment of service organisations — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.20",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "SSO-03",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Data processing agreements with service organisations — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.22",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "SSO-04",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Directory of service organisations — monitoring suppliers — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.22",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "SSO-05",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Monitoring compliance of service organisations — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.20",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "SSO-06",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Contract termination strategy for service organisations"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.21",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "SSO-07",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Ensuring transparency within supply chain"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.22",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "SSO-08",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Controlling exchanges with functional component suppliers"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.24",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "SIM-01",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Incident management policy — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.24",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "SIM-02",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Security incident response plans — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.26",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "SIM-03",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Processing of security incidents — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.27",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "SIM-04",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Documentation, reporting and learning from incidents — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.6.8",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "SIM-05",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Duty to report security incidents — event reporting — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.27",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "SIM-06",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Evaluation and learning process — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.29",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "BCM-01",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Business continuity management system — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.29",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "BCM-02",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Business impact analysis — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.30",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "BCM-03",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Business continuity plans — ICT readiness — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.30",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "BCM-04",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Testing business continuity — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.31",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "COM-01",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Identification of legal and regulatory requirements — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.35",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "COM-02",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Audit planning — independent review — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.35",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "COM-03",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Internal audits of ISMS — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.35",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "COM-04",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Management assessment of ISMS — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.31",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "INQ-01",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Legal assessment of investigation requests — legal requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.31",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "INQ-02",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Informing customers about investigation requests — legal compliance"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.31",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "INQ-03",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Limiting data access/disclosure in investigation requests"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.31",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "INQ-04",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Technical procedures for data disclosure — legal compliance"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.25",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "PSS-01",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "CSC guidelines — secure development life cycle"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.8",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "PSS-02",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Vulnerability identification — technical vulnerability management"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.8",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "PSS-03",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Informing customers about vulnerabilities — vulnerability management"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.15",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "PSS-04",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Error handling and logging mechanisms"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.5",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "PSS-05",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Authentication mechanisms — secure authentication"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.5",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "PSS-06",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Session management — secure authentication"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.17",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "PSS-07",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Confidentiality of authentication information — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.15",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "PSS-08",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Roles and rights framework — access control"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.15",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "PSS-09",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Authorisation mechanisms — access control"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.20",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "PSS-10",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Software defined networking — network security"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.9",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "PSS-11",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "VM/container images — configuration management"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.31",
+      "target_framework": "BSI_C5_2026",
+      "target_id": "PSS-12",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI C5:2026 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Region of data processing — regulatory/data residency requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.22",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-1-04",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "CSP control change notification — monitoring and review of supplier services"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.31",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-2-01",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Extraterritorial legal exposure assessment — legal and statutory requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.35",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-2-02",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Authority audit rights — independent review of information security"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.31",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-3-01",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Data residence requirements — legal and regulatory compliance"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-3-02",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "External key management systems — use of cryptography — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.16",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-3-03",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "External identity provider integration — identity management"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.15",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-3-04",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Logging and monitoring access for customers — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.24",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-3-05",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Client-side encryption — use of cryptography — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.6.1",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-4-01",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Operating personnel EU residency requirement — personnel screening"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.6.7",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-4-02",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Remote work through EU access paths — remote working — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.14",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-4-03",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Redundant EU-based connectivity — redundancy of processing facilities"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.24",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-4-04",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "EU/DE SOC capability — incident management planning"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.21",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-4-05",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Ingress data control for updates — ICT supply chain management"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.8",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-4-06",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Update threat analysis — technical vulnerability management"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.16",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-4-07",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Data exchange monitoring with third parties — monitoring activities"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.14",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-4-08",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Data exchange gateways and flow documentation — information transfer"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.30",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-4-09",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Disconnect capability — ICT readiness for business continuity"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.29",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-4-10",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Reconnect process after disconnect — information security during disruption"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.21",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-5-01",
+      "mapping_type": "maps-to",
+      "confidence": 0.9,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Software SBOM — ICT supply chain management — direct alignment"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.21",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-5-02",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Hardware dependency documentation — ICT supply chain"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.22",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-5-03",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "External service dependency documentation — monitoring supplier services"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.31",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-5-04",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Export restriction compliance — legal and regulatory requirements"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.6",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-5-05",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Sovereign capacity management — capacity management"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.20",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-6-01",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Source code escrow/availability — supplier agreement security provisions"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.5.30",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-6-02",
+      "mapping_type": "maps-to",
+      "confidence": 0.8,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Continuous sovereign service delivery — ICT readiness for business continuity"
+    },
+    {
+      "source_framework": "ISO27001_2022",
+      "source_id": "A.8.25",
+      "target_framework": "BSI_C3A",
+      "target_id": "SOV-6-03",
+      "mapping_type": "maps-to",
+      "confidence": 0.7,
+      "source_reference": "BSI C3A v1.0 — ISO 27001:2022 domain alignment (ISMS CORE, 2026)",
+      "notes": "Software development independence — secure development life cycle"
     }
   ]
 }

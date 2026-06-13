@@ -97,7 +97,7 @@
     },
     {
       "type": "framework_control",
-      "id": "dcb265db-f3d5-5f5d-b91d-76aec2b0eda4",
+      "id": "969ce32f-19f5-543e-bb17-281e8a0740b5",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-1-01",
       "title": "SOV-1 Jurisdiction",
@@ -111,7 +111,7 @@
     },
     {
       "type": "framework_control",
-      "id": "ec94ea5c-1754-5443-87fe-2207dc41410e",
+      "id": "656a11f5-0129-5e17-a23d-402ecda99d8c",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-1-02",
       "title": "SOV-1 Registered Office",
@@ -125,7 +125,7 @@
     },
     {
       "type": "framework_control",
-      "id": "da3192fd-7eae-5692-bd8e-39c19aaa0b32",
+      "id": "9261d624-a0f8-5884-847a-b30ebf781cbb",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-1-03",
       "title": "SOV-1 CSP Effective Control",
@@ -139,7 +139,7 @@
     },
     {
       "type": "framework_control",
-      "id": "2bade163-8e4c-5cd0-99df-d87be41a0e97",
+      "id": "704c4082-1d74-537d-831a-dfab04e5b13b",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-1-04",
       "title": "SOV-1 CSP Control Change",
@@ -153,7 +153,7 @@
     },
     {
       "type": "framework_control",
-      "id": "b6aa6c66-8cc7-5061-b096-e3d875d9fbd3",
+      "id": "5abd8e10-a96c-5a08-8db7-69be461ebc86",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-2-01",
       "title": "SOV-2 Extraterritorial Exposure",
@@ -167,7 +167,7 @@
     },
     {
       "type": "framework_control",
-      "id": "968f49c2-9bb8-518f-b36b-93823cc3a26d",
+      "id": "4947b025-89de-53fc-9e5b-69dd16c2577c",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-2-02",
       "title": "SOV-2 Audit Rights",
@@ -181,7 +181,7 @@
     },
     {
       "type": "framework_control",
-      "id": "fe3e6fd2-8404-586c-97f5-aa0cddb65721",
+      "id": "a489017f-fcd3-5933-948e-c54f06a0e914",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-2-03",
       "title": "SOV-2 State of Defense Takeover",
@@ -195,7 +195,7 @@
     },
     {
       "type": "framework_control",
-      "id": "4e9f465b-16cf-52ff-9359-2f418ec8e759",
+      "id": "a0f21f23-a737-59be-88c6-1e0ff64d67c1",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-3-01",
       "title": "SOV-3 Data Residence",
@@ -209,7 +209,7 @@
     },
     {
       "type": "framework_control",
-      "id": "91c34c00-92c2-57f1-a2a1-bd2784c74a23",
+      "id": "9093909b-ba63-51d6-8f2e-73e052017684",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-3-02",
       "title": "SOV-3 External Key Management",
@@ -223,7 +223,7 @@
     },
     {
       "type": "framework_control",
-      "id": "58988aca-895e-5dea-8a42-f3d3134992e0",
+      "id": "66588370-2377-507b-9d36-211c361f6b17",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-3-03",
       "title": "SOV-3 External Identity Provider",
@@ -237,7 +237,7 @@
     },
     {
       "type": "framework_control",
-      "id": "3a52353a-705c-5255-bb3f-2d2ca9b18260",
+      "id": "ed0fae66-e887-5c74-9d52-c8ff4f11a2e2",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-3-04",
       "title": "SOV-3 Logging and Monitoring",
@@ -251,7 +251,7 @@
     },
     {
       "type": "framework_control",
-      "id": "6998442f-39a2-527a-b1b4-ccc89bca7a57",
+      "id": "873882cd-6de2-51ac-b2f7-3f4b60f47fce",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-3-05",
       "title": "SOV-3 Client-Side Encryption",
@@ -265,7 +265,7 @@
     },
     {
       "type": "framework_control",
-      "id": "df182956-b8c0-5d1a-89e7-b7457fce8be6",
+      "id": "61a2b6a1-a4b2-536d-8b6c-34ebc8fb7a62",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-4-01",
       "title": "SOV-4 Operating Personnel",
@@ -279,7 +279,7 @@
     },
     {
       "type": "framework_control",
-      "id": "84fbf115-f849-532a-8cb5-915d527c4769",
+      "id": "df077dba-bf93-5b0a-bfca-147d516424e0",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-4-02",
       "title": "SOV-4 Remote Work",
@@ -293,7 +293,7 @@
     },
     {
       "type": "framework_control",
-      "id": "df1aaefe-03c5-5bfa-b2f7-4319f8857f37",
+      "id": "9b423d23-ccbe-5b30-89cb-08c531fb600b",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-4-03",
       "title": "SOV-4 Redundant Connectivity Providers",
@@ -307,7 +307,7 @@
     },
     {
       "type": "framework_control",
-      "id": "d99b8a78-f4dd-5101-9f72-7ff881e6d08f",
+      "id": "c1ff63cc-dcec-522b-a8e3-0c1f2b72e482",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-4-04",
       "title": "SOV-4 Security Operations Centre (SOC)",
@@ -321,7 +321,7 @@
     },
     {
       "type": "framework_control",
-      "id": "c615be34-d1fc-5912-80e7-b0c5a9e75162",
+      "id": "88a03ad5-c7b1-532f-afed-5e996898637f",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-4-05",
       "title": "SOV-4 Ingress Data Control",
@@ -335,7 +335,7 @@
     },
     {
       "type": "framework_control",
-      "id": "4e2d9a09-637a-5d18-a471-ac593f617a2e",
+      "id": "69d27ff6-6e72-53ac-9213-0a5742ca1327",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-4-06",
       "title": "SOV-4 Update Threat Analysis",
@@ -349,7 +349,7 @@
     },
     {
       "type": "framework_control",
-      "id": "cd409b9a-2a64-52f4-90ce-92321e9a2588",
+      "id": "aeb62f93-db2f-50d4-a130-c2d5673dd293",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-4-07",
       "title": "SOV-4 Data Exchange Monitoring",
@@ -363,7 +363,7 @@
     },
     {
       "type": "framework_control",
-      "id": "f722850b-02af-5caf-ad13-212f5bb6728c",
+      "id": "0e475157-a2b6-5479-846c-b43f01be0470",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-4-08",
       "title": "SOV-4 Data Exchange Gateways",
@@ -377,7 +377,7 @@
     },
     {
       "type": "framework_control",
-      "id": "13b495ed-6efb-523a-962d-df7d82f9f6e3",
+      "id": "4b368f41-e3b3-5d39-bd9c-720126d482d2",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-4-09",
       "title": "SOV-4 Disconnect",
@@ -391,7 +391,7 @@
     },
     {
       "type": "framework_control",
-      "id": "a9e4382f-8cf6-542f-9544-69c9135e0621",
+      "id": "d50f6829-c15d-5600-93dd-3219c9e08820",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-4-10",
       "title": "SOV-4 Reconnect",
@@ -405,7 +405,7 @@
     },
     {
       "type": "framework_control",
-      "id": "ab82f29d-d0b3-5c46-b955-c3cf5e87116c",
+      "id": "5462df01-b06a-589f-b128-68df2ddab48c",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-5-01",
       "title": "SOV-5 Software Dependencies",
@@ -419,7 +419,7 @@
     },
     {
       "type": "framework_control",
-      "id": "60e80124-c837-5c5e-b7ea-3f8549eccb94",
+      "id": "fbba1548-d429-557b-afab-4b8188d316ab",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-5-02",
       "title": "SOV-5 Hardware Dependencies",
@@ -433,7 +433,7 @@
     },
     {
       "type": "framework_control",
-      "id": "5713b103-3f5d-5727-91bf-9315bd1d7dda",
+      "id": "45da4e64-a816-5ecf-9693-990a22d51ad2",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-5-03",
       "title": "SOV-5 External Service Dependencies",
@@ -447,7 +447,7 @@
     },
     {
       "type": "framework_control",
-      "id": "0fb4aad2-cf90-5fa9-86cc-8cb1c095b550",
+      "id": "37d8e633-4750-515e-a1e7-7e64a7e3ee55",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-5-04",
       "title": "SOV-5 Export Restriction",
@@ -461,7 +461,7 @@
     },
     {
       "type": "framework_control",
-      "id": "20e0e5c0-02d8-5a61-815a-c037d9ae3559",
+      "id": "75a830b2-0371-5452-86af-f93c352274f4",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-5-05",
       "title": "SOV-5 Capacity Management",
@@ -475,7 +475,7 @@
     },
     {
       "type": "framework_control",
-      "id": "5d9c47fd-258f-55c3-bf26-747adf4d30f5",
+      "id": "2f2a5dfa-6f2e-526b-8026-04a0f9cd9ce2",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-6-01",
       "title": "SOV-6 Source Code Availability",
@@ -489,7 +489,7 @@
     },
     {
       "type": "framework_control",
-      "id": "7d3a208a-a1e0-592f-8950-5a4d7be237cb",
+      "id": "61bbcc0f-f174-534e-8213-2cf199df24f6",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-6-02",
       "title": "SOV-6 Continuous Service Delivery",
@@ -503,7 +503,7 @@
     },
     {
       "type": "framework_control",
-      "id": "04ad4a0f-90fe-5893-acd8-4cd1b70b9777",
+      "id": "781eba4f-0cd9-577a-87d5-ce004d99b94a",
       "framework_id": "b2c3d4e5-f6a7-8901-bc23-de45fa67c3a0",
       "control_id": "SOV-6-03",
       "title": "SOV-6 Software Development",
