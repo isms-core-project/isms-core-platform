@@ -46,15 +46,20 @@ def get_covered_fc_ids(db: DBSession, covered_cg_ids: set) -> set:
 
 
 def get_project_covered_cg_ids(db: DBSession, project_id: str | None, org_id: str) -> set:
-    """Return ControlGroup IDs that have at least one Assessment for the given project."""
+    """Return ControlGroup IDs in scope for the given project (or org-wide)."""
     import uuid as _uuid
+    from src.domain.projects import ProjectChecklist
     from src.domain.assessments import Assessment
-    stmt = select(Assessment.control_group_id)
     if project_id:
-        stmt = stmt.where(Assessment.project_id == _uuid.UUID(project_id))
+        stmt = select(ProjectChecklist.control_group_id).where(
+            ProjectChecklist.project_id == _uuid.UUID(project_id)
+        )
     else:
-        # Org-wide: any assessment regardless of project
-        stmt = stmt.join(ControlGroup, Assessment.control_group_id == ControlGroup.id)
+        # Org-wide: all control groups that have any assessment
+        stmt = (
+            select(Assessment.control_group_id)
+            .join(ControlGroup, Assessment.control_group_id == ControlGroup.id)
+        )
     return set(db.scalars(stmt).all())
 
 

@@ -280,11 +280,6 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
         }
       </div>
 
-      @if ((gapsQuery.data()?.length ?? 0) === 0 && !gapsQuery.isLoading()) {
-        <div class="gaps-all-covered">
-          All controls have complete {{ gapProduct() === 'framework' ? 'FW' : 'OP' }} coverage — no artefacts missing.
-        </div>
-      }
 
       @if ((gapsQuery.data()?.length ?? 0) > 0) {
         <mat-card>
@@ -477,7 +472,7 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
     .control-title { font-size: .68rem; opacity: .65; line-height: 1.3; }
     .group-code { font-family: monospace; font-size: .72rem; opacity: .65; }
     html[data-theme='light'] .gap-code { color: #185FA5; }
-    html[data-theme='light'] .gaps-all-covered { background: #dff0eb !important; border-color: rgba(29,158,117,0.35) !important; color: #0a5c43 !important; }
+
 
     /* Mapping chips */
     .mapping-chips { display: flex; flex-wrap: wrap; gap: 4px; }
@@ -509,14 +504,6 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
     }
     .gaps-empty-state { display: flex; align-items: center; gap: 12px; padding: 24px 8px; opacity: .4; }
     .gaps-empty-text { font-size: .85rem; }
-    .gaps-all-covered {
-      padding: 12px 16px;
-      background: rgba(29,158,117,.12);
-      border: 1px solid rgba(29,158,117,.25);
-      border-radius: 6px;
-      color: #C6EFCE;
-      font-size: .85rem;
-    }
 
     /* Gaps table */
     .gap-code { font-family: monospace; font-size: .72rem; color: #9DC3E6; }
