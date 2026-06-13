@@ -1,8 +1,6 @@
 import { Component, inject, signal, computed, effect } from '@angular/core'
 import { DecimalPipe } from '@angular/common'
-import { FormsModule } from '@angular/forms'
 import { Router } from '@angular/router'
-import { firstValueFrom } from 'rxjs'
 
 import { injectQuery } from '@tanstack/angular-query-experimental'
 
@@ -12,15 +10,12 @@ import { MatIconModule } from '@angular/material/icon'
 import { MatChipsModule } from '@angular/material/chips'
 import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { MatTooltipModule } from '@angular/material/tooltip'
-import { MatFormFieldModule } from '@angular/material/form-field'
-import { MatSelectModule } from '@angular/material/select'
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator'
 import { MatTabsModule } from '@angular/material/tabs'
 
 import { DashboardApiService } from '../../api/dashboard-api.service'
 import { ProductService, PRODUCT_COLORS } from '../../core/services/product.service'
-import { ProjectsApiService } from '../../api/projects-api.service'
 import { ThemeService } from '../../core/services/theme.service'
 import { TokenStoreService } from '../../core/services/token-store.service'
 import { PageHeaderComponent } from '../../shared/components/page-header.component'
@@ -96,10 +91,9 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
   selector: 'app-coverage',
   standalone: true,
   imports: [
-    FormsModule, DecimalPipe,
+    DecimalPipe,
     MatCardModule, MatButtonModule, MatIconModule, MatChipsModule,
     MatProgressBarModule, MatTooltipModule,
-    MatFormFieldModule, MatSelectModule,
     MatSlideToggleModule, MatPaginatorModule, MatTabsModule,
     PageHeaderComponent,
   ],
@@ -259,85 +253,12 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
       }
     </mat-card>
 
-    <!-- Content Coverage Gaps — ISMS only (ISO 27001 control groups) -->
-    @if (product.product() === 'isms') {
-    <div class="gaps-section">
-      <div class="gaps-header">
-        <h6 class="gaps-title">Content Coverage Gaps</h6>
-        @if (product.product() === 'isms') {
-          <div class="gap-btns-row">
-            @for (btn of gapBtns; track btn.value) {
-              <div (click)="gapProduct.set(btn.value)"
-                class="gap-btn"
-                [class.gap-btn-active]="gapProduct() === btn.value"
-                [style.background]="gapProduct() === btn.value ? btn.color + '30' : 'rgba(255,255,255,.05)'"
-                [style.color]="gapProduct() === btn.value ? btn.color : 'inherit'"
-                [style.borderColor]="gapProduct() === btn.value ? btn.color + '50' : 'transparent'">
-                {{ btn.label }}
-              </div>
-            }
-          </div>
-        }
-      </div>
-
-
-      @if ((gapsQuery.data()?.length ?? 0) > 0) {
-        <mat-card>
-          <div class="table-scroll">
-            <table class="cov-table">
-              <thead>
-                <tr class="thead-row">
-                  <th class="th-cell th-col-code">Code</th>
-                  <th class="th-cell">Control Group</th>
-                  <th class="th-cell">Section</th>
-                  <th class="th-cell">Missing Artefacts</th>
-                </tr>
-              </thead>
-              <tbody>
-                @for (gap of gapsQuery.data() ?? []; track gap.id) {
-                  <tr class="tbody-row tbody-row-click"
-                    (click)="router.navigate(['/controls', gap.id])">
-                    <td class="td-cell">
-                      <span class="gap-code">{{ gap.group_code }}</span>
-                    </td>
-                    <td class="td-cell td-bold td-sm">{{ gap.name }}</td>
-                    <td class="td-cell td-muted td-xs">{{ gap.section_name }}</td>
-                    <td class="td-cell">
-                      <div class="missing-chips">
-                        @for (m of gap.missing; track m) {
-                          <span class="missing-chip">{{ m }}</span>
-                        }
-                      </div>
-                    </td>
-                  </tr>
-                }
-              </tbody>
-            </table>
-          </div>
-        </mat-card>
-      }
-    </div>
-    }
       </div>
     </mat-tab>
 
     <!-- ── Inferred Coverage ── -->
     <mat-tab label="Inferred Coverage">
       <div class="tab-body">
-        <div class="infer-filter-row">
-          <mat-form-field appearance="outline" class="infer-project-field" subscriptSizing="dynamic">
-            <mat-label>Project scope</mat-label>
-            <mat-select [ngModel]="inferProjectId()" (ngModelChange)="inferProjectId.set($event)">
-              <mat-option value="">Org-wide (all assessments)</mat-option>
-              @for (p of projectsQuery.data() ?? []; track p.id) {
-                <mat-option [value]="p.id">{{ p.name }}</mat-option>
-              }
-            </mat-select>
-          </mat-form-field>
-          @if (inferredQuery.data()) {
-            <span class="infer-count-label">Based on {{ inferredQuery.data()!.assessed_controls }} assessed controls</span>
-          }
-        </div>
 
         @if (inferredQuery.isLoading()) {
           @for (i of [1,2,3,4,5]; track i) {
@@ -393,9 +314,6 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
     .tab-group { margin-bottom: 20px; }
 
     /* Inferred Coverage tab */
-    .infer-filter-row { display: flex; gap: 16px; align-items: center; margin-bottom: 20px; flex-wrap: wrap; }
-    .infer-project-field { min-width: 260px; }
-    .infer-count-label { font-size: .72rem; opacity: .5; }
     .skeleton-row { height: 52px; background: rgba(255,255,255,.05); border-radius: 6px; margin-bottom: 8px; }
     .infer-card { border: 1px solid rgba(128,128,128,.2); border-radius: 6px; overflow: hidden; margin-bottom: 8px; }
     .infer-card-header { display: flex; align-items: center; gap: 16px; padding: 10px 16px; cursor: pointer; }
@@ -490,21 +408,6 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
     /* Hit dot */
     .hit-dot { width: 10px; height: 10px; border-radius: 50%; margin: 0 auto; }
 
-    /* Gaps section */
-    .gaps-section { margin-top: 32px; }
-    .gaps-header { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; flex-wrap: wrap; }
-    .gaps-title { margin: 0; font-size: 1rem; font-weight: 700; }
-    .gap-btns-row { display: flex; gap: 6px; margin-left: auto; }
-    .gap-btn {
-      cursor: pointer;
-      padding: 2px 10px;
-      border-radius: 12px;
-      font-size: .72rem;
-      border: 1px solid transparent;
-    }
-    .gaps-empty-state { display: flex; align-items: center; gap: 12px; padding: 24px 8px; opacity: .4; }
-    .gaps-empty-text { font-size: .85rem; }
-
     /* Gaps table */
     .gap-code { font-family: monospace; font-size: .72rem; color: #9DC3E6; }
     .missing-chips { display: flex; gap: 4px; flex-wrap: wrap; }
@@ -525,7 +428,6 @@ export class CoverageComponent {
   readonly router   = inject(Router)
   private theme     = inject(ThemeService)
   private dashboard   = inject(DashboardApiService)
-  private projects    = inject(ProjectsApiService)
   private tokenStore  = inject(TokenStoreService)
 
   // ── State ──────────────────────────────────────────────────────────────────
@@ -533,8 +435,6 @@ export class CoverageComponent {
   activeFramework = signal('')
   showUnmapped    = signal(false)
   page            = signal(0)
-  gapProduct      = signal<'framework' | 'operational'>('framework')
-  inferProjectId  = signal('')
   openInferred    = signal<Record<string, boolean>>({})
   readonly rowsPerPage = ROWS_PER_PAGE
 
@@ -547,11 +447,6 @@ export class CoverageComponent {
     })
   }
 
-  gapBtns = [
-    { value: 'framework'   as const, label: 'FW', color: PRODUCT_COLORS.isms },
-    { value: 'operational' as const, label: 'OP', color: '#70AD47' },
-  ]
-
   // ── Queries ────────────────────────────────────────────────────────────────
   coverageQuery = injectQuery(() => ({
     queryKey: ['dashboard-coverage', PRODUCT_SOURCE_FRAMEWORK[this.product.product()] ?? 'ISO27001'],
@@ -561,21 +456,10 @@ export class CoverageComponent {
     ).then(r => r.json()) as Promise<RealCoverage>,
   }))
 
-  gapsQuery = injectQuery(() => ({
-    queryKey: ['coverage-gaps', this.gapProduct()],
-    queryFn: () => firstValueFrom(this.dashboard.getCoverageGaps(this.gapProduct())),
-    enabled: this.product.product() === 'isms',
-  }))
-
-  projectsQuery = injectQuery(() => ({
-    queryKey: ['projects-list'],
-    queryFn: () => firstValueFrom(this.projects.list()),
-  }))
-
   inferredQuery = injectQuery(() => ({
-    queryKey: ['coverage-inferred', this.inferProjectId()],
+    queryKey: ['coverage-inferred'],
     queryFn: () => fetch(
-      `/api/v1/coverage/multi-framework${this.inferProjectId() ? '?project_id=' + this.inferProjectId() : ''}`,
+      `/api/v1/coverage/multi-framework`,
       { headers: { Authorization: 'Bearer ' + (this.tokenStore.get() ?? '') } }
     ).then(r => r.json()) as Promise<{ assessed_controls: number; frameworks: InferredResult[] }>,
     enabled: this.activeTab() === 1,
