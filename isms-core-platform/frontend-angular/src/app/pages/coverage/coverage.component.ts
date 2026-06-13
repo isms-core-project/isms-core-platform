@@ -1,5 +1,6 @@
 import { Component, inject, signal, computed, effect } from '@angular/core'
 import { DecimalPipe } from '@angular/common'
+import { FormsModule } from '@angular/forms'
 import { Router } from '@angular/router'
 
 import { injectQuery } from '@tanstack/angular-query-experimental'
@@ -8,6 +9,8 @@ import { MatCardModule } from '@angular/material/card'
 import { MatButtonModule } from '@angular/material/button'
 import { MatIconModule } from '@angular/material/icon'
 import { MatChipsModule } from '@angular/material/chips'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatSelectModule } from '@angular/material/select'
 import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { MatTooltipModule } from '@angular/material/tooltip'
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'
@@ -91,9 +94,10 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
   selector: 'app-coverage',
   standalone: true,
   imports: [
-    DecimalPipe,
+    FormsModule, DecimalPipe,
     MatCardModule, MatButtonModule, MatIconModule, MatChipsModule,
     MatProgressBarModule, MatTooltipModule,
+    MatFormFieldModule, MatSelectModule,
     MatSlideToggleModule, MatPaginatorModule, MatTabsModule,
     PageHeaderComponent,
   ],
