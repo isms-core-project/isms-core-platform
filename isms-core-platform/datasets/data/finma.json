@@ -6,15 +6,15 @@
     "id": "5ef8740e-ae06-53ea-abd2-fa496cca9530",
     "code": "FINMA",
     "name": "FINMA Regulatory Requirements",
-    "version": "2024",
+    "version": "2024-2026",
     "publisher": "Swiss Financial Market Supervisory Authority (FINMA)",
-    "source_url": "https://www.finma.ch/en/documentation/",
+    "source_url": "https://www.finma.ch/en/documentation/circulars/",
     "jurisdiction": "CH",
-    "description": "FINMA circulars and guidance for operational resilience, outsourcing, and cyber risks"
+    "description": "FINMA regulatory requirements for ICT/operational resilience, outsourcing, and cyber risk. Covers Circular 2023/1 (op. risks/resilience, in force 1 Jan 2024, Ch.V fully binding 1 Jan 2026), Circular 2018/3 (outsourcing, still current), Guidance 03/2024 (cyber risks). New 2025/2026 circulars are out of ICT/security scope."
   },
   "generated_at": "2026-06-13T12:07:17Z",
   "generator": "generate_regulatory.py",
-  "content_hash": "2d4e3cebf214f4fdf982d2d00b4ea11a8b32c4af637d9502a8825fbe91b03cbd",
+  "content_hash": "2d4e3cebf214f4fdf982d2d00b4ea11a8b32c4af637d9502a8825fbe91b03cbe",
   "objects_count": 24,
   "relationships_count": 21,
   "objects": [
