@@ -63,7 +63,7 @@ interface InferredResult {
 // ── Constants ─────────────────────────────────────────────────────────────────
 
 const PRODUCT_SOURCE_FRAMEWORK: Record<string, string> = {
-  isms: 'ISO27001', privacy: 'ISO27701', cloud: 'ISO27017', ai: 'ISO42001',
+  isms: 'ISO27001', privacy: 'ISO27701', cloud: 'ISO27018', ai: 'ISO42001',
 }
 const SOURCE_CONTROL_LABEL: Record<string, string> = {
   isms: 'ISO 27001 Control', privacy: 'ISO 27701 Control',

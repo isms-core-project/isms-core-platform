@@ -39,6 +39,7 @@ _SUPPORTED = {
     "UK_NIS", "UK_OPERATIONAL_RESILIENCE",
     "BAFIN_BAIT", "CYFUN_BE", "CSSF_LU", "ACN_IT",
     "BSI_C5_2026", "BSI_C3A",
+    "PCI_DSS_4.0.1",
 }
 
 

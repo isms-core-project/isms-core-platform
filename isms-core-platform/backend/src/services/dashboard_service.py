@@ -193,12 +193,12 @@ def get_coverage_matrix(
 
     # Leaf level differs per framework:
     #   ISO27701: Annex A controls are level 2; A.3.x controls are level-1 leaves (no children)
-    #   ISO27018: actual requirements are level 2 (level 1 = clause headers only)
+    #   ISO27018: controls at level 1 (clauses A.1-A.12) + level 2 (sub-controls A.x.y)
     #   all others: level 1
     if src_prefix.startswith("ISO27701"):
         leaf_levels = [1, 2]   # include A.3.x (level 1, no children) + standard Annex A (level 2)
     elif src_prefix.startswith("ISO27018"):
-        leaf_levels = [2]
+        leaf_levels = [1, 2]
     else:
         leaf_levels = [1]
 
@@ -390,7 +390,7 @@ def get_framework_overview(db: DBSession, source_framework: str = "ISO27701") ->
     if src_prefix.startswith("ISO27701"):
         leaf_levels = [1, 2]
     elif src_prefix.startswith("ISO27018"):
-        leaf_levels = [2]
+        leaf_levels = [1, 2]
     else:
         leaf_levels = [1]
 
@@ -923,7 +923,7 @@ def get_graph(
             if src_prefix.startswith("ISO27701"):
                 leaf_levels = [1, 2]
             elif src_prefix.startswith("ISO27018"):
-                leaf_levels = [2]
+                leaf_levels = [1, 2]
             else:
                 leaf_levels = [1]
             src_ctrl_stmt = select(FrameworkControl).where(
