@@ -78,6 +78,7 @@ const FRAMEWORK_META: Record<string, FrameworkMeta> = {
   CSA_AICM_V1:            { name: 'CSA AI Controls Matrix',            subtitle: 'AICM v1',               color: '#6A1B9A', description: 'Cloud Security Alliance AI Controls Matrix v1 — security controls for AI systems.' },
   BSI_C5_2026:            { name: 'BSI C5:2026',                       subtitle: 'BSI — Cloud Computing Compliance Criteria Catalogue', color: '#C62828', description: 'BSI C5:2026 — 168 criteria across 17 domains for cloud service provider security assurance. Used for third-party attestation audits in Germany and the EU. Replaces C5:2020.' },
   BSI_C3A:                { name: 'BSI C3A',                            subtitle: 'BSI — Criteria enabling Cloud Computing Autonomy', color: '#AD1457', description: 'BSI C3A v1.0 (2026) — 30 criterion groups across 6 sovereignty domains (Strategic, Legal/Jurisdictional, Data, Operational, Supply Chain, Technology). Companion to C5:2026.' },
+  'PCI_DSS_4.0.1':        { name: 'PCI DSS v4.0.1',                     subtitle: 'PCI SSC — Payment Card Industry',  color: '#003087', description: 'Payment Card Industry Data Security Standard v4.0.1 — security standards for organisations that handle cardholder data. 12 requirements across 323 sub-requirements with 6 prioritised milestones.' },
 }
 
 const SLUG_TO_CODE: Record<string, string> = {
@@ -104,6 +105,7 @@ const SLUG_TO_CODE: Record<string, string> = {
   'nist-800-53':      'NIST_800_53_R5',
   'csa-ccm':          'CSA_CCM_V4_1',
   'csa-aicm':         'CSA_AICM_V1',
+  'pci-dss':          'PCI_DSS_4.0.1',
 }
 
 function resolveMeta(frameworkCode: string): FrameworkMeta {
@@ -138,9 +140,29 @@ interface GroupedReq {
   requirements: Requirement[]
 }
 
+const PCI_MILESTONE_LABELS: Record<number, string> = {
+  1: 'Milestone 1 — Remove sensitive authentication data and limit data retention',
+  2: 'Milestone 2 — Protect systems and networks, and be prepared to respond to a breach',
+  3: 'Milestone 3 — Secure payment card applications',
+  4: 'Milestone 4 — Monitor and control access to your systems',
+  5: 'Milestone 5 — Protect stored cardholder data',
+  6: 'Milestone 6 — Finalise remaining compliance efforts, and ensure all controls are in place',
+}
+
 function groupRequirements(reqs: Requirement[], frameworkCode: string): GroupedReq[] {
   if (frameworkCode === 'EU_CLOUD_SOV') {
     return [{ groupId: 'all', groupTitle: 'Cloud Sovereignty Objectives — SOV-1 to SOV-8', requirements: reqs }]
+  }
+  if (frameworkCode === 'PCI_DSS_4.0.1') {
+    const map = new Map<string, GroupedReq>()
+    for (const r of reqs) {
+      const m = (r.metadata as { milestone?: number }).milestone
+      const gid = m ? `M${m}` : 'M0'
+      const gtitle = m ? (PCI_MILESTONE_LABELS[m] ?? `Milestone ${m}`) : 'No Milestone Assigned'
+      if (!map.has(gid)) map.set(gid, { groupId: gid, groupTitle: gtitle, requirements: [] })
+      map.get(gid)!.requirements.push(r)
+    }
+    return Array.from(map.values()).sort((a, b) => a.groupId.localeCompare(b.groupId))
   }
   const groupedFrameworks = ['DORA', 'CIS_V8', 'BSI_IT_GRUNDSCHUTZ', 'COBIT_2019', 'NIST_AI_RMF', 'NCSC_CAF', 'BSI_C5_2026', 'BSI_C3A']
   if (groupedFrameworks.includes(frameworkCode)) {

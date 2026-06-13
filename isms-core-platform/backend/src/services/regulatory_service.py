@@ -45,6 +45,7 @@ _ASSESSABLE_LEVEL = {
     "FR_NIS2_RECYF": 1,
     "BSI_C5_2026": 1,
     "BSI_C3A": 1,
+    "PCI_DSS_4.0.1": 3,
 }
 
 
@@ -109,6 +110,7 @@ def _build_requirement_reads(
             sort_order=r.sort_order,
             group_id=group.control_id if group else None,
             group_title=group.title if group else None,
+            metadata=r.metadata_ or {},
         ))
     return result
 

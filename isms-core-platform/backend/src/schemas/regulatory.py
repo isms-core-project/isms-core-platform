@@ -36,6 +36,7 @@ class RequirementRead(BaseModel):
     sort_order: int
     group_id: str | None = None    # parent control_id (e.g. chapter for DORA)
     group_title: str | None = None
+    metadata: dict = {}
 
 
 # ── Assessments ────────────────────────────────────────────────────────────────

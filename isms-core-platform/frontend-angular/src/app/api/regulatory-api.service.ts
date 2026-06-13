@@ -11,6 +11,7 @@ export interface Requirement {
   sort_order: number
   group_id: string | null
   group_title: string | null
+  metadata: Record<string, unknown>
 }
 
 export interface ComplianceAssessment {

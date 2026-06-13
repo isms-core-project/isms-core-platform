@@ -72,6 +72,7 @@ const NAV_FRAMEWORK_REGIONS: NavRegion[] = [
       { label: 'COBIT 2019',         path: '/compliance/cobit',  icon: 'account_balance' },
       { label: 'CSA CCM v4.1',       path: '/compliance/csa-ccm', icon: 'cloud' },
       { label: 'CSA AI Controls',    path: '/compliance/csa-aicm', icon: 'policy' },
+      { label: 'PCI DSS v4.0.1',     path: '/compliance/pci-dss', icon: 'credit_card' },
     ],
   },
   {
