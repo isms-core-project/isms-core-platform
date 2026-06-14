@@ -49,6 +49,7 @@ config.ini
 # Allow platform source files that contain 'token' in the name
 !*tokenStore*
 !*tokenStore.ts
+!*token-store*
 
 # Temporary Files
 *.tmp
