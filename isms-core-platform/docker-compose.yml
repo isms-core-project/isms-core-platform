@@ -531,7 +531,7 @@ services:
 
   isms-core-frontend:
     build:
-      context: ./frontend-angular
+      context: ./frontend
     image: isms-core-frontend:latest
     container_name: isms-core-frontend
     environment:
