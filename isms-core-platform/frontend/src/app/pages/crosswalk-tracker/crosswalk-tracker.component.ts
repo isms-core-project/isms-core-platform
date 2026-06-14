@@ -19,6 +19,7 @@ interface AxisRow {
   source_framework: string
   target_framework: string
   count: number
+  sprint_date?: string
 }
 
 interface AxesResponse {
@@ -36,11 +37,6 @@ interface KnownReview {
 // ─── Static data ──────────────────────────────────────────────────────────────
 
 const KNOWN_REVIEWS: Record<string, KnownReview> = {
-  'NIST_800_53_R5 → MITRE_ATTACK_V19': {
-    status: 'pending',
-    note: 'MITRE ATT&CK v19 live 2026-04-28 — crosswalk updated to V19. Review Defense Evasion → Stealth / Defense Impairment remapping.',
-    eta: '2026-04-28',
-  },
   'ISO27001_2022 → ISO27017': {
     status: 'pending',
     note: 'ISO 27017:2025 revision in progress — re-validate cloud control mappings on official release.',
@@ -60,8 +56,8 @@ const KNOWN_REVIEWS: Record<string, KnownReview> = {
 }
 
 const SOURCE_FILE: Record<string, string> = {
-  ISO42001:       'iso42001_crosswalk.json',
-  ISO42005:       'iso42005_crosswalk.json',
+  ISO42001:       'crosswalk.json',
+  ISO42005:       'crosswalk.json',
   ISO27001_2022:  'crosswalk.json',
   ISO27017:       'crosswalk.json',
   ISO27018:       'crosswalk.json',
@@ -205,7 +201,7 @@ function fwColor(code: string): string {
                 <ng-container matColumnDef="sprint">
                   <th mat-header-cell *matHeaderCellDef class="col-header">Last Sprint</th>
                   <td mat-cell *matCellDef="let axis">
-                    <span class="sprint-date">2026-04-17</span>
+                    <span class="sprint-date">{{ axis.sprint_date || '—' }}</span>
                   </td>
                 </ng-container>
 
@@ -245,10 +241,9 @@ function fwColor(code: string): string {
 
       <div class="footer-note">
         <mat-icon class="icon-sm">info</mat-icon>
-        Axis counts are live from the database. Review flags are tracked in
-        <code>CrosswalkTracker</code> → <code>KNOWN_REVIEWS</code>.
+        Axis counts read directly from <code>crosswalk.json</code> on disk — always current, no DB lag.
+        Review flags tracked in <code>CrosswalkTracker</code> → <code>KNOWN_REVIEWS</code>.
         Sprint dates update manually after each mapping sprint.
-        Files: <code>crosswalk.json</code> · <code>iso42001_crosswalk.json</code> · <code>iso42005_crosswalk.json</code>.
       </div>
     </div>
   `,
@@ -325,7 +320,7 @@ export class CrosswalkTrackerComponent {
 
   axesQuery = injectQuery(() => ({
     queryKey: ['crosswalk-axes'],
-    queryFn: () => firstValueFrom(this.http.get<AxesResponse>('/api/v1/frameworks/crosswalk/axes')),
+    queryFn: () => firstValueFrom(this.http.get<AxesResponse>('/api/v1/frameworks/crosswalk/axes/files')),
   }))
 
   grouped = computed((): Record<string, AxisRow[]> => {

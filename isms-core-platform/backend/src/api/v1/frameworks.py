@@ -1,9 +1,12 @@
+import json
 import uuid
+from pathlib import Path
 
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session as DBSession, aliased
 
+from src.core.config import get_settings
 from src.core.dependencies import get_current_user
 from src.database.session import get_db
 from src.domain.frameworks import CrossFrameworkMapping, Framework, FrameworkControl
@@ -125,6 +128,38 @@ def list_crosswalk_axes(
     ).all()
 
     axes = [{"source_framework": r.source_framework, "target_framework": r.target_framework, "count": r.count} for r in rows]
+    total = sum(a["count"] for a in axes)
+    return {"axes": axes, "total_mappings": total, "total_axes": len(axes)}
+
+
+@router.get("/crosswalk/axes/files")
+def list_crosswalk_axes_from_files(
+    _user: User = Depends(get_current_user),
+):
+    """Return crosswalk axes read directly from the JSON dataset files (always current, no DB lag)."""
+    datasets_path = Path(get_settings().datasets_path)
+    crosswalk_files = [
+        datasets_path / "crosswalk.json",
+        datasets_path / "iso42001_crosswalk.json",
+        datasets_path / "iso42005_crosswalk.json",
+    ]
+
+    combined: dict[str, tuple[int, str]] = {}
+    for fp in crosswalk_files:
+        if not fp.exists():
+            continue
+        data = json.loads(fp.read_text())
+        sprint_date = data.get("sprint_date", "")
+        for axis, count in data.get("mapping_axes", {}).items():
+            prev_count, prev_date = combined.get(axis, (0, ""))
+            combined[axis] = (prev_count + count, sprint_date or prev_date)
+
+    axes = []
+    for axis, (count, sprint_date) in sorted(combined.items()):
+        parts = axis.split(" → ", 1)
+        if len(parts) == 2:
+            axes.append({"source_framework": parts[0], "target_framework": parts[1], "count": count, "sprint_date": sprint_date})
+
     total = sum(a["count"] for a in axes)
     return {"axes": axes, "total_mappings": total, "total_axes": len(axes)}
 

@@ -51,12 +51,12 @@ const KNOWN_UPDATES: Record<string, KnownUpdate> = {
     latest: '2025',
     status: 'pending',
     note: 'ISO/IEC 27017:2025 revision in progress — replaces 2015 edition. New control pack planned on release.',
-    eta: '~June 2026',
+    eta: 'TBD (delayed past June 2026)',
   },
 }
 
 const CORPUS_STANDARDS: CorpusStandardRow[] = [
-  { standard: 'ISO/IEC 27000',       title: 'Information security management — Overview and vocabulary', domain: 'ISMS',            edition: 'FDIS (replacing 2018)', status: 'pending', note: 'FDIS ballot in progress — replaces ISO/IEC 27000:2018 with updated terminology aligned to ISO 27001:2022.', eta: '~June 2026' },
+  { standard: 'ISO/IEC 27000',       title: 'Information security management — Overview and vocabulary', domain: 'ISMS',            edition: 'FDIS (replacing 2018)', status: 'pending', note: 'FDIS ballot in progress — replaces ISO/IEC 27000:2018 with updated terminology aligned to ISO 27001:2022.', eta: 'TBD (delayed past June 2026)' },
   { standard: 'ISO/IEC 22123-1:2023', title: 'Cloud computing — Vocabulary',                              domain: 'Cloud Computing', edition: '2023',              status: 'current' },
   { standard: 'ISO/IEC 22123-2:2023', title: 'Cloud computing — Concepts',                                domain: 'Cloud Computing', edition: '2023',              status: 'current' },
   { standard: 'ISO/IEC 22123-3:2023', title: 'Cloud computing — Reference Architecture (CCRA)',           domain: 'Cloud Computing', edition: '2023',              status: 'current' },
@@ -432,7 +432,8 @@ export class FrameworkTrackerComponent {
     const fws = this.fwQuery.data() ?? []
     const g: Record<string, FrameworkRow[]> = {}
     for (const fw of fws) {
-      const j = fw.jurisdiction ?? 'INT'
+      const raw = fw.jurisdiction ?? 'INT'
+      const j = (raw === 'Global' || raw === 'global') ? 'INT' : raw
       if (!g[j]) g[j] = []
       g[j].push(fw)
     }
