@@ -627,4 +627,4 @@ Total: **3,433 crosswalk objects across 44 axes** available in the Crosswalk Vie
 
 ---
 
-*Part of [ISMS CORE Project](README.md) — ISO 27001 · ISO 27701 · ISO 27017 · ISO 27018 · ISO 42001* · [Compliance details at isms-core.com/compliance.html](https://isms-core.com/compliance.html)
+*Part of [ISMS CORE Project](README.md) — ISO 27001 · ISO 27701 · ISO 27017 · ISO 27018 · ISO 42001* · [Compliance details at isms-core.com/compliance.html](https://isms-core.com/frameworks)

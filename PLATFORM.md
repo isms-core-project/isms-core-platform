@@ -1037,7 +1037,7 @@ docker compose logs isms-core-beat --tail=20   # Confirm scheduler is running
 ---
 
 <p align="center">
-  <a href="https://isms-core.com/platform.html">isms-core.com/platform</a> · <a href="https://isms-core.com">isms-core.com</a>
+  <a href="https://isms-core.com/platform">isms-core.com/platform</a> · <a href="https://isms-core.com">isms-core.com</a>
 </p>
 
 <p align="center">
