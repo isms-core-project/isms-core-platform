@@ -151,7 +151,7 @@ EN · FR · DE · IT
 
 **Live compliance management system** — turns all content products into dashboards, gap tracking, evidence ingestion, risk registers, and audit reports. Docker Compose, 10 services, self-hosted.
 
-**44** connectors · **27** assessment modules · **3,433** crosswalk objects / 44 axes<br/>
+**44** connectors · **28** assessment modules · **3,433** crosswalk objects / 44 axes<br/>
 7 country jurisdictions · **20+** threat intelligence sources
 
 <img src="https://img.shields.io/badge/v1.0-Live-2E8B57?style=flat-square" alt="Live"/>
