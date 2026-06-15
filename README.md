@@ -522,7 +522,7 @@ Commercial licensing: **info@isms-core.com**
   <a href="https://github.com/isms-core-project"><img src="https://img.shields.io/badge/GitHub-isms--core--project-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/></a>
   <a href="https://isms-core.com"><img src="https://img.shields.io/badge/Website-isms--core.com-2E8B57?style=flat-square" alt="Website"/></a>
   <a href="https://isms-core.com/platform"><img src="https://img.shields.io/badge/Platform-isms--core.com/platform-2E8B57?style=flat-square" alt="Platform"/></a>
-  <a href="https://isms-core.com/compliance"><img src="https://img.shields.io/badge/Compliance-isms--core.com/compliance-0066CC?style=flat-square" alt="Compliance Frameworks"/></a>
+  <a href="https://isms-core.com/frameworks"><img src="https://img.shields.io/badge/Compliance-isms--core.com/compliance-0066CC?style=flat-square" alt="Compliance Frameworks"/></a>
 </p>
 
 ---
