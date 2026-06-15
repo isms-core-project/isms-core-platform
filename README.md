@@ -18,7 +18,7 @@
 </p>
 
 <details>
-<summary><strong>27 compliance assessment modules — click to expand</strong></summary>
+<summary><strong>28 compliance assessment modules — click to expand</strong></summary>
 <br/>
 <p align="center">
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/NIST_CSF_2.0-Assessment_Tool-FF6600?style=flat-square" alt="NIST CSF"/></a>
