@@ -8,7 +8,7 @@ import { Table } from '@tiptap/extension-table'
 import { TableCell } from '@tiptap/extension-table-cell'
 import { TableHeader } from '@tiptap/extension-table-header'
 import { TableRow } from '@tiptap/extension-table-row'
-import { Markdown } from '@tiptap/markdown'
+import { Markdown } from 'tiptap-markdown'
 import { TiptapEditorDirective } from 'ngx-tiptap'
 import { MatIconModule } from '@angular/material/icon'
 import { MatButtonModule } from '@angular/material/button'
@@ -274,7 +274,11 @@ export class RichTextEditorComponent implements OnInit, OnDestroy {
     this.editor = new Editor({
       extensions: [
         StarterKit,
-        Markdown,
+        Markdown.configure({
+          html: true,
+          tightLists: true,
+          transformPastedText: true,
+        }),
         Table.configure({ resizable: false }),
         TableRow,
         TableHeader,
@@ -282,7 +286,7 @@ export class RichTextEditorComponent implements OnInit, OnDestroy {
       ],
       content: this._initValue,
       onUpdate: ({ editor }) => {
-        const md = editor.getMarkdown()
+        const md = (editor.storage as any).markdown?.getMarkdown?.() ?? editor.getHTML()
         if (md !== this._lastEmitted) {
           this._lastEmitted = md
           this.valueChange.emit(md)

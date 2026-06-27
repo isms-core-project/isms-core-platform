@@ -168,7 +168,7 @@ function pct(rated: number, total: number): number {
       <div class="autosave-hint">Changes auto-save after 1.2 s.</div>
 
       @for (fc of functionOrder; track fc) {
-        @let ratings = byFunction()[fc];
+        @let ratings = byFunction()[fc] ?? [];
         @if (ratings.length > 0) {
           <mat-card class="fn-card"
             [style.border-color]="fcColor(fc) + '22'"
@@ -344,7 +344,7 @@ function pct(rated: number, total: number): number {
                   <span class="meta-item">Avg: <span [style.color]="tierColorVal(Math.round(p.avg_current_tier))">T{{ p.avg_current_tier.toFixed(1) }}</span></span>
                 }
               </div>
-              @if ((p.function_scores.length ?? 0) > 0) {
+              @if ((p.function_scores?.length ?? 0) > 0) {
                 <div class="fn-scores-grid">
                   @for (fc of functionOrder; track fc) {
                     @let fs = getFunctionScore(p, fc);

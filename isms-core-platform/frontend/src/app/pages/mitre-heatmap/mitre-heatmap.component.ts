@@ -146,7 +146,7 @@ function textColor(count: number, max: number): string {
           <!-- Technique cells per tactic column -->
           @for (tac of hm.tactic_order; track tac) {
             <div class="hm-col">
-              @for (tech of techsByTactic()[tac]; track tech.stix_id) {
+              @for (tech of techsByTactic()[tac] ?? []; track tech.stix_id) {
                 <div class="hm-cell"
                   [class.hm-cell--sub]="tech.is_subtechnique"
                   [class.hm-cell--selected]="selectedTech()?.stix_id === tech.stix_id"

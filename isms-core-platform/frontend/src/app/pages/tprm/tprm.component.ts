@@ -588,7 +588,7 @@ export class ContractDialogComponent {
                     </div>
 
                     <!-- Type -->
-                    <div class="col-type text-muted-sm">{{ toLabel(v.vendor_type) }}</div>
+                    <div class="col-type text-muted-sm">{{ toLabel(v.vendor_type ?? '—') }}</div>
 
                     <!-- Criticality chip -->
                     <div class="col-criticality">
@@ -597,7 +597,7 @@ export class ContractDialogComponent {
 
                     <!-- Status chip -->
                     <div class="col-status">
-                      <span [style]="statusChipStyle(v.status)">{{ statusLabels[v.status] }}</span>
+                      <span [style]="statusChipStyle(v.status)">{{ statusLabels[v.status] ?? toLabel(v.status) }}</span>
                     </div>
 
                     <!-- DORA badge -->

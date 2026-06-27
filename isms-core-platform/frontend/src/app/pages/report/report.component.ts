@@ -1,4 +1,5 @@
 import { Component, inject, signal, computed } from '@angular/core'
+import { DecimalPipe } from '@angular/common'
 import { firstValueFrom } from 'rxjs'
 
 import { injectQuery } from '@tanstack/angular-query-experimental'
@@ -15,6 +16,8 @@ import { ControlsApiService } from '../../api/controls-api.service'
 import { ProductService, PRODUCT_COLORS, PRODUCT_LABELS, Product } from '../../core/services/product.service'
 import { ProjectService } from '../../core/services/project.service'
 import { ThemeService } from '../../core/services/theme.service'
+import { PageHeaderComponent } from '../../shared/components/page-header.component'
+
 // ── Types ─────────────────────────────────────────────────────────────────────
 
 interface SectionRow {
@@ -91,8 +94,10 @@ function pct(v: number): string { return `${v.toFixed(0)}%` }
   selector: 'app-report',
   standalone: true,
   imports: [
+    DecimalPipe,
     MatCardModule, MatButtonModule, MatIconModule, MatChipsModule,
     MatButtonToggleModule, MatProgressSpinnerModule,
+    PageHeaderComponent,
   ],
   template: `
 <div class="report-root">

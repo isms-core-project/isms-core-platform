@@ -1,6 +1,5 @@
-node_modules
-dist
-.angular
-.git
+node_modules/
+dist/
+.angular/
 *.md
 README*

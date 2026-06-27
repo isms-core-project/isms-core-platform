@@ -293,7 +293,7 @@ export class CreateUserDialogComponent {
             <span class="notif-category">{{ ev.category }}</span>
           </div>
           <mat-slide-toggle
-            [checked]="notifPrefs[ev.event_type]"
+            [checked]="notifPrefs[ev.event_type] ?? true"
             (change)="notifPrefs[ev.event_type] = $event.checked" />
         </div>
       }
@@ -515,6 +515,9 @@ export class ManageMembersDialogComponent {
     MatSlideToggleModule, MatChipsModule, MatTooltipModule,
     MatProgressBarModule, MatDividerModule,
     PageHeaderComponent,
+    AdminConfirmDialogComponent, CreateGroupDialogComponent,
+    CreateUserDialogComponent, EditUserDialogComponent,
+    ManageMembersDialogComponent,
     ExpandableCardComponent,
   ],
   template: `
