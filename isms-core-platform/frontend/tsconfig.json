@@ -19,6 +19,8 @@
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
+    // Disabled: causes O(n) template inference across 45+ components — adds 10+ min to cold Docker builds.
+    // Re-enable temporarily to catch template type errors during development, then disable before building.
     "strictTemplates": false
   },
   "files": [],
