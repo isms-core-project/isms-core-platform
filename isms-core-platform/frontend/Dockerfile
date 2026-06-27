@@ -7,8 +7,7 @@ COPY package.json package-lock.json ./
 RUN --mount=type=cache,target=/root/.npm npm ci
 
 COPY . .
-RUN --mount=type=cache,target=/app/.angular \
-    node_modules/.bin/ng build --configuration=production
+RUN node_modules/.bin/ng build --configuration=production
 
 # ── Stage 2: serve ────────────────────────────────────────────────────────────
 FROM nginx:alpine
