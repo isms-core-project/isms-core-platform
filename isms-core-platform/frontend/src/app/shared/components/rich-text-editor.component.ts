@@ -274,11 +274,7 @@ export class RichTextEditorComponent implements OnInit, OnDestroy {
     this.editor = new Editor({
       extensions: [
         StarterKit,
-        Markdown.configure({
-          html: true,
-          tightLists: true,
-          transformPastedText: true,
-        }),
+        Markdown,
         Table.configure({ resizable: false }),
         TableRow,
         TableHeader,
@@ -286,7 +282,7 @@ export class RichTextEditorComponent implements OnInit, OnDestroy {
       ],
       content: this._initValue,
       onUpdate: ({ editor }) => {
-        const md = (editor.storage as any).markdown?.getMarkdown?.() ?? editor.getHTML()
+        const md = editor.getMarkdown ? editor.getMarkdown() : editor.getHTML()
         if (md !== this._lastEmitted) {
           this._lastEmitted = md
           this.valueChange.emit(md)
