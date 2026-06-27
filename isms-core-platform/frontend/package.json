@@ -52,5 +52,8 @@
     "@types/cytoscape": "^3.31.0",
     "prettier": "^3.8.1",
     "typescript": "~5.9.2"
+  },
+  "overrides": {
+    "marked": "^18.0.5"
   }
 }
