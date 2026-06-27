@@ -245,7 +245,7 @@ export interface DeleteGapDialogData { gap: GapRead }
 @Component({
   selector: 'app-delete-gap-dialog',
   standalone: true,
-  imports: [MatButtonModule, MatDialogModule, MatProgressSpinnerModule],
+  imports: [MatButtonModule, MatDialogModule, MatProgressSpinnerModule, SlicePipe],
   template: `
     <h2 mat-dialog-title>Delete gap?</h2>
     <mat-dialog-content>
