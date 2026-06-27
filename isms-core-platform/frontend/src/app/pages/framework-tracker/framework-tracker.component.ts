@@ -53,25 +53,41 @@ const KNOWN_UPDATES: Record<string, KnownUpdate> = {
     note: 'ISO/IEC 27017:2025 revision in progress — replaces 2015 edition. New control pack planned on release.',
     eta: 'TBD (delayed past June 2026)',
   },
+  ISO27090: {
+    latest: 'FDIS',
+    status: 'pending',
+    note: 'ISO/IEC 27090 (FDIS) — AI security threats guidance. FDIS ballot in progress; publication imminent. Phase 56 build planned on release.',
+    eta: '2026',
+  },
+  ISO27091: {
+    latest: 'DIS',
+    status: 'pending',
+    note: 'ISO/IEC 27091 (DIS) — AI privacy protection guidance. DIS enquiry stage; 12–18+ months from publication. Phase 57 build planned on FDIS.',
+    eta: 'TBD (DIS stage — ~2027)',
+  },
 }
 
 const CORPUS_STANDARDS: CorpusStandardRow[] = [
-  { standard: 'ISO/IEC 27000',       title: 'Information security management — Overview and vocabulary', domain: 'ISMS',            edition: 'FDIS (replacing 2018)', status: 'pending', note: 'FDIS ballot in progress — replaces ISO/IEC 27000:2018 with updated terminology aligned to ISO 27001:2022.', eta: 'TBD (delayed past June 2026)' },
-  { standard: 'ISO/IEC 22123-1:2023', title: 'Cloud computing — Vocabulary',                              domain: 'Cloud Computing', edition: '2023',              status: 'current' },
-  { standard: 'ISO/IEC 22123-2:2023', title: 'Cloud computing — Concepts',                                domain: 'Cloud Computing', edition: '2023',              status: 'current' },
-  { standard: 'ISO/IEC 22123-3:2023', title: 'Cloud computing — Reference Architecture (CCRA)',           domain: 'Cloud Computing', edition: '2023',              status: 'current' },
-  { standard: 'ISO/IEC 42001:2023',   title: 'AI management system (AIMS)',                               domain: 'AI Management',   edition: '2023',              status: 'current' },
-  { standard: 'ISO/IEC 42005:2025',   title: 'AI system impact assessment',                               domain: 'AI Management',   edition: '2025',              status: 'current' },
-  { standard: 'ISO/IEC 22989:2022',   title: 'AI concepts and terminology',                               domain: 'AI Management',   edition: '2022',              status: 'current' },
-  { standard: 'ISO/IEC 19395:2015',   title: 'Smart data centre resource monitoring',                     domain: 'Infrastructure',  edition: '2015',              status: 'current' },
-  { standard: 'ISO/IEC 30141:2024',   title: 'IoT reference architecture',                                domain: 'IoT',             edition: '2024',              status: 'current' },
-  { standard: 'ISO/IEC 24091:2019',   title: 'Data centre storage power efficiency',                      domain: 'Infrastructure',  edition: '2019',              status: 'current' },
+  { standard: 'ISO/IEC 27000',       title: 'Information security management — Overview and vocabulary',                         domain: 'ISMS',            edition: 'FDIS (replacing 2018)', status: 'pending', note: 'FDIS ballot in progress — replaces ISO/IEC 27000:2018 with updated terminology aligned to ISO 27001:2022.', eta: 'TBD (delayed past June 2026)' },
+  { standard: 'ISO/IEC 27028',       title: 'Guidance on using information security control attributes',                         domain: 'ISMS',            edition: 'FDIS',                 status: 'pending', note: 'FDIS ballot in progress — formalises use of ISO 27001:2022 Annex A control attributes (control type, security concept, operational capability, security domain). Phase 58 build planned on release.', eta: '2026' },
+  { standard: 'ISO/IEC 22123-1:2023', title: 'Cloud computing — Vocabulary',                                                    domain: 'Cloud Computing', edition: '2023',              status: 'current' },
+  { standard: 'ISO/IEC 22123-2:2023', title: 'Cloud computing — Concepts',                                                      domain: 'Cloud Computing', edition: '2023',              status: 'current' },
+  { standard: 'ISO/IEC 22123-3:2023', title: 'Cloud computing — Reference Architecture (CCRA)',                                  domain: 'Cloud Computing', edition: '2023',              status: 'current' },
+  { standard: 'ISO/IEC 42001:2023',   title: 'AI management system (AIMS)',                                                      domain: 'AI Management',   edition: '2023',              status: 'current' },
+  { standard: 'ISO/IEC 42005:2025',   title: 'AI system impact assessment',                                                      domain: 'AI Management',   edition: '2025',              status: 'current' },
+  { standard: 'ISO/IEC 22989:2022',   title: 'AI concepts and terminology',                                                      domain: 'AI Management',   edition: '2022',              status: 'current' },
+  { standard: 'ISO/IEC 27090',        title: 'Cybersecurity — AI — Guidance on addressing security threats and failures in AI', domain: 'AI Security',     edition: 'FDIS',                 status: 'pending', note: 'FDIS ballot in progress — AI security threat guidance (poisoning, model theft, adversarial inputs, inference attacks). Phase 56 build planned on release.', eta: '2026' },
+  { standard: 'ISO/IEC 27091',        title: 'Cybersecurity and Privacy — AI — Privacy protection',                              domain: 'AI Security',     edition: 'DIS',                  status: 'pending', note: 'DIS enquiry stage — AI privacy risk guidance bridging ISO 27701 and ISO 42001. Phase 57 build planned on FDIS.', eta: 'TBD (~2027)' },
+  { standard: 'ISO/IEC 19395:2015',   title: 'Smart data centre resource monitoring',                                            domain: 'Infrastructure',  edition: '2015',              status: 'current' },
+  { standard: 'ISO/IEC 30141:2024',   title: 'IoT reference architecture',                                                       domain: 'IoT',             edition: '2024',              status: 'current' },
+  { standard: 'ISO/IEC 24091:2019',   title: 'Data centre storage power efficiency',                                             domain: 'Infrastructure',  edition: '2019',              status: 'current' },
 ]
 
 const DOMAIN_COLOR: Record<string, string> = {
   'ISMS':            '#455A64',
   'Cloud Computing': '#0288d1',
   'AI Management':   '#ff6b35',
+  'AI Security':     '#B71C1C',
   'Infrastructure':  '#00897b',
   'IoT':             '#6d4c41',
 }
