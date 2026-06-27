@@ -282,7 +282,7 @@ export class RichTextEditorComponent implements OnInit, OnDestroy {
       ],
       content: this._initValue,
       onUpdate: ({ editor }) => {
-        const md = editor.getMarkdown ? editor.getMarkdown() : editor.getHTML()
+        const md = editor.getMarkdown()
         if (md !== this._lastEmitted) {
           this._lastEmitted = md
           this.valueChange.emit(md)

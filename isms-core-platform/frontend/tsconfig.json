@@ -3,9 +3,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    // Disabled: strict: true enables exhaustive TypeScript inference across all .ts files — adds significant
-    // cold build time on Linux x86_64. Re-enable temporarily to catch type errors, then disable before deploying.
-    // "strict": true,
+    "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -21,9 +19,7 @@
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    // Disabled: causes O(n) template inference across 45+ components — adds 10+ min to cold Docker builds.
-    // Re-enable temporarily to catch template type errors during development, then disable before building.
-    "strictTemplates": false
+    "strictTemplates": true
   },
   "files": [],
   "references": [
