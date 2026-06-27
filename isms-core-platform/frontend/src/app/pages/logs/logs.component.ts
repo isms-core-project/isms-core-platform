@@ -2,7 +2,6 @@ import { Component, inject, signal, computed } from '@angular/core'
 import { ThemeService } from '../../core/services/theme.service'
 import { FormsModule } from '@angular/forms'
 import { firstValueFrom } from 'rxjs'
-import { JsonPipe, DatePipe } from '@angular/common'
 
 import { injectQuery } from '@tanstack/angular-query-experimental'
 
@@ -96,7 +95,7 @@ function fmtDateFull(iso: string | null): string {
   selector: 'app-logs',
   standalone: true,
   imports: [
-    FormsModule, JsonPipe, DatePipe,
+    FormsModule,
     MatCardModule, MatTableModule, MatPaginatorModule,
     MatFormFieldModule, MatInputModule, MatSelectModule,
     MatButtonModule, MatIconModule, MatExpansionModule,

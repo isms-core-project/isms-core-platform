@@ -288,7 +288,7 @@ function fmtDate(d: string | null | undefined): string {
 
         <!-- Actions -->
         <div class="risk-actions-col">
-          <div class="status-dot" [style.background]="STATUS_COLOR[risk.status] ?? '#9E9E9E'" [matTooltip]="risk.status.replace('_', ' ')"></div>
+          <div class="status-dot" [style.background]="STATUS_COLOR[risk.status]" [matTooltip]="risk.status.replace('_', ' ')"></div>
           <button mat-icon-button matTooltip="Record acceptance" [style.color]="risk.treatment_status === 'accept' ? '#00c752' : undefined"
             (click)="openAcceptance(risk)">
             <mat-icon class="icon-sm">how_to_reg</mat-icon>

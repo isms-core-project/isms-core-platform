@@ -245,7 +245,7 @@ export interface DeleteGapDialogData { gap: GapRead }
 @Component({
   selector: 'app-delete-gap-dialog',
   standalone: true,
-  imports: [MatButtonModule, MatDialogModule, MatProgressSpinnerModule, SlicePipe],
+  imports: [MatButtonModule, MatDialogModule, MatProgressSpinnerModule],
   template: `
     <h2 mat-dialog-title>Delete gap?</h2>
     <mat-dialog-content>
@@ -532,7 +532,7 @@ export class CreateGapDialogComponent {
             <span class="dist-label">Risk Distribution</span>
             @for (lvl of RISK_LEVEL_ORDER; track lvl) {
               <div class="risk-bucket">
-                <span class="risk-count" [style.color]="riskColor(lvl)">{{ riskCounts()[lvl] ?? 0 }}</span>
+                <span class="risk-count" [style.color]="riskColor(lvl)">{{ riskCounts()[lvl] }}</span>
                 <span class="risk-label">{{ lvl.replace('_', ' ') }}</span>
               </div>
             }

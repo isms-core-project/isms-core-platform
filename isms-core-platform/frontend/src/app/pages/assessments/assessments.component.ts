@@ -130,7 +130,6 @@ export class NewAssessmentDialogComponent {
     MatTabsModule,
     DecimalPipe,
     PageHeaderComponent, StatusChipComponent,
-    NewAssessmentDialogComponent,
   ],
   template: `
     <app-page-header
@@ -272,19 +271,19 @@ export class NewAssessmentDialogComponent {
                   @if (a.items_total > 0) {
                     <div>
                       <div class="compliance-bar">
-                        @if ((a.items_compliant ?? 0) > 0) {
+                        @if (a.items_compliant > 0) {
                           <div class="bar-seg seg-compliant"
                             [style.flex]="a.items_compliant"></div>
                         }
-                        @if ((a.items_partial ?? 0) > 0) {
+                        @if (a.items_partial > 0) {
                           <div class="bar-seg seg-partial"
                             [style.flex]="a.items_partial"></div>
                         }
-                        @if ((a.items_non_compliant ?? 0) > 0) {
+                        @if (a.items_non_compliant > 0) {
                           <div class="bar-seg seg-non-compliant"
                             [style.flex]="a.items_non_compliant"></div>
                         }
-                        @if ((a.items_na ?? 0) > 0) {
+                        @if (a.items_na > 0) {
                           <div class="bar-seg seg-na"
                             [style.flex]="a.items_na"></div>
                         }

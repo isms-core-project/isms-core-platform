@@ -188,7 +188,7 @@ function fmtDate(iso: string): string {
             </div>
 
             <div class="table-container">
-              <table mat-table [dataSource]="grouped()[j] ?? []" class="full-table">
+              <table mat-table [dataSource]="grouped()[j]" class="full-table">
 
                 <!-- Framework column -->
                 <ng-container matColumnDef="framework">

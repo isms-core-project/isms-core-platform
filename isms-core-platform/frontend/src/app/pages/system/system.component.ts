@@ -497,7 +497,7 @@ export class MfaBackupDialogComponent {
                 matTooltip="Re-parse all IMP/POL files and push to OpenSearch"
                 [disabled]="reindexMut.isPending()" (click)="doReindex()">
                 @if (reindexMut.isPending()) { <mat-spinner diameter="12" /> Reindexing… }
-                @else { <mat-icon class="xs-icon">cloud_sync</mat-icon> Reindex }
+                @else { <ng-container><mat-icon class="xs-icon">cloud_sync</mat-icon> Reindex</ng-container> }
               </button>
                 @if (d.opensearch_indices) {
                   <table class="dt">
@@ -807,7 +807,7 @@ export class MfaBackupDialogComponent {
             <button mat-raised-button color="primary" class="full-width"
               [disabled]="fullSyncMut.isPending() || anyStepPending()" (click)="doFullSync()">
               @if (fullSyncMut.isPending()) { <mat-spinner diameter="14" /> Running Full Sync… }
-              @else { <mat-icon>sync_alt</mat-icon> Full Sync (Steps 2–5) }
+              @else { <ng-container><mat-icon>sync_alt</mat-icon> Full Sync (Steps 2–5)</ng-container> }
             </button>
             <p class="dim xs mt6 center">Runs all four importers in sequence. Load Reference Frameworks (Step 1) must be done separately first.</p>
         </app-expandable-card>

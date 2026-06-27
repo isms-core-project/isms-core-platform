@@ -348,7 +348,7 @@ export class DeleteProjectDialogComponent {
   }
 
   <!-- Empty state -->
-  @if (projectsQuery.isSuccess() && (projectsQuery.data()?.length ?? 0) === 0) {
+  @if (projectsQuery.isSuccess() && (projectsQuery.data()!.length ?? 0) === 0) {
     <div class="empty-state">
       <mat-icon>folder_open</mat-icon>
       <div>
@@ -367,7 +367,7 @@ export class DeleteProjectDialogComponent {
   }
 
   <!-- Project cards -->
-  @if (projectsQuery.isSuccess() && (projectsQuery.data()?.length ?? 0) > 0) {
+  @if (projectsQuery.isSuccess() && (projectsQuery.data()!.length ?? 0) > 0) {
     <div class="projects-grid">
       @for (p of projectsQuery.data()!; track p.id) {
         <mat-card class="project-card"

@@ -236,7 +236,6 @@ export class BulkDeleteConfirmDialogComponent {
     MatSortModule, MatPaginatorModule,
     MatDialogModule,
     PageHeaderComponent, MetricCardComponent, StatusChipComponent,
-    UploadEvidenceDialogComponent,
   ],
   template: `
     <app-page-header [title]="'Evidence Tracker'" [subtitle]="headerSubtitle()">

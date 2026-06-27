@@ -174,7 +174,7 @@ function fwColor(code: string): string {
             </div>
 
             <div class="table-container">
-              <table mat-table [dataSource]="grouped()[src] ?? []" class="full-width-table">
+              <table mat-table [dataSource]="grouped()[src]" class="full-width-table">
 
                 <!-- Axis column -->
                 <ng-container matColumnDef="axis">

@@ -115,7 +115,7 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
           @for (f of sortedFrameworks(); track f) {
             <mat-option [value]="f">
               {{ f }}
-              <span class="option-count">{{ covData()!.by_framework[f] ?? 0 }}</span>
+              <span class="option-count">{{ covData()!.by_framework[f] }}</span>
             </mat-option>
           }
         </mat-select>
@@ -164,9 +164,9 @@ function confColor(c: number, dark: boolean): { bg: string; color: string } {
                 class="fw-pill"
                 [class.fw-pill-active]="f === activeFramework()"
                 [class.fw-pill-iso-ext]="isIsoExt(f) && f !== activeFramework()"
-                [style.background]="(covData()!.by_framework[f] ?? 0) > 0 && f !== activeFramework() ? packColor() + '18' : null"
-                [style.borderColor]="(covData()!.by_framework[f] ?? 0) > 0 && f !== activeFramework() ? packColor() + '40' : null">
-                {{ f }} <span class="fw-pill-count" [style.opacity]="(covData()!.by_framework[f] ?? 0) > 0 ? '0.8' : '0.35'">· {{ covData()!.by_framework[f] ?? 0 }}</span>
+                [style.background]="(covData()!.by_framework[f]) > 0 && f !== activeFramework() ? packColor() + '18' : null"
+                [style.borderColor]="(covData()!.by_framework[f]) > 0 && f !== activeFramework() ? packColor() + '40' : null">
+                {{ f }} <span class="fw-pill-count" [style.opacity]="(covData()!.by_framework[f]) > 0 ? '0.8' : '0.35'">· {{ covData()!.by_framework[f] }}</span>
               </div>
             }
           </div>

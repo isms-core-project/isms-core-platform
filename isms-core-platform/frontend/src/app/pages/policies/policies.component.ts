@@ -144,8 +144,10 @@ export class PoliciesDeleteDialogComponent {
           @if (importMutation.isPending()) {
             Importing…
           } @else {
-            <mat-icon>upload_file</mat-icon>
-            Import
+            <ng-container>
+              <mat-icon>upload_file</mat-icon>
+              Import
+            </ng-container>
           }
         </button>
       }
@@ -246,7 +248,6 @@ export class ImportExternalDialogComponent {
     MatSelectModule, MatChipsModule, MatButtonModule, MatIconModule,
     MatDialogModule, MatProgressSpinnerModule, MatTooltipModule,
     PageHeaderComponent, MetricCardComponent,
-    PoliciesDeleteDialogComponent,
   ],
   template: `
     <app-page-header [title]="'Policies'" [subtitle]="headerSubtitle()">
