@@ -1,5 +1,0 @@
-requests==2.34.2
-psycopg2-binary==2.9.9
-schedule==1.2.2
-opensearch-py==2.7.1
-geoip2==4.8.1

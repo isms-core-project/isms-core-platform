@@ -17,9 +17,14 @@ name: isms-core-platform
 #
 # Standard usage:
 #   cp .env.example .env && nano .env
-#   docker compose build backend frontend connectors feeds smtp-bridge
+#   docker compose pull
 #   docker compose up -d
 #   ./bootstrap.sh   (first boot only)
+#
+# No local build required — every service pulls a pre-built image (see
+# PLATFORM_REGISTRY / PLATFORM_TAG in .env.example). Building from source is a
+# separate workflow in the private factory_isms_project repo
+# (95-isms-core-factory/build-isms-core.sh), not something this repo needs.
 # ============================================================================
 
 services:
@@ -73,9 +78,7 @@ services:
 
   isms-core-opensearch:
     profiles: [opensearch-single]
-    build:
-      context: ./opensearch
-      dockerfile: Dockerfile
+    image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-opensearch-${PLATFORM_TAG:-latest}
     container_name: isms-core-opensearch
     environment:
       - TZ=${TZ:-Europe/Zurich}
@@ -111,9 +114,7 @@ services:
   # discovery.seed_hosts excludes self (mirrors reference pattern).
 
   isms-core-opensearch-node1:
-    build:
-      context: ./opensearch
-      dockerfile: Dockerfile
+    image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-opensearch-${PLATFORM_TAG:-latest}
     container_name: isms-core-opensearch-node1
     profiles: [opensearch-cluster]
     environment:
@@ -149,9 +150,7 @@ services:
           - isms-core-opensearch  # same alias as single-node — URL unchanged
 
   isms-core-opensearch-node2:
-    build:
-      context: ./opensearch
-      dockerfile: Dockerfile
+    image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-opensearch-${PLATFORM_TAG:-latest}
     container_name: isms-core-opensearch-node2
     profiles: [opensearch-cluster]
     environment:
@@ -185,9 +184,7 @@ services:
       - isms-core-network
 
   isms-core-opensearch-node3:
-    build:
-      context: ./opensearch
-      dockerfile: Dockerfile
+    image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-opensearch-${PLATFORM_TAG:-latest}
     container_name: isms-core-opensearch-node3
     profiles: [opensearch-cluster]
     environment:
@@ -226,9 +223,8 @@ services:
   # and sets number_of_replicas accordingly (0 or 1).
 
   isms-core-opensearch-setup:
-    image: python:3.12-alpine
+    image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-opensearch-setup-${PLATFORM_TAG:-latest}
     container_name: isms-core-opensearch-setup
-    entrypoint: ["python3", "/app/setup.py"]
     environment:
       - TZ=${TZ:-Europe/Zurich}
       - OPENSEARCH_URL=http://isms-core-opensearch:9200
@@ -236,8 +232,6 @@ services:
       - GARAGE_ACCESS_KEY=${GARAGE_ACCESS_KEY:-}
       - GARAGE_SECRET_KEY=${GARAGE_SECRET_KEY:-}
       - GARAGE_BUCKET_SNAPSHOTS=${GARAGE_BUCKET_SNAPSHOTS:-isms-snapshots}
-    volumes:
-      - ./opensearch:/app:ro
     depends_on:
       isms-core-opensearch:
         condition: service_healthy
@@ -282,18 +276,15 @@ services:
       - isms-core-network
 
   isms-core-garage-setup:
-    image: python:3.12-alpine
+    image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-garage-setup-${PLATFORM_TAG:-latest}
     container_name: isms-core-garage-setup
     profiles: [garage]
-    entrypoint: ["python3", "/scripts/setup.py"]
     environment:
       - TZ=${TZ:-Europe/Zurich}
       - GARAGE_ADMIN_URL=http://isms-core-garage:3903
       - GARAGE_ADMIN_TOKEN=${GARAGE_ADMIN_TOKEN:-isms-core-garage-admin}
       - GARAGE_ACCESS_KEY=${GARAGE_ACCESS_KEY}
       - GARAGE_SECRET_KEY=${GARAGE_SECRET_KEY}
-    volumes:
-      - ./garage/setup.py:/scripts/setup.py:ro
     depends_on:
       - isms-core-garage
     restart: "no"
@@ -336,12 +327,9 @@ services:
       - isms-core-network
 
   isms-core-dashboards-setup:
-    image: python:3.12-alpine
+    image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-dashboards-setup-${PLATFORM_TAG:-latest}
     container_name: isms-core-dashboards-setup
     profiles: [dashboards]
-    entrypoint: ["python3", "/scripts/setup.py"]
-    volumes:
-      - ./dashboards:/scripts:ro
     environment:
       - TZ=${TZ:-Europe/Zurich}
       - DASHBOARDS_URL=http://isms-core-dashboards:5601
@@ -353,15 +341,28 @@ services:
     networks:
       - isms-core-network
 
+  # ── QA reference corpus — one-shot init (extracts into the datasets-data volume) ──
+  # Same shape as the K8s content-image pattern: data ships baked into a small
+  # dedicated image, not as raw files in this repo. Runs once before backend/
+  # beat/worker start; idempotent (cp -r just overwrites on every run).
+
+  isms-core-data-init:
+    image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-data-${PLATFORM_TAG:-latest}
+    container_name: isms-core-data-init
+    entrypoint: ["sh", "-c", "cp -r /content/. /app/datasets/"]
+    volumes:
+      - datasets-data:/app/datasets
+    restart: "no"
+    networks:
+      - isms-core-network
+
   # ── Application services ─────────────────────────────────────────────────────
 
   isms-core-backend:
-    build:
-      context: ./backend
-    image: isms-core-backend:latest
+    image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-backend-${PLATFORM_TAG:-latest}
     container_name: isms-core-backend
     volumes:
-      - ./datasets/data:/app/datasets:ro
+      - datasets-data:/app/datasets:ro
       - ${FRAMEWORK_HOST_PATH:-../isms-core-framework}:/app/isms-framework:ro
       - ${OPERATIONAL_HOST_PATH:-../isms-core-operational}:/app/isms-operational:ro
       - ${PRIVACY_HOST_PATH:-../isms-core-privacy}:/app/isms-privacy:ro
@@ -418,6 +419,8 @@ services:
         condition: service_healthy
       isms-core-redis:
         condition: service_healthy
+      isms-core-data-init:
+        condition: service_completed_successfully
       isms-core-opensearch-setup:
         condition: service_completed_successfully
       # required: false — dependency ignored if the service's profile is not active
@@ -438,13 +441,11 @@ services:
       - isms-core-network
 
   isms-core-beat:
-    build:
-      context: ./backend
-    image: isms-core-beat:latest
+    image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-backend-${PLATFORM_TAG:-latest}
     container_name: isms-core-beat
     command: celery -A src.worker.celery_app beat --loglevel=info
     volumes:
-      - ./datasets/data:/app/datasets:ro
+      - datasets-data:/app/datasets:ro
       - ${FRAMEWORK_HOST_PATH:-../isms-core-framework}:/app/isms-framework:ro
       - ${OPERATIONAL_HOST_PATH:-../isms-core-operational}:/app/isms-operational:ro
       - ${PRIVACY_HOST_PATH:-../isms-core-privacy}:/app/isms-privacy:ro
@@ -472,6 +473,8 @@ services:
         condition: service_healthy
       isms-core-redis:
         condition: service_healthy
+      isms-core-data-init:
+        condition: service_completed_successfully
       isms-core-backend:
         condition: service_healthy
     restart: unless-stopped
@@ -479,13 +482,11 @@ services:
       - isms-core-network
 
   isms-core-worker:
-    build:
-      context: ./backend
-    image: isms-core-worker:latest
+    image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-backend-${PLATFORM_TAG:-latest}
     container_name: isms-core-worker
     command: celery -A src.worker.celery_app worker --loglevel=info --queues=isms
     volumes:
-      - ./datasets/data:/app/datasets:ro
+      - datasets-data:/app/datasets:ro
       - ${FRAMEWORK_HOST_PATH:-../isms-core-framework}:/app/isms-framework:ro
       - ${OPERATIONAL_HOST_PATH:-../isms-core-operational}:/app/isms-operational:ro
       - ${PRIVACY_HOST_PATH:-../isms-core-privacy}:/app/isms-privacy:ro
@@ -511,6 +512,8 @@ services:
         condition: service_healthy
       isms-core-redis:
         condition: service_healthy
+      isms-core-data-init:
+        condition: service_completed_successfully
       isms-core-opensearch:
         condition: service_healthy
         required: false
@@ -530,9 +533,7 @@ services:
       - isms-core-network
 
   isms-core-frontend:
-    build:
-      context: ./frontend
-    image: isms-core-frontend:latest
+    image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-frontend-${PLATFORM_TAG:-latest}
     container_name: isms-core-frontend
     environment:
       - TZ=${TZ:-Europe/Zurich}
@@ -546,9 +547,7 @@ services:
   # ── nginx reverse proxy + TLS (A.8.24) ────────────────────────────────────
 
   isms-core-nginx:
-    build:
-      context: ./nginx
-    image: isms-core-nginx:latest
+    image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-nginx-${PLATFORM_TAG:-latest}
     container_name: isms-core-nginx
     ports:
       - "80:80"
@@ -579,9 +578,7 @@ services:
   # ── Connectors runner ──────────────────────────────────────────────────────
 
   isms-core-connectors:
-    build:
-      context: ./connectors
-    image: isms-core-connectors:latest
+    image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-connectors-${PLATFORM_TAG:-latest}
     container_name: isms-core-connectors
     environment:
       - TZ=${TZ:-Europe/Zurich}
@@ -599,9 +596,7 @@ services:
   # ── Threat Intelligence & Vulnerability Feeds ──────────────────────────────
 
   isms-core-feeds:
-    build:
-      context: ./feeds
-    image: isms-core-feeds:latest
+    image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-feeds-${PLATFORM_TAG:-latest}
     container_name: isms-core-feeds
     environment:
       - TZ=${TZ:-Europe/Zurich}
@@ -628,9 +623,7 @@ services:
   # ── Threat Intelligence (optional profile) ────────────────────────────────
 
   isms-core-threat-intel:
-    build:
-      context: ./threat-intel
-    image: isms-core-threat-intel:latest
+    image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-threat-intel-${PLATFORM_TAG:-latest}
     container_name: isms-core-threat-intel
     profiles: [threat-intel]
     environment:
@@ -696,9 +689,7 @@ services:
       - isms-core-network
 
   isms-core-smtp-bridge:
-    build:
-      context: ./smtp-bridge
-    image: isms-core-smtp-bridge:latest
+    image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-smtp-bridge-${PLATFORM_TAG:-latest}
     container_name: isms-core-smtp-bridge
     profiles: [smtp-bridge]
     environment:
@@ -745,6 +736,9 @@ volumes:
   postgres-data:
     driver: local
   redis-data:
+    driver: local
+  # QA reference corpus — populated by isms-core-data-init from the isms-core-data image
+  datasets-data:
     driver: local
   # OpenSearch: single-node (default)
   opensearch-data:

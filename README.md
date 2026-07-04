@@ -14,7 +14,8 @@
   <a href="https://www.iso.org/standard/76559.html"><img src="https://img.shields.io/badge/ISO_27018-2025-00897B?style=flat-square" alt="ISO 27018:2025"/></a>
   <a href="https://www.iso.org/standard/81230.html"><img src="https://img.shields.io/badge/ISO_42001-2023-FF6B35?style=flat-square" alt="ISO 42001:2023"/></a>
   <a href="isms-core-framework/STATUS.md"><img src="https://img.shields.io/badge/Control_Packs-53_of_53-00AA00?style=flat-square" alt="Control Packs"/></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-AGPL_3.0-9400D3?style=flat-square" alt="License"/></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/Content-AGPL_3.0-9400D3?style=flat-square" alt="Content License"/></a>
+  <a href="isms-core-platform/LICENSE"><img src="https://img.shields.io/badge/Platform-Apache_2.0-D22128?style=flat-square" alt="Platform License"/></a>
 </p>
 
 <details>
@@ -503,11 +504,12 @@ See [STRUCTURE.md](STRUCTURE.md) for the complete repository map with per-folder
 
 ## 📜 License
 
-**Dual-licensed:**
-- **AGPL-3.0** for open-source use — see [LICENSE](LICENSE)
-- **Commercial license** for organisations that cannot comply with AGPL obligations
+Two separate works, two licenses:
 
-Commercial licensing: **info@isms-core.com**
+- **Content packs** (`isms-core-framework/`, `isms-core-operational/`, `isms-core-privacy/`, `isms-core-cloud/`, `isms-core-ai/` — the POL/IMP/SCR compliance documents) are **dual-licensed**:
+  - **AGPL-3.0** for open-source use — see [LICENSE](LICENSE)
+  - **Commercial license** for organisations that cannot comply with AGPL obligations — **info@isms-core.com**
+- **`isms-core-platform/`** (the deployable API/engineering product) is **Apache 2.0** — see [isms-core-platform/LICENSE](isms-core-platform/LICENSE). Distributed as pre-built container images; no commercial license needed.
 
 ---
 

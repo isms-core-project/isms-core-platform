@@ -1,3 +1,0 @@
-aiosmtpd==1.4.6
-msal==1.31.1
-requests==2.34.2

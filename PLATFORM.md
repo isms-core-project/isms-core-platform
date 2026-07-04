@@ -387,7 +387,7 @@ docker compose up -d
 
 > `COMPOSE_PROFILES` in `.env` tells Docker Compose which services to start. The default (`opensearch-single`) is already active in `.env.example`. No `--profile` flags needed on the command line.
 
-First run pulls all images and builds backend + frontend. This takes **3–5 minutes**. Subsequent restarts take ~60 seconds.
+First run pulls all images (no local build step — backend/frontend/etc. ship as pre-built images from GHCR/Docker Hub). This takes **3–5 minutes** depending on connection speed. Subsequent restarts take ~60 seconds.
 
 ```bash
 docker compose logs -f    # Watch progress (Ctrl+C stops watching)
@@ -791,7 +791,7 @@ GARAGE_SECRET_KEY=<generated above>
 GARAGE_BIND=127.0.0.1   # set to 0.0.0.0 only if external S3 access is needed
 ```
 
-Then `docker compose up -d`. Garage initialises its buckets (`isms-evidence`, `isms-snapshots`, `isms-exports`) automatically on first boot via `garage/setup.py`. The S3 API listens on port 3900.
+Then `docker compose up -d`. Garage initialises its buckets (`isms-evidence`, `isms-snapshots`, `isms-exports`) automatically on first boot via the `isms-core-garage-setup` container. The S3 API listens on port 3900.
 
 ---
 
@@ -808,7 +808,8 @@ bash bootstrap.sh         # CLI — safe to run any time, idempotent
 
 ```bash
 git pull
-docker compose up -d --build
+docker compose pull
+docker compose up -d
 ```
 
 No data loss — PostgreSQL and OpenSearch data live in named Docker volumes. Reference datasets are reloaded automatically on every container start.

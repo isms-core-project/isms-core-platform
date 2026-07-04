@@ -45,14 +45,14 @@ factory_isms/
 ├── PHILOSOPHY.md              # Anti-cargo-cult methodology
 ├── CODE_OF_CONDUCT.md         # Community standards
 ├── SECURITY.md                # Vulnerability reporting policy
-├── LICENSE                    # AGPL-3.0
+├── LICENSE                    # AGPL-3.0 — governs the content packs below (dual-licensed, see README §License)
 │
 ├── isms-core-framework/       # 🏗️ ISO 27001:2022 — Full Engineering Product
 ├── isms-core-operational/     # ⚡ ISO 27001:2022 — Lightweight SME Product
 ├── isms-core-privacy/         # 🔒 ISO 27701:2025 — Privacy Extension Pack
 ├── isms-core-cloud/           # ☁️ ISO 27018:2025 — Cloud Extension Pack
 ├── isms-core-ai/              # 🤖 ISO 42001:2023 — AI Extension Pack
-├── isms-core-platform/        # 🖥️ Platform Deployment Package
+├── isms-core-platform/        # 🖥️ Platform Deployment Package — own LICENSE (Apache 2.0)
 ├── USER_MANUAL/               # 📖 Full user manual (21 chapters) — served in-app at /docs/user-manual.md
 ├── COMPLIANCE.md              # 📋 Assessment module coverage
 └── screenshots/               # Platform UI screenshots
@@ -213,70 +213,27 @@ isms-core-ai/
 
 ## 🖥️ isms-core-platform/ — Platform Deployment Package
 
-The Docker Compose deployment package. This directory is what you deploy — it mounts the content product directories as read-only volumes.
+The Docker Compose deployment package. **Images-only distribution** — this directory ships no application source, only what's needed to *run* the stack. `docker-compose.yml` pulls pre-built images (`isms-core-backend`, `-frontend`, `-nginx`, `-opensearch`, `-connectors`, `-feeds`, `-threat-intel`, `-smtp-bridge`, plus one-shot setup/data images) from GHCR, Docker Hub, and a private registry. Full application source (backend, frontend, connectors, feeds, threat-intel, smtp-bridge, nginx, opensearch, datasets) lives in the private `factory_isms_project` working repo and is built into those images — it is not part of this public repo.
 
 ```
 isms-core-platform/
 │
 ├── .env.example                           # Environment variable template → copy to .env
-├── docker-compose.yml                     # Multi-service production stack (profile-based)
+├── backup.env.example                     # Backup-service environment template
+├── docker-compose.yml                     # Multi-service production stack (profile-based, image: not build:)
 ├── bootstrap.sh                           # First-boot import script (idempotent, safe to re-run)
+├── LICENSE                                # Apache 2.0 — governs this directory only (see README §License)
+├── .gitignore
 │
-├── backend/                               # FastAPI application
-│   ├── api/v1/                            # REST API routers (34 routers)
-│   ├── domain/                            # SQLAlchemy models
-│   ├── schemas/                           # Pydantic request/response schemas
-│   ├── services/                          # Business logic layer
-│   ├── workers/                           # Celery task definitions
-│   └── entrypoint.sh                      # Container startup: migrations + seed
+├── garage/                                # Garage S3 object store (optional profile) — upstream image, config only
+│   └── garage.toml                        # Garage configuration, bind-mounted into dxflrs/garage
 │
-├── frontend-angular/                      # Angular 21 + Material 3 WebUI
-│   ├── src/
-│   │   ├── app/pages/                     # 45+ page components
-│   │   ├── app/shared/                    # Shared UI components
-│   │   └── app/api/                       # API client layer
-│   └── angular.json
+├── schemas/
+│   └── init_db.sql                        # PostgreSQL initial schema, bind-mounted into postgres:18-alpine
 │
-├── nginx/                                 # Reverse proxy configuration
-│   ├── nginx.conf                         # Main config: TLS termination, routing
-│   └── scripts/setup-letsencrypt.sh       # Let's Encrypt certificate setup
-│
-├── connectors/                            # 44 automated evidence connectors (separate container)
-├── feeds/                                 # Vulnerability & adversary intel scheduler (isms-core-feeds)
-│   └── feeds/                             # MITRE ATT&CK, ATLAS, CISA KEV, EPSS, NVD CVE/CPE, EUVD, Exploit-DB
-├── threat-intel/                          # OSINT IOC feed scheduler (isms-core-threat-intel, optional profile)
-│   └── feeds/                             # CIRCL MISP, Botvrij, AbuseIPDB, URLhaus, ThreatFox, SSLBL,
-│                                          #   AlienVault OTX, Feodo Tracker, RFD, Stopforumspam,
-│                                          #   MalwareBazaar, Malpedia, VirusTotal, MaxMind, IPInfo
-│
-├── opensearch/                            # OpenSearch setup — ISM policies, index templates
-│   └── setup.py                           # One-shot container run before backend starts
-│
-├── dashboards/                            # OpenSearch Dashboards automation (optional profile)
-│   └── setup.py                           # Provisions 19 dashboards on first run
-│
-├── garage/                                # Garage S3 object store (optional profile)
-│   ├── garage.toml                        # Garage configuration
-│   └── setup.py                           # One-shot bucket + key setup
-│
-├── smtp-bridge/                           # Microsoft 365 SMTP relay (optional profile)
-│
-├── datasets/
-│   └── data/                              # 30+ JSON reference datasets
-│       ├── iso27001.json                  # ISO 27001:2022 control structure
-│       ├── nist_csf2.json                 # NIST CSF 2.0 subcategories
-│       ├── mitre_attack_v19.json          # MITRE ATT&CK v19 (697 techniques / 15 tactics)
-│       ├── crosswalk.json                 # 3,433 cross-framework mappings / 44 axes
-│       ├── ncsc_caf.json                  # NCSC CAF v4.0 (59 controls / 41 outcomes)
-│       ├── fr_nis2_recyf.json             # ReCyF v2.5 — France NIS2 (172 nodes)
-│       └── ...                            # DORA, NIS2, BSI, TISAX, and more
-│
-├── certs/                                 # TLS certificate mount point
-│   ├── cert.pem                           # Custom cert (optional — auto-generated if absent)
-│   └── key.pem                            # Private key (optional)
-│
-└── schemas/
-    └── init.sql                           # PostgreSQL initial schema (applied by entrypoint)
+└── certs/                                 # TLS certificate mount point (gitignored — runtime only)
+    ├── cert.pem                           # Custom cert (optional — auto-generated if absent)
+    └── key.pem                            # Private key (optional)
 ```
 
 **Services started by `docker-compose.yml`:**
