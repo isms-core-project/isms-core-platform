@@ -19,7 +19,7 @@
 </p>
 
 <details>
-<summary><strong>28 compliance assessment modules — click to expand</strong></summary>
+<summary><strong>29 compliance assessment modules — click to expand</strong></summary>
 <br/>
 <p align="center">
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/NIST_CSF_2.0-Assessment_Tool-FF6600?style=flat-square" alt="NIST CSF"/></a>
@@ -44,7 +44,8 @@
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/UK_Op._Resilience-Assessment_Tool-283593?style=flat-square" alt="UK Op Resilience"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/NCSC_CAF_v4.0_(UK)-Assessment_Tool-003366?style=flat-square" alt="NCSC CAF v4.0"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/ReCyF_v2.5_(FR_NIS2)-Assessment_Tool-002395?style=flat-square" alt="ReCyF v2.5"/></a>
-  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/FINMA-Assessment_Tool-C62828?style=flat-square" alt="FINMA"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/PCI_DSS_v4.0.1-Assessment_Tool-003087?style=flat-square" alt="PCI DSS v4.0.1"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/FINMA-Assessment_Tool-5D4037?style=flat-square" alt="FINMA"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/NIST_SP_800--53_R5-Assessment_Tool-FF6600?style=flat-square" alt="NIST SP 800-53 Rev 5"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/CSA_CCM_v4.1-Assessment_Tool-2E7D32?style=flat-square" alt="CSA CCM v4.1"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/CSA_AICM_v1.0.3-Assessment_Tool-1B5E20?style=flat-square" alt="CSA AICM v1.0.3"/></a>
@@ -152,7 +153,7 @@ EN · FR · DE · IT
 
 **Live compliance management system** — turns all content products into dashboards, gap tracking, evidence ingestion, risk registers, and audit reports. Docker Compose, 10 services, self-hosted.
 
-**44** connectors · **28** assessment modules · **3,433** crosswalk objects / 44 axes<br/>
+**44** connectors · **29** assessment modules · **3,433** crosswalk objects / 44 axes<br/>
 7 country jurisdictions · **20+** threat intelligence sources
 
 <img src="https://img.shields.io/badge/v1.0-Live-2E8B57?style=flat-square" alt="Live"/>
@@ -399,7 +400,8 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 | UK Operational Resilience | 12 requirements across 4 objectives, maturity 0–4; ISO 27001 crosswalk: 34 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-283593?style=flat-square) |
 | NCSC CAF v4.0 (UK) | 41 Contributing Outcomes across 14 Principles and 4 Objectives — outcome-based; ISO 27001 crosswalk: 65 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-003366?style=flat-square) |
 | ReCyF v2.5 — France NIS2 (ANSSI) | 20 Security Objectives across 4 pillars (Gouvernance / Protection / Défense / Résilience) — French NIS2 transposition (Loi 2024-449); ISO 27001 crosswalk: 50 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-002395?style=flat-square) |
-| FINMA | Assessment module | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-C62828?style=flat-square) |
+| PCI DSS v4.0.1 | 323 sub-requirements across 12 requirements, 6 prioritised milestones, milestone-based scoring; ISO 27001 crosswalk: 39 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-003087?style=flat-square) |
+| FINMA | 21 requirements across 3 circulars/guidance (2023/1 Operational Risk, 2018/3 Outsourcing, Guidance 03/2024 Cyber Risks), maturity 0–4; ISO 27001 crosswalk: 60 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-5D4037?style=flat-square) |
 | NIST SP 800-53 Rev. 5 | Security control cross-mapping | ![Mapped](https://img.shields.io/badge/Mapped-FF6600?style=flat-square) |
 | MITRE ATT&CK v19 | Threat technique mapping (Enterprise / ICS / Mobile) — 697 techniques across 15 tactics, EPSS + CISA KEV correlation. | ![v19](https://img.shields.io/badge/v19-DC143C?style=flat-square) |
 | MITRE ATLAS | AI/ML adversarial threat techniques | ![Mapped](https://img.shields.io/badge/Mapped-DC143C?style=flat-square) |
@@ -467,7 +469,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 | 🔒 Privacy | 21 / 21 | 23 PRIV-POL · 42 IMPs · 21 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-7030A0?style=flat-square) |
 | ☁️ Cloud | 12 / 12 | 12 CLD-POL · 24 IMPs · 12 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-00897B?style=flat-square) |
 | 🤖 AI | 12 / 12 | 12 AI-POL · 20 IMPs · 10 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-FF6B35?style=flat-square) |
-| 🖥️ Platform | 99 total | 44 connectors · 28 assessments · 3,433 mappings / 44 axes | 7 jurisdictions | ![Live v1.0](https://img.shields.io/badge/Live-v1.0-2E8B57?style=flat-square) |
+| 🖥️ Platform | 99 total | 44 connectors · 29 assessments · 3,433 mappings / 44 axes | 7 jurisdictions | ![Live v1.0](https://img.shields.io/badge/Live-v1.0-2E8B57?style=flat-square) |
 
 ---
 
@@ -484,7 +486,7 @@ See [STRUCTURE.md](STRUCTURE.md) for the complete repository map with per-folder
 | [PARADIGM.md](PARADIGM.md) | 🧭 Product overview and paradigm shift guide — start here |
 | [PLATFORM.md](PLATFORM.md) | 🖥️ Platform architecture, features, and full deployment guide (includes Docker Compose quick-start) |
 | [STRUCTURE.md](STRUCTURE.md) | 📂 Repository map — all folders and artifact types explained |
-| [COMPLIANCE.md](COMPLIANCE.md) | 📋 All 28 compliance assessment modules — coverage notes, gaps, audience |
+| [COMPLIANCE.md](COMPLIANCE.md) | 📋 All 29 compliance assessment modules — coverage notes, gaps, audience |
 | [isms-core-framework/CONTROLS.md](isms-core-framework/CONTROLS.md) | 📋 Framework control pack index (53 packs) |
 | [isms-core-framework/COVERAGE.md](isms-core-framework/COVERAGE.md) | 🗺️ 93 Annex A controls → 53 pack mapping |
 | [isms-core-framework/STACKING.md](isms-core-framework/STACKING.md) | 🔗 Control grouping methodology |

@@ -210,7 +210,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | **Admin Panel** | User management (CRUD), system info, service health, DB stats, import triggers |
 | **Full-Text Search** | Search across all policy and IMP document content via OpenSearch (product-filtered) |
 | **ISMS Compass** | AI gap analysis against ISMS CORE Gold Standard (requires `ANTHROPIC_API_KEY`) |
-| **Compliance Assessment Suite** | 27 compliance frameworks with assessment, scoring, gap tracking, and export. See [COMPLIANCE.md](COMPLIANCE.md). |
+| **Compliance Assessment Suite** | 29 compliance frameworks with assessment, scoring, gap tracking, and export. See [COMPLIANCE.md](COMPLIANCE.md). |
 | **NIST CSF 2.0 Assessment** | 106 subcategories across 6 functions (incl. GV — Govern), tier 1–4 ratings, radar + bar chart, XLSX import from official NIST template, XLSX/CSV export |
 | **NIS2 Assessment** | EU 2022/2555 — 10 Article 21(2) security measures + 5 Article 23 reporting obligations, maturity 0–4 |
 | **DORA Assessment** | EU 2022/2554 — 25 articles across 4 chapters (ICT Risk, Incident Mgmt, Resilience Testing, Third-Party Risk), maturity 0–4 |

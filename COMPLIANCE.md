@@ -5,11 +5,11 @@
 <h1 align="center">🎋 ISMS CORE — Compliance Assessment Modules</h1>
 
 <p align="center">
-  <strong>Twenty-seven built-in frameworks + custom YAML import. One platform. No separate tools required.</strong>
+  <strong>Twenty-nine built-in frameworks + custom YAML import. One platform. No separate tools required.</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Frameworks-28-2E8B57?style=flat-square" alt="28 Frameworks"/>
+  <img src="https://img.shields.io/badge/Frameworks-29-2E8B57?style=flat-square" alt="29 Frameworks"/>
   <img src="https://img.shields.io/badge/Requirements-700+-0066CC?style=flat-square" alt="700+ Requirements"/>
   <img src="https://img.shields.io/badge/Export-CSV_%7C_XLSX_%7C_PDF-FF6600?style=flat-square" alt="Export"/>
   <img src="https://img.shields.io/badge/Assessment_Collections-Grouping_%26_Reports-2E7D32?style=flat-square" alt="Collections"/>
@@ -19,7 +19,7 @@
 
 ## Overview
 
-ISMS CORE Platform includes a unified compliance assessment layer covering 28 built-in frameworks across Europe, North America, and globally, plus custom YAML import for any sector-specific or proprietary control framework. Each module provides structured self-assessment, maturity scoring (0–4 where applicable), gap tracking, and export.
+ISMS CORE Platform includes a unified compliance assessment layer covering 29 built-in frameworks across Europe, North America, and globally, plus custom YAML import for any sector-specific or proprietary control framework. Each module provides structured self-assessment, maturity scoring (0–4 where applicable), gap tracking, and export.
 
 Assessment results can be grouped into **Assessment Collections** — named bundles that aggregate status across multiple frameworks for reporting or audit purposes, with CSV, XLSX (colour-coded), and PDF (A4) export.
 
@@ -58,6 +58,8 @@ All compliance assessment modules live under the **Compliance Assessments** side
 | [ReCyF v2.5 — France NIS2](#recyf-v25--france-nis2-anssi) | ANSSI | 20 Security Objectives | 4 Pillars | 0–4 | French NIS2 entities (EI & EE) — Loi 2024-449 |
 | [BSI C5:2026](#bsi-c52026) | BSI (Germany) | 168 criteria | 17 Domains | 0–4 | Cloud service providers (DE/EU) seeking C5 attestation |
 | [BSI C3A](#bsi-c3a-criteria-enabling-cloud-computing-autonomy) | BSI (Germany) | 30 criterion groups | 6 SOV Domains | 0–4 | Cloud CSPs + customers evaluating cloud sovereignty |
+| [PCI DSS v4.0.1](#pci-dss-v401) | PCI SSC | 323 sub-requirements | 12 requirements / 6 milestones | Milestone | Organisations handling cardholder data |
+| [FINMA](#finma) | Swiss regulator | 21 requirements | 3 circulars/guidance | 0–4 | Swiss financial institutions (banks, insurers) |
 | [Custom (YAML)](#custom-frameworks-yaml-import) | User-defined | User-defined | User-defined | User-defined | All |
 
 ---
@@ -559,6 +561,39 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 - SOV-7 (Security & Compliance) and SOV-8 (Environmental Sustainability) from the EU Cloud Sovereignty Framework are intentionally not covered — SOV-7 is addressed by C5:2026, SOV-8 is outside BSI's scope
 - Criterion variants (C1/C2 = EU vs. German tiers; AC = Additional criteria) are documented in criterion group descriptions; the platform scores at the criterion group level
 - Based on the official PDF (C3A_Cloud_Computing_Autonomy.pdf, BSI, April 2026)
+
+---
+
+### PCI DSS v4.0.1
+
+**Source:** PCI Security Standards Council — Payment Card Industry Data Security Standard, v4.0.1, published March 2024.
+**Scope:** 323 sub-requirements grouped into 12 top-level requirements, organised across 6 prioritised implementation milestones: (1) Remove sensitive authentication data and limit data retention, (2) Protect systems and networks and be prepared to respond to a breach, (3) Secure payment card applications, (4) Monitor and control access to your systems, (5) Protect stored cardholder data, (6) Finalise remaining compliance efforts and ensure all controls are in place.
+**Scoring:** Milestone-based progress tracking; sub-requirements assessed individually and grouped by milestone in the platform UI.
+**Audience:** Any organisation that stores, processes, or transmits cardholder data — merchants, service providers, payment processors.
+
+**Coverage notes:**
+- v4.0.1 (March 2024) is a minor correction release of v4.0; ISMS CORE implements v4.0.1 throughout
+- PCI DSS formal assessment (SAQ or QSA Report on Compliance) requires a Qualified Security Assessor or an approved SAQ form — this module is a readiness self-assessment tool, not a substitute for formal certification
+- ISO 27001 ↔ PCI DSS 4.0 crosswalk: 39 mappings, substantial overlap in access control, cryptography, logging, and vulnerability management domains
+
+---
+
+### FINMA
+
+**Source:** FINMA — Swiss Financial Market Supervisory Authority. Covers Circular 2023/1 "Operational Risks and Resilience — Banks" (in force 1 January 2024, resilience provisions fully binding since 1 January 2026), Circular 2018/3 "Outsourcing — Banks and Insurance Companies" (amended 2020, still current), and Guidance 03/2024 "Cyber Risks."
+**Scope:** 21 requirements across 3 sources: Circular 2023/1 (7 requirements — Operational Risk Management, ICT Risk Management, Cyber Risk Management, Critical Data Risk Management, Business Continuity Management, Cross-Border Service Risks, Operational Resilience), Circular 2018/3 (9 requirements — outsourcing inventory, selection/monitoring, intra-group outsourcing, retained responsibility, security, audit rights, cross-border outsourcing, contractual requirements), Guidance 03/2024 (5 requirements — governance, protective measures, detection/response/recovery, 24-hour FINMA reporting, cyber exercises).
+**Scoring:** Maturity levels 0–4
+**Audience:** Swiss banks, insurers, and other FINMA-regulated financial institutions.
+
+**Structure notes:**
+- Every requirement traces to the circular's official margin number (Rz) — the paragraph reference Swiss supervisors cite directly during review
+- Requirements are grouped by source circular in the assessment view, not flattened into a single list
+- New circulars covering conduct obligations (2025/2), liquidity (2025/3), consolidated supervision (2025/4), and climate-related financial risk (2026/1) are out of scope for ICT/security assessment and are not included
+
+**Coverage notes:**
+- FINMA explicitly calibrated Circular 2023/1 for institutions with EU group subsidiaries running DORA in parallel — operational resilience, ICT risk framework, incident management, third-party risk, and cyber exercises (TLPT) overlap substantially
+- ISO 27001 crosswalk: 60 mappings. ISO 27018 and ISO 27701 crosswalk mappings also available for cloud PII and privacy-relevant FINMA obligations (outsourcing, data location, critical data risk)
+- This module is a compliance readiness self-assessment — it does not replace FINMA's own supervisory review or a licensed audit
 
 ---
 

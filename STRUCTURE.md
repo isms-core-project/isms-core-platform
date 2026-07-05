@@ -40,7 +40,7 @@ factory_isms/
 ├── PARADIGM.md                # Product overview and paradigm shift guide
 ├── PLATFORM.md                # Platform architecture, features, and full deployment guide (setup instructions included)
 ├── STRUCTURE.md               # This file
-├── COMPLIANCE.md              # 25 compliance assessment modules — coverage notes
+├── COMPLIANCE.md              # 29 compliance assessment modules — coverage notes
 ├── CONTRIBUTING.md            # QA process and standards
 ├── PHILOSOPHY.md              # Anti-cargo-cult methodology
 ├── CODE_OF_CONDUCT.md         # Community standards
