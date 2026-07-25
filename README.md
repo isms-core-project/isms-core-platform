@@ -52,7 +52,7 @@
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/BSI_C5:2026-Assessment_Tool-C62828?style=flat-square" alt="BSI C5:2026"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/BSI_C3A-Assessment_Tool-AD1457?style=flat-square" alt="BSI C3A"/></a>
   <a href="#-framework-integration"><img src="https://img.shields.io/badge/MITRE_ATT&CK_v19-Mapped-DC143C?style=flat-square" alt="MITRE ATT&CK"/></a>
-  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/3%2C433_Crosswalk_Objects_%2F_44_Axes-Linked-2E8B57?style=flat-square" alt="Crosswalk Mappings"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/4%2C563_Crosswalk_Objects_%2F_44_Axes-Linked-2E8B57?style=flat-square" alt="Crosswalk Mappings"/></a>
 </p>
 </details>
 
@@ -153,7 +153,7 @@ EN · FR · DE · IT
 
 **Live compliance management system** — turns all content products into dashboards, gap tracking, evidence ingestion, risk registers, and audit reports. Docker Compose, 10 services, self-hosted.
 
-**44** connectors · **29** assessment modules · **3,433** crosswalk objects / 44 axes<br/>
+**44** connectors · **29** assessment modules · **4,563** crosswalk objects / 44 axes<br/>
 8 country jurisdictions · **20+** threat intelligence sources
 
 <img src="https://img.shields.io/badge/v1.0-Live-2E8B57?style=flat-square" alt="Live"/>
@@ -344,7 +344,7 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 <td align="center"><strong>NIS2 Assessment</strong><br/><img src="screenshots/24_isms-core_nis2.png" width="380" alt="NIS2 Directive (EU 2022/2555) — Article 21 security measures and Article 23 reporting obligations"/></td>
 </tr>
 <tr>
-<td align="center"><strong>DORA Assessment</strong><br/><img src="screenshots/25_isms-core_dora.png" width="380" alt="DORA (EU 2022/2554) — 30 requirements across 5 pillars, ICT risk maturity scoring 0–4"/></td>
+<td align="center"><strong>DORA Assessment</strong><br/><img src="screenshots/25_isms-core_dora.png" width="380" alt="DORA (EU 2022/2554) — 27 articles across 5 pillars, ICT risk maturity scoring 0–4"/></td>
 <td align="center"><strong>BSI IT-Grundschutz Assessment</strong><br/><img src="screenshots/36_isms-core_de_bsi.png" width="380" alt="BSI IT-Grundschutz Kompendium — all 111 building blocks mapped to ISO 27001:2022"/></td>
 </tr>
 <tr>
@@ -379,7 +379,7 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 | NIST CSF 2.0 | Full assessment tool — 106 subcategories, tier 1–4 ratings, XLSX import/export, radar chart. ISO 27001 crosswalk. | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-FF6600?style=flat-square) |
 | NIST AI RMF 1.0 | Full assessment tool — 72 subcategories, 0–4 maturity; ISO 42001 crosswalk: 32 mappings, EU AI Act: 31 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-FF6600?style=flat-square) |
 | NIS2 Directive (EU 2022/2555) | 10 Article 21 measures + 5 Article 23 obligations, maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-003399?style=flat-square) |
-| DORA (EU 2022/2554) | 30 requirements across 5 pillars (ICT Risk, Incident Reporting, Testing, TPRM, Information Sharing), maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-1565C0?style=flat-square) |
+| DORA (EU 2022/2554) | 27 articles across 5 pillars (ICT Risk, Incident Reporting, Testing, TPRM, Information Sharing), maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-1565C0?style=flat-square) |
 | CIS Critical Security Controls v8 | 153 safeguards across 18 controls, maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-2E7D32?style=flat-square) |
 | BSI IT-Grundschutz Kompendium | All 111 Bausteine across 10 layers, maturity 0–4. Crosswalk: ISO 27001↔BSI (386), ISO 27701↔BSI (101), ISO 27018↔BSI (51) | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-CC0000?style=flat-square) |
 | CSRM (Swiss NCSC, 2025) | Object-centric module — IT Protection Objects, 20 NIST CSF 2.0 baseline requirements, binary status, 6 Control Objectives | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-D32F2F?style=flat-square) |
@@ -387,7 +387,7 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 | Swiss nDSG 2023 | 25 provisions across 6 chapters, maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-C62828?style=flat-square) |
 | Swiss ISG (SR 128, 2024) | 27 requirements across 8 sections, 24h cyberattack reporting; ISO 27001 crosswalk: 40 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-B71C1C?style=flat-square) |
 | EU Cyber Resilience Act (2024/2847) | 26 essential requirements across 6 groups, maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-1A237E?style=flat-square) |
-| EU AI Act (2024/1689) | 25 articles across 6 groups (Risk Mgmt, Data Governance, Transparency, Human Oversight, Robustness, Accountability), maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-4527A0?style=flat-square) |
+| EU AI Act (2024/1689) | 9 articles — Chapter III Section 2 high-risk system requirements (Art. 8–15) plus Art. 27 fundamental rights impact assessment, maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-4527A0?style=flat-square) |
 | EU Cloud Sovereignty Framework (v1.2.1) | 8 Sovereignty Objectives (SOV-1 to SOV-8), SEAL-0 to SEAL-4 scoring, weighted Sovereignty Score | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-01579B?style=flat-square) |
 | COBIT 2019 | 40 governance/management objectives, capability scoring 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-7B1FA2?style=flat-square) |
 | CyberFundamentals (BE) | 41 NIST CSF 2.0 aligned practices, maturity 0–4; ISO 27001 crosswalk: 107 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-1A237E?style=flat-square) |
@@ -469,7 +469,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 | 🔒 Privacy | 21 / 21 | 23 PRIV-POL · 42 IMPs · 21 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-7030A0?style=flat-square) |
 | ☁️ Cloud | 12 / 12 | 12 CLD-POL · 24 IMPs · 12 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-00897B?style=flat-square) |
 | 🤖 AI | 12 / 12 | 12 AI-POL · 20 IMPs · 10 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-FF6B35?style=flat-square) |
-| 🖥️ Platform | 99 total | 44 connectors · 29 assessments · 3,433 mappings / 44 axes | 8 jurisdictions | ![Live v1.0](https://img.shields.io/badge/Live-v1.0-2E8B57?style=flat-square) |
+| 🖥️ Platform | 99 total | 44 connectors · 29 assessments · 4,563 mappings / 44 axes | 8 jurisdictions | ![Live v1.0](https://img.shields.io/badge/Live-v1.0-2E8B57?style=flat-square) |
 
 ---
 

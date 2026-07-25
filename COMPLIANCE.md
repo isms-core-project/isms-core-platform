@@ -34,7 +34,7 @@ All compliance assessment modules live under the **Compliance Assessments** side
 | [NIST CSF 2.0](#nist-csf-20) | NIST | 106 subcategories | 6 Functions | Tier 1–4 | Any sector |
 | [NIST AI RMF 1.0](#nist-ai-rmf-10-ai-100-1) | NIST | 72 subcategories | 4 Functions (GOV/MAP/MSR/MNG) | 0–4 | AI system providers and operators — any sector |
 | [NIS2](#nis2-directive-eu-20222555) | EU Directive | 15 requirements | 2 Articles | 0–4 | EU essential/important entities |
-| [DORA](#dora-eu-20222554) | EU Regulation | 30 requirements | 5 Pillars | 0–4 | EU financial sector |
+| [DORA](#dora-eu-20222554) | EU Regulation | 27 articles | 5 Pillars | 0–4 | EU financial sector |
 | [CIS Controls v8](#cis-critical-security-controls-v8) | Best Practice | 153 safeguards | 18 Controls | 0–4 | Any sector |
 | [BSI IT-Grundschutz](#bsi-it-grundschutz-kompendium) | German standard | 111 Bausteine | 10 Layers | 0–4 | Germany / DACH / IT-Grundschutz cert |
 | [CSRM (NCSC CH)](#csrm-swiss-ncsc-2025) | Swiss NCSC | 20 baseline requirements | 5 CSF Functions | Binary | Swiss critical infrastructure |
@@ -42,9 +42,9 @@ All compliance assessment modules live under the **Compliance Assessments** side
 | [TISAX](#tisaxvida-isa-60) | VDA/ENX | 53 requirements | 12 Domains | 0–4 | Automotive supply chain |
 | [Swiss nDSG](#swiss-ndsg-2023) | Swiss law | 25 provisions | 6 Chapters | 0–4 | Organisations processing Swiss personal data |
 | [EU Cyber Resilience Act](#eu-cyber-resilience-act-20242847) | EU Regulation | 26 requirements | 6 Groups | 0–4 | EU product manufacturers |
-| [EU AI Act](#eu-ai-act-20241689) | EU Regulation | 25 articles | 6 Groups | 0–4 | EU AI system providers/deployers |
+| [EU AI Act](#eu-ai-act-20241689) | EU Regulation | 9 articles | Ch. III Sec. 2 + Art. 27 | 0–4 | EU AI system providers/deployers |
 | [EU Cloud Sovereignty Framework](#eu-cloud-sovereignty-framework-v121) | EC DG DIGIT | 8 Sovereignty Objectives | 1 Group (SEAL) | SEAL 0–4 | EU institutions / public sector cloud procurement |
-| [CyberFundamentals (BE)](#cyberfundamentals-ccncertbe) | Belgian regulation | 41 practices | 6 CSF Functions | 0–4 | Belgian organisations / CCB certification |
+| [CyberFundamentals (BE)](#cyberfundamentals-ccb) | Belgian regulation | 41 practices | 6 CSF Functions | 0–4 | Belgian organisations / CCB certification |
 | [BaFin BAIT (DE)](#bafin-bait-rundschreiben-102021) | German BaFin | 23 requirements | 12 Modules | 0–4 | German financial sector (banks, investment firms) |
 | [CSSF Circulaire 20-750 (LU)](#cssf-circulaire-20-750-lu) | Luxembourg CSSF | 19 requirements | 7 Domains | 0–4 | Luxembourg financial sector |
 | [ACN Cyber Risk Management (IT)](#acn-cyber-risk-management-it) | Italian ACN | 19 guidelines | 4 Groups | 0–4 | Italian organisations / critical infrastructure |
@@ -157,7 +157,7 @@ Each collection shows derived statistics: completion %, compliance %, per-status
 ### DORA (EU 2022/2554)
 
 **Source:** Regulation (EU) 2022/2554 — Digital Operational Resilience Act
-**Scope:** binding requirements across 5 pillars: ICT Risk Management, ICT Incident Reporting, Digital Operational Resilience Testing, ICT Third-Party Risk Management, and Information Sharing. 30 requirements assessed across these pillars.
+**Scope:** binding requirements across 5 pillars: ICT Risk Management, ICT Incident Reporting, Digital Operational Resilience Testing, ICT Third-Party Risk Management, and Information Sharing. 27 articles assessed across these pillars (Chapters II–VI).
 **Scoring:** Maturity 0–4
 **Audience:** EU financial entities (banks, investment firms, insurance, crypto-asset service providers, payment institutions) and their critical ICT third-party providers
 
@@ -319,7 +319,7 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 ### EU AI Act (2024/1689)
 
 **Source:** Regulation (EU) 2024/1689 — Artificial Intelligence Act
-**Scope:** 25 articles across 6 groups: Risk Management System, Data Governance, Technical Documentation, Transparency & User Information, Human Oversight, Robustness & Accuracy
+**Scope:** 9 articles from Chapter III (High-Risk AI Systems): the 8 core requirement articles in Section 2 (Art. 8 Compliance, Art. 9 Risk Management, Art. 10 Data Governance, Art. 11 Technical Documentation, Art. 12 Record-Keeping, Art. 13 Transparency, Art. 14 Human Oversight, Art. 15 Accuracy/Robustness/Cybersecurity) plus Art. 27 Fundamental Rights Impact Assessment from Section 3
 **Scoring:** Maturity 0–4
 **Audience:** Providers and deployers of AI systems in the EU — obligations vary by risk classification (unacceptable risk/prohibited, high-risk, limited-risk, minimal-risk)
 
@@ -349,14 +349,14 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 
 ### CyberFundamentals (CCB)
 
-**Source:** Centre for Cybersecurity Belgium (CCB/CCN) — CyberFundamentals Framework v2025
+**Source:** Centre for Cybersecurity Belgium (CCB) — CyberFundamentals Framework v2025
 **Scope:** 41 practices aligned to NIST CSF 2.0 functions: Govern (GV), Identify (ID), Protect (PR), Detect (DE), Respond (RS), Recover (RC)
 **Scoring:** Maturity 0–4
 **Audience:** Belgian organisations seeking CCB CyberFundamentals certification; NIS2-in-scope entities in Belgium; any organisation using NIST CSF 2.0 with Belgian regulatory context
 
 **Coverage notes:**
 - CyberFundamentals uses NIST CSF 2.0 control IDs (GV.OC-01, ID.AM-01, etc.) — the ISMS CORE crosswalk leverages existing ISO→NIST CSF mappings
-- Three certification levels: Basic, Important, Essential (aligned to Belgian NIS2 transposition)
+- Four assurance levels: Small, Basic, Important, Essential (aligned to Belgian NIS2 transposition, Law of 26 April 2024)
 - Crosswalk: ISO 27001:2022 ↔ CyberFundamentals — 107 mappings
 
 ---
@@ -646,7 +646,7 @@ All compliance assessment modules benefit from the Platform's Crosswalk Viewer, 
 - ISO 27001:2022 ↔ NCSC CAF v4.0 (65 mappings)
 - ISO 27001:2022 ↔ ReCyF v2.5 / FR NIS2 (50 mappings)
 
-Total: **3,433 crosswalk objects across 44 axes** available in the Crosswalk Viewer.
+Total: **4,563 crosswalk objects across 44 axes** available in the Crosswalk Viewer.
 
 ---
 

@@ -156,7 +156,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | **Evidence** | Evidence items linked to control groups and assessment items — manual upload + automated connector ingestion |
 | **Connector Evidence** | Automated evidence from connectors — timestamped, classified, source-labelled |
 | **Frameworks** | 39 reference datasets: ISO 27001, NIST CSF 2.0, NIST AI RMF 1.0, MITRE ATT&CK v19, GDPR, DORA, NIS2, CIS Controls v8, BSI IT-Grundschutz Kompendium, TISAX/VDA ISA 6.0, Swiss nDSG 2023, Swiss ISG (SR 128), EU CRA 2024, EU AI Act, CyberFundamentals BE, BaFin BAIT DE, CSSF 20-750 LU, ACN IT, UK NIS, UK Operational Resilience, NCSC CAF v4.0, ReCyF v2.5 (France NIS2), FINMA, COBIT 2019, and more |
-| **Crosswalk Mappings** | Cross-framework relationships: 3,433 objects / 44 axes — including ISO 27001 ↔ MITRE ATT&CK v19 (36), ISO 27001 ↔ FINMA (60), ISO 27001 ↔ OWASP ASVS 4.0 (22), NIST SP 800-53 R5 ↔ MITRE ATT&CK v19 (614), BSI IT-Grundschutz (ISO 27001 ↔ BSI: 115, ISO 27701 ↔ BSI: 103, ISO 27018 ↔ BSI: 51), NCSC CAF v4.0 (65), ReCyF v2.5 / FR NIS2 (50), Swiss ISG (40), and EU country frameworks (CyberFundamentals BE: 107, BaFin BAIT: 69, CSSF LU: 47, ACN IT: 43, UK NIS: 51, UK Op. Resilience: 34) |
+| **Crosswalk Mappings** | Cross-framework relationships: 4,563 objects / 44 axes — including ISO 27001 ↔ MITRE ATT&CK v19 (36), ISO 27001 ↔ FINMA (60), ISO 27001 ↔ OWASP ASVS 4.0 (22), NIST SP 800-53 R5 ↔ MITRE ATT&CK v19 (614), BSI IT-Grundschutz (ISO 27001 ↔ BSI: 386, ISO 27701 ↔ BSI: 101, ISO 27018 ↔ BSI: 51), NCSC CAF v4.0 (65), ReCyF v2.5 / FR NIS2 (50), Swiss ISG (40), and EU country frameworks (CyberFundamentals BE: 107, BaFin BAIT: 69, CSSF LU: 47, ACN IT: 43, UK NIS: 51, UK Op. Resilience: 34) |
 | **NIST CSF 2.0 Profiles** | Named assessment profiles — tier 1–4 ratings for all 106 subcategories, per-function scoring, gap analysis, XLSX import/export |
 | **Compliance Assessments** | 25 frameworks — see [COMPLIANCE.md](COMPLIANCE.md) for full coverage |
 | **Projects** | Workspace layer — named projects own a curated subset of policies, implementations, assessments, gaps, and evidence; doc-vars substitution (org name, CISO, effective date) applied on add; active/inactive/draft/archived lifecycle |
@@ -204,7 +204,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | **Evidence Tracker** | Evidence items with expiry tracking, verification status, and freshness alerts |
 | **Connectors** | Automated evidence ingestion from 44 systems — continuous compliance signals from real infrastructure |
 | **Nightly Evidence Archive** | Celery Beat job archives stale connector evidence at 02:00 UTC daily |
-| **Crosswalk Viewer** | Cross-framework mappings: 3,433 objects / 44 axes — ISO 27001 ↔ NIST CSF ↔ MITRE ATT&CK v19 ↔ GDPR ↔ DORA ↔ BSI IT-Grundschutz ↔ FINMA ↔ OWASP ASVS 4.0 ↔ NCSC CAF ↔ ReCyF v2.5 and more |
+| **Crosswalk Viewer** | Cross-framework mappings: 4,563 objects / 44 axes — ISO 27001 ↔ NIST CSF ↔ MITRE ATT&CK v19 ↔ GDPR ↔ DORA ↔ BSI IT-Grundschutz ↔ FINMA ↔ OWASP ASVS 4.0 ↔ NCSC CAF ↔ ReCyF v2.5 and more |
 | **QA / Existence Checker** | Validate that all expected artifacts are present (Framework, Operational, Privacy, Cloud, AI) |
 | **System Event Log** | Full audit log of all platform actions |
 | **Admin Panel** | User management (CRUD), system info, service health, DB stats, import triggers |
@@ -213,7 +213,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | **Compliance Assessment Suite** | 29 compliance frameworks with assessment, scoring, gap tracking, and export. See [COMPLIANCE.md](COMPLIANCE.md). |
 | **NIST CSF 2.0 Assessment** | 106 subcategories across 6 functions (incl. GV — Govern), tier 1–4 ratings, radar + bar chart, XLSX import from official NIST template, XLSX/CSV export |
 | **NIS2 Assessment** | EU 2022/2555 — 10 Article 21(2) security measures + 5 Article 23 reporting obligations, maturity 0–4 |
-| **DORA Assessment** | EU 2022/2554 — 30 requirements across 5 pillars (ICT Risk, Incident Reporting, Resilience Testing, Third-Party Risk, Information Sharing), maturity 0–4 |
+| **DORA Assessment** | EU 2022/2554 — 27 articles across 5 pillars (ICT Risk, Incident Reporting, Resilience Testing, Third-Party Risk, Information Sharing), maturity 0–4 |
 | **CIS Controls v8 Assessment** | 153 safeguards across 18 controls, maturity 0–4 |
 | **BSI IT-Grundschutz Assessment** | All 111 Bausteine across 10 layers, maturity 0–4. Paired with 538 crosswalk mappings across three ISO standards. |
 | **CSRM Assessment (NCSC CH)** | Custom object-centric module — IT Protection Objects, 20 NIST CSF 2.0 baseline requirements, binary status, 6 Control Objectives |
@@ -221,7 +221,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | **Swiss ISG Assessment (SR 128)** | Swiss Federal Act on Information Security 2024 — 27 requirements, 24h cyberattack reporting to BACS/OFCS (Art. 74e), maturity 0–4; ISO 27001 crosswalk: 40 mappings |
 | **Swiss nDSG Assessment** | Swiss Federal Act on Data Protection 2023 — 25 provisions across 6 chapters, maturity 0–4 |
 | **EU Cyber Resilience Act Assessment** | EU 2024/2847 — 26 essential requirements across 6 groups, maturity 0–4 |
-| **EU AI Act Assessment** | EU 2024/1689 — 25 articles across 6 groups (Risk Management, Data Governance, Transparency, Human Oversight, Robustness, Accountability), maturity 0–4 |
+| **EU AI Act Assessment** | EU 2024/1689 — 9 articles from Chapter III high-risk AI system requirements (Art. 8–15, Art. 27), maturity 0–4 |
 | **NIST AI RMF 1.0 Assessment** | 72 subcategories across 4 functions (GOVERN, MAP, MEASURE, MANAGE), maturity 0–4; ISO 42001 crosswalk: 32 mappings, EU AI Act: 31 mappings |
 | **EU Cloud Sovereignty Framework** | 8 Sovereignty Objectives (SOV-1 to SOV-8), SEAL-0 to SEAL-4 scoring, weighted Sovereignty Score |
 | **COBIT 2019 Assessment** | 40 governance/management objectives, capability scoring 0–4 |
