@@ -215,7 +215,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | **NIS2 Assessment** | EU 2022/2555 — 10 Article 21(2) security measures + 5 Article 23 reporting obligations, maturity 0–4 |
 | **DORA Assessment** | EU 2022/2554 — 30 requirements across 5 pillars (ICT Risk, Incident Reporting, Resilience Testing, Third-Party Risk, Information Sharing), maturity 0–4 |
 | **CIS Controls v8 Assessment** | 153 safeguards across 18 controls, maturity 0–4 |
-| **BSI IT-Grundschutz Assessment** | 58 of 111 Bausteine across 10 layers, maturity 0–4. Paired with 269 crosswalk mappings across three ISO standards. |
+| **BSI IT-Grundschutz Assessment** | All 111 Bausteine across 10 layers, maturity 0–4. Paired with 538 crosswalk mappings across three ISO standards. |
 | **CSRM Assessment (NCSC CH)** | Custom object-centric module — IT Protection Objects, 20 NIST CSF 2.0 baseline requirements, binary status, 6 Control Objectives |
 | **TISAX Assessment** | VDA ISA 6.0 — 53 requirements across 12 domains, maturity 0–4 |
 | **Swiss ISG Assessment (SR 128)** | Swiss Federal Act on Information Security 2024 — 27 requirements, 24h cyberattack reporting to BACS/OFCS (Art. 74e), maturity 0–4; ISO 27001 crosswalk: 40 mappings |

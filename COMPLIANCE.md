@@ -36,7 +36,7 @@ All compliance assessment modules live under the **Compliance Assessments** side
 | [NIS2](#nis2-directive-eu-20222555) | EU Directive | 15 requirements | 2 Articles | 0–4 | EU essential/important entities |
 | [DORA](#dora-eu-20222554) | EU Regulation | 30 requirements | 5 Pillars | 0–4 | EU financial sector |
 | [CIS Controls v8](#cis-critical-security-controls-v8) | Best Practice | 153 safeguards | 18 Controls | 0–4 | Any sector |
-| [BSI IT-Grundschutz](#bsi-it-grundschutz-kompendium) | German standard | 58 of 111 Bausteine | 10 Layers | 0–4 | Germany / DACH / IT-Grundschutz cert |
+| [BSI IT-Grundschutz](#bsi-it-grundschutz-kompendium) | German standard | 111 Bausteine | 10 Layers | 0–4 | Germany / DACH / IT-Grundschutz cert |
 | [CSRM (NCSC CH)](#csrm-swiss-ncsc-2025) | Swiss NCSC | 20 baseline requirements | 5 CSF Functions | Binary | Swiss critical infrastructure |
 | [Swiss ISG (SR 128)](#swiss-isg-sr-128) | Swiss law | 27 requirements | 8 Sections | 0–4 | Swiss federal bodies & critical infrastructure operators |
 | [TISAX](#tisaxvida-isa-60) | VDA/ENX | 53 requirements | 12 Domains | 0–4 | Automotive supply chain |
@@ -184,19 +184,19 @@ Each collection shows derived statistics: completion %, compliance %, per-status
 ### BSI IT-Grundschutz Kompendium
 
 **Source:** Bundesamt für Sicherheit in der Informationstechnik — IT-Grundschutz Kompendium
-**Scope:** the 2023 edition contains 111 official Bausteine (building blocks) across 10 Schichten (layers): ISMS, ORP (Organisation), CON (Concepts), OPS (Operations), DER (Detection), APP (Applications), SYS (Systems), IND (Industrial), NET (Networks), INF (Infrastructure). ISMS CORE currently covers 58 of these 111.
+**Scope:** the 2023 edition contains 111 official Bausteine (building blocks) across 10 Schichten (layers): ISMS, ORP (Organisation), CON (Concepts), OPS (Operations), DER (Detection), APP (Applications), SYS (Systems), IND (Industrial), NET (Networks), INF (Infrastructure). ISMS CORE covers all 111.
 **Scoring:** Maturity 0–4
 **Audience:** German public sector (mandatory), organisations pursuing dual ISO 27001 / IT-Grundschutz certification, DACH-region organisations
 
 **Crosswalk:**
-- ISO 27001:2022 ↔ BSI IT-Grundschutz: 115 mappings
-- ISO 27701:2025 ↔ BSI IT-Grundschutz: 103 mappings
+- ISO 27001:2022 ↔ BSI IT-Grundschutz: 386 mappings — built from BSI's official Zuordnungstabelle
+- ISO 27701:2025 ↔ BSI IT-Grundschutz: 101 mappings
 - ISO 27018:2025 ↔ BSI IT-Grundschutz: 51 mappings
-- Total: 269 cross-standard mappings — visible in the Crosswalk Viewer
+- Total: 538 cross-standard mappings — visible in the Crosswalk Viewer
 
 **Coverage notes:**
 - Based on publicly available Kompendium structure; exact requirement text from the full BSI Kompendium (bsi.bund.de)
-- Coverage focuses on core Bausteine — some sector-specific modules may not be included
+- All 111 official Bausteine are covered, across all 10 layers
 
 ---
 

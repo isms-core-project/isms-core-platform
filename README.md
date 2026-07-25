@@ -345,7 +345,7 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 </tr>
 <tr>
 <td align="center"><strong>DORA Assessment</strong><br/><img src="screenshots/25_isms-core_dora.png" width="380" alt="DORA (EU 2022/2554) — 30 requirements across 5 pillars, ICT risk maturity scoring 0–4"/></td>
-<td align="center"><strong>BSI IT-Grundschutz Assessment</strong><br/><img src="screenshots/36_isms-core_de_bsi.png" width="380" alt="BSI IT-Grundschutz Kompendium — 58 of 111 building blocks mapped to ISO 27001:2022"/></td>
+<td align="center"><strong>BSI IT-Grundschutz Assessment</strong><br/><img src="screenshots/36_isms-core_de_bsi.png" width="380" alt="BSI IT-Grundschutz Kompendium — all 111 building blocks mapped to ISO 27001:2022"/></td>
 </tr>
 <tr>
 <td align="center"><strong>Risk Register &amp; Heatmap</strong><br/><img src="screenshots/07_isms-core_risk_register.png" width="380" alt="Risk Register — 5×5 probability/impact matrix, risk heatmap, treatment workflow"/></td>
@@ -381,7 +381,7 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 | NIS2 Directive (EU 2022/2555) | 10 Article 21 measures + 5 Article 23 obligations, maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-003399?style=flat-square) |
 | DORA (EU 2022/2554) | 30 requirements across 5 pillars (ICT Risk, Incident Reporting, Testing, TPRM, Information Sharing), maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-1565C0?style=flat-square) |
 | CIS Critical Security Controls v8 | 153 safeguards across 18 controls, maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-2E7D32?style=flat-square) |
-| BSI IT-Grundschutz Kompendium | 58 of 111 Bausteine across 10 layers, maturity 0–4. Crosswalk: ISO 27001↔BSI (115), ISO 27701↔BSI (103), ISO 27018↔BSI (51) | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-CC0000?style=flat-square) |
+| BSI IT-Grundschutz Kompendium | All 111 Bausteine across 10 layers, maturity 0–4. Crosswalk: ISO 27001↔BSI (386), ISO 27701↔BSI (101), ISO 27018↔BSI (51) | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-CC0000?style=flat-square) |
 | CSRM (Swiss NCSC, 2025) | Object-centric module — IT Protection Objects, 20 NIST CSF 2.0 baseline requirements, binary status, 6 Control Objectives | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-D32F2F?style=flat-square) |
 | TISAX / VDA ISA 6.0 | 53 requirements across 12 domains, maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-1B5E20?style=flat-square) |
 | Swiss nDSG 2023 | 25 provisions across 6 chapters, maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-C62828?style=flat-square) |
