@@ -634,8 +634,8 @@ All compliance assessment modules benefit from the Platform's Crosswalk Viewer, 
 - ISO 27001:2022 ↔ DORA
 - ISO 27001:2022 ↔ NIS2
 - ISO 27001:2022 ↔ CIS Controls v8
-- ISO 27001:2022 ↔ BSI IT-Grundschutz (115 mappings)
-- ISO 27701:2025 ↔ BSI IT-Grundschutz (103 mappings)
+- ISO 27001:2022 ↔ BSI IT-Grundschutz (386 mappings)
+- ISO 27701:2025 ↔ BSI IT-Grundschutz (101 mappings)
 - ISO 27018:2025 ↔ BSI IT-Grundschutz (51 mappings)
 - ISO 27001:2022 ↔ CyberFundamentals BE (107 mappings)
 - ISO 27001:2022 ↔ BaFin BAIT DE (69 mappings)
