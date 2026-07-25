@@ -154,7 +154,7 @@ EN · FR · DE · IT
 **Live compliance management system** — turns all content products into dashboards, gap tracking, evidence ingestion, risk registers, and audit reports. Docker Compose, 10 services, self-hosted.
 
 **44** connectors · **29** assessment modules · **3,433** crosswalk objects / 44 axes<br/>
-7 country jurisdictions · **20+** threat intelligence sources
+8 country jurisdictions · **20+** threat intelligence sources
 
 <img src="https://img.shields.io/badge/v1.0-Live-2E8B57?style=flat-square" alt="Live"/>
 
@@ -328,7 +328,7 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 <td align="center"><strong>Home Dashboard</strong><br/><img src="screenshots/02_isms-core_home.png" width="380" alt="Home dashboard — ISMS + Privacy + Cloud + AI product switcher with compliance quick-access row"/></td>
 </tr>
 <tr>
-<td align="center"><strong>Compliance Overview</strong><br/><img src="screenshots/03_isms-core_overview.png" width="380" alt="Compliance overview — 54 controls, 100% coverage, audit readiness"/></td>
+<td align="center"><strong>Compliance Overview</strong><br/><img src="screenshots/03_isms-core_overview.png" width="380" alt="Compliance overview — 53 control groups, 100% coverage, audit readiness"/></td>
 <td align="center"><strong>Connectors — Automated Evidence</strong><br/><img src="screenshots/53_isms-core_connectors.png" width="380" alt="Automated evidence connectors — MS Entra ID, Defender, M365, Azure CSPM"/></td>
 </tr>
 <tr>
@@ -344,8 +344,8 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 <td align="center"><strong>NIS2 Assessment</strong><br/><img src="screenshots/24_isms-core_nis2.png" width="380" alt="NIS2 Directive (EU 2022/2555) — Article 21 security measures and Article 23 reporting obligations"/></td>
 </tr>
 <tr>
-<td align="center"><strong>DORA Assessment</strong><br/><img src="screenshots/25_isms-core_dora.png" width="380" alt="DORA (EU 2022/2554) — 25 articles across 4 chapters, ICT risk maturity scoring 0–4"/></td>
-<td align="center"><strong>BSI IT-Grundschutz Assessment</strong><br/><img src="screenshots/36_isms-core_de_bsi.png" width="380" alt="BSI IT-Grundschutz Kompendium — 68 building blocks mapped to ISO 27001:2022"/></td>
+<td align="center"><strong>DORA Assessment</strong><br/><img src="screenshots/25_isms-core_dora.png" width="380" alt="DORA (EU 2022/2554) — 30 requirements across 5 pillars, ICT risk maturity scoring 0–4"/></td>
+<td align="center"><strong>BSI IT-Grundschutz Assessment</strong><br/><img src="screenshots/36_isms-core_de_bsi.png" width="380" alt="BSI IT-Grundschutz Kompendium — 58 of 111 building blocks mapped to ISO 27001:2022"/></td>
 </tr>
 <tr>
 <td align="center"><strong>Risk Register &amp; Heatmap</strong><br/><img src="screenshots/07_isms-core_risk_register.png" width="380" alt="Risk Register — 5×5 probability/impact matrix, risk heatmap, treatment workflow"/></td>
@@ -379,9 +379,9 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 | NIST CSF 2.0 | Full assessment tool — 106 subcategories, tier 1–4 ratings, XLSX import/export, radar chart. ISO 27001 crosswalk. | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-FF6600?style=flat-square) |
 | NIST AI RMF 1.0 | Full assessment tool — 72 subcategories, 0–4 maturity; ISO 42001 crosswalk: 32 mappings, EU AI Act: 31 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-FF6600?style=flat-square) |
 | NIS2 Directive (EU 2022/2555) | 10 Article 21 measures + 5 Article 23 obligations, maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-003399?style=flat-square) |
-| DORA (EU 2022/2554) | 25 articles across 4 chapters (ICT Risk, Incidents, Testing, TPRM), maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-1565C0?style=flat-square) |
+| DORA (EU 2022/2554) | 30 requirements across 5 pillars (ICT Risk, Incident Reporting, Testing, TPRM, Information Sharing), maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-1565C0?style=flat-square) |
 | CIS Critical Security Controls v8 | 153 safeguards across 18 controls, maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-2E7D32?style=flat-square) |
-| BSI IT-Grundschutz Kompendium | 68 Bausteine across 10 layers, maturity 0–4. Crosswalk: ISO 27001↔BSI (115), ISO 27701↔BSI (103), ISO 27018↔BSI (51) | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-CC0000?style=flat-square) |
+| BSI IT-Grundschutz Kompendium | 58 of 111 Bausteine across 10 layers, maturity 0–4. Crosswalk: ISO 27001↔BSI (115), ISO 27701↔BSI (103), ISO 27018↔BSI (51) | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-CC0000?style=flat-square) |
 | CSRM (Swiss NCSC, 2025) | Object-centric module — IT Protection Objects, 20 NIST CSF 2.0 baseline requirements, binary status, 6 Control Objectives | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-D32F2F?style=flat-square) |
 | TISAX / VDA ISA 6.0 | 53 requirements across 12 domains, maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-1B5E20?style=flat-square) |
 | Swiss nDSG 2023 | 25 provisions across 6 chapters, maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-C62828?style=flat-square) |
@@ -399,7 +399,7 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 | UK NIS Regulations | 13 requirements across 3 objectives, maturity 0–4; ISO 27001 crosswalk: 51 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-1A237E?style=flat-square) |
 | UK Operational Resilience | 12 requirements across 4 objectives, maturity 0–4; ISO 27001 crosswalk: 34 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-283593?style=flat-square) |
 | NCSC CAF v4.0 (UK) | 41 Contributing Outcomes across 14 Principles and 4 Objectives — outcome-based; ISO 27001 crosswalk: 65 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-003366?style=flat-square) |
-| ReCyF v2.5 — France NIS2 (ANSSI) | 20 Security Objectives across 4 pillars (Gouvernance / Protection / Défense / Résilience) — French NIS2 transposition (Loi 2024-449); ISO 27001 crosswalk: 50 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-002395?style=flat-square) |
+| ReCyF v2.5 — France NIS2 (ANSSI) | 20 Security Objectives across 4 pillars (Gouvernance / Protection / Défense / Résilience) — France's pending NIS2 transposition law; ISO 27001 crosswalk: 50 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-002395?style=flat-square) |
 | PCI DSS v4.0.1 | 323 sub-requirements across 12 requirements, 6 prioritised milestones, milestone-based scoring; ISO 27001 crosswalk: 39 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-003087?style=flat-square) |
 | FINMA | 21 requirements across 3 circulars/guidance (2023/1 Operational Risk, 2018/3 Outsourcing, Guidance 03/2024 Cyber Risks), maturity 0–4; ISO 27001 crosswalk: 60 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-5D4037?style=flat-square) |
 | NIST SP 800-53 Rev. 5 | Security control cross-mapping | ![Mapped](https://img.shields.io/badge/Mapped-FF6600?style=flat-square) |
@@ -469,7 +469,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 | 🔒 Privacy | 21 / 21 | 23 PRIV-POL · 42 IMPs · 21 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-7030A0?style=flat-square) |
 | ☁️ Cloud | 12 / 12 | 12 CLD-POL · 24 IMPs · 12 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-00897B?style=flat-square) |
 | 🤖 AI | 12 / 12 | 12 AI-POL · 20 IMPs · 10 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-FF6B35?style=flat-square) |
-| 🖥️ Platform | 99 total | 44 connectors · 29 assessments · 3,433 mappings / 44 axes | 7 jurisdictions | ![Live v1.0](https://img.shields.io/badge/Live-v1.0-2E8B57?style=flat-square) |
+| 🖥️ Platform | 99 total | 44 connectors · 29 assessments · 3,433 mappings / 44 axes | 8 jurisdictions | ![Live v1.0](https://img.shields.io/badge/Live-v1.0-2E8B57?style=flat-square) |
 
 ---
 

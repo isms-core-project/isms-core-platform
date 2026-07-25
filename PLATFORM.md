@@ -173,7 +173,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 <td align="center"><strong>Home — Product Dashboard</strong><br/><img src="screenshots/02_isms-core_home.png" width="380" alt="Home dashboard — ISMS, Privacy, Cloud, AI product switcher with live metrics"/></td>
 </tr>
 <tr>
-<td align="center"><strong>Compliance Overview</strong><br/><img src="screenshots/03_isms-core_overview.png" width="380" alt="Compliance overview — 54 controls, 100% FW/OP coverage, audit readiness"/></td>
+<td align="center"><strong>Compliance Overview</strong><br/><img src="screenshots/03_isms-core_overview.png" width="380" alt="Compliance overview — 53 control groups, 100% FW/OP coverage, audit readiness"/></td>
 <td align="center"><strong>Connectors — Automated Evidence</strong><br/><img src="screenshots/53_isms-core_connectors.png" width="380" alt="Connector dashboard — MS Entra ID, Defender XDR, M365, Azure CSPM — all Active/Healthy"/></td>
 </tr>
 <tr>
@@ -213,9 +213,9 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | **Compliance Assessment Suite** | 29 compliance frameworks with assessment, scoring, gap tracking, and export. See [COMPLIANCE.md](COMPLIANCE.md). |
 | **NIST CSF 2.0 Assessment** | 106 subcategories across 6 functions (incl. GV — Govern), tier 1–4 ratings, radar + bar chart, XLSX import from official NIST template, XLSX/CSV export |
 | **NIS2 Assessment** | EU 2022/2555 — 10 Article 21(2) security measures + 5 Article 23 reporting obligations, maturity 0–4 |
-| **DORA Assessment** | EU 2022/2554 — 25 articles across 4 chapters (ICT Risk, Incident Mgmt, Resilience Testing, Third-Party Risk), maturity 0–4 |
+| **DORA Assessment** | EU 2022/2554 — 30 requirements across 5 pillars (ICT Risk, Incident Reporting, Resilience Testing, Third-Party Risk, Information Sharing), maturity 0–4 |
 | **CIS Controls v8 Assessment** | 153 safeguards across 18 controls, maturity 0–4 |
-| **BSI IT-Grundschutz Assessment** | 68 Bausteine across 10 layers, maturity 0–4. Paired with 269 crosswalk mappings across three ISO standards. |
+| **BSI IT-Grundschutz Assessment** | 58 of 111 Bausteine across 10 layers, maturity 0–4. Paired with 269 crosswalk mappings across three ISO standards. |
 | **CSRM Assessment (NCSC CH)** | Custom object-centric module — IT Protection Objects, 20 NIST CSF 2.0 baseline requirements, binary status, 6 Control Objectives |
 | **TISAX Assessment** | VDA ISA 6.0 — 53 requirements across 12 domains, maturity 0–4 |
 | **Swiss ISG Assessment (SR 128)** | Swiss Federal Act on Information Security 2024 — 27 requirements, 24h cyberattack reporting to BACS/OFCS (Art. 74e), maturity 0–4; ISO 27001 crosswalk: 40 mappings |
@@ -232,7 +232,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms all five ISMS 
 | **UK NIS Assessment** | UK NIS Regulations 2018 — 13 requirements across 3 objectives, maturity 0–4; ISO 27001 crosswalk: 51 mappings |
 | **UK Operational Resilience** | FCA/PRA PS21/3 + PS26/2 — 12 requirements across 4 objectives, maturity 0–4; ISO 27001 crosswalk: 34 mappings |
 | **NCSC CAF v4.0 Assessment** | UK NCSC Cyber Assessment Framework v4.0 — 41 Contributing Outcomes across 14 Principles and 4 Objectives; Not Achieved / Partially Achieved / Achieved; ISO 27001 crosswalk: 65 mappings |
-| **ReCyF v2.5 Assessment (France NIS2)** | ANSSI ReCyF v2.5 — 20 Security Objectives across 4 pillars (Gouvernance / Protection / Défense / Résilience), 152 requirements; French NIS2 transposition (Loi 2024-449); ISO 27001 crosswalk: 50 mappings |
+| **ReCyF v2.5 Assessment (France NIS2)** | ANSSI ReCyF v2.5 — 20 Security Objectives across 4 pillars (Gouvernance / Protection / Défense / Résilience), 152 requirements; France's pending NIS2 transposition law; ISO 27001 crosswalk: 50 mappings |
 | **Assessment Collections** | Group multiple assessments into named collections with derived stats (completion %, compliance %, status rollup). Export as CSV, colour-coded XLSX, or PDF (A4). |
 | **Projects Workspace** | Create named projects — own, edit, and track a curated set of policies and implementations from the library. WYSIWYG editing, doc-vars substitution, bulk actions, SCR checklists, completeness scoring. |
 | **Document Editor** | TipTap v3 WYSIWYG + raw source toggle; grid table auto-conversion (RST → GFM); metadata comment stripping |

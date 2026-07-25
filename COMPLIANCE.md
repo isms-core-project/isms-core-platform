@@ -34,9 +34,9 @@ All compliance assessment modules live under the **Compliance Assessments** side
 | [NIST CSF 2.0](#nist-csf-20) | NIST | 106 subcategories | 6 Functions | Tier 1–4 | Any sector |
 | [NIST AI RMF 1.0](#nist-ai-rmf-10-ai-100-1) | NIST | 72 subcategories | 4 Functions (GOV/MAP/MSR/MNG) | 0–4 | AI system providers and operators — any sector |
 | [NIS2](#nis2-directive-eu-20222555) | EU Directive | 15 requirements | 2 Articles | 0–4 | EU essential/important entities |
-| [DORA](#dora-eu-20222554) | EU Regulation | 25 articles | 4 Chapters | 0–4 | EU financial sector |
+| [DORA](#dora-eu-20222554) | EU Regulation | 30 requirements | 5 Pillars | 0–4 | EU financial sector |
 | [CIS Controls v8](#cis-critical-security-controls-v8) | Best Practice | 153 safeguards | 18 Controls | 0–4 | Any sector |
-| [BSI IT-Grundschutz](#bsi-it-grundschutz-kompendium) | German standard | 68 Bausteine | 10 Layers | 0–4 | Germany / DACH / IT-Grundschutz cert |
+| [BSI IT-Grundschutz](#bsi-it-grundschutz-kompendium) | German standard | 58 of 111 Bausteine | 10 Layers | 0–4 | Germany / DACH / IT-Grundschutz cert |
 | [CSRM (NCSC CH)](#csrm-swiss-ncsc-2025) | Swiss NCSC | 20 baseline requirements | 5 CSF Functions | Binary | Swiss critical infrastructure |
 | [Swiss ISG (SR 128)](#swiss-isg-sr-128) | Swiss law | 27 requirements | 8 Sections | 0–4 | Swiss federal bodies & critical infrastructure operators |
 | [TISAX](#tisaxvida-isa-60) | VDA/ENX | 53 requirements | 12 Domains | 0–4 | Automotive supply chain |
@@ -44,7 +44,7 @@ All compliance assessment modules live under the **Compliance Assessments** side
 | [EU Cyber Resilience Act](#eu-cyber-resilience-act-20242847) | EU Regulation | 26 requirements | 6 Groups | 0–4 | EU product manufacturers |
 | [EU AI Act](#eu-ai-act-20241689) | EU Regulation | 25 articles | 6 Groups | 0–4 | EU AI system providers/deployers |
 | [EU Cloud Sovereignty Framework](#eu-cloud-sovereignty-framework-v121) | EC DG DIGIT | 8 Sovereignty Objectives | 1 Group (SEAL) | SEAL 0–4 | EU institutions / public sector cloud procurement |
-| [CyberFundamentals (BE)](#cyberfundamentals-ccncertbe) | Belgian regulation | 41 practices | 6 CSF Functions | 0–4 | Belgian organisations / CCN/CCB certification |
+| [CyberFundamentals (BE)](#cyberfundamentals-ccncertbe) | Belgian regulation | 41 practices | 6 CSF Functions | 0–4 | Belgian organisations / CCB certification |
 | [BaFin BAIT (DE)](#bafin-bait-rundschreiben-102021) | German BaFin | 23 requirements | 12 Modules | 0–4 | German financial sector (banks, investment firms) |
 | [CSSF Circulaire 20-750 (LU)](#cssf-circulaire-20-750-lu) | Luxembourg CSSF | 19 requirements | 7 Domains | 0–4 | Luxembourg financial sector |
 | [ACN Cyber Risk Management (IT)](#acn-cyber-risk-management-it) | Italian ACN | 19 guidelines | 4 Groups | 0–4 | Italian organisations / critical infrastructure |
@@ -55,7 +55,7 @@ All compliance assessment modules live under the **Compliance Assessments** side
 | [CSA CCM v4.1](#csa-cloud-controls-matrix-v41) | CSA | 207 control specifications | 17 Domains | 0–4 | Cloud service providers, cloud consumers — any sector |
 | [CSA AICM v1.0.3](#csa-ai-controls-matrix-v103) | CSA | 243 controls | 18 Domains | 0–4 | Organisations developing, deploying, or procuring AI systems |
 | [NCSC CAF v4.0 (UK)](#ncsc-caf-v40-uk) | NCSC UK | 41 Contributing Outcomes | 14 Principles / 4 Objectives | 0/2/4 | UK operators of essential services / CNI |
-| [ReCyF v2.5 — France NIS2](#recyf-v25--france-nis2-anssi) | ANSSI | 20 Security Objectives | 4 Pillars | 0–4 | French NIS2 entities (EI & EE) — Loi 2024-449 |
+| [ReCyF v2.5 — France NIS2](#recyf-v25--france-nis2-anssi) | ANSSI | 20 Security Objectives | 4 Pillars | 0–4 | French NIS2 entities (EI & EE) — transposition pending |
 | [BSI C5:2026](#bsi-c52026) | BSI (Germany) | 168 criteria | 17 Domains | 0–4 | Cloud service providers (DE/EU) seeking C5 attestation |
 | [BSI C3A](#bsi-c3a-criteria-enabling-cloud-computing-autonomy) | BSI (Germany) | 30 criterion groups | 6 SOV Domains | 0–4 | Cloud CSPs + customers evaluating cloud sovereignty |
 | [PCI DSS v4.0.1](#pci-dss-v401) | PCI SSC | 323 sub-requirements | 12 requirements / 6 milestones | Milestone | Organisations handling cardholder data |
@@ -157,7 +157,7 @@ Each collection shows derived statistics: completion %, compliance %, per-status
 ### DORA (EU 2022/2554)
 
 **Source:** Regulation (EU) 2022/2554 — Digital Operational Resilience Act
-**Scope:** 25 articles across 4 chapters: ICT Risk Management (10 articles), ICT Incident Management (6), Digital Operational Resilience Testing (5), ICT Third-Party Risk Management (4)
+**Scope:** binding requirements across 5 pillars: ICT Risk Management, ICT Incident Reporting, Digital Operational Resilience Testing, ICT Third-Party Risk Management, and Information Sharing. 30 requirements assessed across these pillars.
 **Scoring:** Maturity 0–4
 **Audience:** EU financial entities (banks, investment firms, insurance, crypto-asset service providers, payment institutions) and their critical ICT third-party providers
 
@@ -184,7 +184,7 @@ Each collection shows derived statistics: completion %, compliance %, per-status
 ### BSI IT-Grundschutz Kompendium
 
 **Source:** Bundesamt für Sicherheit in der Informationstechnik — IT-Grundschutz Kompendium
-**Scope:** 68 Bausteine (building blocks) across 10 Schichten (layers): ISMS, ORP (Organisation), CON (Concepts), OPS (Operations), DER (Detection), APP (Applications), SYS (Systems), IND (Industrial), NET (Networks), INF (Infrastructure)
+**Scope:** the 2023 edition contains 111 official Bausteine (building blocks) across 10 Schichten (layers): ISMS, ORP (Organisation), CON (Concepts), OPS (Operations), DER (Detection), APP (Applications), SYS (Systems), IND (Industrial), NET (Networks), INF (Infrastructure). ISMS CORE currently covers 58 of these 111.
 **Scoring:** Maturity 0–4
 **Audience:** German public sector (mandatory), organisations pursuing dual ISO 27001 / IT-Grundschutz certification, DACH-region organisations
 
@@ -347,12 +347,12 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 
 ---
 
-### CyberFundamentals (CCN/CERT.be)
+### CyberFundamentals (CCB)
 
 **Source:** Centre for Cybersecurity Belgium (CCB/CCN) — CyberFundamentals Framework v2025
 **Scope:** 41 practices aligned to NIST CSF 2.0 functions: Govern (GV), Identify (ID), Protect (PR), Detect (DE), Respond (RS), Recover (RC)
 **Scoring:** Maturity 0–4
-**Audience:** Belgian organisations seeking CCN/CCB CyberFundamentals certification; NIS2-in-scope entities in Belgium; any organisation using NIST CSF 2.0 with Belgian regulatory context
+**Audience:** Belgian organisations seeking CCB CyberFundamentals certification; NIS2-in-scope entities in Belgium; any organisation using NIST CSF 2.0 with Belgian regulatory context
 
 **Coverage notes:**
 - CyberFundamentals uses NIST CSF 2.0 control IDs (GV.OC-01, ID.AM-01, etc.) — the ISMS CORE crosswalk leverages existing ISO→NIST CSF mappings
@@ -511,7 +511,7 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 **Source:** ANSSI — Agence nationale de la sécurité des systèmes d'information. Référentiel de Cybersécurité France v2.5 (17/03/2026).
 **Scope:** 20 Security Objectives (OS-01 to OS-20) structured across 4 pillars: Gouvernance, Protection, Défense, Résilience. 152 requirements (Moyens acceptables de conformité). OS-01–15 apply to both Entités Importantes (EI) and Entités Essentielles (EE). OS-16–20 apply to EE only.
 **Scoring:** Maturity levels 0–4
-**Audience:** French organisations subject to the NIS2 transposition: Entités Importantes (EI) and Entités Essentielles (EE) as classified under Loi n° 2024-449 (PJL Art. 14 / NIS2 transposition). Covers all NIS2 sectors: énergie, transport, santé, eau, infrastructures numériques, services numériques, administrations publiques.
+**Audience:** French organisations subject to the NIS2 transposition: Entités Importantes (EI) and Entités Essentielles (EE) as classified by ANSSI under France's pending NIS2 transposition law (PJL Art. 14 — not yet enacted as of this writing). Covers all NIS2 sectors: énergie, transport, santé, eau, infrastructures numériques, services numériques, administrations publiques.
 
 **Coverage notes:**
 - Document de travail ANSSI version 2.5 (17/03/2026) — subject to revision before final adoption
@@ -566,13 +566,13 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 
 ### PCI DSS v4.0.1
 
-**Source:** PCI Security Standards Council — Payment Card Industry Data Security Standard, v4.0.1, published March 2024.
+**Source:** PCI Security Standards Council — Payment Card Industry Data Security Standard, v4.0.1, published June 2024.
 **Scope:** 323 sub-requirements grouped into 12 top-level requirements, organised across 6 prioritised implementation milestones: (1) Remove sensitive authentication data and limit data retention, (2) Protect systems and networks and be prepared to respond to a breach, (3) Secure payment card applications, (4) Monitor and control access to your systems, (5) Protect stored cardholder data, (6) Finalise remaining compliance efforts and ensure all controls are in place.
 **Scoring:** Milestone-based progress tracking; sub-requirements assessed individually and grouped by milestone in the platform UI.
 **Audience:** Any organisation that stores, processes, or transmits cardholder data — merchants, service providers, payment processors.
 
 **Coverage notes:**
-- v4.0.1 (March 2024) is a minor correction release of v4.0; ISMS CORE implements v4.0.1 throughout
+- v4.0.1 (June 2024) is a minor correction release of v4.0; ISMS CORE implements v4.0.1 throughout
 - PCI DSS formal assessment (SAQ or QSA Report on Compliance) requires a Qualified Security Assessor or an approved SAQ form — this module is a readiness self-assessment tool, not a substitute for formal certification
 - ISO 27001 ↔ PCI DSS 4.0 crosswalk: 39 mappings, substantial overlap in access control, cryptography, logging, and vulnerability management domains
 
