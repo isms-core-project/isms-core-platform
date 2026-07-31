@@ -112,7 +112,7 @@ Projects SHALL be classified based on the highest applicable factor:
 | **System Criticality** | RTO < 4 hours, revenue-generating system, customer-facing service | RTO 4-24 hours, business-important but not revenue-critical | RTO > 24 hours, operational support system |
 | **Regulatory Scope** | GDPR/PCI DSS v4.0.1/FINMA directly applicable | Swiss nDSG applicable | No regulated data processing |
 | **External Exposure** | Internet-facing or accessible to external parties (customers, partners, public) | Controlled external access (VPN, dedicated connection) | Internal-only access |
-| **Technical Complexity** | New architecture pattern, novel integrations, custom security controls | Standard architecture with moderate customization | Standard deployment, proven architecture |
+| **Technical Complexity** | New architecture pattern, novel integrations, custom security controls | Standard architecture with moderate customisation | Standard deployment, proven architecture |
 | **Third-Party Involvement** | Critical function outsourced (hosting, authentication, payment processing) | Vendor-managed components (SaaS integration, managed services) | Fully internal development and hosting |
 
 **Classification Logic**: If **any factor** meets High Risk criteria → classify as **High Risk**. If **any factor** meets Medium Risk criteria (and no High Risk factors) → classify as **Medium Risk**. If **all factors** meet Low Risk criteria → classify as **Low Risk**.
@@ -534,4 +534,4 @@ The boundary is: POL-A.5.8 defines WHAT security activities must occur at each p
 
 *This policy establishes requirements for information security integration into project management. Implementation procedures, assessment templates, and detailed guidance are documented in ISMS-IMP-A.5.8 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

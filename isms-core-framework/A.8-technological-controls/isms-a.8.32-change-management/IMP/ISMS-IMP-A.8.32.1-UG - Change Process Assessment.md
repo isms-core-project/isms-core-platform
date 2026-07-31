@@ -215,7 +215,7 @@ Whether you use ServiceNow, Jira, BMC Remedy, custom tools, or spreadsheets - th
 
 - Review auto-calculated compliance scores (Sheet 10: Summary_Dashboard)
 - Validate gap analysis
-- Prioritize remediation actions
+- Prioritise remediation actions
 - Prepare executive summary
 
 **Step 11: Quality Review (Days 11-14)**
@@ -465,7 +465,7 @@ Whether you use ServiceNow, Jira, BMC Remedy, custom tools, or spreadsheets - th
 **Common Questions:**
 
 - **Q:** "What if evidence is scattered across multiple locations?"
-  - **A:** Document all locations - this may identify need for centralized evidence repository
+  - **A:** Document all locations - this may identify need for centralised evidence repository
 - **Q:** "Some evidence is in people's heads (undocumented)"
   - **A:** Not acceptable evidence - mark as gap
 
@@ -754,12 +754,12 @@ Common reasons for rejection:
 
 **Gap Remediation:**
 
-- Prioritize critical gaps (red flags in dashboard)
+- Prioritise critical gaps (red flags in dashboard)
 - Assign owners and target dates
 - Track progress monthly
 - Re-assess quarterly
 
-**Process Optimization:**
+**Process Optimisation:**
 
 - Review change failure patterns - common failure modes?
 - Analyze emergency change % - too high? Why?
@@ -789,4 +789,4 @@ Common reasons for rejection:
 *"Change without control is chaos; control without change is stagnation."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

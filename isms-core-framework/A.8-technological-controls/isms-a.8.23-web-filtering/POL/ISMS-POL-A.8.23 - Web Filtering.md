@@ -170,7 +170,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Implementation Note**: Specific threat intelligence feeds, update frequencies, and blocking mechanisms are defined in ISMS-IMP-A.8.23-1 (Filtering Infrastructure Assessment) and ISMS-IMP-A.8.23-3 (Policy Configuration Assessment).
 
-**Threat Intelligence**: [Organisation] SHALL utilize threat intelligence from reputable sources to maintain current protection against emerging threats. Threat intelligence integration procedures documented in ISMS-IMP-A.8.23-3.
+**Threat Intelligence**: [Organisation] SHALL utilise threat intelligence from reputable sources to maintain current protection against emerging threats. Threat intelligence integration procedures documented in ISMS-IMP-A.8.23-3.
 
 ## Category Filtering Approach (Risk-Based)
 
@@ -188,7 +188,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Adopted Organisational Approach:** [Organisation] implements a **Hybrid Risk-Based** approach:
 
-- **Blocked (High-Risk):** Malware distribution, phishing, C2/botnets, exploit kits, illegal content, anonymizers/open proxies
+- **Blocked (High-Risk):** Malware distribution, phishing, C2/botnets, exploit kits, illegal content, anonymisers/open proxies
 - **Monitored (Medium-Risk):** File sharing, streaming media, social networking, personal webmail
 - **Permitted (Low-Risk):** Business, news, education, technology, government, financial services
 
@@ -333,7 +333,7 @@ Exceptions to web filtering policy requirements require:
 
 **Monitoring**: Active exceptions reviewed based on risk level. Exception activity monitored for policy compliance. Exceptions revoked if risk profile changes or business justification no longer valid.
 
-**Exception Template**: ISMS-IMP-A.8.23 Exception Request procedures provide standardized documentation format and workflow.
+**Exception Template**: ISMS-IMP-A.8.23 Exception Request procedures provide standardised documentation format and workflow.
 
 ## Incident Response
 
@@ -452,7 +452,7 @@ This policy addresses web filtering requirements from:
 
 - Annual training module on web filtering and acceptable use
 - User responsibilities and reporting procedures
-- Recognizing phishing and suspicious websites
+- Recognising phishing and suspicious websites
 
 **Technical Training** (IT/Security Staff):
 
@@ -498,7 +498,7 @@ This policy addresses web filtering requirements from:
 **Filtering Approach:** Guest networks implement a **Restrictive Blocking** approach:
 
 - **Blocked:** All threat protection categories (malware, phishing, C2, exploits) — no exceptions permitted
-- **Blocked:** High-risk content categories (adult content, illegal content, anonymizers/proxies)
+- **Blocked:** High-risk content categories (adult content, illegal content, anonymisers/proxies)
 - **Permitted:** General web access for legitimate business use
 
 **Coverage:** All guest network egress points SHALL traverse web filtering controls before reaching the internet.
@@ -527,4 +527,4 @@ This policy addresses web filtering requirements from:
 ---
 
 *This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.8.23 (UG/TG).*
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

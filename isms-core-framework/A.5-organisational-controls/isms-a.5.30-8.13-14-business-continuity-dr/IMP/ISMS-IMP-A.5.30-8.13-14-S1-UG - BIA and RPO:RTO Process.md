@@ -114,7 +114,7 @@ Upon completion, [Organisation] will have:
 **Without BIA - The Cargo Cult BC/DR:**
 
 - "We backup everything nightly" → Wastes backup storage on non-critical systems, fails to meet RPO for critical systems
-- "Everything is Tier 1 critical" → Unsustainable redundancy costs, no prioritization
+- "Everything is Tier 1 critical" → Unsustainable redundancy costs, no prioritisation
 - "We'll restore whatever the business asks for first" → No documented recovery sequence, dependencies ignored
 - "We haven't tested but backups are running" → False confidence, untested recovery
 
@@ -253,7 +253,7 @@ ICT BC Readiness:
 | **Week 1: Planning** | 5 days | Team assembly, scope definition, stakeholder scheduling |
 | **Week 2-3: Data Collection** | 10 days | Business process interviews, system inventory, dependency mapping |
 | **Week 4: Analysis** | 5 days | Impact scoring, RPO/RTO determination, criticality classification |
-| **Week 5: Gap Analysis** | 3 days | Compare requirements vs. current capabilities, prioritize gaps |
+| **Week 5: Gap Analysis** | 3 days | Compare requirements vs. current capabilities, prioritise gaps |
 | **Week 6: Approval** | 5 days | Executive presentation, feedback incorporation, final approval |
 
 **Total Duration:** 4-6 weeks (first-time BIA)
@@ -832,7 +832,7 @@ Reputational Impact: HIGH
 
 ## STEP 4: QUANTIFY Impact (Financial/Ops/Reg/Rep)
 
-**Objective:** Score each impact dimension on a 1-5 scale to enable prioritization.
+**Objective:** Score each impact dimension on a 1-5 scale to enable prioritisation.
 
 **Duration:** Week 3-4
 
@@ -1042,7 +1042,7 @@ Payment Processing System:
 | Downtime Tolerance | RTO Target | Typical Business Drivers | Technical Implementation (A.8.14) |
 |--------------------|------------|-------------------------|----------------------------------|
 | **Near-Zero** | **≤ 15 minutes** | Critical revenue systems, customer transactions, safety-critical | Active-active load balanced, automated failover |
-| **Minimal** | **≤ 1 hour** | Payment processing, e-commerce, real-time operations | Hot standby, automatic failover, synchronized data |
+| **Minimal** | **≤ 1 hour** | Payment processing, e-commerce, real-time operations | Hot standby, automatic failover, synchronised data |
 | **Limited** | **≤ 4 hours** | CRM, ERP, customer support, operational systems | Warm standby, manual failover, recent data sync |
 | **Moderate** | **≤ 24 hours** | Email, collaboration, internal applications | Cold standby or restore from backup |
 | **Relaxed** | **≤ 7 days** | Supporting systems, development tools, non-critical infrastructure | Rebuild from backup, no redundancy |
@@ -1670,7 +1670,7 @@ ___________________________  Date: __________
 
 **BIA Evidence Repository:**
 
-Create centralized folder structure:
+Create centralised folder structure:
 ```
 BIA_2026/
   ├── 01_Planning/
@@ -1749,4 +1749,4 @@ BIA_2026/
 *"Hope is not a strategy."*
 — Vince Lombardi
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

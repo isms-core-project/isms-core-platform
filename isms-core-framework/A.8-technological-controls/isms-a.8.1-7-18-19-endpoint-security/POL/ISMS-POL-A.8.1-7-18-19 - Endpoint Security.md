@@ -184,7 +184,7 @@ This policy does NOT:
 
 - Laptops and desktops (corporate-owned and BYOD, all operating systems)
 - Mobile devices (smartphones and tablets - iOS, Android, other mobile OS)
-- Specialized endpoints (thin clients, chromebooks, kiosks, point-of-sale terminals)
+- Specialised endpoints (thin clients, chromebooks, kiosks, point-of-sale terminals)
 - IoT devices that store, process, or access organisational information
 - Virtual desktop infrastructure (VDI/DaaS client-side security components)
 
@@ -360,16 +360,16 @@ These frameworks inform implementation but do not constitute mandatory complianc
 **Required Management Capabilities**:
 
 - Configuration management (deploy and enforce security baselines)
-- Software deployment (centralized software distribution and updates)
+- Software deployment (centralised software distribution and updates)
 - Compliance monitoring (monitor baseline compliance, encryption status, software inventory)
 - Remote wipe capability (for lost/stolen devices)
-- Inventory synchronization (automatically update endpoint inventory)
+- Inventory synchronisation (automatically update endpoint inventory)
 
 **Enrollment Requirements**:
 
 - Timing: Enrollment required before device given to user (pre-deployment)
 - Coverage: 100% target for corporate laptops, desktops, mobile devices
-- BYOD: Containerized management (MAM) via MDM - limited scope (corporate apps/data only)
+- BYOD: Containerised management (MAM) via MDM - limited scope (corporate apps/data only)
 
 **Configuration Drift Management**: Weekly configuration compliance scans, automatic remediation where possible, drift remediated within 7 days.
 
@@ -391,7 +391,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Disposal Requirements**:
 
-- Data sanitization: Secure erase (NIST SP 800-88 Rev. 2 compliant) or physical destruction
+- Data sanitisation: Secure erase (NIST SP 800-88 Rev. 2 compliant) or physical destruction
 - Certificate of destruction: Required for all disposed endpoints
 - Inventory update: Endpoint marked "Disposed" in inventory with certificate attached
 
@@ -401,7 +401,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Degaussing: For magnetic hard drives
 - Physical Destruction: Shredding, crushing, or incineration (certified vendor)
 
-**Implementation Note**: Disposal procedures, sanitization methods, and vendor selection are defined in ISMS-IMP-A.8.1-7-18-19-S1 (Endpoint Discovery Process) and ISMS-REF-A.8.10 (Deletion Methods Reference).
+**Implementation Note**: Disposal procedures, sanitisation methods, and vendor selection are defined in ISMS-IMP-A.8.1-7-18-19-S1 (Endpoint Discovery Process) and ISMS-REF-A.8.10 (Deletion Methods Reference).
 
 ### BYOD Program (Conditional)
 
@@ -411,7 +411,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 - BYOD user agreement: Required (user acknowledges security requirements and remote container wipe)
 - Minimum device security: Device passcode, encryption (or container encryption), auto-lock, supported OS
-- Containerized management (MAM): Corporate apps in managed container, separated from personal data
+- Containerised management (MAM): Corporate apps in managed container, separated from personal data
 - Remote wipe scope: Container-only wipe (not full device wipe)
 
 **BYOD Privacy Protections**: No personal data access, no personal app inventory, no full device control, container-only management, transparent privacy notice.
@@ -531,7 +531,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Disk and file utilities (disk formatters, partition managers, secure delete tools)
 - Password and security tools (password recovery, encryption bypass tools)
 - Network utilities (packet sniffers, port scanners, network analysers)
-- Virtualization tools (hypervisors, VM management tools)
+- Virtualisation tools (hypervisors, VM management tools)
 - Any tools that can bypass security controls (disable antivirus, modify audit logs)
 
 **Inventory Maintenance**: Quarterly review of privileged utility inventory, new utilities assessed before deployment.
@@ -580,7 +580,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Monitoring Requirements**: Real-time alerting for unauthorised privileged utility usage attempts, daily review of privileged utility usage logs (automated anomaly detection), quarterly usage audit.
 
-**SIEM Integration**: Privileged utility usage logs forwarded to centralized SIEM (per ISMS-POL-A.8.15).
+**SIEM Integration**: Privileged utility usage logs forwarded to centralised SIEM (per ISMS-POL-A.8.15).
 
 **Implementation Note**: Logging configuration, monitoring procedures, and SIEM integration are defined in ISMS-IMP-A.8.1-7-18-19-S4 (Privileged Utility Management).
 
@@ -629,7 +629,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Software request with business justification
 - Security review (vulnerability assessment, vendor reputation, privacy review, license compliance)
 - Approval decision (approved, approved with conditions, denied)
-- Deployment (centralized deployment preferred, user self-installation if approved)
+- Deployment (centralised deployment preferred, user self-installation if approved)
 
 **Approval SLA**: Standard request 5 business days, urgent request 2 business days (manager approval), emergency request 1 business day (CISO approval). When CISO is unavailable, emergency approval authority delegates to: (1) Deputy CISO, (2) IT Director, or (3) designated Security Manager, with retrospective CISO review within 5 business days.
 
@@ -671,7 +671,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 **Enforcement**:
 
 - Corporate laptops/desktops: Whitelisting enforced (mandatory)
-- BYOD devices: Containerized apps only (corporate container whitelisting)
+- BYOD devices: Containerised apps only (corporate container whitelisting)
 - Servers: Strict whitelisting (change control required for new software)
 
 **Implementation Note**: Application control technology selection, whitelisting rule configuration, and enforcement mechanisms are defined in ISMS-IMP-A.8.1-7-18-19-S3 (Software Control Process).
@@ -699,7 +699,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **BYOD Software Approach**:
 
-- Containerized apps: Corporate apps installed in managed container (MAM solution)
+- Containerised apps: Corporate apps installed in managed container (MAM solution)
 - No personal app inventory: [Organisation] does not inventory or control personal apps (privacy)
 - Container-only controls: Application control applied to corporate container only
 - Personal app restrictions: No restrictions on personal app installation (user privacy), corporate data cannot be copied to personal apps (DLP controls)
@@ -785,7 +785,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 |----------------|-------------------|------------|
 | **A.5.9 - Asset Inventory** | Endpoint inventory feeds asset inventory | Endpoint devices = information assets |
 | **A.8.2 - Privileged Access Rights** | Privileged utility access is subset of privileged access management | Privileged utility users require governance |
-| **A.8.3 - Information Access Restriction** | Endpoint authentication enforces access restrictions | BYOD containerization separates data |
+| **A.8.3 - Information Access Restriction** | Endpoint authentication enforces access restrictions | BYOD containerisation separates data |
 | **A.8.5 - Secure Authentication** | Endpoint authentication implements secure authentication | MFA for endpoints and privileged utilities |
 | **A.8.8 - Vulnerability Management** | Software patching remediates endpoint vulnerabilities | Vulnerability scanning identifies unpatched software |
 | **A.8.9 - Configuration Management** | Endpoint baselines are managed configurations | Baseline drift = configuration deviation |
@@ -816,7 +816,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 - **Version Control**: All generator scripts maintained in version control with change history and approval tracking
 - **Sanity Check Scripts**: Each workbook type has corresponding sanity check script that validates structure, required sheets, and data integrity
-- **Normalization Scripts**: Normalization scripts ensure consistent formatting and styling across generated workbooks
+- **Normalisation Scripts**: Normalisation scripts ensure consistent formatting and styling across generated workbooks
 - **Test Execution**: Scripts tested against known baselines before deployment; output compared to expected results
 - **Peer Review**: Script modifications require peer review before merge to production branch
 - **Output Validation**: Generated workbooks validated against expected sheet structures, data validation rules, and formula integrity
@@ -855,7 +855,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Compensating Controls**: Required for all exceptions. Compensating controls reduce risk when primary control cannot be implemented.
 
-**Exception Tracking and Review**: All approved exceptions documented in centralized exception register, temporary exceptions reviewed monthly, permanent exceptions reviewed annually, high-risk exceptions reviewed quarterly.
+**Exception Tracking and Review**: All approved exceptions documented in centralised exception register, temporary exceptions reviewed monthly, permanent exceptions reviewed annually, high-risk exceptions reviewed quarterly.
 
 ## Regulatory Mapping
 
@@ -912,7 +912,7 @@ This policy addresses endpoint security requirements from multiple regulatory fr
 
 **MAM (Mobile Application Management)**: Management of corporate applications on mobile devices, especially BYOD scenarios, allowing corporate app/data control while preserving user privacy.
 
-**MDM (Mobile Device Management)**: Centralized management of mobile devices, enforcing security policies, deploying configurations, and enabling remote wipe capabilities.
+**MDM (Mobile Device Management)**: Centralised management of mobile devices, enforcing security policies, deploying configurations, and enabling remote wipe capabilities.
 
 **Privileged Utility Program**: Software tool capable of overriding or bypassing system and application security controls (e.g., registry editors, debuggers, administrative tools).
 
@@ -949,4 +949,4 @@ This policy addresses endpoint security requirements from multiple regulatory fr
 ---
 
 *This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.8.1-7-18-19 (UG/TG).*
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

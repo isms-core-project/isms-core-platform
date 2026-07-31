@@ -274,7 +274,7 @@ After completing this assessment, you will have:
 
    - Comparison of deployed capabilities vs. policy requirements
    - Identification of missing capabilities (correlation, threat intel, SOAR)
-   - Prioritized remediation plan with timelines
+   - Prioritised remediation plan with timelines
 
 3. **Coverage Analysis**
 
@@ -429,7 +429,7 @@ Before starting this assessment, gather the following information and access:
 
 **System Resource Usage:**
 
-- CPU utilization (% average, % peak)
+- CPU utilisation (% average, % peak)
 - Memory consumption
 - Disk I/O
 - Network bandwidth
@@ -524,7 +524,7 @@ To complete this assessment, you will need:
 
 - Step 1.1: Gather Prerequisites (2-3 hours)
 - Step 1.2: Review Policy Requirements (30-60 minutes)
-- Step 1.3: Familiarize with Assessment Workbook (30 minutes)
+- Step 1.3: Familiarise with Assessment Workbook (30 minutes)
 
 ## Phase 2: Data Collection (Week 1, Days 3-5)
 
@@ -728,7 +728,7 @@ Raw logs are data. Enriched logs are intelligence.
 - **Storage Consumption:** Total data stored, growth rate, retention compliance
 - **Search Performance:** Average query response time
 - **Alert Latency:** Time from event generation to alert notification
-- **Resource Utilization:** CPU, memory, disk I/O on monitoring infrastructure
+- **Resource Utilisation:** CPU, memory, disk I/O on monitoring infrastructure
 - **Capacity Headroom:** Available capacity for growth before scaling required
 
 **Column Guidance (10 data rows for performance metrics):**
@@ -914,4 +914,4 @@ Raw logs are data. Enriched logs are intelligence.
 *"Visibility is the precondition of control."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

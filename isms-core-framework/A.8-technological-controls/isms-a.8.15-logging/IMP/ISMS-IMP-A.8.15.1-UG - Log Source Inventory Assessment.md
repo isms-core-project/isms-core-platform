@@ -33,7 +33,7 @@
 **Related Documents**:
 
 - ISMS-POL-A.8.15 (Logging)
-- ISMS-IMP-A.8.15.2 (Log Collection & Centralization Assessment)
+- ISMS-IMP-A.8.15.2 (Log Collection & Centralisation Assessment)
 - ISMS-IMP-A.8.15.3 (Log Protection & Retention Assessment)
 - ISMS-IMP-A.8.15.4 (Log Analysis & Review Assessment)
 
@@ -105,7 +105,7 @@ This assessment verifies [Organisation]'s compliance with:
 2. **Event Logging Completeness**: Verification each system logs required event types
 3. **Gap Analysis**: Systems with missing or incomplete logging identified
 4. **Compliance Scoring**: Percentage of systems meeting logging requirements
-5. **Remediation Plan**: Prioritized action items with owners and timelines
+5. **Remediation Plan**: Prioritised action items with owners and timelines
 
 **Typical Assessment Results**:
 
@@ -193,7 +193,7 @@ Before starting this assessment, gather:
 Step 1: Gather System Inventory
   |
   v
-Step 2: Categorise Systems (by type, criticality, data classification)
+Step 2: Categorize Systems (by type, criticality, data classification)
   |
   v
 Step 3: Determine Required Events (per ISMS-POL-A.8.15, Section 2.1 + Annex A)
@@ -389,7 +389,7 @@ This section provides detailed guidance for completing each assessment sheet.
 - **Partial**: Some logs forwarded, some local only
 - **Planned**: Log forwarding scheduled but not yet configured
 - **Not Implemented**: No log forwarding, logs remain local only
-- **N/A**: Centralized logging not applicable (e.g., isolated test system)
+- **N/A**: Centralised logging not applicable (e.g., isolated test system)
 
 **Column M: SIEM Integration**
 
@@ -610,8 +610,8 @@ Per ISMS-POL-A.8.15, Section 2.1 (System Events):
 - [ ] System startup/shutdown (system identifier, event type, timestamp)
 - [ ] Service starts/stops/restarts (service name, action, initiated by, timestamp)
 - [ ] System errors/crashes (error type, affected system/component, error details, timestamp)
-- [ ] Resource exhaustion warnings (resource type, utilization level, affected system, timestamp)
-- [ ] Time synchronization events (time source, synchronization status, drift detected, timestamp)
+- [ ] Resource exhaustion warnings (resource type, utilisation level, affected system, timestamp)
+- [ ] Time synchronisation events (time source, synchronisation status, drift detected, timestamp)
 
 **Common Gaps**:
 
@@ -752,11 +752,11 @@ All evidence cataloged in Sheet 11 (Evidence_Register) with:
 - Request specific evidence for each required event type
 - Sample logs to verify required fields present
 
-## Local Logs Only (Not Centralized)
+## Local Logs Only (Not Centralised)
 
 **Pitfall**: Logs generated but only stored locally, not forwarded to SIEM
 
-**Impact**: Logs can be tampered with or deleted by attacker, log analysis difficult without centralization
+**Impact**: Logs can be tampered with or deleted by attacker, log analysis difficult without centralisation
 
 **Prevention**:
 
@@ -872,7 +872,7 @@ Before submitting assessment for approval, verify:
 ## Gap Analysis
 
 - [ ] **All gaps identified**: Every "Non-Compliant" or "Partial Compliance" has corresponding gap in Sheet 10 (Gap_Analysis)
-- [ ] **Gaps prioritized**: Severity assigned based on risk (Critical, High, Medium, Low)
+- [ ] **Gaps prioritised**: Severity assigned based on risk (Critical, High, Medium, Low)
 - [ ] **Remediation feasible**: Proposed actions are technically achievable
 - [ ] **Owners assigned**: Every gap has responsible owner and realistic timeline
 
@@ -930,7 +930,7 @@ Before submitting assessment for approval, verify:
 
 - All sections complete with no placeholder text
 - Compliance scoring methodology documented and calculations correct
-- Gap analysis comprehensive with prioritization and remediation plans
+- Gap analysis comprehensive with prioritisation and remediation plans
 - Evidence sufficient to support findings
 - System Owners and IT Operations confirmed accuracy
 
@@ -958,4 +958,4 @@ Before submitting assessment for approval, verify:
 *"A log unrecorded is an event unwitnessed."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

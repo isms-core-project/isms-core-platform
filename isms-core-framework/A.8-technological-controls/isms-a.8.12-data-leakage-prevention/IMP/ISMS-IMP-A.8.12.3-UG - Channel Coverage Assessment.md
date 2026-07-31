@@ -476,7 +476,7 @@ Organisations often deploy DLP on "obvious" channels (email, web) but miss "alte
 
 3. Test mobile DLP:
 
-   - Access corporate email on personal phone → Should require MDM enrollment or containerization
+   - Access corporate email on personal phone → Should require MDM enrollment or containerisation
    - Try to forward corporate email from mobile → Should block
    - Try to save attachment to mobile device storage → Should block or encrypt
    - AirDrop/Bluetooth file transfer from corporate app → Should block
@@ -516,7 +516,7 @@ Organisations often deploy DLP on "obvious" channels (email, web) but miss "alte
    - Assign owner (DLP admin + Endpoint team)
    - Set target date (Critical <30 days, High <90 days)
 
-3. Prioritize:
+3. Prioritise:
 
    - **Critical:** Unprotected channels for Restricted data (e.g., no USB blocking but HR data on endpoints)
    - **High:** Monitor-only channels that should be blocking (e.g., email DLP in monitor mode for Confidential data)
@@ -818,7 +818,7 @@ EV-[Domain]-[Channel]-[Date]-[Description].[ext]
 **Solution:**
 1. Complete channel inventory (all 7 categories)
 2. Deploy DLP across ALL high-risk channels
-3. Prioritize by data sensitivity × channel usage
+3. Prioritise by data sensitivity × channel usage
 4. Accept residual risk for low-usage channels (with CISO approval)
 
 ## "DLP is deployed but set to monitor-only everywhere"
@@ -891,7 +891,7 @@ EV-[Domain]-[Channel]-[Date]-[Description].[ext]
 **Common Mobile Gaps:**
 
 - MDM enrolled but no DLP policies enabled
-- Corporate apps containerized but copy/paste between container and device allowed
+- Corporate apps containerised but copy/paste between container and device allowed
 - BYOD enrollment optional (unmanaged devices can access corporate email)
 
 **Solution:**
@@ -1059,4 +1059,4 @@ Cost: _______
 *"Every channel is a potential leak; every policy is a potential seal."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

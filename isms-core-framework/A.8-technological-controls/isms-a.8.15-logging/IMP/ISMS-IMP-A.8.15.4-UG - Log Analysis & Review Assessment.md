@@ -34,7 +34,7 @@
 
 - ISMS-POL-A.8.15 (Logging)
 - ISMS-IMP-A.8.15.1 (Log Source Inventory Assessment)
-- ISMS-IMP-A.8.15.2 (Log Collection & Centralization Assessment)
+- ISMS-IMP-A.8.15.2 (Log Collection & Centralisation Assessment)
 - ISMS-IMP-A.8.15.3 (Log Protection & Retention Assessment)
 
 ---
@@ -228,7 +228,7 @@ Summary Dashboards (per workbook)
 - **SOC Analysts**: Front-line experience with alerts, tuning needs, false positives
 - **Security Engineers**: SIEM configuration, automation development
 - **Incident Response**: IR integration, escalation effectiveness
-- **InfoSec Manager**: Strategic perspective, resource prioritization
+- **InfoSec Manager**: Strategic perspective, resource prioritisation
 
 **Estimated Time**: 12-18 hours (distributed across multiple personnel over 2-3 weeks)
 
@@ -392,7 +392,7 @@ Summary Dashboards (per workbook)
   - Level 2: Developing - Rule tuned, documented, moderate effectiveness
   - Level 3: Defined - Well-tuned, low false positives, documented procedures
   - Level 4: Managed - Regularly tested, metrics tracked, continuous improvement
-  - Level 5: Optimized - Automated response, threat hunting integration, best-in-class
+  - Level 5: Optimised - Automated response, threat hunting integration, best-in-class
 - False Positive Rate (High >20%, Medium 5-20%, Low <5%)
 - True Positive Count (Last 90 days)
 - Last Tuned Date
@@ -580,7 +580,7 @@ Summary Dashboards (per workbook)
 **Detection Engineering Maturity**:
 
 - Detection Engineering Team Exists (Yes/No)
-- Use Case Development Process (Ad-hoc, Defined, Managed, Optimized)
+- Use Case Development Process (Ad-hoc, Defined, Managed, Optimised)
 - Use Case Testing Process (None, Manual, Automated)
 - Purple Team Exercises (Frequency: Never, Annual, Quarterly, Monthly)
 
@@ -675,7 +675,7 @@ Summary Dashboards (per workbook)
 
 - Case management reports (MTTD, MTTR, case age)
 - Investigation quality assessments (sample investigations)
-- SOC dashboard screenshots (metrics visualization)
+- SOC dashboard screenshots (metrics visualisation)
 - Monthly/quarterly SOC performance reports
 
 **For Automation (Sheet 6)**:
@@ -771,7 +771,7 @@ Summary Dashboards (per workbook)
 **How to Avoid**:
 
 - Assess automation gaps (Sheet 6 - current vs. target state)
-- Prioritize high-volume, low-complexity tasks for automation
+- Prioritise high-volume, low-complexity tasks for automation
 - Incremental automation (don't wait for perfect SOAR)
 
 ---
@@ -803,7 +803,7 @@ Summary Dashboards (per workbook)
 
 - Information Security Manager
 - Timeline: 3-5 days
-- Focus: Gap prioritization, resource needs
+- Focus: Gap prioritisation, resource needs
 
 **Level 3: Executive Approval**
 
@@ -822,4 +822,4 @@ Summary Dashboards (per workbook)
 *"Logs are only valuable when they are read."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -64,7 +64,7 @@
 This document provides **practical, step-by-step guidance** for creating and maintaining comprehensive network architecture documentation for [Organisation]. Proper documentation is essential for:
 
 - **Control A.8.20 (Network Security)**: Understanding network topology to implement perimeter controls, access controls, and monitoring
-- **Control A.8.22 (Network Segregation)**: Visualizing security zones, trust boundaries, and segmentation architecture
+- **Control A.8.22 (Network Segregation)**: Visualising security zones, trust boundaries, and segmentation architecture
 - **Operational Requirements**: Troubleshooting, capacity planning, change management, disaster recovery
 - **Audit and Compliance**: Demonstrating network security controls to auditors
 
@@ -146,7 +146,7 @@ Phase 5: Ongoing Maintenance
 - **Accuracy**: Documentation must reflect the actual network state (not aspirational or outdated)
 - **Completeness**: All network segments, devices, services, and connections must be documented
 - **Clarity**: Diagrams should be understandable by technical and non-technical audiences
-- **Consistency**: Use standardized symbols, colors, and formats across all diagrams
+- **Consistency**: Use standardised symbols, colors, and formats across all diagrams
 - **Currency**: Documentation must be updated promptly when the network changes (within 5 business days)
 - **Version Control**: Maintain history of changes (who, what, when, why)
 
@@ -157,7 +157,7 @@ Phase 5: Ongoing Maintenance
 ## Required Access and Permissions
 
 - **Network access**: Ability to access network devices to verify configurations
-- **Documentation repository access**: Ability to create/edit documents in centralized storage
+- **Documentation repository access**: Ability to create/edit documents in centralised storage
 - **Source data access**: Access to network discovery data (from IMP-S1), configuration backups, IPAM systems
 
 ## Recommended Documentation Tools
@@ -179,7 +179,7 @@ Phase 5: Ongoing Maintenance
 | **Mermaid** | Markdown-like syntax | Embeds in Markdown/documentation, GitHub/GitLab support | Limited for complex diagrams | Documentation in Git repositories |
 | **Graphviz (dot)** | DOT language | Powerful, automatic layout, scriptable | Steep learning curve, less visually appealing | Automated diagram generation |
 | **Terraform Graph** | HCL (Terraform) | Auto-generates from Terraform code | Only for Terraform-managed infrastructure | Cloud infrastructure (IaC) |
-| **PlantUML** | PlantUML syntax | Wide adoption, sequence diagrams, activity diagrams | Not specialized for network diagrams | Software architecture + networks |
+| **PlantUML** | PlantUML syntax | Wide adoption, sequence diagrams, activity diagrams | Not specialised for network diagrams | Software architecture + networks |
 
 ### IP Address Management (IPAM) Tools
 
@@ -251,7 +251,7 @@ Phase 5: Ongoing Maintenance
 **Optional Documentation Types** (for complex environments):
 
 - High-Availability Diagrams (failover paths, redundancy)
-- Capacity Planning Diagrams (bandwidth utilization, growth projections)
+- Capacity Planning Diagrams (bandwidth utilisation, growth projections)
 - Disaster Recovery Diagrams (backup links, failover sites)
 
 ### Establish Documentation Standards
@@ -726,7 +726,7 @@ graph TD
 
 **For Diagram-as-Code** (D2, Mermaid):
 
-1. **Initialize Git Repository**:
+1. **Initialise Git Repository**:
    ```bash
    mkdir network-docs
    cd network-docs
@@ -890,7 +890,7 @@ d2 switch_topology.d2 switch_topology.svg
 - [ ] Legend included (symbols, colors explained)
 - [ ] Title block complete (title, version, date, author, classification)
 - [ ] Version control implemented (file versions tracked)
-- [ ] Centralized storage (SharePoint, Confluence, Git)
+- [ ] Centralised storage (SharePoint, Confluence, Git)
 - [ ] Access controls configured (only authorised personnel can edit)
 
 ---
@@ -943,7 +943,7 @@ d2 switch_topology.d2 switch_topology.svg
 
 ## Documentation Storage and Access
 
-**Centralized Storage**:
+**Centralised Storage**:
 
 - Store in: SharePoint, Confluence, Git repository, ISMS document repository
 - Path: `ISMS/Network_Security/Documentation/`
@@ -1022,4 +1022,4 @@ Use this checklist for quarterly reviews:
 *"Architecture without documentation is architecture forgotten."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

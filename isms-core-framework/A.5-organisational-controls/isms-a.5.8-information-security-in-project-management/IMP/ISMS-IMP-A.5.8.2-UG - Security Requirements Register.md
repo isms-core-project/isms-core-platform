@@ -408,7 +408,7 @@ Key regulations and their security requirements:
 **GDPR (if processing EU personal data):**
 
 - Art. 25: Privacy by design and default
-- Art. 32: Technical measures (encryption, pseudonymization, access control, resilience)
+- Art. 32: Technical measures (encryption, pseudonymisation, access control, resilience)
 - Art. 33: Breach notification (within 72 hours)
 - Art. 5: Data minimisation, purpose limitation, retention limits
 
@@ -453,7 +453,7 @@ Key regulations and their security requirements:
   - Comprehensive security requirement library for web applications
   - 3 verification levels (1=Basic, 2=Standard, 3=Advanced)
   - 14 categories covering all application security domains
-  - Copy relevant requirements, customize for project
+  - Copy relevant requirements, customise for project
 
 - **CIS Benchmarks:** https://www.cisecurity.org/cis-benchmarks
   - Security configuration requirements for OS, databases, cloud
@@ -462,7 +462,7 @@ Key regulations and their security requirements:
 
 - **NIST SP 800-53 (Security and Privacy Controls):**
   - Federal security control catalog
-  - Organized by control family (Access Control, Audit, Crypto, etc.)
+  - Organised by control family (Access Control, Audit, Crypto, etc.)
   - Can map requirements to NIST controls for compliance
 
 **4. Threat Modeling Output:**
@@ -512,7 +512,7 @@ For each of the 6 requirement categories, ask:
 **Category 1: Application Security (if software development)**
 
 - What secure coding standards will we follow? (OWASP, CERT, SANS)
-- How will we validate user inputs? (whitelist validation, parameterized queries)
+- How will we validate user inputs? (whitelist validation, parameterised queries)
 - What authentication mechanism? (password, MFA, SSO, OAuth, SAML)
 - What authorisation model? (RBAC, ABAC, ACLs)
 - How will we manage sessions? (timeout, secure cookies, token-based)
@@ -642,7 +642,7 @@ Use security standards as requirement sources:
 
 - A01: Broken Access Control → Requirements for authorisation, access controls
 - A02: Cryptographic Failures → Requirements for encryption
-- A03: Injection → Requirements for input validation, parameterized queries
+- A03: Injection → Requirements for input validation, parameterised queries
 - A04: Insecure Design → Requirements for threat modeling, secure architecture
 - A05: Security Misconfiguration → Requirements for secure configuration
 - A06: Vulnerable Components → Requirements for dependency scanning, patching
@@ -677,7 +677,7 @@ Copy relevant ASVS requirements (e.g., from V2 Authentication, V3 Session Manage
 
 **When:** After requirements identified, before Execution phase begins
 
-**Objective:** Structure requirements in standardized format for traceability
+**Objective:** Structure requirements in standardised format for traceability
 
 **Open Requirements Register Workbook, Sheet 2: Requirements Register**
 
@@ -689,7 +689,7 @@ For each requirement, complete all mandatory fields:
 | **Category** | Which category? | Application Security / Data Protection / Access Control / Infrastructure / Third-Party / Compliance | Dropdown selection |
 | **Requirement Statement** | WHAT must be done | "All user passwords must meet complexity: min 12 chars, upper+lower+number+special" | Clear, specific, testable; avoid "should", use "must" |
 | **Source** | WHY is this required? | ISMS-POL-A.5.18 Section 4.1 / GDPR Art. 32 / OWASP ASVS V2.1.1 / Threat Model T-012 / Risk R-003 | Policy section, regulation, standard, threat, or risk |
-| **Priority** | Business criticality | Must Have / Should Have / Nice to Have | MoSCoW prioritization |
+| **Priority** | Business criticality | Must Have / Should Have / Nice to Have | MoSCoW prioritisation |
 | **Acceptance Criteria** | HOW to verify? | "Functional test: Attempt password 'Pass1' (fails), 'P@ssw0rd123' (succeeds)" | Testable criteria, clear pass/fail |
 | **Implementation Status** | Current state | Not Started / In Progress / Implemented / Verified | Updated during Execution phase |
 | **Assigned To** | WHO implements? | [Developer name, Team name] | Person or team responsible |
@@ -755,7 +755,7 @@ REQ-010: "Follow security best practices."
 
 ---
 
-## Step 3: Prioritize Requirements (Planning Phase - 1-2 hours)
+## Step 3: Prioritise Requirements (Planning Phase - 1-2 hours)
 
 **When:** After initial documentation, before implementation begins
 
@@ -786,7 +786,7 @@ REQ-010: "Follow security best practices."
 - InfoSec Officer reviews and approves Must Have vs. Should Have split
 - Project Manager confirms implementation sequence feasible
 
-**Deliverable:** Prioritized requirements with implementation sequence
+**Deliverable:** Prioritised requirements with implementation sequence
 
 ---
 
@@ -1050,7 +1050,7 @@ If requirement fails verification:
 This section provides detailed guidance for each of the 6 requirement categories, including:
 
 - When category applies
-- Common requirements (examples to customize)
+- Common requirements (examples to customise)
 - Requirement sources (standards, policies)
 - Verification approaches
 
@@ -1070,14 +1070,14 @@ This section provides detailed guidance for each of the 6 requirement categories
 - DevOps teams
 - Application architects
 
-**Common Requirements (Examples - Customize for Your Project):**
+**Common Requirements (Examples - Customise for Your Project):**
 
 ### Subcategory 1.1: Input Validation
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
 | "All user inputs must be validated using whitelist validation (allow-list of acceptable inputs). Reject inputs containing special characters unless explicitly required for functionality." | OWASP Top 10 A03:2021 (Injection) | SAST + Functional Test |
-| "All SQL queries must use parameterized statements (prepared statements) or ORM frameworks. Direct SQL string concatenation is prohibited." | OWASP ASVS V5.3.4 | SAST (check for string concatenation in SQL) |
+| "All SQL queries must use parameterised statements (prepared statements) or ORM frameworks. Direct SQL string concatenation is prohibited." | OWASP ASVS V5.3.4 | SAST (check for string concatenation in SQL) |
 | "File uploads must validate file type, size (<10MB), and scan for malware before processing." | OWASP ASVS V12.4.1 | Functional Test + Code Review |
 
 ### Subcategory 1.2: Authentication
@@ -1133,7 +1133,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "API authentication must use OAuth 2.0 or API keys (not Basic Auth with credentials in clear text). API keys rotated every 90 days." | OWASP API Security Top 10 API2:2019 | API Test + Config Review |
 | "APIs must implement rate limiting: 100 requests/minute per API key, 1000 requests/hour per IP. Exceeded limits return HTTP 429." | OWASP API Security Top 10 API4:2019 | API Load Test |
 | "API responses must not expose sensitive data (user tokens, internal IDs, full error messages)." | OWASP ASVS V13.1.4 | API Test |
-| "API input validation same standards as web UI: whitelist validation, parameterized queries, size limits." | OWASP API Security Top 10 API8:2019 | SAST + API Test |
+| "API input validation same standards as web UI: whitelist validation, parameterised queries, size limits." | OWASP API Security Top 10 API8:2019 | SAST + API Test |
 
 ### Subcategory 1.8: Security Testing
 
@@ -1202,9 +1202,9 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Personal data retained only as long as necessary for processing purpose. Retention periods defined: [e.g., Customer data: 7 years after last transaction, Application logs: 90 days]." | GDPR Art. 5(1)(e) + ISMS-POL-A.8.10 | Document Review (retention schedule) |
 | "Data deletion upon retention period expiry or user request (GDPR right to erasure): Secure deletion per ISMS-POL-A.8.10 (overwrite, crypto erase, or physical destruction)." | GDPR Art. 17 + ISMS-POL-A.8.10 | Deletion Test (verify data irrecoverable) |
 | "Backups: Backup retention aligned with data retention policy. Backups deleted when source data reaches retention limit." | ISMS-POL-A.8.13 Section 4.3 | Backup Config Review |
-| "Test/dev data: Production Confidential data must NOT be used in test/dev without anonymization or masking per ISMS-POL-A.8.11." | ISMS-POL-A.8.11 Section 3.2 | Test Data Review |
+| "Test/dev data: Production Confidential data must NOT be used in test/dev without anonymisation or masking per ISMS-POL-A.8.11." | ISMS-POL-A.8.11 Section 3.2 | Test Data Review |
 
-### Subcategory 2.5: Data Minimization and Purpose Limitation (GDPR)
+### Subcategory 2.5: Data Minimisation and Purpose Limitation (GDPR)
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1359,7 +1359,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
 | "Production environment must be network-segmented from development/test environments. No direct network connectivity between production and non-production." | ISMS-POL-A.8.20 Section 3.1 | Network Diagram Review + Connectivity Test |
-| "DMZ (demilitarized zone) required for internet-facing systems. Public-facing servers in DMZ, application servers in internal network, database servers in restricted zone." | ISMS-POL-A.8.20 Section 3.2 | Network Architecture Review |
+| "DMZ (demilitarised zone) required for internet-facing systems. Public-facing servers in DMZ, application servers in internal network, database servers in restricted zone." | ISMS-POL-A.8.20 Section 3.2 | Network Architecture Review |
 | "VLANs or security groups for logical network segmentation: Web tier, Application tier, Database tier, Management tier isolated with firewall rules between." | ISMS-POL-A.8.20 Section 3.3 | Network Config Review |
 | "Jump host/bastion host required for administrative access to production servers. No direct SSH/RDP from admin workstations to production." | ISMS-POL-A.8.20 Section 3.4 | Access Flow Diagram + Connectivity Test |
 | "Cloud network isolation: VPCs/VNets segregated by environment (prod/test/dev), security groups restrict traffic to minimum necessary." | ISMS-POL-A.8.20 Section 3.5 (Cloud) | Cloud Config Review (AWS Security Groups, Azure NSGs) |
@@ -1411,7 +1411,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
-| "Centralized logging: All infrastructure logs (firewall, server, network devices) forwarded to SIEM (Security Information and Event Management) system." | ISMS-POL-A.8.16 Section 3.3 | SIEM Config Review (log sources) |
+| "Centralised logging: All infrastructure logs (firewall, server, network devices) forwarded to SIEM (Security Information and Event Management) system." | ISMS-POL-A.8.16 Section 3.3 | SIEM Config Review (log sources) |
 | "Infrastructure security events logged: Failed login attempts, privilege escalation, configuration changes, service start/stop, firewall rule changes." | ISMS-POL-A.8.16 Section 3.1 | Log Sample Review |
 | "Log retention: Infrastructure logs retained 90 days online, 365 days archived for security investigations." | ISMS-POL-A.8.16 Section 5.1 | Log Retention Config Review |
 | "Real-time alerting: Critical security events trigger immediate alerts (failed root login, firewall rule deletion, malware detected, DLP violation)." | ISMS-POL-A.8.16 Section 4.3 | SIEM Alert Rules Review + Test Alert |
@@ -1496,7 +1496,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Data minimisation with vendors: Share only data necessary for vendor to perform service. Do not share entire customer database if vendor only needs email addresses." | GDPR Art. 5(1)(c) + ISMS-POL-A.5.21 | Data Sharing Agreement Review |
 | "Data segregation: Vendor must logically or physically segregate [Organisation]'s data from other clients' data (multi-tenant SaaS)." | ISMS-POL-A.5.21 Section 4.1 | Vendor Architecture Review |
 | "Data transmission encryption: Confidential data transmitted to vendor must be encrypted in transit (SFTP, HTTPS, VPN) per ISMS-POL-A.8.24." | ISMS-POL-A.8.24 Section 6.2 | File Transfer Protocol Review |
-| "Data residency: Vendor must store [Organisation] data in [specific region/country] to comply with data localization requirements (GDPR, nDSG, local laws)." | GDPR Art. 44-49 + ISMS-POL-00 | Vendor Data Center Location Confirmation |
+| "Data residency: Vendor must store [Organisation] data in [specific region/country] to comply with data localisation requirements (GDPR, nDSG, local laws)." | GDPR Art. 44-49 + ISMS-POL-00 | Vendor Data Center Location Confirmation |
 | "Cross-border data transfer controls: If vendor transfers data outside [region], implement Standard Contractual Clauses (SCCs) or Binding Corporate Rules (BCRs) for GDPR compliance." | GDPR Art. 46 | Contract Review (SCCs attached) |
 
 ### Subcategory 5.5: Third-Party Access Management
@@ -1605,7 +1605,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Privacy by design and default: Implement privacy controls by default (data minimisation, purpose limitation, retention limits) without user configuration required." | GDPR Art. 25 | Privacy Settings Review (secure defaults) |
 | "Purpose limitation: Use personal data only for specified, explicit purposes. Do not repurpose data without new lawful basis and user notification." | GDPR Art. 5(1)(b) | Data Usage Review + Privacy Notice |
 | "Data minimisation: Collect only personal data necessary for stated purpose. Avoid 'just in case' data collection." | GDPR Art. 5(1)(c) | Data Collection Review (necessity assessment) |
-| "Storage limitation: Retain personal data only as long as necessary for processing purpose. Delete or anonymize when no longer needed." | GDPR Art. 5(1)(e) | Retention Schedule + Deletion Procedures |
+| "Storage limitation: Retain personal data only as long as necessary for processing purpose. Delete or anonymise when no longer needed." | GDPR Art. 5(1)(e) | Retention Schedule + Deletion Procedures |
 | "Cookie consent: Obtain explicit consent before setting non-essential cookies (analytics, marketing). Essential cookies (authentication, security) exempt." | ePrivacy Directive + GDPR | Cookie Consent Banner Review + Cookie Audit |
 | "Consent withdrawal: Provide easy mechanism for users to withdraw consent. Withdrawal must be as easy as giving consent." | GDPR Art. 7(3) | Consent Withdrawal Functional Test |
 
@@ -1642,4 +1642,4 @@ This section provides detailed guidance for each of the 6 requirement categories
 *"A requirement unstated is a requirement unmet."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

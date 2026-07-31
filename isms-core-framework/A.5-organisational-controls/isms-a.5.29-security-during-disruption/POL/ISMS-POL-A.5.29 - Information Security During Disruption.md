@@ -545,4 +545,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for maintaining information security during disruption. Implementation procedures are documented in ISMS-IMP-A.5.29 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

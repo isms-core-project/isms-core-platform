@@ -1021,7 +1021,7 @@ Before submitting this assessment, verify:
 - [ ] Cross-reference with HR completed (no departed employees as owners)
 - [ ] No placeholder owners ("TBD", "Unknown", etc.)
 - [ ] Department names replaced with individual owners
-- [ ] Unowned assets prioritized by criticality
+- [ ] Unowned assets prioritised by criticality
 
 ### Acknowledgment Checks
 
@@ -1142,4 +1142,4 @@ Before submitting this assessment, verify:
 *"Ownership is the beginning of stewardship."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

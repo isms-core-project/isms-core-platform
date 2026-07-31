@@ -110,7 +110,7 @@
 | 20 | Protocols Inspected |
 | 21 | SSL/TLS Inspection |
 | 22 | Throughput Capacity |
-| 23 | Current Utilization % |
+| 23 | Current Utilisation % |
 | 24 | Content Inspection |
 | 25 | Pattern Matching (Regex) |
 | 26 | Fingerprinting |
@@ -226,4 +226,4 @@ Deferred
 *"You cannot prevent what you cannot see."*
 — Security monitoring principle
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

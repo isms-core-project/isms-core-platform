@@ -674,7 +674,7 @@ WHERE type_desc = 'SQL_LOGIN';
 - Entra ID password policy: `EV-1-EntraID-Password-Policy-20260115.png`
 - PostgreSQL hash algorithm: `EV-1-PostgreSQL-Hash-Method-20260115.txt` (SQL query result)
 - MySQL authentication plugin: `EV-1-MySQL-Auth-Plugin-20260115.txt`
-- Linux /etc/shadow sample: `EV-1-Linux-Shadow-Hash-Sample-20260115.txt` (sanitized)
+- Linux /etc/shadow sample: `EV-1-Linux-Shadow-Hash-Sample-20260115.txt` (sanitised)
 - SQL Server password policy: `EV-1-MSSQL-Password-Policy-20260115.txt`
 
 **Common Issues & Solutions:**
@@ -888,10 +888,10 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 
 **Storage Requirements:**
 
-- **Location:** Centralized evidence repository (same as IMP-1, IMP-2)
-- **Folder Structure:** Organize by assessment section
+- **Location:** Centralised evidence repository (same as IMP-1, IMP-2)
+- **Folder Structure:** Organise by assessment section
 - **Retention:** Audit cycle + 1 year minimum
-- **Sensitivity:** Authentication configs may contain sensitive info - sanitize credentials
+- **Sensitivity:** Authentication configs may contain sensitive info - sanitise credentials
 
 **Evidence Quality Criteria:**
 
@@ -899,7 +899,7 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - **Complete:** Full reports/screenshots
 - **Attributable:** Clear which system it documents
 - **Verifiable:** Auditor can reproduce
-- **Protected:** Stored securely, sanitized
+- **Protected:** Stored securely, sanitised
 
 ## Evidence Types by Section
 
@@ -907,9 +907,9 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 
 - AD password policy (PowerShell export)
 - Entra ID password policy (screenshot)
-- Database password hash algorithm (SQL query result, sanitized)
-- Linux password hash format (/etc/shadow sample, sanitized)
-- Application password policy (config file excerpt, sanitized)
+- Database password hash algorithm (SQL query result, sanitised)
+- Linux password hash format (/etc/shadow sample, sanitised)
+- Application password policy (config file excerpt, sanitised)
 - Password policy GPO export
 
 **2. Multi-Factor Authentication:**
@@ -973,7 +973,7 @@ az ad policy list --query "[?contains(type, 'password')]" > EV-1-EntraID-Passwor
 az ad conditional-access policy list > EV-2-Conditional-Access.json
 ```
 
-**Database Queries (Sanitize Output!):**
+**Database Queries (Sanitise Output!):**
 ```sql
 -- PostgreSQL password hash (SANITIZE before saving)
 SELECT rolname, 
@@ -982,11 +982,11 @@ FROM pg_authid
 WHERE rolpassword IS NOT NULL;
 ```
 
-## Evidence Sanitization
+## Evidence Sanitisation
 
 **CRITICAL:** Remove sensitive information:
 
-**Must Sanitize:**
+**Must Sanitise:**
 
 - Password hashes (show format/algorithm only, not actual hash)
 - Service account passwords
@@ -1265,4 +1265,4 @@ WHERE rolpassword IS NOT NULL;
 *"A certificate without verification is a signature without a witness."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

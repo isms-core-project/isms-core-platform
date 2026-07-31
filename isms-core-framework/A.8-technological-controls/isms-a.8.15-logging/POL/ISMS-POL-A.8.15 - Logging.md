@@ -41,13 +41,13 @@
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-IMP-A.8.15.1-UG/TG (Log Source Inventory Assessment)
-- ISMS-IMP-A.8.15.2-UG/TG (Log Collection & Centralization Assessment)
+- ISMS-IMP-A.8.15.2-UG/TG (Log Collection & Centralisation Assessment)
 - ISMS-IMP-A.8.15.3-UG/TG (Log Protection & Retention Assessment)
 - ISMS-IMP-A.8.15.4-UG/TG (Log Analysis & Review Assessment)
 
 - ISMS-REF-A.8.15 (Logging Standards Reference)
 - ISMS-POL-A.8.16 (Monitoring Activities)
-- ISMS-POL-A.8.17 (Clock Synchronization)
+- ISMS-POL-A.8.17 (Clock Synchronisation)
 - ISMS-POL-A.5.24 (Information Security Incident Management)
 
 ---
@@ -129,8 +129,8 @@ Implementation procedures (HOW logs are technically configured) are documented s
 
 **Integrity protection**:
 
-- Logs SHALL be forwarded to centralized collection within 5 minutes for security events
-- Centralized collection prevents local tampering
+- Logs SHALL be forwarded to centralised collection within 5 minutes for security events
+- Centralised collection prevents local tampering
 - Cryptographic or write-once protection SHOULD be implemented for compliance-critical logs
 
 **Secure transmission**:
@@ -157,7 +157,7 @@ Implementation procedures (HOW logs are technically configured) are documented s
 
 **Storage and disposal**:
 
-- Tiered storage architecture (hot, warm, cold) SHALL optimize cost and accessibility
+- Tiered storage architecture (hot, warm, cold) SHALL optimise cost and accessibility
 - Logs SHALL be securely deleted after retention expiry using approved methods
 - Legal hold procedures SHALL suspend deletion during litigation or investigation
 
@@ -200,15 +200,15 @@ Implementation procedures (HOW logs are technically configured) are documented s
 - Card verification codes (CVV/CVC)
 - National identification numbers (full SSN, passport number)
 - Full contents of personal communications (subject lines/metadata permitted)
-- Biometric templates (raw biometric data prohibited; pseudonymized identifiers permitted)
+- Biometric templates (raw biometric data prohibited; pseudonymised identifiers permitted)
 - Other regulated special categories as identified by DPO per GDPR Art. 9 or nDSG Art. 5
 
 **DPO Authoritative List**: DPO SHALL maintain authoritative list of prohibited data types, reviewed quarterly and updated when new data categories are processed.
 
 **Privacy principles**:
 
-- Minimize personal data collection in logs
-- Use pseudonymization where feasible
+- Minimise personal data collection in logs
+- Use pseudonymisation where feasible
 - Inform users of monitoring through acceptable use policy
 - DPO SHALL review logging implementations affecting personal data
 
@@ -224,7 +224,7 @@ Implementation procedures (HOW logs are technically configured) are documented s
 | **CISO** | Overall policy effectiveness; approve exceptions; define logging requirements based on risk |
 | **Information Security Manager** | Implement policy requirements; coordinate logging enablement; manage exceptions |
 | **SOC Team** | Daily log review; alert investigation; incident escalation; 24/7 coverage |
-| **IT Operations** | Configure system logging; ensure log forwarding; maintain time synchronization |
+| **IT Operations** | Configure system logging; ensure log forwarding; maintain time synchronisation |
 | **System/Application Owners** | Enable appropriate logging; document log events; coordinate onboarding |
 | **Log Administrators** | Manage SIEM platform; configure collection and retention; maintain separation of duties |
 | **DPO** | Review privacy compliance; advise on personal data handling; respond to data subject requests |
@@ -354,7 +354,7 @@ The following SHALL be classified as security incidents:
 | Document | Purpose |
 |----------|---------|
 | **ISMS-IMP-A.8.15.1-UG/TG** | Log Source Inventory Assessment |
-| **ISMS-IMP-A.8.15.2-UG/TG** | Log Collection & Centralization Assessment |
+| **ISMS-IMP-A.8.15.2-UG/TG** | Log Collection & Centralisation Assessment |
 | **ISMS-IMP-A.8.15.3-UG/TG** | Log Protection & Retention Assessment |
 | **ISMS-IMP-A.8.15.4-UG/TG** | Log Analysis & Review Assessment |
 
@@ -365,7 +365,7 @@ The following SHALL be classified as security incidents:
 | Control | Integration |
 |---------|-------------|
 | **A.8.16 (Monitoring)** | Real-time monitoring consumes logs for alerting |
-| **A.8.17 (Clock Synchronization)** | Accurate timestamps for log correlation |
+| **A.8.17 (Clock Synchronisation)** | Accurate timestamps for log correlation |
 | **A.5.24 (Incident Management)** | Logs provide incident detection and investigation evidence |
 | **A.5.17-18 (Authentication/Access)** | Authentication and authorisation events logged |
 
@@ -378,7 +378,7 @@ The following SHALL be classified as security incidents:
 | Domain | Frequency | Procedure | Evidence Output |
 |--------|-----------|-----------|-----------------|
 | Log Source Inventory | Annual (quarterly updates) | ISMS-IMP-A.8.15.1-UG/TG | Inventory workbook with coverage % |
-| Collection & Centralization | Annual (quarterly metrics) | ISMS-IMP-A.8.15.2-UG/TG | Forwarding compliance report |
+| Collection & Centralisation | Annual (quarterly metrics) | ISMS-IMP-A.8.15.2-UG/TG | Forwarding compliance report |
 | Protection & Retention | Semi-annual | ISMS-IMP-A.8.15.3-UG/TG | Retention compliance workbook |
 | Analysis & Review | Quarterly | ISMS-IMP-A.8.15.4-UG/TG | Review completion records |
 
@@ -453,4 +453,4 @@ The following SHALL be classified as security incidents:
 
 *This policy establishes requirements for event logging controls. Implementation procedures are documented in ISMS-IMP-A.8.15 (UG/TG). Technical standards are documented in ISMS-REF-A.8.15.*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

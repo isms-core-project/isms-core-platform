@@ -52,7 +52,7 @@
 
 This policy establishes [Organisation]'s requirements for data masking controls to protect sensitive information confidentiality in accordance with ISO/IEC 27001:2022 Control A.8.11.
 
-**Scope**: This policy applies to all sensitive data categories (PII, financial, health, credentials, proprietary) across all environments (production, test, development, analytics, training, backup); all masking techniques (redaction, substitution, tokenization, pseudonymization, anonymization); and all organisational personnel, contractors, and third parties handling sensitive data.
+**Scope**: This policy applies to all sensitive data categories (PII, financial, health, credentials, proprietary) across all environments (production, test, development, analytics, training, backup); all masking techniques (redaction, substitution, tokenisation, pseudonymisation, anonymisation); and all organisational personnel, contractors, and third parties handling sensitive data.
 
 **Purpose**: Define organisational requirements for data masking control implementation and governance. This policy establishes WHAT data requires masking, WHICH techniques are approved, and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.11 (UG/TG variants).
 
@@ -164,7 +164,7 @@ Regulatory requirements are categorised per **ISMS-POL-00 (Regulatory Applicabil
 | Regulation | Applicability | Key Data Masking Requirements |
 |------------|---------------|-------------------------------|
 | **Swiss nDSG** | All Swiss operations | Art. 8 - Data protection by design including data minimisation; Art. 25 - Appropriate technical and organisational measures for personal data protection |
-| **EU GDPR** | When processing EU personal data | Art. 5(1)(c) - Data minimisation principle; Art. 25 - Data protection by design and default; Art. 32 - Security of processing including pseudonymization; Art. 89 - Safeguards for research/statistics including pseudonymization |
+| **EU GDPR** | When processing EU personal data | Art. 5(1)(c) - Data minimisation principle; Art. 25 - Data protection by design and default; Art. 32 - Security of processing including pseudonymisation; Art. 89 - Safeguards for research/statistics including pseudonymisation |
 | **ISO/IEC 27001:2022** | Certification scope | Control A.8.11 - Documented data masking policy, implemented controls, evidence of effectiveness |
 
 **Tier 2: Conditional Applicability**
@@ -173,11 +173,11 @@ Apply only when specific business conditions trigger applicability:
 
 | Regulation | Trigger Condition | Data Masking Requirements |
 |-----------|-------------------|---------------------------|
-| **PCI DSS v4.0.1** | Processing payment card data | Req. 3.4 - PAN rendered unreadable (masking, truncation, hashing, tokenization); Req. 3.5 - Primary Account Number (PAN) masked when displayed (minimum first 6 and last 4 digits); Req. 12.3 - Data usage policies for non-production environments |
+| **PCI DSS v4.0.1** | Processing payment card data | Req. 3.4 - PAN rendered unreadable (masking, truncation, hashing, tokenisation); Req. 3.5 - Primary Account Number (PAN) masked when displayed (minimum first 6 and last 4 digits); Req. 12.3 - Data usage policies for non-production environments |
 | **HIPAA Privacy Rule** | US healthcare data (ePHI) | §164.514(a)-(b) - De-identification standards (Expert Determination or Safe Harbor method); §164.514(c) - Re-identification prohibition; §164.530(c) - Administrative safeguards for de-identified data |
 | **FINMA** | Swiss regulated financial institution | Technical and organisational measures per risk assessment; client data protection requirements; outsourcing risk management (FINMA Circular 2018/3) |
 | **DORA** | EU financial services entity (ICT risk) | Art. 9 - ICT risk management framework including data protection controls; Art. 28 - ICT third-party risk management including data security |
-| **NIS2** | Essential/important entity (EU) | Art. 21 - Cybersecurity risk management measures including data security; Data minimisation and pseudonymization for risk reduction |
+| **NIS2** | Essential/important entity (EU) | Art. 21 - Cybersecurity risk management measures including data security; Data minimisation and pseudonymisation for risk reduction |
 | **ISO/IEC 27701** | Privacy extension (if implemented) | Control 7.2.2 - Identify basis for PII processing; Control 7.3.2 - Determine PII de-identification and deletion; Control 7.4.5 - PII de-identification and deletion processes |
 
 **Tier 3: Informational Guidance**
@@ -260,16 +260,16 @@ The following masking technique categories are approved for use:
 | **Dynamic Data Masking (DDM)** | Real-time masking based on user role at query time | N/A (original data unchanged) | Production role-based access, compliance scenarios |
 | **Redaction/Nullification** | Complete removal or placeholder replacement | Irreversible | Reports, exports, screenshots |
 | **Substitution** | Replacement with realistic fictitious data | Irreversible | Test data generation, maintaining data utility |
-| **Tokenization** | Replacement with tokens; original in secure vault | Reversible with vault | Payment systems, referential integrity requirements |
-| **Pseudonymization** | Replacement with pseudonyms; re-identifiable with key | Reversible with key | GDPR compliance, research/analytics |
-| **Anonymization** | Irreversible removal of all identifying information | Irreversible | Public data release, statistical analysis |
+| **Tokenisation** | Replacement with tokens; original in secure vault | Reversible with vault | Payment systems, referential integrity requirements |
+| **Pseudonymisation** | Replacement with pseudonyms; re-identifiable with key | Reversible with key | GDPR compliance, research/analytics |
+| **Anonymisation** | Irreversible removal of all identifying information | Irreversible | Public data release, statistical analysis |
 
 **Technique Selection Criteria**:
 
 Masking technique selection SHALL consider:
 
 - **Data sensitivity classification**: Higher sensitivity requires stronger masking
-- **Regulatory requirements**: GDPR pseudonymization vs. anonymization, PCI DSS v4.0.1 masking rules
+- **Regulatory requirements**: GDPR pseudonymisation vs. anonymisation, PCI DSS v4.0.1 masking rules
 - **Business use case**: Development/testing vs. analytics vs. external sharing
 - **Reversibility requirements**: Legitimate need to recover original data
 - **Format preservation**: Maintaining data format for application compatibility
@@ -280,7 +280,7 @@ Masking technique selection SHALL consider:
 
 The following practices are NOT acceptable as masking techniques:
 
-- Simple character substitution without randomization (predictable patterns)
+- Simple character substitution without randomisation (predictable patterns)
 - ROT13 or Caesar cipher (trivially reversible)
 - Reversible encoding (Base64, URL encoding) without encryption
 - Production data in non-production without any masking (policy violation)
@@ -310,7 +310,7 @@ New masking techniques or significant modifications to approved techniques SHALL
 | **Production** | Risk-based; mask where operationally feasible | Business operations require some real data | Document business justification for unmasked data |
 | **Test/QA** | Mandatory for Restricted/Confidential data | No business need for real sensitive data | Requires CISO approval with compensating controls |
 | **Development** | Mandatory for Restricted/Confidential data | Developers do not need real sensitive data | Requires CISO approval with compensating controls |
-| **Analytics/BI** | Mandatory unless aggregated or anonymized | Analytics can function with masked data | Aggregate reporting may not require masking |
+| **Analytics/BI** | Mandatory unless aggregated or anonymised | Analytics can function with masked data | Aggregate reporting may not require masking |
 | **Training** | Mandatory for ALL sensitive data | Training must use non-sensitive data | No exceptions |
 | **Sandbox/Experimental** | Mandatory for ALL sensitive data | Experimental environments are high-risk | No exceptions |
 | **Backup/Archive** | Same protection as source environment | Backups mirror source data sensitivity | N/A - follows source requirements |
@@ -351,7 +351,7 @@ Masking implementations SHALL be tested for:
 | **Referential Integrity Testing** | Verify cross-table relationships preserved | Before production deployment | Foreign key relationships intact, joins function correctly |
 | **Format Validation Testing** | Verify data format and validation rules | Before production deployment | Masked data passes application validation rules |
 | **Performance Testing** | Verify acceptable performance impact | Before production deployment for DDM | Masking overhead within acceptable limits (<10% typically) |
-| **Re-identification Risk Assessment** | Verify data cannot be re-identified | Annually, or when data structure changes | Anonymization/pseudonymization meets regulatory standards |
+| **Re-identification Risk Assessment** | Verify data cannot be re-identified | Annually, or when data structure changes | Anonymisation/pseudonymisation meets regulatory standards |
 | **Regression Testing** | Verify masking after system changes | After masking configuration changes | Masking continues to function correctly |
 
 **Validation Methodology**:
@@ -361,8 +361,8 @@ Masking validation SHALL include:
 - Sample data inspection (manual review of masked vs. unmasked data)
 - Automated pattern detection (searching for unmasked sensitive data patterns)
 - Reverse engineering attempts (attempting to recover original data from masked data)
-- Statistical analysis (for anonymization - verify k-anonymity, l-diversity as applicable)
-- Re-identification testing (for GDPR pseudonymization compliance)
+- Statistical analysis (for anonymisation - verify k-anonymity, l-diversity as applicable)
+- Re-identification testing (for GDPR pseudonymisation compliance)
 
 **Acceptance Criteria**:
 
@@ -449,7 +449,7 @@ Logging SHALL comply with applicable privacy regulations per ISMS-POL-00. Users 
 **Data Protection Officer (DPO)**:
 
 - Advising on GDPR/nDSG compliance for masking implementations
-- Reviewing pseudonymization and anonymization techniques for regulatory adequacy
+- Reviewing pseudonymisation and anonymisation techniques for regulatory adequacy
 - Ensuring data subject rights are respected in masked datasets
 - Coordinating with CISO on privacy-by-design implementations
 - Monitoring compliance with data protection regulations
@@ -603,7 +603,7 @@ Active exceptions are:
 - Escalated if risk profile increases
 - Automatically expired at end of approved duration (no implicit renewal)
 
-**Exception Template**: ISMS-POL-A.8.11 Annex B provides standardized exception request template and approval workflow.
+**Exception Template**: ISMS-POL-A.8.11 Annex B provides standardised exception request template and approval workflow.
 
 ## Incident Response
 
@@ -615,7 +615,7 @@ Active exceptions are:
 | **Masking process failure exposing sensitive data** | Critical | Immediate - Stop exposure, investigate |
 | **Successful re-identification of masked data** | High | Immediate - Assess technique weakness |
 | **Masking bypass or circumvention attempt** | High | Immediate - Investigate and prevent recurrence |
-| **Unauthorised access to token vault or pseudonymization keys** | Critical | Immediate - Key compromise response |
+| **Unauthorised access to token vault or pseudonymisation keys** | Critical | Immediate - Key compromise response |
 | **Masking configuration error** | Medium | Urgent - Correct configuration, validate |
 | **Data exfiltration from environment with insufficient masking** | Critical | Immediate - Incident response, breach notification |
 
@@ -693,7 +693,7 @@ Policy published in ISMS document repository. Changes communicated organisation-
 
 **Primary Repository**:
 
-- Centralized policy repository (SharePoint, Confluence, document management system)
+- Centralised policy repository (SharePoint, Confluence, document management system)
 - Access-controlled (Internal classification)
 - Version history maintained
 
@@ -721,7 +721,7 @@ Policy published in ISMS document repository. Changes communicated organisation-
 
 - Annual security awareness training includes data masking overview
 - User responsibilities for handling masked data
-- Recognizing unmasked sensitive data and reporting procedures
+- Recognising unmasked sensitive data and reporting procedures
 - Prohibition on re-identification attempts
 
 **Technical Training** (IT/Security Staff):
@@ -845,7 +845,7 @@ This policy addresses data masking requirements from:
 | Requirement Category | Swiss nDSG | EU GDPR | ISO 27001 | PCI DSS v4.0.1* | HIPAA* | FINMA* | DORA/NIS2* |
 |---------------------|-----------|---------|-----------|---------|--------|--------|------------|
 | Data minimisation | Art. 8, 25 | Art. 5(1)(c) | A.8.11 | Req. 12.3 | §164.514 | Risk-Based | Art. 21 (NIS2) |
-| Pseudonymization | Art. 8 | Art. 32(1)(a), Art. 89 | A.8.11 | N/A | §164.514(b) | Risk-Based | Risk-Based |
+| Pseudonymisation | Art. 8 | Art. 32(1)(a), Art. 89 | A.8.11 | N/A | §164.514(b) | Risk-Based | Risk-Based |
 | Masking in non-production | Art. 8 | Art. 25, 32 | A.8.11 | Req. 3.4, 12.3 | §164.514 | Risk-Based | Risk-Based |
 | Testing & validation | Art. 8 | Art. 25, 32 | A.8.11 | Req. 11.3 | §164.308(a)(8) | Risk-Based | Art. 9 (DORA) |
 | Access logging | Art. 8 | Art. 32(1)(d) | A.8.16 | Req. 10 | §164.312(b) | Risk-Based | Monitoring |
@@ -887,7 +887,7 @@ Implementation Layer (Assessment & Evidence - ISMS Governed)
 
 # Definitions
 
-**Anonymization**: Irreversible process of removing all identifying information from data such that re-identification is not possible even with additional data or effort. Anonymized data is no longer personal data under GDPR.
+**Anonymisation**: Irreversible process of removing all identifying information from data such that re-identification is not possible even with additional data or effort. Anonymised data is no longer personal data under GDPR.
 
 **Compensating Control**: Alternative security control implemented when primary control (masking) is not technically or operationally feasible, providing equivalent risk reduction.
 
@@ -911,13 +911,13 @@ Implementation Layer (Assessment & Evidence - ISMS Governed)
 
 **Personally Identifiable Information (PII)**: Any information that can identify an individual directly (name, ID number) or indirectly (combination of attributes).
 
-**Pseudonymization**: Replacing direct identifiers with pseudonyms such that data cannot identify individuals without additional information (key or mapping table) held separately. Pseudonymized data remains personal data under GDPR but with reduced risk.
+**Pseudonymisation**: Replacing direct identifiers with pseudonyms such that data cannot identify individuals without additional information (key or mapping table) held separately. Pseudonymised data remains personal data under GDPR but with reduced risk.
 
 **Redaction**: Complete removal or replacement of sensitive data with placeholder characters (e.g., `****`, `XXXX`, `[REDACTED]`) without providing substitute values.
 
 **Referential Integrity**: Maintaining valid relationships between related data across tables or datasets, ensuring foreign keys and joins continue to function correctly after masking.
 
-**Re-identification**: Process of determining the original identity of a data subject from anonymized or pseudonymized data, either through reverse engineering, linking with external data, or other techniques.
+**Re-identification**: Process of determining the original identity of a data subject from anonymised or pseudonymised data, either through reverse engineering, linking with external data, or other techniques.
 
 **Sensitive Data**: Any information that, if disclosed, could cause harm to individuals or [Organisation], including PII, financial data, health data, credentials, and proprietary information. Typically classified as Confidential or Restricted.
 
@@ -925,7 +925,7 @@ Implementation Layer (Assessment & Evidence - ISMS Governed)
 
 **Substitution**: Replacement of sensitive data with realistic but fictitious values that maintain data format, structure, and utility for intended use cases (testing, development, analytics).
 
-**Tokenization**: Replacing sensitive data with non-sensitive tokens (surrogate values); original data stored in secure token vault enabling reversibility when authorised.
+**Tokenisation**: Replacing sensitive data with non-sensitive tokens (surrogate values); original data stored in secure token vault enabling reversibility when authorised.
 
 ---
 
@@ -947,7 +947,7 @@ New masking techniques or modifications to approved techniques SHALL meet the fo
 **Regulatory Compliance**:
 
 - Technique SHALL meet regulatory requirements for applicable data types:
-  - GDPR pseudonymization requirements (Art. 32(1)(a), Art. 89) if used for GDPR compliance
+  - GDPR pseudonymisation requirements (Art. 32(1)(a), Art. 89) if used for GDPR compliance
   - PCI DSS v4.0.1 masking requirements (Req. 3.4, 3.5) if used for payment card data
   - HIPAA de-identification standards (§164.514) if used for healthcare data
   - nDSG data protection requirements (Art. 8) for Swiss personal data
@@ -977,12 +977,12 @@ New masking techniques or modifications to approved techniques SHALL meet the fo
 | Non-production testing | Critical/High | No | Yes | Static Data Masking (SDM) with Substitution |
 | Non-production development | Critical/High | No | Yes | Static Data Masking (SDM) with Substitution |
 | Production role-based access | Critical/High | N/A (original unchanged) | Yes | Dynamic Data Masking (DDM) |
-| Analytics/reporting | High | No | Partial | Pseudonymization or Aggregation |
-| External data sharing | Critical/High | No | Optional | Anonymization or Strong Pseudonymization |
-| Payment card data (non-prod) | Critical | Conditional | Yes | Tokenization or SDM with PCI-compliant masking |
-| Research/statistics (GDPR) | High | Conditional | Partial | Pseudonymization per GDPR Art. 89 |
+| Analytics/reporting | High | No | Partial | Pseudonymisation or Aggregation |
+| External data sharing | Critical/High | No | Optional | Anonymisation or Strong Pseudonymisation |
+| Payment card data (non-prod) | Critical | Conditional | Yes | Tokenisation or SDM with PCI-compliant masking |
+| Research/statistics (GDPR) | High | Conditional | Partial | Pseudonymisation per GDPR Art. 89 |
 | Training/demonstration | Any Sensitive | No | Optional | Redaction or SDM with Substitution |
-| Public data release | Any Sensitive | No | No | Anonymization (k-anonymity, l-diversity) |
+| Public data release | Any Sensitive | No | No | Anonymisation (k-anonymity, l-diversity) |
 
 **Selection Considerations**:
 
@@ -1027,15 +1027,15 @@ New masking techniques or modifications to approved techniques SHALL meet the fo
 - Bypass attempts detected and alerted
 - Minimal performance degradation (<10% typical)
 
-### A.3.3 Tokenization
+### A.3.3 Tokenisation
 
 **Mandatory Requirements**:
 
 - Token vault SHALL be secured with access controls and encryption
 - Tokens SHALL be format-preserving where required (e.g., credit card format)
-- Token-to-value mapping SHALL be one-to-one (deterministic tokenization)
+- Token-to-value mapping SHALL be one-to-one (deterministic tokenisation)
 - Token vault SHALL be backed up separately with appropriate security
-- De-tokenization SHALL require explicit authorisation and be logged
+- De-tokenisation SHALL require explicit authorisation and be logged
 
 **Quality Criteria**:
 
@@ -1043,14 +1043,14 @@ New masking techniques or modifications to approved techniques SHALL meet the fo
 - Key management for vault encryption follows A.8.24 Cryptography Policy
 - Token collision risk minimised through appropriate token space
 
-### A.3.4 Pseudonymization (GDPR Compliance)
+### A.3.4 Pseudonymisation (GDPR Compliance)
 
 **Mandatory Requirements**:
 
-- Pseudonymization keys SHALL be stored separately from pseudonymized data
+- Pseudonymisation keys SHALL be stored separately from pseudonymised data
 - Re-identification SHALL require separate authorisation beyond data access
-- Pseudonymization SHALL meet GDPR requirements (Art. 32(1)(a), Art. 89) when used for GDPR compliance
-- Pseudonymization technique SHALL be validated by DPO for GDPR adequacy
+- Pseudonymisation SHALL meet GDPR requirements (Art. 32(1)(a), Art. 89) when used for GDPR compliance
+- Pseudonymisation technique SHALL be validated by DPO for GDPR adequacy
 - Key management SHALL follow A.8.24 Cryptography Policy
 
 **Quality Criteria**:
@@ -1059,19 +1059,19 @@ New masking techniques or modifications to approved techniques SHALL meet the fo
 - Re-identification risk assessed annually or when data structure changes
 - Appropriate for intended purpose (research, statistics, legitimate interest)
 
-### A.3.5 Anonymization (Irreversible)
+### A.3.5 Anonymisation (Irreversible)
 
 **Mandatory Requirements**:
 
-- Anonymization SHALL be irreversible (no keys or mappings retained)
+- Anonymisation SHALL be irreversible (no keys or mappings retained)
 - Re-identification risk SHALL be assessed using appropriate methodology (k-anonymity, l-diversity)
-- Direct identifiers SHALL be removed or generalized
+- Direct identifiers SHALL be removed or generalised
 - Quasi-identifiers SHALL be assessed for linking risk
-- Anonymization SHALL meet regulatory standards when used for compliance (GDPR, HIPAA)
+- Anonymisation SHALL meet regulatory standards when used for compliance (GDPR, HIPAA)
 
 **Quality Criteria**:
 
-- k-anonymity ≥ 5 (minimum) for GDPR-compliant anonymization
+- k-anonymity ≥ 5 (minimum) for GDPR-compliant anonymisation
 - l-diversity considered for sensitive attributes
 - Linking risk with external datasets assessed
 - Data utility preserved for intended analytical purpose
@@ -1110,7 +1110,7 @@ All masking techniques SHALL be validated for:
 
 # Annex B: Exception Request Template
 
-**Purpose**: Standardized format for requesting exceptions to data masking requirements per policy Section 3.3.
+**Purpose**: Standardised format for requesting exceptions to data masking requirements per policy Section 3.3.
 
 ## Exception Request Form
 
@@ -1309,4 +1309,4 @@ Examples:
 
 *This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.8.11 (UG/TG). Technical reference information is provided in ISMS-CTX-A.8.11 (NOT ISMS).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

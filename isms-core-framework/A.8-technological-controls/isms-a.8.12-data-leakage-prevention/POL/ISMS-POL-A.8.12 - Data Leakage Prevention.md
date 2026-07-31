@@ -138,7 +138,7 @@ This policy does NOT:
 - Physical security of paper documents (covered by ISMS-POL-A.7.X Physical Security)
 - Backup and archival processes (covered by ISMS-POL-A.8.13 Information Backup)
 - Data retention and deletion (covered by ISMS-POL-A.8.10 Information Deletion)
-- Data masking and anonymization (covered by ISMS-POL-A.8.11 Data Masking)
+- Data masking and anonymisation (covered by ISMS-POL-A.8.11 Data Masking)
 
 ## Regulatory Applicability
 
@@ -226,7 +226,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - **Last inventory update**: [Date]
 - **Inventory reconciliation**: Quarterly against Asset Inventory (A.5.9)
 
-**Implementation Note**: Specific data patterns, regex rules, classification labels, and machine learning models are documented in ISMS-IMP-A.8.12-2 (Data Classification Assessment). Organisations customize detection logic based on their specific data inventory and risk assessment.
+**Implementation Note**: Specific data patterns, regex rules, classification labels, and machine learning models are documented in ISMS-IMP-A.8.12-2 (Data Classification Assessment). Organisations customise detection logic based on their specific data inventory and risk assessment.
 
 ## Channel Protection Requirements
 
@@ -285,9 +285,9 @@ These frameworks inform implementation but do not constitute mandatory complianc
 **Mobile DLP**:
 
 - Mobile Device Management (MDM) integration
-- App-level DLP for containerized corporate apps
+- App-level DLP for containerised corporate apps
 - Email and document sharing monitoring
-- BYOD risk-based controls (containerization, conditional access)
+- BYOD risk-based controls (containerisation, conditional access)
 
 **Coverage Verification**: [Organisation] SHALL verify DLP coverage through technical testing and network topology mapping. Testing methodology and frequency defined in ISMS-IMP-A.8.12-3 (Channel Coverage Assessment).
 
@@ -381,7 +381,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Data classification (Restricted, Confidential, Internal)
 - Detection method (content inspection, labeling, contextual)
 - Action taken (blocked, allowed, quarantined, user-justified)
-- Data sample (first 100 characters or sanitized excerpt - privacy-compliant)
+- Data sample (first 100 characters or sanitised excerpt - privacy-compliant)
 
 **Log Retention**:
 
@@ -653,7 +653,7 @@ Active exceptions are tracked and monitored through the DLP Exception Register:
 
 **Access to Exception Register**: Security Team (full access), CISO (read/approve), Internal Audit (read-only), External Auditors (read-only upon request)
 
-**Exception Template**: ISMS-IMP-A.8.12 Exception Request procedures provide standardized documentation format, risk assessment template, and approval workflow.
+**Exception Template**: ISMS-IMP-A.8.12 Exception Request procedures provide standardised documentation format, risk assessment template, and approval workflow.
 
 ## Incident Response
 
@@ -853,7 +853,7 @@ This policy addresses DLP requirements from multiple regulations:
 **Security Awareness** (All Personnel):
 
 - **Annual training**: DLP purpose, acceptable use, data handling, monitoring transparency
-- **User responsibilities**: Recognizing sensitive data, proper transfer methods, reporting incidents
+- **User responsibilities**: Recognising sensitive data, proper transfer methods, reporting incidents
 - **DLP interaction**: Understanding blocked transfers, exception requests, false positive reporting
 - **Privacy awareness**: Employee monitoring transparency, data subject rights
 
@@ -905,7 +905,7 @@ This policy addresses DLP requirements from multiple regulations:
 
 **Document Labeling**: Embedding classification metadata directly into files (headers, footers, watermarks, file properties, metadata tags). Enables DLP systems to identify sensitive documents regardless of content. Common standards: Microsoft Information Protection, Adobe Document Security, PDF metadata.
 
-**False Positive**: Legitimate business activity incorrectly identified as a DLP policy violation. Common causes: overly broad rules, inadequate context analysis, untuned detection logic. False positives cause user friction, operational delays, and security team workload. Minimized through policy tuning, exception management, and machine learning.
+**False Positive**: Legitimate business activity incorrectly identified as a DLP policy violation. Common causes: overly broad rules, inadequate context analysis, untuned detection logic. False positives cause user friction, operational delays, and security team workload. Minimised through policy tuning, exception management, and machine learning.
 
 **False Negative**: Data leakage that occurs despite DLP controls (bypassed or undetected). Causes: coverage gaps, detection logic limitations, encrypted channels, covert exfiltration techniques. False negatives represent residual risk and drive continuous DLP improvement.
 
@@ -995,7 +995,7 @@ Member states may provide specific rules for employee data processing. DLP monit
 ✅ Limit access to DLP logs (Security Team, CISO, DPO - need-to-know basis)  
 ✅ Deploy in monitor-only mode initially (observe before blocking)  
 ✅ Provide user notifications (transparency via acceptable use policy)  
-✅ Limit data samples in logs (first 100 characters, sanitized excerpts)  
+✅ Limit data samples in logs (first 100 characters, sanitised excerpts)  
 
 **Disproportionate Monitoring (Legally Non-Compliant)**:
 
@@ -1174,4 +1174,4 @@ Data Leakage Prevention (DLP) protects [Organisation]'s sensitive information fr
 
 *This policy establishes requirements for data leakage prevention. Implementation procedures, technical standards, and assessment workbooks are documented in ISMS-IMP-A.8.12 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

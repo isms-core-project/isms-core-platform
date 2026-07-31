@@ -588,7 +588,7 @@ For each piece of evidence:
 **Solution**:
 
 - Tune alerts (reduce false positives)
-- Prioritize: Tier 0 access = HIGH priority, Tier 2 = LOW priority
+- Prioritise: Tier 0 access = HIGH priority, Tier 2 = LOW priority
 - Use baseline: Alert on UNUSUAL privileged access, not ALL privileged access
 - Use risk scoring: Off-hours + unusual system + failed attempts = HIGH RISK
 
@@ -760,7 +760,7 @@ Before submitting assessment for approval, verify:
 - **90-99% completed**: Good - Follow up on overdue reviews
 - **<90% completed**: POOR - Access review process not enforced
 
-## Anomaly Prioritization
+## Anomaly Prioritisation
 
 **Priority 1 - CRITICAL (Immediate Investigation - Within 4 Hours):**
 
@@ -860,4 +860,4 @@ After CISO approval:
 *"Power unchecked is a vulnerability waiting to be exploited."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

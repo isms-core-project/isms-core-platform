@@ -504,7 +504,7 @@ For EACH cloud service provider:
 - Columns A-E are **copied from IMP-5.23.1** (maintain consistency)
 - Do NOT re-assess criticality or data classification here
 - Status (Column H) is **sheet-specific** (varies by assessment focus)
-- Evidence Location (Column I) references **Sheet 9** (centralized evidence tracking)
+- Evidence Location (Column I) references **Sheet 9** (centralised evidence tracking)
 
 ### Extended Columns (R+) - Sheet-Specific
 
@@ -671,7 +671,7 @@ Thank you,
 
 **SOC 2 Type II:**
 
-- Verify auditor is reputable (Big 4, recognized regional firm)
+- Verify auditor is reputable (Big 4, recognised regional firm)
 - Check audit period (must be ≥12 months for Type II)
 - Review opinion (unqualified/clean opinion required)
 - Check scope covers relevant Trust Service Criteria
@@ -696,7 +696,7 @@ Thank you,
 | ISO 27001 valid + SOC 2 Type II valid + service in scope | ✅ | - |
 | ISO 27001 valid + SOC 2 Type I only | ⚠️ | "SOC 2 Type I only (point-in-time, not 12-month)" |
 | ISO 27001 valid + No SOC 2 | ⚠️ | "No SOC 2 report available" |
-| No ISO 27001 + No SOC 2 | ❌ | "No recognized security certification" |
+| No ISO 27001 + No SOC 2 | ❌ | "No recognised security certification" |
 | ISO 27001 expired | ❌ | "ISO 27001 expired [Date]" |
 | Service not in ISO scope | ❌ | "Service not covered by ISO 27001 certification scope" |
 | Low criticality + No certs | N/A | "Certification not required for Low criticality services" |
@@ -1279,7 +1279,7 @@ For each vendor:
 
 **Ineffective Mitigations:**
 
-- ❌ "We'll anonymize data" (re-identification risk)
+- ❌ "We'll anonymise data" (re-identification risk)
 - ❌ "Vendor promises not to give US data" (cannot override CLOUD Act)
 - ❌ "Data is encrypted" (if vendor holds keys, US can compel disclosure)
 
@@ -1445,7 +1445,7 @@ For each vendor:
 
 | Evidence Type | Validation Check | Red Flag |
 |---------------|------------------|----------|
-| **ISO 27001** | Certificate number valid, accreditation body recognized, service in scope | Generic "management system" cert not covering cloud service |
+| **ISO 27001** | Certificate number valid, accreditation body recognised, service in scope | Generic "management system" cert not covering cloud service |
 | **SOC 2** | Type II (not Type I), <18 months old, unqualified opinion | Type I, qualified opinion, or ancient report |
 | **Contracts** | Signed by authorised parties, dates valid, all annexes present | Unsigned draft, missing DPA, expired |
 | **SLA Data** | From YOUR monitoring (not vendor self-report), timestamp visible | "Vendor told us 99.9%" with no proof |
@@ -1468,7 +1468,7 @@ For each vendor:
 
 4. Reference Evidence ID in Sheet 2-7 Column I
 
-**Benefit:** Centralized evidence tracking, easy audit trail, no duplicate files.
+**Benefit:** Centralised evidence tracking, easy audit trail, no duplicate files.
 
 ---
 
@@ -1813,7 +1813,7 @@ Step 6: Archive & Publish (Evidence repository, ISMS folder)
 
 **For Each Gap (⚠️ or ❌):**
 
-1. **Prioritize:** Critical > High > Medium > Low (based on service criticality + risk)
+1. **Prioritise:** Critical > High > Medium > Low (based on service criticality + risk)
 2. **Assign Owner:** Who will remediate? (Legal, Security, Vendor Manager)
 3. **Set Target Date:** Realistic timeline (30/60/90 days)
 4. **Define Success Criteria:** What does "fixed" look like?
@@ -2141,4 +2141,4 @@ Thank you,
 *"Choose your partners as carefully as you choose your enemies."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

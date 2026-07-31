@@ -48,7 +48,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 | # | Sheet Name | Purpose |
 |---|-----------|---------|
 | 1 | Instructions & Legend | How to use this workbook and understand the colour coding |
-| 2 | Historical Utilization | Record historical capacity utilisation data for trend analysis |
+| 2 | Historical Utilisation | Record historical capacity utilisation data for trend analysis |
 | 3 | Trend Analysis | Analyse capacity usage trends over time |
 | 4 | Capacity Forecasts | Document capacity forecasts for each resource type |
 | 5 | Capacity Exhaustion | Identify and prioritise resources approaching exhaustion |
@@ -69,7 +69,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 #### What This Assessment Covers
 
-This assessment uses historical utilization data (from A.8.6.1) to forecast future capacity needs and plan expansions. This is the "WHERE will we be?" assessment that answers:
+This assessment uses historical utilisation data (from A.8.6.1) to forecast future capacity needs and plan expansions. This is the "WHERE will we be?" assessment that answers:
 
 - What are the capacity usage trends? (growth, decline, stable)
 - What is the growth rate? (GB/month, %/month, users/month)
@@ -84,7 +84,7 @@ This assessment is **data-driven and forward-looking**. You analyse historical t
 
 #### What You'll Document
 
-- Historical utilization trends (3-12 months of data)
+- Historical utilisation trends (3-12 months of data)
 - Growth rate calculations (linear, exponential, seasonal)
 - Capacity exhaustion forecasts (dates when resources hit 100%)
 - Planned capacity expansions (what, when, how much, cost)
@@ -96,7 +96,7 @@ This assessment is **data-driven and forward-looking**. You analyse historical t
 
 | Assessment            | Focus                  | Relationship to A.8.6.2           |
 |-----------------------|------------------------|------------------------------------|
-| ISMS-IMP-A.8.6.1     | Current Utilization     | **INPUT** - Provides historical utilization data |
+| ISMS-IMP-A.8.6.1     | Current Utilisation     | **INPUT** - Provides historical utilisation data |
 | **ISMS-IMP-A.8.6.2** | **Forecasting & Planning** | **ANALYZES A.8.6.1 data to predict future needs** |
 
 This assessment (A.8.6.2) **requires A.8.6.1 to be completed first** - you can't forecast without historical data!
@@ -129,7 +129,7 @@ This assessment (A.8.6.2) **requires A.8.6.1 to be completed first** - you can't
 
 Upon completion, you will have:
 
-1. ✅ **Historical trend analysis** - Visualization of capacity consumption over time
+1. ✅ **Historical trend analysis** - Visualisation of capacity consumption over time
 2. ✅ **Growth rate calculations** - Quantified growth (GB/month, %/month)
 3. ✅ **Capacity exhaustion forecasts** - Predicted dates when resources hit limits
 4. ✅ **Capacity expansion plans** - What to expand, when, how much
@@ -149,9 +149,9 @@ Before starting this assessment, gather:
 
 #### 1. Completed A.8.6.1 Assessment (REQUIRED)
 
-- **Sheet 2: Compute Capacity** - Historical CPU/memory utilization
-- **Sheet 3: Storage Capacity** - Historical disk utilization and growth rates
-- **Sheet 4: Network Capacity** - Historical bandwidth utilization
+- **Sheet 2: Compute Capacity** - Historical CPU/memory utilisation
+- **Sheet 3: Storage Capacity** - Historical disk utilisation and growth rates
+- **Sheet 4: Network Capacity** - Historical bandwidth utilisation
 - **Sheet 5: Application Capacity** - Historical user/transaction counts
 - **Minimum data requirement:** 90 days of historical data (180+ days preferred)
 
@@ -197,7 +197,7 @@ Sources:
 ### Required Tools
 
 - **Microsoft Excel** (2016 or later) with Analysis ToolPak enabled
-- **Historical utilization data** from A.8.6.1
+- **Historical utilisation data** from A.8.6.1
 - **Charting/graphing tools** (Excel built-in or Tableau, Power BI)
 - **Forecasting tools** (optional):
   - Python with pandas, scikit-learn (for advanced forecasting)
@@ -208,7 +208,7 @@ Sources:
 
 **CRITICAL DEPENDENCY:**
 
-- ✅ **A.8.6.1 (Capacity Utilization Assessment) MUST be completed first**
+- ✅ **A.8.6.1 (Capacity Utilisation Assessment) MUST be completed first**
   - Cannot forecast without historical data
   - Minimum 90 days of data required
   - 180+ days preferred
@@ -255,15 +255,15 @@ Sources:
 1. Open completed A.8.6.1 assessment workbook
 2. Verify historical data availability:
 
-   - Check that 30-day and 90-day utilization data exists
+   - Check that 30-day and 90-day utilisation data exists
    - Verify peak and average metrics are populated
    - Confirm data is recent (< 30 days old)
 
 3. Export A.8.6.1 data for analysis:
 
-   - Sheet 2 (Compute): Export CPU/memory utilization time series
-   - Sheet 3 (Storage): Export disk utilization and growth rates
-   - Sheet 4 (Network): Export bandwidth utilization
+   - Sheet 2 (Compute): Export CPU/memory utilisation time series
+   - Sheet 3 (Storage): Export disk utilisation and growth rates
+   - Sheet 4 (Network): Export bandwidth utilisation
    - Sheet 5 (Application): Export user/transaction counts
 
 4. Gather extended historical data (if available):
@@ -290,7 +290,7 @@ Sources:
 **Steps:**
 1. For each resource from A.8.6.1:
 
-   - Plot utilization over time (line chart)
+   - Plot utilisation over time (line chart)
    - Identify trend pattern (linear growth, exponential, seasonal, stable)
    - Calculate correlation coefficient (R²) for trend line
    - Document trend confidence (high, medium, low)
@@ -304,7 +304,7 @@ Sources:
    - **Stable/flat:** No significant change
 
 3. Document trend observations
-4. Create trend visualizations (charts/graphs)
+4. Create trend visualisations (charts/graphs)
 
 **Deliverable:** Complete Sheet 1 with trend analysis for all resources
 
@@ -312,7 +312,7 @@ Sources:
 
 - ✓ All resources from A.8.6.1 analysed
 - ✓ Trend patterns identified and documented
-- ✓ Visualizations created (charts)
+- ✓ Visualisations created (charts)
 - ✓ Trend confidence assessed
 
 #### Phase 3: Growth Rate Calculation (2-3 hours)
@@ -320,7 +320,7 @@ Sources:
 **Objective:** Complete Sheet 2 - Growth Rate Calculations
 
 **Steps:**
-1. For each resource with growing utilization:
+1. For each resource with growing utilisation:
 
    - Calculate absolute growth rate (GB/month, users/month)
    - Calculate percentage growth rate (%/month)
@@ -342,7 +342,7 @@ Sources:
 
 4. Flag anomalies:
 
-   - Negative growth (declining utilization - optimization, migration?)
+   - Negative growth (declining utilisation - optimisation, migration?)
    - Sudden acceleration
    - Unexpected patterns
 
@@ -379,7 +379,7 @@ Sources:
    - **Medium confidence:** R² 0.7-0.9, some variability
    - **Low confidence:** R² < 0.7, high variability, limited data
 
-4. Prioritize by urgency:
+4. Prioritise by urgency:
 
    - **Critical (< 3 months):** Immediate action required
    - **High (3-6 months):** Planning required now
@@ -393,7 +393,7 @@ Sources:
 - ✓ Exhaustion dates calculated for all growing resources
 - ✓ Forecast methodology documented
 - ✓ Forecast confidence assessed
-- ✓ Resources prioritized by urgency
+- ✓ Resources prioritised by urgency
 
 #### Phase 5: Capacity Expansion Planning (4-6 hours)
 
@@ -402,7 +402,7 @@ Sources:
 **Steps:**
 1. For each resource approaching exhaustion:
 
-   - Determine expansion approach (vertical scale, horizontal scale, optimization)
+   - Determine expansion approach (vertical scale, horizontal scale, optimisation)
    - Calculate required capacity addition
    - Document expansion timeline (considering lead times)
    - Estimate costs (capital and operational)
@@ -449,8 +449,8 @@ Sources:
 
 2. For each previous forecast:
 
-   - Document predicted utilization
-   - Document actual utilization
+   - Document predicted utilisation
+   - Document actual utilisation
    - Calculate forecast error (% difference)
    - Classify accuracy (within ±15% = accurate)
 
@@ -503,7 +503,7 @@ Sources:
 5. Flag budget gaps:
 
    - Required vs. available budget
-   - Prioritization if budget constrained
+   - Prioritisation if budget constrained
 
 **Deliverable:** Complete Sheet 6 with capacity planning budget
 
@@ -529,7 +529,7 @@ Sources:
    - Budget approval emails
    - Vendor quotes
 
-2. Organize by category
+2. Organise by category
 3. Document storage locations
 4. Verify accessibility
 5. Tag for audit readiness
@@ -577,7 +577,7 @@ Sources:
 
 - ✓ All sections complete
 - ✓ All reviewers have approved
-- ✓ Budget approved (or prioritization decisions made)
+- ✓ Budget approved (or prioritisation decisions made)
 - ✓ Evidence is audit-ready
 
 ---
@@ -590,7 +590,7 @@ This section provides detailed guidance for completing each sheet in the workboo
 
 #### Purpose
 
-Visualize and analyse capacity utilization trends over time to understand historical patterns and identify growth trajectories.
+Visualise and analyse capacity utilisation trends over time to understand historical patterns and identify growth trajectories.
 
 #### What to Document
 
@@ -603,7 +603,7 @@ For EACH resource from A.8.6.1:
 - **R² (Correlation Coefficient)** (measure of trend fit, 0.0-1.0)
 - **Trend Confidence** (High/Medium/Low based on R²)
 - **Observations** (notes on pattern, anomalies, inflection points)
-- **Visualization** (chart showing utilization over time with trend line)
+- **Visualisation** (chart showing utilisation over time with trend line)
 
 #### Common Mistakes to Avoid
 
@@ -619,22 +619,22 @@ For EACH resource from A.8.6.1:
 
 From A.8.6.1 assessment:
 
-- Minimum: 90 days (3 months) of utilization data
+- Minimum: 90 days (3 months) of utilisation data
 - Preferred: 180 days (6 months)
 - Ideal: 365+ days (12+ months) for seasonal pattern detection
 
 Data points needed:
 
 - Date/time stamps
-- Utilization percentage or absolute values
+- Utilisation percentage or absolute values
 - Peak, average, or both (peak recommended for capacity planning)
 
-**Step 2: Create Trend Visualization**
+**Step 2: Create Trend Visualisation**
 
 Using Excel or similar tool:
 1. Create scatter plot or line chart
 2. X-axis: Time (dates)
-3. Y-axis: Utilization (% or absolute)
+3. Y-axis: Utilisation (% or absolute)
 4. Add trend line:
 
    - Linear (most common for capacity planning)
@@ -692,12 +692,12 @@ Excel formula: `=LINEST(utilization_range, time_range, TRUE, TRUE)`
 **Stable/Flat:**
 
 - No significant change over time
-- Example: Well-optimized application with stable user base
+- Example: Well-optimised application with stable user base
 - Forecast method: None needed (but monitor for changes)
 
 **Declining:**
 
-- Decreasing utilization
+- Decreasing utilisation
 - Example: Application being phased out, data archived
 - Forecast method: None (capacity not at risk)
 
@@ -719,8 +719,8 @@ Note anything interesting or unusual:
 |-------|-------|
 | Resource ID | db-prod-01-data |
 | Time Period | 180 days (Jan-Jun 2026) |
-| Starting Utilization | 650 GB |
-| Ending Utilization | 950 GB |
+| Starting Utilisation | 650 GB |
+| Ending Utilisation | 950 GB |
 | Trend Pattern | Linear Growth |
 | Trend Equation | y = 1.67x + 650 |
 | Slope | 1.67 GB/day |
@@ -752,18 +752,18 @@ Note anything interesting or unusual:
 | Resource ID | dev-environment-01 |
 | Time Period | 180 days |
 | Trend Pattern | Stable/Flat |
-| Average Utilization | 45% |
+| Average Utilisation | 45% |
 | Std Deviation | 3% |
 | R² (trend line) | 0.12 |
 | Trend Confidence | Very Low (no trend) |
-| Observations | Consistent ~45% utilization, minor fluctuations, no growth trend |
+| Observations | Consistent ~45% utilisation, minor fluctuations, no growth trend |
 
 **Analysis:** No forecasting needed. Resource is stable and not at risk of exhaustion. Continue quarterly monitoring.
 
 #### Evidence to Collect
 
 - **Trend charts** (with trend lines and R² values)
-- **Historical data exports** (CSV/Excel with dates and utilization)
+- **Historical data exports** (CSV/Excel with dates and utilisation)
 - **Trend analysis calculations** (Excel formulas or scripts)
 - **Pattern documentation** (explanations of seasonal patterns, anomalies)
 
@@ -871,7 +871,7 @@ Example:
 **Example:**
 
 - Month-end processing causes 20% CPU spike every month
-- Forecast uses average utilization
+- Forecast uses average utilisation
 - Result: Under-forecasting peak capacity needs
 
 **How to Avoid:**
@@ -920,4 +920,4 @@ Example:
 *"Plan for the traffic you expect; prepare for the traffic you don't."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

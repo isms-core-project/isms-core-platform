@@ -166,7 +166,7 @@ Beyond scheduled reviews, conduct immediate review upon:
 | Availability | Uptime percentage, unplanned downtime incidents | Continuous/Real-time | Below SLA target |
 | Performance | Response time, throughput, latency | Continuous/Real-time | >10% degradation |
 | Support | Ticket response time, resolution time, escalations | Weekly aggregation | SLA breach |
-| Capacity | Resource utilization, scalability headroom | Monthly trend analysis | >80% utilization |
+| Capacity | Resource utilisation, scalability headroom | Monthly trend analysis | >80% utilisation |
 | Quality | Error rates, transaction success rate, customer satisfaction | Monthly review | Above baseline |
 
 ## SLA Compliance Tracking
@@ -202,7 +202,7 @@ Beyond scheduled reviews, conduct immediate review upon:
 
 | Method | Description | Applicability |
 |--------|-------------|---------------|
-| **Security questionnaire** | Standardized assessment (200-300 questions for L1) | All suppliers with data/system access |
+| **Security questionnaire** | Standardised assessment (200-300 questions for L1) | All suppliers with data/system access |
 | **Evidence review** | Review of policies, procedures, configurations, logs | Level 1 & 2 |
 | **Certification review** | Verify valid ISO 27001, SOC 2, etc. | Level 1, 2, 3 (if applicable) |
 | **Audit report review** | Detailed review of SOC 2 Type II, ISO surveillance audit results | Level 1 & 2 (required) |
@@ -550,4 +550,4 @@ A change is considered **material** if it meets any of the following criteria:
 ---
 
 *"Monitoring without action is just expensive watching. Action without monitoring is blind faith."*
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -154,7 +154,7 @@ This assessment covers **4 maintenance domains**:
 - Inventory system architecture diagrams
 - Data flow diagrams (inventory ↔ other systems)
 - Integration configuration documentation
-- Update procedure documents (if formalized)
+- Update procedure documents (if formalised)
 - Previous assessment (if exists - for comparison)
 
 **4. System Access**:
@@ -275,7 +275,7 @@ Phase 6: Review & Approval (Day 16)
 
    - Start with primary system (likely CMDB if you have one)
    - Include ALL systems with inventory data (even spreadsheets!)
-   - Don't forget: Document repos, procurement systems, specialized tools
+   - Don't forget: Document repos, procurement systems, specialised tools
 
 2. **Example 1: ServiceNow CMDB**:
 
@@ -505,7 +505,7 @@ Phase 6: Review & Approval (Day 16)
 - System-to-system integrations
 - Data flow direction (one-way, bi-directional)
 - Integration method (API, file transfer, database sync)
-- Synchronization frequency and schedule
+- Synchronisation frequency and schedule
 - Reconciliation procedures
 - Integration health monitoring
 
@@ -581,7 +581,7 @@ Phase 6: Review & Approval (Day 16)
 - **Target System**: "Asset Inventory (Personnel Assets sheet)"
 - **Data Flow Direction**: Source → Target (one-way, read-only from HR)
 - **Integration Method**: REST API (Workday API, custom integration)
-- **Data Elements Transferred**: "Job profiles (roles), competency counts (anonymized headcount), succession plan status, training completion"
+- **Data Elements Transferred**: "Job profiles (roles), competency counts (anonymised headcount), succession plan status, training completion"
 - **Sync Frequency**: Weekly
 - **Sync Schedule**: "Every Monday at 6:00 AM UTC"
 - **Last Successful Sync**: [Date/time]
@@ -934,7 +934,7 @@ Phase 6: Review & Approval (Day 16)
 
 ### Pitfall 1: Only Documenting "Official" Processes
 
-**Problem**: Documenting idealized workflows that don't match reality.
+**Problem**: Documenting idealised workflows that don't match reality.
 
 **Why It Fails**: Auditors will find the actual process, gaps between documented and actual create audit findings.
 
@@ -1169,4 +1169,4 @@ Document approval in assessment workbook:
 *"Without structure, a list is just noise with commas."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

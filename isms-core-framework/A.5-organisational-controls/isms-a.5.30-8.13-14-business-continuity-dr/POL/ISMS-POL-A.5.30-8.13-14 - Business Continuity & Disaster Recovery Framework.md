@@ -224,7 +224,7 @@ This policy does NOT:
 
 **Cloud Environment Scope**:
 
-This policy applies to all cloud environments utilized by [Organisation], regardless of provider or service model (IaaS/PaaS/SaaS). The authoritative list of in-scope cloud environments is maintained in:
+This policy applies to all cloud environments utilised by [Organisation], regardless of provider or service model (IaaS/PaaS/SaaS). The authoritative list of in-scope cloud environments is maintained in:
 
 - **Backup Inventory (Workbook 1)**: All cloud workloads requiring backup protection, including IaaS instances, PaaS databases, and SaaS application data
 - **Redundancy Analysis (Workbook 2)**: Cloud infrastructure implementing redundancy requirements (multi-AZ, multi-region, multi-cloud deployments)
@@ -505,7 +505,7 @@ This requirement is critical for cloud independence and is referenced in supplie
 
 **Testing Documentation Requirements**:
 
-Each backup restore test SHALL be documented using standardized template including:
+Each backup restore test SHALL be documented using standardised template including:
 
 1. **Test Metadata**: Test ID, date, type (full/partial), system(s) tested, test environment, participants
 2. **Pre-Test State**: Systems in scope, backup source (date/location), expected RTO/RPO
@@ -520,8 +520,8 @@ Each backup restore test SHALL be documented using standardized template includi
 8. **Sign-Off**: BC/DR Coordinator approval, System Owner confirmation of functionality
 
 **Testing Documentation Standards**:
-- Standardized template maintained in ISMS-IMP-A.5.30-8.13-14-S4 (Recovery Testing Process)
-- Testing documentation SHALL be stored in [centralized repository/SharePoint/ISMS tool]
+- Standardised template maintained in ISMS-IMP-A.5.30-8.13-14-S4 (Recovery Testing Process)
+- Testing documentation SHALL be stored in [centralised repository/SharePoint/ISMS tool]
 - Minimum retention: 3 years or per regulatory requirement
 - Test results referenced in Workbook 4 (BC/DR Testing Results)
 
@@ -545,7 +545,7 @@ Backup operations SHALL be monitored:
 | **Backup Success/Failure** | Real-time monitoring | Immediate alert on failure |
 | **Backup Duration** | Trend analysis | Alert if duration exceeds window |
 | **Backup Size** | Trend analysis | Alert on unexpected growth/shrinkage |
-| **Repository Capacity** | Capacity monitoring | Alert at 75% utilization |
+| **Repository Capacity** | Capacity monitoring | Alert at 75% utilisation |
 | **Retention Compliance** | Automated validation | Alert on retention policy violations |
 
 **Alerting Requirements**:
@@ -762,11 +762,11 @@ For organisations with hybrid cloud deployments, redundancy strategies should co
 
 - Traffic split between cloud and on-premises
 - Both environments active simultaneously
-- Use case: Geographic distribution, performance optimization
+- Use case: Geographic distribution, performance optimisation
 
 **Implementation Considerations**:
 
-- Data synchronization between cloud and on-premises
+- Data synchronisation between cloud and on-premises
 - Network connectivity requirements (VPN, Direct Connect, ExpressRoute)
 - License portability (bring-your-own-license to cloud)
 - Recovery procedures for bidirectional failover
@@ -979,7 +979,7 @@ For each Critical and High system:
 **RPO/RTO Reporting**: Quarterly reports to CISO shall include:
 
 - Systems meeting vs. not meeting RPO/RTO targets
-- Gap analysis with criticality-prioritized remediation
+- Gap analysis with criticality-prioritised remediation
 - Testing compliance status
 - Trend analysis (improving vs. degrading)
 
@@ -1105,7 +1105,7 @@ Gaps in BC/DR capability SHALL be identified through:
 - Incident lessons learned (actual disaster response)
 - Technology changes (new systems without backup/redundancy)
 
-**Gap Prioritization**:
+**Gap Prioritisation**:
 
 | Gap Type | Priority | Remediation Timeline |
 |----------|----------|---------------------|
@@ -1207,7 +1207,7 @@ Exceptions to BC/DR requirements (e.g., system excluded from backup, redundancy 
 **Continuous Monitoring**:
 
 - Backup job success/failure rates
-- Backup storage capacity utilization
+- Backup storage capacity utilisation
 - Redundancy health checks (clustering, replication status)
 - RPO/RTO compliance metrics
 - Testing schedule adherence
@@ -1227,7 +1227,7 @@ Exceptions to BC/DR requirements (e.g., system excluded from backup, redundancy 
 - BC/DR program KPIs
 - RPO/RTO compliance summary
 - Testing results and lessons learned
-- Gap analysis with prioritization
+- Gap analysis with prioritisation
 - Exception register review
 - Trend analysis
 
@@ -1331,7 +1331,7 @@ This policy integrates with [Organisation]'s Information Security Management Sys
 - Backup operations logged (success, failure, duration)
 - Failover events logged
 - Recovery operations logged for audit trail
-- Integration: BC/DR logs centralized per A.8.15 requirements
+- Integration: BC/DR logs centralised per A.8.15 requirements
 
 **Monitoring Activities** (A.8.16):
 
@@ -1483,7 +1483,7 @@ This policy addresses BC/DR requirements from applicable regulations:
 
 **Cloud Repatriation**: Process of moving workloads and data from cloud back to on-premises infrastructure, relevant for extended cloud outages or strategic changes.
 
-**Multi-Cloud**: Architecture utilizing multiple cloud providers for redundancy, avoiding vendor lock-in, or service optimization.
+**Multi-Cloud**: Architecture utilising multiple cloud providers for redundancy, avoiding vendor lock-in, or service optimisation.
 
 **Hybrid Cloud**: Architecture combining on-premises infrastructure with cloud services, supporting flexible recovery scenarios.
 
@@ -1507,4 +1507,4 @@ This policy addresses BC/DR requirements from applicable regulations:
 
 *This policy establishes BC/DR requirements. Implementation procedures are documented in ISMS-IMP-A.5.30-8.13-14-S1 through S4 (UG/TG). Each assessment workbook includes its own Summary Dashboard for compliance verification.*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

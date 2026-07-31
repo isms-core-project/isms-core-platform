@@ -331,7 +331,7 @@ However, outputs from this assessment are INPUT to:
 - Take screenshots of UPS web interfaces (capacity, battery health, current load)
 - Take screenshots of generator control panels (fuel level, runtime hours)
 - Take screenshots of HVAC control systems (unit status, temperature, capacity)
-- Take screenshots of ISP monitoring (uptime, bandwidth utilization)
+- Take screenshots of ISP monitoring (uptime, bandwidth utilisation)
 - Export UPS testing logs (monthly self-tests, quarterly load tests)
 - Export generator testing logs (monthly exercise tests)
 - Export ISP SLA reports (if available from ISP)
@@ -537,7 +537,7 @@ However, outputs from this assessment are INPUT to:
 - ISP uptime reports (from ISP SLA reports if available)
 - Network diagrams (dual ISP configuration, diverse paths)
 - ISP failover testing logs (quarterly tests showing failover time)
-- ISP monitoring screenshots (uptime, bandwidth utilization)
+- ISP monitoring screenshots (uptime, bandwidth utilisation)
 
 **4. Utility Monitoring Evidence**
 
@@ -851,4 +851,4 @@ However, outputs from this assessment are INPUT to:
 *"Power is the foundation upon which all other controls rest."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

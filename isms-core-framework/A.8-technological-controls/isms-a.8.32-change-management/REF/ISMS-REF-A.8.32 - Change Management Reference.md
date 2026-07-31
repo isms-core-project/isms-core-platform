@@ -121,7 +121,7 @@ Define minimum capabilities required from change management systems (ITSM tools,
 - Capture all required fields per Section 3 (Form Template)
 - Support rich text descriptions and file attachments
 - Link related changes, incidents, problems
-- Tag/categorise changes (by type, affected systems, priority)
+- Tag/categorize changes (by type, affected systems, priority)
 
 **Assessment:** Can users submit complete change requests? Are all required fields captured?
 

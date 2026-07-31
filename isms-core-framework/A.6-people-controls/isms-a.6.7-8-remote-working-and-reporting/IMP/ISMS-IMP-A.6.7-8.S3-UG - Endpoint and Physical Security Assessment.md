@@ -204,7 +204,7 @@ Before starting this assessment, ensure:
 
 **Compliance Logic**:
 - Corporate devices: Full-disk encryption required, key escrowed
-- BYOD: Full-disk or containerized work data encrypted
+- BYOD: Full-disk or containerised work data encrypted
 - Mobile: Device encryption or container encryption
 
 #### 4.4 Endpoint_Protection Sheet
@@ -523,4 +523,4 @@ Before starting this assessment, ensure:
 *"Security doesn't happen at headquarters; it happens where work happens."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

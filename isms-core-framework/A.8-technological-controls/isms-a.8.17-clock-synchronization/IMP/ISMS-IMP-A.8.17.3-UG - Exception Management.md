@@ -1,7 +1,7 @@
 <!-- ISMS-CORE:IMP:ISMS-IMP-A.8.17.3-UG:framework:UG:a.8.17-s3 -->
 **ISMS-IMP-A.8.17.3-UG - Exception Management**
 **User Completion Guide**
-### ISO/IEC 27001:2022 Control A.8.17: Clock Synchronization
+### ISO/IEC 27001:2022 Control A.8.17: Clock Synchronisation
 
 ---
 
@@ -12,8 +12,8 @@
 | **Document Title** | Exception Management |
 | **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.17.3-UG |
-| **Related Policy** | ISMS-POL-A.8.17 (Clock Synchronization) |
-| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.17 (Clock Synchronization) |
+| **Related Policy** | ISMS-POL-A.8.17 (Clock Synchronisation) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.17 (Clock Synchronisation) |
 | **Document Creator** | Chief Information Security Officer (CISO) |
 | **Document Owner** | CISO |
 | **Created Date** | [Date] |
@@ -32,9 +32,9 @@
 
 **Related Documents**:
 
-- ISMS-POL-A.8.17 (Clock Synchronization)
+- ISMS-POL-A.8.17 (Clock Synchronisation)
 - ISMS-IMP-A.8.17.1 (Time Source Configuration)
-- ISMS-IMP-A.8.17.2 (Synchronization Verification Process)
+- ISMS-IMP-A.8.17.2 (Synchronisation Verification Process)
 
 ---
 
@@ -70,7 +70,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 **What This Assessment Covers:**
 
-This assessment documents and manages systems that cannot meet the standard clock synchronization requirements defined in ISMS-POL-A.8.17. Think of this as the formal process for tracking "legitimate exceptions" to the clock sync policy. This assessment answers critical questions:
+This assessment documents and manages systems that cannot meet the standard clock synchronisation requirements defined in ISMS-POL-A.8.17. Think of this as the formal process for tracking "legitimate exceptions" to the clock sync policy. This assessment answers critical questions:
 
 - **Which systems cannot meet sync requirements?** (Air-gapped, legacy, vendor-locked)
 - **Why can't they comply?** (Technical limitation, business requirement, vendor constraint)
@@ -78,9 +78,9 @@ This assessment documents and manages systems that cannot meet the standard cloc
 - **Who approved the exception?** (Risk acceptance authority)
 - **When does the exception expire?** (Time-limited, permanent, or until remediated)
 
-**Key Principle:** "No system escapes accountability." Every system either meets clock synchronization requirements OR has a documented, approved exception with compensating controls. This assessment ensures no systems fall through the cracks.
+**Key Principle:** "No system escapes accountability." Every system either meets clock synchronisation requirements OR has a documented, approved exception with compensating controls. This assessment ensures no systems fall through the cracks.
 
-Think of this as the "exception register" for time synchronization - similar to how a firewall rule exception requires approval and documentation, systems that cannot synchronize properly require formal exception management.
+Think of this as the "exception register" for time synchronisation - similar to how a firewall rule exception requires approval and documentation, systems that cannot synchronise properly require formal exception management.
 
 ## What You'll Document
 
@@ -124,11 +124,11 @@ Think of this as the "exception register" for time synchronization - similar to 
 | Assessment | Focus | Relationship to A.8.17-S3 |
 |------------|-------|---------------------------|
 | ISMS-IMP-A.8.17.1 | Time Source Infrastructure | S1 documents WHAT sources exist; S3 tracks systems that CAN'T use those sources |
-| ISMS-IMP-A.8.17.2 | System Synchronization Verification | S2 identifies non-compliant systems; S3 manages their exceptions |
+| ISMS-IMP-A.8.17.2 | System Synchronisation Verification | S2 identifies non-compliant systems; S3 manages their exceptions |
 | **ISMS-IMP-A.8.17.3** | **Exception Management** | **THIS assessment - documents WHY systems can't comply and HOW we mitigate** |
 
 **Assessment Flow:**
-1. **A.8.17-S2 (PREVIOUS):** "System XYZ is not synchronized to approved time sources"
+1. **A.8.17-S2 (PREVIOUS):** "System XYZ is not synchronised to approved time sources"
 2. **A.8.17-S3 (THIS):** "System XYZ is an air-gapped OT system; approved exception with local GPS compensating control"
 
 You SHOULD complete S1 and S2 first - exception management (S3) handles systems identified as non-compliant in S2.
@@ -137,7 +137,7 @@ You SHOULD complete S1 and S2 first - exception management (S3) handles systems 
 
 **Primary Stakeholders:**
 
-1. **System Administrators** - Know which systems have synchronization challenges
+1. **System Administrators** - Know which systems have synchronisation challenges
 2. **Network Engineers** - Understand technical constraints preventing NTP connectivity
 3. **OT/ICS Engineers** - Manage air-gapped and legacy industrial systems
 4. **ISMS Officer** - Conducts risk assessment and manages exception process
@@ -147,8 +147,8 @@ You SHOULD complete S1 and S2 first - exception management (S3) handles systems 
 **Required Skills:**
 
 - **System Architecture Knowledge** - Understand why systems cannot meet requirements
-- **Risk Assessment Basics** - Can evaluate impact of non-synchronized time
-- **Compensating Control Design** - Know alternatives to standard NTP synchronization
+- **Risk Assessment Basics** - Can evaluate impact of non-synchronised time
+- **Compensating Control Design** - Know alternatives to standard NTP synchronisation
 - **Documentation Skills** - Can clearly articulate justifications and controls
 
 **You DON'T need to be a risk management expert!** The assessment provides guidance on exception categories, standard compensating controls, and approval criteria.
@@ -185,7 +185,7 @@ Upon completion, you will have:
 
 **What This Looks Like for Audit:**
 
-When an auditor asks: *"How do you handle systems that cannot meet clock synchronization requirements?"*
+When an auditor asks: *"How do you handle systems that cannot meet clock synchronisation requirements?"*
 
 You hand them this assessment and say:
 
@@ -247,7 +247,7 @@ Before starting, gather the following:
 
 ## Policy Requirements to Review
 
-Before starting, familiarize yourself with key policy requirements from **ISMS-POL-A.8.17**:
+Before starting, familiarise yourself with key policy requirements from **ISMS-POL-A.8.17**:
 
 **From Section 3.3 (Exception Management):**
 
@@ -271,7 +271,7 @@ You'll be verifying compliance with these requirements in the assessment.
 
 - Export list of non-compliant systems from S2 assessment
 - Categorise by reason for non-compliance
-- Prioritize by system criticality
+- Prioritise by system criticality
 
 **STEP 2:** Research technical constraints
 
@@ -389,7 +389,7 @@ You'll be verifying compliance with these requirements in the assessment.
 | F | **Justification [*]** | REQUIRED | Detailed explanation why exception is needed | Technical assessment |
 | | | | Example: `Air-gapped OT system controlling manufacturing line. Network connectivity prohibited by safety standards.` | Documentation review |
 | | | | **Must be specific** - not just "cannot comply" | |
-| G | **Risk Assessment [*]** | REQUIRED | Impact of non-synchronized time | Risk analysis |
+| G | **Risk Assessment [*]** | REQUIRED | Impact of non-synchronised time | Risk analysis |
 | | | | Example: `Low - isolated system, logs not correlated with IT systems. Local timestamps sufficient for operational troubleshooting.` | |
 | H | **Compensating Controls [*]** | REQUIRED | Alternative measures to mitigate risk | Control design |
 | | | | Example: `Local GPS receiver for independent time source. Manual clock verification monthly.` | |
@@ -646,7 +646,7 @@ Document notable patterns, trends, or concerns:
 **Risk Assessment Evidence:**
 
 - [ ] **Risk assessment document** - Formal risk analysis for high-risk exceptions
-- [ ] **Impact analysis** - Documentation of potential impact if time unsynchronized
+- [ ] **Impact analysis** - Documentation of potential impact if time unsynchronised
 
 **System Documentation:**
 
@@ -669,7 +669,7 @@ EXC-20260116-001-Risk-Assessment-20260118.pdf    (Risk analysis)
 ## Where to Store Evidence
 
 **Options:**
-1. **ISMS document repository** - Centralized ISMS file storage
+1. **ISMS document repository** - Centralised ISMS file storage
 2. **Network share** - `\\fileserver\ISMS\Evidence\A.8.17\S3\Exceptions\`
 3. **Document management** - SharePoint, Confluence, etc.
 4. **Reference in workbook** - Put file paths in Notes columns
@@ -702,9 +702,9 @@ Policy requires compensating controls for all exceptions. No controls = no appro
 **HOW TO AVOID:**
 Every exception needs at least one compensating control. Examples:
 - Local GPS receiver
-- Manual time synchronization with documented procedure
+- Manual time synchronisation with documented procedure
 - Isolated time source within air-gapped network
-- Vendor-managed time synchronization
+- Vendor-managed time synchronisation
 
 ## Expired Exceptions Not Tracked
 
@@ -879,4 +879,4 @@ Before submitting for approval, verify:
 *"A single second of drift can mean a world of confusion in forensic analysis."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

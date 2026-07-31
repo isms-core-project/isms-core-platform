@@ -1,5 +1,5 @@
 <!-- ISMS-CORE:IMP:ISMS-IMP-A.8.6.1-UG:framework:UG:a.8.6.1 -->
-**ISMS-IMP-A.8.6.1-UG - Capacity Utilization Assessment**
+**ISMS-IMP-A.8.6.1-UG - Capacity Utilisation Assessment**
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.8.6: Capacity Management
 
@@ -65,29 +65,29 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ### Purpose & Scope
 
-**Assessment Name:** ISMS-IMP-A.8.6.1 - Capacity Utilization Assessment
+**Assessment Name:** ISMS-IMP-A.8.6.1 - Capacity Utilisation Assessment
 
 #### What This Assessment Covers
 
-This assessment documents CURRENT capacity utilization across all infrastructure and application resources. This is the foundational "WHERE are we now?" assessment that answers:
+This assessment documents CURRENT capacity utilisation across all infrastructure and application resources. This is the foundational "WHERE are we now?" assessment that answers:
 
 - What resources exist in the infrastructure? (compute, storage, network, application)
-- What is the current utilization of each resource? (percentage used)
-- What is the peak utilization over recent history? (maximum observed)
-- How does current utilization compare to policy thresholds? (warning, critical)
+- What is the current utilisation of each resource? (percentage used)
+- What is the peak utilisation over recent history? (maximum observed)
+- How does current utilisation compare to policy thresholds? (warning, critical)
 - What capacity headroom exists? (remaining capacity before exhaustion)
 - Which resources are at risk of capacity exhaustion?
 
 #### Key Principle
 
-This assessment is **completely vendor-agnostic and platform-independent**. You document YOUR specific infrastructure (whether physical servers, VMware, Hyper-V, AWS, Azure, GCP, Kubernetes, hybrid, whatever), and measure utilization against generic policy thresholds.
+This assessment is **completely vendor-agnostic and platform-independent**. You document YOUR specific infrastructure (whether physical servers, VMware, Hyper-V, AWS, Azure, GCP, Kubernetes, hybrid, whatever), and measure utilisation against generic policy thresholds.
 
 #### What You'll Document
 
 - Complete resource inventory (all compute, storage, network, application resources)
-- Current utilization metrics for each resource
-- Peak utilization (30-day and 90-day maximum)
-- Average utilization (30-day and 90-day average)
+- Current utilisation metrics for each resource
+- Peak utilisation (30-day and 90-day maximum)
+- Average utilisation (30-day and 90-day average)
 - Threshold status (below warning, warning, critical, exceeded)
 - Capacity headroom (percentage remaining before thresholds)
 - Monitoring coverage (which resources are monitored, which are not)
@@ -98,18 +98,18 @@ This assessment is **completely vendor-agnostic and platform-independent**. You 
 
 | Assessment            | Focus                  | Relationship to A.8.6.1           |
 |-----------------------|------------------------|------------------------------------|
-| **ISMS-IMP-A.8.6.1** | **Current Utilization** | **WHERE are we now - current capacity status** |
+| **ISMS-IMP-A.8.6.1** | **Current Utilisation** | **WHERE are we now - current capacity status** |
 | ISMS-IMP-A.8.6.2     | Forecasting & Planning | WHERE will we be - future capacity needs |
 
-This assessment (A.8.6.1) MUST be completed first - you can't forecast future capacity until you know current utilization!
+This assessment (A.8.6.1) MUST be completed first - you can't forecast future capacity until you know current utilisation!
 
 ### Who Should Complete This Assessment
 
 #### Primary Stakeholders
 
-1. **Infrastructure Engineering** - Architecture, resource inventory, virtualization platforms
+1. **Infrastructure Engineering** - Architecture, resource inventory, virtualisation platforms
 2. **IT Operations** - Day-to-day monitoring, resource management
-3. **Capacity Planning Team** - Utilization analysis, threshold management
+3. **Capacity Planning Team** - Utilisation analysis, threshold management
 4. **System Administrators** - Server, storage, network administration
 5. **Cloud Operations** - Cloud resource management (if applicable)
 
@@ -118,7 +118,7 @@ This assessment (A.8.6.1) MUST be completed first - you can't forecast future ca
 - Understanding of infrastructure architecture (compute, storage, network)
 - Familiarity with monitoring tools (Prometheus, Datadog, CloudWatch, etc.)
 - Access to monitoring dashboards and metric sources
-- Understanding of resource types and utilization metrics
+- Understanding of resource types and utilisation metrics
 - Knowledge of organisational threshold policies
 
 #### Time Commitment
@@ -132,8 +132,8 @@ This assessment (A.8.6.1) MUST be completed first - you can't forecast future ca
 Upon completion, you will have:
 
 1. ✅ **Complete resource inventory** - Every infrastructure resource documented
-2. ✅ **Current utilization data** - Real-time and historical utilization metrics
-3. ✅ **Peak utilization tracking** - Maximum observed utilization (30/90 days)
+2. ✅ **Current utilisation data** - Real-time and historical utilisation metrics
+3. ✅ **Peak utilisation tracking** - Maximum observed utilisation (30/90 days)
 4. ✅ **Threshold assessment** - Comparison vs. warning and critical thresholds
 5. ✅ **Capacity headroom analysis** - Remaining capacity before exhaustion
 6. ✅ **At-risk resource identification** - Resources approaching or exceeding thresholds
@@ -197,7 +197,7 @@ This assessment has NO dependencies - it's the first assessment in the A.8.6 ser
 
 However, outputs from this assessment are INPUT to:
 
-- A.8.6.2 (Forecasting & Planning) - Needs utilization data from this assessment
+- A.8.6.2 (Forecasting & Planning) - Needs utilisation data from this assessment
 - A.8.6.3 - Consolidates data from all A.8.6 assessments into the Summary Dashboard
 
 ---
@@ -285,26 +285,26 @@ However, outputs from this assessment are INPUT to:
 **Steps:**
 1. For each compute resource (servers, VMs, containers):
 
-   - Collect current CPU utilization (%)
-   - Collect current memory utilization (%)
-   - Collect 30-day peak CPU utilization
-   - Collect 30-day peak memory utilization
-   - Collect 30-day average CPU utilization
-   - Collect 30-day average memory utilization
+   - Collect current CPU utilisation (%)
+   - Collect current memory utilisation (%)
+   - Collect 30-day peak CPU utilisation
+   - Collect 30-day peak memory utilisation
+   - Collect 30-day average CPU utilisation
+   - Collect 30-day average memory utilisation
    - Collect 90-day peak and average (if available)
 
 2. Document total capacity (CPU cores, memory GB)
-3. Calculate utilization vs. capacity
+3. Calculate utilisation vs. capacity
 4. Compare against policy thresholds
 5. Capture evidence (monitoring dashboard screenshots)
 
-**Deliverable:** Complete Sheet 2 with compute utilization data
+**Deliverable:** Complete Sheet 2 with compute utilisation data
 
 **Quality Check:**
 
-- ✓ Current utilization is recent (< 24 hours old)
-- ✓ Peak utilization reflects true maximums
-- ✓ Average utilization calculated correctly
+- ✓ Current utilisation is recent (< 24 hours old)
+- ✓ Peak utilisation reflects true maximums
+- ✓ Average utilisation calculated correctly
 - ✓ Threshold comparisons accurate
 - ✓ Evidence collected for critical resources
 
@@ -315,33 +315,33 @@ However, outputs from this assessment are INPUT to:
 **Steps:**
 1. For each storage resource (volumes, file systems, databases):
 
-   - Collect current disk space utilization (GB used, % used)
-   - Collect 30-day peak utilization
-   - Collect 30-day average utilization
+   - Collect current disk space utilisation (GB used, % used)
+   - Collect 30-day peak utilisation
+   - Collect 30-day average utilisation
    - Document total capacity (GB)
-   - Document IOPS utilization (if applicable)
-   - Document throughput utilization (if applicable)
+   - Document IOPS utilisation (if applicable)
+   - Document throughput utilisation (if applicable)
 
 2. For database storage:
 
    - Document table/database sizes
    - Document transaction log sizes
-   - Document backup storage utilization
+   - Document backup storage utilisation
 
 3. For cloud storage:
 
-   - Document object storage utilization
-   - Document block storage utilization
+   - Document object storage utilisation
+   - Document block storage utilisation
 
 4. Compare against policy thresholds
 5. Capture evidence
 
-**Deliverable:** Complete Sheet 3 with storage utilization data
+**Deliverable:** Complete Sheet 3 with storage utilisation data
 
 **Quality Check:**
 
 - ✓ All storage types included (disk, database, backup, cloud)
-- ✓ Utilization data is current
+- ✓ Utilisation data is current
 - ✓ Growth trends considered
 - ✓ Evidence collected
 
@@ -352,28 +352,28 @@ However, outputs from this assessment are INPUT to:
 **Steps:**
 1. For each network resource:
 
-   - Collect interface utilization (% bandwidth)
+   - Collect interface utilisation (% bandwidth)
    - Collect throughput (Mbps/Gbps actual vs. capacity)
    - Collect packet rate (packets per second)
    - Collect error rates and dropped packets
-   - Document 30-day peak utilization
-   - Document 30-day average utilization
+   - Document 30-day peak utilisation
+   - Document 30-day average utilisation
 
 2. For network services:
 
    - Load balancer connection counts
-   - Firewall connection table utilization
-   - VPN tunnel utilization
+   - Firewall connection table utilisation
+   - VPN tunnel utilisation
 
 3. Compare against policy thresholds
 4. Capture evidence
 
-**Deliverable:** Complete Sheet 4 with network utilization data
+**Deliverable:** Complete Sheet 4 with network utilisation data
 
 **Quality Check:**
 
 - ✓ All network segments covered
-- ✓ Peak utilization captured
+- ✓ Peak utilisation captured
 - ✓ Service-level metrics included
 - ✓ Evidence collected
 
@@ -387,15 +387,15 @@ However, outputs from this assessment are INPUT to:
    - Collect concurrent user/session counts
    - Collect transaction rates (requests per second, TPS)
    - Collect queue depths (message queues, job queues)
-   - Collect connection pool utilization
-   - Collect thread pool utilization
+   - Collect connection pool utilisation
+   - Collect thread pool utilisation
    - Document licensed capacity limits
    - Document architectural capacity limits
 
 2. For web services:
 
    - HTTP request rates
-   - API rate limits and utilization
+   - API rate limits and utilisation
    - Response time metrics
 
 3. Compare against capacity limits and thresholds
@@ -407,7 +407,7 @@ However, outputs from this assessment are INPUT to:
 
 - ✓ All critical applications covered
 - ✓ Capacity limits documented
-- ✓ Current utilization vs. limits assessed
+- ✓ Current utilisation vs. limits assessed
 - ✓ Evidence collected
 
 #### Phase 7: Threshold Assessment (1-2 hours)
@@ -415,7 +415,7 @@ However, outputs from this assessment are INPUT to:
 **Objective:** Complete Sheet 6 - Threshold Status
 
 **Steps:**
-1. For each resource, compare utilization vs. thresholds:
+1. For each resource, compare utilisation vs. thresholds:
 
    - Identify resources below warning threshold (healthy)
    - Identify resources at/above warning threshold (plan capacity)
@@ -424,7 +424,7 @@ However, outputs from this assessment are INPUT to:
 
 2. Calculate capacity headroom (% remaining before warning/critical)
 3. Calculate time-to-threshold (if trending data available)
-4. Prioritize at-risk resources by criticality
+4. Prioritise at-risk resources by criticality
 5. Document threshold breach incidents (if any)
 
 **Deliverable:** Complete Sheet 6 with threshold assessment
@@ -434,7 +434,7 @@ However, outputs from this assessment are INPUT to:
 - ✓ All resources assessed against thresholds
 - ✓ Threshold status is accurate
 - ✓ At-risk resources identified
-- ✓ Prioritization reflects business criticality
+- ✓ Prioritisation reflects business criticality
 
 #### Phase 8: Monitoring Coverage Assessment (1 hour)
 
@@ -456,7 +456,7 @@ However, outputs from this assessment are INPUT to:
 
 3. For unmonitored resources:
 
-   - Document reason (technical limitation, cost, deprioritized)
+   - Document reason (technical limitation, cost, deprioritised)
    - Assess risk of not monitoring
    - Create remediation plan
 
@@ -479,12 +479,12 @@ However, outputs from this assessment are INPUT to:
 
    - Assess business impact if capacity exhausted
    - Determine root cause (workload growth, inefficiency, etc.)
-   - Identify potential solutions (capacity expansion, optimization, workload migration)
+   - Identify potential solutions (capacity expansion, optimisation, workload migration)
    - Create remediation plan
    - Assign owner
    - Set target date
 
-4. Prioritize remediation by risk and business impact
+4. Prioritise remediation by risk and business impact
 
 **Deliverable:** Complete Sheet 8 with at-risk analysis and remediation plans
 
@@ -502,7 +502,7 @@ However, outputs from this assessment are INPUT to:
 
 **Steps:**
 1. List all evidence collected during assessment
-2. Organize by category (monitoring dashboards, metric exports, infrastructure screenshots, documentation)
+2. Organise by category (monitoring dashboards, metric exports, infrastructure screenshots, documentation)
 3. Document storage locations
 4. Verify accessibility
 5. Tag for audit readiness
@@ -532,7 +532,7 @@ However, outputs from this assessment are INPUT to:
 2. **Technical review** (infrastructure/operations manager)
 
    - Review technical accuracy
-   - Validate utilization data
+   - Validate utilisation data
    - Check threshold assessments
    - Verify monitoring coverage
    - Approve or request changes
@@ -660,7 +660,7 @@ Ask these questions:
 | **Medium** | Supports business operations | Moderate impact within days |
 | **Low** | Non-essential, development/test | Minimal business impact |
 
-**Critical resources should be prioritized for capacity management.**
+**Critical resources should be prioritised for capacity management.**
 
 **Step 5: Determine Monitoring Status**
 
@@ -848,7 +848,7 @@ Sheet1-Evidence-Network-Diagram-2026-01-15.pdf
 
 #### Purpose
 
-Document current CPU and memory utilization for all compute resources. This provides visibility into compute capacity consumption and identifies resources approaching capacity limits.
+Document current CPU and memory utilisation for all compute resources. This provides visibility into compute capacity consumption and identifies resources approaching capacity limits.
 
 #### What to Document
 
@@ -858,19 +858,19 @@ For EACH compute resource:
 - **Total Capacity**:
   - CPU cores (total)
   - Memory GB (total)
-- **Current Utilization**:
-  - CPU utilization (% used)
-  - Memory utilization (% used)
-- **Peak Utilization** (30 days):
+- **Current Utilisation**:
+  - CPU utilisation (% used)
+  - Memory utilisation (% used)
+- **Peak Utilisation** (30 days):
   - CPU peak (% max observed)
   - Memory peak (% max observed)
-- **Peak Utilization** (90 days):
+- **Peak Utilisation** (90 days):
   - CPU peak (% max observed)
   - Memory peak (% max observed)
-- **Average Utilization** (30 days):
+- **Average Utilisation** (30 days):
   - CPU average (% mean)
   - Memory average (% mean)
-- **Average Utilization** (90 days):
+- **Average Utilisation** (90 days):
   - CPU average (% mean)
   - Memory average (% mean)
 - **Threshold Status**:
@@ -881,11 +881,11 @@ For EACH compute resource:
 
 #### Common Mistakes to Avoid
 
-❌ **Using stale data** - Utilization data from weeks/months ago  
-❌ **Ignoring peak utilization** - Only looking at current or average  
+❌ **Using stale data** - Utilisation data from weeks/months ago  
+❌ **Ignoring peak utilisation** - Only looking at current or average  
 ❌ **Not accounting for burst capacity** - Assuming average = sufficient  
-❌ **Mixing CPU allocation with utilization** - Allocated vCPUs ≠ actual CPU usage  
-❌ **Ignoring memory pressure** - Memory utilization may not show swapping/paging  
+❌ **Mixing CPU allocation with utilisation** - Allocated vCPUs ≠ actual CPU usage  
+❌ **Ignoring memory pressure** - Memory utilisation may not show swapping/paging  
 ❌ **Not considering workload patterns** - Missing daily/weekly peaks  
 
 #### How to Complete
@@ -924,44 +924,44 @@ Depending on your infrastructure, access:
   - Cloud instance: Instance type memory (e.g., m5.xlarge = 16 GB)
   - Container: Memory limit (e.g., 8 GB)
 
-**Step 3: Collect Current Utilization**
+**Step 3: Collect Current Utilisation**
 
-- **CPU Utilization (%)**: Current CPU usage as percentage of total capacity
+- **CPU Utilisation (%)**: Current CPU usage as percentage of total capacity
   - Linux: `top` or `htop` (look at CPU% column)
   - Windows: Task Manager → Performance → CPU
   - Monitoring dashboards: Current CPU% metric
-- **Memory Utilization (%)**: Current memory usage as percentage of total capacity
+- **Memory Utilisation (%)**: Current memory usage as percentage of total capacity
   - Linux: `free -h` (Used / Total × 100)
   - Windows: Task Manager → Performance → Memory
   - Monitoring dashboards: Current Memory% metric
 
-**IMPORTANT: Current utilization should be recent (< 24 hours old) to reflect actual state.**
+**IMPORTANT: Current utilisation should be recent (< 24 hours old) to reflect actual state.**
 
-**Step 4: Collect Peak Utilization (30 days and 90 days)**
+**Step 4: Collect Peak Utilisation (30 days and 90 days)**
 
-- **CPU Peak**: Maximum CPU utilization observed over period
+- **CPU Peak**: Maximum CPU utilisation observed over period
   - Query monitoring system: `max(cpu_utilization) over last 30 days`
   - Example tools:
     - Prometheus: `max_over_time(cpu_percent[30d])`
     - CloudWatch: EC2 CPUUtilization metric, statistic=Maximum, period=30 days
     - Datadog: `max:system.cpu.user{*} over 30d`
-- **Memory Peak**: Maximum memory utilization observed over period
+- **Memory Peak**: Maximum memory utilisation observed over period
   - Query monitoring system: `max(memory_utilization) over last 30 days`
 
-**WHY PEAK MATTERS**: Peak utilization reveals capacity risks that averages hide. A resource averaging 40% CPU but peaking at 95% is at risk during peak load.
+**WHY PEAK MATTERS**: Peak utilisation reveals capacity risks that averages hide. A resource averaging 40% CPU but peaking at 95% is at risk during peak load.
 
-**Step 5: Collect Average Utilization (30 days and 90 days)**
+**Step 5: Collect Average Utilisation (30 days and 90 days)**
 
-- **CPU Average**: Mean CPU utilization over period
+- **CPU Average**: Mean CPU utilisation over period
   - Query monitoring system: `avg(cpu_utilization) over last 30 days`
-- **Memory Average**: Mean memory utilization over period
+- **Memory Average**: Mean memory utilisation over period
   - Query monitoring system: `avg(memory_utilization) over last 30 days`
 
-**WHY AVERAGE MATTERS**: Average utilization reveals baseline load and identifies over-provisioned resources (consistently low average = waste).
+**WHY AVERAGE MATTERS**: Average utilisation reveals baseline load and identifies over-provisioned resources (consistently low average = waste).
 
 **Step 6: Assess Threshold Status**
 
-Compare current/peak utilization against policy thresholds (from ISMS-POL-A.8.6, Section 4.1):
+Compare current/peak utilisation against policy thresholds (from ISMS-POL-A.8.6, Section 4.1):
 
 **Standard Thresholds** (adjust based on your policy):
 
@@ -970,16 +970,16 @@ Compare current/peak utilization against policy thresholds (from ISMS-POL-A.8.6,
 
 | Threshold Status | Definition | Action Required |
 |------------------|------------|-----------------|
-| **Below Warning** | Utilization < warning threshold (healthy) | Continue monitoring |
-| **Warning** | Utilization ≥ warning threshold but < critical | Begin capacity planning, prepare expansion |
-| **Critical** | Utilization ≥ critical threshold but < 100% | Immediate action required |
-| **Exceeded** | Utilization = 100% (capacity exhausted) | Emergency response |
+| **Below Warning** | Utilisation < warning threshold (healthy) | Continue monitoring |
+| **Warning** | Utilisation ≥ warning threshold but < critical | Begin capacity planning, prepare expansion |
+| **Critical** | Utilisation ≥ critical threshold but < 100% | Immediate action required |
+| **Exceeded** | Utilisation = 100% (capacity exhausted) | Emergency response |
 
-**Important**: Assess threshold status based on PEAK utilization (30-day or 90-day), not just current or average. A resource peaking at 88% CPU is at Critical status even if average is 40%.
+**Important**: Assess threshold status based on PEAK utilisation (30-day or 90-day), not just current or average. A resource peaking at 88% CPU is at Critical status even if average is 40%.
 
 **Step 7: Calculate Capacity Headroom**
 
-**Headroom = Warning Threshold - Current Peak Utilization**
+**Headroom = Warning Threshold - Current Peak Utilisation**
 
 Examples:
 
@@ -1045,7 +1045,7 @@ For audit purposes, note where data came from:
 **Analysis**: CRITICAL - Immediate action required. Both CPU and memory exceed critical thresholds during peak load. Averages look acceptable (52%/68%), but peaks reveal severe capacity constraint. Risk of performance degradation or outages during peak times.
 
 **Recommended Actions**:
-1. **Immediate**: Review application for optimization opportunities (memory leaks, inefficient queries)
+1. **Immediate**: Review application for optimisation opportunities (memory leaks, inefficient queries)
 2. **Short-term** (1-2 weeks): Increase VM allocation (12 vCPUs, 48 GB RAM)
 3. **Long-term**: Consider application refactoring or horizontal scaling
 
@@ -1070,10 +1070,10 @@ For audit purposes, note where data came from:
 | Data Source | AWS CloudWatch |
 | Collection Date | 2026-01-15 |
 
-**Analysis**: OVER-PROVISIONED - Resource is significantly oversized. Peak utilization (22% CPU, 28% memory) is well below warning thresholds. Consider right-sizing to reduce costs.
+**Analysis**: OVER-PROVISIONED - Resource is significantly oversized. Peak utilisation (22% CPU, 28% memory) is well below warning thresholds. Consider right-sizing to reduce costs.
 
 **Recommended Actions**:
-1. **Cost Optimization**: Downsize to c5.xlarge (4 vCPUs, 8 GB RAM) - would still have 50%+ headroom
+1. **Cost Optimisation**: Downsize to c5.xlarge (4 vCPUs, 8 GB RAM) - would still have 50%+ headroom
 2. **Estimated Savings**: $200/month (approximate, verify with AWS pricing)
 3. **Implementation**: Test in dev/staging first, then production during maintenance window
 
@@ -1108,12 +1108,12 @@ For audit purposes, note where data came from:
 #### Evidence to Collect
 
 - **Monitoring dashboard screenshots** showing:
-  - Current CPU and memory utilization
+  - Current CPU and memory utilisation
   - 30-day CPU and memory trends
-  - Peak utilization markers
+  - Peak utilisation markers
 - **Metric export files** (CSV or JSON):
-  - CPU utilization time series (30-90 days)
-  - Memory utilization time series (30-90 days)
+  - CPU utilisation time series (30-90 days)
+  - Memory utilisation time series (30-90 days)
 - **Hypervisor performance data**:
   - VMware: vCenter performance charts
   - Hyper-V: Hyper-V Manager performance screenshots
@@ -1136,12 +1136,12 @@ Sheet2-Evidence-srv-dc01-Performance-Dashboard-2026-01-15.png
 
 - [ ] All compute resources from Sheet 1 included
 - [ ] Total capacity documented (CPU cores, memory GB)
-- [ ] Current utilization is recent (< 24 hours old)
-- [ ] Peak utilization calculated correctly (max over period, not average of peaks)
-- [ ] Average utilization calculated correctly (mean over period)
+- [ ] Current utilisation is recent (< 24 hours old)
+- [ ] Peak utilisation calculated correctly (max over period, not average of peaks)
+- [ ] Average utilisation calculated correctly (mean over period)
 - [ ] Both 30-day and 90-day data collected (if available)
 - [ ] Threshold status assessed based on PEAK (not current or average)
-- [ ] Capacity headroom calculated (warning threshold minus peak utilization)
+- [ ] Capacity headroom calculated (warning threshold minus peak utilisation)
 - [ ] Negative headroom flagged for immediate action
 - [ ] Evidence collected for all critical resources
 - [ ] Evidence collected for all at-risk resources (warning/critical status)
@@ -1155,7 +1155,7 @@ Sheet2-Evidence-srv-dc01-Performance-Dashboard-2026-01-15.png
 
 #### Purpose
 
-Document current disk space and storage utilization for all storage resources. Storage capacity exhaustion can cause application failures, data loss, and service outages.
+Document current disk space and storage utilisation for all storage resources. Storage capacity exhaustion can cause application failures, data loss, and service outages.
 
 #### What to Document
 
@@ -1166,14 +1166,14 @@ For EACH storage resource:
 - **Total Capacity**: Total storage space (GB or TB)
 - **Used Space**: Currently used space (GB or TB)
 - **Free Space**: Available space (GB or TB)
-- **Utilization**: Percentage used (%)
-- **Peak Utilization** (30 days): Maximum % used over period
-- **Peak Utilization** (90 days): Maximum % used over period
-- **Average Utilization** (30 days): Mean % used over period
-- **Average Utilization** (90 days): Mean % used over period
+- **Utilisation**: Percentage used (%)
+- **Peak Utilisation** (30 days): Maximum % used over period
+- **Peak Utilisation** (90 days): Maximum % used over period
+- **Average Utilisation** (30 days): Mean % used over period
+- **Average Utilisation** (90 days): Mean % used over period
 - **Growth Rate**: GB or TB per month (if calculable)
-- **IOPS Utilization**: If applicable (% of maximum IOPS)
-- **Throughput Utilization**: If applicable (% of maximum throughput)
+- **IOPS Utilisation**: If applicable (% of maximum IOPS)
+- **Throughput Utilisation**: If applicable (% of maximum throughput)
 - **Threshold Status**: Below Warning / Warning / Critical / Exceeded
 - **Capacity Headroom**: % remaining before warning threshold
 - **Estimated Exhaustion Date**: When storage will hit 100% (if trending)
@@ -1253,24 +1253,24 @@ For EACH storage resource:
 **For Backup Storage**:
 
 - Backup software console (Veeam, Commvault, AWS Backup, Azure Backup, etc.)
-- Check backup repository utilization
+- Check backup repository utilisation
 
-**Step 3: Calculate Utilization**
+**Step 3: Calculate Utilisation**
 
-**Utilization (%) = (Used Space / Total Capacity) × 100**
+**Utilisation (%) = (Used Space / Total Capacity) × 100**
 
 Example:
 
 - Total Capacity: 1000 GB
 - Used Space: 750 GB
 - Free Space: 250 GB
-- Utilization: 75%
+- Utilisation: 75%
 
-**Step 4: Collect Peak Utilization (30 days and 90 days)**
+**Step 4: Collect Peak Utilisation (30 days and 90 days)**
 
-Storage typically grows over time, so peak utilization = most recent maximum.
+Storage typically grows over time, so peak utilisation = most recent maximum.
 
-Query monitoring system for maximum storage utilization over period:
+Query monitoring system for maximum storage utilisation over period:
 
 - Prometheus: `max_over_time(disk_used_percent[30d])`
 - CloudWatch: EBS VolumeUtilization, statistic=Maximum, period=30 days
@@ -1304,7 +1304,7 @@ Example:
 - Months Until Exhaustion: 250 / 50 = 5 months
 - Estimated Exhaustion: Current Date + 5 months = June 2026
 
-**This helps prioritize storage expansion planning.**
+**This helps prioritise storage expansion planning.**
 
 **Step 7: Check IOPS and Throughput Limits (If Applicable)**
 
@@ -1314,16 +1314,16 @@ Storage capacity (GB) is not the only constraint. IOPS (Input/Output Operations 
 
 - Check IOPS limits (e.g., AWS gp3: 3000 baseline IOPS)
 - Check throughput limits (e.g., AWS gp3: 125 MB/s baseline)
-- Monitor current IOPS and throughput utilization vs. limits
+- Monitor current IOPS and throughput utilisation vs. limits
 
 **For SAN/NAS**:
 
 - Check storage array IOPS limits
-- Monitor current IOPS utilization
+- Monitor current IOPS utilisation
 
 **Step 8: Assess Threshold Status**
 
-Compare utilization against policy thresholds (from ISMS-POL-A.8.6, Section 4.1):
+Compare utilisation against policy thresholds (from ISMS-POL-A.8.6, Section 4.1):
 
 **Standard Thresholds** (adjust based on your policy):
 
@@ -1337,19 +1337,19 @@ Compare utilization against policy thresholds (from ISMS-POL-A.8.6, Section 4.1)
 
 | Threshold Status | Definition | Action Required |
 |------------------|------------|-----------------|
-| **Below Warning** | Utilization < warning threshold | Continue monitoring |
-| **Warning** | Utilization ≥ warning threshold but < critical | Plan storage expansion |
-| **Critical** | Utilization ≥ critical threshold but < 100% | Immediate expansion or cleanup |
-| **Exceeded** | Utilization = 100% (storage full) | Emergency response, application failure imminent |
+| **Below Warning** | Utilisation < warning threshold | Continue monitoring |
+| **Warning** | Utilisation ≥ warning threshold but < critical | Plan storage expansion |
+| **Critical** | Utilisation ≥ critical threshold but < 100% | Immediate expansion or cleanup |
+| **Exceeded** | Utilisation = 100% (storage full) | Emergency response, application failure imminent |
 
 **Step 9: Calculate Capacity Headroom**
 
-**Headroom = Warning Threshold - Current Utilization**
+**Headroom = Warning Threshold - Current Utilisation**
 
 Example:
 
 - Warning threshold: 75%
-- Current utilization: 68%
+- Current utilisation: 68%
 - Headroom: 7% (= 7% of total capacity remaining before warning)
 
 **Negative headroom means already at/above warning.**
@@ -1364,12 +1364,12 @@ Example:
 | Total Capacity GB | 2000 |
 | Used Space GB | 1350 |
 | Free Space GB | 650 |
-| Utilization % | 68% | Calculated: 1350/2000 |
+| Utilisation % | 68% | Calculated: 1350/2000 |
 | Peak Util % (30d) | 70% |
 | Peak Util % (90d) | 65% | Growing trend |
 | Avg Util % (30d) | 67% |
 | Growth Rate GB/mo | 50 | Measured from historical data |
-| IOPS Utilization % | 45% | Well below limit |
+| IOPS Utilisation % | 45% | Well below limit |
 | Throughput Util % | 38% |
 | Threshold Status | Below Warning | 70% < 75% warning |
 | Headroom % | +5% | 75% - 70% = 5% |
@@ -1392,7 +1392,7 @@ Example:
 | Total Capacity GB | 500 |
 | Used Space GB | 465 |
 | Free Space GB | 35 |
-| Utilization % | 93% | **CRITICAL** |
+| Utilisation % | 93% | **CRITICAL** |
 | Peak Util % (30d) | 95% | **EXCEEDED CRITICAL** |
 | Peak Util % (90d) | 92% |
 | Avg Util % (30d) | 89% |
@@ -1424,7 +1424,7 @@ Example:
 | Total Capacity GB | Unlimited (S3) | No hard limit, but cost concern |
 | Used Space GB | 85000 | 85 TB |
 | Free Space GB | N/A |
-| Utilization % | N/A | No fixed capacity |
+| Utilisation % | N/A | No fixed capacity |
 | Peak Util % (30d) | N/A |
 | Growth Rate GB/mo | 2500 | 2.5 TB/month |
 | Threshold Status | N/A | Cost-based threshold instead |
@@ -1449,7 +1449,7 @@ Example:
 | Total Capacity GB | 50000 | 50 TB |
 | Used Space GB | 42500 | 42.5 TB |
 | Free Space GB | 7500 | 7.5 TB |
-| Utilization % | 85% | **AT CRITICAL THRESHOLD** |
+| Utilisation % | 85% | **AT CRITICAL THRESHOLD** |
 | Peak Util % (30d) | 86% |
 | Peak Util % (90d) | 82% |
 | Avg Util % (30d) | 84% |
@@ -1474,7 +1474,7 @@ Example:
 
 #### Evidence to Collect
 
-- **Storage dashboard screenshots** showing current utilization
+- **Storage dashboard screenshots** showing current utilisation
 - **Metric export files** with historical storage data (30-90 days)
 - **Growth trend graphs** showing storage consumption over time
 - **Database storage reports** (if applicable):
@@ -1486,7 +1486,7 @@ Example:
   - Azure Storage Analytics
   - GCP Cloud Storage usage reports
 - **Storage array management console** screenshots (for SAN/NAS):
-  - Volume utilization
+  - Volume utilisation
   - IOPS graphs
   - Throughput graphs
 
@@ -1504,15 +1504,15 @@ Sheet3-Evidence-s3-prod-uploads-Storage-Report-2026-01-15.pdf
 
 - [ ] All storage resources from Sheet 1 included
 - [ ] Total capacity documented accurately
-- [ ] Current utilization is recent (< 24 hours for on-prem, < 1 week for cloud)
-- [ ] Peak utilization over 30/90 days calculated
+- [ ] Current utilisation is recent (< 24 hours for on-prem, < 1 week for cloud)
+- [ ] Peak utilisation over 30/90 days calculated
 - [ ] Growth rate calculated (GB/month or TB/month) from historical data
 - [ ] Estimated exhaustion date calculated for resources with positive growth
 - [ ] IOPS/throughput limits checked (if applicable)
 - [ ] Database storage included (data files, transaction logs, tempdb)
 - [ ] Backup storage included
 - [ ] Cloud storage included (if applicable) with cost analysis
-- [ ] Threshold status assessed based on peak utilization
+- [ ] Threshold status assessed based on peak utilisation
 - [ ] Capacity headroom calculated
 - [ ] Evidence collected for all critical resources
 - [ ] Evidence collected for all at-risk resources (warning/critical status)
@@ -1534,8 +1534,8 @@ Sheet3-Evidence-s3-prod-uploads-Storage-Report-2026-01-15.pdf
 
 **How to Avoid:**
 
-- ALWAYS collect peak utilization (30-day and 90-day maximum)
-- Review utilization graphs to see patterns
+- ALWAYS collect peak utilisation (30-day and 90-day maximum)
+- Review utilisation graphs to see patterns
 - Identify peak times (daily backups, month-end processing, business hours)
 - Assess threshold status based on PEAK, not average
 - Configure monitoring dashboards to show max/peak prominently
@@ -1569,7 +1569,7 @@ Sheet3-Evidence-s3-prod-uploads-Storage-Report-2026-01-15.pdf
 - Review cloud console for ALL resources (compute, storage, network, database, serverless)
 - Include cloud operations team in assessment
 - Check cloud billing reports (resources using cost = resources to monitor)
-- Recognize that cloud has limits too (service quotas, cost controls)
+- Recognise that cloud has limits too (service quotas, cost controls)
 
 **Impact of Not Fixing:**
 
@@ -1586,7 +1586,7 @@ Sheet3-Evidence-s3-prod-uploads-Storage-Report-2026-01-15.pdf
 - "We know server XYZ isn't monitored, we'll get to it someday"
 - No documentation of WHY unmonitored
 - No plan to close monitoring gap
-- No prioritization of gaps
+- No prioritisation of gaps
 
 **Why It Happens:**
 
@@ -1598,9 +1598,9 @@ Sheet3-Evidence-s3-prod-uploads-Storage-Report-2026-01-15.pdf
 **How to Avoid:**
 
 - Document ALL gaps honestly (Sheet 7)
-- For each gap, document reason (technical limitation, cost, deprioritized)
+- For each gap, document reason (technical limitation, cost, deprioritised)
 - Create remediation plan even if "accept risk" (document acceptance)
-- Prioritize gaps by risk and business impact
+- Prioritise gaps by risk and business impact
 - Assign owners and target dates
 
 **Impact of Not Fixing:**
@@ -1615,7 +1615,7 @@ Sheet3-Evidence-s3-prod-uploads-Storage-Report-2026-01-15.pdf
 
 **Examples:**
 
-- Resource at 72% utilization (warning threshold 70%) → "Close enough, no action needed"
+- Resource at 72% utilisation (warning threshold 70%) → "Close enough, no action needed"
 - Resource at 78% → "It's not Critical yet, we'll wait"
 
 **Why It Happens:**
@@ -1690,7 +1690,7 @@ Sheet3-Evidence-s3-prod-uploads-Storage-Report-2026-01-15.pdf
 - Collect 30-day and 90-day historical data
 - Calculate growth rates (GB/month, %/month)
 - Estimate capacity exhaustion date: Months Until Exhaustion = (Free Space / Growth Rate)
-- Prioritize remediations by how soon capacity will exhaust
+- Prioritise remediations by how soon capacity will exhaust
 
 **Impact of Not Fixing:**
 
@@ -1760,9 +1760,9 @@ Use this checklist to verify assessment completeness and quality before submitti
 
 - [ ] All compute resources from Sheet 1 included
 - [ ] Total capacity documented (CPU cores, memory GB)
-- [ ] Current utilization is recent (< 24 hours old)
-- [ ] Peak utilization calculated correctly (max over 30/90 days)
-- [ ] Average utilization calculated correctly (mean over 30/90 days)
+- [ ] Current utilisation is recent (< 24 hours old)
+- [ ] Peak utilisation calculated correctly (max over 30/90 days)
+- [ ] Average utilisation calculated correctly (mean over 30/90 days)
 - [ ] Both 30-day and 90-day data collected (if available)
 - [ ] Threshold status assessed based on peak (not average)
 - [ ] Capacity headroom calculated
@@ -1774,8 +1774,8 @@ Use this checklist to verify assessment completeness and quality before submitti
 
 - [ ] All storage resources from Sheet 1 included
 - [ ] Total capacity documented accurately
-- [ ] Current utilization is recent (< 24 hours)
-- [ ] Peak utilization over 30/90 days calculated
+- [ ] Current utilisation is recent (< 24 hours)
+- [ ] Peak utilisation over 30/90 days calculated
 - [ ] Growth rate calculated (GB/month or TB/month)
 - [ ] Estimated exhaustion date calculated (if trending)
 - [ ] IOPS/throughput limits checked (if applicable)
@@ -1790,9 +1790,9 @@ Use this checklist to verify assessment completeness and quality before submitti
 
 - [ ] All network resources from Sheet 1 included
 - [ ] Interface speeds documented accurately
-- [ ] Current utilization is recent
-- [ ] Peak utilization over 30/90 days calculated
-- [ ] Both inbound and outbound utilization checked
+- [ ] Current utilisation is recent
+- [ ] Peak utilisation over 30/90 days calculated
+- [ ] Both inbound and outbound utilisation checked
 - [ ] Packet rate limits checked (if applicable)
 - [ ] Error rates and dropped packets reviewed
 - [ ] Threshold status assessed
@@ -1803,8 +1803,8 @@ Use this checklist to verify assessment completeness and quality before submitti
 
 - [ ] All critical applications from Sheet 1 included
 - [ ] Capacity limits documented (licensed, architectural, configured)
-- [ ] Current utilization is recent
-- [ ] Peak utilization over 30/90 days calculated
+- [ ] Current utilisation is recent
+- [ ] Peak utilisation over 30/90 days calculated
 - [ ] License compliance verified (if applicable)
 - [ ] Threshold status assessed
 - [ ] Capacity headroom calculated
@@ -1836,12 +1836,12 @@ Use this checklist to verify assessment completeness and quality before submitti
 - [ ] Remediation plans created for all gaps
 - [ ] Remediation owners assigned
 - [ ] Target dates set
-- [ ] Gaps prioritized by risk
+- [ ] Gaps prioritised by risk
 
 ### Sheet 8: At-Risk Resources & Remediation
 
 - [ ] All at-risk resources from Sheets 2-5 included
-- [ ] Resources prioritized by risk
+- [ ] Resources prioritised by risk
 - [ ] Business impact assessed for each resource
 - [ ] Root cause identified
 - [ ] Multiple solution options evaluated
@@ -1858,7 +1858,7 @@ Use this checklist to verify assessment completeness and quality before submitti
 - [ ] Evidence organised by category (folder structure)
 - [ ] Evidence IDs assigned systematically
 - [ ] Metadata documented (description, source, date, location)
-- [ ] Sensitive data sanitized
+- [ ] Sensitive data sanitised
 - [ ] Audit tags applied
 - [ ] Evidence accessibility verified
 - [ ] Retention periods documented
@@ -1867,19 +1867,19 @@ Use this checklist to verify assessment completeness and quality before submitti
 
 ### Data Quality
 
-- [ ] All utilization data is current (< 24-48 hours old for "current" metrics)
+- [ ] All utilisation data is current (< 24-48 hours old for "current" metrics)
 - [ ] Historical data covers adequate period (30 days minimum, 90 days preferred)
-- [ ] Peak utilization represents true maximums (not averages)
+- [ ] Peak utilisation represents true maximums (not averages)
 - [ ] Threshold comparisons are accurate
-- [ ] Calculations verified (utilization %, headroom %, growth rates)
-- [ ] No obvious data errors (e.g., >100% utilization, negative headroom without explanation)
+- [ ] Calculations verified (utilisation %, headroom %, growth rates)
+- [ ] No obvious data errors (e.g., >100% utilisation, negative headroom without explanation)
 
 ### Evidence Quality
 
 - [ ] Evidence is recent (< 30 days old)
 - [ ] Screenshots are clear and readable
 - [ ] Metric exports are complete (no truncated data)
-- [ ] Sensitive data sanitized
+- [ ] Sensitive data sanitised
 - [ ] Evidence properly stored and accessible
 - [ ] Evidence metadata documented
 
@@ -1918,7 +1918,7 @@ This assessment requires three levels of review and approval to ensure quality, 
 2. Verify all sheets are complete (no empty sections)
 3. Verify data accuracy:
 
-   - Spot-check utilization metrics against monitoring dashboards
+   - Spot-check utilisation metrics against monitoring dashboards
    - Verify calculations (percentages, headroom, growth rates)
    - Cross-reference resource inventory with asset inventory/CMDB
 
@@ -1962,10 +1962,10 @@ This assessment requires three levels of review and approval to ensure quality, 
    - Are resource types correctly categorised?
    - Is criticality assignment reasonable?
 
-2. Review utilization data (Sheets 2-5):
+2. Review utilisation data (Sheets 2-5):
 
-   - Spot-check utilization metrics against monitoring systems
-   - Verify peak utilization calculations
+   - Spot-check utilisation metrics against monitoring systems
+   - Verify peak utilisation calculations
    - Check threshold assessments are accurate
 
 3. Review monitoring coverage (Sheet 7):
@@ -1996,7 +1996,7 @@ This assessment requires three levels of review and approval to ensure quality, 
 
 - ✅ Technical accuracy verified
 - ✅ Resource inventory complete
-- ✅ Utilization data accurate
+- ✅ Utilisation data accurate
 - ✅ Monitoring gaps correctly identified
 - ✅ Remediation plans are feasible
 - ✅ Evidence quality acceptable
@@ -2022,7 +2022,7 @@ This assessment requires three levels of review and approval to ensure quality, 
    - Understand business impact of capacity risks
    - Review recommended solutions and cost estimates
    - Assess budget implications
-   - Prioritize remediations by risk and cost
+   - Prioritise remediations by risk and cost
 
 3. Approve remediation plans:
 
@@ -2098,4 +2098,4 @@ Once assessment is approved:
 *"Running out of capacity is never sudden; it is always a failure to plan ahead."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

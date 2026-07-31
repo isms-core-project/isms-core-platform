@@ -532,4 +532,4 @@ This policy addresses asset management requirements from:
 
 *This policy establishes requirements for acceptable use and return of assets. Implementation procedures are documented in ISMS-IMP-A.5.10-11 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

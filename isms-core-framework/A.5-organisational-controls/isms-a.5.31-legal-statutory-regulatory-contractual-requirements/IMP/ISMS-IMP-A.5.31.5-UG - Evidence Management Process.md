@@ -42,13 +42,13 @@
 
 ## Purpose
 
-This implementation guide operationalizes the evidence framework defined in ISMS-POL-A.5.31.4. It provides step-by-step instructions for compliance, security, and operational personnel to systematically collect, verify, organize, and maintain evidence that demonstrates [Organization]'s compliance with regulatory requirements.
+This implementation guide operationalises the evidence framework defined in ISMS-POL-A.5.31.4. It provides step-by-step instructions for compliance, security, and operational personnel to systematically collect, verify, organise, and maintain evidence that demonstrates [Organisation]'s compliance with regulatory requirements.
 
 **What This Guide Is**:
 
 - Operational "how-to" for evidence lifecycle management
 - Structured process from identification through audit presentation
-- Practical guidance on evidence types, quality, and organization
+- Practical guidance on evidence types, quality, and organisation
 - Audit readiness methodology
 
 **What This Guide Is Not**:
@@ -64,7 +64,7 @@ This implementation guide operationalizes the evidence framework defined in ISMS
 1. **Control Implementation**: New control implemented → Collect initial evidence
 2. **Periodic Collection**: Scheduled evidence refresh (monthly, quarterly, annual)
 3. **Regulatory Requirement**: Specific regulation mandates evidence retention
-4. **Audit Preparation**: Pre-audit evidence gathering and organization
+4. **Audit Preparation**: Pre-audit evidence gathering and organisation
 5. **Gap Remediation**: Gap closed, new control implemented → Collect evidence
 6. **Regulatory Change**: Regulation amended, evidence requirements change
 7. **Compliance Demonstration**: External stakeholder (customer, regulator) requests proof
@@ -152,21 +152,21 @@ This implementation guide operationalizes the evidence framework defined in ISMS
 - Identification: 1-2 hours
 - Collection: 2-8 hours (depending on control complexity)
 - Verification: 1-2 hours
-- Organization: 1 hour
+- Organisation: 1 hour
 - **Total**: 1-2 days per control
 
 **Periodic Evidence Refresh**:
 
 - Collection: 1-4 hours
 - Verification: 30 min - 1 hour
-- Organization: 30 min
+- Organisation: 30 min
 - **Total**: Half-day per control
 
 **Comprehensive Audit Preparation** (all regulations):
 
 - Evidence gap analysis: 2-3 days
 - Missing evidence collection: 1-2 weeks
-- Organization and packaging: 2-3 days
+- Organisation and packaging: 2-3 days
 - Pre-audit review: 1-2 days
 - **Total**: 3-4 weeks before audit
 
@@ -200,7 +200,7 @@ This implementation guide operationalizes the evidence framework defined in ISMS
    - Control implementation status (implemented, planned, in progress)
    - Control Owner
 
-**Output**: List of controls requiring evidence, organized by regulation
+**Output**: List of controls requiring evidence, organised by regulation
 
 **Example**:
 ```
@@ -223,7 +223,7 @@ Controls Requiring Evidence:
 
 **Evidence Type Framework**:
 
-**1. Policy Evidence** (Organizational controls)
+**1. Policy Evidence** (Organisational controls)
 
 - **What**: Approved policy documents, procedures, standards, guidelines
 - **Demonstrates**: Governance, management intent, documented requirements
@@ -233,7 +233,7 @@ Controls Requiring Evidence:
 **2. Procedure Evidence** (Operational controls)
 
 - **What**: Documented procedures, work instructions, playbooks
-- **Demonstrates**: How control is operationalized, step-by-step implementation
+- **Demonstrates**: How control is operationalised, step-by-step implementation
 - **Example**: Incident Response Procedure v2.1 (breach notification workflow, escalation criteria)
 - **Typical Controls**: A.5.26 Incident Response, A.5.24 Incident Planning, A.6.8 Disciplinary Process
 
@@ -297,7 +297,7 @@ Controls Requiring Evidence:
 
 For each control, ask:
 1. **What would convince an auditor** that this control is implemented and effective?
-2. **What is SPECIFIC to this control** (not generic organizational documents)?
+2. **What is SPECIFIC to this control** (not generic organisational documents)?
 3. **What demonstrates CURRENT state** (not historical or planned)?
 4. **What is VERIFIABLE** (auditor can independently check)?
 
@@ -630,7 +630,7 @@ Action: Schedule recertification audit, obtain renewed certificate by 2025-01-15
 
 - Evidence is tangentially related but doesn't directly demonstrate control
 - Evidence shows PLAN to implement, not actual implementation
-- Evidence is generic organizational document, not control-specific
+- Evidence is generic organisational document, not control-specific
 
 **Example**:
 ```
@@ -673,7 +673,7 @@ Document in Evidence Register:
 
 ---
 
-## Step 4: Evidence Organization
+## Step 4: Evidence Organisation
 
 ### Evidence Repository Structure
 
@@ -727,13 +727,13 @@ Document in Evidence Register:
     └── [Future Audits]/
 ```
 
-**Primary Organization: By_Regulation**
+**Primary Organisation: By_Regulation**
 
 - Most useful for compliance demonstrations
-- Organizes evidence by what it proves (regulatory requirement)
+- Organises evidence by what it proves (regulatory requirement)
 - Easy to answer "Show me your GDPR compliance evidence"
 
-**Secondary Organization: By_Control and By_Evidence_Type**
+**Secondary Organisation: By_Control and By_Evidence_Type**
 
 - Symbolic links or duplicates (if file system allows)
 - Alternative views for different use cases
@@ -744,7 +744,7 @@ Document in Evidence Register:
 
 **Components**:
 
-- **ControlID**: ISO control (A.5.10) or organizational control (CTRL-ORG-005)
+- **ControlID**: ISO control (A.5.10) or organisational control (CTRL-ORG-005)
 - **EvidenceType**: Policy, Procedure, Config, Log, Report, Certificate, Training, Contract, Screenshot
 - **Description**: Brief descriptor (no spaces, use underscores)
 - **Date**: ISO format YYYY-MM-DD (for time-sensitive evidence)
@@ -1037,7 +1037,7 @@ Action Required:
 
 ### Evidence Assembly
 
-**Purpose**: Organize evidence for easy auditor access
+**Purpose**: Organise evidence for easy auditor access
 
 **Audit Package Structure**:
 ```
@@ -1155,7 +1155,7 @@ Action Before Real Audit:
 - [ ] All requirements have supporting evidence (no zero-evidence requirements)
 - [ ] All evidence is current (no stale evidence >1 year old for ongoing controls)
 - [ ] All evidence is verified (Verification Status = Verified in Evidence Register)
-- [ ] Evidence is organized and indexed (Audit Package assembled)
+- [ ] Evidence is organised and indexed (Audit Package assembled)
 - [ ] Evidence quality reviewed (internal review complete)
 - [ ] Evidence locations documented (Evidence Index current)
 - [ ] Gaps identified and remediated (or risk-accepted with management approval)
@@ -1235,7 +1235,7 @@ Response:
 
 - "We have [Evidence A], but it sounds like you're looking for something different. Can you clarify what would satisfy this requirement?"
 - Action: Understand auditor's expectation, provide alternative evidence or explain why current evidence is sufficient
-- Negotiation: Sometimes auditor has different interpretation of requirement than organization - discuss and align
+- Negotiation: Sometimes auditor has different interpretation of requirement than organisation - discuss and align
 
 **Option 3: Evidence Doesn't Exist - Control Implemented but Not Documented**
 
@@ -1276,7 +1276,7 @@ Outcome: Evidence gap closed during audit, no finding.
 
 **Do**:
 
-- ✅ Be organized (know where evidence is, provide quickly)
+- ✅ Be organised (know where evidence is, provide quickly)
 - ✅ Be transparent (if gap exists, acknowledge it)
 - ✅ Provide context (explain what evidence shows, don't assume auditor will understand)
 - ✅ Be concise (provide exactly what auditor asks for, not 50 pages of tangentially related documents)
@@ -1315,7 +1315,7 @@ Outcome: Evidence gap closed during audit, no finding.
 
 - **Issue**: Policy is draft (not approved)
   - **Fix**: Obtain approved version or expedite approval process
-- **Issue**: Policy is outdated (e.g., references old organizational structure)
+- **Issue**: Policy is outdated (e.g., references old organisational structure)
   - **Fix**: Update policy, obtain re-approval
 
 **Example**:
@@ -1495,7 +1495,7 @@ Verdict: QUALITY EVIDENCE
 
 ## Evidence for Third-Party Controls
 
-**Challenge**: Control is implemented by third party (cloud provider, vendor), not directly by [Organization]
+**Challenge**: Control is implemented by third party (cloud provider, vendor), not directly by [Organisation]
 
 **Evidence Strategy**:
 1. **Third-Party Attestation**: Obtain SOC 2, ISO 27001, or other certification from vendor
@@ -1770,4 +1770,4 @@ END OF DOCUMENT
 *"The measure of intelligence is the ability to change."*
 — Albert Einstein
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -75,10 +75,10 @@ This assessment evaluates [Organisation]'s **masking technique selection and imp
 1. **Static Data Masking (SDM)** - Permanent masking for non-production environments
 2. **Dynamic Data Masking (DDM)** - Real-time masking based on user roles
 3. **Redaction/Nullification** - Complete data removal or blanking
-4. **Tokenization** - Reversible pseudonymization with secure vault
+4. **Tokenisation** - Reversible pseudonymisation with secure vault
 5. **Data Substitution (Synthetic)** - Replacement with realistic fake data
 6. **Encryption for Masking** - Reversible cryptographic masking
-7. **Data Shuffling** - Randomization within dataset
+7. **Data Shuffling** - Randomisation within dataset
 8. **Hashing (One-way)** - Irreversible cryptographic transformation
 
 **Assessment Output:** Excel workbook documenting technique selection rationale, implementation status, validation results, and compliance evidence.
@@ -112,7 +112,7 @@ This assessment evaluates [Organisation]'s **masking technique selection and imp
 - Familiarity with database structures and data relationships
 - Knowledge of application functionality requirements
 - Understanding of regulatory requirements (GDPR, FADP, PCI-DSS, HIPAA as applicable)
-- Basic cryptography concepts (hashing, encryption, tokenization)
+- Basic cryptography concepts (hashing, encryption, tokenisation)
 
 **Required Authority:**
 
@@ -133,7 +133,7 @@ This assessment evaluates [Organisation]'s **masking technique selection and imp
 
 **Breakdown:**
 
-- **Technique Familiarization:** 1-2 hours (reading documentation, understanding options)
+- **Technique Familiarisation:** 1-2 hours (reading documentation, understanding options)
 - **Technique Selection:** 2-3 hours (completing selection matrix)
 - **Implementation Documentation:** 2-3 hours (documenting current implementations)
 - **Validation Planning:** 1-2 hours (defining test criteria)
@@ -259,7 +259,7 @@ This assessment focuses on **WHICH masking techniques** are appropriate for your
 
 **Regulatory Context:**
 
-- GDPR Art.32(1)(a) - Pseudonymization requirement
+- GDPR Art.32(1)(a) - Pseudonymisation requirement
 - FADP Art.8(2) - Technical security measures
 - PCI-DSS Req.3.4 - Primary Account Number (PAN) masking
 - HIPAA 164.514(b) - De-identification methods
@@ -268,7 +268,7 @@ This assessment focuses on **WHICH masking techniques** are appropriate for your
 
 - Ability to read database schemas
 - Understanding of SQL joins and relationships
-- Basic understanding of encryption vs. hashing vs. tokenization
+- Basic understanding of encryption vs. hashing vs. tokenisation
 - Ability to test data transformations
 
 ## Tools and Resources
@@ -299,7 +299,7 @@ This assessment focuses on **WHICH masking techniques** are appropriate for your
 **Misconception #2: "Encryption = masking"**
 ❌ Reality: Encryption is reversible with key (not true masking). Use encryption only when reversibility is required AND key management is robust.
 
-**Misconception #3: "Just randomize everything"**
+**Misconception #3: "Just randomise everything"**
 ❌ Reality: Random data breaks referential integrity, fails application validation, destroys analytics value. Technique must match use case.
 
 **Misconception #4: "Production data doesn't need masking"**
@@ -360,7 +360,7 @@ END → Feed results into IMP-A.8.11.3 (Environment Coverage)
 - Typical use cases (when to use each technique)
 - Regulatory alignment (which regulations require/prefer which techniques)
 
-**Decision Point:** Familiarize yourself with ALL techniques before selecting. Don't prematurely narrow to one technique.
+**Decision Point:** Familiarise yourself with ALL techniques before selecting. Don't prematurely narrow to one technique.
 
 **Output:** Mental model of technique landscape and capabilities.
 
@@ -395,7 +395,7 @@ For each data element, identify:
 
 - **Reversibility Requirements:** Must data be un-masked?
   - Never (irreversible)?
-  - Authorised users only (DDM or tokenization)?
+  - Authorised users only (DDM or tokenisation)?
   - Specific scenarios (decryption with key)?
 
 **2.3 Apply Selection Criteria (1-2 hours)**
@@ -458,14 +458,14 @@ Selection Rationale: Tokenization chosen because:
   - What masking method is applied? (partial masking, full masking, etc.)
   - What is the performance impact?
 
-**3.3 Tokenization - 30 minutes** (if applicable)
+**3.3 Tokenisation - 30 minutes** (if applicable)
 
 - Open "Tokenization_Implementation" sheet
 - Document:
-  - Which data elements are tokenized?
+  - Which data elements are tokenised?
   - Token vault architecture (external service, internal vault, etc.)
   - Token format (format-preserving or random?)
-  - De-tokenization process and authorisation
+  - De-tokenisation process and authorisation
 
 **3.4 Other Techniques - 30 minutes**
 
@@ -498,11 +498,11 @@ Selection Rationale: Tokenization chosen because:
 - Performance thresholds (maximum acceptable latency)
 - Audit logging requirements (log DDM policy evaluations)
 
-**For Tokenization:**
+**For Tokenisation:**
 
 - Token format standards (format-preserving vs. random)
 - Vault security requirements (encryption, access control, backup)
-- De-tokenization authorisation workflow
+- De-tokenisation authorisation workflow
 - Token lifecycle (expiration, rotation policies)
 
 **Example Standard:**
@@ -533,7 +533,7 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 **Implementation Gaps:**
 
 - Technique selected but not yet implemented
-- Example: "Selected tokenization for SSN, but currently using SDM"
+- Example: "Selected tokenisation for SSN, but currently using SDM"
 
 **Coverage Gaps:**
 
@@ -558,7 +558,7 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - Target Date
 - Owner
 
-**Output:** Complete Gap_Analysis sheet with prioritized remediation roadmap.
+**Output:** Complete Gap_Analysis sheet with prioritised remediation roadmap.
 
 ---
 
@@ -578,7 +578,7 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 
 - Masking tool configuration exports
 - Masking script source code (if custom scripts)
-- Before/after masking sample data (sanitized examples only)
+- Before/after masking sample data (sanitised examples only)
 - DDM policy exports
 
 **Validation Evidence:**
@@ -660,7 +660,7 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 | **Static Data Masking (SDM)** | No | Yes | Non-production environments | GDPR Art.32, FADP Art.8 |
 | **Dynamic Data Masking (DDM)** | Runtime only | Yes | Production role-based access | GDPR Art.32, SOC 2 |
 | **Redaction/Nullification** | No | No | Complete data removal | GDPR Right to Erasure |
-| **Tokenization** | Yes (with vault) | Optional | Payment cards, reversible pseudonymization | PCI-DSS Req.3.4, GDPR |
+| **Tokenisation** | Yes (with vault) | Optional | Payment cards, reversible pseudonymisation | PCI-DSS Req.3.4, GDPR |
 | **Data Substitution** | No | Yes | Realistic test data | GDPR, FADP |
 | **Encryption (for masking)** | Yes (with key) | No | Reversible protection | HIPAA, GDPR Art.32 |
 | **Data Shuffling** | No | Yes (values) | Analytics, ML training | GDPR, research exemptions |
@@ -688,9 +688,9 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - **Pros:** No data duplication, real-time access control
 - **Cons:** Performance overhead, requires DDM-capable infrastructure
 
-**Option B: Secure vault with tokenization**
+**Option B: Secure vault with tokenisation**
 
-- ✅ **Technique:** Tokenization
+- ✅ **Technique:** Tokenisation
 - **Use Case:** Payment cards, reversible for authorised payment processing
 - **Pros:** PCI-DSS compliant, format-preserving optional
 - **Cons:** Vault infrastructure required, vault is single point of failure
@@ -705,7 +705,7 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 **Decision Criteria:**
 
 - Choose **DDM** if: Production system, role-based access control required
-- Choose **Tokenization** if: Format preservation critical, PCI-DSS scope, limited authorised de-masking
+- Choose **Tokenisation** if: Format preservation critical, PCI-DSS scope, limited authorised de-masking
 - Choose **Encryption** if: Regulatory requirement (HIPAA), batch de-masking acceptable
 
 ➡️ **SELECTED TECHNIQUE** → Document in Technique_Selection_Matrix
@@ -731,7 +731,7 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 **Option B: Analytics/reporting with statistical properties**
 
 - ✅ **Technique:** Data Shuffling
-- **Configuration:** Randomize values within dataset, preserve distribution
+- **Configuration:** Randomise values within dataset, preserve distribution
 - **Use Case:** Analytics, machine learning training data
 - **Validation:** Statistical properties preserved (mean, variance, distribution)
 
@@ -849,7 +849,7 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 **Requirement:** PCI-DSS Req.3.4 - Mask Primary Account Number (PAN) in non-production
 
 **Recommended Techniques:**
-1. **Primary:** Tokenization (format-preserving)
+1. **Primary:** Tokenisation (format-preserving)
 2. **Alternative:** Static Data Masking with format preservation
 
 **PCI-DSS Allowances:**
@@ -857,11 +857,11 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - First 6 digits (BIN - Bank Identification Number) + last 4 may be visible
 - Example: 4532-XXXX-XXXX-1234
 
-**Configuration Standards (Tokenization):**
+**Configuration Standards (Tokenisation):**
 
 - Format-preserving tokens (16 digits, Luhn-valid)
 - Secure token vault (PCI-DSS compliant)
-- De-tokenization only for authorised payment processing
+- De-tokenisation only for authorised payment processing
 - Token lifecycle: Expire tokens on card expiration date
 
 **Configuration Standards (SDM Alternative):**
@@ -893,15 +893,15 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 **Safe Harbor Method (18 identifiers must be removed/masked):**
 
 - Names → Data substitution with fake names
-- Geographic subdivisions smaller than state → Generalize to state level
+- Geographic subdivisions smaller than state → Generalise to state level
 - Dates (birth, admission, etc.) → Shift by random offset (±30 days)
 - Phone numbers → Replace with fake but valid format
 - Email addresses → Replace with fake domain
 - SSN → Redact or static mask
-- Medical record numbers → Tokenize with format preservation
-- Account numbers → Tokenize
+- Medical record numbers → Tokenise with format preservation
+- Account numbers → Tokenise
 - Certificate/license numbers → Redact
-- Device identifiers → Hash or tokenize
+- Device identifiers → Hash or tokenise
 - URLs → Redact
 - IP addresses → Replace with private IP range
 - Biometric identifiers → Redact (cannot mask meaningfully)
@@ -960,7 +960,7 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 
 **Recommended Techniques:**
 1. **Primary:** Redaction + Data Substitution
-2. **Alternative:** Tokenization (if reversibility needed with authorised partner)
+2. **Alternative:** Tokenisation (if reversibility needed with authorised partner)
 
 **Configuration Standards:**
 
@@ -973,9 +973,9 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 
 | Scenario | Data Shared | Masking Approach |
 |----------|-------------|------------------|
-| **Marketing Partner** | Customer preferences, NOT names/emails | Pseudonymize customer ID, redact PII, share preferences |
-| **Analytics Vendor** | Behavioral data, NOT identities | Aggregate to anonymized cohorts, no individual records |
-| **Cloud Service Provider** | Application data for processing | Tokenize sensitive fields, encrypt data-in-transit |
+| **Marketing Partner** | Customer preferences, NOT names/emails | Pseudonymise customer ID, redact PII, share preferences |
+| **Analytics Vendor** | Behavioral data, NOT identities | Aggregate to anonymised cohorts, no individual records |
+| **Cloud Service Provider** | Application data for processing | Tokenise sensitive fields, encrypt data-in-transit |
 | **Offshore Development Team** | Test data for development | Static Data Masking with synthetic substitution |
 
 **Validation Criteria:**
@@ -993,9 +993,9 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 
 | Regulation | Requirement | Recommended Techniques | Validation Evidence |
 |------------|-------------|----------------------|---------------------|
-| **GDPR Art.32(1)(a)** | Pseudonymization and encryption | SDM, Tokenization, Encryption | Irreversibility test results, technique documentation |
+| **GDPR Art.32(1)(a)** | Pseudonymisation and encryption | SDM, Tokenisation, Encryption | Irreversibility test results, technique documentation |
 | **FADP Art.8(2)** | Appropriate technical measures | SDM, DDM, Encryption | Risk assessment, technique selection rationale |
-| **PCI-DSS Req.3.4** | Mask PAN (display max first 6 + last 4) | Tokenization, SDM (format-preserving) | PCI assessor approval, masking validation tests |
+| **PCI-DSS Req.3.4** | Mask PAN (display max first 6 + last 4) | Tokenisation, SDM (format-preserving) | PCI assessor approval, masking validation tests |
 | **HIPAA 164.514(b)** | De-identification (18 identifiers) | SDM, Redaction, Data Substitution | Safe Harbor checklist, expert determination report |
 | **CCPA/CPRA** | De-identification for analytics | Data Shuffling, Synthetic Data | Re-identification risk assessment |
 | **SOC 2 CC6.1** | Logical access controls | DDM (role-based), Access controls | DDM policy audit logs, access reviews |
@@ -1003,20 +1003,20 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 
 **Critical Compliance Notes:**
 
-**GDPR Pseudonymization (Art.32):**
+**GDPR Pseudonymisation (Art.32):**
 
 - Technique must prevent attribution to data subject without additional information
-- Additional information (e.g., tokenization vault key) must be stored separately
+- Additional information (e.g., tokenisation vault key) must be stored separately
 - Re-identification must require "disproportionate effort"
-- ✅ Compliant: Tokenization with vault, SDM with irreversibility
+- ✅ Compliant: Tokenisation with vault, SDM with irreversibility
 - ❌ Non-Compliant: Simple obfuscation (e.g., "XXX"), reversible encoding
 
 **PCI-DSS Masking (Req.3.4):**
 
 - Masking required in non-production AND for display purposes
 - First 6 + last 4 may be displayed (for BIN identification)
-- Truncation alone is NOT masking (must be irreversible or tokenized)
-- ✅ Compliant: Format-preserving tokenization, SDM with irreversibility
+- Truncation alone is NOT masking (must be irreversible or tokenised)
+- ✅ Compliant: Format-preserving tokenisation, SDM with irreversibility
 - ❌ Non-Compliant: Simple truncation without irreversibility proof
 
 **HIPAA De-Identification (164.514):**
@@ -1140,7 +1140,7 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - **Dropdown Options:**
   - Never (Irreversible)
   - Authorised Users Only (DDM)
-  - Specific Scenarios (Tokenization/Encryption)
+  - Specific Scenarios (Tokenisation/Encryption)
   - Emergency Only (Break-Glass)
 
 **Decision Criteria:**
@@ -1148,7 +1148,7 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 **Select "Never (Irreversible)" if:**
 
 - Non-production testing (no need to see real data)
-- Regulatory requirement (GDPR pseudonymization)
+- Regulatory requirement (GDPR pseudonymisation)
 - Data minimisation principle
 
 **Select "Authorised Users Only (DDM)" if:**
@@ -1157,9 +1157,9 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - Customer service needs conditional access
 - Real-time business operations require selective unmasking
 
-**Select "Specific Scenarios (Tokenization/Encryption)" if:**
+**Select "Specific Scenarios (Tokenisation/Encryption)" if:**
 
-- Payment processing (authorised payment gateway can de-tokenize)
+- Payment processing (authorised payment gateway can de-tokenise)
 - Compliance requirement (auditor needs access with proper authorisation)
 - Batch processing (decrypt for processing, re-encrypt after)
 
@@ -1179,7 +1179,7 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
   - Static Data Masking (SDM)
   - Dynamic Data Masking (DDM)
   - Redaction/Nullification
-  - Tokenization
+  - Tokenisation
   - Data Substitution (Synthetic)
   - Encryption (for masking)
   - Data Shuffling
@@ -1195,11 +1195,11 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 
 | Data Type | Use Case | Reversibility | Primary Technique | Why? |
 |-----------|----------|--------------|-------------------|------|
-| Credit Card PAN | Non-prod testing | Never | Tokenization (format-preserving) | PCI-DSS compliant, maintains format, supports testing |
+| Credit Card PAN | Non-prod testing | Never | Tokenisation (format-preserving) | PCI-DSS compliant, maintains format, supports testing |
 | Customer SSN | Prod role-based access | Authorised only | Dynamic Data Masking (DDM) | Real-time access control, no data duplication |
 | Patient Names | HIPAA research | Never | Data Substitution (Synthetic) | Safe Harbor compliance, realistic for analytics |
 | Passwords | Authentication | Never | Hashing (bcrypt) | Industry standard, irreversible, verification-only |
-| Account Balances | Analytics | Never | Data Shuffling | Preserves distribution, anonymizes individuals |
+| Account Balances | Analytics | Never | Data Shuffling | Preserves distribution, anonymises individuals |
 
 ---
 
@@ -1222,7 +1222,7 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 |------------------|-----------------|
 | Static Data Masking | Format-preserving substitution: Replace each digit with random digit (0-9), maintain length and hyphens. Preserve Luhn validity for credit cards. Same input → same output (deterministic for referential integrity). |
 | Dynamic Data Masking | Policy-based: IF user.role = 'agent' THEN CONCAT(SUBSTRING(ssn,1,3), '-XX-XXXX') ELSE ssn. Cache policy evaluation for 5 minutes to reduce overhead. |
-| Tokenization | Format-preserving tokenization using AES-128 in FF3-1 mode. Token vault: PostgreSQL with AES-256 encryption at rest. Token format matches original (16 digits for cards, 11 for SSN). De-tokenization requires 2-factor auth. |
+| Tokenisation | Format-preserving tokenisation using AES-128 in FF3-1 mode. Token vault: PostgreSQL with AES-256 encryption at rest. Token format matches original (16 digits for cards, 11 for SSN). De-tokenisation requires 2-factor auth. |
 | Data Substitution | Lookup table replacement: names from US Census data, addresses from postal database, emails using [firstname].[lastname]@example-masked.com pattern. Maintain gender consistency (male name → male name). |
 
 **Common Mistake:** Don't just repeat the technique name - provide configuration details.
@@ -1264,7 +1264,7 @@ Rationale: If tokenization vault becomes unavailable or performance overhead too
 4. **Alternatives Considered:** What other techniques were evaluated and why rejected?
 5. **Trade-offs Accepted:** What limitations/risks are accepted with this choice?
 
-**Example Rationale (Credit Card Tokenization):**
+**Example Rationale (Credit Card Tokenisation):**
 ```
 Tokenization selected for credit card PAN masking based on following criteria:
 
@@ -1349,7 +1349,7 @@ APPROVAL: CFO approved as data owner for financial data category (approval email
 - Special considerations (e.g., "Performance testing required before production")
 - Dependencies (e.g., "Requires token vault upgrade to v2.0")
 - Timeline (e.g., "Implement by Q2 2026")
-- Open questions (e.g., "Confirm with legal if anonymization level sufficient for GDPR")
+- Open questions (e.g., "Confirm with legal if anonymisation level sufficient for GDPR")
 
 ---
 
@@ -1629,7 +1629,7 @@ Credit card PAN masking:
 
 **Column J: Performance Acceptable?**
 
-- **Dropdown:** Yes, No, Needs Optimization
+- **Dropdown:** Yes, No, Needs Optimisation
 
 **Column K: DDM Tested?**
 
@@ -1663,11 +1663,11 @@ Credit card PAN masking:
 
 ## Sheet: Tokenization_Implementation
 
-**Purpose:** Document tokenization implementations (if applicable to [Organisation])
+**Purpose:** Document tokenisation implementations (if applicable to [Organisation])
 
-**Time to Complete:** 30 minutes (or skip if tokenization not used)
+**Time to Complete:** 30 minutes (or skip if tokenisation not used)
 
-**⚠️ NOTE:** If [Organisation] does NOT use tokenization, mark this sheet as "N/A - Not Applicable" and skip.
+**⚠️ NOTE:** If [Organisation] does NOT use tokenisation, mark this sheet as "N/A - Not Applicable" and skip.
 
 **Step-by-Step Instructions:**
 
@@ -1710,9 +1710,9 @@ Credit card PAN masking:
 
 ---
 
-**Column E-H: Tokenization Configuration**
+**Column E-H: Tokenisation Configuration**
 
-**Column E: Tokenization Algorithm**
+**Column E: Tokenisation Algorithm**
 
 - **Text Field** - Which algorithm/method?
 
@@ -1734,7 +1734,7 @@ Credit card PAN masking:
 
 **Deterministic = NO:**
 
-- Same credit card tokenized multiple times → different tokens each time
+- Same credit card tokenised multiple times → different tokens each time
 - **Benefit:** No token collision risk
 - **Risk:** Referential integrity lost (same card → different tokens in different tables)
 
@@ -1748,9 +1748,9 @@ Credit card PAN masking:
 - "Tokens rotated annually"
 - "Indefinite (no expiration)"
 
-**Column H: De-tokenization Authorisation**
+**Column H: De-tokenisation Authorisation**
 
-- **Text Field** - Who can de-tokenize and how?
+- **Text Field** - Who can de-tokenise and how?
 
 **Examples:**
 
@@ -1791,7 +1791,7 @@ Credit card PAN masking:
 ## Pitfall #1: Choosing Technique Before Understanding Requirements
 
 **The Mistake:**
-Jumping to a technique selection ("We'll use tokenization for everything!") before analyzing:
+Jumping to a technique selection ("We'll use tokenisation for everything!") before analyzing:
 
 - What data types exist
 - What use cases require masking
@@ -1800,7 +1800,7 @@ Jumping to a technique selection ("We'll use tokenization for everything!") befo
 
 **Why This Fails:**
 
-- Tokenization may be overkill for simple non-production masking
+- Tokenisation may be overkill for simple non-production masking
 - One technique doesn't fit all data types
 - Over-engineering leads to complexity, cost, delays
 
@@ -1973,11 +1973,11 @@ Problem: International dialing code lost, SMS functionality breaks
 ## Pitfall #4: Reversibility When Irreversibility Required
 
 **The Mistake:**
-Using reversible techniques (encryption, tokenization) when irreversibility is required by regulation or policy.
+Using reversible techniques (encryption, tokenisation) when irreversibility is required by regulation or policy.
 
 **Example Scenario:**
 
-**Requirement:** GDPR Art.32 pseudonymization for analytics (must be irreversible)
+**Requirement:** GDPR Art.32 pseudonymisation for analytics (must be irreversible)
 
 **Wrong Approach:**
 ```
@@ -2002,8 +2002,8 @@ Result: GDPR-compliant pseudonymization (irreversible without "disproportionate 
 
 | Regulation | Requirement | Reversible OK? | Recommended Technique |
 |------------|-------------|----------------|----------------------|
-| GDPR Art.32 Pseudonymization | Must prevent attribution without "additional info" | ⚠️ Yes, IF key/vault stored separately | Tokenization (vault segregated) OR SDM (irreversible) |
-| PCI-DSS Req.3.4 Masking | Mask PAN in non-production | ✅ Yes (tokenization allowed) | Tokenization OR SDM |
+| GDPR Art.32 Pseudonymisation | Must prevent attribution without "additional info" | ⚠️ Yes, IF key/vault stored separately | Tokenisation (vault segregated) OR SDM (irreversible) |
+| PCI-DSS Req.3.4 Masking | Mask PAN in non-production | ✅ Yes (tokenisation allowed) | Tokenisation OR SDM |
 | HIPAA Safe Harbor | Remove 18 identifiers | ❌ No (must be irreversible) | SDM, Redaction, Data Substitution |
 | FADP Art.8 Security | Appropriate technical measures | ✅ Yes (context-dependent) | Any technique meeting risk assessment |
 
@@ -2041,7 +2041,7 @@ Result: Query latency increased from 50ms → 250ms (5x slower)
 Problem: Application timeouts, user complaints, SLA breach
 ```
 
-**Scenario 2: Tokenization Vault Bottleneck**
+**Scenario 2: Tokenisation Vault Bottleneck**
 ```
 Implementation: Token vault for high-volume payment processing
 Impact: 1000 transactions/second × 2 token lookups each = 2000 vault calls/sec
@@ -2070,10 +2070,10 @@ Problem: Release schedule impacted, business frustrated
 - [ ] Load test: Can system handle peak concurrent users with DDM?
 - [ ] Set performance threshold: <10ms overhead acceptable, >50ms unacceptable
 
-**For Tokenization:**
+**For Tokenisation:**
 
 - [ ] Measure vault response time (round-trip latency)
-- [ ] Load test vault: Concurrent tokenization/de-tokenization requests
+- [ ] Load test vault: Concurrent tokenisation/de-tokenisation requests
 - [ ] Test vault failover: Does failover work within SLA?
 - [ ] Network latency: Vault in different datacenter/cloud region?
 - [ ] Set performance threshold: <20ms per token lookup acceptable
@@ -2317,11 +2317,11 @@ Non-production database credentials:
 - [ ] Audit logging enabled and verified
 - [ ] DDM policies tested for each role
 
-**Tokenization (if applicable):**
+**Tokenisation (if applicable):**
 
 - [ ] Token vault architecture documented
 - [ ] Token format specified (format-preserving or random)
-- [ ] De-tokenization authorisation process defined
+- [ ] De-tokenisation authorisation process defined
 - [ ] Vault security controls documented (encryption, access control, backup)
 
 **Other Techniques:**
@@ -2363,7 +2363,7 @@ Non-production database credentials:
 
 **Quality Questions:**
 
-- Are gaps prioritized correctly (critical gaps have earliest target dates)?
+- Are gaps prioritised correctly (critical gaps have earliest target dates)?
 - Are remediation plans actionable (specific steps, not vague intentions)?
 - Are target dates achievable given resource constraints?
 
@@ -2396,7 +2396,7 @@ Non-production database credentials:
 
 - [ ] Overall compliance metrics calculated correctly
 - [ ] Technique coverage by data category summarised
-- [ ] Gaps prioritized and visible
+- [ ] Gaps prioritised and visible
 - [ ] Approval sign-off section complete
 
 ---
@@ -2497,7 +2497,7 @@ Owner: Jane Doe (Database Administrator), john.smith@example.com
 **Examples:**
 
 - `Technique_Selection_Rationale_Finance_Domain_20260115.pdf` - Documented decision analysis for financial data
-- `DataOwner_Approval_CFO_20260115.pdf` - CFO approval email for credit card tokenization
+- `DataOwner_Approval_CFO_20260115.pdf` - CFO approval email for credit card tokenisation
 - `PCI_DSS_Compliance_Mapping_20260115.xlsx` - Mapping of PCI-DSS requirements to masking techniques
 
 ---
@@ -2596,7 +2596,7 @@ As you complete each assessment step, immediately collect corresponding evidence
 
 ---
 
-**Step 2: Organize Evidence in Evidence_Register Sheet (1 hour)**
+**Step 2: Organise Evidence in Evidence_Register Sheet (1 hour)**
 
 **For each evidence item:**
 
@@ -2777,7 +2777,7 @@ Problem: Vague description, inaccessible location, no context
 - **Who:** DPO, Compliance Officer, or Legal Counsel
 - **Focus:** Regulatory compliance verification
 - **Checklist:**
-  - [ ] GDPR pseudonymization requirements met
+  - [ ] GDPR pseudonymisation requirements met
   - [ ] PCI-DSS masking requirements met (if applicable)
   - [ ] HIPAA de-identification requirements met (if applicable)
   - [ ] Other applicable regulations addressed
@@ -2822,7 +2822,7 @@ Problem: Vague description, inaccessible location, no context
 
 | Role | Name | Signature | Date | Comments |
 |------|------|-----------|------|----------|
-| Data Owner (Finance) | [Name] | [Signature/Email] | [Date] | "Approved tokenization for payment cards, SDM for account numbers" |
+| Data Owner (Finance) | [Name] | [Signature/Email] | [Date] | "Approved tokenisation for payment cards, SDM for account numbers" |
 | Data Owner (HR) | [Name] | [Signature/Email] | [Date] | "Approved SDM for employee SSN, hashing for passwords" |
 | Security Team Lead | [Name] | [Signature/Email] | [Date] | "All technique selections security-appropriate" |
 | Compliance Officer | [Name] | [Signature/Email] | [Date] | "GDPR, PCI-DSS requirements addressed" |
@@ -2910,4 +2910,4 @@ Problem: Vague description, inaccessible location, no context
 *"The right mask protects the sensitive without destroying the useful."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

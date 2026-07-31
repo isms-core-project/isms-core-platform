@@ -331,7 +331,7 @@ Upon completion, you will have:
 
 **Steps:**
 1. List all evidence collected
-2. Organize by category
+2. Organise by category
 3. Verify accessibility
 
 **Deliverable:** Complete Sheet 7
@@ -522,13 +522,13 @@ From software inventory tools:
 "chrome.exe"
 ```
 
-**Normalization:**
-1. Standardize to official product name
+**Normalisation:**
+1. Standardise to official product name
 2. Separate software name from version
 3. Remove architecture/language designators (x64, en-US)
 4. Handle variations (acronyms, abbreviations)
 
-**Tool:** Use lookup table or scripted normalization
+**Tool:** Use lookup table or scripted normalisation
 
 **Step 3: Aggregate Software Inventory**
 
@@ -576,7 +576,7 @@ Automatically flag:
 #### Common Mistakes to Avoid
 
 ❌ **Incomplete inventory** - Missing endpoints, missing software  
-❌ **Not normalizing names** - Can't aggregate effectively  
+❌ **Not normalising names** - Can't aggregate effectively  
 ❌ **No version tracking** - "Chrome installed" - which version?  
 ❌ **Ignoring BYOD** - BYOD needs inventory too (with privacy limits)  
 ❌ **Stale data** - Using 6-month-old inventory  
@@ -869,7 +869,7 @@ For each endpoint:
 
 - Developer endpoints (need to compile/test code)
 - Administrative workstations (need admin tools)
-- Specialized workstations (CAD, video editing, etc.)
+- Specialised workstations (CAD, video editing, etc.)
 - Temporary exceptions (testing, troubleshooting)
 
 **For Each Exception:**
@@ -1142,7 +1142,7 @@ Target Date: 11 weeks from now
 Resources: AppLocker policy template, GPO deployment, help desk support
 ```
 
-**Step 5: Prioritize Gaps**
+**Step 5: Prioritise Gaps**
 
 Using risk/effort matrix similar to S3.
 
@@ -1169,7 +1169,7 @@ Using risk/effort matrix similar to S3.
 ### Sheet 7: Evidence_Register
 
 #### Purpose
-Centralized evidence repository for audit.
+Centralised evidence repository for audit.
 
 #### Evidence Categories
 
@@ -1191,7 +1191,7 @@ Similar to S3, Sheet 7. Document all evidence collected.
 - [ ] Storage locations documented
 - [ ] Evidence current (≤30 days for operational data)
 - [ ] Audit ready
-- [ ] Sanitized
+- [ ] Sanitised
 
 ---
 
@@ -1326,7 +1326,7 @@ For unpatched vulnerabilities:
 
 ❌ Not tracking vulnerability age
 ❌ Patches approved but not deployed
-❌ No prioritization of critical issues
+❌ No prioritisation of critical issues
 ❌ Not investigating why patches blocked
 ❌ EOL software with known vulnerabilities
 
@@ -1344,7 +1344,7 @@ For unpatched vulnerabilities:
 ### Sheet 10: Licensing_Compliance
 
 #### Purpose
-Ensure software licensing compliance and cost optimization.
+Ensure software licensing compliance and cost optimisation.
 
 #### What to Document
 
@@ -1364,7 +1364,7 @@ Ensure software licensing compliance and cost optimization.
 - Vendor name
 - Support tier and expiration
 - Renewal terms
-- Cost optimization opportunities
+- Cost optimisation opportunities
 
 #### How to Complete
 
@@ -1400,7 +1400,7 @@ For each approved software:
 - Support costs: [amount]
 - Annual cost: [total]
 
-**Step 5: Identify Cost Optimization**
+**Step 5: Identify Cost Optimisation**
 
 - Unused licenses: [count] (potential savings)
 - Negotiated discount opportunity: Yes/No
@@ -1422,7 +1422,7 @@ For each approved software:
 - [ ] Expiration dates tracked
 - [ ] No over-deployment
 - [ ] Renewal timeline established
-- [ ] Cost optimization identified
+- [ ] Cost optimisation identified
 
 ---
 
@@ -1493,7 +1493,7 @@ For BYOD endpoints:
 
 ❌ Requirements too vague
 ❌ Over-specifying nice-to-have features
-❌ No gap prioritization
+❌ No gap prioritisation
 ❌ Outdated solution information
 ❌ No performance impact assessment
 
@@ -1527,7 +1527,7 @@ For BYOD endpoints:
 
 **Mistake:** "We approve software as needed" (no master list)
 
-**Why It Happens:** Never formalized, assumed everyone knows
+**Why It Happens:** Never formalised, assumed everyone knows
 
 **How to Avoid:** Create and maintain approved list, publish to users
 
@@ -1561,7 +1561,7 @@ For BYOD endpoints:
 
 **Why It Happens:** Privacy concerns
 
-**How to Avoid:** Inventory containerized/work apps only, respect privacy
+**How to Avoid:** Inventory containerised/work apps only, respect privacy
 
 ### Pitfall 6: Shadow IT Whack-a-Mole
 
@@ -1591,9 +1591,9 @@ For BYOD endpoints:
 
 **Mistake:** 47 different versions of the same software
 
-**Why It Happens:** No standardization, user self-install
+**Why It Happens:** No standardisation, user self-install
 
-**How to Avoid:** Centralized deployment, version control
+**How to Avoid:** Centralised deployment, version control
 
 ### Pitfall 10: Licensing Ignored
 
@@ -1648,7 +1648,7 @@ For BYOD endpoints:
 - [ ] Application control configs
 - [ ] Vulnerability scan reports
 - [ ] Approval workflow records
-- [ ] All evidence sanitized
+- [ ] All evidence sanitised
 
 ### Remediation (6 items)
 
@@ -1762,4 +1762,4 @@ For BYOD endpoints:
 *"Every installed application is a door; know which ones are locked."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

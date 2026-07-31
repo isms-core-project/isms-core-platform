@@ -51,7 +51,7 @@ implementation of security-focused configuration controls.
 **As ISMS Implementer:**
 
 - Provides systematic methodology to assess hardening standard compliance
-- Defines practical process for identifying and prioritizing hardening gaps
+- Defines practical process for identifying and prioritising hardening gaps
 - Creates framework for documenting exceptions and risk acceptance
 - Enables integration with vulnerability management and configuration monitoring
 
@@ -91,7 +91,7 @@ framework:
 
 - Emerging threats inform hardening standard updates
 - New attack vectors may require new hardening controls
-- Threat landscape drives prioritization of hardening remediation
+- Threat landscape drives prioritisation of hardening remediation
 
 **A.5.23 (Information Security for Cloud Services):**
 
@@ -102,7 +102,7 @@ framework:
 **A.8.10 (Information Deletion):**
 
 - Secure deletion may be part of hardening requirements
-- Storage media hardening includes data sanitization controls
+- Storage media hardening includes data sanitisation controls
 
 ---
 
@@ -117,7 +117,7 @@ framework:
 | 5 | Control Compliance Detail | Document detailed compliance status for each hardening control |
 | 6 | Exception Management | Manage hardening exceptions and risk acceptance |
 | 7 | Remediation Tracking | Track remediation of identified hardening gaps |
-| 8 | Gap Prioritization | Prioritise hardening gaps by risk and asset criticality |
+| 8 | Gap Prioritisation | Prioritise hardening gaps by risk and asset criticality |
 | 9 | Evidence Register | Store and reference evidence supporting assessments |
 | 10 | Summary Dashboard | Compliance status and key metrics overview |
 | 11 | Approval Sign-Off | Management review sign-off and certification |
@@ -133,7 +133,7 @@ Evaluate [Organisation]'s security hardening posture by:
 1. **Standard Applicability**: Identify which hardening standards apply to which assets
 2. **Control Compliance**: Assess implementation of required hardening controls
 3. **Gap Analysis**: Identify controls not implemented or partially implemented
-4. **Risk Evaluation**: Prioritize gaps based on asset criticality and control severity
+4. **Risk Evaluation**: Prioritise gaps based on asset criticality and control severity
 5. **Exception Management**: Document and track approved deviations with risk acceptance
 6. **Remediation Tracking**: Monitor progress on closing hardening gaps
 
@@ -190,7 +190,7 @@ applicable standards during risk assessment based on:
 
 - Identify gaps where required controls are not implemented
 - Assess gap severity based on control criticality and asset importance
-- Prioritize remediation based on risk exposure
+- Prioritise remediation based on risk exposure
 - Calculate residual risk for accepted exceptions
 
 **Phase 4: Remediation & Exception Management (Both Perspectives)**
@@ -538,7 +538,7 @@ for each asset category. Provides basis for sampling during audit.
 
 - Matrix should be complete (no blank cells) to demonstrate systematic analysis
 - "Not Applicable" requires justification (documented in Notes)
-- Asset types with high hardening burden may need prioritization
+- Asset types with high hardening burden may need prioritisation
 - Matrix serves as input to Asset_Hardening_Assessment (determines which assets get 
 
   assessed against which standards)
@@ -651,7 +651,7 @@ Next_Assessment_Date = Last_Assessment_Date + [Review_Frequency from standard]
 Single view showing hardening posture for each asset. Enables:
 
 - Quick identification of non-compliant assets
-- Prioritization of remediation efforts (focus on Critical tier first)
+- Prioritisation of remediation efforts (focus on Critical tier first)
 - Resource allocation (assets with most gaps need most effort)
 - Progress tracking (are we improving over time?)
 
@@ -745,7 +745,7 @@ view that supports the asset-level summary in Sheet 4.
 - System Hardening
 - Patch Management
 - Secure Configuration
-- Service Minimization
+- Service Minimisation
 - Physical Security
 - Cryptography
 - Backup & Recovery
@@ -1229,7 +1229,7 @@ Target_Completion_Date =
 Provides systematic tracking of gap remediation from identification to closure:
 
 - Ensures no gaps are forgotten or lost
-- Prioritizes remediation based on risk
+- Prioritises remediation based on risk
 - Tracks progress and identifies blocked remediations
 - Links remediation to change control (Change_Request_ID)
 - Captures lessons learned to prevent recurrence
@@ -1238,7 +1238,7 @@ Provides systematic tracking of gap remediation from identification to closure:
 Demonstrates that:
 
 - Gaps are systematically tracked and remediated
-- Remediation prioritization is risk-based
+- Remediation prioritisation is risk-based
 - High-risk gaps receive prompt attention
 - Remediation effectiveness is verified (not just "done")
 - Trend shows improvement over time (gap closure rate > gap identification rate)
@@ -1426,7 +1426,7 @@ Provides:
 - Overall compliance status against hardening requirements
 - Evidence of systematic gap management
 - Demonstration of continuous improvement
-- Risk-based prioritization of remediation
+- Risk-based prioritisation of remediation
 
 **Refresh Frequency:**
 Dashboard should be refreshed after:
@@ -1447,7 +1447,7 @@ Dashboard must answer:
 ## Sheet 9: Gap_Prioritization
 
 ### Purpose
-Provide risk-based prioritization of all identified hardening gaps to guide remediation 
+Provide risk-based prioritisation of all identified hardening gaps to guide remediation 
 sequencing.
 
 ### Structure
@@ -1562,7 +1562,7 @@ Tertiary: Days_Until_Target (ascending - most overdue first)
 **Purpose (Implementer Perspective):**
 Answers critical question: "What should we fix first?"
 
-- Risk-based prioritization (not first-in-first-out)
+- Risk-based prioritisation (not first-in-first-out)
 - Identifies "quick wins" (high impact, low effort)
 - Highlights batch opportunities (fix multiple similar gaps together)
 - Surfaces dependencies (can't fix B until A is done)
@@ -1573,7 +1573,7 @@ Demonstrates:
 - Systematic, risk-based approach to gap remediation
 - Critical assets receive priority attention
 - Resources allocated based on risk, not convenience
-- Progress tracking against prioritized plan
+- Progress tracking against prioritised plan
 
 **Key Insight - Not All Gaps Are Equal:**
 A low-severity gap on a Critical asset may be more important than a high-severity gap 
@@ -1607,7 +1607,7 @@ Target: Fix all P1/P2 quick wins within 30 days.
 ## Sheet 10: Evidence_Register
 
 ### Purpose
-Centralized repository for all evidence supporting hardening compliance claims.
+Centralised repository for all evidence supporting hardening compliance claims.
 
 ### Structure
 
@@ -1704,7 +1704,7 @@ Review_Required =
 ### Usage Notes
 
 **Purpose (Implementer Perspective):**
-Centralized evidence management:
+Centralised evidence management:
 
 - Know what evidence exists
 - Track evidence validity/expiry
@@ -2075,7 +2075,7 @@ Automated drift detection (A.8.9.3) should trigger hardening assessment (A.8.9.4
 
 - Emerging threats → inform hardening standard updates
 - New attack vectors → drive new hardening controls
-- Threat landscape → prioritizes remediation
+- Threat landscape → prioritises remediation
 
 **Linkage:**
 ```
@@ -2220,7 +2220,7 @@ ensure standards address current threat landscape.
 ### Phase 1: Preparation (Weeks 1-2)
 
 **Activities:**
-1. Review and finalize applicable hardening standards
+1. Review and finalise applicable hardening standards
 2. Complete Asset_Type_Hardening_Matrix
 3. Identify assessment tools and configure access
 4. Train assessment team on methodology
@@ -2236,7 +2236,7 @@ ensure standards address current threat landscape.
 ### Phase 2: Assessment Execution (Weeks 3-6)
 
 **Activities:**
-1. Assess Critical assets first (prioritize high-risk)
+1. Assess Critical assets first (prioritise high-risk)
 2. Collect evidence systematically (automated where possible)
 3. Document gaps and exceptions as identified
 4. Validate findings with asset owners
@@ -2253,7 +2253,7 @@ ensure standards address current threat landscape.
 
 **Activities:**
 1. Analyze compliance metrics (Compliance_Dashboard)
-2. Prioritize gaps (Gap_Prioritization)
+2. Prioritise gaps (Gap_Prioritization)
 3. Develop remediation plans
 4. Obtain exception approvals where needed
 5. Prepare Key Findings summary
@@ -2261,7 +2261,7 @@ ensure standards address current threat landscape.
 **Deliverables:**
 
 - Compliance_Dashboard complete
-- Gap_Prioritization finalized
+- Gap_Prioritization finalised
 - Remediation_Tracking populated with plans
 - Exception_Management complete for approved exceptions
 
@@ -2383,4 +2383,4 @@ Configuration management team, system administrators, IT operations, security en
 *"Hardening is not about removing functionality; it is about removing attack surface."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

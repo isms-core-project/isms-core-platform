@@ -276,7 +276,7 @@ Create unique identifier using format `REV-XXXX`:
 
 | Category | Check Items |
 |----------|-------------|
-| Input Validation | All user inputs validated, parameterized queries |
+| Input Validation | All user inputs validated, parameterised queries |
 | Authentication | Proper auth mechanisms, session management |
 | Authorisation | Access controls, privilege checks |
 | Cryptography | Proper algorithms, key management |
@@ -786,4 +786,4 @@ Acceptance Authority Review
 *"Never accept software from a third party without testing it as if it came from an adversary."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

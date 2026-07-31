@@ -476,4 +476,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for equipment siting and protection. Implementation procedures are documented in ISMS-IMP-A.7.8-9 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

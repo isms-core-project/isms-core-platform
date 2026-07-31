@@ -157,7 +157,7 @@ This assessment prevents cargo cult monitoring by requiring:
 4. **Follow the Workflow** (pages 13-16) - 3-week timeline for comprehensive baseline assessment
 5. **Complete Each Sheet** (pages 17-70) using detailed instructions:
 
-   - Sheet 2: System Utilization Baselines (pages 17-30)
+   - Sheet 2: System Utilisation Baselines (pages 17-30)
    - Sheet 3: Access Pattern Baselines (pages 31-40)
    - Sheet 4: Application Behavior Baselines (pages 41-50)
    - Sheet 5: Detection Rule Coverage (pages 51-60)
@@ -276,9 +276,9 @@ Sometimes it's higher, sometimes lower. We alert if it seems unusually high."
 
 ## What You'll Document
 
-### System Utilization Baselines (Sheet 2)
+### System Utilisation Baselines (Sheet 2)
 
-- CPU utilization patterns (mean, std dev, peak times)
+- CPU utilisation patterns (mean, std dev, peak times)
 - Memory consumption baselines
 - Disk I/O patterns
 - Network bandwidth consumption
@@ -356,7 +356,7 @@ This assessment implements requirements from:
 
 - ISMS-POL-A.8.16, Section 2.1 (Monitoring Infrastructure Requirements) - for platform capabilities
 - ISMS-POL-A.8.16, Section 2.3 (Alert Management & Response Requirements) - for alert handling
-- ISMS-POL-A.8.16, Annex B (Baseline Definition Template) - standardized baseline format
+- ISMS-POL-A.8.16, Annex B (Baseline Definition Template) - standardised baseline format
 
 **Regulatory Context:**
 
@@ -391,7 +391,7 @@ After completing this assessment, you will have:
 4. **Tuning Roadmap**
 
    - High false-positive rules identified for tuning
-   - Coverage gaps prioritized for new rule development
+   - Coverage gaps prioritised for new rule development
    - Quarterly tuning plan with owners and timelines
 
 5. **Evidence Package**
@@ -556,12 +556,12 @@ Exclude incident periods from baseline observation windows to ensure baselines r
 
 - Extract 45-60 days of historical data: 2-4 hours
 - Clean data (remove incident periods): 1-2 hours
-- Organize by system/user/application: 2-3 hours
+- Organise by system/user/application: 2-3 hours
 - **Total:** 5-9 hours
 
 **Phase 2: Baseline Establishment (Week 2)**
 
-- System utilization baselines (Sheet 2): 8-12 hours (10-20 systems)
+- System utilisation baselines (Sheet 2): 8-12 hours (10-20 systems)
 - Access pattern baselines (Sheet 3): 6-10 hours (authentication, privileged access)
 - Application baselines (Sheet 4): 6-10 hours (key applications)
 - **Total:** 20-32 hours
@@ -600,7 +600,7 @@ Exclude incident periods from baseline observation windows to ensure baselines r
 ## Phase 1: Data Collection & Preparation (Week 1)
 
 **Step 1.1: Extract Historical Data (2-4 hours)**
-1. Identify systems for baseline establishment (from A.8.16.1, Sheet 3 - prioritize Tier 1)
+1. Identify systems for baseline establishment (from A.8.16.1, Sheet 3 - prioritise Tier 1)
 2. Determine observation period (45-60 days recommended)
 3. Extract performance data from monitoring platforms:
 
@@ -616,7 +616,7 @@ Exclude incident periods from baseline observation windows to ensure baselines r
 3. Exclude incident periods from baseline data
 4. Document exclusions (dates, reasons, systems affected)
 
-**Step 1.3: Organize Data (2-3 hours)**
+**Step 1.3: Organise Data (2-3 hours)**
 1. Group by system / user / application
 2. Aggregate by time period (hourly, daily as appropriate)
 3. Separate business hours vs. off-hours data (if patterns differ)
@@ -624,7 +624,7 @@ Exclude incident periods from baseline observation windows to ensure baselines r
 
 ## Phase 2: Baseline Establishment (Week 2)
 
-**Step 2.1: System Utilization Baselines (Sheet 2: 8-12 hours)**
+**Step 2.1: System Utilisation Baselines (Sheet 2: 8-12 hours)**
 For each critical system:
 1. Calculate statistical profile:
 
@@ -700,7 +700,7 @@ For critical applications:
    - Tactics with no detection rules
    - High-priority techniques not covered (lateral movement, credential dumping, etc.)
 
-4. Prioritize gap remediation (focus on high-risk, high-likelihood techniques)
+4. Prioritise gap remediation (focus on high-risk, high-likelihood techniques)
 
 **Step 3.3: Detection Effectiveness Testing (Sheet 6: 8-12 hours)**
 1. Select sample of detection rules for testing (10-20 rules across severity levels)
@@ -725,7 +725,7 @@ For critical applications:
 1. Collect baseline documentation (statistical profiles, threshold calculations)
 2. Collect detection rule exports (SIEM configuration, rule descriptions)
 3. Collect effectiveness test results (test logs, alert screenshots, MTTD measurements)
-4. Organize evidence with IDs (E001, E002, etc.)
+4. Organise evidence with IDs (E001, E002, etc.)
 5. Document in Evidence Register
 
 **Step 4.2: Quality Self-Check (2-3 hours)**
@@ -748,9 +748,9 @@ For critical applications:
 
 [Due to length constraints, full section includes detailed column-by-column guidance for:]
 
-## Sheet 2: System Utilization Baselines
+## Sheet 2: System Utilisation Baselines
 
-**Purpose:** Document measured baselines for system resource utilization (CPU, memory, disk, network)
+**Purpose:** Document measured baselines for system resource utilisation (CPU, memory, disk, network)
 
 **Policy Reference:** ISMS-POL-A.8.16, Section 2.2.1 (Baseline Establishment)
 
@@ -816,7 +816,7 @@ As Feynman said: *"The first principle is that you must not fool yourself—and 
 
 - **Servers/VMs:** CPU %, Memory %, Disk I/O, Network Traffic
 - **Databases:** CPU %, Memory %, Query Rate, Connection Count, Transaction Rate
-- **Network Devices:** Interface Utilization %, Packet Rate, Error Rate
+- **Network Devices:** Interface Utilisation %, Packet Rate, Error Rate
 - **Applications:** Transaction Rate, Response Time, Active Sessions
 
 **One row per metric** - If monitoring CPU, Memory, and Disk for same server, create 3 rows.
@@ -924,7 +924,7 @@ As Feynman said: *"The first principle is that you must not fool yourself—and 
 
 - **What to Enter:** Average value during weekends (Saturday-Sunday)
 - **Example:** CPU Weekend Mean = 15%
-- **Use Case:** Many corporate systems have lower weekend utilization
+- **Use Case:** Many corporate systems have lower weekend utilisation
 - **Note:** If system has no weekend pattern, can leave blank or use same as business hours
 
 **Column T: Alert Threshold (Derived)**
@@ -1708,7 +1708,7 @@ Status: CRITICAL - investigate immediately (likely credential theft)
 
 - Business changes (new users, new applications, infrastructure growth)
 - Baselines become outdated (alert on normal behavior = false positives)
-- Attacks become normalized (attacker activity included in "normal" baseline)
+- Attacks become normalised (attacker activity included in "normal" baseline)
 
 **How to Fix:**
 
@@ -1775,7 +1775,7 @@ Status: CRITICAL - investigate immediately (likely credential theft)
 
 - Baselines should represent NORMAL behavior
 - Security incidents are ANOMALIES (attacks, breaches, malware)
-- Including incidents in baseline normalizes attack behavior
+- Including incidents in baseline normalises attack behavior
 - Result: Attacks become "baseline" - detection rules won't trigger
 
 **Example:**
@@ -1799,7 +1799,7 @@ Status: CRITICAL - investigate immediately (likely credential theft)
 3. Exclude incident periods from baseline calculation
 4. Document exclusions (dates, reason, systems affected)
 
-**Prevention:** Always cross-reference incident history before finalizing baselines.
+**Prevention:** Always cross-reference incident history before finalising baselines.
 
 [Additional pitfalls 6-10 in full document]
 
@@ -1822,7 +1822,7 @@ Status: CRITICAL - investigate immediately (likely credential theft)
 - [ ] All active detection rules catalogued (rule ID, name, description)
 - [ ] MITRE ATT&CK coverage mapped (tactics/techniques covered)
 - [ ] Coverage gaps identified (tactics with no detection)
-- [ ] High-priority gaps prioritized for remediation
+- [ ] High-priority gaps prioritised for remediation
 
 **Effectiveness Measurement:**
 
@@ -1834,7 +1834,7 @@ Status: CRITICAL - investigate immediately (likely credential theft)
 
 **Evidence Completeness:**
 
-- [ ] Baseline documentation in standardized format (Annex B template)
+- [ ] Baseline documentation in standardised format (Annex B template)
 - [ ] Detection rule exports collected
 - [ ] Test results documented (attack simulations, detection results)
 - [ ] Evidence Register complete with all evidence IDs and locations
@@ -1874,4 +1874,4 @@ Status: CRITICAL - investigate immediately (likely credential theft)
 *"You cannot detect the abnormal without understanding the normal."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

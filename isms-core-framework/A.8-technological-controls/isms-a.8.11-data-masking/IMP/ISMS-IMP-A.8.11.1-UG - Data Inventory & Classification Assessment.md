@@ -73,7 +73,7 @@ This assessment evaluates [Organisation]'s **ability to identify, inventory, cla
 4. Data Classification (Critical/High/Medium/Low sensitivity levels)
 5. Data Ownership Assignment (who is accountable for each data category)
 6. Regulatory Mapping (GDPR, FADP, HIPAA, PCI-DSS applicability)
-7. Masking Priority Matrix (P1-P4 prioritization based on risk)
+7. Masking Priority Matrix (P1-P4 prioritisation based on risk)
 8. Gap Analysis (systems not inventoried, data not classified, ownership unassigned)
 
 **Assessment Output:** Excel workbook with ~200-500 data points documenting comprehensive data inventory, classification decisions, ownership assignments, and masking priorities.
@@ -98,7 +98,7 @@ Data masking controls are meaningless without knowing:
 
 - **Swiss nFADP (Art. 6):** Requires data controllers to maintain processing inventories
 - **EU GDPR (Art. 30):** Mandates records of processing activities (ROPA)
-- **EU GDPR (Art. 32):** Data pseudonymization requirements depend on knowing what data exists
+- **EU GDPR (Art. 32):** Data pseudonymisation requirements depend on knowing what data exists
 - **PCI-DSS v4.0 (Req. 3.3):** Primary Account Numbers (PAN) must be inventoried before masking
 - **HIPAA (§164.514):** De-identification requires knowing which data elements constitute Protected Health Information (PHI)
 
@@ -125,7 +125,7 @@ Data masking controls are meaningless without knowing:
 
 - Data discovery and profiling techniques
 - Database schema analysis
-- Risk assessment and prioritization
+- Risk assessment and prioritisation
 - Stakeholder engagement (extracting ownership assignments)
 
 **Support Roles:**
@@ -148,7 +148,7 @@ Data masking controls are meaningless without knowing:
 - **Classification Decisions:** 3-5 hours (requires SME input, data owner consultation)
 - **Ownership Assignment:** 2-3 hours (stakeholder outreach, RACI confirmation)
 - **Regulatory Mapping:** 1-2 hours (legal/compliance team consultation)
-- **Gap Analysis & Prioritization:** 1-2 hours
+- **Gap Analysis & Prioritisation:** 1-2 hours
 - **Evidence Collection:** 1-2 hours
 - **Quality Review:** 1-2 hours
 
@@ -200,7 +200,7 @@ This assessment implements **ISMS-POL-A.8.11, Section 2.1 (Data Classification a
 - Data Owners have acknowledged accountability
 - Escalation path defined for ownership disputes
 
-✅ **Risk-Based Prioritization:**
+✅ **Risk-Based Prioritisation:**
 
 - Masking priority (P1-P4) assigned based on objective criteria
 - High-risk data flagged for immediate attention
@@ -488,7 +488,7 @@ For EACH sensitive data element found:
 **Quality Checks:**
 
 - [ ] All "Yes" systems from Phase 1 have corresponding data elements documented
-- [ ] Data categories use standardized taxonomy (not free-text descriptions)
+- [ ] Data categories use standardised taxonomy (not free-text descriptions)
 - [ ] Sample patterns provided (helps validate classification)
 - [ ] Discovery method documented (audit trail)
 - [ ] False positives eliminated (e.g., "customer_type" is NOT PII)
@@ -513,8 +513,8 @@ For EACH sensitive data element found:
 | **Critical** | Severe harm if exposed, guaranteed regulatory breach, criminal liability | SHALL mask in ALL non-production environments | SSN/AHV, Passport, Credit Card (full PAN), Health diagnoses, Genetic data |
 | **High** | Substantial personal/business harm, privacy violation, regulatory risk | SHALL mask in non-production environments | Email, Phone, DOB, Full Name, IBAN, Salary, Location data |
 | **Medium** | Moderate harm, business impact, reputational risk | SHOULD mask in non-production environments | Job Title+Department (indirect PII), IP addresses, Device IDs |
-| **Low** | Minimal harm, low privacy risk | MAY mask based on risk assessment | Generalized demographics (age range, region) |
-| **Public** | No confidentiality requirement | No masking needed | Public information, anonymized aggregates |
+| **Low** | Minimal harm, low privacy risk | MAY mask based on risk assessment | Generalised demographics (age range, region) |
+| **Public** | No confidentiality requirement | No masking needed | Public information, anonymised aggregates |
 
 **Decision Tree for Classification:**
 
@@ -597,7 +597,7 @@ For EACH data category (not individual fields):
 5. **FADP Applicable?:** Yes / No / Conditional
 6. **FADP Article Reference:** Art. 6 (principles), Art. 8 (security measures)
 7. **Other Regulations:** PCI-DSS / HIPAA / CCPA / None / Multiple
-8. **Masking Requirement Source:** Which regulation mandates masking? (GDPR Art. 32 pseudonymization, PCI-DSS Req. 3.3, etc.)
+8. **Masking Requirement Source:** Which regulation mandates masking? (GDPR Art. 32 pseudonymisation, PCI-DSS Req. 3.3, etc.)
 9. **Cross-Border Restrictions:** Any data residency requirements? (EU data must stay in EU, etc.)
 10. **Retention Period:** Regulatory minimum/maximum retention
 11. **Deletion Requirements:** Right to erasure (GDPR Art. 17), destruction timelines
@@ -717,7 +717,7 @@ For EACH data category:
 
 ## Phase 6: Masking Priority Matrix (1-2 hours)
 
-**Objective:** Prioritize masking implementation based on risk scoring.
+**Objective:** Prioritise masking implementation based on risk scoring.
 
 **Sheet:** `Masking_Priority_Matrix`
 
@@ -807,7 +807,7 @@ For EACH data element (or grouped by data category if hundreds of fields):
 - Cross-border restrictions not assessed
 - Retention period not defined
 
-**5. Prioritization Gaps:**
+**5. Prioritisation Gaps:**
 
 - P1 items without assigned implementation owner
 - Target masking dates passed without completion
@@ -817,7 +817,7 @@ For EACH data element (or grouped by data category if hundreds of fields):
 
 For EACH identified gap:
 1. **Gap ID:** Unique identifier (GAP-001)
-2. **Gap Type:** Inventory / Classification / Ownership / Regulatory / Prioritization / Other
+2. **Gap Type:** Inventory / Classification / Ownership / Regulatory / Prioritisation / Other
 3. **Gap Description:** Specific issue (e.g., "CRM database not inventoried", "Health data category has no Data Owner")
 4. **Affected System(s):** Which systems impacted?
 5. **Affected Data Category:** Which data category impacted?
@@ -1228,7 +1228,7 @@ Document ALL evidence in the `Evidence_Register` sheet with:
 **Root Causes:**
 1. **Non-Standard Column Names:** "Cust_SSN" instead of "SSN", "Soc_Sec_Num" instead of "Social_Security_Number"
 2. **Encrypted/Hashed Data:** Tool can't pattern-match encrypted data
-3. **Custom Business Data:** Proprietary data types tool doesn't recognize (e.g., internal employee IDs that are sensitive in your context)
+3. **Custom Business Data:** Proprietary data types tool doesn't recognise (e.g., internal employee IDs that are sensitive in your context)
 4. **Tool Configuration:** Pattern matching rules not tuned for your environment
 
 **Solutions:**
@@ -1370,7 +1370,7 @@ Work with CISO/DPO/Legal to create a reference table:
 |-------------|----------------------|-----------------|------------------------|
 | **Critical** | SSN/AHV, Passport #, Credit Card (full PAN), Medical diagnoses, Genetic data, Child data | Severe personal harm (identity theft, discrimination, blackmail), Criminal liability | Guaranteed regulatory fine (GDPR Art. 83), Mandatory breach notification, Criminal charges possible |
 | **High** | Full Name, Email, Phone, DOB, Full Address, Salary, Bank Account (IBAN), Precise geolocation | Substantial privacy violation, Reputational damage, Financial loss | Regulatory investigation likely, Breach notification required, Civil liability |
-| **Medium** | Job Title + Department (indirect PII), IP Address, Device ID, Generalized location (city-level), Transaction history (anonymized) | Moderate privacy concern, Re-identification risk when combined, Business confidentiality | Regulatory scrutiny possible, Internal policy violation, Reputational risk |
+| **Medium** | Job Title + Department (indirect PII), IP Address, Device ID, Generalised location (city-level), Transaction history (anonymised) | Moderate privacy concern, Re-identification risk when combined, Business confidentiality | Regulatory scrutiny possible, Internal policy violation, Reputational risk |
 | **Low** | Aggregate demographics (age range 30-40, region), Publicly available info, Non-sensitive business data | Minimal privacy risk, Low business impact | No regulatory consequence, Minimal reputational impact |
 
 **Document in Policy Annex:** "Classification Examples - [Organisation] Context"
@@ -1398,7 +1398,7 @@ Work with CISO/DPO/Legal to create a reference table:
 **Data Discovery:**
 
 - [ ] All "Yes" systems from System Inventory have corresponding data elements
-- [ ] Data categories use standardized taxonomy (CAT-PII-D, CAT-FIN, etc., not free text)
+- [ ] Data categories use standardised taxonomy (CAT-PII-D, CAT-FIN, etc., not free text)
 - [ ] Sample patterns documented (helps validate classification)
 - [ ] Discovery method documented per element (audit trail)
 - [ ] False positives eliminated (validation performed)
@@ -1430,7 +1430,7 @@ Work with CISO/DPO/Legal to create a reference table:
 - [ ] Backup Data Owners identified (no single point of failure)
 - [ ] Escalation path defined for disputes
 
-**Prioritization:**
+**Prioritisation:**
 
 - [ ] All data elements have priority score calculated (P1/P2/P3/P4)
 - [ ] Priority scoring algorithm applied consistently
@@ -1537,7 +1537,7 @@ Work with CISO/DPO/Legal to create a reference table:
 |------|------|-----------|------|----------|
 | **Data Governance Lead** | [Name] | [Digital signature or "Approved via email [date]"] | DD.MM.YYYY | Assessment completed and self-reviewed |
 | **Chief Data Officer (CDO)** or **Data Protection Officer (DPO)** | [Name] | [Signature] | DD.MM.YYYY | Data classification and ownership approved |
-| **Chief Information Security Officer (CISO)** | [Name] | [Signature] | DD.MM.YYYY | Risk assessment and prioritization approved, resource allocation approved for P1 gaps |
+| **Chief Information Security Officer (CISO)** | [Name] | [Signature] | DD.MM.YYYY | Risk assessment and prioritisation approved, resource allocation approved for P1 gaps |
 | **Legal/Compliance Officer** | [Name] | [Signature] | DD.MM.YYYY | Regulatory mapping validated |
 
 **Optional (depending on organisation):**
@@ -1779,7 +1779,7 @@ For non-sensitive data:
 
 - Customer names (even if not secret, still PII under GDPR)
 - Employee data (even if org chart published)
-- Aggregated data (anonymized aggregates may be public, but underlying data is NOT)
+- Aggregated data (anonymised aggregates may be public, but underlying data is NOT)
 
 **Auditor will challenge "Public" classification.** Be prepared to justify.
 
@@ -1827,7 +1827,7 @@ For non-sensitive data:
 - Written acknowledgment from Data Owners
 - No "TBD" or "Unknown" ownership gaps
 
-✅ **Risk Prioritization:**
+✅ **Risk Prioritisation:**
 
 - Masking priority (P1/P2/P3/P4) assigned to all data elements
 - P1 items have implementation plan and owner
@@ -1886,4 +1886,4 @@ For non-sensitive data:
 *"To mask effectively, you must first know what needs masking."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

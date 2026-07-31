@@ -198,7 +198,7 @@ Phase 3: Completeness Assessment (Day 7-8)
 ├─ Check mandatory attribute population
 ├─ Identify missing fields
 ├─ Calculate completeness percentage
-└─ Categorise gaps (systemic vs. isolated)
+└─ Categorize gaps (systemic vs. isolated)
 
 Phase 4: Currency Assessment (Day 9-10)
 ├─ Check LastUpdated dates against policy thresholds
@@ -216,7 +216,7 @@ Phase 6: Policy Compliance Verification (Day 13-15)
 ├─ Verify against each SHALL requirement
 ├─ Document evidence of compliance
 ├─ Identify non-compliance gaps
-└─ Categorise severity (Critical, High, Medium, Low)
+└─ Categorize severity (Critical, High, Medium, Low)
 
 Phase 7: Metrics & Reporting (Day 16-18)
 ├─ Calculate quality scores
@@ -569,7 +569,7 @@ Sheet auto-calculates:
 
 - Overall completeness (average across all mandatory attributes)
 - Completeness by asset category
-- Top 10 missing attributes (prioritize remediation)
+- Top 10 missing attributes (prioritise remediation)
 
 **Target**: 100% mandatory attribute completeness (policy requirement)
 
@@ -682,7 +682,7 @@ Query inventory for:
 Create list of stale records (exceeding threshold):
 
 - Asset ID, Name, Criticality, Days Stale
-- Prioritize by criticality (Critical → High → Standard → Low)
+- Prioritise by criticality (Critical → High → Standard → Low)
 - Assign to owners for refresh
 
 **Common Pitfalls**:
@@ -1238,7 +1238,7 @@ Before submitting this assessment, verify:
 
 - [ ] Staleness calculated correctly (TODAY - LastUpdated)
 - [ ] Policy thresholds applied by criticality
-- [ ] Stale records identified and prioritized
+- [ ] Stale records identified and prioritised
 - [ ] Remediation assigned to responsible parties
 
 ### Consistency Checks
@@ -1348,4 +1348,4 @@ Before submitting this assessment, verify:
 *"A specification is a promise to the future."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -34,7 +34,7 @@
 
 - ISMS-POL-A.8.15 (Logging)
 - ISMS-IMP-A.8.15.1 (Log Source Inventory Assessment)
-- ISMS-IMP-A.8.15.2 (Log Collection & Centralization Assessment)
+- ISMS-IMP-A.8.15.2 (Log Collection & Centralisation Assessment)
 - ISMS-IMP-A.8.15.4 (Log Analysis & Review Assessment)
 
 ---
@@ -187,7 +187,7 @@ Summary Dashboards (per workbook)
 
 ## Required Completed Work
 
-**RECOMMENDED**: Complete **ISMS-IMP-A.8.15.2 (Log Collection & Centralization)** first.
+**RECOMMENDED**: Complete **ISMS-IMP-A.8.15.2 (Log Collection & Centralisation)** first.
 
 **Why?** This assessment validates protection and retention of logs stored in SIEM/storage infrastructure. You need to know WHERE logs are stored (IMP-A.8.15.2 Sheet 3 - Storage Architecture) before assessing HOW they're protected.
 
@@ -446,7 +446,7 @@ Summary Dashboards (per workbook)
   - Administrative Controls (Multi-person authorisation required?)
   - Separation of Duties (Log admins != system admins confirmed?)
 
-- **Centralized Collection**:
+- **Centralised Collection**:
   - Immediate Forwarding (Logs forwarded immediately to SIEM preventing local deletion?)
   - Local Log Retention (Are local logs retained on source systems? For how long?)
   - Local Log Protection (If local logs exist, are they protected from deletion?)
@@ -468,7 +468,7 @@ Summary Dashboards (per workbook)
 
 - WORM or signing for audit logs (security events, authentication, administrative actions)
 - Tamper detection implemented (checksums, hash chains, signature verification)
-- Centralized collection (immediate forwarding to SIEM)
+- Centralised collection (immediate forwarding to SIEM)
 - Separation of duties (enforced for logging infrastructure)
 - Access control (write access restricted to logging processes only)
 
@@ -476,7 +476,7 @@ Summary Dashboards (per workbook)
 
 - % of critical log sources with WORM or cryptographic protection
 - % of log storage tiers with tamper detection
-- Centralized collection coverage (% immediately forwarded)
+- Centralised collection coverage (% immediately forwarded)
 - Separation of duties enforced (yes/no binary)
 - Overall integrity protection score (weighted average)
 
@@ -721,7 +721,7 @@ Summary Dashboards (per workbook)
 
 **What to Document**:
 
-**Data Minimization Assessment**:
+**Data Minimisation Assessment**:
 
 **For Each Log Category**:
 
@@ -730,7 +730,7 @@ Summary Dashboards (per workbook)
 - Personal Data Present (Yes/No - does log contain personal data?)
 - Personal Data Types (User IDs, IP addresses, email addresses, location data, etc.)
 - Data Necessity (Is all logged data necessary for security/compliance purpose?)
-- Minimization Compliant (Is only necessary data logged? Yes/No)
+- Minimisation Compliant (Is only necessary data logged? Yes/No)
 
 **Prohibited Data Verification** (ISMS-POL-A.8.15 Section 2.5):
 
@@ -753,7 +753,7 @@ Check logs for presence of PROHIBITED data types:
 
 **GDPR/nDSG Compliance** (if applicable per ISMS-POL-00):
 
-**Article 5(1)(c) - Data Minimization**:
+**Article 5(1)(c) - Data Minimisation**:
 
 - Logging limited to necessary data (yes/no)
 - Excessive data identified (any unnecessary personal data logged?)
@@ -912,7 +912,7 @@ Check logs for presence of PROHIBITED data types:
 - Cryptographic implementation details (algorithms used, key management procedures)
 - Tamper detection configuration (checksums enabled, signature verification settings)
 - Separation of duties evidence (role segregation matrix)
-- Centralized collection verification (logs immediately forwarded to SIEM)
+- Centralised collection verification (logs immediately forwarded to SIEM)
 
 **For Tamper Detection (Sheet 4)**:
 
@@ -966,7 +966,7 @@ Check logs for presence of PROHIBITED data types:
 
 - Export in native format (JSON, XML, CSV) when possible
 - Include metadata (export date, who exported, system version)
-- Sanitize for sensitive information (credentials, internal IPs if necessary)
+- Sanitise for sensitive information (credentials, internal IPs if necessary)
 - Document export procedure (so it can be repeated for future assessments)
 
 **Test Results**:
@@ -1063,7 +1063,7 @@ ISMS-IMP-A.8.15.3_Evidence/
 **Reality**:
 
 - Critical system logs (per policy Section 2.2): REQUIRE WORM or cryptographic signing
-- Standard system logs: MAY use WORM, or alternative protection (centralized collection, access control)
+- Standard system logs: MAY use WORM, or alternative protection (centralised collection, access control)
 - Need to verify WHICH logs are actually on WORM storage
 
 **How to Avoid**:
@@ -1197,7 +1197,7 @@ ISMS-IMP-A.8.15.3_Evidence/
 - **DPO involvement**: Data Protection Officer must review logging practices
 - **DPIA if needed**: High-risk logging (e.g., monitoring employee communications) may require DPIA
 - **Legal basis**: Document legal basis (GDPR Article 6(1)(c) legal obligation + 6(1)(f) legitimate interest)
-- **Minimize data**: Don't log full message content, full health records, excessive location data
+- **Minimise data**: Don't log full message content, full health records, excessive location data
 
 **Evidence of Compliance**:
 
@@ -1255,7 +1255,7 @@ ISMS-IMP-A.8.15.3_Evidence/
 - [ ] Assessment completed by qualified personnel (InfoSec Manager, SIEM Admin, DPO)
 - [ ] Cross-functional input obtained (IT Ops, Legal, DPO provided input)
 - [ ] Review by DPO scheduled (privacy assessment requires DPO sign-off)
-- [ ] Gaps socialized with stakeholders (no surprises in approval meeting)
+- [ ] Gaps socialised with stakeholders (no surprises in approval meeting)
 - [ ] Remediation plans have buy-in (responsible parties aware and committed)
 
 **If ANY checkbox unchecked**: Assessment NOT ready for approval. Complete missing items first.
@@ -1350,4 +1350,4 @@ ISMS-IMP-A.8.15.3_Evidence/
 *"A log tampered with is evidence destroyed."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

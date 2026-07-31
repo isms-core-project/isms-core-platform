@@ -444,4 +444,4 @@ At month end, create snapshot:
 *"Education is not the filling of a pail, but the lighting of a fire."*
 — W.B. Yeats
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

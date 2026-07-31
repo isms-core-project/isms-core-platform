@@ -54,7 +54,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ### What This Assessment Evaluates
 
-This assessment documents HOW your organization tests changes before production deployment. It evaluates:
+This assessment documents HOW your organisation tests changes before production deployment. It evaluates:
 
 - **Testing Framework:** What types of testing are performed (unit, integration, UAT, security, performance)
 - **Test Coverage:** How comprehensive is testing for different change types
@@ -65,7 +65,7 @@ This assessment documents HOW your organization tests changes before production 
 
 ### Why This Matters
 
-This assessment verifies [Organization]'s compliance with:
+This assessment verifies [Organisation]'s compliance with:
 
 - ISO/IEC 27001:2022 Control A.8.32: Change Management (element d - testing and acceptance)
 - ISO/IEC 27001:2022 Control A.8.29: Security Testing in Development and Acceptance
@@ -385,13 +385,13 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 
 - Control 8.29 REQUIRES security testing for security-relevant changes
 - Automated vulnerability scanning is minimum
-- Manual security review for authentication, authorization, data handling changes
+- Manual security review for authentication, authorisation, data handling changes
 - Security testing should be part of CI/CD pipeline where possible
 
 **Common Questions:**
 
 - **Q:** "What changes need security testing?"
-  - **A:** Policy defines security-relevant changes: authentication, authorization, data handling, external interfaces, cryptography.
+  - **A:** Policy defines security-relevant changes: authentication, authorisation, data handling, external interfaces, cryptography.
 - **Q:** "Is automated scanning enough?"
   - **A:** For routine changes, maybe. For major security changes, manual security review required.
 - **Q:** "Who performs security testing?"
@@ -710,4 +710,4 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 *"The measure of intelligence is the ability to change."*
 — Albert Einstein
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

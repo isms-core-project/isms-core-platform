@@ -143,7 +143,7 @@
 | 48 | Rogue DHCP Detection |
 | 49 | Server Hardening |
 | 50 | Lease Time Appropriate |
-| 51 | Utilization Monitoring |
+| 51 | Utilisation Monitoring |
 | 52 | Reservation Management |
 | 53 | Logging Enabled |
 | 54 | NTP Role |
@@ -207,4 +207,4 @@ Re-assessment required, Approved, Approved with Conditions, Rejected, Deferred
 *"I would not dare to say that there is a direct relation between mathematics and madness, but there is no doubt that great mathematicians suffer from maniacal characteristics."*
 — John Nash
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

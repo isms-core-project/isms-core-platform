@@ -98,7 +98,7 @@
 | 10 | Correlation Engine |
 | 11 | Threat Intel Integration |
 | 12 | SOAR Integration |
-| 13 | Visualization/Dashboards |
+| 13 | Visualisation/Dashboards |
 | 14 | High Availability |
 | 15 | Disaster Recovery |
 | 16 | Current EPS Capacity |
@@ -132,7 +132,7 @@
 | 44 | Encryption Status |
 | 45 | Authentication Method |
 | 46 | Throughput Capacity |
-| 47 | Current Utilization % |
+| 47 | Current Utilisation % |
 | 48 | Buffer/Queue Size |
 | 49 | Failover Configured |
 | 50 | Load Balancing |
@@ -221,4 +221,4 @@ Approved with Conditions, Rejected, Deferred
 *"A computer would deserve to be called intelligent if it could deceive a human into believing that it was human."*
 — Alan Turing
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

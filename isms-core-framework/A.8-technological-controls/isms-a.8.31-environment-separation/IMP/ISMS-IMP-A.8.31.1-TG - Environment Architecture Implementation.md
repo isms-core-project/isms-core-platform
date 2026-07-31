@@ -111,7 +111,7 @@
 | 24 | Evidence |
 | 25 | Data Type Used |
 | 26 | Production Data Present? |
-| 27 | Anonymization Applied? |
+| 27 | Anonymisation Applied? |
 | 28 | Synthetic Data Used? |
 | 29 | Data Source |
 | 30 | Evidence/Notes |
@@ -195,4 +195,4 @@ Approved with Conditions, Rejected, Deferred
 *"The security of a cryptographic system lies entirely in the key."*
 — Ron Rivest
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

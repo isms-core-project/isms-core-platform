@@ -550,9 +550,9 @@ Information Protection and Records Management Policy — ISO 27001 Controls Mapp
 | Swiss Patent Act / Copyright Act | Protection of patent documentation and source code (where applicable) |
 | ISO/IEC 27001:2022 | Annex A Controls 5.32, 5.33 |
 | ISO/IEC 27002:2022 | Sections 5.32, 5.33 — Implementation guidance |
-| NIST SP 800-53 Rev 5 | MP-6 (Media Sanitization), SI-12 (Information Management and Retention), PM-22 (Personally Identifiable Information Quality Management) |
+| NIST SP 800-53 Rev 5 | MP-6 (Media Sanitisation), SI-12 (Information Management and Retention), PM-22 (Personally Identifiable Information Quality Management) |
 | NIST SP 800-88 Rev 1 | Guidelines for Media Sanitization (Clear, Purge, Destroy) |
 
 ---
 
-<!-- QA_VERIFIED: 2026-02-07 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

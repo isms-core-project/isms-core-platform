@@ -109,7 +109,7 @@
 | 21 | System/Application |
 | 22 | Contains Prod Data? |
 | 23 | Data Type |
-| 24 | Anonymized? |
+| 24 | Anonymised? |
 | 25 | Approval Date |
 | 26 | Approved By |
 | 27 | Review Date |
@@ -182,4 +182,4 @@ Approved with Conditions, Rejected, Deferred
 *"When you have a clever cryptographic scheme, the job is half done. Making it work in practice is the other ninety percent."*
 — Adi Shamir
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -124,7 +124,7 @@ This policy does NOT:
 - All IT infrastructure supporting information processing (servers, storage, networking, endpoints)
 - All applications and software (business applications, SaaS services, development tools)
 - All physical assets supporting information security (facilities, media, equipment)
-- All personnel assets critical to operations (key roles, specialized competencies)
+- All personnel assets critical to operations (key roles, specialised competencies)
 - All third-party services processing [Organisation]'s information
 
 **In Scope Asset Categories**:
@@ -164,7 +164,7 @@ This policy does NOT:
 5. **Associated Assets - Personnel**: Human resources and competencies
 
    - Key personnel roles (critical to operations)
-   - Specialized competencies (unique skills, certifications)
+   - Specialised competencies (unique skills, certifications)
    - NOT individual person records (privacy compliance)
 
 **Out of Scope**:
@@ -191,7 +191,7 @@ Regulatory requirements are categorised per **ISMS-POL-00 (Regulatory Applicabil
 - **FINMA**: Risk-based asset inventory requirements for Swiss financial institutions
 - **DORA/NIS2**: ICT asset inventory for critical infrastructure and financial entities
 - **SOX**: IT general controls require documented system inventory for financial reporting
-- **Industry-specific regulations**: May require specialized asset categorisation
+- **Industry-specific regulations**: May require specialised asset categorisation
 
 **Tier 3: Informational Reference** (best practices, not legally binding):
 
@@ -221,7 +221,7 @@ For complete regulatory categorisation and applicability determination methodolo
 - All physical assets supporting security (facilities, media, equipment)
 - All personnel assets critical to operations (key roles, competencies)
 
-**Implementation Approach**: [Organisation] determines appropriate inventory structure based on risk assessment. Inventory may consist of multiple specialized inventories (CMDB for IT, HRIS for personnel, document repositories) provided they collectively satisfy control requirements.
+**Implementation Approach**: [Organisation] determines appropriate inventory structure based on risk assessment. Inventory may consist of multiple specialised inventories (CMDB for IT, HRIS for personnel, document repositories) provided they collectively satisfy control requirements.
 
 **Verification Method**: Completeness assessment per ISMS-IMP-A.5.9-3 (Quality & Compliance Assessment).
 
@@ -274,7 +274,7 @@ For complete regulatory categorisation and applicability determination methodolo
 | **Description** | Purpose and function | Understanding and context | Owner verification |
 | **Location** | Physical or logical location | Asset tracking, data residency | Physical verification |
 | **Status** | Lifecycle state per 2.2 | Maintenance planning | Status workflow |
-| **Criticality** | Business impact per 2.2 | Risk prioritization | Risk assessment alignment |
+| **Criticality** | Business impact per 2.2 | Risk prioritisation | Risk assessment alignment |
 | **Created Date** | Acquisition/creation date | Asset age tracking | Documentation verification |
 | **Last Updated** | Record last modified | Currency tracking | Automatic timestamp |
 | **Last Reviewed** | Owner last reviewed record | Accuracy assurance | Owner attestation |
@@ -444,11 +444,11 @@ Accuracy improvement tracked quarterly. Sampling methodology defined in ISMS-IMP
 | **Risk Management (Clause 6)** | Inventory provides risk assessment input | Threat-asset-vulnerability identification |
 | **Change Management** | Changes trigger inventory updates | Currency maintenance |
 | **Incident Management** | Incidents reference affected assets | Impact assessment |
-| **Business Continuity** | Critical asset identification for BCP/DRP | Prioritization |
+| **Business Continuity** | Critical asset identification for BCP/DRP | Prioritisation |
 
 **Organisational System Integration**:
 
-| System | Integration Purpose | Synchronization |
+| System | Integration Purpose | Synchronisation |
 |--------|-------------------|----------------|
 | **CMDB (Configuration Management Database)** | IT asset inventory source | Bi-directional (where technically feasible) |
 | **Procurement/Finance** | Asset acquisition tracking | Inbound (procurement → inventory) |
@@ -719,7 +719,7 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 - **Owner Notification**: Contact asset owners for business impact assessment
 - **Impact Assessment**: Determine criticality and business impact using inventory metadata
 - **Containment**: Use dependency information to isolate affected systems
-- **Recovery**: Prioritize recovery based on asset criticality classification
+- **Recovery**: Prioritise recovery based on asset criticality classification
 - **Root Cause Analysis**: Cross-reference asset configurations and relationships
 
 **Incident-Triggered Inventory Actions**:
@@ -773,7 +773,7 @@ This policy integrates with [Organisation]'s Information Security Management Sys
 **Risk Assessment** (ISO 27001 Clause 6.1):
 
 - Asset inventory provides foundation for risk identification
-- Asset criticality influences risk rating and treatment prioritization
+- Asset criticality influences risk rating and treatment prioritisation
 - Threat-asset-vulnerability analysis requires complete asset inventory
 - Risk treatment plans reference inventoried assets
 
@@ -895,7 +895,7 @@ This policy addresses asset inventory requirements from multiple regulatory fram
 
 **Inventory Currency**: Degree to which inventory reflects current state rather than historical state. Measured by review dates and update timeliness.
 
-**Criticality**: Assessment of business impact should asset be unavailable, compromised, or destroyed. Used to prioritize risk treatment and incident response.
+**Criticality**: Assessment of business impact should asset be unavailable, compromised, or destroyed. Used to prioritise risk treatment and incident response.
 
 **Lifecycle State**: Current stage in asset lifecycle (active, development, maintenance, retired, archived). Determines applicable controls and maintenance requirements.
 
@@ -903,7 +903,7 @@ This policy addresses asset inventory requirements from multiple regulatory fram
 
 **CMDB (Configuration Management Database)**: Organisational system documenting IT infrastructure configurations. Primary source for IT asset inventory where implemented.
 
-**Personnel Asset**: Key organisational roles and specialized competencies (not individual person records). Documented generically to protect privacy while enabling business continuity planning.
+**Personnel Asset**: Key organisational roles and specialised competencies (not individual person records). Documented generically to protect privacy while enabling business continuity planning.
 
 **Granularity**: Level of detail at which assets are inventoried. High-risk assets require individual records; low-risk assets may be grouped (e.g., "standard laptops - quantity 50").
 
@@ -941,7 +941,7 @@ Evidence required to demonstrate this policy is operationally effective:
 - Inventory currency metrics (percentage of records updated within required timeframes)
 - Asset owner review records (annual attestations)
 - Integration evidence with other controls (access control, classification, change management, incident management)
-- CMDB/HR/procurement system synchronization records
+- CMDB/HR/procurement system synchronisation records
 - Asset lifecycle documentation (acquisition, change, retirement records)
 - Unowned asset escalation records (if any - with <30 day resolution)
 - Audit findings and remediation evidence for inventory gaps
@@ -1020,12 +1020,12 @@ This annex provides practical decision framework for categorising assets within 
 - Asset is critical to operations
 - Asset processes sensitive information (High/Very High classification per A.5.12)
 - Regulatory requirements demand individual tracking (PCI cardholder systems, HIPAA PHI systems)
-- Asset is unique or specialized
+- Asset is unique or specialised
 - Asset value justifies tracking overhead
 
 **Low Granularity** (grouped records) when:
 
-- Assets are commodity/standardized
+- Assets are commodity/standardised
 - Assets are low-risk and easily replaceable
 - Individual tracking creates excessive maintenance burden
 - Assets are homogeneous (identical model, configuration, purpose)
@@ -1036,9 +1036,9 @@ This annex provides practical decision framework for categorising assets within 
 |------------|-------------|-----------|
 | Production database server | Individual | Critical, unique, processes sensitive data |
 | CEO laptop | Individual | High-risk user, potential for sensitive information |
-| Standard employee laptops (identical model) | Grouped (quantity: 100) | Commodity, standardized, low individual risk |
+| Standard employee laptops (identical model) | Grouped (quantity: 100) | Commodity, standardised, low individual risk |
 | Customer PII database | Individual | Regulatory requirement, high sensitivity |
-| Office WiFi access points | Grouped by building | Standardized, low individual significance |
+| Office WiFi access points | Grouped by building | Standardised, low individual significance |
 | Source code repositories | Individual | Intellectual property, version control needed |
 | Marketing brochure PDFs | Grouped by campaign | Public information, low individual value |
 | Domain administrator accounts | Individual | High privilege, must track precisely |
@@ -1144,12 +1144,12 @@ This annex provides practical decision framework for categorising assets within 
 - Regulatory compliance roles (DPO, compliance officer)
 - Security operations roles (SOC lead, incident response)
 
-**Specialized Competencies**:
+**Specialised Competencies**:
 
 - Deep technical expertise (specific technologies, legacy systems)
 - Regulatory expertise (industry-specific compliance knowledge)
 - Vendor relationships (key vendor contacts, negotiation history)
-- Certifications (specialized certifications required for operations)
+- Certifications (specialised certifications required for operations)
 - Language skills (critical for international operations)
 
 **Privacy Note**: Personnel assets document ROLES and COMPETENCIES, never individual person records. "Database Administrator competency (3 qualified staff)" NOT "John Smith - DBA".
@@ -1301,4 +1301,4 @@ When leaving role or changing positions:
 
 *This policy establishes requirements for inventory of information and associated assets. Implementation procedures are documented in ISMS-IMP-A.5 (UG/TG).9-1 through A.5.9-5.*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

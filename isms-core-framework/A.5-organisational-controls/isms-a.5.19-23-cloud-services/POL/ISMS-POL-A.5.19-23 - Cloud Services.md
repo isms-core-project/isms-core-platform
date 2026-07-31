@@ -75,7 +75,7 @@ This document serves as the **master index** for [Organisation]'s Supplier and C
 - **Policy Layer:** Governance documents defining requirements (7 policy documents)
 - **Assessment Layer:** Technical evaluation specifications (markdown documentation)
 - **Implementation Layer:** Python-generated Excel workbooks (4 assessment workbooks)
-- **Validation Layer:** Quality assurance and normalization scripts
+- **Validation Layer:** Quality assurance and normalisation scripts
 - **Integration Layer:** Individual workbook Summary Dashboards
 
 **Approach**: This framework employs a **documented, systematic process** where assessment tools are programmatically generated from controlled specifications rather than manually created. This ensures consistency, repeatability, and version control - if assessment requirements change, regenerating updated workbooks follows documented procedures rather than error-prone manual editing. The principle is straightforward: what can be created from documented specifications can be understood completely, maintained reliably, and audited objectively.
@@ -353,7 +353,7 @@ When Python generators are executed, they produce:
 - What are key performance indicators? (service inventory completeness, contract coverage, configuration compliance)
 - What gaps exist? (missing contracts, weak SLAs, configuration drift)
 - What regulatory evidence exists? (DORA/NIS2 ICT register, AI Act documentation)
-- What is the remediation roadmap? (prioritized action items, budget requirements)
+- What is the remediation roadmap? (prioritised action items, budget requirements)
 
 ## Assessment Workflow
 
@@ -375,8 +375,8 @@ When Python generators are executed, they produce:
                             ↓
 ┌──────────────────────────────────────────────────────────────┐
 │ PHASE 3: NORMALIZATION (Day 15)                            │
-│ • Run normalization script                                 │
-│ • Standardize filenames from review process                │
+│ • Run normalisation script                                 │
+│ • Standardise filenames from review process                │
 │ • Create audit trail manifest                              │
 └──────────────────────────────────────────────────────────────┘
                             ↓
@@ -682,7 +682,7 @@ This framework covers five related controls that work together across the suppli
 | **Application** | Organisation | Organisation | Provider |
 | **Runtime** | Organisation | Provider | Provider |
 | **OS** | Organisation | Provider | Provider |
-| **Virtualization** | Provider | Provider | Provider |
+| **Virtualisation** | Provider | Provider | Provider |
 | **Servers** | Provider | Provider | Provider |
 | **Storage** | Provider | Provider | Provider |
 | **Networking** | Shared | Provider | Provider |
@@ -729,11 +729,11 @@ This framework covers five related controls that work together across the suppli
 - Incident response and resolution
 - Relationship management
 
-**Phase 5: Review & Optimization (A.5.22)**
+**Phase 5: Review & Optimisation (A.5.22)**
 
 - Annual contract review
 - Cost-benefit analysis
-- Service optimization
+- Service optimisation
 - Renegotiation or renewal
 - Alternative evaluation
 
@@ -958,7 +958,7 @@ Auditors should expect the following evidence:
 - Incident statistics from supplier services
 - Cloud exit plan testing results
 - Stakeholder feedback (business units, IT operations, security team)
-- Cost-benefit analysis (cloud service optimization, vendor consolidation)
+- Cost-benefit analysis (cloud service optimisation, vendor consolidation)
 
 ## Audit Approach
 
@@ -1467,4 +1467,4 @@ The boundary is: **This policy governs EXTERNAL supplier/cloud relationships** (
 ---
 
 *This master index provides comprehensive governance for supplier and cloud services security. Detailed requirements for each control are documented in sections S1-S6. Assessment tools and implementation guidance are provided in the ISMS-IMP-A.5.19-23 document suite.*
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

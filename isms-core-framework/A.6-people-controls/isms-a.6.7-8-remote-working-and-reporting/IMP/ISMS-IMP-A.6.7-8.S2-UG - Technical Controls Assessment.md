@@ -307,7 +307,7 @@ Before starting this assessment, ensure:
 | Logging Enabled | Is logging active? | Yes/No |
 | Log Content | What is captured | Free text |
 | Retention Period | How long logs are kept | Free text |
-| Centralized | Sent to SIEM/central logging? | Yes/No |
+| Centralised | Sent to SIEM/central logging? | Yes/No |
 | Monitored | Active monitoring/alerting? | Yes/No |
 | Alert Thresholds | Alerting configured | Yes/No |
 | Compliant | Meets requirements | Formula |
@@ -404,13 +404,13 @@ Before starting this assessment, ensure:
 | Test Results | TLS scan results, penetration test excerpts |
 | Reports | MFA enrollment reports, login statistics |
 | Architecture Diagrams | Remote access architecture |
-| Logs (Samples) | Sample authentication logs (sanitized) |
+| Logs (Samples) | Sample authentication logs (sanitised) |
 
 #### 5.2 Sensitive Data Handling
 
 When collecting evidence:
 - Redact usernames/passwords in screenshots
-- Anonymize or mask personal identifiers
+- Anonymise or mask personal identifiers
 - Do not export full production logs with PII
 - Store evidence in approved secure location
 - Mark sensitive evidence appropriately
@@ -616,4 +616,4 @@ When collecting evidence:
 *"The perimeter is wherever your people are."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

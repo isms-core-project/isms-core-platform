@@ -138,11 +138,11 @@ This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulat
 
 **PS-3.1.2 Documented Procedures**: [Organisation] MUST document and maintain incident response procedures covering the complete incident lifecycle. Procedures SHALL be version controlled and reviewed annually.
 
-**PS-3.1.3 Classification Framework**: [Organisation] MUST establish an incident classification framework defining severity levels and incident categories. The framework SHALL enable consistent incident prioritization and escalation.
+**PS-3.1.3 Classification Framework**: [Organisation] MUST establish an incident classification framework defining severity levels and incident categories. The framework SHALL enable consistent incident prioritisation and escalation.
 
 **PS-3.1.4 Training Requirements**: Incident response personnel MUST be trained and demonstrate competency before assuming incident response duties. Competency SHALL be assessed through practical tabletop exercises and supervisor verification of response procedure knowledge. Minimum competency standards are defined in ISMS-IMP-A.5.24-28.S1. Training SHALL be refreshed annually (12-month maximum interval from prior completion).
 
-**PS-3.1.5 Exercise Requirements**: [Organisation] MUST conduct incident response tabletop exercises minimum twice annually covering major incident scenarios. Exercise findings SHALL be documented, prioritized by risk, and tracked as improvement actions per PS-3.5.3 (Learning & Improvement). Critical capability gaps require immediate remediation with executive escalation.
+**PS-3.1.5 Exercise Requirements**: [Organisation] MUST conduct incident response tabletop exercises minimum twice annually covering major incident scenarios. Exercise findings SHALL be documented, prioritised by risk, and tracked as improvement actions per PS-3.5.3 (Learning & Improvement). Critical capability gaps require immediate remediation with executive escalation.
 
 **PS-3.1.6 Tools & Technology**: [Organisation] MUST provide incident response teams with appropriate tools including: (1) incident management system with workflow tracking, (2) forensic acquisition capability, (3) secure communication channel (encrypted), (4) access to monitoring/logging systems per A.8.15/A.8.16. Tool adequacy is assessed annually in ISMS-IMP-A.5.24-28.S1.
 
@@ -152,7 +152,7 @@ This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulat
 
 [Organisation] SHALL systematically assess all security events to determine if they constitute incidents requiring response.
 
-**PS-3.2.1 Assessment Requirement**: All security events detected through monitoring or reported by users MUST be assessed to determine if they constitute incidents requiring response. Events SHALL be prioritized for assessment based on: (1) automated severity indicators from monitoring systems (A.8.16), (2) affected system criticality per asset register (A.5.9), (3) event source (SOC alerts prioritized over user reports for duplicate events). Event prioritization methodology is detailed in ISMS-IMP-A.5.24-28.S2.
+**PS-3.2.1 Assessment Requirement**: All security events detected through monitoring or reported by users MUST be assessed to determine if they constitute incidents requiring response. Events SHALL be prioritised for assessment based on: (1) automated severity indicators from monitoring systems (A.8.16), (2) affected system criticality per asset register (A.5.9), (3) event source (SOC alerts prioritised over user reports for duplicate events). Event prioritisation methodology is detailed in ISMS-IMP-A.5.24-28.S2.
 
 **PS-3.2.2 Severity Classification**: All confirmed incidents MUST be assigned a severity level based on impact to confidentiality, integrity, and availability using the CIA Impact Scoring Matrix defined in ISMS-REF-A.5.24-28 Section 1. Scoring considers: data volume affected, system criticality (per A.5.9 asset register), business process impact, regulatory notification triggers. Critical and High severity incidents SHALL be scored independently by two analysts to ensure consistency. Incident severity MAY be reclassified if new information changes impact assessment; reclassification to High/Critical requires Incident Response Manager approval with retroactive management notifications per Section 5.2.
 
@@ -173,7 +173,7 @@ This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulat
 - **Malware/Ransomware**: Isolation, forensic imaging, malware analysis, eradication verification
 - **Unauthorised Access**: Credential revocation, session termination, access log review, privilege escalation assessment
 - **Data Breach**: Scope assessment, regulatory notification analysis (GDPR/nDSG), affected party identification, evidence preservation
-- **Denial of Service**: Traffic analysis, mitigation activation (rate limiting, upstream filtering), service restoration prioritization
+- **Denial of Service**: Traffic analysis, mitigation activation (rate limiting, upstream filtering), service restoration prioritisation
 - **Social Engineering**: User notification, credential reset, awareness reinforcement, similar attack prevention
 - **Insider Threat**: Evidence preservation (legal hold), HR coordination, access suspension, investigation scope determination
 - **Physical Security**: Asset recovery, access control verification, surveillance review, physical control remediation
@@ -181,7 +181,7 @@ This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulat
 
 For incidents spanning multiple categories, primary category is determined by most significant impact (data breach takes precedence over initial access vector). Playbook selection is documented in incident record with rationale. Hybrid or novel incidents without existing playbook default to general incident response procedure with Incident Response Manager guidance.
 
-**PS-3.3.2 Containment**: Incident response SHALL prioritize containment to limit scope and prevent further damage. Containment approach varies by severity with aggressive containment for Critical/High incidents. Containment effectiveness SHALL be verified before proceeding to eradication phase: (1) No additional systems showing compromise indicators, (2) Attack vector is identified and blocked, (3) Threat actor access is terminated (credential revocation, session termination confirmed), (4) Monitoring confirms no lateral movement for minimum 1 hour (Critical/High) or 4 hours (Medium). For ongoing sophisticated attacks, containment may be iterative with Incident Response Manager approval to proceed.
+**PS-3.3.2 Containment**: Incident response SHALL prioritise containment to limit scope and prevent further damage. Containment approach varies by severity with aggressive containment for Critical/High incidents. Containment effectiveness SHALL be verified before proceeding to eradication phase: (1) No additional systems showing compromise indicators, (2) Attack vector is identified and blocked, (3) Threat actor access is terminated (credential revocation, session termination confirmed), (4) Monitoring confirms no lateral movement for minimum 1 hour (Critical/High) or 4 hours (Medium). For ongoing sophisticated attacks, containment may be iterative with Incident Response Manager approval to proceed.
 
 **PS-3.3.3 Eradication**: The root cause of incidents MUST be eliminated before systems are returned to production. Eradication actions SHALL be verified before proceeding to recovery.
 
@@ -578,4 +578,4 @@ The boundary is: POL-A.5.24-28 defines WHAT incident management capabilities are
 
 *This policy establishes requirements for information security incident management covering the complete lifecycle (A.5.24-28). Implementation procedures are documented in ISMS-IMP-A.5.24-28 (UG/TG).S1 through S5.*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

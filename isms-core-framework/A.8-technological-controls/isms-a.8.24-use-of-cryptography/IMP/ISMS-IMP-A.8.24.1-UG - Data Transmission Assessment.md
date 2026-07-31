@@ -617,7 +617,7 @@ Check each item and mark "Yes", "No", or "N/A":
 
 - SSL Labs full report (PDF or screenshot): `EV-1.1-www.example.com-SSLLabs-20260115.pdf`
 - Certificate details (export from browser or openssl): `EV-1.1-www.example.com-cert-20260115.pem`
-- Server configuration (sanitized): `EV-1.1-nginx-ssl-config-20260115.txt`
+- Server configuration (sanitised): `EV-1.1-nginx-ssl-config-20260115.txt`
 - testssl.sh output (comprehensive): `EV-1.1-testssl-output-20260115.txt`
 - HSTS header screenshot: `EV-1.1-HSTS-header-20260115.png`
 - Certificate automation documentation: `EV-1.1-certbot-config-20260115.txt`
@@ -746,7 +746,7 @@ Check each item and mark "Yes", "No", or "N/A":
 
 - [ ] **Certificate inventory maintained**  
 
-  *What this means:* Centralized list of all internal certificates  
+  *What this means:* Centralised list of all internal certificates  
   *Minimum fields:* Service name, certificate subject, issuer, expiration date, location  
   *Update frequency:* Quarterly review  
 
@@ -924,7 +924,7 @@ Check each item and mark "Yes", "No", or "N/A":
 - Evidence must be specific and verifiable
 - Common pitfalls identified and solutions provided
 - Practical "where to find" guidance
-- Automation and lifecycle management emphasized
+- Automation and lifecycle management emphasised
 
 ---
 
@@ -945,8 +945,8 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 
 **Storage Requirements:**
 
-- **Location:** Centralized evidence repository (SharePoint, file share, ISMS document management system)
-- **Folder Structure:** Organize by assessment section for easy retrieval
+- **Location:** Centralised evidence repository (SharePoint, file share, ISMS document management system)
+- **Folder Structure:** Organise by assessment section for easy retrieval
 - **Retention:** Audit cycle + 1 year minimum
 - **Sensitivity:** Mark evidence files according to data classification (some configs may contain sensitive information)
 - **Access Control:** Restrict to security team and auditors
@@ -957,7 +957,7 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - **Complete:** Full screenshots (not cropped unless sensitive), complete command output
 - **Attributable:** Clear which system/service it documents
 - **Verifiable:** Auditor can reproduce the evidence collection process
-- **Protected:** Stored securely, sanitized if contains credentials or sensitive data
+- **Protected:** Stored securely, sanitised if contains credentials or sensitive data
 
 ## Evidence Types by Section
 
@@ -981,7 +981,7 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 
 **2.1 Email Encryption:**
 
-- S/MIME or PGP/GPG certificate sample (sanitize private key)
+- S/MIME or PGP/GPG certificate sample (sanitise private key)
 - PKI infrastructure documentation or diagram
 - Email gateway configuration (TLS/STARTTLS settings)
 - User training completion records
@@ -1003,7 +1003,7 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 
 **4.1 VPN:**
 
-- VPN server configuration export (sanitize pre-shared keys)
+- VPN server configuration export (sanitise pre-shared keys)
 - MFA enrollment statistics or screenshot
 - VPN protocol and encryption verification
 - VPN connection logs (sample)
@@ -1011,7 +1011,7 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 
 **4.2 SSH:**
 
-- SSH server configuration (/etc/ssh/sshd_config) - sanitize host keys
+- SSH server configuration (/etc/ssh/sshd_config) - sanitise host keys
 - SSH key algorithm inventory (`for i in /home/*/.ssh/authorised_keys; do ssh-keygen -lf $i; done`)
 - Key rotation schedule documentation
 - Root login disabled verification (`grep PermitRootLogin /etc/ssh/sshd_config`)
@@ -1110,11 +1110,11 @@ curl -v https://api.example.com 2>&1 | grep "TLS"
 curl -H "Authorisation: Bearer $TOKEN" https://api.example.com/endpoint
 ```
 
-## Evidence Sanitization
+## Evidence Sanitisation
 
 **CRITICAL:** Remove sensitive information before storing evidence:
 
-**Must Sanitize:**
+**Must Sanitise:**
 
 - Private keys (TLS, SSH, etc.)
 - Passwords, passphrases, secrets
@@ -1123,7 +1123,7 @@ curl -H "Authorisation: Bearer $TOKEN" https://api.example.com/endpoint
 - Personal identifiable information
 - Internal IP addresses (if required by policy)
 
-**Sanitization Methods:**
+**Sanitisation Methods:**
 
 - Replace with placeholders: `private_key = [REDACTED]`
 - Use example values: `password = example_password_123`
@@ -1350,7 +1350,7 @@ sed 's/private_key = .*/private_key = [REDACTED]/g' config.txt > config_sanitize
 
 - [ ] Evidence is verifiable (auditor could reproduce findings with same tools/methods)
 - [ ] Evidence is timestamped and attributable (clear what system, when collected, by whom)
-- [ ] No sensitive credentials exposed in screenshots/configs (sanitized appropriately)
+- [ ] No sensitive credentials exposed in screenshots/configs (sanitised appropriately)
 - [ ] Evidence organised logically and consistently named (EV-[Section]-[System]-[Date]-[Type])
 - [ ] Technical jargon explained where necessary (not everyone is a network engineer)
 - [ ] Assessment tells a clear story from beginning to end (executive could understand)
@@ -1513,4 +1513,4 @@ sed 's/private_key = .*/private_key = [REDACTED]/g' config.txt > config_sanitize
 *"Encryption in transit is the digital equivalent of a sealed envelope."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

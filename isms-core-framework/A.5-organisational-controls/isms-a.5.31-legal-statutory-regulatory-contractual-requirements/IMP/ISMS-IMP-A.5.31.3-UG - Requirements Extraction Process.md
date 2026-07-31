@@ -58,7 +58,7 @@ This workbook contains the following 5 sheets:
 
 ## Purpose
 
-This implementation guide operationalizes the requirements extraction methodology defined in ISMS-POL-A.5.31.3 Section 2. It provides step-by-step instructions for transforming regulatory text into specific, actionable requirements that can be mapped to ISO 27001 controls and implemented by [Organisation].
+This implementation guide operationalises the requirements extraction methodology defined in ISMS-POL-A.5.31.3 Section 2. It provides step-by-step instructions for transforming regulatory text into specific, actionable requirements that can be mapped to ISO 27001 controls and implemented by [Organisation].
 
 **The Translation Challenge**:
 Regulations are written in legal language for legal purposes. Security controls are implemented in technical and organisational terms. Requirements extraction is the "translation layer" that bridges this gap.
@@ -128,7 +128,7 @@ Requirements extraction is NOT a solo activity. Best results come from team:
   - Maintain citation to regulation
 
               ↓
-[STEP 4: Categorise Requirements]
+[STEP 4: Categorize Requirements]
 
 - Assign category: Technical, Organisational, Reporting, Operational
 - Streamlines control mapping (know which Annex A sections relevant)
@@ -224,7 +224,7 @@ Regulations typically follow structured formats, though specific formats vary by
 
 - Subdivisions within articles
 - Provide detail or enumerate specific requirements
-- Example: "Article 32(1)(a): Pseudonymization and encryption of personal data"
+- Example: "Article 32(1)(a): Pseudonymisation and encryption of personal data"
 
 **Annexes / Schedules / Appendices**:
 
@@ -344,7 +344,7 @@ Articles 77-91: Final Provisions
 
 - Shows which sections contain obligations (Articles 24-40 in example)
 - Helps estimate extraction effort
-- Guides prioritization (start with obligation-heavy sections)
+- Guides prioritisation (start with obligation-heavy sections)
 
 ## Marking Up the Regulation
 
@@ -396,7 +396,7 @@ Physical or digital markup makes extraction more efficient and accurate.
 > 
 > The controller and processor **shall** implement appropriate [technical] and [organisational measures] to ensure a level of security appropriate to the risk, including inter alia as appropriate:
 > 
-> (a) **pseudonymization** and **encryption** of [personal data];
+> (a) **pseudonymisation** and **encryption** of [personal data];
 > 
 > (b) the ability to ensure the ongoing **confidentiality**, **integrity**, **availability** and **resilience** of [processing systems] and services;
 >
@@ -455,7 +455,7 @@ Before extracting requirements, create a worksheet to track progress and plan ex
 
 - Prevents skipping articles
 - Estimates effort realistically
-- Prioritizes legal review where needed
+- Prioritises legal review where needed
 - Tracks progress (manager can see % complete)
 
 ---
@@ -541,7 +541,7 @@ Before extracting requirements, create a worksheet to track progress and plan ex
 **"Could" / "Can"**:
 
 - Possibility, not obligation
-- Example: "Organisations could implement anonymization to reduce risk"
+- Example: "Organisations could implement anonymisation to reduce risk"
 - Action: Note as option
 
 ## Contextual Interpretation
@@ -570,7 +570,7 @@ Some language requires careful contextual analysis.
 **"Or" - Alternatives**:
 
 **Example**:
-> "Organisations shall implement encryption or pseudonymization for personal data"
+> "Organisations shall implement encryption or pseudonymisation for personal data"
 
 **Analysis**:
 
@@ -579,8 +579,8 @@ Some language requires careful contextual analysis.
 
 **Extraction**:
 
-- Single requirement: "Implement encryption or pseudonymization for personal data"
-- OR: Two alternative requirements: (1) "Implement encryption for personal data" OR (2) "Implement pseudonymization for personal data"
+- Single requirement: "Implement encryption or pseudonymisation for personal data"
+- OR: Two alternative requirements: (1) "Implement encryption for personal data" OR (2) "Implement pseudonymisation for personal data"
 - Recommended: Single requirement with "or" (preserves implementation flexibility)
 
 **Conditional Requirements ("If X, then shall Y")**:
@@ -710,7 +710,7 @@ Requirements must be "just right" - specific enough to implement, general enough
 **Example Original Regulation Text**:
 > "Article 32(1): The controller and processor shall implement appropriate technical and organisational measures to ensure a level of security appropriate to the risk, including inter alia as appropriate:
 > 
-> (a) the pseudonymization and encryption of personal data;
+> (a) the pseudonymisation and encryption of personal data;
 > 
 > (b) the ability to ensure the ongoing confidentiality, integrity, availability and resilience of processing systems and services;
 > 
@@ -724,7 +724,7 @@ Break down complex article into individual obligations:
 
 - **Obligation 1**: Implement technical and organisational security measures
 - **Obligation 2**: Measures must be appropriate to risk
-- **Obligation 3**: Include pseudonymization and encryption (example)
+- **Obligation 3**: Include pseudonymisation and encryption (example)
 - **Obligation 4**: Ensure confidentiality, integrity, availability, resilience (CIA+R)
 - **Obligation 5**: Restore availability and access after incidents (business continuity/disaster recovery)
 - **Obligation 6**: Regularly test, assess, evaluate effectiveness (ongoing assurance)
@@ -740,10 +740,10 @@ Transform each obligation into requirement:
 - Context: "appropriate to risk level"
 - Result: Clear, actionable
 
-**REQ-002**: "Implement pseudonymization or encryption controls for personal data to reduce processing risk"
+**REQ-002**: "Implement pseudonymisation or encryption controls for personal data to reduce processing risk"
 
 - Action verb: "Implement"
-- What: "pseudonymization or encryption"
+- What: "pseudonymisation or encryption"
 - Scope: "for personal data"
 - Purpose: "to reduce risk"
 - Note: "or" preserves flexibility
@@ -890,13 +890,13 @@ If regulation says same thing multiple times (common in laws with cross-referenc
 **Case 2: Requirements with Alternatives**
 
 **Regulation Example**:
-> "Organisations shall implement encryption or pseudonymization for personal data"
+> "Organisations shall implement encryption or pseudonymisation for personal data"
 
 **Extraction**:
 
-- ✅ "Implement encryption or pseudonymization for personal data"
+- ✅ "Implement encryption or pseudonymisation for personal data"
 
-**Preserves Choice**: [Organisation] can choose encryption, pseudonymization, or both. Don't arbitrarily choose one.
+**Preserves Choice**: [Organisation] can choose encryption, pseudonymisation, or both. Don't arbitrarily choose one.
 
 **Case 3: Requirements with Examples ("Including but not limited to...")**
 
@@ -1110,7 +1110,7 @@ Categories correlate to organisational responsibilities.
 
 **During implementation planning**: Use categories to assign owners.
 
-**Benefit 3: Prioritization**
+**Benefit 3: Prioritisation**
 
 Some categories may be more urgent.
 
@@ -1375,7 +1375,7 @@ Categories inform resource needs.
 
 # Step 6 - Review & Validation
 
-**Purpose**: Quality assurance before finalizing requirements extraction.
+**Purpose**: Quality assurance before finalising requirements extraction.
 
 ## Completeness Check
 
@@ -1443,7 +1443,7 @@ Categories inform resource needs.
 - **Red Flag Patterns**:
   - Interpreted requirement less specific than regulation (e.g., regulation says "within 72 hours", interpreted says "promptly")
   - Interpreted requirement omits conditions (e.g., regulation says "unless unlikely to result in risk", interpreted omits exception)
-  - Interpreted requirement generalizes where regulation is specific
+  - Interpreted requirement generalises where regulation is specific
 
 **If Under-Interpretation Found**:
 
@@ -1471,7 +1471,7 @@ Categories inform resource needs.
 - Select 5-10 requirements randomly
 - For each, ask: "If I'm a control owner, can I implement this?"
 - If answer is "No, too vague": Break down further (too coarse)
-- If answer is "Yes, but I'm locked into very specific technology/process": Generalize (too fine)
+- If answer is "Yes, but I'm locked into very specific technology/process": Generalise (too fine)
 - If answer is "Yes, I know what to do and have options for how": Just right ✓
 
 **Common Fixes**:
@@ -1515,13 +1515,13 @@ Categories inform resource needs.
 
 - Every requirement links to article/section
 - Citation format consistent
-- Fix: Add missing citations, standardize format
+- Fix: Add missing citations, standardise format
 
 ☐ **Consistent terminology**:
 
 - Same concept referred to same way across all requirements
 - Example: Don't mix "personal data" (regulation term) with "PII" (US term) or "customer data" (colloquial)
-- Fix: Standardize on regulatory terminology
+- Fix: Standardise on regulatory terminology
 
 ☐ **Consistent priority logic**:
 
@@ -2008,7 +2008,7 @@ Before submitting for final approval (Step 6), perform these checks:
 **Consistency**:
 
 - ☐ Requirements categorised (Technical/Organisational/Reporting/Operational)
-- ☐ Requirements prioritized (High/Medium/Low)
+- ☐ Requirements prioritised (High/Medium/Low)
 - ☐ Consistent terminology (regulatory terms used consistently)
 - ☐ Consistent formatting (all start with action verb, etc.)
 
@@ -2113,7 +2113,7 @@ Before submitting for final approval (Step 6), perform these checks:
 **Policy Documents**:
 
 - **ISMS-POL-A.5.31.3**: Requirements Extraction & Control Mapping Framework
-  - Defines the extraction methodology this guide operationalizes
+  - Defines the extraction methodology this guide operationalises
   - Section 2: Requirements Extraction Process (methodology)
 - **ISMS-POL-00**: Regulatory Applicability Framework
   - Source of applicable regulations (input to this process)
@@ -2154,4 +2154,4 @@ Before submitting for final approval (Step 6), perform these checks:
 *"The difference between something good and something great is attention to detail."*
 — Charles R. Swindoll
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

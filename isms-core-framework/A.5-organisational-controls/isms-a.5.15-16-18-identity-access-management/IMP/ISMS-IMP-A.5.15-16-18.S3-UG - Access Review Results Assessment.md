@@ -669,7 +669,7 @@ Before starting this assessment, gather:
    - **Reviewers consistently late** (accountability issue)
    - **Removal timeliness missed** (executed >5 days)
 
-2. **Prioritize Gaps by Risk**:
+2. **Prioritise Gaps by Risk**:
 
    - **Critical** (P1):
      - Privileged access reviews not completed (security risk)
@@ -703,7 +703,7 @@ Before starting this assessment, gather:
 **Quality Check:**
 
 - ✓ All gaps identified
-- ✓ Prioritization reflects actual risk
+- ✓ Prioritisation reflects actual risk
 - ✓ Remediation actions specific and actionable
 - ✓ Owners assigned
 - ✓ Target dates realistic
@@ -734,7 +734,7 @@ Before starting this assessment, gather:
    - Date Collected, Collected By
    - Verification Status
 
-3. **Organize Evidence**
+3. **Organise Evidence**
 
 4. **Verify Evidence Quality**:
 
@@ -981,7 +981,7 @@ Before submitting for approval, verify:
 ### Gap Analysis (Sheet 7)
 
 - [ ] All gaps identified
-- [ ] Prioritization reflects risk
+- [ ] Prioritisation reflects risk
 - [ ] Remediation actions actionable
 - [ ] Owners assigned
 - [ ] Target dates realistic
@@ -1095,4 +1095,4 @@ Each quarter:
 *"An unexamined access right is not worth keeping."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -369,7 +369,7 @@ All due diligence activities shall be documented including:
 | **Incident Reporting** | Security incidents reported to [Organisation] within 24 hours of awareness |
 | **Personnel Security** | Background checks appropriate to access level for staff with access to [Organisation] data |
 | **Confidentiality** | NDA or equivalent contractual confidentiality commitment |
-| **Data Minimization** | Access only to data necessary for service delivery |
+| **Data Minimisation** | Access only to data necessary for service delivery |
 | **Data Residency** | Data processing within approved jurisdictions per contract |
 
 ## Enhanced Requirements (Level 1 & 2 Suppliers)
@@ -541,4 +541,4 @@ Security requirements shall be communicated to suppliers through:
 ---
 
 *"The strength of your security is only as strong as your weakest supplier."*
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -252,7 +252,7 @@ Before starting this assessment, gather:
 
 - Screenshot tool (for capturing dashboard evidence)
 - Config export scripts (for exporting tool configurations)
-- Metrics visualization tool (for trend analysis)
+- Metrics visualisation tool (for trend analysis)
 
 ## Required Skills
 
@@ -393,7 +393,7 @@ Before starting this assessment, gather:
 - Verify continuous improvement (are tools tuned based on metrics?)
 - Calculate ROI (vulnerabilities prevented vs. tool cost)
 
-**Phase 5: Review and Finalization (Week 3, Days 16-18)**
+**Phase 5: Review and Finalisation (Week 3, Days 16-18)**
 
 **Step 14**: Complete Evidence Register
 
@@ -415,7 +415,7 @@ Before starting this assessment, gather:
 - Verify all ❌ Non-Compliant and ⚠️ Partial items appear
 - Assign remediation owners (who will fix the gap?)
 - Set remediation target dates (realistic timelines)
-- Prioritize gaps (Critical / High / Medium / Low)
+- Prioritise gaps (Critical / High / Medium / Low)
 
 **Step 17**: Review Summary Dashboard
 
@@ -449,7 +449,7 @@ Before starting this assessment, gather:
 - Metrics extraction and analysis: 4-6 hours
 - Assessment completion: 4-6 hours
 - Evidence collection: 2-3 hours
-- Review and finalization: 2-3 hours
+- Review and finalisation: 2-3 hours
 - Approval cycle: 3-5 business days
 
 **Critical Path**:
@@ -557,8 +557,8 @@ This section provides detailed guidance for completing each assessment domain.
 
 **Examples**:
 
-- ✅ **Compliant**: [Organisation] primary languages: Python (50%), JavaScript (30%), Java (20%); standards include Python SQL parameterization examples, JavaScript XSS prevention (DOMPurify, React auto-escaping), Java PreparedStatement usage
-- ❌ **Non-Compliant**: [Organisation] uses Python, Java, Go; standards are generic ("use parameterized queries") without language-specific examples
+- ✅ **Compliant**: [Organisation] primary languages: Python (50%), JavaScript (30%), Java (20%); standards include Python SQL parameterisation examples, JavaScript XSS prevention (DOMPurify, React auto-escaping), Java PreparedStatement usage
+- ❌ **Non-Compliant**: [Organisation] uses Python, Java, Go; standards are generic ("use parameterised queries") without language-specific examples
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.2.2 (Language-specific guidance required), ISMS-CTX-A.8.28 (technical reference)
 
@@ -1386,4 +1386,4 @@ Before submitting the assessment for approval, verify:
 *"A standard without a tool is a wish; a tool without a standard is a lottery."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

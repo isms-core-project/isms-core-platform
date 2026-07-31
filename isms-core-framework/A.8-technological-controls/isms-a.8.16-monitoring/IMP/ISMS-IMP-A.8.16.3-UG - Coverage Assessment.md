@@ -330,7 +330,7 @@ After completing this assessment, you will have:
 
 4. **Gap Remediation Plan**
 
-   - Prioritized list of gaps (Critical → High → Medium)
+   - Prioritised list of gaps (Critical → High → Medium)
    - Remediation actions with assigned owners
    - Target completion dates per policy requirements
    - Resource requirements (budget, tools, staff)
@@ -346,7 +346,7 @@ After completing this assessment, you will have:
 6. **Executive Dashboard**
 
    - Coverage compliance status (✅ Compliant, ⚠️ Partial, ❌ Non-Compliant)
-   - Key metrics visualization
+   - Key metrics visualisation
    - Trend analysis (coverage improving/degrading)
    - Risk summary (high-risk blind spots)
 
@@ -558,7 +558,7 @@ Before starting this assessment, you MUST have:
 1. **Identify Coverage Gaps:**
 
    - List all assets with no/partial coverage
-   - Prioritize by criticality and risk
+   - Prioritise by criticality and risk
    - Group gaps by root cause (technical, process, resource)
 
 2. **Risk Assessment:**
@@ -1677,7 +1677,7 @@ Coverage degrades over time:
 
 ---
 
-## Pitfall 10: No Risk Prioritization for Gaps
+## Pitfall 10: No Risk Prioritisation for Gaps
 
 **The Mistake:**
 Gap list: 200 unmonitored systems → Treat all equally → Overwhelmed → Paralysis.
@@ -1690,7 +1690,7 @@ Not all gaps are equal:
 
 **How to Avoid:**
 
-- Risk-prioritize gaps (Criticality × Data Classification × Regulatory Scope)
+- Risk-prioritise gaps (Criticality × Data Classification × Regulatory Scope)
 - Address Critical gaps FIRST (30-day timeline)
 - Defer Low priority gaps (or accept risk)
 
@@ -1823,4 +1823,4 @@ Not all gaps are equal:
 *"Blind spots in monitoring are open doors to attackers."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

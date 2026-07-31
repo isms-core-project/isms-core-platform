@@ -260,7 +260,7 @@ This is the CRITICAL foundation - if you miss segments here, you'll miss coverag
    - Remediation plan
    - Owner and target date
 
-4. Prioritize:
+4. Prioritise:
 
    - 0% coverage on production segments = CRITICAL
    - <100% on high-risk segments = HIGH
@@ -318,7 +318,7 @@ For any segments marked "🚫 Exempt":
 Verify that filtering actually works on each segment:
 
 1. Go to "Coverage_Verification" sheet
-2. For each network segment (prioritize production/high-risk):
+2. For each network segment (prioritise production/high-risk):
 
    - Plan test from that segment
    - Execute test (manual browse, automated scan, curl/wget)
@@ -437,12 +437,12 @@ This section provides detailed guidance for completing each field in the assessm
   - **VPN:** Remote access via VPN
   - **Cloud Endpoints:** Virtual desktops, DaaS, Windows 365
   - **Guest:** Visitor/partner networks
-  - **DMZ:** Demilitarized zone, public-facing
+  - **DMZ:** Demilitarised zone, public-facing
   - **Branch:** Remote office networks
   - **Mobile:** Devices NOT on VPN (direct internet)
   - **IoT/OT:** Internet of Things, Operational Technology
   - **Dev/Test:** Development, staging, lab environments
-  - **Other:** Specialized segments not fitting above
+  - **Other:** Specialised segments not fitting above
 - **Note:** Same physical network with different purposes = separate segments
   - Example: "Guest WiFi" (segment 1) vs. "Corp WiFi" (segment 2) even if same access points
 
@@ -1176,7 +1176,7 @@ Auditors need to verify your network coverage claims. Acceptable evidence includ
 - Monitoring reports showing filtering activity
 - Block logs from each segment
 
-### How to Organize Evidence
+### How to Organise Evidence
 
 1. Create folder structure: `Evidence/A.8.23.2_Network_Coverage/`
 2. Subfolders:
@@ -1191,7 +1191,7 @@ Auditors need to verify your network coverage claims. Acceptable evidence includ
    - `Test_Results/`
 
 3. Use consistent naming: `EVD-001_HQ_Network_Topology.pdf`
-4. Sanitize: Remove passwords, sensitive internal IPs if necessary
+4. Sanitise: Remove passwords, sensitive internal IPs if necessary
 5. Version control: Include date in filename
 6. Cross-reference: Link Evidence IDs to assessment claims
 
@@ -1340,7 +1340,7 @@ Before submitting for review, verify all of the following:
 - [ ] All gaps have risk levels assigned
 - [ ] All gaps have remediation plans
 - [ ] All gaps have owners and target dates
-- [ ] Critical gaps prioritized (0% coverage on production)
+- [ ] Critical gaps prioritised (0% coverage on production)
 - [ ] Dependencies noted for delayed remediations
 
 **Exemption Management:**
@@ -1358,7 +1358,7 @@ Before submitting for review, verify all of the following:
 - [ ] Evidence collected for all key claims
 - [ ] Evidence file names match Evidence IDs
 - [ ] Evidence organised in folder structure
-- [ ] Sensitive information sanitized
+- [ ] Sensitive information sanitised
 - [ ] Evidence verification status marked
 
 **Cross-Reference Check:**
@@ -1414,7 +1414,7 @@ Submit to Network Team Lead for technical verification:
 
 If time permits, have Security Team perform independent verification testing:
 
-1. Select sample of segments (prioritize high-risk)
+1. Select sample of segments (prioritise high-risk)
 2. Perform filtering tests
 3. Confirm claimed coverage
 4. Document any discrepancies
@@ -1511,4 +1511,4 @@ Common rejection reasons and solutions:
 *"A filter with gaps is not a filter; it is a false sense of security."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

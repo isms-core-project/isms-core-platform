@@ -313,7 +313,7 @@ For each source in Sheet 2:
 
    - Timeliness: How quickly does intelligence arrive?
    - Relevance: How relevant to [Organisation]'s threat model?
-   - Actionability: Can we operationalize this intelligence?
+   - Actionability: Can we operationalise this intelligence?
    
 4. **Assess CVSS Accuracy** (if source provides CVSS):
 
@@ -355,19 +355,19 @@ For each source in Sheet 2:
 
    - Mark which regions each source covers (Global, North America, Europe, Asia-Pacific, Middle East, Latin America, Africa)
    - Identify gaps (regions with <2 sources)
-   - Prioritize gaps based on [Organisation]'s operating regions
+   - Prioritise gaps based on [Organisation]'s operating regions
    
 2. **Sector Coverage Assessment**:
 
    - Mark which industry sectors each source covers (Financial, Healthcare, Government, Critical Infrastructure, Technology, Education, Retail, Manufacturing, All Sectors)
    - Identify gaps (sectors with <2 sources)
-   - Prioritize gaps based on [Organisation]'s business focus
+   - Prioritise gaps based on [Organisation]'s business focus
    
 3. **Threat Type Coverage Assessment**:
 
    - Mark which threat types each source covers (Malware, Phishing, Ransomware, Data Breach, DDoS, Insider, Supply Chain, Zero-Day, APT, Vulnerabilities)
    - Identify gaps (threat types with <2 sources)
-   - Prioritize gaps based on [Organisation]'s risk assessment
+   - Prioritise gaps based on [Organisation]'s risk assessment
    
 4. **MITRE ATT&CK Coverage Assessment**:
 
@@ -375,14 +375,14 @@ For each source in Sheet 2:
    - Document how many ATT&CK techniques (0-200) each source covers
    - Calculate coverage percentage
    - Identify techniques with <2 sources
-   - Prioritize based on organisational threat model
+   - Prioritise based on organisational threat model
 
 **Deliverable:** Complete Sheet 4 with coverage analysis and gap identification
 
 **Quality Check:**
 
 - ✓ All sources assessed across all coverage dimensions
-- ✓ Gaps identified and prioritized
+- ✓ Gaps identified and prioritised
 - ✓ Coverage percentages calculated
 - ✓ Action items created for critical gaps
 
@@ -395,7 +395,7 @@ For each source in Sheet 2:
 2. Calculate cost per analyst, cost per user, cost per IOC
 3. Assess value delivered (prevented incidents, detection improvements)
 4. Calculate ROI using formula: ROI = (Value - Cost) / Cost × 100%
-5. Identify cost optimization opportunities
+5. Identify cost optimisation opportunities
 6. Track budget vs. actual spending
 
 **Deliverable:** Complete Sheet 5 with cost and ROI data
@@ -631,7 +631,7 @@ For each source in Sheet 2:
    - Status (Not Started, In Progress, Completed, Blocked)
    - Notes
 
-3. Prioritize action items based on impact and policy requirements
+3. Prioritise action items based on impact and policy requirements
 4. Track progress toward remediation
 
 **Deliverable:** Complete Sheet 7 with all action items
@@ -639,7 +639,7 @@ For each source in Sheet 2:
 **Quality Check:**
 
 - ✓ All gaps from Sheets 3-6, 9-15 captured
-- ✓ High-impact gaps prioritized
+- ✓ High-impact gaps prioritised
 - ✓ Owners assigned
 - ✓ Realistic target dates
 - ✓ Status current
@@ -928,7 +928,7 @@ For each source in Sheet 2:
 **Gap Analysis:**
 
 - Identify tactics/techniques with <2 sources
-- Prioritize based on [Organisation]'s threat model
+- Prioritise based on [Organisation]'s threat model
 - Create action items for critical gaps (Sheet 7)
 
 ---
@@ -1089,7 +1089,7 @@ For each source in Sheet 2:
 
 - **Sheet 3:** Sources with poor reliability ratings (D, E, F) or low CVSS accuracy (<90%)
 - **Sheet 4:** Coverage gaps (regions, sectors, threats with <2 sources)
-- **Sheet 5:** Sources with ROI <50% (cost optimization needed)
+- **Sheet 5:** Sources with ROI <50% (cost optimisation needed)
 - **Sheet 6:** Compliance gaps (missing DPAs, TLP violations)
 - **Sheet 9-13:** Integration issues (API failures, SLA violations)
 - **Sheet 14:** Validation failures (accuracy <85%)
@@ -1099,7 +1099,7 @@ For each source in Sheet 2:
 
 - **P1-Critical:** Policy violation, regulatory non-compliance, complete capability gap
 - **P2-High:** Significant gap impacting effectiveness, source quality issues
-- **P3-Medium:** Optimization opportunity, non-critical gap
+- **P3-Medium:** Optimisation opportunity, non-critical gap
 - **P4-Low:** Nice-to-have improvement, documentation gap
 
 **Status Definitions:**
@@ -1108,7 +1108,7 @@ For each source in Sheet 2:
 - **In Progress:** Work actively underway
 - **Completed:** Action resolved, verification performed
 - **Blocked:** Cannot proceed due to dependency or obstacle
-- **Cancelled:** No longer needed or deprioritized
+- **Cancelled:** No longer needed or deprioritised
 
 **Conditional Formatting:**
 
@@ -1619,7 +1619,7 @@ Evidence/
 **Solution:**
 
 - Review Sheet 4 coverage matrix for all gaps
-- Prioritize gaps based on risk assessment
+- Prioritise gaps based on risk assessment
 - Create action items (Sheet 7) for critical gaps
 - Target: ≥2 sources for each critical dimension
 - Review action items quarterly
@@ -1759,7 +1759,7 @@ Evidence/
 
 - Review business justification for major source investments
 - Approve budget allocation for new sources
-- Provide strategic direction on portfolio optimization
+- Provide strategic direction on portfolio optimisation
 - Approve discontinuation of underperforming sources
 
 **Approval Criteria:**
@@ -1799,4 +1799,4 @@ Evidence/
 *"Know your enemy and know yourself; in a hundred battles, you will never be defeated."*
 — Sun Tzu
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

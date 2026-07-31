@@ -254,7 +254,7 @@ For EACH cloud service, across 5 security layers:
 
 **Week 6-7: Remediation Planning**
 
-- Prioritize gaps (Critical services first)
+- Prioritise gaps (Critical services first)
 - Assign remediation owners
 - Set target dates for fixes
 
@@ -670,7 +670,7 @@ This section provides configuration assessment guidance for each security layer 
 
 Verify that identity and access controls are properly configured to prevent unauthorised access. Strong IAM is the first line of defense - even encrypted data is useless if attackers can log in with stolen credentials.
 
-**Success Criterion:** All Critical/High services enforce MFA for all users, use SSO for centralized identity, implement RBAC with least privilege, and conduct quarterly access reviews.
+**Success Criterion:** All Critical/High services enforce MFA for all users, use SSO for centralised identity, implement RBAC with least privilege, and conduct quarterly access reviews.
 
 ### What to Assess
 
@@ -1025,7 +1025,7 @@ For each service:
 
 - Audit logging enabled (what events are logged)
 - Log retention period (regulatory requirements)
-- SIEM integration (centralized log collection)
+- SIEM integration (centralised log collection)
 - Alert configuration (security events, anomalies)
 - Log integrity protection (tamper-proof logs)
 
@@ -1108,7 +1108,7 @@ For each service:
 | Full logging + Batch SIEM + Alerts | ⚠️ | "SIEM integration not real-time" |
 | Partial logging (auth only, no data access) | ⚠️ | "Incomplete logging coverage" |
 | Retention <90 days | ⚠️ | "Log retention below minimum (90 days)" |
-| No SIEM integration | ❌ | "Logs not centralized - blind spot" |
+| No SIEM integration | ❌ | "Logs not centralised - blind spot" |
 | No logging enabled | ❌ | "No audit trail - critical gap" |
 
 ### Common Misconfigurations
@@ -1763,4 +1763,4 @@ Step 5: Archive & Implement (Config remediation, IaC updates)
 *"Security is always excessive until it is not enough."*
 — Robbie Sinclair
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

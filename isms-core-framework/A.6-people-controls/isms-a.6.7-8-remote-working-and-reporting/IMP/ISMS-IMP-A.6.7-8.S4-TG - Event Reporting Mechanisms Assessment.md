@@ -179,7 +179,7 @@ Approved with Conditions, Rejected, Deferred
 
 ---
 
-*"The first step toward security is recognizing that there's a problem."*
+*"The first step toward security is recognising that there's a problem."*
 — Security Maxim
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

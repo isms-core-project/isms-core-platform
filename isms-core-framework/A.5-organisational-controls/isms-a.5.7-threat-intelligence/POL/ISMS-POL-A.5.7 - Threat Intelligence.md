@@ -72,7 +72,7 @@ This policy establishes [Organisation]'s requirements for threat intelligence to
 
 > *Information relating to information security threats should be collected and analysed to produce threat intelligence.*
 
-**Control Objective**: Establish organisational policy for threat intelligence controls enabling proactive threat detection, informing risk management decisions, prioritizing security investments, and enhancing incident response effectiveness.
+**Control Objective**: Establish organisational policy for threat intelligence controls enabling proactive threat detection, informing risk management decisions, prioritising security investments, and enhancing incident response effectiveness.
 
 ## Policy Boundaries
 
@@ -130,7 +130,7 @@ This policy establishes [Organisation]'s requirements for threat intelligence to
 
 **Source Management Requirements**:
 
-- All sources SHALL be evaluated for reliability and credibility before operationalization
+- All sources SHALL be evaluated for reliability and credibility before operationalisation
 - Sources SHALL be validated periodically for accuracy and performance
 - Data protection requirements SHALL be applied to all collected intelligence
 - Third-party sharing SHALL be governed by Traffic Light Protocol (TLP) classifications
@@ -200,7 +200,7 @@ Threat intelligence SHALL inform [Organisation]'s risk assessment process per IS
 - Threat intelligence findings SHALL inform likelihood estimates for security risks
 - Emerging threat campaigns SHALL trigger risk reassessment when targeting [Organisation]'s sector
 - Vulnerability exploitation intelligence SHALL inform impact assessments
-- Threat intelligence recommendations SHALL inform control selection and prioritization
+- Threat intelligence recommendations SHALL inform control selection and prioritisation
 - Risk register updates SHALL cross-reference supporting threat intelligence reports
 
 **Documentation Requirements**:
@@ -231,8 +231,8 @@ When [Organisation] implements Control A.8.8 (Management of Technical Vulnerabil
 **If Implemented**:
 
 - Vulnerability intelligence SHALL combine CVE data with exploitation status
-- Active exploitation intelligence SHALL inform remediation prioritization
-- CVSS scores combined with threat intelligence SHALL enable risk-based prioritization
+- Active exploitation intelligence SHALL inform remediation prioritisation
+- CVSS scores combined with threat intelligence SHALL enable risk-based prioritisation
 
 **Implementation Reference**: When implemented, VulnerabilityThreatLink integration documented in ISMS-IMP-A.5.7.2 and ISMS-IMP-A.8.8.
 
@@ -252,7 +252,7 @@ When [Organisation] implements Control A.8.8 (Management of Technical Vulnerabil
 **Program Maturity**:
 
 - [Organisation] SHALL assess threat intelligence program maturity annually
-- Assessment SHALL cover collection, analysis, dissemination, operationalization, and governance
+- Assessment SHALL cover collection, analysis, dissemination, operationalisation, and governance
 
 **Implementation Reference**: Effectiveness metrics and KPI tracking documented in Summary Dashboard.
 
@@ -269,7 +269,7 @@ When [Organisation] implements Control A.8.8 (Management of Technical Vulnerabil
 | **Chief Risk Officer (CRO)** | Risk assessment integration, TI-driven risk updates approval |
 | **Threat Intelligence Team Lead** | Program management, intelligence production, source management |
 | **Threat Intelligence Analysts** | Intelligence collection, analysis, production, quality assurance |
-| **Security Operations (SOC)** | Intelligence operationalization, IOC deployment, detection tuning |
+| **Security Operations (SOC)** | Intelligence operationalisation, IOC deployment, detection tuning |
 | **Incident Response Team** | Intelligence application during investigations, IOC extraction |
 | **IT Operations** | Technical implementation of TI-driven controls |
 | **Risk Management Team** | Risk assessment updates based on threat intelligence |
@@ -287,8 +287,8 @@ When [Organisation] implements Control A.8.8 (Management of Technical Vulnerabil
 ## Training Requirements
 
 - **All Personnel**: Annual security awareness including threat landscape overview
-- **TI Analysts**: Specialized training on analysis frameworks and report writing
-- **SOC Staff**: Training on TI operationalization and IOC deployment
+- **TI Analysts**: Specialised training on analysis frameworks and report writing
+- **SOC Staff**: Training on TI operationalisation and IOC deployment
 - **Security Leadership**: Strategic threat intelligence briefings
 
 ## Business Continuity
@@ -405,7 +405,7 @@ This policy integrates with [Organisation]'s Information Security Management Sys
 |---------|------------------|-------------|
 | **A.5.24-5.28** | MANDATORY | Incident Management - TI enhances detection and response |
 | **A.8.16** | MANDATORY | Monitoring Activities - TI provides detection context |
-| **A.8.8** | OPTIONAL | Vulnerability Management - TI prioritizes remediation |
+| **A.8.8** | OPTIONAL | Vulnerability Management - TI prioritises remediation |
 | **A.5.19-5.22** | OPTIONAL | Supplier Security - TI assesses third-party risks |
 | **A.5.23** | OPTIONAL | Cloud Security - TI covers cloud-specific threats |
 | **A.8.23** | OPTIONAL | Web Filtering - TI provides malicious domain feeds |
@@ -484,7 +484,7 @@ This policy establishes threat intelligence governance framework (collection, an
 
 - **Technical detection controls** (addressed in A.8.16 Monitoring Activities - threat intelligence provides context for detection rules)
 - **Incident response procedures** (addressed in A.5.24-5.28 Incident Management - threat intelligence enhances investigation)
-- **Vulnerability prioritization** (addressed in A.8.8 Vulnerability Management - VulnerabilityThreatLink integration is optional)
+- **Vulnerability prioritisation** (addressed in A.8.8 Vulnerability Management - VulnerabilityThreatLink integration is optional)
 - **Specific threat actor profiles** (operational intelligence maintained in threat intelligence platform, not policy)
 - **Tool selection or platform configuration** (implementation decisions based on organisational requirements)
 
@@ -510,4 +510,4 @@ The boundary is: POL-A.5.7 defines governance framework for threat intelligence 
 
 *This policy establishes requirements for threat intelligence. Implementation procedures are documented in ISMS-IMP-A.5.7 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

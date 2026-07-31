@@ -406,7 +406,7 @@ However, outputs from this assessment are INPUT to:
    - List which sources provide coverage
    - Assess detection capability (High, Medium, Low, None)
    - Document if technique seen in wild recently
-   - Prioritize gaps based on threat model
+   - Prioritise gaps based on threat model
 
 3. Generate gap remediation plans for critical techniques
 
@@ -458,7 +458,7 @@ However, outputs from this assessment are INPUT to:
 
 **Objective:** Complete Sheet 8 - Vulnerability_Linked_Threats
 
-**VTL Purpose:** Link vulnerabilities (CVEs) to active threat intelligence, enabling CVSS-based risk prioritization and emergency patching triggers.
+**VTL Purpose:** Link vulnerabilities (CVEs) to active threat intelligence, enabling CVSS-based risk prioritisation and emergency patching triggers.
 
 **Steps:**
 
@@ -575,7 +575,7 @@ Assigned To: Infrastructure Team
    - **Level 2 - Repeatable**: Some processes defined but inconsistent
    - **Level 3 - Defined**: Documented processes, generally followed
    - **Level 4 - Managed**: Measured, monitored, controlled
-   - **Level 5 - Optimizing**: Continuous improvement, industry-leading
+   - **Level 5 - Optimising**: Continuous improvement, industry-leading
 
 3. Provide evidence for each maturity rating
 4. Identify gaps between current and target maturity
@@ -602,14 +602,14 @@ Assigned To: Infrastructure Team
    - **TI Platforms**: MISP, ThreatConnect, Anomali, etc.
    - **OSINT Collection**: Maltego, Spiderfoot, Shodan, etc.
    - **Malware Analysis**: Sandboxes, disassemblers, debuggers
-   - **Visualization**: MITRE ATT&CK Navigator, link analysis tools
+   - **Visualisation**: MITRE ATT&CK Navigator, link analysis tools
    - **Data Processing**: Python scripts, SIEM queries, SQL databases
    - **Collaboration**: Wikis, Slack, ticketing systems
 
 2. For each tool:
 
    - Document purpose and use cases
-   - Assess utilization (high, medium, low)
+   - Assess utilisation (high, medium, low)
    - Document licensing and costs
    - Assess analyst skill level with tool
    - Identify integration points
@@ -624,7 +624,7 @@ Assigned To: Infrastructure Team
 
 - ✓ All tools documented (including scripts and manual processes)
 - ✓ Costs tracked for budget planning
-- ✓ Utilization assessed honestly
+- ✓ Utilisation assessed honestly
 - ✓ Integration architecture clear
 
 ---
@@ -749,7 +749,7 @@ Assigned To: Infrastructure Team
    - Status (Not Started, In Progress, Completed, Blocked)
    - Notes and progress updates
 
-3. Prioritize action items:
+3. Prioritise action items:
 
    - **Critical**: Prevents meeting policy requirements, high risk
    - **High**: Significant capability gap, impacts effectiveness
@@ -1022,9 +1022,9 @@ Assigned To: Infrastructure Team
 
 **Tips:**
 
-- Use MITRE ATT&CK Navigator for visualization
+- Use MITRE ATT&CK Navigator for visualisation
 - Focus on techniques seen in wild (last 90 days) first
-- Prioritize based on [Organisation]'s threat model
+- Prioritise based on [Organisation]'s threat model
 - Critical gaps = technique seen recently + no coverage + high impact
 
 **Conditional Formatting:**
@@ -1189,7 +1189,7 @@ Priority_Score = MIN(10,
 | 2 | Repeatable | Some processes defined but inconsistently followed |
 | 3 | Defined | Documented processes, generally followed |
 | 4 | Managed | Measured, monitored, controlled processes |
-| 5 | Optimizing | Continuous improvement, industry-leading |
+| 5 | Optimising | Continuous improvement, industry-leading |
 
 **Columns:**
 
@@ -1280,21 +1280,21 @@ Priority_Score = MIN(10,
 |--------|--------------|---------|
 | **Tool_ID** | Auto-generated | TOOL-001 |
 | **Tool_Name** | Product name | MISP |
-| **Tool_Category** | Dropdown: TI_Platform, OSINT, Malware_Analysis, Visualization, etc. | TI_Platform |
+| **Tool_Category** | Dropdown: TI_Platform, OSINT, Malware_Analysis, Visualisation, etc. | TI_Platform |
 | **Vendor** | Provider name | CIRCL |
 | **Purpose** | Free text | Central threat intelligence platform for collection, analysis, sharing |
-| **Utilization** | Dropdown: High, Medium, Low | High |
+| **Utilisation** | Dropdown: High, Medium, Low | High |
 | **License_Type** | Dropdown: Commercial, Open_Source, Subscription, Internal | Open_Source |
 | **Annual_Cost** | Currency (if commercial) | 0 |
 | **Analyst_Skill_Level** | Dropdown: Expert, Advanced, Intermediate, Novice | Advanced |
 | **Integration_Points** | Comma-separated systems | SIEM, EDR, Firewall |
-| **Limitations** | Free text | Limited built-in visualization |
+| **Limitations** | Free text | Limited built-in visualisation |
 | **Notes** | Free text | Core platform, all analysts trained |
 
 **Tips:**
 
 - Include scripts and manual processes (not just commercial tools)
-- Be honest about utilization (low-use tools may be candidates for retirement)
+- Be honest about utilisation (low-use tools may be candidates for retirement)
 - Document skill levels honestly (identifies training needs)
 - Identify integration gaps
 
@@ -1304,7 +1304,7 @@ Priority_Score = MIN(10,
 
 **User Action:** DATA ENTRY (ONGOING) - Maintain threat actor knowledge base
 
-**Purpose:** Centralized repository of adversary intelligence
+**Purpose:** Centralised repository of adversary intelligence
 
 **Columns:**
 
@@ -1427,7 +1427,7 @@ Priority_Score = MIN(10,
 
 - ATT&CK Navigator exports showing coverage
 - Gap analysis spreadsheets
-- Prioritization matrices
+- Prioritisation matrices
 
 **Phase 7 (Quality Metrics):**
 
@@ -1571,7 +1571,7 @@ Evidence/
 **Symptoms:**
 
 - Claims Level 4 "Managed" but no metrics exist
-- Claims Level 5 "Optimizing" but no continuous improvement
+- Claims Level 5 "Optimising" but no continuous improvement
 - Auditor challenges maturity ratings
 - Cannot provide documentation
 
@@ -1770,4 +1770,4 @@ Evidence/
 *"Data is the new oil; refined intelligence is the new fuel."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

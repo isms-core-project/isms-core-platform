@@ -68,7 +68,7 @@ This policy establishes [Organisation]'s requirements for handling security poli
 
 **ISO/IEC 27001:2022 Annex A.6.4 - Disciplinary Process**
 
-> *A disciplinary process should be formalized and communicated to take actions against personnel who have committed an information security policy violation.*
+> *A disciplinary process should be formalised and communicated to take actions against personnel who have committed an information security policy violation.*
 
 **ISO/IEC 27001:2022 Annex A.6.5 - Responsibilities After Termination or Change of Employment**
 
@@ -520,4 +520,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for disciplinary processes and employment exit. Implementation procedures are documented in ISMS-IMP-A.6.4-5 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

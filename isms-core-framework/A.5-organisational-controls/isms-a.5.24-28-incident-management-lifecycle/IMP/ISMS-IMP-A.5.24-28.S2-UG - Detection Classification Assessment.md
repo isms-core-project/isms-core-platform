@@ -167,7 +167,7 @@ This assessment evaluates [Organisation]'s **incident detection and classificati
   
 - **Gap Analysis:** 1-2 hours
   - Identify detection blind spots
-  - Prioritize tuning requirements
+  - Prioritise tuning requirements
   - Develop improvement recommendations
 
 **Complexity Factors:**
@@ -392,7 +392,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - Detection blind spots identification
 - Alert tuning requirements
 - Procedure gaps and improvements
-- Prioritization and remediation
+- Prioritisation and remediation
 
 **Sheet 7: Evidence Register**
 
@@ -699,9 +699,9 @@ For each of the 11 primary threat categories, assess:
 
 **Q37: Triage_Queue_Management**
 
-- **Question:** How are alerts prioritized in the triage queue?
+- **Question:** How are alerts prioritised in the triage queue?
 - **Dropdown:** Automated (Severity-Based) / Manual (Analyst Discretion) / FIFO (First In First Out) / No Defined Process
-- **Best Practice:** Automated severity-based prioritization with analyst override
+- **Best Practice:** Automated severity-based prioritisation with analyst override
 
 **Q38: Triage_Shift_Handoff**
 
@@ -1135,7 +1135,7 @@ Assess the top incident categories by volume and their typical severity:
 
 - **Question:** What detection mechanism generates the most false positives?
 - **Dropdown:** SIEM / EDR / IDS/IPS / NDR / User Reports / Other
-- **Action:** Prioritize tuning for top source
+- **Action:** Prioritise tuning for top source
 
 **Q100: False_Positive_Tuning_Backlog**
 
@@ -1193,9 +1193,9 @@ Assess the top incident categories by volume and their typical severity:
 
 **Q107: Coverage_Gap_Priority**
 
-- **Question:** Are coverage gaps prioritized for remediation?
+- **Question:** Are coverage gaps prioritised for remediation?
 - **Dropdown:** Yes / No
-- **Prioritization Criteria:** Threat likelihood × Impact
+- **Prioritisation Criteria:** Threat likelihood × Impact
 
 **Q108: Coverage_Improvement_Plan**
 
@@ -1207,7 +1207,7 @@ Assess the top incident categories by volume and their typical severity:
 
 ## Sheet 6: Gap Analysis
 
-**Purpose:** Consolidate gaps and prioritize remediation
+**Purpose:** Consolidate gaps and prioritise remediation
 
 **Gap Register Format:**
 
@@ -1363,7 +1363,7 @@ Coverage = (Categories with Detection / Total Categories) × 100
 # Common Mistakes to Avoid
 
 **❌ Mistake:** Focusing on alert volume instead of alert quality
-**✅ Solution:** Prioritize reducing false positives over increasing alert count
+**✅ Solution:** Prioritise reducing false positives over increasing alert count
 
 **❌ Mistake:** Not tracking MTTD/MTTT (no visibility into detection lag)
 **✅ Solution:** Implement metrics tracking in SIEM and ticketing system
@@ -1405,4 +1405,4 @@ Coverage = (Categories with Detection / Total Categories) × 100
 *"Not all that glitters is gold; not every alert is a breach."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

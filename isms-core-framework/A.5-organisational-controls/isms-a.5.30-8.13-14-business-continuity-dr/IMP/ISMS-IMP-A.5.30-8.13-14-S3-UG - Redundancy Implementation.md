@@ -161,7 +161,7 @@ Per system criticality tier:
 |---------------------|-------------------------------------|
 | **RTO Requirement** | **Redundancy Type** |
 | RTO ≤15 min | Active-active (load balanced), automated failover |
-| RTO ≤1 hour | Hot standby (synchronized replica), automated failover |
+| RTO ≤1 hour | Hot standby (synchronised replica), automated failover |
 | RTO ≤4 hours | Warm standby (recent data sync), manual failover acceptable |
 | RTO ≤24 hours | Cold standby or restore from backup (per IMP-S2) |
 | RTO >24 hours | No redundancy required (backup sufficient) |
@@ -435,7 +435,7 @@ Tier 2 Systems (RTO ≤24 hours):
   [List all Tier 2]
 ```
 
-**Prioritization:**
+**Prioritisation:**
 
 Implement redundancy in order of criticality + revenue impact:
 
@@ -505,7 +505,7 @@ E-commerce Platform:
 
 - Is there a single database instance? (If yes → SPOF)
 - Is replication configured? (If no → SPOF)
-- Is data synchronized? (If no → data loss risk)
+- Is data synchronised? (If no → data loss risk)
 
 **Example Analysis (Payment Database):**
 ```
@@ -730,7 +730,7 @@ Total P2 SPOFs: 1
 
 - ✓ SPOF analysis complete for all Tier 1 systems
 - ✓ All layers analysed (Application → Power)
-- ✓ SPOFs prioritized (P1 = eliminate immediately)
+- ✓ SPOFs prioritised (P1 = eliminate immediately)
 - ✓ Remediation plan defined for each SPOF
 - ✓ Cost estimated for each remediation
 
@@ -754,7 +754,7 @@ Total P2 SPOFs: 1
 - Load balancer distributes traffic
 - All instances actively processing requests
 - Automatic failover (load balancer health checks)
-- No data loss (stateless or synchronized state)
+- No data loss (stateless or synchronised state)
 
 **Example: E-commerce Web Tier**
 ```
@@ -786,7 +786,7 @@ Total P2 SPOFs: 1
 **Disadvantages:**
 
 - Higher cost (dual resources)
-- Requires stateless application or session synchronization
+- Requires stateless application or session synchronisation
 
 ### Pattern 2: Active-Passive (Hot Standby)
 
@@ -796,7 +796,7 @@ Total P2 SPOFs: 1
 
 - Primary instance handles all traffic
 - Secondary instance (standby) running but idle
-- Data synchronized from primary to secondary
+- Data synchronised from primary to secondary
 - Manual or automatic failover
 - Minimal data loss (depends on sync frequency)
 
@@ -826,12 +826,12 @@ Failover Process:
 **Advantages:**
 
 - Faster recovery than backup restore
-- Data synchronized (minimal loss)
+- Data synchronised (minimal loss)
 - Lower cost than active-active
 
 **Disadvantages:**
 
-- Standby resources underutilized (wasted capacity)
+- Standby resources underutilised (wasted capacity)
 - Failover not instant (minutes)
 - Requires failover procedure
 
@@ -843,7 +843,7 @@ Failover Process:
 
 - Primary instance handles all traffic
 - Secondary instance NOT running (provisioned but stopped)
-- Data synchronized periodically (hourly/daily)
+- Data synchronised periodically (hourly/daily)
 - Manual failover (start secondary, switch traffic)
 - Some data loss (RPO = sync frequency)
 
@@ -1550,7 +1550,7 @@ CISO: _____________________ Date: _____
 **1. Component Health:**
 
 - Primary replica status (Healthy/Degraded/Offline)
-- Secondary replica status (Synchronized/Lagging/Offline)
+- Secondary replica status (Synchronised/Lagging/Offline)
 - Replication lag (seconds behind primary)
 
 **2. Failover Events:**
@@ -1562,7 +1562,7 @@ CISO: _____________________ Date: _____
 **3. Capacity:**
 
 - N+1 capacity still available (if one node fails, can others handle load?)
-- Resource utilization (CPU, RAM, disk) per node
+- Resource utilisation (CPU, RAM, disk) per node
 
 ## Azure Monitor Configuration
 
@@ -1721,7 +1721,7 @@ This section describes the 6 sheets in the **Redundancy Implementation Assessmen
 
 **Use When:**
 - Analyzing what could fail in each system
-- Prioritizing SPOF remediation
+- Prioritising SPOF remediation
 - Proving redundancy analysis was thorough
 
 **Key Information:**
@@ -1874,7 +1874,7 @@ P2-High: Orange fill
 Complete: Green cell (Status column)
 ```
 
-## Sheet 2: SPOF Prioritization
+## Sheet 2: SPOF Prioritisation
 
 [Similar structure with ROI calculations]
 
@@ -1971,4 +1971,4 @@ Complete: Green cell (Status column)
 *"Don't put all your eggs in one basket."*
 — Miguel de Cervantes
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

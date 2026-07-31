@@ -323,7 +323,7 @@ This assessment uses a **systematic inventory and verification approach**:
 - Compare inventory to minimum required policies
 - Identify Annex A controls without policies
 - Check Statement of Applicability for excluded controls
-- Prioritize gap remediation (critical controls first)
+- Prioritise gap remediation (critical controls first)
 
 **For Organisations with Existing ISMS:**
 
@@ -753,7 +753,7 @@ For each policy, document:
 
 **Lifecycle Assessment Tips**:
 
-1. **Prioritize approval verification**: Most critical lifecycle element - policies without valid approval are non-compliant
+1. **Prioritise approval verification**: Most critical lifecycle element - policies without valid approval are non-compliant
 
 2. **Check overdue reviews**: Use TODAY() function to identify overdue policies automatically
 
@@ -1339,7 +1339,7 @@ For each policy, document:
 - **Question**: Overall repository compliance?
 - **Dropdown**: Compliant / Partial / Non-Compliant
 - **Calculation**:
-  - **Compliant**: Organized, searchable, version control, access controls, backed up
+  - **Compliant**: Organised, searchable, version control, access controls, backed up
   - **Partial**: Minor issues (search limited, manual versioning)
   - **Non-Compliant**: Major issues (disorganised, no version control, no backups)
 - **Auto-Calculate**: Based on Q3-Q15
@@ -1465,7 +1465,7 @@ For each policy, document:
 
 - **Question**: How much effort is required?
 - **Dropdown**: < 1 hour / 1-4 hours / 1 day / 2-5 days / > 1 week
-- **Purpose**: Resource planning, prioritization
+- **Purpose**: Resource planning, prioritisation
 
 **Q13: Dependencies**
 
@@ -1611,9 +1611,9 @@ For each policy, document:
 
 1. **Collect as you assess**: Don't wait until end - gather evidence while completing each sheet
 
-2. **Organize systematically**: Use consistent folder structure matching assessment sheets
+2. **Organise systematically**: Use consistent folder structure matching assessment sheets
 
-3. **Sanitize sensitive data**: Remove or redact sensitive information before storing evidence
+3. **Sanitise sensitive data**: Remove or redact sensitive information before storing evidence
 
 4. **Version evidence**: If evidence changes (e.g., updated repository), keep versions with dates
 
@@ -2081,4 +2081,4 @@ This assessment (.S1 - Policy Framework) is part of the stacked control framewor
 *"A principle is not a principle until it costs you something."*
 — Bill Bernbach
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -827,7 +827,7 @@ Not all assets require identical monitoring:
 | Critical Drift Incidents | =COUNTIF(Drift_Detection_Log!H3:H152,"Critical") | 0 (absolute zero tolerance) | [Alert if >0] |
 | High Drift Incidents | =COUNTIF(...,"High") | <5 per month | [Status] |
 | Unauthorised Changes Detected | =COUNTIF(Drift_Detection_Log!K3:K152,"No (Unauthorised)") | Detect all | [Count] |
-| Authorised Changes (Post-Facto) | =COUNTIF(...,"Yes (Change ID)") | Minimize (indicates process gap) | [Count] |
+| Authorised Changes (Post-Facto) | =COUNTIF(...,"Yes (Change ID)") | Minimise (indicates process gap) | [Count] |
 | Drift Detection Rate (incidents/asset/month) | =(Incidents Last 30 Days)/(Monitored Assets) | <0.1 (stable environment) | [Ratio] |
 | False Positive Rate % | =COUNTIF(Drift_Detection_Log!O3:O152,"False Positive")/Total_Incidents*100 | <10% | [Status] |
 
@@ -835,7 +835,7 @@ Not all assets require identical monitoring:
 
 | Metric | Formula | Target | Status |
 |--------|---------|--------|--------|
-| Open Drift Incidents | =COUNTIFS(Drift_Detection_Log!O3:O152,"<>Closed","<>False Positive") | Minimize | [Count] |
+| Open Drift Incidents | =COUNTIFS(Drift_Detection_Log!O3:O152,"<>Closed","<>False Positive") | Minimise | [Count] |
 | Overdue Critical Drift | =COUNTIFS(Drift_Remediation_Tracking!C3:C152,"Critical",P3:P152,"Overdue") | 0 (immediate escalation) | [Alert if >0] |
 | Overdue High Drift | =COUNTIFS(...,"High","Overdue") | 0 | [Alert if >0] |
 | Mean Time to Detect (MTTD) | =AVERAGE(Drift_Detection_Log!P3:P152) hours | <1 hour (Tier 1), <24 hours (Tier 2) | [Hours] |
@@ -947,12 +947,12 @@ Logic: Identify asset types with (1) Critical/High criticality AND (2) Monitorin
 **Special Features**:
 
 - All cells protected (formula-driven)
-- Automatically highlights worst gaps for remediation prioritization
+- Automatically highlights worst gaps for remediation prioritisation
 - Links to specific Monitoring_Coverage_Register rows showing which assets
 
 **Usage Notes**:
 
-- Use monthly to prioritize monitoring expansion
+- Use monthly to prioritise monitoring expansion
 - "Critical Gap" in Section A = category needs immediate attention
 - Critical/High assets with Status="❌" require escalation
 - "None" monitoring method for Tier 1 assets = severe gap
@@ -1023,7 +1023,7 @@ Action Needed logic:
 
 - Review quarterly to assess monitoring program effectiveness
 - Increasing drift trend = environment instability or monitoring expansion
-- Decreasing drift trend = configuration stabilization or process improvement
+- Decreasing drift trend = configuration stabilisation or process improvement
 - High drift rate for specific category = targeted investigation needed
 - Assets with >10 incidents in 90 days = configuration stability problem
 
@@ -1241,7 +1241,7 @@ Status:
 2. Document current monitoring coverage in Monitoring_Coverage_Register
 3. Catalog monitoring tools in Monitoring_Tool_Inventory
 4. Identify coverage gaps (use Coverage_Gap_Analysis dashboard)
-5. Prioritize gaps based on asset criticality
+5. Prioritise gaps based on asset criticality
 
 **Phase 2: Drift Tracking Setup** (Weeks 3-4)
 1. Establish drift detection log process
@@ -1406,7 +1406,7 @@ Status:
 2. **Risk Assessment**:
 
    - Determine asset criticality (if Critical/High, immediate action)
-   - Prioritize based on Monitoring Tier
+   - Prioritise based on Monitoring Tier
 
 3. **Remediation Plan**:
 
@@ -1471,4 +1471,4 @@ Retain versions:
 *"Configuration drift is the slow erosion of your security posture."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

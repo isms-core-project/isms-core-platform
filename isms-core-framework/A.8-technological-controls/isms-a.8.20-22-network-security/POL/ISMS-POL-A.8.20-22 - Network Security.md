@@ -238,7 +238,7 @@ Best practice frameworks referenced but not mandatory compliance requirements:
 | **Device Hardening** | Disable default credentials; Remove unnecessary services; Implement secure configurations per CIS benchmarks or vendor hardening guides | ISMS-IMP-A.8.20-22-S3 |
 | **Perimeter Controls** | Firewalls at network perimeter; IPS/IDS for threat detection; DDoS protection for internet-facing services | ISMS-IMP-A.8.20-22-S3 |
 | **Network Access Controls** | Industry-standard network access control mechanisms **(e.g., 802.1X for wired/wireless networks, NAC appliances, clientless network access control)**; Port security on switches; Authentication-based access control | ISMS-IMP-A.8.20-22-S3 |
-| **Monitoring & Logging** | All network devices log to centralized system; Network traffic analysis; SIEM integration for correlation | ISMS-IMP-A.8.20-22-S6 |
+| **Monitoring & Logging** | All network devices log to centralised system; Network traffic analysis; SIEM integration for correlation | ISMS-IMP-A.8.20-22-S6 |
 | **Configuration Management** | Configuration baselines; Change control for configuration changes; Automated backups per implementation guidance | ISMS-IMP-A.8.20-22-S3 |
 | **Wireless Security** | Strong encryption and authentication; Rogue AP detection; Guest network isolation | ISMS-IMP-A.8.20-22-S3 |
 | **Remote Access Security** | VPN with MFA; Split-tunnel policies; Session logging and monitoring | ISMS-IMP-A.8.20-22-S3 |
@@ -255,7 +255,7 @@ Best practice frameworks referenced but not mandatory compliance requirements:
 |-------------|------------------------------|-------------------------|
 | **DNS** | Industry-standard DNS security mechanisms **(specific mechanisms defined in ISMS-IMP-A.8.20-22-S4)**; Split DNS architecture; DNS query logging; DNS filtering for malicious domains; DDoS protection for public DNS | ISMS-IMP-A.8.20-22-S4 |
 | **DHCP** | DHCP security mechanisms on switches **(specific mechanisms defined in ISMS-IMP-A.8.20-22-S4)**; Rogue DHCP detection; Documented scopes with periodic review; High availability for critical DHCP services | ISMS-IMP-A.8.20-22-S4 |
-| **NTP** | NTP authentication mechanisms **(specific mechanisms defined in ISMS-IMP-A.8.20-22-S4)**; Documented time source hierarchy; Access control restrictions; Time synchronization monitoring | ISMS-IMP-A.8.20-22-S4 |
+| **NTP** | NTP authentication mechanisms **(specific mechanisms defined in ISMS-IMP-A.8.20-22-S4)**; Documented time source hierarchy; Access control restrictions; Time synchronisation monitoring | ISMS-IMP-A.8.20-22-S4 |
 | **Proxy Services** | Authentication required; SSL/TLS interception (if applicable); Comprehensive logging; Bypass prevention | ISMS-IMP-A.8.20-22-S4 |
 | **Load Balancers** | SSL/TLS termination with strong ciphers; Session management; DDoS protection; Health check monitoring | ISMS-IMP-A.8.20-22-S4 |
 | **Authentication Services** | RADIUS/TACACS+ with MFA support; AAA logging; Encrypted communication; Redundancy for critical authentication | ISMS-IMP-A.8.20-22-S4 |
@@ -286,7 +286,7 @@ Service-specific SLA determination guidance is provided in ISMS-IMP-A.8.20-22-S4
 | **Inter-Zone Traffic Controls** | Firewalls or ACLs at trust boundaries; Default deny policy (explicit allow only); Stateful inspection for all inter-zone traffic; Traffic flow documentation | ISMS-IMP-A.8.20-22-S5 |
 | **Trust Boundaries** | Define trust boundaries between zones; Enforce controls at every boundary; Log denied traffic; Regular firewall rule review | ISMS-IMP-A.8.20-22-S5 |
 | **Segmentation Testing** | Periodic segmentation effectiveness testing; VLAN security testing; Traffic flow verification; Penetration testing of inter-zone controls | ISMS-IMP-A.8.20-22-S6 |
-| **Flat Network Remediation** | Identify flat networks (no segmentation); Risk assessment of flat networks; Remediation plan based on risk prioritization | ISMS-IMP-A.8.20-22-S5 |
+| **Flat Network Remediation** | Identify flat networks (no segmentation); Risk assessment of flat networks; Remediation plan based on risk prioritisation | ISMS-IMP-A.8.20-22-S5 |
 | **Microsegmentation** | Application-level segmentation for high-security requirements (SHOULD); Zero Trust network approaches where applicable | ISMS-IMP-A.8.20-22-S5 |
 
 **Default Deny Principle**: All inter-zone traffic **MUST** be blocked by default. Only explicitly approved traffic flows permitted. Every permit rule **MUST** have documented business justification.
@@ -392,7 +392,7 @@ Rules lacking documented business justification identified during review must be
 **Continuous Monitoring**:
 
 - Network security controls monitored through automated and manual mechanisms
-- Network device logs monitored via centralized logging system
+- Network device logs monitored via centralised logging system
 - Network traffic analysed for security anomalies
 - Security events trigger alerts and incident response procedures
 
@@ -410,7 +410,7 @@ Rules lacking documented business justification identified during review must be
 - Network security compliance metrics defined in assessment framework
 - Key performance indicators (KPIs) documented in implementation guidance
 - Targets and thresholds established based on organisational risk tolerance
-- Gap remediation prioritized based on risk assessment
+- Gap remediation prioritised based on risk assessment
 - Trend analysis conducted to identify security improvements
 
 **Network Security Performance Targets**:
@@ -506,7 +506,7 @@ When network security requirements cannot be met due to technical, operational, 
 | **Low** | Failed authentication attempts on single network device; minor configuration drift detected; single rogue AP detected and contained |
 | **Medium** | Misconfigured firewall rule allowing unintended traffic (no exploitation confirmed); VLAN misconfiguration affecting non-critical segment; network service degradation from capacity issue |
 | **High** | Compromised network device with evidence of reconnaissance; successful VLAN hopping attempt; unauthorised access to network management interface; segmentation bypass confirmed |
-| **Critical** | Network device compromise affecting critical infrastructure; active lateral movement across segments; compromise of centralized authentication (RADIUS/TACACS+); network-wide DDoS with sustained impact; evidence of data exfiltration via network channels |
+| **Critical** | Network device compromise affecting critical infrastructure; active lateral movement across segments; compromise of centralised authentication (RADIUS/TACACS+); network-wide DDoS with sustained impact; evidence of data exfiltration via network channels |
 
 **Incident Response Process**:
 
@@ -580,7 +580,7 @@ When network security requirements cannot be met due to technical, operational, 
 - Regulatory mandate requiring immediate compliance
 - Approval: CISO (with Executive Management notification within 24 hours)
 - Notification: Immediate communication to affected parties
-- Formalization: Retroactive approval at next policy review
+- Formalisation: Retroactive approval at next policy review
 
 **Communication**:
 
@@ -620,7 +620,7 @@ This policy supports the following SoA entries:
 
 - Network devices generate security logs
 - Network services log critical events
-- Logs centralized in SIEM for correlation
+- Logs centralised in SIEM for correlation
 - Integration: Network devices configured to log per A.8.15 requirements
 
 **A.8.16 - Monitoring Activities**:
@@ -734,7 +734,7 @@ This policy supports the following SoA entries:
 
 - **Content**: Network security assessment methodologies; Segmentation effectiveness testing; Penetration testing techniques; Cloud network security; Security monitoring and SIEM
 - **Frequency**: Annual, plus continuous learning for emerging threats
-- **Delivery**: Security conferences, specialized training courses, certification programs
+- **Delivery**: Security conferences, specialised training courses, certification programs
 - **Verification**: Security certifications (CISSP, GIAC, vendor security certifications)
 
 **Cloud Administrators**:
@@ -746,12 +746,12 @@ This policy supports the following SoA entries:
 
 **Operational Training** (IT operations, help desk):
 
-- **Content**: Network security basics; Recognizing security incidents; Escalation procedures; Change management procedures
+- **Content**: Network security basics; Recognising security incidents; Escalation procedures; Change management procedures
 - **Frequency**: Annual
 - **Delivery**: Internal training sessions, documentation review
 - **Verification**: Training completion and knowledge checks
 
-**Specialized Training** (as needed):
+**Specialised Training** (as needed):
 
 - Software-defined networking (SDN) security
 - Zero Trust network architecture
@@ -788,7 +788,7 @@ Frequency reductions require CISO approval and documented risk acceptance.
 
 **Defense in Depth**: Layered security approach using multiple security controls at different levels to protect information assets. In network security context: perimeter controls + segmentation + device hardening + monitoring.
 
-**DMZ (Demilitarized Zone)**: Network segment isolated from both internal networks and the internet, typically hosting internet-facing services (web servers, mail relays, VPN concentrators).
+**DMZ (Demilitarised Zone)**: Network segment isolated from both internal networks and the internet, typically hosting internet-facing services (web servers, mail relays, VPN concentrators).
 
 **Flat Network**: Network with no segmentation - all systems can communicate with all other systems without firewall or ACL controls. Considered high-risk architecture.
 
@@ -804,7 +804,7 @@ Frequency reductions require CISO approval and documented risk acceptance.
 
 **VLAN (Virtual Local Area Network)**: Logical network segment created on physical network infrastructure using IEEE 802.1Q standard, enabling network segregation without separate physical networks.
 
-**Zero Trust Network**: Security model that assumes no implicit trust based on network location. All access requests verified regardless of source, emphasizing "never trust, always verify."
+**Zero Trust Network**: Security model that assumes no implicit trust based on network location. All access requests verified regardless of source, emphasising "never trust, always verify."
 
 ---
 
@@ -826,4 +826,4 @@ Frequency reductions require CISO approval and documented risk acceptance.
 
 *This policy establishes requirements for network security controls covering network infrastructure (A.8.20), network services (A.8.21), and network segmentation (A.8.22). Implementation procedures are documented in ISMS-IMP-A.8.20-22 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

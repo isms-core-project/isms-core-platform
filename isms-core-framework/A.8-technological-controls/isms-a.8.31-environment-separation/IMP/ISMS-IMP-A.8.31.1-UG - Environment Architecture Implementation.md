@@ -152,7 +152,7 @@ Before starting this assessment, gather:
 - Administrator access to all environment infrastructures
 - Access to cloud management consoles (AWS, Azure, GCP)
 - Access to network infrastructure (firewall, router configs)
-- Access to virtualization platforms (VMware, Hyper-V, Kubernetes)
+- Access to virtualisation platforms (VMware, Hyper-V, Kubernetes)
 - Database admin access (for database instance inventory)
 
 #### 2. Documentation
@@ -319,13 +319,13 @@ However, outputs from this assessment are INPUT to:
 - Complete Sheet 4: Data Separation
 - Verify NO production data in development environments
 - Verify NO production data in testing environments
-- Document data anonymization procedures (if used in test)
+- Document data anonymisation procedures (if used in test)
 - Document synthetic data generation (if used in test)
 
 **Outputs:**
 
 - Data separation compliance matrix
-- Data anonymization documentation
+- Data anonymisation documentation
 - Production data leak verification
 
 **Common Pitfalls to Avoid:**
@@ -391,7 +391,7 @@ However, outputs from this assessment are INPUT to:
 **Outputs:**
 
 - Comprehensive gap analysis
-- Risk-prioritized remediation plan
+- Risk-prioritised remediation plan
 - Timeline for gap closure
 
 #### Phase 9: Evidence Collection (1-2 hours)
@@ -469,7 +469,7 @@ However, outputs from this assessment are INPUT to:
    - Environment name
    - Purpose (what it's used for)
    - Primary users (who accesses it)
-   - Data type (synthetic, anonymized, production)
+   - Data type (synthetic, anonymised, production)
    - Availability target (SLA)
    - Status (deployed, planned, decommissioned)
 
@@ -486,7 +486,7 @@ However, outputs from this assessment are INPUT to:
 | Environment | Purpose | Primary Users | Data Type | Availability | Status |
 |-------------|---------|---------------|-----------|--------------|--------|
 | Production | Live customer operations | Operations team | Production data | 99.9% | ✅ Deployed |
-| Staging | Pre-production validation | Ops + Senior Devs | Anonymized | 99% | ✅ Deployed |
+| Staging | Pre-production validation | Ops + Senior Devs | Anonymised | 99% | ✅ Deployed |
 | Testing | QA, UAT | QA team, business users | Synthetic | 95% business hours | ✅ Deployed |
 | Development | Active code development | Developers, DevOps | Synthetic only | Best effort | ✅ Deployed |
 
@@ -553,7 +553,7 @@ However, outputs from this assessment are INPUT to:
 **What to do:**
 1. Verify NO production data in development
 2. Verify NO production data in testing
-3. Document data anonymization procedures (if used)
+3. Document data anonymisation procedures (if used)
 4. Document synthetic data generation
 5. Document any violations and remediation
 
@@ -564,13 +564,13 @@ However, outputs from this assessment are INPUT to:
 - This is a CRITICAL compliance requirement
 - Production database dumps in dev/test = MAJOR VIOLATION
 - Use data discovery tools to scan for production data
-- Document data anonymization technique (if used in test)
+- Document data anonymisation technique (if used in test)
 
 **Example Entry:**
-| Environment | Production Data Present? | Data Type | Anonymization Used? | Violations | Evidence |
+| Environment | Production Data Present? | Data Type | Anonymisation Used? | Violations | Evidence |
 |-------------|-------------------------|-----------|---------------------|------------|----------|
 | Production | ✅ Yes (authorised) | Real production data | N/A | None | N/A |
-| Staging | ❌ No | Anonymized production subset | ✅ Yes (k-anonymity=5) | None | data-anonymization-procedure.pdf |
+| Staging | ❌ No | Anonymised production subset | ✅ Yes (k-anonymity=5) | None | data-anonymisation-procedure.pdf |
 | Testing | ❌ No | Synthetic test data | N/A | None | synthetic-data-generator-config.yaml |
 | Development | ❌ No | Synthetic test data | N/A | None | dev-database-schema.sql |
 
@@ -636,7 +636,7 @@ However, outputs from this assessment are INPUT to:
 **Example Entry:**
 | Configuration Item | Production | Staging | Match? | Drift % | IaC Managed? | Evidence |
 |--------------------|------------|---------|--------|---------|--------------|----------|
-| Instance type | t3.xlarge | t3.large | ⚠️ Partial (intentional cost optimization) | N/A | ✅ Yes (Terraform) | main.tf |
+| Instance type | t3.xlarge | t3.large | ⚠️ Partial (intentional cost optimisation) | N/A | ✅ Yes (Terraform) | main.tf |
 | Security group rules | sg-prod-app (22 rules) | sg-staging-app (22 rules) | ✅ Yes | 0% | ✅ Yes (Terraform) | terraform-plan-output.txt |
 | Database version | PostgreSQL 15.4 | PostgreSQL 15.4 | ✅ Yes | 0% | ✅ Yes (Terraform) | terraform-plan-output.txt |
 | Application config | app-config-v2.3 | app-config-v2.2 | ❌ No (staging outdated) | 5% | ⚠️ Partial | FINDING: Update staging to v2.3 |
@@ -657,14 +657,14 @@ However, outputs from this assessment are INPUT to:
    - Estimated effort
    - Target completion date
 
-4. Prioritize gaps by risk severity
+4. Prioritise gaps by risk severity
 
 **Time:** 1-2 hours
 
 **Tips:**
 
 - Be honest about gaps (audit will find them anyway)
-- Prioritize High severity gaps first
+- Prioritise High severity gaps first
 - Provide realistic remediation timelines
 - Include compensating controls if remediation delayed
 
@@ -696,7 +696,7 @@ However, outputs from this assessment are INPUT to:
 
 **Tips:**
 
-- Organize evidence in a shared folder
+- Organise evidence in a shared folder
 - Use descriptive file names (network-diagram-2024-01.pdf, not diagram.pdf)
 - Include date in file names for version control
 - Screenshot cloud console views with timestamp visible
@@ -733,7 +733,7 @@ However, outputs from this assessment are INPUT to:
 - ✅ Attributed (who collected it)
 - ✅ Verifiable (auditor can reproduce)
 - ✅ Complete (covers all requirements)
-- ✅ Organized (easy to find and review)
+- ✅ Organised (easy to find and review)
 
 **Poor Evidence:**
 
@@ -842,7 +842,7 @@ vault kv list secret/prod/
 **Solution:**
 
 - Use data discovery tools to scan dev/test environments
-- Implement data anonymization for any production data used in test
+- Implement data anonymisation for any production data used in test
 - Strictly prohibit production database dumps in dev/test
 - Generate synthetic test data instead
 
@@ -893,7 +893,7 @@ curl http://prod-app:9090/metrics  # Should SUCCEED (allowed)
 
 - Use Infrastructure as Code (Terraform, CloudFormation) for both staging and prod
 - Detect drift with `terraform plan` regularly
-- Document intentional differences (e.g., instance size for cost optimization)
+- Document intentional differences (e.g., instance size for cost optimisation)
 - Keep application configuration identical (different instance size OK, different app config NOT OK)
 
 ---
@@ -980,7 +980,7 @@ Before submitting your assessment for approval, verify:
 - Is the environment inventory complete?
 - Are separation mechanisms accurately documented?
 - Is evidence sufficient and verifiable?
-- Are gaps realistic and properly prioritized?
+- Are gaps realistic and properly prioritised?
 
 #### Level 2: Security Review
 
@@ -1071,4 +1071,4 @@ Document approvals in Sheet 9 (Evidence Register):
 *"Production and development share a purpose; they should not share an environment."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

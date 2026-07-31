@@ -90,7 +90,7 @@ This implementation guide specifies procedures for conducting Data Protection Im
 - Processing involving cross-border data transfers outside EEA
 - Decisions with potential to cause significant harm (automated decision-making)
 
-**ISO/IEC 27001:2022 Control A.5.34 Requirement:** Organizations must implement privacy impact assessments when required by applicable privacy regulations.
+**ISO/IEC 27001:2022 Control A.5.34 Requirement:** Organisations must implement privacy impact assessments when required by applicable privacy regulations.
 
 ---
 
@@ -409,7 +409,7 @@ For any processing marked "DPIA Required = Yes":
 | F | DPO Assigned | Text | DPO conducting assessment | Text (name of DPO or privacy analyst) |
 | G | DPIA Start Date | Date | When DPIA project began | Date format: YYYY-MM-DD |
 | H | Target Completion Date | Date | Planned finish date | Date format: YYYY-MM-DD |
-| I | Actual Completion Date | Date | When DPIA was finalized | Date format: YYYY-MM-DD (blank until complete) |
+| I | Actual Completion Date | Date | When DPIA was finalised | Date format: YYYY-MM-DD (blank until complete) |
 | J | DPIA Status | Dropdown | Current lifecycle stage | Dropdown: Planned, In Progress, Under Review, Complete, Overdue |
 | K | Initial Risk Rating | Dropdown | Risk before mitigation (from Sheet 4) | Dropdown: Low, Medium, High, Critical |
 | L | Residual Risk Rating | Dropdown | Risk after mitigation (from Sheet 7) | Dropdown: Low, Medium, High, Critical |
@@ -442,7 +442,7 @@ For any processing marked "DPIA Required = Yes":
 **Column F - DPO Assigned:**
 
 - Name of DPO or privacy analyst conducting the DPIA
-- One DPO can handle multiple DPIAs (centralized expertise)
+- One DPO can handle multiple DPIAs (centralised expertise)
 - If outsourced, note consultant name (e.g., "External DPO - Smith & Associates")
 
 **Step 3: Set Timeline (Columns G-I)**
@@ -461,7 +461,7 @@ For any processing marked "DPIA Required = Yes":
 
 **Column I - Actual Completion Date:**
 
-- Leave blank until DPIA is finalized and approved
+- Leave blank until DPIA is finalised and approved
 - Completion = all mitigation measures documented, DPO sign-off, business owner approval
 - If completion date exceeds target → mark Status as "Overdue" (red flag)
 
@@ -472,7 +472,7 @@ For any processing marked "DPIA Required = Yes":
 - **Planned:** DPIA identified as needed, not yet started (awaiting resources/approval)
 - **In Progress:** Active DPIA work (stakeholder interviews, risk assessment, mitigation planning)
 - **Under Review:** DPIA draft complete, awaiting approvals (DPO review, legal review, business owner sign-off)
-- **Complete:** DPIA finalized, mitigation measures implemented, documented in register
+- **Complete:** DPIA finalised, mitigation measures implemented, documented in register
 - **Overdue:** Actual date > Target Completion Date AND status not "Complete" (requires escalation)
 
 **Status Progression:** Planned → In Progress → Under Review → Complete
@@ -590,7 +590,7 @@ For any processing marked "DPIA Required = Yes":
 
 - **A.5.34.1 (PII Identification):** Processing activities flow from Sheet 2 System Inventory
 - **A.5.34.2 (Legal Basis):** Legal basis documented in DPIA must match Legal Basis Assessment
-- **A.5.34.4 (TOMs):** Technical/organizational measures from DPIA feed into TOMs assessment
+- **A.5.34.4 (TOMs):** Technical/organisational measures from DPIA feed into TOMs assessment
 - **A.5.34.7 (Dashboard):** DPIA completion rate tracked in master compliance dashboard
 
 ---
@@ -621,14 +621,14 @@ Sheet 4 covers items (a)-(c). Sheet 5 covers item (d).
 | C | Risk Category | Dropdown | Type of risk to data subjects | Dropdown: See risk categories below |
 | D | Risk Description | Text | Detailed description of specific risk | Text (500 char max) |
 | E | Data Subject Impact | Text | How data subjects are harmed | Text (300 char max) |
-| F | Likelihood (Before Mitigation) | Dropdown | Probability risk will materialize | Dropdown: 1-Rare, 2-Unlikely, 3-Possible, 4-Likely, 5-Almost Certain |
+| F | Likelihood (Before Mitigation) | Dropdown | Probability risk will materialise | Dropdown: 1-Rare, 2-Unlikely, 3-Possible, 4-Likely, 5-Almost Certain |
 | G | Impact (Before Mitigation) | Dropdown | Severity of harm to data subjects | Dropdown: 1-Negligible, 2-Minor, 3-Moderate, 4-Major, 5-Severe |
 | H | Inherent Risk Score | Number | Likelihood × Impact (before mitigation) | Formula: =F*G |
 | I | Inherent Risk Level | Text | Risk classification | Formula: =IF(H>=20,"Critical",IF(H>=15,"High",IF(H>=8,"Medium","Low"))) |
 | J | Necessity Justified? | Yes/No | Is processing necessary for stated purpose? (Art. 35(7)(b)) | Dropdown: Yes, No, Uncertain |
 | K | Necessity Justification | Text | Why processing is necessary | Text (300 char max) |
-| L | Proportionality Justified? | Yes/No | Are data minimization principles followed? (Art. 35(7)(b)) | Dropdown: Yes, No, Uncertain |
-| M | Proportionality Justification | Text | Evidence of data minimization | Text (300 char max) |
+| L | Proportionality Justified? | Yes/No | Are data minimisation principles followed? (Art. 35(7)(b)) | Dropdown: Yes, No, Uncertain |
+| M | Proportionality Justification | Text | Evidence of data minimisation | Text (300 char max) |
 | N | Legal Basis | Dropdown | GDPR Article 6 lawful basis | Dropdown: Consent, Contract, Legal Obligation, Vital Interests, Public Task, Legitimate Interests |
 | O | Special Category Legal Basis | Dropdown | GDPR Article 9 basis (if applicable) | Dropdown: N/A, Explicit Consent, Employment Law, Vital Interests, Medical Purposes, Public Health, Archiving/Research |
 | P | Data Subject Rights Respected? | Yes/No | Can subjects exercise rights (access, erasure, etc.)? | Dropdown: Yes, No, Partial |
@@ -645,13 +645,13 @@ The following risk categories align with WP248 guidelines and ISO/IEC 29134:2017
 
 2. **Identity Theft/Fraud:** PII could be stolen/misused (e.g., SSN exposure, financial data breach, account takeover)
 
-3. **Financial Loss:** Data subjects could suffer economic harm (e.g., unauthorized transactions, credit damage, employment termination)
+3. **Financial Loss:** Data subjects could suffer economic harm (e.g., unauthorised transactions, credit damage, employment termination)
 
 4. **Reputational Damage:** Disclosure could harm reputation (e.g., health data leak, embarrassing personal info exposure, online shaming)
 
 5. **Physical Harm:** Processing could endanger physical safety (e.g., location data revealing domestic abuse victim whereabouts, health data exposure leading to insurance denial for critical treatment)
 
-6. **Loss of Confidentiality:** Unauthorized disclosure (e.g., medical records breach, whistleblower identity revealed, trade secrets exposed via employee monitoring)
+6. **Loss of Confidentiality:** Unauthorised disclosure (e.g., medical records breach, whistleblower identity revealed, trade secrets exposed via employee monitoring)
 
 7. **Loss of Control:** Data subjects cannot manage their data (e.g., inability to correct inaccurate data, no opt-out mechanism, data sold to third parties without knowledge)
 
@@ -690,11 +690,11 @@ The following risk categories align with WP248 guidelines and ISO/IEC 29134:2017
 
 - Describe the specific risk scenario (not generic)
 - **Bad example:** "Data breach could occur"
-- **Good example:** "Customer PII stored in unencrypted S3 bucket accessible via misconfigured IAM policy could be exfiltrated by unauthorized attacker, exposing names, addresses, and payment card data of 50,000 customers"
+- **Good example:** "Customer PII stored in unencrypted S3 bucket accessible via misconfigured IAM policy could be exfiltrated by unauthorised attacker, exposing names, addresses, and payment card data of 50,000 customers"
 
 **Column E - Data Subject Impact:**
 
-- Explain concrete harm to individuals (not organization)
+- Explain concrete harm to individuals (not organisation)
 - **Bad example:** "Reputational damage to company"
 - **Good example:** "Customers could suffer identity theft requiring credit monitoring, potential financial fraud, emotional distress from breach notification, and loss of trust in service"
 
@@ -702,7 +702,7 @@ The following risk categories align with WP248 guidelines and ISO/IEC 29134:2017
 
 **Column F - Likelihood (Before Mitigation):**
 
-Assess probability the risk will materialize WITHOUT mitigation controls:
+Assess probability the risk will materialise WITHOUT mitigation controls:
 
 - **1 - Rare:** <5% chance, requires multiple unlikely failures, no precedent in industry
   - *Example:* Breach of air-gapped system with no network connectivity
@@ -721,7 +721,7 @@ Assess probability the risk will materialize WITHOUT mitigation controls:
 
 **Column G - Impact (Before Mitigation):**
 
-Assess severity of harm to data subjects if risk materializes:
+Assess severity of harm to data subjects if risk materialises:
 
 - **1 - Negligible:** No material harm, minor inconvenience
   - *Example:* Exposure of publicly available information (company name)
@@ -770,14 +770,14 @@ Assess severity of harm to data subjects if risk materializes:
 
 **Column L - Proportionality Justified?**
 
-- **Yes:** Data minimization principles followed (Art. 5(1)(c)), only collect/process minimum necessary data
+- **Yes:** Data minimisation principles followed (Art. 5(1)(c)), only collect/process minimum necessary data
 - **No:** Processing excessive data beyond what's needed
 - **Uncertain:** Requires data inventory review
 
 **Column M - Proportionality Justification:**
 
-- Document evidence of data minimization
-- **Good example:** "Marketing campaign only requires email + first name for personalization. We do NOT collect full postal address, phone, or demographic data because unnecessary for email marketing purpose."
+- Document evidence of data minimisation
+- **Good example:** "Marketing campaign only requires email + first name for personalisation. We do NOT collect full postal address, phone, or demographic data because unnecessary for email marketing purpose."
 - **Bad example:** "We collect everything just in case we need it later"
 
 **Step 5: Document Legal Basis (Columns N-O)**
@@ -890,4 +890,4 @@ Assess severity of harm to data subjects if risk materializes:
 *"Risk assessment is not about eliminating risk, but about understanding it."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

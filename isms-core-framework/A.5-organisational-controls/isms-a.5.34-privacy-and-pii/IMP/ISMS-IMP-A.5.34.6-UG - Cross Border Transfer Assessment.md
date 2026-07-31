@@ -89,7 +89,7 @@ This implementation guide provides comprehensive procedures for assessing, docum
 
 - Purely domestic data transfers within EU/EEA or within Switzerland
 - Transfers between EU/EEA member states (free movement of data per GDPR Article 45)
-- Anonymized data (GDPR does not apply if truly anonymized per GDPR Recital 26)
+- Anonymised data (GDPR does not apply if truly anonymised per GDPR Recital 26)
 - Data physically transported by data subjects themselves (e.g., employee traveling with laptop)
 
 ### Regulatory Context
@@ -107,13 +107,13 @@ This implementation guide provides comprehensive procedures for assessing, docum
 
 - **Article 16**: Disclosure of personal data abroad (similar to GDPR but separate adequacy list)
 - **Article 17**: Processor obligations (applies to processors outside Switzerland)
-- Adequacy recognized by Swiss Federal Council (NOT identical to EU adequacy list)
+- Adequacy recognised by Swiss Federal Council (NOT identical to EU adequacy list)
 
 **Post-Schrems II Landscape:**
 
 - **Schrems II (2020)**: Invalidated EU-US Privacy Shield, requires case-by-case TIA for US transfers
 - **Transfer Impact Assessment (TIA)**: Mandatory for transfers to countries without adequacy decision
-- **Supplementary Measures**: Technical (encryption, pseudonymization) and contractual measures required
+- **Supplementary Measures**: Technical (encryption, pseudonymisation) and contractual measures required
 - **Continuous Monitoring**: Reassess TIAs if legal/political situation changes
 
 ---
@@ -288,7 +288,7 @@ For each transfer, identify the legal mechanism per GDPR Article 44-46:
 
 #### 3.2 Standard Contractual Clauses (SCCs) Identification
 
-**EU SCCs (2021 Modernized Version):**
+**EU SCCs (2021 Modernised Version):**
 
 - **Module 1:** Controller-to-Controller
 - **Module 2:** Controller-to-Processor (most common for cloud services)
@@ -350,7 +350,7 @@ For each transfer, identify the legal mechanism per GDPR Article 44-46:
 
 - Transfer to country WITHOUT EU adequacy decision
 - Even if SCCs in place (SCCs alone insufficient post-Schrems II)
-- US transfers especially scrutinized (FISA 702, EO 12333 surveillance concerns)
+- US transfers especially scrutinised (FISA 702, EO 12333 surveillance concerns)
 
 #### 4.1 TIA Methodology (Sheet 3 Assessment)
 
@@ -373,8 +373,8 @@ For each transfer requiring TIA, evaluate:
 | **Importer Type** | Is importer subject to surveillance laws? (Telecom providers often subject to more surveillance than other sectors) | If yes, supplementary measures required |
 | **Data Access Requests History** | Has importer received government data access requests? | Check transparency reports |
 | **Contractual Commitments** | Does importer commit to challenge unlawful requests? | Verify "challenge clause" in DPA |
-| **Technical Measures** | Are there encryption/pseudonymization measures preventing importer access? | End-to-end encryption with client-held keys |
-| **Data Localization Options** | Can data be stored exclusively in adequate jurisdiction? | AWS EU-only regions, Azure EU residency |
+| **Technical Measures** | Are there encryption/pseudonymisation measures preventing importer access? | End-to-end encryption with client-held keys |
+| **Data Localisation Options** | Can data be stored exclusively in adequate jurisdiction? | AWS EU-only regions, Azure EU residency |
 
 **Step 3: Identify Supplementary Measures**
 
@@ -385,7 +385,7 @@ If TIA reveals risks, implement supplementary measures:
 - **Encryption in transit:** TLS 1.3 (minimum)
 - **Encryption at rest:** AES-256 with customer-managed keys (not provider-managed)
 - **End-to-end encryption:** Provider cannot decrypt data (e.g., client-side encryption)
-- **Pseudonymization:** Replace identifiers with pseudonyms (reversible only by data exporter)
+- **Pseudonymisation:** Replace identifiers with pseudonyms (reversible only by data exporter)
 - **Data minimisation:** Transfer only necessary PII fields
 - **Access controls:** Restrict importer personnel access to minimum necessary
 - **Multi-party encryption:** Split key approach requiring multiple parties to decrypt
@@ -417,7 +417,7 @@ If TIA reveals risks, implement supplementary measures:
 | **Government Access Risk** | Likelihood × Impact | "Medium (electronic communications subject to FISA 702)" |
 | **Importer Type** | Cloud provider, telecom, other | "Cloud Infrastructure Provider (not telecommunications)" |
 | **Data Access Requests History** | Check transparency report | "Provider publishes transparency report - no FISA requests disclosed (likely under gag order)" |
-| **Supplementary Measures (Technical)** | Encryption, pseudonymization | "TLS 1.3 in transit, AES-256 at rest with AWS KMS (customer-managed keys), access logging enabled" |
+| **Supplementary Measures (Technical)** | Encryption, pseudonymisation | "TLS 1.3 in transit, AES-256 at rest with AWS KMS (customer-managed keys), access logging enabled" |
 | **Supplementary Measures (Contractual)** | DPA clauses | "AWS DPA includes obligation to challenge requests, notification clause (subject to gag order limitations)" |
 | **Supplementary Measures (Organisational)** | Governance, monitoring | "Quarterly review of AWS security bulletins, annual DPA compliance audit" |
 | **TIA Conclusion** | Pass/Fail with conditions | "PASS with supplementary measures: Transfer lawful subject to continued use of customer-managed encryption keys and quarterly monitoring" |
@@ -558,7 +558,7 @@ If TIA reveals risks, implement supplementary measures:
 | **Status** | Progress tracking | "Open" → "In Progress" → "Completed" |
 | **Escalation** | If deadline at risk | "Escalate to CISO if not resolved by 2025-03-01" |
 
-#### 7.3 Prioritization Matrix
+#### 7.3 Prioritisation Matrix
 
 | Risk Level | Remediation Timeline | Approval Required |
 |------------|---------------------|-------------------|
@@ -578,7 +578,7 @@ If TIA reveals risks, implement supplementary measures:
 | Metric | Formula (Excel) | Target | Red Flag |
 |--------|----------------|--------|----------|
 | **Total Transfers** | `=COUNTA(Sheet2!A:A)-1` | N/A | N/A |
-| **Transfers to Non-Adequate Countries** | `=COUNTIF(Sheet2!F:F,"NOT Adequate")` | Minimize | >50% of transfers |
+| **Transfers to Non-Adequate Countries** | `=COUNTIF(Sheet2!F:F,"NOT Adequate")` | Minimise | >50% of transfers |
 | **Transfers with Valid Mechanism** | `=COUNTIF(Sheet2!G:G,"<>")` | 100% | <100% |
 | **TIAs Completed** | `=COUNTIF(Sheet3!A:A,"TIA-*")` | = Non-Adequate Transfers | Less than Non-Adequate count |
 | **TIAs Overdue for Review** | `=COUNTIF(Sheet3!Review_Date,"<"&TODAY())` | 0 | >0 |
@@ -588,7 +588,7 @@ If TIA reveals risks, implement supplementary measures:
 | **Gap Remediation On Track** | `=COUNTIF(Sheet6!Status,"Completed")/COUNTA(Sheet6!A:A)` | >80% | <50% |
 | **Average Gap Age** | `=AVERAGE(TODAY()-Sheet6!Gap_Identified_Date)` | <30 days | >90 days |
 
-#### 8.2 Dashboard Visualizations
+#### 8.2 Dashboard Visualisations
 
 **Chart 1: Transfer Mechanisms (Pie Chart)**
 
@@ -654,7 +654,7 @@ If TIA reveals risks, implement supplementary measures:
 
 Once Sheet 6 (Gap Analysis) is complete:
 
-1. **Prioritize Critical and High Gaps**
+1. **Prioritise Critical and High Gaps**
 
    - Critical gaps = stop transfers immediately until remediated (if feasible) OR document explicit risk acceptance by senior management
    - High gaps = remediate within 1-3 months
@@ -828,7 +828,7 @@ Consolidation script (`consolidate_a534_privacy_dashboard.py`) will read this wo
 
 | Term | Definition | GDPR Reference |
 |------|------------|----------------|
-| **Adequacy Decision** | EU Commission decision recognizing a third country provides adequate level of data protection | Article 45 |
+| **Adequacy Decision** | EU Commission decision recognising a third country provides adequate level of data protection | Article 45 |
 | **Standard Contractual Clauses (SCCs)** | Commission-approved contractual clauses providing appropriate safeguards for transfers | Article 46(2)(c) |
 | **Binding Corporate Rules (BCRs)** | Internal rules for multinational companies allowing intra-group transfers | Article 47 |
 | **Derogation** | Exception allowing transfer in specific situations (consent, contract necessity, etc.) - last resort | Article 49 |
@@ -848,4 +848,4 @@ Consolidation script (`consolidate_a534_privacy_dashboard.py`) will read this wo
 *"Data does not respect borders; but the law does."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

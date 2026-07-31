@@ -87,7 +87,7 @@ This policy establishes [Organisation]'s requirements for capacity management to
 
 **Out of Scope**:
 
-- Application performance tuning (covered under application optimization)
+- Application performance tuning (covered under application optimisation)
 - Software licensing management (covered under asset management)
 
 ## ISO/IEC 27001:2022 Control Alignment
@@ -171,15 +171,15 @@ Thresholds SHALL be reviewed quarterly and tuned based on false positive rates, 
 - Quarterly: Comprehensive forecast review
 - Annually: Strategic forecast aligned with budget cycle
 
-**Accuracy Target**: Forecasts within ±15% of actual utilization (measured quarterly).
+**Accuracy Target**: Forecasts within ±15% of actual utilisation (measured quarterly).
 
 **Accuracy Target Exceptions**:
 - New systems (first 6 months post-deployment): ±30% accuracy acceptable while baseline established
-- High-variability workloads (systems with >50% utilization variance): ±25% accuracy with CIO approval
+- High-variability workloads (systems with >50% utilisation variance): ±25% accuracy with CIO approval
 - Program maturity (first 12 months of program): ±20% accuracy target, tightening to ±15% thereafter
 
 **Accuracy Measurement**:
-- Calculate quarterly: (Actual Utilization - Forecasted Utilization) / Forecasted Utilization
+- Calculate quarterly: (Actual Utilisation - Forecasted Utilisation) / Forecasted Utilisation
 - Document in ISMS-IMP-A.8.6.2 workbook with trend analysis
 - Root cause analysis required for deviations >15% (completed within 10 business days)
 
@@ -203,7 +203,7 @@ Thresholds SHALL be reviewed quarterly and tuned based on false positive rates, 
 
 [Organisation] SHALL produce regular capacity reports:
 
-- **Monthly**: Utilization summary, incidents, forecast highlights, actions
+- **Monthly**: Utilisation summary, incidents, forecast highlights, actions
 - **Quarterly**: Comprehensive forecasts, expansion plans, health scorecard
 - **Annually**: Strategic capacity plan with multi-year projections
 
@@ -281,7 +281,7 @@ All capacity management non-conformances SHALL be logged in Gap Register with:
 
 - Overall accountability for capacity management program effectiveness
 - Ensure capacity headroom meets organisational targets:
-  - Production systems: Minimum 20% headroom at peak utilization
+  - Production systems: Minimum 20% headroom at peak utilisation
   - Storage systems: Minimum 3 months headroom at current growth rate
   - Network bandwidth: Minimum 30% headroom during business hours
 - Balance capacity requirements with budget constraints
@@ -332,7 +332,7 @@ All capacity management non-conformances SHALL be logged in Gap Register with:
 **Authorities**:
 
 - Execute emergency capacity mitigation actions
-- Implement approved capacity tuning and optimization
+- Implement approved capacity tuning and optimisation
 - Escalate capacity issues per procedures
 
 ## Application Owners / System Owners
@@ -349,7 +349,7 @@ All capacity management non-conformances SHALL be logged in Gap Register with:
 
 - Approve capacity management budgets (CapEx and OpEx)
 - Financial reporting on capacity investments
-- Cost optimization oversight
+- Cost optimisation oversight
 
 ---
 
@@ -460,7 +460,7 @@ This policy satisfies requirements per **ISMS-POL-00 (Regulatory Applicability F
 | **Accuracy** | False positive alert rate | <10% |
 | **Accuracy** | Monitoring data completeness | >99% |
 | **Efficiency** | Average headroom across systems | 15-30% |
-| **Efficiency** | Average utilization at peak | 70-85% |
+| **Efficiency** | Average utilisation at peak | 70-85% |
 | **Efficiency** | Budget variance (actual vs. planned) | ±10% |
 
 KPIs SHALL be reported quarterly to IT Leadership Team and annually to Executive Management
@@ -525,9 +525,9 @@ KPIs SHALL be reported quarterly to IT Leadership Team and annually to Executive
 | Term | Definition |
 |------|------------|
 | **Capacity Management** | Process of ensuring adequate resources to meet current and future performance and availability requirements |
-| **Capacity Monitoring** | Continuous measurement of resource utilization to understand consumption and track trends |
+| **Capacity Monitoring** | Continuous measurement of resource utilisation to understand consumption and track trends |
 | **Capacity Planning** | Proactive process of determining future capacity requirements and developing expansion plans |
-| **Capacity Threshold** | Defined utilization level that triggers alerts or actions when exceeded |
+| **Capacity Threshold** | Defined utilisation level that triggers alerts or actions when exceeded |
 | **Capacity Forecast** | Projection of future capacity requirements based on trends and business plans |
 | **Headroom** | Remaining unused capacity available for growth or unexpected demand |
 
@@ -550,4 +550,4 @@ KPIs SHALL be reported quarterly to IT Leadership Team and annually to Executive
 
 *This policy establishes capacity management requirements. Implementation procedures are documented in ISMS-IMP-A.8.6 (UG/TG).1 (Capacity Monitoring Implementation), ISMS-IMP-A.8.6.2 (Capacity Forecasting and Planning), and ISMS-IMP-A.8.6.3 (Capacity Management Assessment).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

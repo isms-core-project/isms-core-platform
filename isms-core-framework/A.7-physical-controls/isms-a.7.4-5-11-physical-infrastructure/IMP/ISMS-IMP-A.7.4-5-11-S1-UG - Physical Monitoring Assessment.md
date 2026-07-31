@@ -200,7 +200,7 @@ Before starting this assessment, gather:
 #### 3. Historical Data
 
 - Access control logs (last 90 days minimum)
-- CCTV storage utilization reports
+- CCTV storage utilisation reports
 - Intrusion detection alarm logs (last 90 days minimum)
 - Physical security incident reports (last 12 months)
 - System maintenance records
@@ -485,7 +485,7 @@ However, outputs from this assessment are INPUT to:
 
 - Total storage capacity for this NVR/VMS: 2 TB, 10 TB, 50 TB, etc.
 
-**Column I - Storage Utilization (%):**
+**Column I - Storage Utilisation (%):**
 
 - Current storage usage: 60%, 85%, etc.
 - Alert if >90% (insufficient capacity for retention)
@@ -724,7 +724,7 @@ However, outputs from this assessment are INPUT to:
 **Gap Summary:**
 
 - Auto-generated list of non-compliant items requiring remediation
-- Prioritized by severity (Critical → High → Medium → Low)
+- Prioritised by severity (Critical → High → Medium → Low)
 
 **What YOU Do:**
 
@@ -825,7 +825,7 @@ However, outputs from this assessment are INPUT to:
 **Storage Best Practices:**
 
 - Use consistent file naming: [Facility]_[System]_[Type]_[Date].ext
-- Organize in folders by sheet: Evidence/Sheet2_AccessControl/, Evidence/Sheet3_CCTV/, etc.
+- Organise in folders by sheet: Evidence/Sheet2_AccessControl/, Evidence/Sheet3_CCTV/, etc.
 - Encrypt sensitive evidence (access logs contain user data)
 - Backup evidence to secure location (required for audit)
 
@@ -977,7 +977,7 @@ However, outputs from this assessment are INPUT to:
 
 - **Secure network share:** \\server\ISMS\Assessments\A.7.4.1_Physical_Monitoring\Evidence
 - **SharePoint/Cloud:** SharePoint > ISMS > Assessments > A.7.4.1 > Evidence folder
-- **Organized by sheet:** Evidence/Sheet2_AccessControl/, Evidence/Sheet3_CCTV/, Evidence/Sheet4_IntrusionDetection/, Evidence/Sheet5_Incidents/
+- **Organised by sheet:** Evidence/Sheet2_AccessControl/, Evidence/Sheet3_CCTV/, Evidence/Sheet4_IntrusionDetection/, Evidence/Sheet5_Incidents/
 
 **Access Control:**
 
@@ -1164,7 +1164,7 @@ Before submitting for Level 2 approval (Security Operations Manager), complete t
 - [ ] Resolution verified (not assumed - check camera specs)
 - [ ] Recording mode verified (continuous, motion, scheduled)
 - [ ] Retention period verified (actual retention, check NVR settings)
-- [ ] Storage capacity and utilization accurate (check NVR storage report)
+- [ ] Storage capacity and utilisation accurate (check NVR storage report)
 - [ ] Coverage areas listed (entrances, server rooms, parking, etc.)
 - [ ] Blind spots documented honestly (if any exist)
 - [ ] Low-light capability verified (IR illumination present?)
@@ -1342,7 +1342,7 @@ Before submitting for Level 2 approval (Security Operations Manager), complete t
 - Review Summary Dashboard (overall compliance score)
 - Review gap summary (non-compliant items requiring remediation)
 - Assess remediation resource requirements (budget, personnel, timeline)
-- Prioritize gaps for remediation (critical gaps first)
+- Prioritise gaps for remediation (critical gaps first)
 - Approve remediation plan (or request revised plan)
 - Complete Level 3 approval in Sheet 8 (name, date, signature, comments)
 
@@ -1388,7 +1388,7 @@ Before submitting for Level 2 approval (Security Operations Manager), complete t
 
 **Post-Approval:**
 
-- Assessment workbook finalized (no further edits without re-approval)
+- Assessment workbook finalised (no further edits without re-approval)
 - Assessment stored in audit repository
 - Assessment available to Internal Audit and External Auditors
 - Assessment forms basis for Control A.7.4 compliance evidence
@@ -1443,4 +1443,4 @@ Before submitting for Level 2 approval (Security Operations Manager), complete t
 *"Watch everything; trust selectively."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

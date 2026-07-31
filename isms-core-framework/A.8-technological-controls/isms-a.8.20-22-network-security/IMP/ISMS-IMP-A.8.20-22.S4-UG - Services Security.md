@@ -69,12 +69,12 @@ This guidance covers implementation security for:
 
 - **DNS** (Domain Name System): Authoritative and recursive DNS servers
 - **DHCP** (Dynamic Host Configuration Protocol): IP address management
-- **NTP** (Network Time Protocol): Time synchronization
+- **NTP** (Network Time Protocol): Time synchronisation
 - **Proxy Services**: Web proxies and content filtering
 - **Load Balancers**: Application delivery and SSL/TLS termination
 - **AAA Services**: RADIUS and TACACS+ authentication
 - **SNMP** (Simple Network Management Protocol): Network management
-- **Syslog**: Centralized logging
+- **Syslog**: Centralised logging
 
 ## Target Audience
 
@@ -86,7 +86,7 @@ This guidance covers implementation security for:
 ## Prerequisites
 
 - Administrative access to network services
-- Understanding of service architecture (authoritative vs. recursive, centralized vs. distributed)
+- Understanding of service architecture (authoritative vs. recursive, centralised vs. distributed)
 - Configuration backup capabilities
 - Testing environment (recommended for validation before production deployment)
 
@@ -296,7 +296,7 @@ sudo tcpdump -i eth0 -n port 67 or port 68
 
 ## Service Overview
 
-**Purpose**: Synchronizes system clocks across network  
+**Purpose**: Synchronises system clocks across network  
 **Security Focus**: Time source integrity, authentication, availability  
 **Common Implementations**: ntpd, chronyd, Windows Time Service  
 **Attack Vectors**: Time manipulation, DDoS amplification  
@@ -353,7 +353,7 @@ ntpq -p | grep '^\*' | awk '{print $9}'
 
 ## Service Overview
 
-**Purpose**: Centralizes web access control and content filtering  
+**Purpose**: Centralises web access control and content filtering  
 **Security Focus**: Authentication, SSL inspection, bypass prevention  
 **Common Implementations**: Squid, Blue Coat, Zscaler, Microsoft Forefront  
 **Attack Vectors**: Authentication bypass, certificate trust issues, proxy chaining  
@@ -460,7 +460,7 @@ backend webservers
 
 ## Service Overview
 
-**Purpose**: Centralized authentication, authorisation, accounting  
+**Purpose**: Centralised authentication, authorisation, accounting  
 **Security Focus**: Shared secret protection, encrypted communication  
 **Common Implementations**: FreeRADIUS, Cisco ISE, Microsoft NPS  
 **Attack Vectors**: Shared secret compromise, replay attacks  
@@ -571,7 +571,7 @@ snmpget -v2c -c public 10.1.0.50 sysDescr.0
 
 ## Service Overview
 
-**Purpose**: Centralized log collection and storage  
+**Purpose**: Centralised log collection and storage  
 **Security Focus**: Encrypted transmission, log integrity, retention  
 **Common Implementations**: rsyslog, syslog-ng, Splunk  
 **Attack Vectors**: Log injection, eavesdropping, tampering  
@@ -676,7 +676,7 @@ grep "Failed password" /var/log/auth.log | awk '{print $11}' | sort | uniq -c | 
 
 ## DHCP
 
-- **IP exhaustion** → Monitor utilization, increase scope size
+- **IP exhaustion** → Monitor utilisation, increase scope size
 - **Rogue DHCP not detected** → Enable DHCP snooping on all switches
 
 ## NTP
@@ -756,13 +756,13 @@ Each service must have:
 ## Service Metrics
 
 - **DNS**: Query volume, DNSSEC validation rate, response time
-- **DHCP**: Scope utilization %, lease conflicts, rogue detections
+- **DHCP**: Scope utilisation %, lease conflicts, rogue detections
 - **NTP**: Time offset, stratum level, peer reachability
 - **Proxy**: User count, bandwidth per user, blocked requests
 - **Load Balancer**: Backend health, request rate, error rate
 - **AAA**: Auth success/failure rate, command denials
 - **SNMP**: Query volume, auth failures
-- **Syslog**: Log volume, disk utilization, TLS failures
+- **Syslog**: Log volume, disk utilisation, TLS failures
 
 ## Review Schedule
 
@@ -818,4 +818,4 @@ Each service must have:
 *"Every open port is an invitation; make sure you know who you are inviting."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

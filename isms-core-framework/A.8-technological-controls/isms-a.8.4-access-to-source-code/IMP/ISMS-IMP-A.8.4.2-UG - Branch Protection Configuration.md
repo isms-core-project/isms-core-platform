@@ -441,7 +441,7 @@ Step 10: Obtain Approvals
    - Who is responsible?
    - When will it be fixed?
 
-3. Prioritize gaps: 🔴 Critical > 🟠 High > 🟡 Medium > 🟢 Low
+3. Prioritise gaps: 🔴 Critical > 🟠 High > 🟡 Medium > 🟢 Low
 
 **Critical gaps** (require immediate action):
 
@@ -458,7 +458,7 @@ Step 10: Obtain Approvals
 3. Capture recent PR examples showing enforcement
 4. Save CI/CD test results
 5. Document in Sheet 9: Evidence_Register
-6. Organize files in folder structure
+6. Organise files in folder structure
 
 **Evidence to collect:**
 
@@ -1568,4 +1568,4 @@ Same process as IMP-S1:
 *"An unprotected branch is an unprotected door to your intellectual property."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

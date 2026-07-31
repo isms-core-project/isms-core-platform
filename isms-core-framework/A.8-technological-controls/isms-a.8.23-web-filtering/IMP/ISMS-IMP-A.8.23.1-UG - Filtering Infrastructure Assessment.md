@@ -367,7 +367,7 @@ For each solution in Sheet 1:
    - Identify gaps
 
 3. Calculate compliance percentages
-4. Prioritize gaps
+4. Prioritise gaps
 
 **Deliverable:** Complete Sheet 8 with gap analysis
 
@@ -404,7 +404,7 @@ For each solution in Sheet 1:
 
 **Steps:**
 1. List all evidence collected
-2. Organize by category
+2. Organise by category
 3. Document storage locations
 4. Verify accessibility
 5. Tag for audit readiness
@@ -420,7 +420,7 @@ For each solution in Sheet 1:
 
 #### Phase 9: Gap Analysis & Remediation Planning (2-3 hours)
 
-**Objective:** Identify and prioritize gaps
+**Objective:** Identify and prioritise gaps
 
 **Steps:**
 1. Review all "Partial" or "Not Compliant" items
@@ -431,7 +431,7 @@ For each solution in Sheet 1:
    - Performance gaps
    - Documentation gaps
 
-3. Prioritize by risk
+3. Prioritise by risk
 4. Create remediation plan
 5. Assign owners
 6. Set target dates
@@ -781,7 +781,7 @@ For each capability, use this scale:
 | Rating | Description | When to Use |
 |--------|-------------|-------------|
 | ✅ **Full** | Capability fully deployed and functional | Feature works as expected, no limitations |
-| ⚠️ **Partial** | Capability exists but limited/partially deployed | Feature exists but not fully utilized or has limitations |
+| ⚠️ **Partial** | Capability exists but limited/partially deployed | Feature exists but not fully utilised or has limitations |
 | ❌ **None** | Capability not available or not deployed | Feature doesn't exist or not configured |
 | N/A | Not applicable | Feature not needed for your use case |
 
@@ -790,7 +790,7 @@ For each capability, use this scale:
 For critical capabilities, capture evidence:
 
 - Screenshots from admin console
-- Configuration exports (sanitized)
+- Configuration exports (sanitised)
 - Test results
 - Performance reports
 - Integration documentation
@@ -1057,7 +1057,7 @@ For each solution, document:
 
 **Application Control:**
 
-- Does the solution recognize applications (not just URLs)?
+- Does the solution recognise applications (not just URLs)?
 - Social media apps?
 - Messaging apps?
 - File sharing apps?
@@ -1170,7 +1170,7 @@ Common gaps to check:
 
 - Category list (screenshot or export)
 - Custom category definitions
-- Whitelist/blacklist (sanitized)
+- Whitelist/blacklist (sanitised)
 - Policy examples (screenshots)
 - Safe search enforcement proof
 - Application control list
@@ -1257,7 +1257,7 @@ For each solution, document what is logged:
 **System Logs:**
 
 - Performance metrics?
-- Capacity utilization?
+- Capacity utilisation?
 - Errors/warnings?
 - Service availability?
 - Update events?
@@ -1425,7 +1425,7 @@ If you have a SIEM:
 
 #### Evidence to Collect
 
-- Log sample (sanitized) showing log format and fields
+- Log sample (sanitised) showing log format and fields
 - Log retention configuration screenshot
 - SIEM integration documentation
 - Dashboard screenshots
@@ -1473,7 +1473,7 @@ If you have a SIEM:
 - [ ] Dashboards identified and accessed
 - [ ] Alerting tested and validated
 - [ ] Reporting capabilities assessed
-- [ ] Gaps identified and prioritized
+- [ ] Gaps identified and prioritised
 - [ ] Evidence collected
 
 ---
@@ -1482,7 +1482,7 @@ If you have a SIEM:
 
 #### Purpose
 
-Assess advanced and specialized capabilities that enhance security posture beyond basic web filtering. These are often differentiators between solutions and higher-tier licenses.
+Assess advanced and specialised capabilities that enhance security posture beyond basic web filtering. These are often differentiators between solutions and higher-tier licenses.
 
 #### What to Document
 
@@ -1519,7 +1519,7 @@ For each solution:
 
 - Latency increase from SSL inspection?
 - Throughput reduction?
-- CPU utilization?
+- CPU utilisation?
 - User complaints?
 
 **Privacy & Legal:**
@@ -1672,7 +1672,7 @@ For each solution:
 **Capability:**
 
 - Can solution control cloud app usage?
-- Which cloud apps recognized? (O365, Google Workspace, Salesforce, Box, Dropbox, etc.)
+- Which cloud apps recognised? (O365, Google Workspace, Salesforce, Box, Dropbox, etc.)
 - Granular control (e.g., allow email, block file uploads in same app)?
 
 **Cloud App Catalog:**
@@ -1698,7 +1698,7 @@ For each solution:
 
 **Step 7: Other Advanced Capabilities**
 
-Document any other specialized capabilities:
+Document any other specialised capabilities:
 
 - Remote browser isolation
 - Virtual desktop/app delivery integration
@@ -1769,7 +1769,7 @@ For each solution, document:
 
 - Current vs. actual usage
 - Overdeployed? (using more than licensed)
-- Underutilized? (paying for more than using)
+- Underutilised? (paying for more than using)
 - Compliance status
 
 **Step 2: Expiration Tracking**
@@ -1856,7 +1856,7 @@ For each solution, document:
 - Current license cost
 - Expected renewal cost
 - Budget available?
-- Cost optimization opportunities?
+- Cost optimisation opportunities?
 
 **Vendor Relationship:**
 
@@ -2135,7 +2135,7 @@ For each solution:
 
 - Uptime/availability
 - Performance metrics (latency, throughput)
-- Capacity utilization
+- Capacity utilisation
 - Incident history
 - Mean Time To Detect (MTTD)
 - Mean Time To Resolve (MTTR)
@@ -2179,14 +2179,14 @@ Uptime = (43,200 - 120) / 43,200 × 100 = 99.72%
 - Current average throughput: X Mbps or requests/second
 - Peak throughput: Y Mbps
 - Capacity limit: Z Mbps
-- Utilization: (Current / Capacity) × 100 = %
+- Utilisation: (Current / Capacity) × 100 = %
 
-**Resource Utilization:**
+**Resource Utilisation:**
 
-- CPU utilization: Average / Peak
-- Memory utilization: Average / Peak
-- Disk utilization: Current / Maximum
-- Network utilization: Average / Peak
+- CPU utilisation: Average / Peak
+- Memory utilisation: Average / Peak
+- Disk utilisation: Current / Maximum
+- Network utilisation: Average / Peak
 
 **Step 3: Incident Tracking**
 
@@ -2300,7 +2300,7 @@ Track trends over time (monthly):
 #### Evidence to Collect
 
 - Uptime reports from monitoring system
-- Performance graphs (latency, throughput, resource utilization)
+- Performance graphs (latency, throughput, resource utilisation)
 - Incident tickets (from ticketing system)
 - Resolution documentation
 - Post-incident reviews
@@ -2323,7 +2323,7 @@ Track trends over time (monthly):
 
 **Issue: Capacity Not Monitored**
 
-- Don't know utilization level
+- Don't know utilisation level
 - Surprise when hitting capacity limits
 - Remediation: Implement capacity monitoring, set thresholds at 70% and 85%
 
@@ -2337,7 +2337,7 @@ Track trends over time (monthly):
 
 - [ ] Uptime calculated for all solutions
 - [ ] Performance metrics documented
-- [ ] Capacity utilization tracked
+- [ ] Capacity utilisation tracked
 - [ ] All incidents (last 90 days) documented
 - [ ] MTTD and MTTR calculated
 - [ ] Recurring issues identified
@@ -2374,13 +2374,13 @@ For each piece of evidence:
 As you complete each sheet, collect evidence:
 
 - Take screenshots with timestamps
-- Export configurations (sanitized)
+- Export configurations (sanitised)
 - Generate reports
-- Capture logs (sanitized)
+- Capture logs (sanitised)
 - Document integrations
 - Record test results
 
-**Step 2: Organize Evidence**
+**Step 2: Organise Evidence**
 
 Create a folder structure:
 ```
@@ -2444,16 +2444,16 @@ For evidence to be audit-ready:
 
 - [ ] Clear, readable quality
 - [ ] Timestamps visible (when applicable)
-- [ ] Sensitive data sanitized (passwords, PII, internal IPs)
+- [ ] Sensitive data sanitised (passwords, PII, internal IPs)
 - [ ] Context provided (what are we looking at?)
 - [ ] Source identified (which system/solution?)
 - [ ] Collection date recent (<90 days preferred)
 - [ ] File format accessible (PDF, PNG, XLSX - not proprietary)
-- [ ] Organized and labeled clearly
+- [ ] Organised and labeled clearly
 
-**Step 5: Sanitization Guidelines**
+**Step 5: Sanitisation Guidelines**
 
-Before collecting evidence, sanitize:
+Before collecting evidence, sanitise:
 
 **Always Redact:**
 
@@ -2464,7 +2464,7 @@ Before collecting evidence, sanitize:
 - Proprietary algorithms
 - License keys (just show that it exists, not the actual key)
 
-**Sanitization Example:**
+**Sanitisation Example:**
 
 BEFORE (don't include):
 ```
@@ -2473,7 +2473,7 @@ API Key: sk_live_51234567890abcdefghij
 Admin Password: MyS3cretP@ssw0rd!
 ```
 
-AFTER (sanitized):
+AFTER (sanitised):
 ```
 Database Server: [Internal_DB_Server]
 API Key: sk_live_**********************ij
@@ -2482,7 +2482,7 @@ Admin Password: [Configured - Not Shown]
 
 #### Evidence Categories
 
-Organize evidence by these categories:
+Organise evidence by these categories:
 
 - **Architecture** - Network diagrams, deployment diagrams, integration diagrams
 - **Configuration** - Config exports, policy screenshots, settings
@@ -2500,7 +2500,7 @@ Organize evidence by these categories:
 - [ ] Evidence organised in clear folder structure
 - [ ] Every piece of evidence registered in this sheet
 - [ ] Evidence IDs unique and traceable
-- [ ] Sensitive data sanitized
+- [ ] Sensitive data sanitised
 - [ ] All evidence is audit-ready quality
 - [ ] Storage location accessible to auditors
 - [ ] Collection dates recent
@@ -2547,7 +2547,7 @@ Organize evidence by these categories:
 **Configuration Exports:**
 
 - Export from admin console when possible
-- Sanitize before saving
+- Sanitise before saving
 - Include metadata (export date, system version)
 - Save in accessible format (XML, JSON, CSV, not proprietary)
 
@@ -2560,7 +2560,7 @@ Organize evidence by these categories:
 
 **Log Samples:**
 
-- Sanitize before collecting
+- Sanitise before collecting
 - Show log format and fields
 - Include recent timestamp (prove logs are current)
 - Don't need thousands of lines - just representative samples
@@ -2611,15 +2611,15 @@ Organize evidence by these categories:
 - Problem: Screenshots from 2 years ago
 - Solution: Collect fresh evidence, show current state
 
-**Gap 4: Evidence not sanitized**
+**Gap 4: Evidence not sanitised**
 
 - Problem: Sensitive data exposed in evidence
-- Solution: Re-capture with sanitization, or redact before sharing
+- Solution: Re-capture with sanitisation, or redact before sharing
 
 **Gap 5: Evidence not organised**
 
 - Problem: Random files in random folders
-- Solution: Organize per Sheet 10, create clear structure
+- Solution: Organise per Sheet 10, create clear structure
 
 ---
 
@@ -2717,7 +2717,7 @@ This section highlights common mistakes to avoid when completing this assessment
 
 - Every "Partial" requires a remediation plan
 - Even if remediation is "accept risk" (document it)
-- Prioritize based on risk
+- Prioritise based on risk
 - Get management buy-in
 
 ### Pitfall 5: Data Quality Issues
@@ -2796,7 +2796,7 @@ This section highlights common mistakes to avoid when completing this assessment
 
 ### Pitfall 8: Copy-Paste Errors
 
-**Mistake:** Copying content from other assessments or solutions without customization
+**Mistake:** Copying content from other assessments or solutions without customisation
 
 **Example:**
 
@@ -2807,7 +2807,7 @@ This section highlights common mistakes to avoid when completing this assessment
 **Why It Happens:**
 
 - Rushing through assessment
-- Template reuse without customization
+- Template reuse without customisation
 - Not reading what was pasted
 
 **How to Avoid:**
@@ -2901,7 +2901,7 @@ Before submitting assessment for review, verify:
 
 - [ ] Evidence collected for all "Compliant" ratings
 - [ ] Critical capabilities have supporting evidence
-- [ ] All evidence sanitized (no passwords, internal IPs)
+- [ ] All evidence sanitised (no passwords, internal IPs)
 - [ ] Evidence organised and indexed (Sheet 10)
 - [ ] Evidence is audit-ready quality
 
@@ -3065,7 +3065,7 @@ This assessment (A.8.23.1) is now complete. Use the data collected here as INPUT
 ### Execute Remediation Plans
 
 From Sheet 8 (Gap Analysis):
-1. Review prioritized gaps with management
+1. Review prioritised gaps with management
 2. Allocate resources (budget, people, time)
 3. Assign ownership
 4. Set milestones
@@ -3124,4 +3124,4 @@ Use this assessment to drive improvements:
 *"Not all web traffic is created equal; filter accordingly."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

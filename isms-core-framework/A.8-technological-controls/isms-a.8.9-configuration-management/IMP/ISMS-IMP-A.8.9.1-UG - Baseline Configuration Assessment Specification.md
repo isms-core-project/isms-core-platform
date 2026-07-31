@@ -162,7 +162,7 @@ This assessment applies to all asset types within [Organisation]'s asset invento
 
 ## Criticality Levels
 
-Assets are classified by criticality to prioritize baseline implementation:
+Assets are classified by criticality to prioritise baseline implementation:
 
 | Criticality | Definition | Baseline Requirement | Target Coverage |
 |-------------|------------|---------------------|-----------------|
@@ -659,7 +659,7 @@ The following asset scenarios may be excluded from baseline requirements with ap
   =IF(K3="","",IF(K3<=14,"Within SLA",IF(K3<=21,"Approaching SLA","SLA Breach")))
 ```
 
-  - Explanation: Approval SLA is 14 days (customize for [Organisation]). Warns if approaching or exceeding SLA.
+  - Explanation: Approval SLA is 14 days (customise for [Organisation]). Warns if approaching or exceeding SLA.
 
 **Conditional Formatting**:
 
@@ -690,7 +690,7 @@ The following asset scenarios may be excluded from baseline requirements with ap
 - Update Column E as baseline progresses through approval workflow
 - Column H (Approval Reference) is critical for audit trail - document where approval decision is recorded
 - If "Revisions Requested", document required changes in Column M (Next Action)
-- SLA of 14 days is example; customize for [Organisation]'s governance cycle
+- SLA of 14 days is example; customise for [Organisation]'s governance cycle
 
 ---
 
@@ -1033,7 +1033,7 @@ The following asset scenarios may be excluded from baseline requirements with ap
 | Critical Asset Coverage % | =COUNTIFS(Asset_Inventory!E3:E102,"Critical",Asset_Inventory!H3:H102,"Defined")/COUNTIF(Asset_Inventory!E3:E102,"Critical")*100 | ≥95% | [Status] |
 | High Asset Coverage % | Similar formula for High criticality | ≥90% | [Status] |
 | Baselines Pending Approval | =COUNTIF(Approval_Tracking!E3:E52,"Submitted")+COUNTIF(Approval_Tracking!E3:E52,"Under Review") | 0 | [Status] |
-| Documentation Quality - Excellent | =COUNTIF(Documentation_Assessment!L3:L32,"Excellent") | Maximize | [Count] |
+| Documentation Quality - Excellent | =COUNTIF(Documentation_Assessment!L3:L32,"Excellent") | Maximise | [Count] |
 | Documentation Quality - Poor | =COUNTIF(Documentation_Assessment!L3:L32,"Poor") | 0 | [Count] |
 | Active Deviations - High Risk | =COUNTIFS(Deviation_Register!J3:J52,"High",Deviation_Register!P3:P52,"Active")+COUNTIFS(Deviation_Register!J3:J52,"Critical",Deviation_Register!P3:P52,"Active") | <5 | [Status] |
 
@@ -1267,7 +1267,7 @@ The following asset scenarios may be excluded from baseline requirements with ap
 
 **Usage Notes**:
 
-- Complete this sheet LAST after all other sheets are finalized
+- Complete this sheet LAST after all other sheets are finalised
 - Preparer completes Section B after finishing data entry in all assessment sheets
 - Reviewer completes Section C after verifying completeness and accuracy
 - Approver completes Section D after reviewing summary metrics and deciding on approval
@@ -1642,7 +1642,7 @@ A: Verbal approvals should be:
 
 - Documented in meeting minutes (add to Evidence_Register)
 - Followed up with email confirmation (add to Evidence_Register)
-- Retroactively formalized through proper approval workflow
+- Retroactively formalised through proper approval workflow
 
 Verbal-only approvals are not sufficient for audit purposes.
 
@@ -1712,7 +1712,7 @@ A: Valid deviations require:
 | Asset_Inventory sheet | ISMS-IMP-A.8.9.2 (Change Control) | Changes to baselines trigger version updates | Bidirectional: Asset list → Change requests for baseline updates |
 | Baseline_Repository | ISMS-IMP-A.8.9.3 (Config Monitoring) | Baselines define expected state for drift detection | Unidirectional: Baselines → Monitoring tools |
 | Deviation_Register | ISMS-IMP-A.8.9.4 (Security Hardening) | Deviations may be security hardening exceptions | Bidirectional: Hardening gaps ↔ Approved deviations |
-| All sheets | A.5.9 (Asset Inventory) | Asset list must align with organisational asset register | Bidirectional: Asset data synchronized |
+| All sheets | A.5.9 (Asset Inventory) | Asset list must align with organisational asset register | Bidirectional: Asset data synchronised |
 
 ## Data Export Requirements
 
@@ -1749,7 +1749,7 @@ If [Organisation] maintains a Configuration Management Database (CMDB):
 - Last reviewed dates
 - Deviation status (for assets with active deviations)
 
-**Synchronization Approach**:
+**Synchronisation Approach**:
 
 - Initial assessment: Import asset list from CMDB
 - Ongoing: Periodic sync (weekly/monthly) to keep aligned
@@ -1946,4 +1946,4 @@ This assessment workbook should be updated when:
 *"A baseline is not a snapshot; it is a commitment to a known-good state."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

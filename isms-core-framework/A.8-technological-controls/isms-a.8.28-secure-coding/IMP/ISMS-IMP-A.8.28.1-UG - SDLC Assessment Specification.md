@@ -182,7 +182,7 @@ Before starting this assessment, gather:
 - [ ] Threat modeling methodology documentation (STRIDE, PASTA, Attack Trees)
 - [ ] Completed threat models (recent high-risk projects, minimum 3 examples)
 - [ ] Architecture diagrams with trust boundaries
-- [ ] Threat prioritization and risk ratings
+- [ ] Threat prioritisation and risk ratings
 - [ ] Security team review approvals
 - [ ] Mitigation strategy documentation
 
@@ -324,7 +324,7 @@ Before starting this assessment, gather:
 - Identify high-risk projects requiring threat models
 - Gather completed threat model documents
 - Collect architecture diagrams with trust boundaries
-- Extract threat prioritization and risk ratings
+- Extract threat prioritisation and risk ratings
 - Verify Security Architect review approvals
 - Document mitigation strategies
 
@@ -405,7 +405,7 @@ Before starting this assessment, gather:
 - Document Application Security Team engagement model
 - Assess security resource allocation
 
-**Phase 4: Review and Finalization (Week 3, Days 16-18)**
+**Phase 4: Review and Finalisation (Week 3, Days 16-18)**
 
 **Step 16**: Complete Evidence Register
 
@@ -421,7 +421,7 @@ Before starting this assessment, gather:
 - Verify all ❌ Non-Compliant and ⚠️ Partial items appear
 - Assign remediation owners
 - Set remediation target dates
-- Prioritize gaps (Critical / High / Medium / Low)
+- Prioritise gaps (Critical / High / Medium / Low)
 
 **Step 18**: Review Summary Dashboard
 
@@ -453,7 +453,7 @@ Before starting this assessment, gather:
 - Information gathering: 6-8 hours (distributed over 1-2 weeks)
 - Assessment completion: 4-6 hours
 - Evidence collection: 2-3 hours
-- Review and finalization: 1-2 hours
+- Review and finalisation: 1-2 hours
 - Approval cycle: 3-5 business days
 
 **Critical Path**:
@@ -613,7 +613,7 @@ This section provides detailed guidance for completing each assessment domain. F
 
 - Completed threat model documents
 - Architecture diagrams with trust boundaries
-- Threat identification and prioritization lists
+- Threat identification and prioritisation lists
 - Security Architect review approvals
 
 **How to Answer**:
@@ -633,7 +633,7 @@ This section provides detailed guidance for completing each assessment domain. F
 
 ---
 
-**Assessment Question 2.2**: "Do threat models include system overview, threat identification, prioritization, and mitigation strategies?"
+**Assessment Question 2.2**: "Do threat models include system overview, threat identification, prioritisation, and mitigation strategies?"
 
 **What This Asks**: Are threat models comprehensive (not just diagrams), documenting threats and how they'll be addressed?
 
@@ -646,7 +646,7 @@ This section provides detailed guidance for completing each assessment domain. F
 
 **How to Answer**:
 
-- **✅ Compliant**: 90%+ of threat models include all required elements: system overview, threat ID, prioritization (CVSS or similar), mitigation strategies
+- **✅ Compliant**: 90%+ of threat models include all required elements: system overview, threat ID, prioritisation (CVSS or similar), mitigation strategies
 - **⚠️ Partial**: 50-89% complete (some missing sections)
 - **❌ Non-Compliant**: <50% complete, or threat models are just diagrams without analysis
 - **🔄 Planned**: Threat model template created with required sections, not yet used
@@ -654,7 +654,7 @@ This section provides detailed guidance for completing each assessment domain. F
 
 **Examples**:
 
-- ✅ **Compliant**: "API Gateway" threat model has: system diagram (5 components, 3 trust boundaries), 18 identified threats, CVSS scores, mitigation strategies (e.g., "SQL Injection mitigated by parameterized queries")
+- ✅ **Compliant**: "API Gateway" threat model has: system diagram (5 components, 3 trust boundaries), 18 identified threats, CVSS scores, mitigation strategies (e.g., "SQL Injection mitigated by parameterised queries")
 - ❌ **Non-Compliant**: "Mobile App" threat model is just architecture diagram with no threat identification or mitigation
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.1.2 (Threat model documentation requirements)
@@ -1112,9 +1112,9 @@ Learn from others' mistakes. Here are the 10 most common errors in SDLC assessme
 
 **Problem**: Counting architecture diagrams without threat analysis as "threat models".
 
-**Example**: "API Gateway" has Visio diagram with 5 components; marked Compliant for threat modeling. Missing: threat identification, prioritization, mitigation.
+**Example**: "API Gateway" has Visio diagram with 5 components; marked Compliant for threat modeling. Missing: threat identification, prioritisation, mitigation.
 
-**Solution**: Verify threat models include ALL required elements: system overview, threat identification, prioritization (CVSS/DREAD), mitigation strategies, approval. Diagram alone ≠ threat model.
+**Solution**: Verify threat models include ALL required elements: system overview, threat identification, prioritisation (CVSS/DREAD), mitigation strategies, approval. Diagram alone ≠ threat model.
 
 ---
 
@@ -1134,7 +1134,7 @@ Learn from others' mistakes. Here are the 10 most common errors in SDLC assessme
 
 **Example**: Assessor marks "Security stories included in sprints" as Compliant; Development Manager clarifies: "Only if Security Champion flags them; not systematic."
 
-**Solution**: Schedule stakeholder meetings (Dev Managers, Security Architects, DevOps). Validate answers before finalizing.
+**Solution**: Schedule stakeholder meetings (Dev Managers, Security Architects, DevOps). Validate answers before finalising.
 
 ---
 
@@ -1297,7 +1297,7 @@ Before submitting the assessment for approval, verify:
 
 - Technical accuracy (security practices correctly assessed)
 - Evidence sufficiency (claims supported by evidence)
-- Gap remediation plans (realistic and prioritized)
+- Gap remediation plans (realistic and prioritised)
 - Compliance with policy (ISMS-POL-A.8.28 requirements met)
 
 **Possible Outcomes**:
@@ -1393,4 +1393,4 @@ Before submitting the assessment for approval, verify:
 *"The safest code is code written securely from the first line."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -114,8 +114,8 @@ This assessment evaluates **Technical and Organisational Measures (TOMs)** prote
 **Technical Measures (T1-T10):**
 1. **T1 - Encryption:** Data encryption in transit and at rest
 2. **T2 - Access Control:** Role-based access control (RBAC), least privilege
-3. **T3 - Pseudonymization/Anonymization:** Data minimisation techniques
-4. **T4 - Data Minimization:** Collection limitation, purpose limitation
+3. **T3 - Pseudonymisation/Anonymisation:** Data minimisation techniques
+4. **T4 - Data Minimisation:** Collection limitation, purpose limitation
 5. **T5 - Security Monitoring & Logging:** SIEM, audit trails, anomaly detection
 6. **T6 - Network Security:** Firewalls, segmentation, intrusion detection
 7. **T7 - Application Security:** Secure coding, input validation, WAF
@@ -176,9 +176,9 @@ Upon completion, you will have:
 1. ✅ **TOM Implementation Status** - Complete inventory of all 20 TOMs with implementation ratings (Implemented/Partially Implemented/Planned/Not Implemented)
 2. ✅ **Technical Measure Details** - Deep-dive documentation of T1-T10: technologies deployed, configurations, coverage percentages, exceptions
 3. ✅ **Organisational Measure Details** - Deep-dive documentation of O1-O10: policies, training programs, governance structures, monitoring methods
-4. ✅ **Evidence Repository** - Centralized documentation of all evidence proving TOM effectiveness (policies, configs, audit reports, test results)
+4. ✅ **Evidence Repository** - Centralised documentation of all evidence proving TOM effectiveness (policies, configs, audit reports, test results)
 5. ✅ **Gap Analysis** - Identification of all TOM gaps with risk ratings (Critical/High/Medium/Low) using likelihood × impact matrix
-6. ✅ **Remediation Roadmap** - Prioritized action plans for closing gaps with owners, timelines, budgets, and progress tracking
+6. ✅ **Remediation Roadmap** - Prioritised action plans for closing gaps with owners, timelines, budgets, and progress tracking
 8. ✅ **Audit-Ready Documentation** - Complete assessment workbook suitable for ISO 27001, GDPR, FADP audits and supervisory authority inspections
 
 ## How This Relates to Other A.5.34 Assessments
@@ -187,7 +187,7 @@ Upon completion, you will have:
 |------------|-------|--------------------------|
 | **ISMS-IMP-A.5.34.1** | **PII Identification & Classification** | **Prerequisites:** A.5.34.1 identifies WHAT PII you process. A.5.34.4 documents HOW you protect it. |
 | ISMS-IMP-A.5.34.2 | Legal Basis & Lawful Processing | Provides legal context for processing - A.5.34.4 ensures technical/organisational controls match legal obligations |
-| ISMS-IMP-A.5.34.3 | Data Subject Rights Management | A.5.34.4's TOMs enable DSR fulfillment (e.g., T3 pseudonymization enables right to object, O3 incident response enables breach notification) |
+| ISMS-IMP-A.5.34.3 | Data Subject Rights Management | A.5.34.4's TOMs enable DSR fulfillment (e.g., T3 pseudonymisation enables right to object, O3 incident response enables breach notification) |
 | ISMS-IMP-A.5.34.6 | Cross-Border Transfer Assessment | International transfers require TOMs adequacy - A.5.34.4 proves your controls meet GDPR Chapter V requirements |
 
 **Critical Dependency:** Complete A.5.34.1 (PII Identification) BEFORE starting A.5.34.4. You cannot assess protection measures without knowing what PII you're protecting.
@@ -287,7 +287,7 @@ You will need access to:
 
 ### Primary Stakeholders
 
-1. **Chief Information Security Officer (CISO)** - Overall responsibility, strategic decisions, gap prioritization, executive reporting
+1. **Chief Information Security Officer (CISO)** - Overall responsibility, strategic decisions, gap prioritisation, executive reporting
 2. **Data Protection Officer (DPO)** - Regulatory interpretation, GDPR/FADP compliance verification, risk assessment
 3. **Security Architect** - Technical measure documentation (T1-T10), architecture decisions, control effectiveness assessment
 4. **IT Operations Manager** - Operational measure documentation, implementation details, evidence collection
@@ -325,7 +325,7 @@ Upon completion, you will have:
 4. ✅ **Organisational Measure Documentation** - Detailed descriptions of O1-O10 with governance structures
 5. ✅ **Evidence Repository** - 100+ evidence entries documenting control effectiveness
 6. ✅ **Gap Analysis Report** - All identified gaps with risk ratings
-7. ✅ **Remediation Roadmap** - Prioritized action plans with owners, timelines, budgets
+7. ✅ **Remediation Roadmap** - Prioritised action plans with owners, timelines, budgets
 8. ✅ **Executive Dashboard** - Compliance metrics suitable for board reporting
 9. ✅ **GDPR Art. 32 Compliance Score** - Calculated compliance percentage
 10. ✅ **Audit Evidence Package** - Documentation suitable for ISO 27001, GDPR, FADP audits
@@ -356,7 +356,7 @@ Complete the assessment in **4 phases**:
 
 - Conduct gap analysis
 - Assess risks (likelihood × impact)
-- Prioritize remediation
+- Prioritise remediation
 - Assign ownership and timelines
 
 **PHASE 4: REPORTING (Sheet 8)** - Generate compliance metrics
@@ -758,8 +758,8 @@ COVERAGE: Incident response process operational 24/7/365. 12/12 incident respons
 
 - **T1 Encryption:** TLS test (SSL Labs), TDE verification (database query), FDE verification (device sample)
 - **T2 Access Control:** Access review (user permissions), penetration test (privilege escalation), SOC 2 audit
-- **T3 Pseudonymization:** Data inspection (verify PII masked), query test (cannot reverse pseudonymization)
-- **T4 Data Minimization:** Privacy audit (compare collected vs. required data fields)
+- **T3 Pseudonymisation:** Data inspection (verify PII masked), query test (cannot reverse pseudonymisation)
+- **T4 Data Minimisation:** Privacy audit (compare collected vs. required data fields)
 - **T5 Security Monitoring:** SIEM test (inject test event, verify alert), alert tuning validation
 - **T6 Network Security:** Firewall rule review, network scan (Nmap), penetration test
 - **T7 Application Security:** SAST/DAST scan results, penetration test, bug bounty findings
@@ -892,7 +892,7 @@ Phase 1 (Q1 2026): Implement vendor privacy risk assessment process. Tasks: (1) 
 ### Column N - Target Completion Date
 **Format:** YYYY-MM-DD
 **Guidance:** When should gap be closed?
-**Prioritization:**
+**Prioritisation:**
 
 - **Critical risk gaps:** 30-60 days
 - **High risk gaps:** 90-180 days
@@ -1418,7 +1418,7 @@ DPO CONTINUING EDUCATION:
 
 ## Sheet 5: Evidence Repository
 
-**Purpose:** Centralized storage of all evidence proving TOM implementation and effectiveness
+**Purpose:** Centralised storage of all evidence proving TOM implementation and effectiveness
 
 **Complete Evidence Repository for ALL 20 TOMs (T1-T10, O1-O10)**
 
@@ -1561,7 +1561,7 @@ Evidence EV-O3-001 (Incident response tabletop exercise): Exercise identified 2 
 - **Comprehensiveness:** Aim for 5-10 evidence items per TOM
 - **Variety:** Include different evidence types (technical configs, policies, audit reports, test results)
 - **Currency:** Update evidence regularly (technical configs quarterly, audit reports annually)
-- **Accessibility:** Store evidence in centralized, access-controlled repository (SharePoint recommended)
+- **Accessibility:** Store evidence in centralised, access-controlled repository (SharePoint recommended)
 - **Auditability:** Ensure evidence can be easily retrieved for audits (clear file naming, logical folder structure)
 
 ---
@@ -1681,7 +1681,7 @@ GAP-T1-001: Likelihood=LOW, Impact=HIGH → Overall Risk=MEDIUM
 - Medium = 2
 - Low = 1
 
-**Purpose:** Enables sorting and prioritization (sort by risk score descending to prioritize remediation)
+**Purpose:** Enables sorting and prioritisation (sort by risk score descending to prioritise remediation)
 
 ### Column H - Remediation Priority
 **Formula:** `=IF(G2=4, "URGENT (30 days)", IF(G2=3, "HIGH (90 days)", IF(G2=2, "MEDIUM (6 months)", "LOW (12 months)")))`
@@ -1868,7 +1868,7 @@ ALTERNATIVE CONSIDERED:
 **Format:** YYYY-MM-DD
 **Guidance:** When should remediation be complete? Based on risk priority:
 
-**Prioritization:**
+**Prioritisation:**
 
 - **Critical risk gaps:** 30-60 days from start
 - **High risk gaps:** 90-180 days from start
@@ -2086,14 +2086,14 @@ GDPR Art. 32 Compliance Score:
 - ✅ Access review results (quarterly access review reports)
 - ✅ Least privilege validation (sample privilege escalation tests)
 
-**T3 - Pseudonymization/Anonymization:**
+**T3 - Pseudonymisation/Anonymisation:**
 
 - ✅ Data masking configuration (database masking rules, application-level masking)
-- ✅ Anonymization procedure documentation
+- ✅ Anonymisation procedure documentation
 - ✅ Test results (query results showing PII properly masked)
 - ✅ Code review (application code implementing masking)
 
-**T4 - Data Minimization:**
+**T4 - Data Minimisation:**
 
 - ✅ Privacy audit report (data collection vs. required fields analysis)
 - ✅ Data retention policy (approved policy document)
@@ -2199,7 +2199,7 @@ GDPR Art. 32 Compliance Score:
 
 - ✅ Privacy risk assessment reports (risk registers)
 - ✅ DPIA documentation (high-risk processing assessments)
-- ✅ Privacy risk register (centralized risk tracking)
+- ✅ Privacy risk register (centralised risk tracking)
 - ✅ Risk acceptance sign-offs (risk acceptance documentation)
 
 **O8 - Compliance Monitoring:**
@@ -2263,7 +2263,7 @@ GDPR Art. 32 Compliance Score:
 - **Document naming conventions:**
   - Format: `YYYYMMDD_[System]_[Description]_[Version].ext`
   - Example: `20251215_nginx_TLS_Config_v1.0.png`
-- **Centralized storage:**
+- **Centralised storage:**
   - Store all evidence in SharePoint folder `/Privacy/Evidence/2025/`
   - Subfolders by TOM (e.g., `/T1_Encryption/`, `/O2_Training/`)
   - Version control enabled
@@ -2332,7 +2332,7 @@ GDPR Art. 32 Compliance Score:
 
 **Assessment:** All gaps in Column J (Sheet 2) must have corresponding entry in Sheet 6 (Gap Analysis).
 
-**Gap:** Without risk assessment, gaps cannot be prioritized for remediation.
+**Gap:** Without risk assessment, gaps cannot be prioritised for remediation.
 
 **Remediation:**
 
@@ -2340,7 +2340,7 @@ GDPR Art. 32 Compliance Score:
 - Assess likelihood (High/Medium/Low)
 - Assess impact (Critical/High/Medium/Low)
 - Calculate overall risk using matrix
-- Prioritize remediation based on risk score
+- Prioritise remediation based on risk score
 - Example: T1 Encryption gap (6 unencrypted databases) → Sheet 6 entry: Likelihood=LOW (strong compensating controls), Impact=HIGH (150K PII records), Overall Risk=MEDIUM, Remediation Priority=6 months
 
 ---
@@ -2367,7 +2367,7 @@ GDPR Art. 32 Compliance Score:
 ## Pitfall 6: Treating All Gaps as Equal Priority
 **Issue:** Attempting to remediate all gaps simultaneously regardless of risk level.
 
-**Assessment:** Prioritize gaps based on risk score (Column G in Sheet 6).
+**Assessment:** Prioritise gaps based on risk score (Column G in Sheet 6).
 
 **Gap:** Resource constraints mean not all gaps can be closed immediately. Treating all gaps equally spreads resources thin.
 
@@ -2584,7 +2584,7 @@ GDPR Art. 32 Compliance Score:
 - [ ] Column D (Proposed Solution) detailed for all actions
 - [ ] Column E (Owner) assigned for all actions
 - [ ] Column F (Start Date) set for all actions
-- [ ] Column G (Target Date) set for all actions (risk-based prioritization)
+- [ ] Column G (Target Date) set for all actions (risk-based prioritisation)
 - [ ] Column H (Status) selected for all actions
 - [ ] Column I (% Complete) estimated for all In Progress actions
 - [ ] Column J (Completion Date) filled for all Complete actions
@@ -2701,7 +2701,7 @@ GDPR Art. 32 Compliance Score:
   - GDPR/FADP compliance (Art. 32 TOMs adequately addressed?)
   - Organisational measures (O1-O10 sufficient?)
   - Evidence sufficiency (audit-ready?)
-  - Gap prioritization (Critical/High risks addressed?)
+  - Gap prioritisation (Critical/High risks addressed?)
   - Regulatory risk (any material non-compliance?)
 
 **Step 4: CISO Review (Security Posture)**
@@ -2806,4 +2806,4 @@ GDPR Art. 32 Compliance Score:
 *"A technical measure without an organisational one is a lock without a policy for who holds the keys."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

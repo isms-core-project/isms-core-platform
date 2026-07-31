@@ -177,7 +177,7 @@ HR system designated as authoritative source for identity lifecycle events.
 
 ### Identity Lifecycle Framework
 
-[Organisation] SHALL manage identities through standardized lifecycle processes:
+[Organisation] SHALL manage identities through standardised lifecycle processes:
 
 | Process | Trigger | Timeline | Accountability |
 |---------|---------|----------|----------------|
@@ -531,4 +531,4 @@ The boundary is: **This policy defines WHO gets WHAT access, WHEN, and HOW it is
 
 *This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.5.15-16-18 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -622,7 +622,7 @@ For each piece of evidence:
 
 ## Pitfall 8: Forgetting NIS2 Compliance
 
-**Problem**: Organisation is NIS2 essential/important entity but MFA deployment not prioritized
+**Problem**: Organisation is NIS2 essential/important entity but MFA deployment not prioritised
 
 **Solution**:
 
@@ -719,7 +719,7 @@ Before submitting assessment for approval, verify:
 **Remote Access User MFA Coverage:**
 
 - **100%**: Target state - All remote users have MFA (MANDATORY)
-- **90-99%**: Good progress - Prioritize remaining gaps
+- **90-99%**: Good progress - Prioritise remaining gaps
 - **<90%**: HIGH RISK - Remote access without MFA = easy attack vector
 
 **MFA Method Quality Score:**
@@ -730,7 +730,7 @@ Before submitting assessment for approval, verify:
 - **Push Notification**: Acceptable - 60 points
 - **SMS/Voice**: Weak - 40 points (acceptable as backup only)
 
-## Gap Prioritization
+## Gap Prioritisation
 
 **Priority 1 - CRITICAL (Immediate Action - Within 7 Days):**
 
@@ -786,7 +786,7 @@ Before submitting assessment for approval, verify:
 
 - Export user and MFA data
 - Complete assessment workbook
-- Identify gaps and prioritize
+- Identify gaps and prioritise
 - Collect evidence
 - Submit for review
 
@@ -794,7 +794,7 @@ Before submitting assessment for approval, verify:
 
 - Validate user classification accuracy
 - Verify MFA enrollment data against identity provider
-- Check gap prioritization logic
+- Check gap prioritisation logic
 - Confirm evidence completeness
 - Approve and forward to CISO
 
@@ -812,7 +812,7 @@ Assessment is approved when:
 
 - [ ] All users inventoried with MFA status
 - [ ] Privileged user MFA coverage documented
-- [ ] Critical gaps identified and prioritized
+- [ ] Critical gaps identified and prioritised
 - [ ] Remediation timeline defined for all gaps
 - [ ] Evidence collected and linked
 - [ ] NIS2/FINMA/DORA compliance status documented (if applicable)
@@ -834,4 +834,4 @@ After CISO approval:
 *"One factor is an assumption; two factors are a verification."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

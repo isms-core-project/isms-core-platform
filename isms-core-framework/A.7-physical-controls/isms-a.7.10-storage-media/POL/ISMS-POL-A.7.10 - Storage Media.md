@@ -151,7 +151,7 @@ Apply only when specific business conditions trigger applicability:
 
 These frameworks inform implementation but do not constitute mandatory compliance unless contractually required:
 
-- NIST SP 800-88 Rev. 2 (Media Sanitization Guidelines)
+- NIST SP 800-88 Rev. 2 (Media Sanitisation Guidelines)
 - ISO/IEC 27040 (Storage security)
 - CIS Controls v8.1 (Control 3 - Data Protection)
 - Industry best practices for media management
@@ -510,4 +510,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for storage media management. Implementation procedures are documented in ISMS-IMP-A.7.10 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

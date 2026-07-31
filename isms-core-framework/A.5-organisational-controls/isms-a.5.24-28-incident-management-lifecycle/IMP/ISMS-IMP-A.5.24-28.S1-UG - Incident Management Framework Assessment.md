@@ -198,7 +198,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 **Training & Competency:**
 
 - Annual incident response training for all staff
-- Specialized training for CSIRT members
+- Specialised training for CSIRT members
 - Tabletop exercises conducted (minimum annually)
 - Competency assessment and certification tracking
 - New hire onboarding (incident reporting awareness)
@@ -307,7 +307,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 
    - Create folder: `/Evidence/A.5.24-28/S1_Framework/`
    - Collect documents, screenshots, training records
-   - Organize by assessment section (Governance, Structure, Training, Tools)
+   - Organise by assessment section (Governance, Structure, Training, Tools)
 
 ---
 
@@ -407,7 +407,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 **Sheet 7: Gap Analysis**
 
 - Framework maturity scoring
-- Gap prioritization (Critical, High, Medium, Low)
+- Gap prioritisation (Critical, High, Medium, Low)
 - Remediation recommendations
 - Timeline and ownership
 
@@ -792,7 +792,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - Virtual CSIRT (part-time, members from different departments)
   - Hybrid (core dedicated staff + virtual team members)
   - Outsourced SOC/MSSP (Managed Security Service Provider)
-  - Coordinated (decentralized, regional teams)
+  - Coordinated (decentralised, regional teams)
 - **Model Characteristics:**
   
   **Dedicated CSIRT:**
@@ -827,7 +827,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 
   - Multiple regional/business unit teams
   - Central coordination (CISO office)
-  - Best for: Global organisations, decentralized IT
+  - Best for: Global organisations, decentralised IT
 
 **Q27: CSIRT_Establishment_Date**
 
@@ -836,7 +836,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - **Maturity Indicator:**
   - <1 year: New team, likely building processes
   - 1-3 years: Maturing, refining procedures
-  - 3-5 years: Established, optimizing
+  - 3-5 years: Established, optimising
   - >5 years: Mature, industry-leading (if continuously improved)
 
 **Q28: CSIRT_Coverage**
@@ -921,7 +921,7 @@ For each role, document:
   - Identify IOCs (Indicators of Compromise)
   - Recommend containment actions
 - **RACI:** Responsible for incident investigation
-- **Skill Level:** Mid to senior, specialized security skills
+- **Skill Level:** Mid to senior, specialised security skills
 
 **Q34: Forensic_Specialist**
 
@@ -932,7 +932,7 @@ For each role, document:
   - Perform forensic analysis
   - Prepare forensic reports for legal
 - **RACI:** Responsible for evidence collection (A.5.28)
-- **Skill Level:** Senior, specialized forensic training/certification
+- **Skill Level:** Senior, specialised forensic training/certification
 - **Note:** May be outsourced (forensic retainer, law enforcement)
 
 **Q35: Malware_Analyst**
@@ -944,7 +944,7 @@ For each role, document:
   - Develop detection signatures (YARA, IDS)
   - Recommend remediation
 - **RACI:** Responsible for malware analysis
-- **Skill Level:** Senior, specialized reverse engineering skills
+- **Skill Level:** Senior, specialised reverse engineering skills
 - **Note:** Often outsourced or shared resource
 
 **Q36: Threat_Intelligence_Analyst**
@@ -1149,7 +1149,7 @@ For each role, document:
 - **Dropdown:** Yes - Documented / Informally Identified / No
 - **Common Skill Gaps:**
   - Cloud security (AWS/Azure/GCP incident response)
-  - Forensics (specialized training needed)
+  - Forensics (specialised training needed)
   - Malware reverse engineering
   - Threat intelligence analysis
   - Regulatory compliance (GDPR, PCI DSS v4.0.1 procedures)
@@ -1219,7 +1219,7 @@ For each role, document:
 - **Question:** Does [Organisation] have a documented incident response training program?
 - **Dropdown:** Yes - Comprehensive / Yes - Basic / No
 - **Comprehensive Program Includes:**
-  - Training curriculum (awareness, role-specific, specialized)
+  - Training curriculum (awareness, role-specific, specialised)
   - Delivery methods (classroom, online, tabletop, simulation)
   - Frequency requirements (annual for all, quarterly for CSIRT)
   - Competency assessment
@@ -1233,7 +1233,7 @@ For each role, document:
 - **Requirement:** ISMS-POL-A.5.24-28 Section 2.1.3 - Annual training for all staff
 - **Awareness Training Should Cover:**
   - What is a security incident (examples)
-  - How to recognize security incidents
+  - How to recognise security incidents
   - How to report incidents (A.6.8 integration - reporting mechanism)
   - Importance of timely reporting
   - Personal accountability
@@ -1249,16 +1249,16 @@ For each role, document:
 
 **Q59: CSIRT_Specialized_Training**
 
-- **Question:** Do CSIRT members receive specialized incident response training?
+- **Question:** Do CSIRT members receive specialised incident response training?
 - **Dropdown:** Yes - Regular / Yes - Occasional / No
-- **Specialized Training Topics:**
+- **Specialised Training Topics:**
   - Incident handling methodologies (NIST, SANS)
   - Digital forensics
   - Malware analysis
   - Threat intelligence
   - Regulatory compliance (GDPR breach notification, PCI DSS v4.0.1 forensics)
   - Tools (SIEM, forensic tools, SOAR)
-- **Best Practice:** CSIRT members receive at least 40 hours specialized training annually
+- **Best Practice:** CSIRT members receive at least 40 hours specialised training annually
 - **Evidence:** Training records, certifications, course materials
 
 **Q60: External_Training_Budget**
@@ -1442,7 +1442,7 @@ For each role, document:
 - **Effectiveness Measures:**
   - **Knowledge Assessment:** Pre/post-training quizzes, certifications
   - **Behavioral Change:** Incident reporting rates increased after awareness training?
-  - **Performance Improvement:** Response time improved after specialized training?
+  - **Performance Improvement:** Response time improved after specialised training?
   - **Exercise Performance:** Tabletop performance improved over time?
 - **Best Practice:** Combine multiple measures (Kirkpatrick Model - Reaction, Learning, Behavior, Results)
 
@@ -1540,7 +1540,7 @@ For each role, document:
 - **SIEM Purpose:**
   - Aggregate logs from multiple sources
   - Correlate events to detect incidents
-  - Provide centralized investigation platform
+  - Provide centralised investigation platform
   - Generate alerts for CSIRT
 - **Common SIEM Platforms:** Splunk, QRadar (IBM), Sentinel (Microsoft), ArcSight (Micro Focus), ELK Stack (open source)
 
@@ -1603,7 +1603,7 @@ For each role, document:
 **Q85: Forensic_Tool_Training**
 
 - **Question:** Are CSIRT members trained in the use of forensic tools?
-- **Dropdown:** Yes - All Members / Yes - Specialized Roles Only / Limited / No
+- **Dropdown:** Yes - All Members / Yes - Specialised Roles Only / Limited / No
 - **Training Requirements:**
   - Tool-specific training (e.g., EnCase certification)
   - Forensic methodology (NIST, SANS FOR500/572)
@@ -1695,7 +1695,7 @@ For each role, document:
 - **Use Cases:**
   - IOC enrichment (is this IP/domain known malicious?)
   - Proactive threat hunting
-  - Alert prioritization (known APT group TTPs)
+  - Alert prioritisation (known APT group TTPs)
 
 **Q92: Threat_Intel_Integration_SIEM**
 
@@ -1787,7 +1787,7 @@ For each role, document:
   - Budget approval (annual cycle or emergency request)
   - Vendor selection and POC (1-3 months)
   - Procurement and deployment (2-6 months)
-  - Training and operationalization (1-3 months)
+  - Training and operationalisation (1-3 months)
 - **Evidence:** Budget documents, procurement plans, project timelines
 
 **Q99: Tool_Integration_Challenges**
@@ -1828,10 +1828,10 @@ For each role, document:
 - **Question:** Are logs readily available to CSIRT during incidents?
 - **Dropdown:** Yes - Immediate Access / Yes - Delayed Access / No
 - **Access Methods:**
-  - SIEM centralized logs (ideal - search and correlate)
+  - SIEM centralised logs (ideal - search and correlate)
   - Direct system access (SSH, RDP to log locations)
   - Request to IT Ops (slower, dependency)
-- **Best Practice:** CSIRT has direct access to SIEM or centralized logging platform
+- **Best Practice:** CSIRT has direct access to SIEM or centralised logging platform
 
 **Q102: Log_Retention_Adequate**
 
@@ -2039,7 +2039,7 @@ For each role, document:
 
 ## Sheet 7: Gap Analysis
 
-**Purpose:** Consolidate gaps from all assessment sections and prioritize remediation
+**Purpose:** Consolidate gaps from all assessment sections and prioritise remediation
 
 **Gap Register Format:**
 
@@ -2056,7 +2056,7 @@ For each role, document:
 - **Medium:** Moderate gap, remediate within 6-12 months
 - **Low:** Minor gap, address when feasible
 
-**Prioritization Criteria:**
+**Prioritisation Criteria:**
 1. **Regulatory Compliance:** GDPR, PCI DSS v4.0.1, sector-specific requirements
 2. **Operational Impact:** Does gap prevent effective incident response?
 3. **Risk Exposure:** Does gap leave organisation vulnerable?
@@ -2105,9 +2105,9 @@ For each role, document:
 - **Maturity Levels:**
   - **Level 1 (Initial):** Ad-hoc, reactive, minimal documentation (0-40%)
   - **Level 2 (Developing):** Some processes defined, inconsistent implementation (41-60%)
-  - **Level 3 (Defined):** Documented, standardized, repeatable processes (61-75%)
+  - **Level 3 (Defined):** Documented, standardised, repeatable processes (61-75%)
   - **Level 4 (Managed):** Measured, monitored, data-driven decisions (76-90%)
-  - **Level 5 (Optimizing):** Continuous improvement, industry-leading (91-100%)
+  - **Level 5 (Optimising):** Continuous improvement, industry-leading (91-100%)
 
 **B. Domain Scores**
 
@@ -2128,7 +2128,7 @@ For each role, document:
 
 **D. Top 10 Gaps**
 
-- Gap prioritization table (from Gap Analysis sheet)
+- Gap prioritisation table (from Gap Analysis sheet)
 
 ---
 
@@ -2258,13 +2258,13 @@ Assessment Status: [Draft / Under Review / Approved]
 **❌ Mistake:** No evidence collected (claims without proof)
 **✅ Solution:** Systematic evidence collection (for every "Yes," have supporting evidence)
 
-**❌ Mistake:** Generic assessment (copy-paste from templates without customization)
+**❌ Mistake:** Generic assessment (copy-paste from templates without customisation)
 **✅ Solution:** Organisation-specific assessment (reflect actual state, not aspirational state)
 
 ## Gap Analysis Mistakes
 
-**❌ Mistake:** All gaps marked "Critical" (lack of prioritization)
-**✅ Solution:** Risk-based prioritization (use criteria: regulatory, operational, risk, effort)
+**❌ Mistake:** All gaps marked "Critical" (lack of prioritisation)
+**✅ Solution:** Risk-based prioritisation (use criteria: regulatory, operational, risk, effort)
 
 **❌ Mistake:** Vague remediation ("Improve training")
 **✅ Solution:** Specific actions ("Conduct tabletop exercise by Q2, 20 participants, ransomware scenario")
@@ -2284,7 +2284,7 @@ Assessment Status: [Draft / Under Review / Approved]
 **✅ Solution:** Evidence with metadata (filename: "CSIRT_Org_Chart_2026-01-30.pdf", Evidence Register entry)
 
 **❌ Mistake:** Sensitive data in evidence (personal info, credentials)
-**✅ Solution:** Redact sensitive data, use anonymized examples
+**✅ Solution:** Redact sensitive data, use anonymised examples
 
 ---
 
@@ -2351,7 +2351,7 @@ Assessment Status: [Draft / Under Review / Approved]
 **Create Remediation Project Plan:**
 
 - List all gaps (from Gap Analysis sheet)
-- Prioritize (Critical → High → Medium → Low)
+- Prioritise (Critical → High → Medium → Low)
 - Assign owners
 - Set deadlines
 - Allocate budget/resources
@@ -2404,4 +2404,4 @@ Assessment Status: [Draft / Under Review / Approved]
 *"The best crisis manager is the one who prevents the crisis."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

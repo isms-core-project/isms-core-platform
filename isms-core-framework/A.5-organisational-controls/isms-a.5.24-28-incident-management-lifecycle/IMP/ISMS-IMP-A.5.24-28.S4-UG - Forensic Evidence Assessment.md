@@ -158,7 +158,7 @@ This assessment evaluates [Organisation]'s **digital forensic evidence managemen
   
 - **Gap Analysis:** 1-2 hours
   - Identify forensic capability gaps
-  - Prioritize improvements
+  - Prioritise improvements
   - Develop capability enhancement plan
 
 - **Quality Review:** 1 hour
@@ -892,4 +892,4 @@ Target: <72 hours for Critical incidents
 *"The past is never dead. It's not even past."*
 — William Faulkner
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

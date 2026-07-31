@@ -55,7 +55,7 @@ This policy establishes [Organisation]'s requirements for managing security in o
 
 **Purpose**: Define WHAT security controls are required for outsourced development and WHO is accountable. Technical implementation details (HOW) are documented in ISMS-IMP-A.8.30 specifications.
 
-**Scope**: All outsourced development activities including contracted development, offshore development, freelance developers, and acquired software customization.
+**Scope**: All outsourced development activities including contracted development, offshore development, freelance developers, and acquired software customisation.
 
 **Business Risk Addressed**: Security vulnerabilities introduced through third-party development leading to data breaches, intellectual property theft, supply chain compromise, and regulatory non-compliance.
 
@@ -95,13 +95,13 @@ This policy establishes [Organisation]'s requirements for managing security in o
 - Offshore and nearshore development teams
 - Freelance/independent developers
 - Staff augmentation with development access
-- Acquired software requiring customization
+- Acquired software requiring customisation
 - Development platform providers (where [Organisation] code is hosted)
 - Managed development services
 
 **Out of Scope**:
 
-- Commercial off-the-shelf (COTS) software without customization (see A.8.31)
+- Commercial off-the-shelf (COTS) software without customisation (see A.8.31)
 - Internal development by employees (see A.8.28)
 - Cloud service providers for infrastructure only (see A.5.23)
 - General supplier management (see A.5.19-22)
@@ -266,7 +266,7 @@ Outsourced development environments SHALL meet minimum security requirements:
 | **Network Security** | Development environment isolated or secured; no direct production access |
 | **Endpoint Security** | Developer workstations with current security software |
 | **Code Repository** | Branch protection, code review enforcement, secret scanning |
-| **Data Handling** | No production data in development without masking/anonymization |
+| **Data Handling** | No production data in development without masking/anonymisation |
 
 **Verification**: Environment security requirements documented in Workbook 1; vendor attestation required.
 
@@ -430,7 +430,7 @@ Outsourced development vendors SHALL NOT engage subcontractors without:
 |---------------------|-------------------|---------------------|
 | Access to [Organisation] systems/data | CISO | Full security questionnaire |
 | Development without direct access | IT Security Manager | Abbreviated questionnaire + vendor attestation |
-| Limited/specialized tasks | Project Manager + Security | Vendor attestation of security requirements flow-down |
+| Limited/specialised tasks | Project Manager + Security | Vendor attestation of security requirements flow-down |
 
 **Verification**: Subcontractor approvals documented in project records; tracked in Workbook 4.
 
@@ -634,4 +634,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for outsourced development security. Implementation procedures, assessment methodologies, and workbook specifications are documented in ISMS-IMP-A.8.30.1-4 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

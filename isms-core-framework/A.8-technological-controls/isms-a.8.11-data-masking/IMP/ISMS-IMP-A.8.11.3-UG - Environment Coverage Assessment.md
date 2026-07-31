@@ -163,7 +163,7 @@ Organisations often implement masking in some environments while leaving critica
 - **Cloud Environment Discovery:** 2-3 hours (AWS/Azure/GCP inventory, SaaS platforms)
 - **External Sharing Review:** 1-2 hours (vendor agreements, data export procedures)
 - **Data Flow Mapping:** 2-3 hours (ETL pipelines, data movement tracking)
-- **Gap Analysis & Prioritization:** 1-2 hours
+- **Gap Analysis & Prioritisation:** 1-2 hours
 - **Evidence Collection:** 1-2 hours
 - **Quality Review:** 1 hour
 
@@ -592,7 +592,7 @@ This assessment is **tool-agnostic**. [Organisation] may use any environment dis
    - **Data Sensitivity:** PII / Financial / Health / Credentials / Proprietary / Mixed / None
    - **Masking Required?:** ✅ Mandatory / ⚠️ Conditional / ❌ Not Required / N/A
    - **Masking Deployed?:** Yes / No / Partial / Planned / N/A
-   - **Masking Technique:** SDM / DDM / Tokenization / Encryption / Redaction / Substitution / Anonymization / None
+   - **Masking Technique:** SDM / DDM / Tokenisation / Encryption / Redaction / Substitution / Anonymisation / None
    - **Masking Tool/Solution:** [Tool name if deployed]
    - **Coverage %:** Percentage of sensitive fields masked (0-100%)
    - **Last Verified Date:** When masking status last checked
@@ -800,7 +800,7 @@ This assessment is **tool-agnostic**. [Organisation] may use any environment dis
 
 **Sheet:** `Analytics_Reporting`
 
-**Policy Requirement:** Analytics environments SHALL mask individual-level PII. Aggregation and anonymization preferred.
+**Policy Requirement:** Analytics environments SHALL mask individual-level PII. Aggregation and anonymisation preferred.
 
 **Step-by-Step:**
 
@@ -826,7 +826,7 @@ This assessment is **tool-agnostic**. [Organisation] may use any environment dis
    - "Average salary by department" (>5 people per group)
    - "Customer count by age range" (no PII)
 
-**3. Verify Masking or Anonymization:**
+**3. Verify Masking or Anonymisation:**
    
    **Option 1: Masking at Source**
 
@@ -840,7 +840,7 @@ This assessment is **tool-agnostic**. [Organisation] may use any environment dis
    - k-anonymity: Each record indistinguishable from ≥4 others
    - Example: "Age range 30-40, ZIP 12XXX, Male" not individual records
    
-   **Option 3: Anonymization**
+   **Option 3: Anonymisation**
 
    - Irreversible transformation (not just masking)
    - Statistical disclosure control
@@ -851,7 +851,7 @@ This assessment is **tool-agnostic**. [Organisation] may use any environment dis
    Extended columns:
 
    - **Platform Type:** BI Tool / Data Warehouse / Data Lake / ML Platform / Reporting
-   - **Data Granularity:** Individual-level / Aggregated / Anonymized / Mixed
+   - **Data Granularity:** Individual-level / Aggregated / Anonymised / Mixed
    - **Analyst Access Count:** How many people have access?
    - **External Access?:** Vendors / Consultants (Yes / No)
    - **PII Visible?:** Yes / No / Partial (if yes, requires masking or exception)
@@ -862,7 +862,7 @@ This assessment is **tool-agnostic**. [Organisation] may use any environment dis
 - [ ] Individual-level PII masked or aggregated
 - [ ] Data warehouse ETL includes masking step (verify scripts)
 - [ ] BI dashboards use masked views (test by logging in as analyst)
-- [ ] ML platforms anonymize training data (model outputs don't leak PII)
+- [ ] ML platforms anonymise training data (model outputs don't leak PII)
 
 ## Phase 5: Cloud Environment Coverage (2-3 hours)
 
@@ -1286,7 +1286,7 @@ Data moves between environments constantly:
    - **Sensitive Data Transferred?:** Yes / No
    - **Masking Checkpoint Exists?:** Yes / No / N/A
    - **Checkpoint Location:** At Source / In Pipeline / At Destination / None
-   - **Masking Technique Used:** SDM / DDM / Tokenization / Redaction / None
+   - **Masking Technique Used:** SDM / DDM / Tokenisation / Redaction / None
    - **Checkpoint Automated?:** Yes / Manual / N/A
    - **Checkpoint Validation:** How is masking verified? (automated tests, manual checks)
    - **Failure Handling:** What happens if masking fails? (Stop flow / Alert / Continue)
@@ -1303,7 +1303,7 @@ Data moves between environments constantly:
 
    - Manual masking step (human error risk) → Automate
    - No validation that masking worked → Add checkpoint validation
-   - Temporary unmasked window at destination → Minimize duration
+   - Temporary unmasked window at destination → Minimise duration
 
 **Quality Checks:**
 
@@ -1323,7 +1323,7 @@ Data moves between environments constantly:
 
 ## Phase 9: Gap Analysis & Remediation Planning (1-2 hours)
 
-**Objective:** Consolidate ALL gaps identified across Phases 1-8 and prioritize remediation.
+**Objective:** Consolidate ALL gaps identified across Phases 1-8 and prioritise remediation.
 
 **Sheet:** `Gap_Analysis`
 
@@ -1789,7 +1789,7 @@ Data moves between environments constantly:
 - Priority 2 (20-25 environments): Standard remediation
   - Dev/Test/UAT with customer PII → 30-day remediation SLA
 - Priority 3 (10-15 environments): Lower risk
-  - Training, sandbox with anonymized or old data → 90-day remediation SLA
+  - Training, sandbox with anonymised or old data → 90-day remediation SLA
 
 **Day 4-5: Quick Wins**
 
@@ -1803,7 +1803,7 @@ Data moves between environments constantly:
 
 - If no masking tool → Emergency procurement (work with vendors for fast setup)
 - If have masking tool → Expand licenses, train additional DBAs
-- Setup masking "factory" (standardized process for masking non-prod)
+- Setup masking "factory" (standardised process for masking non-prod)
 
 **Week 3-4: Bulk Masking**
 
@@ -2267,7 +2267,7 @@ This assessment (IMP-A.8.11.3) integrates with:
 
 **ISMS-IMP-A.8.11.2 (Masking Technique Selection):**
 
-- **Input:** Approved masking techniques per data type (SDM, DDM, tokenization, etc.)
+- **Input:** Approved masking techniques per data type (SDM, DDM, tokenisation, etc.)
 - **Usage:** Verify appropriate techniques deployed in each environment type
 
 **ISMS-IMP-A.8.11.4 (Testing & Validation):**
@@ -2291,4 +2291,4 @@ This assessment (IMP-A.8.11.3) integrates with:
 *"Sensitive data does not become safe simply because the environment is labelled test."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

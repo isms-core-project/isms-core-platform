@@ -119,7 +119,7 @@ This policy does NOT:
 - **Define training content development procedures** (see ISMS-IMP-A.6.3.2 Training Program Design)
 - **Provide technical LMS configuration guidance** (organisational technology choice)
 - **Define HR onboarding procedures** (organisational HR policy, interfaces with this policy)
-- **Replace specialized technical certification programs** (vendor certifications, professional development)
+- **Replace specialised technical certification programs** (vendor certifications, professional development)
 - **Dictate training delivery platforms** (tool selection based on [Organisation]'s preferences)
 
 **Rationale**: Separating policy requirements from implementation guidance enables:
@@ -201,7 +201,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 | **Role-Based Depth** | Training depth matches role risk and responsibility | Tiered training tracks based on access and function |
 | **Continuous Learning** | Security knowledge maintained through regular updates | Quarterly threat briefs, policy change notifications |
 | **Competency Verification** | Training effectiveness measured through assessment | Knowledge tests, practical exercises, behavioral metrics |
-| **Risk-Proportionate** | Training effort proportional to risk exposure | High-risk roles receive enhanced, specialized training |
+| **Risk-Proportionate** | Training effort proportional to risk exposure | High-risk roles receive enhanced, specialised training |
 | **Behavioral Focus** | Training drives secure behaviors, not just awareness | Practical scenarios, simulations, real-world examples |
 | **Measurement-Driven** | Program effectiveness tracked through metrics | Completion rates, test scores, incident correlation |
 
@@ -229,7 +229,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 | **Tier 3: Data Handlers** | Personnel regularly handling sensitive data | Tier 2 + Data protection, privacy, classification | HR, Finance, Legal, Customer Service |
 | **Tier 4: Technical Staff** | IT/Development personnel with system access | Tier 2 + Secure development, system security | Developers, system administrators, IT support |
 | **Tier 5: Privileged Users** | Personnel with administrative or elevated access | Tier 4 + Privileged access, incident response | System admins, DBAs, security operations |
-| **Tier 6: Security Roles** | Information security team members | All tiers + Specialized security training | Security analysts, CISO, auditors |
+| **Tier 6: Security Roles** | Information security team members | All tiers + Specialised security training | Security analysts, CISO, auditors |
 | **Tier 7: Management** | Managers and executives with governance duties | Tier 2/3 + Governance, risk, compliance | Department heads, executives, board members |
 
 **Classification Authority**: Training audience classification is determined by HR in consultation with the Information Security Officer based on job role descriptions and access requirements. Classification is reviewed when roles change and during annual role review cycles.
@@ -413,7 +413,7 @@ Personnel with privileged access SHALL receive additional training on:
 
 **Insider Threat Awareness**:
 
-- Recognizing indicators of insider threats
+- Recognising indicators of insider threats
 - Reporting concerns appropriately
 - Protecting against social engineering targeting privileged users
 
@@ -429,7 +429,7 @@ Information security team members SHALL maintain competencies in:
 - Incident response and forensics
 - Compliance and audit
 
-**Specialized Training**:
+**Specialised Training**:
 
 - Role-specific certifications (as defined by CISO)
 - Emerging threat and technology training
@@ -540,7 +540,7 @@ All training content SHALL meet the following requirements:
 - Assessments SHALL cover all learning objectives
 - Failed assessments require remediation and re-testing
 - Assessment results SHALL be documented and retained
-- Specialized roles (Tier 5-6) SHALL have competency assessments
+- Specialised roles (Tier 5-6) SHALL have competency assessments
 
 **Minimum Passing Thresholds**:
 
@@ -655,7 +655,7 @@ Training records SHALL be retained:
 - **Individuals**: May access own training records upon request
 - **Supervisors**: May access training status and completion for direct reports
 - **HR**: Full access to training records for administration
-- **Auditors**: Access to anonymized and aggregate metrics; specific records as needed for audit
+- **Auditors**: Access to anonymised and aggregate metrics; specific records as needed for audit
 
 ---
 
@@ -713,7 +713,7 @@ Training records SHALL be retained:
 **Responsibilities**:
 
 - Develop and maintain training content
-- Deliver specialized security training
+- Deliver specialised security training
 - Conduct phishing simulations and awareness testing
 - Analyze training effectiveness and behavioral metrics
 - Update training for emerging threats and policy changes
@@ -1077,7 +1077,7 @@ Evidence required to demonstrate this policy is operationally effective (maintai
 - Training program review meeting minutes
 - Incident reports with training-related root causes and remediation
 - Training content update records (responding to incidents/threats)
-- Competency verification records for specialized roles (Tier 5-6)
+- Competency verification records for specialised roles (Tier 5-6)
 - Third-party training compliance attestations (per Section 3.7)
 - Training Evidence Register (ISMS-IMP-A.6.3.4 or equivalent repository)
 
@@ -1111,4 +1111,4 @@ The boundary is: POL-A.6.3 defines WHAT training is required and WHO must comple
 
 *This policy establishes requirements for information security awareness, education, and training. Implementation procedures, assessment templates, and detailed guidance are documented in ISMS-IMP-A.6.3 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

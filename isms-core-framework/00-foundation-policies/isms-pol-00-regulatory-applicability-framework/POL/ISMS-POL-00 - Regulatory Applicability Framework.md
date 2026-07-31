@@ -103,7 +103,7 @@ This policy defines the **identification and applicability** of legal, statutory
 The outcome of the regulatory applicability assessment serves as **input** for:
 
 - Control scoping decisions within Annex A
-- Risk assessment and treatment prioritization
+- Risk assessment and treatment prioritisation
 - Proportionality decisions for control implementation
 - Audit planning and compliance verification
 
@@ -227,14 +227,14 @@ Requirements that apply only when specific conditions are met (e.g., industry se
 - Article 24: Controller responsibilities (accountability)
 - Article 25: Data protection by design and by default
 - Article 28: Processor obligations (contracts, security measures)
-- Article 32: Security of processing (encryption, pseudonymization, resilience)
+- Article 32: Security of processing (encryption, pseudonymisation, resilience)
 - Article 33: Breach notification (72 hours to supervisory authority)
 - Article 35: Data Protection Impact Assessment (DPIA) for high-risk processing
 
 **ISMS Impact**:
 
 - Technical and organisational measures (TOMs)
-- Encryption and pseudonymization
+- Encryption and pseudonymisation
 - Access controls and authentication
 - Data breach response procedures
 - Vendor management (processor agreements)
@@ -958,7 +958,7 @@ This policy establishes regulatory applicability (WHICH regulations apply). It d
 - **Compliance KPIs/dashboards** (addressed in ISMS-POL-A.5.31-S4 §6)
 - **Regulatory audit findings** (addressed in compliance monitoring processes)
 
-The boundary is: POL-00 identifies obligations → Risk assessment prioritizes → Controls implement → Separate processes verify compliance.
+The boundary is: POL-00 identifies obligations → Risk assessment prioritises → Controls implement → Separate processes verify compliance.
 
 ---
 
@@ -1135,7 +1135,7 @@ This section documents the organisation's current regulatory compliance obligati
 | Framework | Usage | Referenced In | Rationale |
 |----------|-------|--------------|-----------|
 | **NIST SP 800-series** | Technical implementation guidance | Multiple Annex A controls (A.8.8 Vulnerability Management references NIST SP 800-40, A.5.24-28 Incident Response references NIST SP 800-61) | Industry-standard technical guidance for control implementation |
-| **CIS Controls v8.1** | Security benchmarking | Internal security posture assessment, control gap analysis | Widely recognized security baseline for comparison |
+| **CIS Controls v8.1** | Security benchmarking | Internal security posture assessment, control gap analysis | Widely recognised security baseline for comparison |
 | **OWASP** | Secure development practices | A.8.25-28 Secure Development Lifecycle | Web application security best practices |
 | **ISO/IEC 27002:2022** | Control implementation guidance | All Annex A controls | Official implementation guidance for ISO 27001 controls |
 

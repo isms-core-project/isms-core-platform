@@ -238,7 +238,7 @@ You'll know this assessment is successful when:
 - Discover services not in official procurement
 - Compare credit card statements vs. inventory
 - Engage with departments using unapproved services
-- Regularize or sunset shadow IT
+- Regularise or sunset shadow IT
 
 **Use Case 5: Contract Renewals**
 
@@ -766,8 +766,8 @@ For each service, collect:
 
 - Contract or purchase order (PDF)
 - Invoice showing annual cost
-- Screenshot of admin console (sanitized)
-- User list export (sanitized)
+- Screenshot of admin console (sanitised)
+- User list export (sanitised)
 - SSO configuration screenshot (if integrated)
 
 **Deliverable:**
@@ -1011,7 +1011,7 @@ Must have documented exit plans including:
 
 #### Phase 7: Financial Impact Analysis (2-4 hours)
 
-**Objective:** Calculate total cloud spend and identify cost optimization opportunities
+**Objective:** Calculate total cloud spend and identify cost optimisation opportunities
 
 **Activities:**
 
@@ -1028,7 +1028,7 @@ Must have documented exit plans including:
 
 - Top 10 most expensive services (80/20 rule - these are likely 80% of spend)
 - Services with cost increases (compare to prior year)
-- Unused/underutilized services (low user count vs. cost)
+- Unused/underutilised services (low user count vs. cost)
 - Duplicate services (same function, different vendor)
 
 **Contract Review:**
@@ -1038,23 +1038,23 @@ Must have documented exit plans including:
 - Trial services that converted to paid (was this authorised?)
 - Services without contracts (credit card purchases - negotiate volume discount?)
 
-**Cost Optimization Opportunities:**
+**Cost Optimisation Opportunities:**
 1. Consolidation (eliminate duplicates)
-2. Right-sizing (reduce licenses for underutilized services)
+2. Right-sizing (reduce licenses for underutilised services)
 3. Renegotiation (volume discounts, multi-year commits)
 4. Elimination (sunset unused services)
 
 **Deliverable:**
 
 - Sheet 5 (Financial Summary) - Complete with totals and breakdowns
-- Cost optimization recommendations
+- Cost optimisation recommendations
 - Contract renewal calendar
 
 **Quality Check:**
 
 - ✓ All costs verified with finance
 - ✓ Totals reconcile with budget
-- ✓ Optimization opportunities identified
+- ✓ Optimisation opportunities identified
 - ✓ Renewal dates tracked
 - ✓ Savings potential estimated
 
@@ -1118,7 +1118,7 @@ For each gap, assess:
 **Deliverable:**
 
 - Gap analysis report
-- Risk register with prioritized remediation plan
+- Risk register with prioritised remediation plan
 - Management escalation for critical gaps
 
 **Quality Check:**
@@ -1134,7 +1134,7 @@ For each gap, assess:
 
 #### Phase 9: Evidence Registry (1-2 hours)
 
-**Objective:** Organize all evidence for audit readiness
+**Objective:** Organise all evidence for audit readiness
 
 **Evidence Organisation:**
 
@@ -1289,7 +1289,7 @@ Classify the service (use dropdown):
 | **Security Service** | Cloud-based security tools | CrowdStrike, Zscaler, Cloudflare, Okta |
 | **Cloud Storage** | File storage and collaboration | Dropbox, Box, Google Drive, OneDrive |
 | **Collaboration** | Communication and teamwork | Slack, Teams, Zoom, Webex, Miro |
-| **Other** | Doesn't fit above categories (document in notes) | Specialized industry tools |
+| **Other** | Doesn't fit above categories (document in notes) | Specialised industry tools |
 
 **If unsure:** Most business applications are SaaS. Most infrastructure is IaaS.
 
@@ -1447,7 +1447,7 @@ For each service, obtain:
 **Annual Cost:**
 
 - Check most recent invoice
-- Annualize if monthly/quarterly (monthly × 12)
+- Annualise if monthly/quarterly (monthly × 12)
 - Include all licenses/seats
 - Include support/maintenance if separate line item
 
@@ -1489,7 +1489,7 @@ You need two numbers:
 - Service: Zoom Enterprise
 - Licensed Users: 500
 - Active Users (30 days): 280
-- **Finding:** Paying for 220 unused licenses → potential cost optimization
+- **Finding:** Paying for 220 unused licenses → potential cost optimisation
 
 **Step 6: Document Evidence**
 
@@ -1532,7 +1532,7 @@ Discovery: Marketing Manager's credit card shows $299/month to "Canva Pro Teams"
 7. Service Owner: Marketing Manager
 8. Annual Cost: CHF 3,588 ($299 × 12)
 9. **Gap:** No IT approval, no data processing agreement
-10. **Action:** Engage with Marketing - regularize or move to approved tool
+10. **Action:** Engage with Marketing - regularise or move to approved tool
 
 **Scenario 2: Critical Service Without Owner**
 
@@ -1750,7 +1750,7 @@ Based on data types and residency, identify applicable regulations:
 | **GDPR** | EU personal data | Lawful basis, data minimisation, breach notification, DPA required |
 | **Swiss FADP** | Swiss personal data | Similar to GDPR, data export restrictions |
 | **HIPAA** | US healthcare data | BAA required, encryption, audit logs, breach notification |
-| **PCI-DSS** | Payment card data | No storage of CVV, encryption, tokenization, SAQ compliance |
+| **PCI-DSS** | Payment card data | No storage of CVV, encryption, tokenisation, SAQ compliance |
 | **SOX** | Financial reporting data (public companies) | Access controls, audit trails, change management |
 | **Sector-Specific** | Banking, insurance, etc. | FINMA (CH banking), BaFin (DE banking), etc. |
 
@@ -2285,7 +2285,7 @@ Rate the overall difficulty of migrating data:
 | **Low** | Standard formats, clean data, simple schema | Email (IMAP export), file storage (download folders) |
 | **Medium** | Some custom fields, moderate transformations needed | CRM with custom objects, project management tools |
 | **High** | Complex schema, many custom fields, significant transformations | ERP systems, custom-developed applications |
-| **Very High** | Deeply integrated, proprietary formats, no clear migration path | Highly customized platforms, embedded workflows |
+| **Very High** | Deeply integrated, proprietary formats, no clear migration path | Highly customised platforms, embedded workflows |
 
 **Step 3: Cloud-to-Cloud Exit Assessment**
 
@@ -2353,7 +2353,7 @@ Document which components go where:
 | **Reporting/Analytics** | Cloud | Compute-intensive, benefits from cloud elasticity |
 | **Integration Layer** | Hybrid (VPN/Direct Connect) | Bridges cloud app to on-prem database |
 
-**Data Synchronization Requirements:**
+**Data Synchronisation Requirements:**
 
 For hybrid deployments, assess:
 
@@ -2363,7 +2363,7 @@ For hybrid deployments, assess:
 - 100-500ms: Acceptable (near real-time)
 - > 500ms: Concern (may require async sync, potential consistency issues)
 
-**Synchronization Mechanism:**
+**Synchronisation Mechanism:**
 
 - Real-Time Replication (database mirroring)
 - Batch Sync (hourly, daily)
@@ -2375,7 +2375,7 @@ Required infrastructure:
 
 - **VPN:** Basic connectivity (typically 100-500 Mbps)
 - **Direct Connect / ExpressRoute:** High-speed dedicated link (1-10 Gbps)
-- **SD-WAN:** Software-defined networking for optimized routing
+- **SD-WAN:** Software-defined networking for optimised routing
 
 **Cost:** CHF 1K-10K/month for dedicated connectivity
 
@@ -2421,7 +2421,7 @@ On-premises exit only justified if:
 | **Storage** | CHF 50K-150K | ~100TB usable storage (SAN/NAS) |
 | **Network** | CHF 40K-80K | Switches, firewalls, load balancers |
 | **Facilities** | CHF 0-100K | If new datacenter space needed |
-| **Software Licenses** | CHF 20K-50K | Virtualization, management tools |
+| **Software Licenses** | CHF 20K-50K | Virtualisation, management tools |
 | **Professional Services** | CHF 50K-100K | Migration, configuration, testing |
 | **Security Tools** | CHF 30K-60K | Firewalls, IDS/IPS, backup systems |
 | **Contingency (20%)** | CHF 80K-200K | Buffer for unexpected costs |
@@ -2435,7 +2435,7 @@ On-premises exit only justified if:
 | **Power & Cooling** | CHF 15K-40K | Datacenter operating costs |
 | **Facilities/Colocation** | CHF 20K-60K | If not owned datacenter |
 | **Software Maintenance** | CHF 40K-100K | Support contracts (15-20% of license cost) |
-| **Hardware Refresh (3-5 year)** | CHF 60K-120K | Amortized replacement costs |
+| **Hardware Refresh (3-5 year)** | CHF 60K-120K | Amortised replacement costs |
 | **Backup/DR** | CHF 20K-50K | Off-site backup, DR testing |
 | **Security Services** | CHF 30K-80K | Security monitoring, pen testing |
 | **Network Connectivity** | CHF 10K-30K | Internet, WAN links |
@@ -2469,7 +2469,7 @@ If proceeding with on-premises:
 - vCPU requirements: _____ cores
 - Memory requirements: _____ GB RAM
 - Storage IOPS: _____ IOPS
-- Virtualization platform: VMware ESXi / Hyper-V / KVM / Other
+- Virtualisation platform: VMware ESXi / Hyper-V / KVM / Other
 
 **Storage:**
 
@@ -2506,7 +2506,7 @@ On-premises infrastructure requires refresh every 3-5 years:
 - Storage: 4-5 years
 - Network: 5-7 years
 
-Budget CHF 60K-120K/year for ongoing refresh (amortized).
+Budget CHF 60K-120K/year for ongoing refresh (amortised).
 
 **Risks of On-Premises:**
 
@@ -2551,8 +2551,8 @@ Assess factors that could prevent or complicate exit:
 | **Data Format** | Proprietary, no export | Proprietary with conversion tools | Standard formats (CSV, JSON) |
 | **APIs** | Proprietary, no alternatives | REST API but vendor-specific | Standard protocols (IMAP, CalDAV) |
 | **Integrations** | Deep custom integrations, hundreds of connections | Moderate integrations, documented | Minimal integrations, standard connectors |
-| **Custom Development** | Significant custom code on platform | Some customizations | Out-of-box configuration only |
-| **Training Investment** | Extensive specialized training, certifications | Moderate training | Minimal training, intuitive |
+| **Custom Development** | Significant custom code on platform | Some customisations | Out-of-box configuration only |
+| **Training Investment** | Extensive specialised training, certifications | Moderate training | Minimal training, intuitive |
 | **Contract Terms** | Multi-year lock-in, high exit penalties | 1-year terms, moderate penalties | Monthly/annual, no penalties |
 | **Data Volume** | > 10TB | 1-10TB | < 1TB |
 | **User Count** | > 500 users | 100-500 users | < 100 users |
@@ -2571,7 +2571,7 @@ For high lock-in risks:
 - ✅ Negotiate contract exit clauses (termination for convenience, data portability guaranteed)
 - ✅ Maintain integration abstraction layer (don't integrate directly, use middleware)
 - ✅ Export data regularly (quarterly backups to standard formats)
-- ✅ Document all customizations (version control, architecture diagrams)
+- ✅ Document all customisations (version control, architecture diagrams)
 - ✅ Cross-train staff (reduce vendor-specific skill dependency)
 - ✅ Evaluate alternatives annually (maintain awareness of exit options)
 
@@ -2665,13 +2665,13 @@ Cloud 5-Year TCO: CHF 2.4M
 - ✅ Implement auto-scaling (reduce off-peak capacity → save CHF 60K/year)
 - **Total Savings:** CHF 396K/year (82% of current cost)
 
-**Revised Cloud TCO (optimized):** CHF 1.01M (5-year)
+**Revised Cloud TCO (optimised):** CHF 1.01M (5-year)
 
-**Conclusion:** Cloud-to-cloud optimization vastly superior to on-prem repatriation.
+**Conclusion:** Cloud-to-cloud optimisation vastly superior to on-prem repatriation.
 
 **Scenario 4: Lock-In with Remediation**
 
-Service: Salesforce Sales Cloud (Highly Customized)
+Service: Salesforce Sales Cloud (Highly Customised)
 
 **Assessment:**
 
@@ -2684,11 +2684,11 @@ Service: Salesforce Sales Cloud (Highly Customized)
 - **Lock-In Risk:** High
 - **Data Portability:** Medium (standard export available, but complex schema)
 - **Migration Estimate:** 12-18 months, CHF 500K-800K
-- **Alternative:** Microsoft Dynamics 365, HubSpot Enterprise (both require significant customization)
+- **Alternative:** Microsoft Dynamics 365, HubSpot Enterprise (both require significant customisation)
 
 **Remediation Plan:**
 
-- ✅ Document all customizations (architecture diagrams, code repository)
+- ✅ Document all customisations (architecture diagrams, code repository)
 - ✅ Reduce custom code (replace with standard features where possible)
 - ✅ Quarterly data exports (maintain export capability)
 - ✅ Integration abstraction layer (use middleware, not direct SFDC→System connections)
@@ -2732,11 +2732,11 @@ Service: Salesforce Sales Cloud (Highly Customized)
 
 ---
 
-## Sheet 5: Financial Summary & Cost Optimization
+## Sheet 5: Financial Summary & Cost Optimisation
 
 ### Purpose
 
-Consolidate financial data for all cloud services, analyse spending patterns, identify cost optimization opportunities, and track contract renewals.
+Consolidate financial data for all cloud services, analyse spending patterns, identify cost optimisation opportunities, and track contract renewals.
 
 ### What to Document
 
@@ -2744,16 +2744,16 @@ Consolidate financial data for all cloud services, analyse spending patterns, id
 - Top 10 most expensive services
 - Contract renewal calendar
 - Cost trends (year-over-year comparison)
-- Optimization opportunities
+- Optimisation opportunities
 - Budget variance
 
 ### How to Complete
 
 1. Export billing data from each cloud provider console (monthly or quarterly)
-2. Categorize spend by service type (IaaS, PaaS, SaaS), department, and cost centre
+2. Categorise spend by service type (IaaS, PaaS, SaaS), department, and cost centre
 3. Identify top 10 services by spend and flag any with >10% quarter-over-quarter increase
 4. Cross-reference contract renewal dates and flag renewals within 90 days
-5. Document optimization opportunities (right-sizing, reserved instances, unused resources)
+5. Document optimisation opportunities (right-sizing, reserved instances, unused resources)
 6. Calculate budget variance and report to finance/management
 
 ---
@@ -2863,7 +2863,7 @@ Map regulatory requirements to cloud services, track compliance status, identify
 
 - Recent (< 90 days old)
 - Complete (all required information visible)
-- Sanitized (passwords/secrets redacted)
+- Sanitised (passwords/secrets redacted)
 - Timestamped (date clearly visible)
 - Attributed (source identified)
 
@@ -2871,7 +2871,7 @@ Map regulatory requirements to cloud services, track compliance status, identify
 
 - Outdated (> 1 year old)
 - Incomplete (key information missing)
-- Unsanitized (contains sensitive data)
+- Unsanitised (contains sensitive data)
 - No date (can't verify currency)
 - Generic (vendor marketing, not actual config)
 
@@ -3010,7 +3010,7 @@ Map regulatory requirements to cloud services, track compliance status, identify
 **Why:**
 
 - Two environments to manage (cloud + on-prem)
-- Data synchronization challenges (latency, consistency)
+- Data synchronisation challenges (latency, consistency)
 - Security boundaries (cross-environment trust)
 - Skills required for both environments
 - More failure modes (connectivity, sync, inconsistency)
@@ -3025,7 +3025,7 @@ Map regulatory requirements to cloud services, track compliance status, identify
 **When to Avoid Hybrid:**
 
 - "Cloud and on-prem both sound good" (lack of clear requirement)
-- Cost optimization (usually not cheaper than pure cloud)
+- Cost optimisation (usually not cheaper than pure cloud)
 - "Hedge our bets" (increases risk, doesn't reduce it)
 
 ---
@@ -3111,7 +3111,7 @@ Before submitting for review, verify:
 
 - [ ] Evidence recent (< 90 days)
 - [ ] Evidence complete (required information present)
-- [ ] Evidence sanitized (sensitive data redacted)
+- [ ] Evidence sanitised (sensitive data redacted)
 - [ ] Evidence organised (follows standard structure)
 - [ ] Evidence accessible (paths correct, files exist)
 
@@ -3128,8 +3128,8 @@ Before submitting for review, verify:
 - [ ] Costs reconcile with budget
 - [ ] Contract dates accurate
 - [ ] Renewal calendar complete
-- [ ] Cost optimizations identified
-- [ ] ROI calculated for optimizations
+- [ ] Cost optimisations identified
+- [ ] ROI calculated for optimisations
 
 ---
 
@@ -3241,7 +3241,7 @@ Once all three levels approve:
 
    - Auditors: Assessment available for review
    - Department heads: Service ownership confirmed
-   - Finance: Cost optimizations identified
+   - Finance: Cost optimisations identified
    - Security: Risk gaps requiring remediation
 
 4. **Execute Remediation**
@@ -3297,7 +3297,7 @@ This inventory (A.5.23.1) is complete. Use it as INPUT for:
 ### Execute Remediation Plans
 
 From gap analysis:
-1. **Review prioritized gaps** with management
+1. **Review prioritised gaps** with management
 2. **Allocate resources** (budget, people, time)
 3. **Assign ownership** to each gap
 4. **Set milestones** (30/60/90-day targets)
@@ -3342,7 +3342,7 @@ Move beyond periodic assessments:
 - **Sheet 2:** Data classification changes (new data types)
 - **Sheet 3:** Criticality re-assessment (business impact changes)
 - **Sheet 4:** Exit strategy review, export testing results
-- **Sheet 5:** Cost updates, renewal dates, optimization progress
+- **Sheet 5:** Cost updates, renewal dates, optimisation progress
 - **Sheet 6:** Regulatory changes, compliance status
 - **Sheet 10:** New evidence collected
 
@@ -3364,7 +3364,7 @@ Move beyond periodic assessments:
 - Shadow IT discovery rate (services found outside procurement)
 - Exit plan coverage (% of Critical/High with documented plans)
 - Compliance rate (% services fully compliant)
-- Cost optimization savings realised
+- Cost optimisation savings realised
 
 **Monthly Reporting to Management:**
 
@@ -3373,7 +3373,7 @@ Move beyond periodic assessments:
 - Contract renewals upcoming
 - Cost variance vs. budget
 - Compliance gaps (open/closed)
-- Optimization savings
+- Optimisation savings
 
 ---
 
@@ -3452,7 +3452,7 @@ Move beyond periodic assessments:
 
 - **CISO:** For risk acceptance, major gaps
 - **CIO:** For strategic decisions, major investments
-- **CFO:** For budget implications, cost optimizations
+- **CFO:** For budget implications, cost optimisations
 
 ---
 
@@ -3463,4 +3463,4 @@ Move beyond periodic assessments:
 *"The cloud is not a place; it is a shared responsibility."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -55,7 +55,7 @@
 
 | # | Sheet Name |
 |---|-----------|
-| 1 | Historical Utilization |
+| 1 | Historical Utilisation |
 | 2 | Trend Analysis |
 | 3 | Capacity Forecasts |
 | 4 | Capacity Exhaustion |
@@ -97,8 +97,8 @@
 | 10 | Description |
 | 11 | Month/Date |
 | 12 | Resource Name |
-| 13 | Utilization (%) |
-| 14 | Peak Utilization (%) |
+| 13 | Utilisation (%) |
+| 14 | Peak Utilisation (%) |
 | 15 | Notes |
 | 16 | Data Source |
 | 17 | Trend Method |
@@ -106,7 +106,7 @@
 | 19 | R-Squared |
 | 20 | Seasonal Pattern |
 | 21 | Analyst |
-| 22 | Current Utilization (%) |
+| 22 | Current Utilisation (%) |
 | 23 | Growth Rate (%/month) |
 | 24 | 6-Month Forecast (%) |
 | 25 | 12-Month Forecast (%) |
@@ -175,4 +175,4 @@ Requires remediation, Re-assessment required, Approved with Conditions
 *"In cryptography, we must always assume the worst about our adversaries."*
 — Adi Shamir
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -655,7 +655,7 @@ Get-MgGroup -All | ForEach-Object {
    - **Undocumented group/role access** (from Sheet 3)
    - **Privileged access without approval** (from Sheet 2)
 
-2. **Prioritize gaps by risk**:
+2. **Prioritise gaps by risk**:
 
    - **Critical** (P1):
      - Privileged access without justification/approval
@@ -691,7 +691,7 @@ Get-MgGroup -All | ForEach-Object {
 **Quality Check:**
 
 - ✓ All gaps identified from previous sheets
-- ✓ Prioritization reflects actual risk
+- ✓ Prioritisation reflects actual risk
 - ✓ Remediation actions specific and actionable
 - ✓ Owners assigned for each action
 - ✓ Target dates realistic but urgent for critical gaps
@@ -724,7 +724,7 @@ Get-MgGroup -All | ForEach-Object {
    - Collected By (who gathered this evidence?)
    - Verification Status (Verified, Pending, Not Verified)
 
-3. **Organize evidence** in logical folder structure
+3. **Organise evidence** in logical folder structure
 
 4. **Verify evidence quality**:
 
@@ -834,7 +834,7 @@ Get-MgGroup -All | ForEach-Object {
 - Approval sign-offs
 - System owner confirmations
 
-### How to Organize Evidence
+### How to Organise Evidence
 
 **Folder Structure:**
 ```
@@ -872,7 +872,7 @@ ISMS-A.5.15-16-18.2_Evidence_YYYYMMDD/
 
 ❌ **Mistake:** Different terminology for access levels across systems (View, Contributor, Editor, Modify, Update)
 
-✅ **Fix:** Normalize to standard levels: Read, Write, Admin, Privileged. Document mapping (e.g., "Contributor" in SharePoint = "Write" in access matrix).
+✅ **Fix:** Normalise to standard levels: Read, Write, Admin, Privileged. Document mapping (e.g., "Contributor" in SharePoint = "Write" in access matrix).
 
 ---
 
@@ -998,7 +998,7 @@ Before submitting for approval, verify:
 ### Gap Analysis (Sheet 7)
 
 - [ ] All gaps identified from previous sheets
-- [ ] Prioritization reflects actual risk
+- [ ] Prioritisation reflects actual risk
 - [ ] Remediation actions specific and actionable
 - [ ] Owners assigned
 - [ ] Target dates realistic
@@ -1147,4 +1147,4 @@ This assessment (A.5.15-16-18.2) feeds into:
 *"Least privilege is not a limitation; it is a liberation from risk."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -136,8 +136,8 @@
 | 43 | Baseline (Unmasked) |
 | 44 | With Masking |
 | 45 | Performance Impact % |
-| 46 | Optimization Needed? |
-| 47 | Optimization Applied? |
+| 46 | Optimisation Needed? |
+| 47 | Optimisation Applied? |
 | 48 | Monitoring Type |
 | 49 | Monitoring Frequency |
 | 50 | Alert Configured? |
@@ -216,4 +216,4 @@ Approved with Conditions, Rejected, Deferred
 *"The only reason for time is so that everything doesn't happen at once."*
 — Albert Einstein
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

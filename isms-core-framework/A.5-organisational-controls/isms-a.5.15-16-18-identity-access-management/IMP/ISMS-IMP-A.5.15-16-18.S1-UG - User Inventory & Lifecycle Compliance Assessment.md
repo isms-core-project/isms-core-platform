@@ -153,7 +153,7 @@ Upon completion, you will have:
 3. ✅ **Orphaned account register** - Accounts without valid owner identified
 4. ✅ **Inactive account tracking** - Accounts with no recent login flagged
 5. ✅ **Summary Dashboard** - Overall lifecycle compliance rate calculated
-6. ✅ **Gap analysis** - Late provisioning, missed deprovisioning, orphaned accounts prioritized
+6. ✅ **Gap analysis** - Late provisioning, missed deprovisioning, orphaned accounts prioritised
 7. ✅ **Remediation plan** - Actions to improve lifecycle compliance
 8. ✅ **Evidence register** - Supporting documentation for audit
 9. ✅ **Approved assessment** - Three-level approval workflow completed
@@ -323,7 +323,7 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 **Consolidation Step:**
 
 - Combine exports from all identity systems into single CSV
-- Normalize column names (UserID, Name, Email, Status, CreatedDate, LastLogin, Source)
+- Normalise column names (UserID, Name, Email, Status, CreatedDate, LastLogin, Source)
 - Remove duplicates (same user in multiple systems)
 - Tag each user with source system
 
@@ -561,7 +561,7 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 
 5. **Create remediation plan**:
 
-   - Prioritize by risk (privileged orphaned accounts = highest priority)
+   - Prioritise by risk (privileged orphaned accounts = highest priority)
    - Assign ownership (who will investigate/remediate)
    - Set target completion date (typically 30 days maximum)
 
@@ -700,7 +700,7 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - **Orphaned Account Gaps** (accounts without valid owner)
    - **Inactive Account Gaps** (accounts inactive >90 days without justification)
 
-2. **Prioritize gaps by risk**:
+2. **Prioritise gaps by risk**:
 
    - **Critical** (P1):
      - Terminated employees still active (>7 days post-termination)
@@ -738,7 +738,7 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 **Quality Check:**
 
 - ✓ All gaps identified from previous sheets
-- ✓ Prioritization reflects actual risk (deprovisioning > provisioning)
+- ✓ Prioritisation reflects actual risk (deprovisioning > provisioning)
 - ✓ Remediation actions are specific and actionable
 - ✓ Owners assigned for each action
 - ✓ Target dates are realistic but urgent for critical gaps
@@ -773,7 +773,7 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - Collected By (who gathered this evidence?)
    - Verification Status (Verified, Pending, Not Verified)
 
-3. **Organize evidence** in logical folder structure:
+3. **Organise evidence** in logical folder structure:
    ```
    Evidence/
    ├── Identity_System_Exports/
@@ -833,7 +833,7 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 - Verify lifecycle calculations accurate (provisioning/deprovisioning delays)
 - Check orphaned account detection logic (false positives?)
 - Validate inactive account thresholds (90 days appropriate?)
-- Review gap analysis and remediation plan (prioritization correct?)
+- Review gap analysis and remediation plan (prioritisation correct?)
 - Approve or request changes
 - Complete "Reviewed By (IAM Team Lead)" section in Sheet 9
 
@@ -928,7 +928,7 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 - Meeting minutes from review sessions
 - CISO acceptance of risk for unresolved gaps
 
-### How to Organize Evidence
+### How to Organise Evidence
 
 **Folder Structure:**
 ```
@@ -1094,7 +1094,7 @@ Before submitting for approval, verify:
 - [ ] Confirmed orphaned accounts accurately identified
 - [ ] Investigation status documented for each orphaned account
 - [ ] Remediation plan has owners and target dates
-- [ ] Privileged orphaned accounts prioritized (highest risk)
+- [ ] Privileged orphaned accounts prioritised (highest risk)
 
 ### Inactive Accounts (Sheet 5)
 
@@ -1116,7 +1116,7 @@ Before submitting for approval, verify:
 ### Gap Analysis (Sheet 7)
 
 - [ ] All gaps identified from previous sheets
-- [ ] Prioritization reflects actual risk (Critical = terminated users still active, orphaned privileged accounts)
+- [ ] Prioritisation reflects actual risk (Critical = terminated users still active, orphaned privileged accounts)
 - [ ] Remediation actions specific and actionable (not vague "improve process")
 - [ ] Owners assigned for each action
 - [ ] Target dates realistic but urgent for critical gaps
@@ -1173,7 +1173,7 @@ Before submitting for approval, verify:
 - **Focus:** Compliance level, risk acceptance, resource allocation for remediation
 - **Review Criteria:**
   - Overall lifecycle compliance rate acceptable? (target >85%)
-  - Critical gaps identified and prioritized correctly?
+  - Critical gaps identified and prioritised correctly?
   - Remediation plans have adequate resources and timelines?
   - Deprovisioning delays addressed urgently? (security risk priority)
   - Risk acceptance for gaps that cannot be immediately remediated?
@@ -1285,4 +1285,4 @@ For ongoing assessments (not initial assessment):
 *"Know thyself."*
 — Socrates
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

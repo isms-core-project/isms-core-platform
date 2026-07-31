@@ -198,7 +198,7 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 
 - Review auto-calculated compliance (Sheet 9)
 - Validate gap analysis
-- Prioritize remediation
+- Prioritise remediation
 
 **Step 10: Quality Review (Days 10-13)**
 
@@ -393,7 +393,7 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 
 - If you don't track this, mark as gap - these are key metrics
 - Emergency % is KEY indicator - rising trend means problems
-- Low standard change utilization = catalog not valuable
+- Low standard change utilisation = catalog not valuable
 - Success rate should be HIGHEST for standard, lowest acceptable for emergency
 
 **Common Questions:**
@@ -552,7 +552,7 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 
 **Problem:** Vendor defaults may not match YOUR risk tolerance.
 
-**Solution:** Customize to YOUR organisation. Document YOUR criteria.
+**Solution:** Customise to YOUR organisation. Document YOUR criteria.
 
 ### Mistake #10: "Classification is the requester's job"
 
@@ -679,10 +679,10 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 
 ### Using Assessment Results
 
-**Catalog Optimization:**
+**Catalog Optimisation:**
 
-- Low utilization -> Remove unused entries
-- High utilization -> Promote successful normal changes to standard
+- Low utilisation -> Remove unused entries
+- High utilisation -> Promote successful normal changes to standard
 - Failures -> Demote to normal change
 
 **Risk Assessment Refinement:**
@@ -711,4 +711,4 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 *"Not all changes are equal; categorise to prioritise."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

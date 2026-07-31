@@ -253,7 +253,7 @@ Complete verification for all 14 mandatory security clause categories:
 | Check Item | Requirement | Standard Language |
 |------------|-------------|-------------------|
 | Coding standards reference | Vendor follows OWASP, SANS, or equivalent | "Vendor shall adhere to OWASP Secure Coding Practices" |
-| Input validation | All inputs validated and sanitized | "All user inputs shall be validated server-side" |
+| Input validation | All inputs validated and sanitised | "All user inputs shall be validated server-side" |
 | Output encoding | Proper encoding to prevent XSS | "All output shall be properly encoded" |
 | Error handling | Secure error handling without information disclosure | "Error messages shall not reveal system internals" |
 
@@ -817,4 +817,4 @@ Contract Execution
 *"What is not written in the contract is not obligated."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -97,7 +97,7 @@ Framework Implementation:
 Framework Implementation:
 
 - Evidence requirements (§5.1): Definition of evidence needed per regulation and per control
-- Evidence storage (§5.3): Centralized repository with role-based access control and retention policies
+- Evidence storage (§5.3): Centralised repository with role-based access control and retention policies
 - Evidence lifecycle (§5.4): Creation → Verification → Refresh → Retention → Disposal
 - Evidence gaps (§5.5): Systematic identification and remediation of missing evidence
 - Audit readiness (§5.6): "Audit readiness kit" preparation per regulation
@@ -245,7 +245,7 @@ This regulatory compliance framework delivers:
 **For Executive Management:**
 
 - Visibility into compliance status across all applicable regulations
-- Risk-based prioritization of compliance gaps
+- Risk-based prioritisation of compliance gaps
 - Informed decision-making on resource allocation for compliance
 - Foundation for compliance reporting to board, customers, and regulators
 - Framework that supports business expansion while managing compliance risk
@@ -285,9 +285,9 @@ Implementing this framework delivers measurable business value:
 
 **Risk Reduction**: Systematic identification of applicable regulations reduces the risk of inadvertent non-compliance.
 
-**Audit Efficiency**: Organized evidence and clear traceability make audits faster, less disruptive, and more predictable.
+**Audit Efficiency**: Organised evidence and clear traceability make audits faster, less disruptive, and more predictable.
 
-**Resource Optimization**: Risk-based gap prioritization ensures compliance resources focus on highest-impact areas.
+**Resource Optimisation**: Risk-based gap prioritisation ensures compliance resources focus on highest-impact areas.
 
 **Business Enablement**: Framework supports expansion into new markets or service offerings by providing methodology to assess new regulatory obligations.
 
@@ -475,7 +475,7 @@ The A.5.31 regulatory compliance framework documentation is complete:
 - ✅ Policy framework (POL-5.31.1 through 5.31.4): All four policy sections documented
 - ✅ Implementation guides (IMP-5.31.1 through 5.31.6): All six operational procedures documented  
 - ✅ Assessment workbook templates (Workbooks 1-6): All six Excel-based tools implemented
-- ✅ Quality assurance utilities: Normalization and validation scripts operational
+- ✅ Quality assurance utilities: Normalisation and validation scripts operational
 
 **Operational Execution Status (Stage 2 Scope):** 🔄 **IN PROGRESS**
 
@@ -540,7 +540,7 @@ Effective implementation and operation of this regulatory compliance framework r
 | Role | Responsibilities | Authority | Accountability |
 |------|-----------------|-----------|----------------|
 | **Compliance Officer / Legal Function** | • Identify potentially applicable regulations through monitoring of legal databases, regulatory authorities, and industry sources<br>• Perform detailed applicability assessments<br>• Conduct or coordinate legal interpretation of regulatory requirements<br>• Review requirements extraction for legal accuracy<br>• Monitor regulatory landscape for changes<br>• Approve applicability determinations<br>• Coordinate with external legal counsel when needed | • Approve/reject applicability determinations<br>• Escalate to Executive Management for high-impact decisions<br>• Engage external legal counsel<br>• Issue legal interpretations (in coordination with counsel) | • Accuracy of applicability assessments<br>• Currency of regulatory monitoring<br>• Legal correctness of requirements interpretation |
-| **ISMS Manager** | • Own and maintain the regulatory compliance framework (this document and related policies)<br>• Coordinate requirements extraction activities<br>• Maintain requirements register<br>• Coordinate control mapping activities<br>• Maintain control mapping matrices<br>• Identify and track compliance gaps<br>• Coordinate gap remediation efforts<br>• Report compliance status to Executive Management<br>• Coordinate framework updates when regulations change<br>• Manage framework documentation and version control | • Approve control mappings<br>• Approve framework updates (with appropriate review)<br>• Prioritize compliance gaps<br>• Request resources for compliance activities | • Completeness and accuracy of requirements register<br>• Accuracy of control mappings<br>• Currency of gap tracking<br>• Effectiveness of framework processes |
+| **ISMS Manager** | • Own and maintain the regulatory compliance framework (this document and related policies)<br>• Coordinate requirements extraction activities<br>• Maintain requirements register<br>• Coordinate control mapping activities<br>• Maintain control mapping matrices<br>• Identify and track compliance gaps<br>• Coordinate gap remediation efforts<br>• Report compliance status to Executive Management<br>• Coordinate framework updates when regulations change<br>• Manage framework documentation and version control | • Approve control mappings<br>• Approve framework updates (with appropriate review)<br>• Prioritise compliance gaps<br>• Request resources for compliance activities | • Completeness and accuracy of requirements register<br>• Accuracy of control mappings<br>• Currency of gap tracking<br>• Effectiveness of framework processes |
 | **Control Owners** | • Implement controls addressing regulatory requirements<br>• Maintain control documentation (policies, procedures, configurations)<br>• Operate controls according to specifications<br>• Collect and maintain evidence of control implementation and operation<br>• Report control effectiveness<br>• Support control mapping validation<br>• Implement control enhancements when gaps identified<br>• Participate in compliance audits | • Determine control implementation approach (within framework)<br>• Define evidence collection methods<br>• Report control failures or changes | • Effective implementation of assigned controls<br>• Quality and availability of evidence<br>• Timeliness of control updates |
 | **Internal Audit / Compliance Team** | • Validate completeness and adequacy of evidence<br>• Perform periodic internal compliance audits<br>• Test control effectiveness<br>• Verify framework processes are followed<br>• Identify framework improvement opportunities<br>• Support external audits and regulatory inquiries<br>• Report audit findings to management | • Determine audit scope and schedule<br>• Issue audit findings<br>• Recommend corrective actions | • Independence and objectivity of audits<br>• Quality of audit findings<br>• Effectiveness of audit program |
 | **Executive Management** | • Approve Tier 1 (mandatory compliance) applicability determinations<br>• Approve risk acceptance for identified compliance gaps<br>• Allocate resources for compliance activities<br>• Receive and review compliance status reports<br>• Approve significant changes to compliance framework<br>• Provide strategic direction for compliance program<br>• Represent [Organisation] to regulators and auditors (as needed) | • Final approval authority for compliance decisions<br>• Resource allocation decisions<br>• Risk acceptance authority | • Overall compliance posture of [Organisation]<br>• Adequacy of resources for compliance<br>• Compliance with fiduciary duties to stakeholders |
@@ -605,7 +605,7 @@ The A.5.31 regulatory compliance framework requires legal expertise for regulato
 
 [Organisation] retains external legal counsel for information security compliance:
 
-- **Law Firm**: [To be specified - external legal counsel specializing in data protection and cybersecurity]
+- **Law Firm**: [To be specified - external legal counsel specialising in data protection and cybersecurity]
 - **Primary Contact**: [Attorney Name and Contact Details]
 - **Engagement Model**: On-demand with retainer for regulatory monitoring
 - **Engagement Documentation**: Engagement letter on file
@@ -721,7 +721,7 @@ This regulatory compliance framework consists of four integrated layers, each bu
 - Defines methodology for parsing regulatory text into actionable requirements
 - Establishes requirements categorisation approach (technical/organisational/reporting/operational)
 - Specifies control mapping methodology (Primary/Secondary/Supporting)
-- Defines gap analysis and prioritization approach
+- Defines gap analysis and prioritisation approach
 - Establishes traceability requirements (regulation → requirement → control → evidence)
 - Addresses handling of overlapping requirements from multiple regulations
 
@@ -791,7 +791,7 @@ This regulatory compliance framework consists of four integrated layers, each bu
 
 - Comprehensive list of all regulations (active, historical, under evaluation)
 - Regulation metadata (jurisdiction, authority, effective date, tier, status)
-- Summary metrics and visualizations
+- Summary metrics and visualisations
 - Generated by Python script, populated by users
 
 **Assessment Workbook 2: Applicability Matrix**
@@ -806,7 +806,7 @@ This regulatory compliance framework consists of four integrated layers, each bu
 
 - Requirements register for all extracted requirements
 - Regulation citation to requirement mapping
-- Categorisation and prioritization
+- Categorisation and prioritisation
 - Implementation status tracking
 - Generated by Python script, populated by users
 
@@ -815,7 +815,7 @@ This regulatory compliance framework consists of four integrated layers, each bu
 - Requirements (rows) × ISO 27001 Controls (columns) mapping
 - Mapping type indicators (Primary/Secondary/Supporting)
 - Gap identification and tracking
-- Coverage analysis and visualizations
+- Coverage analysis and visualisations
 - Generated by Python script, populated by users
 
 
@@ -827,7 +827,7 @@ This regulatory compliance framework consists of four integrated layers, each bu
 
 **Dashboard: Regulatory Compliance Overview**
 
-- Executive-level visualization of compliance status
+- Executive-level visualisation of compliance status
 - Metrics: regulations by tier, requirements with coverage, gap status, evidence coverage
 - Recent changes log
 - Alerts for gaps and expiring evidence
@@ -922,7 +922,7 @@ The framework operates in a continuous improvement lifecycle:
 **Phase 4: Continuous Improvement** (Periodic)
 
 - Audit framework effectiveness
-- Identify optimization opportunities
+- Identify optimisation opportunities
 - Update framework based on lessons learned
 - Enhance tools and automation
 
@@ -950,12 +950,12 @@ The regulatory compliance framework is supported by six Excel-based assessment w
 - **Language**: Python 3 with openpyxl library for Excel manipulation
 - **Encoding**: Full UTF-8 support with emoji-based visual indicators (✅ ❌ ⚠️ 🔄 📊)
 - **Professional Formatting**: 
-  - Standardized headers with organisational branding
+  - Standardised headers with organisational branding
   - Color-coded sections (policy=blue, data=white, instructions=gray)
   - Professional borders and cell formatting
-  - Print-optimized layouts with repeating headers
+  - Print-optimised layouts with repeating headers
 - **Data Validation**: 
-  - Dropdown lists for standardized fields (Status, Tier, Priority, etc.)
+  - Dropdown lists for standardised fields (Status, Tier, Priority, etc.)
   - Cell validation to prevent data entry errors
   - Formula-based calculations for coverage percentages
 - **Conditional Formatting**:
@@ -1002,7 +1002,7 @@ The regulatory compliance framework is supported by six Excel-based assessment w
 **Automation Value Proposition**:
 
 - Accelerates execution (hours vs days for workbook generation)
-- Ensures consistency (standardized formatting, validation rules)
+- Ensures consistency (standardised formatting, validation rules)
 - Reduces errors (formula-based calculations, data validation)
 - Supports scalability (framework works for 2 regulations or 20)
 - **BUT**: Automation is maturity enhancement, NOT compliance foundation
@@ -1019,7 +1019,7 @@ The regulatory compliance framework is supported by six Excel-based assessment w
 - UTF-8 encoding verification (ensures emojis display correctly)
 - Data validation rule verification (ensures dropdowns and formulas intact)
 - Cross-workbook consistency checking (IDs match across workbooks)
-- Format normalization (standardizes cell widths, fonts, colors)
+- Format normalisation (standardises cell widths, fonts, colors)
 - Error detection and reporting (identifies broken references, invalid data)
 
 **Usage**: Run after generating workbooks to verify quality before deployment.
@@ -1210,6 +1210,6 @@ A.5.31 provides the **FRAMEWORK** to determine:
 
 ---
 
-*This document establishes the foundation for [Organisation]'s regulatory compliance framework implementing ISO 27001:2022 Control A.5.31. Subsequent policy sections (5.31.2, 5.31.3, 5.31.4) provide detailed methodology and processes. Implementation guides (IMP-5.31.1 through 5.31.5) operationalize these policies with step-by-step procedures.*
+*This document establishes the foundation for [Organisation]'s regulatory compliance framework implementing ISO 27001:2022 Control A.5.31. Subsequent policy sections (5.31.2, 5.31.3, 5.31.4) provide detailed methodology and processes. Implementation guides (IMP-5.31.1 through 5.31.5) operationalise these policies with step-by-step procedures.*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

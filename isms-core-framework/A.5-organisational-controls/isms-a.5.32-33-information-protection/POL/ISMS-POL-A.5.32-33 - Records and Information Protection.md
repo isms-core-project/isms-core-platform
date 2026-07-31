@@ -282,7 +282,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 | **Legal Hold** | Litigation hold overrides normal deletion (indefinite until released) |
 | **Integrity Protection** | Critical records SHALL have integrity verification (checksums, digital signatures) |
 
-**Retention vs Erasure Conflict Resolution**: When a deletion or anonymization request conflicts with legal retention obligations, retention takes precedence. Records under retention are access-restricted, the decision basis is documented (Legal Counsel approval required), and DPO involvement is mandatory for personal data. Decision records are retained in ISMS-REG-EXCEPTIONS.
+**Retention vs Erasure Conflict Resolution**: When a deletion or anonymisation request conflicts with legal retention obligations, retention takes precedence. Records under retention are access-restricted, the decision basis is documented (Legal Counsel approval required), and DPO involvement is mandatory for personal data. Decision records are retained in ISMS-REG-EXCEPTIONS.
 
 **Legal Hold Register (ISMS-REG-HOLD)**: Owner: Legal Counsel; System of record: [GRC/SharePoint/equivalent]. Minimum fields: hold ID, matter description, hold scope (systems/records/custodians), start date, release date, Legal Counsel authorisation, evidence of system enforcement (deletion suspended), and release verification. Active holds reviewed monthly; release requires Legal Counsel sign-off.
 
@@ -527,4 +527,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for intellectual property and records protection. Implementation procedures are documented in ISMS-IMP-A.5.32-33 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

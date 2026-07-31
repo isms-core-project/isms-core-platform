@@ -115,7 +115,7 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - [ ] Interview DevOps team about deployment workflows
 - [ ] Review access logs showing environment usage
 - [ ] Gather incident reports involving environment issues
-- [ ] Review data masking/anonymization procedures
+- [ ] Review data masking/anonymisation procedures
 - [ ] Identify environment monitoring dashboards
 
 ### Who Should Complete This Assessment
@@ -172,7 +172,7 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 **Step 5: Data Protection Assessment (Days 5-8)**
 
 - Assess production data usage in test (Sheet 5: Data_Protection)
-- Review data masking/anonymization procedures
+- Review data masking/anonymisation procedures
 - Document synthetic data generation
 - Verify no production credentials in non-prod
 
@@ -327,7 +327,7 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 **What to document:**
 
 - How production data is used (or not used) in non-production
-- Data masking/anonymization procedures
+- Data masking/anonymisation procedures
 - Synthetic test data generation
 - Credential management (no prod credentials in test)
 - Backup data protection
@@ -546,7 +546,7 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 
 **Problem:** MAJOR data protection violation (GDPR, privacy regulations).
 
-**Solution:** Mask/anonymize production data OR generate synthetic test data. NEVER use unprotected prod data in test.
+**Solution:** Mask/anonymise production data OR generate synthetic test data. NEVER use unprotected prod data in test.
 
 ### Mistake #5: "Test environment has older versions - saves money"
 
@@ -616,7 +616,7 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 **Data Protection:**
 
 - [ ] Production data usage in test documented
-- [ ] Data masking/anonymization procedures defined
+- [ ] Data masking/anonymisation procedures defined
 - [ ] Credential management verified (no prod creds in test)
 - [ ] Data protection evidence available
 
@@ -723,4 +723,4 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 *"A change tested in the wrong environment is a change untested."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

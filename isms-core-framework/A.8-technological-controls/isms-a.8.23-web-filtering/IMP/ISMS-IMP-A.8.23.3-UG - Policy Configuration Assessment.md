@@ -480,7 +480,7 @@ Consolidate all gaps:
    - Target date
    - Status (Open/In Progress/Resolved)
 
-4. Prioritize:
+4. Prioritise:
 
    - Threat protection gaps = CRITICAL
    - AUP misalignment = HIGH
@@ -1009,7 +1009,7 @@ Auditors need to verify your policy configuration claims:
 - Category block test screenshots
 - False positive investigation records
 
-**Organize Evidence:**
+**Organise Evidence:**
 1. Folder: `Evidence/A.8.23.3_Policy_Configuration/`
 2. Subfolders: `Threat_Protection/`, `Categories/`, `Custom_Lists/`, `Exceptions/`, `AUP/`, `Reviews/`
 3. Naming: `EVD-001_Threat_Policy_Config_Screenshot.png`
@@ -1231,4 +1231,4 @@ Before submitting for review, verify:
 *"A policy is only as effective as its weakest rule."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

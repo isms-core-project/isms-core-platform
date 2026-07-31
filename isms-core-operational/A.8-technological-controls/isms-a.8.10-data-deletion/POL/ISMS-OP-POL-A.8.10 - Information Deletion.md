@@ -542,8 +542,8 @@ Information Deletion Policy — ISO 27001 Controls Mapping
 | ISO/IEC 27001:2022 | Annex A Control 8.10 — Information deletion |
 | ISO/IEC 27002:2022 | Section 8.10 — Implementation guidance for information deletion |
 | NIST SP 800-88 Rev. 2 | Guidelines for Media Sanitization (Clear, Purge, Destroy; cryptographic erasure) |
-| IEEE 2883 | Standard for Sanitizing Storage (media-specific sanitisation techniques) |
-| NIST SP 800-53 Rev 5 | MP-6 (Media Sanitization), SI-12 (Information Management and Retention) |
+| IEEE 2883 | Standard for Sanitising Storage (media-specific sanitisation techniques) |
+| NIST SP 800-53 Rev 5 | MP-6 (Media Sanitisation), SI-12 (Information Management and Retention) |
 | DIN 66399 | Classification of paper and media destruction security levels |
 
 **Conditional Frameworks** (apply where business activities trigger applicability):
@@ -556,4 +556,4 @@ Information Deletion Policy — ISO 27001 Controls Mapping
 
 ---
 
-<!-- QA_VERIFIED: 2026-02-07 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

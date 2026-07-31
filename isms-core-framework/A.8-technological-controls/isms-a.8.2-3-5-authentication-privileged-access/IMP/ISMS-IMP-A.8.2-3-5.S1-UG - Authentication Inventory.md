@@ -102,7 +102,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 - Quarterly formal compliance reporting
 - Preparing for ISO 27001 certification audits
 - Investigating authentication-related security incidents
-- Planning authentication modernization projects (SSO rollout, MFA deployment)
+- Planning authentication modernisation projects (SSO rollout, MFA deployment)
 
 **Assessment Frequency:**
 
@@ -585,7 +585,7 @@ Before submitting assessment for approval, verify:
 - [ ] No spelling errors
 - [ ] Consistent formatting (dates in DD.MM.YYYY format)
 - [ ] Clear and concise notes
-- [ ] Proper capitalization and grammar
+- [ ] Proper capitalisation and grammar
 
 ---
 
@@ -597,7 +597,7 @@ Before submitting assessment for approval, verify:
 
 - **90-100%**: Excellent - Modern authentication across nearly all systems
 - **75-89%**: Good - Most systems have modern authentication, some legacy gaps
-- **60-74%**: Moderate - Significant legacy authentication, modernization needed
+- **60-74%**: Moderate - Significant legacy authentication, modernisation needed
 - **<60%**: Poor - Major authentication security gaps, immediate action required
 
 **MFA Coverage**:
@@ -612,7 +612,7 @@ Before submitting assessment for approval, verify:
 - **60-79%**: Good progress, continue SSO rollout
 - **<60%**: Low SSO adoption (password sprawl risk)
 
-## Gap Prioritization
+## Gap Prioritisation
 
 **Priority 1 - Critical (Immediate Action)**:
 
@@ -673,7 +673,7 @@ Assessment is approved when:
 - [ ] Evidence collected and linked
 - [ ] System owners validated authentication methods
 - [ ] Compliance scores calculated and reviewed
-- [ ] Critical gaps identified and prioritized
+- [ ] Critical gaps identified and prioritised
 - [ ] Remediation plan documented
 
 ## Post-Approval Actions
@@ -693,4 +693,4 @@ After CISO approval:
 *"Know every identity that touches your systems."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

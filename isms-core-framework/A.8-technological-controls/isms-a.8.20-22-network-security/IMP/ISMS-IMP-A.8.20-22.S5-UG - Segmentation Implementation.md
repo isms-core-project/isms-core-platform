@@ -276,7 +276,7 @@ Phase 8: Migration to Segmented Network (For Existing Flat Networks)
 | Zone Name | Trust Level | Purpose | Example Assets |
 |-----------|-------------|---------|----------------|
 | **Internet** | Untrusted | External networks | - |
-| **DMZ (Demilitarized Zone)** | Semi-Trusted | Internet-facing services | Web servers, mail relays, DNS (external) |
+| **DMZ (Demilitarised Zone)** | Semi-Trusted | Internet-facing services | Web servers, mail relays, DNS (external) |
 | **Internal** | Trusted | Business systems and user workstations | ERP, CRM, file servers, workstations |
 | **Management** | Highly Trusted | Network/system management | Monitoring, backup, patch servers, jump hosts |
 | **Guest** | Untrusted | Guest user access | Guest Wi-Fi, visitor workstations |
@@ -1322,12 +1322,12 @@ tcpdump -r dmz-internal.pcap -n
 - Create Internal zone and segment workstations
 - Implement firewall rules for workstation access
 
-**Phase 4: Specialized Zones**
+**Phase 4: Specialised Zones**
 
 - Create Guest, Development, IoT/OT zones as needed
 - Migrate respective assets
 
-**Phase 5: Finalize and Harden**
+**Phase 5: Finalise and Harden**
 
 - Review all firewall rules
 - Remove overly permissive rules
@@ -1646,11 +1646,11 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 
 - **Symptoms**: Network slow after implementing firewall rules
 - **Diagnosis**:
-  - Check firewall CPU/memory utilization
+  - Check firewall CPU/memory utilisation
   - Count number of firewall rules (too many?)
   - Identify complex rules (regex patterns, deep packet inspection)
 - **Solution**:
-  - Optimize firewall rules (consolidate, use rule groups)
+  - Optimise firewall rules (consolidate, use rule groups)
   - Upgrade firewall hardware/software (if needed)
   - Implement rule cleanup (remove obsolete rules)
 
@@ -1734,7 +1734,7 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 
 ## Documentation Storage
 
-**Centralized Documentation Repository**:
+**Centralised Documentation Repository**:
 
 - SharePoint, Confluence, or similar documentation platform
 - Version control (track changes over time)
@@ -1951,4 +1951,4 @@ Next Test Date: [Date + 12 months]
 *"Divide and isolate: the first principle of network defence."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

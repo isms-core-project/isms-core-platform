@@ -318,7 +318,7 @@ Complete each sheet in order (Sheet 1 → Sheet 10). Use Section 4 (Question-by-
 
 **Step 4: Gap Remediation (if gaps found)**
 
-1. **Prioritize Gaps:**
+1. **Prioritise Gaps:**
 
    - Critical gaps (block deployment)
    - High gaps (address before next release)
@@ -685,7 +685,7 @@ Sometimes the formula produces unexpected results. Common scenarios:
 
 *Answer N/A if:*
 
-- Application is COTS with no customization (security requirements vendor responsibility)
+- Application is COTS with no customisation (security requirements vendor responsibility)
 - Application being decommissioned (no new requirements needed)
 
 *Where to find:*
@@ -733,7 +733,7 @@ Requirements older than 12 months may be outdated (technology changes, new threa
 
 - SRS exists but outdated (>12 months)
 - Security requirements exist but embedded in larger requirements doc (not dedicated SRS)
-- Draft SRS exists but not finalized
+- Draft SRS exists but not finalised
 
 *❌ Non-Compliant:*
 
@@ -743,7 +743,7 @@ Requirements older than 12 months may be outdated (technology changes, new threa
 
 *N/A:*
 
-- COTS application with no customization
+- COTS application with no customisation
 - Application being decommissioned
 
 ### Question 3.2: SRS Completeness - Functional Security Requirements
@@ -808,7 +808,7 @@ SRS includes requirements for:
 - Protection against injection attacks (SQL, XSS, command injection)
 
 *Example requirement:*
-"The application SHALL validate all input from users and external systems using whitelist validation. All user input SHALL be validated for data type, length, format, and range. The application SHALL use parameterized queries for all database access to prevent SQL injection."
+"The application SHALL validate all input from users and external systems using whitelist validation. All user input SHALL be validated for data type, length, format, and range. The application SHALL use parameterised queries for all database access to prevent SQL injection."
 
 *Answer No if:*
 
@@ -852,7 +852,7 @@ SRS includes requirements for:
 - Log content (who, what, when, where, result)
 - Log retention period
 - Log integrity protection
-- Centralized logging (SIEM integration for High-Risk apps)
+- Centralised logging (SIEM integration for High-Risk apps)
 
 *Example requirement:*
 "The application SHALL log all authentication attempts (successful and failed), authorisation decisions (grants and denials), administrative actions, and data modifications. Logs SHALL include timestamp, user ID, source IP, action, and result. Logs SHALL be retained for 12 months and protected from tampering."
@@ -994,7 +994,7 @@ SRS includes requirements for:
 *Answer N/A if:*
 
 - Low-Risk application (threat modeling not required per policy)
-- COTS application with no customization
+- COTS application with no customisation
 
 *Policy requirements:*
 
@@ -1187,7 +1187,7 @@ Threat models should be updated when:
 *Answer N/A if:*
 
 - Low-Risk application (architecture review optional per policy)
-- COTS application with no customization
+- COTS application with no customisation
 
 *Policy requirements:*
 
@@ -1602,7 +1602,7 @@ For each gap identified in the assessment:
 
 ## Sheet 9: Evidence Register
 
-**Purpose:** Centralized register of all evidence supporting this assessment.
+**Purpose:** Centralised register of all evidence supporting this assessment.
 
 For each piece of evidence:
 
@@ -1783,7 +1783,7 @@ EV-[SheetNumber]-[ApplicationID]-[DocumentType]-[Date].[ext]
 
 **Storage Requirements:**
 
-- **Location:** Centralized evidence repository
+- **Location:** Centralised evidence repository
 - **Folder Structure:** `Evidence/[AppID]/A.8.26_Requirements/[AssessmentDate]/`
 - **Retention:** Audit cycle + 1 year minimum (typically 3 years)
 - **Access Control:** Read access for auditors, compliance team, security team
@@ -1865,7 +1865,7 @@ EV-[SheetNumber]-[ApplicationID]-[DocumentType]-[Date].[ext]
 **For Distributed Teams:**
 
 - Use shared cloud storage (SharePoint, Google Drive)
-- Standardize folder structures
+- Standardise folder structures
 - Use consistent naming conventions
 - Set up automated reminders for evidence submissions
 
@@ -2140,7 +2140,7 @@ Use this checklist before submitting assessment for review.
 - [ ] All gaps from previous sheets documented
 - [ ] Each gap has severity, remediation action, responsible party, target date
 - [ ] Critical gaps have realistic remediation plans (<30 days)
-- [ ] Gap prioritization makes sense (critical before low)
+- [ ] Gap prioritisation makes sense (critical before low)
 
 **Sheet 9: Evidence Register**
 
@@ -2337,4 +2337,4 @@ Good luck with your assessment!
 *"A requirement written in a specification costs pennies; a vulnerability found in production costs millions."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

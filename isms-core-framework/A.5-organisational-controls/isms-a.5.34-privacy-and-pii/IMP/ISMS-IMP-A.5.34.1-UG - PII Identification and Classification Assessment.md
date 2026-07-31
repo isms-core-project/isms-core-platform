@@ -247,7 +247,7 @@ You will need access to:
 
 - **Data Loss Prevention (DLP)** - Automated PII scanning (e.g., Microsoft Purview, Symantec DLP, Digital Guardian)
 - **Database discovery tools** - Identify PII columns in databases (e.g., BigID, OneTrust Discovery, IBM Guardium)
-- **Data mapping software** - Visualize data flows (e.g., OneTrust DataGuidance, TrustArc, Collibra)
+- **Data mapping software** - Visualise data flows (e.g., OneTrust DataGuidance, TrustArc, Collibra)
 - **Collaboration tools** - Document findings (SharePoint, Confluence, Notion)
 
 **Reference Materials:**
@@ -490,7 +490,7 @@ The ROPA must document:
 
 ### Phase 6: Gap Analysis (2-4 hours)
 
-**Objective:** Identify non-compliant processing and prioritize remediation
+**Objective:** Identify non-compliant processing and prioritise remediation
 
 **Steps:**
 1. **Review Sheet 2, 3, 4 for gaps:**
@@ -508,7 +508,7 @@ The ROPA must document:
    - Risk level (Critical / High / Medium / Low based on impact and likelihood)
    - Remediation action (what needs to be done?)
    - Owner (who will fix it?)
-   - Target completion date (risk-based prioritization)
+   - Target completion date (risk-based prioritisation)
 
 3. **Risk Rating Guidelines:**
 
@@ -738,7 +738,7 @@ For EACH data flow, enter:
 - **Destination Country:** Where data is transferred to
 - **Transfer Safeguard:** If cross-border, what mechanism? (SCCs, BCRs, Adequacy Decision, Derogation)
 - **Purpose:** Why is data transferred? (Service delivery, Analytics, Backup, etc.)
-- **Data Minimization:** Is transfer limited to necessary data? (Yes / No / Needs Review)
+- **Data Minimisation:** Is transfer limited to necessary data? (Yes / No / Needs Review)
 - **Evidence Reference:** Link to DPA, SCC, architecture diagram
 
 **Step 3: Flag Cross-Border Transfers**
@@ -888,7 +888,7 @@ For EACH gap identified, enter:
 - **Risk Justification:** Why this risk rating?
 - **Remediation Action:** What needs to be done to close the gap?
 - **Remediation Owner:** Person responsible for fixing
-- **Target Completion Date:** Deadline (risk-based prioritization)
+- **Target Completion Date:** Deadline (risk-based prioritisation)
 - **Actual Completion Date:** When gap was actually closed (if Status = Resolved)
 
 **Risk Rating Guidelines:**
@@ -920,7 +920,7 @@ For EACH gap identified, enter:
 - Training needs (staff unaware of policies)
 - Tool enhancements (better PII discovery automation)
 
-**Step 3: Prioritize Remediation**
+**Step 3: Prioritise Remediation**
 
 - **Sort by Risk Level** (Critical → High → Medium → Low)
 - **Consider effort** (quick wins for low-effort high-risk items)
@@ -973,7 +973,7 @@ For EACH evidence artifact, enter:
 - **Verified By:** Who validated evidence adequacy?
 - **Notes:** Any additional context
 
-**Step 3: Organize Evidence**
+**Step 3: Organise Evidence**
 
 Suggested folder structure:
 ```
@@ -1004,7 +1004,7 @@ ISMS-A.5.34.1-PII-Assessment-Evidence/
 **Tips:**
 
 - Collect evidence as you complete assessment (don't wait until the end)
-- Sanitize sensitive data in screenshots (redact account numbers, passwords)
+- Sanitise sensitive data in screenshots (redact account numbers, passwords)
 - Include metadata (creation date, version, author)
 - Store evidence in access-controlled location (not public file share)
 - Keep evidence for audit cycle (typically 1+ years)
@@ -1133,7 +1133,7 @@ Before seeking approvals:
 **Step 3: Schedule Review Meetings**
 
 Don't just send workbook via email - schedule review sessions:
-1. **DPO Review (1-2 hours):** Walk through ROPA, discuss legal basis, prioritize gaps
+1. **DPO Review (1-2 hours):** Walk through ROPA, discuss legal basis, prioritise gaps
 2. **CISO Review (30-60 min):** Validate system inventory, verify data flow accuracy
 3. **Legal Review (30-60 min):** Confirm transfer mechanisms, review sensitive PII processing
 4. **Executive Briefing (15-30 min):** Present dashboard, highlight critical gaps, request approval
@@ -1220,7 +1220,7 @@ For EACH approver, record:
 - After audit, archive but don't delete (useful for trend analysis)
 - Update evidence when it expires (e.g., certificate renewals, updated policies)
 
-**Sanitization:**
+**Sanitisation:**
 
 - Redact sensitive data in screenshots (account numbers, passwords, personal details)
 - Remove confidential business information (financial data, strategy)
@@ -1244,7 +1244,7 @@ For EACH approver, record:
 - **Problem:** DLP scan from 2 years ago doesn't reflect current state
 - **Solution:** Re-run scan, collect fresh evidence within 90 days of assessment
 
-**Gap 4: Evidence not sanitized**
+**Gap 4: Evidence not sanitised**
 
 - **Problem:** Screenshot shows employee SSNs or customer payment data
 - **Solution:** Re-capture with sensitive data masked/redacted
@@ -1252,7 +1252,7 @@ For EACH approver, record:
 **Gap 5: Evidence not organised**
 
 - **Problem:** Random files scattered across email, personal folders
-- **Solution:** Centralize in structured repository, register in Sheet 6
+- **Solution:** Centralise in structured repository, register in Sheet 6
 
 ---
 
@@ -1301,7 +1301,7 @@ For EACH approver, record:
 
 **Why It Happens:**
 
-- Not recognizing indirect Sensitive PII (inferred or derived data)
+- Not recognising indirect Sensitive PII (inferred or derived data)
 - Treating aggregated data as non-sensitive (aggregation doesn't remove special category status)
 - Assuming "business data" isn't personal data (job title = personal data if identifiable)
 
@@ -1505,7 +1505,7 @@ Complete this checklist before seeking approvals:
 - [ ] Cross-border transfers identified with "Cross-Border? = Yes"
 - [ ] Transfer Safeguards documented for ALL cross-border flows (SCCs / BCRs / Adequacy)
 - [ ] Source/Destination systems match Sheet 2 System Names (dropdown validation)
-- [ ] Data Minimization assessed (transfer only necessary data)
+- [ ] Data Minimisation assessed (transfer only necessary data)
 - [ ] Evidence Reference links to Sheet 6 for critical flows (SCCs, DPAs)
 
 ## Sheet 4: ROPA (Record of Processing Activities)
@@ -1524,7 +1524,7 @@ Complete this checklist before seeking approvals:
 - [ ] Risk Level assigned for each gap (Critical / High / Medium / Low)
 - [ ] Remediation Action defined (clear, specific, actionable)
 - [ ] Remediation Owner assigned (specific person responsible)
-- [ ] Target Completion Date set (risk-based prioritization)
+- [ ] Target Completion Date set (risk-based prioritisation)
 - [ ] Critical gaps have immediate action plans (no Critical gaps without remediation)
 
 ## Sheet 6: Evidence Register
@@ -1653,7 +1653,7 @@ After all reviews complete and corrections made:
 
 2. **Begin Gap Remediation**
 
-   - Prioritize Critical and High risk gaps
+   - Prioritise Critical and High risk gaps
    - Allocate resources (budget, personnel, time)
    - Track progress weekly (update Sheet 5 Status column)
 
@@ -1731,4 +1731,4 @@ This assessment (A.5.34.1) provides foundational data for:
 *"Privacy is not something that I'm merely entitled to, it's an absolute prerequisite."*
 — Marlon Brando
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

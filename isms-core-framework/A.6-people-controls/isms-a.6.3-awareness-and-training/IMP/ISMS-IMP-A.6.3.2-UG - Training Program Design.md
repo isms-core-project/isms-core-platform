@@ -86,7 +86,7 @@ Training programs should be designed to cover organisational policies, procedure
 - **Resource Efficiency:** Structured curriculum avoids duplication and gaps
 - **Regulatory Compliance:** Documented program design demonstrates due diligence
 - **Audit Readiness:** Clear specifications support audit evidence requirements
-- **Scalability:** Standardized design enables consistent delivery across organisation
+- **Scalability:** Standardised design enables consistent delivery across organisation
 
 ## Who Should Complete This Assessment
 
@@ -229,7 +229,7 @@ The workbook includes baseline modules from POL-A.6.3. Review, modify, and suppl
    - Quiz, Practical, Simulation, Scenario, Tabletop
    - Ensure alignment with organisational policies
 
-2. **Customize Thresholds:**
+2. **Customise Thresholds:**
    - Pass thresholds appropriate for risk level
    - Attempt limits reasonable for learner experience
    - Remediation paths practical and effective
@@ -548,7 +548,7 @@ The workbook includes baseline modules from POL-A.6.3. Review, modify, and suppl
    - Filename: `ISMS-IMP-A.6.3.2_Program_Design_[DATE]_APPROVED.xlsx`
 
 2. **Distribute Results:**
-   - L&D Team: For content development prioritization
+   - L&D Team: For content development prioritisation
    - Vendor Management: For procurement planning
    - IT: For LMS configuration requirements
 
@@ -571,4 +571,4 @@ The workbook includes baseline modules from POL-A.6.3. Review, modify, and suppl
 *"Tell me and I forget, teach me and I may remember, involve me and I learn."*
 — Chinese proverb
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

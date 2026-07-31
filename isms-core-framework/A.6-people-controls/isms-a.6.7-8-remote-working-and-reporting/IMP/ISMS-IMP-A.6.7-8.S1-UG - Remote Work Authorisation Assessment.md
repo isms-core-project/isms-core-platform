@@ -108,7 +108,7 @@ Before starting this assessment, ensure:
 
 | Prerequisite | Status | Notes |
 |--------------|--------|-------|
-| ISMS-POL-A.6.7-8 approved and published | ☐ | Policy must be finalized |
+| ISMS-POL-A.6.7-8 approved and published | ☐ | Policy must be finalised |
 | Remote work authorisation procedure documented | ☐ | Or gap identified |
 | Access to HR records for remote work approvals | ☐ | Sample selection |
 | Access to IT access provisioning records | ☐ | VPN/remote access grants |
@@ -247,7 +247,7 @@ Before starting this assessment, ensure:
 | Column | Description | Input Type |
 |--------|-------------|------------|
 | Sample ID | Unique identifier for sample | Auto-generated |
-| Employee ID | Personnel identifier (anonymized if needed) | Free text |
+| Employee ID | Personnel identifier (anonymised if needed) | Free text |
 | Department | Department/team | Free text |
 | Role | Job role/title | Free text |
 | Authorisation Date | When remote work was authorised | Date |
@@ -562,7 +562,7 @@ Before submitting for review:
 **Review Points:**
 - Sampling methodology appropriate
 - Evidence supports conclusions
-- Gaps accurately characterized
+- Gaps accurately characterised
 - No obvious oversights
 
 **Duration:** 2-3 business days
@@ -587,7 +587,7 @@ Before submitting for review:
 
 **Review Points:**
 - Overall risk posture acceptable
-- Gaps appropriately prioritized
+- Gaps appropriately prioritised
 - Remediation resources adequate
 - Timeline realistic
 
@@ -643,4 +643,4 @@ Before submitting for review:
 *"Freedom comes with responsibility."*
 — Traditional proverb
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -118,7 +118,7 @@ This policy establishes [Organisation]'s requirements for privacy and protection
 - Website visitors
 - Other natural persons whose data [Organisation] processes
 
-**Exclusions**: Anonymized data (genuinely anonymized per GDPR Recital 26), deceased persons where regulation excludes them.
+**Exclusions**: Anonymised data (genuinely anonymised per GDPR Recital 26), deceased persons where regulation excludes them.
 
 ---
 
@@ -241,7 +241,7 @@ When consent is the legal basis, [Organisation] SHALL ensure consent is:
 
 When legitimate interests is the legal basis, [Organisation] SHALL:
 
-- Conduct and document a Legitimate Interest Assessment (LIA) before processing using standardized template in ISMS-IMP-A.5.34.2
+- Conduct and document a Legitimate Interest Assessment (LIA) before processing using standardised template in ISMS-IMP-A.5.34.2
 - Apply the three-part test: purpose test (is there a legitimate purpose?), necessity test (are less intrusive alternatives available?), and balancing test (organisation interests vs. data subject rights, considering expectations, relationship, and data sensitivity)
 - Obtain Legal/DPO approval before processing begins
 - Review LIAs annually or when processing changes materially
@@ -316,7 +316,7 @@ Transfer impact assessments SHALL be conducted for transfers not based on adequa
 
 [Organisation] SHALL implement appropriate security measures taking into account state of the art, implementation costs, processing nature, and risks, including:
 
-- Pseudonymization and encryption of personal data
+- Pseudonymisation and encryption of personal data
 - Measures to ensure ongoing confidentiality, integrity, availability, and resilience
 - Process for regularly testing and evaluating control effectiveness
 - Ability to restore data availability after incidents
@@ -541,7 +541,7 @@ This policy integrates with:
 | A.5.33 (Records) | Retention schedules comply with data minimisation |
 | A.6.3 (Training) | Privacy training mandatory for all employees |
 | A.8.10 (Deletion) | Secure deletion implements right to erasure |
-| A.8.11 (Masking) | Pseudonymization protects PII |
+| A.8.11 (Masking) | Pseudonymisation protects PII |
 | A.8.12 (DLP) | DLP detects unauthorised PII disclosure |
 | A.8.24 (Cryptography) | Encryption mandatory for sensitive PII |
 
@@ -608,4 +608,4 @@ Suspected violations SHALL be reported to DPO and investigated. Privacy violatio
 
 *This policy establishes requirements for privacy and protection of personally identifiable information. Implementation procedures are documented in ISMS-IMP-A.5.34 (UG/TG).1 through A.5.34.6.*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

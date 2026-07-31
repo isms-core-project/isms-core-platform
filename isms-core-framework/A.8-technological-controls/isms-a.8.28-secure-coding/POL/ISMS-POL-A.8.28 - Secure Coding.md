@@ -55,7 +55,7 @@ This policy establishes [Organisation]'s requirements for secure software develo
 
 **Purpose**: Define WHAT secure coding controls are required and WHO is accountable. Technical implementation details (HOW) are documented in ISMS-IMP-A.8.28 specifications.
 
-**Scope**: All software development activities including internal development, outsourced development, and acquired software customization. Applies to all application types, development phases, and programming languages.
+**Scope**: All software development activities including internal development, outsourced development, and acquired software customisation. Applies to all application types, development phases, and programming languages.
 
 **Business Risk Addressed**: Software vulnerabilities leading to data breaches, service disruptions, financial losses, reputational damage, and regulatory sanctions.
 
@@ -139,7 +139,7 @@ This policy establishes [Organisation]'s requirements for secure software develo
 - Mitigation controls mapped to threats
 - Validation approach
 
-**Threat Modeling Methodology**: [Organisation] SHALL use a recognized methodology (STRIDE, PASTA, DREAD, or OWASP Threat Dragon). Methodology selection documented per application; consistency within application families encouraged.
+**Threat Modeling Methodology**: [Organisation] SHALL use a recognised methodology (STRIDE, PASTA, DREAD, or OWASP Threat Dragon). Methodology selection documented per application; consistency within application families encouraged.
 
 **Verification**: Threat models reviewed by Application Security Team; approval documented in Workbook 1. Critical applications require CISO sign-off.
 
@@ -185,7 +185,7 @@ This policy establishes [Organisation]'s requirements for secure software develo
 - Validate ALL input (user, API, file, environment, database)
 - Whitelist validation preferred over blacklist
 - Server-side validation mandatory (client-side is UX only)
-- Reject invalid input; do not attempt sanitization
+- Reject invalid input; do not attempt sanitisation
 
 **Output Encoding**:
 
@@ -611,4 +611,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for secure software development. Implementation procedures, assessment methodologies, and workbook specifications are documented in ISMS-IMP-A.8.28 (UG/TG). Language-specific guidelines are in ISMS-CTX-A.8.28. Code review checklists are in ISMS-REF-A.8.28.*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

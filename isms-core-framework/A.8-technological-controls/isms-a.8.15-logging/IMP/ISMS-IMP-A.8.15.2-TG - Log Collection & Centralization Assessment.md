@@ -1,5 +1,5 @@
 <!-- ISMS-CORE:IMP:ISMS-IMP-A.8.15.2-TG:framework:TG:a.8.15.2 -->
-**ISMS-IMP-A.8.15.2-TG - Log Collection & Centralization Assessment**
+**ISMS-IMP-A.8.15.2-TG - Log Collection & Centralisation Assessment**
 **Technical Specification**
 ### ISO/IEC 27001:2022 Control A.8.15: Logging
 
@@ -9,7 +9,7 @@
 
 | Attribute | Value |
 |-------|-------|
-| **Document Title** | Log Collection & Centralization Assessment |
+| **Document Title** | Log Collection & Centralisation Assessment |
 | **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.15.2-TG |
 | **Related Policy** | ISMS-POL-A.8.15 (Logging) |
@@ -181,8 +181,8 @@
 | 88 | Indexing Lag (minutes) |
 | 89 | Search Performance (sec) |
 | 90 | Dashboard Load Time (sec) |
-| 91 | CPU Utilization % |
-| 92 | Memory Utilization % |
+| 91 | CPU Utilisation % |
+| 92 | Memory Utilisation % |
 | 93 | Disk I/O % |
 | 94 | Network Throughput (Gbps) |
 | 95 | Uptime % |
@@ -292,4 +292,4 @@ Approved, Approved with Conditions, Rejected
 *"Make everything as simple as possible, but not simpler."*
 - Albert Einstein
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

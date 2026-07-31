@@ -379,7 +379,7 @@ You will need access to:
 **Phase 9: Approval & Sign-Off (1 hour)**
 → Stakeholder review (DPO, Legal Counsel, Customer Service Lead)
 → Obtain sign-offs in Sheet 9
-→ Finalize and archive assessment
+→ Finalise and archive assessment
 
 ---
 
@@ -393,7 +393,7 @@ You will need access to:
 1. Read this sheet first to understand DSR framework and the 7 rights
 2. Review SLA requirements (30-day deadline, extension rules)
 3. Understand dropdown options and validation rules
-4. Note any organisation-specific customizations
+4. Note any organisation-specific customisations
 
 **No data entry required on this sheet.**
 
@@ -625,7 +625,7 @@ Controller can refuse objection to legitimate interest processing (NOT direct ma
 
 ## SHEET 3: Request Processing Procedures
 
-**Purpose:** Document standardized workflow for each right type to ensure consistency
+**Purpose:** Document standardised workflow for each right type to ensure consistency
 
 **For EACH of the 7 Rights:**
 
@@ -692,7 +692,7 @@ Controller can refuse objection to legitimate interest processing (NOT direct ma
 
 **Common Issues:**
 
-- Correction in one system but not others (data inconsistency) → Use centralized data management or sync processes
+- Correction in one system but not others (data inconsistency) → Use centralised data management or sync processes
 - Failure to notify third parties (Art. 19 violation) → Maintain recipient list in ROPA
 
 **Art. 19 Requirement:**
@@ -1116,7 +1116,7 @@ For each SLA breach, document:
 
 ## SHEET 7: Evidence Repository
 
-**Purpose:** Centralized evidence tracking for DSR audit readiness
+**Purpose:** Centralised evidence tracking for DSR audit readiness
 
 **For EACH piece of supporting documentation, record:**
 
@@ -1232,7 +1232,7 @@ If multiple quarters assessed, show trend:
 - Postal Mail: A% of requests
 - In-Person: B% of requests
 
-**Interpretation:** If 80% of requests via email, prioritize email response process optimization.
+**Interpretation:** If 80% of requests via email, prioritise email response process optimisation.
 
 **Section 5: Rejection Analysis (Rows 38-44)**
 
@@ -1279,7 +1279,7 @@ Breakdown of rejection reasons:
 3. Schedule approval meetings with stakeholders
 4. Present findings, SLA compliance, gaps, recommendations
 5. Collect signatures and dates in Sheet 9
-6. Finalize and archive assessment
+6. Finalise and archive assessment
 
 ---
 
@@ -1555,4 +1555,4 @@ Breakdown of rejection reasons:
 *"The right to be forgotten is the right to move forward."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

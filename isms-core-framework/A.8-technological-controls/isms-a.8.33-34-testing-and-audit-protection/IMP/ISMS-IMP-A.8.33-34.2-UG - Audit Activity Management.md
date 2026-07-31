@@ -607,4 +607,4 @@ A: Activate incident response, notify audit sponsor, implement rollback. Documen
 *"An audit is only as credible as the independence of those conducting it."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

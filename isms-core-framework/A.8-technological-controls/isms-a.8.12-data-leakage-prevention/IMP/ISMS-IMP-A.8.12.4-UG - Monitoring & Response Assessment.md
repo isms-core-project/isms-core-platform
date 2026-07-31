@@ -173,7 +173,7 @@ Organisations commonly deploy DLP technology but fail to establish effective mon
 | **Level 0: No Monitoring** | DLP deployed, alerts generated, nobody reviews | DLP completely ineffective, data leaks undetected | Establish basic alert triage |
 | **Level 1: Reactive** | Alerts reviewed occasionally (weekly), large backlog | Breaches detected days/weeks late | Daily alert review, reduce backlog |
 | **Level 2: Managed** | Daily alert review, documented procedures, SIEM integrated | Effective for most incidents, some delays | Implement 24/7 coverage, automate triage |
-| **Level 3: Optimized** | 24/7 SOC coverage, automated triage, SOAR integration, <10% FP rate | Highly effective, rapid response | Focus on advanced threats, continuous improvement |
+| **Level 3: Optimised** | 24/7 SOC coverage, automated triage, SOAR integration, <10% FP rate | Highly effective, rapid response | Focus on advanced threats, continuous improvement |
 
 **Common Monitoring Failures:**
 
@@ -233,7 +233,7 @@ Organisations commonly deploy DLP technology but fail to establish effective mon
 **Essential Understanding:**
 
 - How DLP alerts are generated (what triggers alert)
-- SOC alert triage process (how alerts are reviewed and prioritized)
+- SOC alert triage process (how alerts are reviewed and prioritised)
 - SIEM log ingestion and correlation
 - Incident response lifecycle (detection → analysis → containment → eradication → recovery → lessons learned)
 - Difference between false positive (non-sensitive data flagged) and true positive (actual sensitive data leak)
@@ -469,7 +469,7 @@ Organisations commonly deploy DLP technology but fail to establish effective mon
    - Example: "FP rate 45%, target <10%" → Risk: High → Action: "Implement quarterly pattern tuning, user feedback mechanism"
    - Example: "No SOC playbook for DLP" → Risk: Critical → Action: "Develop playbook, train SOC analysts"
 
-3. Prioritize:
+3. Prioritise:
 
    - Critical: No monitoring, MTTR >24 hours, FP rate >50%
    - High: No SIEM integration, no playbook, FP rate 30-50%
@@ -767,7 +767,7 @@ Unacceptable: >50% (DLP ineffective)
 - [ ] Minimum 2 evidence items per domain (10+ total)
 - [ ] SIEM queries documented (reproducible)
 - [ ] Screenshots include timestamps
-- [ ] Incident details sanitized (PII removed)
+- [ ] Incident details sanitised (PII removed)
 
 **Policy Alignment:**
 
@@ -869,4 +869,4 @@ I confirm:
 *"A DLP tool without a response process is an alarm without a fire brigade."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

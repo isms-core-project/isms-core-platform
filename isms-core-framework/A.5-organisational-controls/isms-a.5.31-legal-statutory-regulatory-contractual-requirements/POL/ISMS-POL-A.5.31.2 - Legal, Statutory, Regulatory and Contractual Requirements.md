@@ -247,7 +247,7 @@ Applicability assessment shall be initiated when [Organisation]:
 
 ## Sources for Regulatory Intelligence
 
-[Organisation] shall utilize the following sources to identify potentially applicable regulations:
+[Organisation] shall utilise the following sources to identify potentially applicable regulations:
 
 ### Legal Databases and Research Services
 
@@ -267,7 +267,7 @@ Applicability assessment shall be initiated when [Organisation]:
 
 **Regulatory Technology (RegTech) Platforms:**
 
-- Specialized compliance monitoring services (e.g., Compliance.ai, RegHub)
+- Specialised compliance monitoring services (e.g., Compliance.ai, RegHub)
 - AI-powered regulatory change detection
 - Industry-specific regulatory tracking
 - Often includes interpretation and impact analysis
@@ -295,7 +295,7 @@ Applicability assessment shall be initiated when [Organisation]:
 
 **Standards Development Organisations:**
 
-- ISO (International Organisation for Standardization)
+- ISO (International Organisation for Standardisation)
 - NIST (National Institute of Standards and Technology)
 - CIS (Center for Internet Security)
 - Industry-specific standards bodies
@@ -319,10 +319,10 @@ Applicability assessment shall be initiated when [Organisation]:
 **External Legal Advisors:**
 
 - Jurisdiction-specific counsel (for international operations)
-- Specialized regulatory counsel (e.g., data protection, financial regulation)
+- Specialised regulatory counsel (e.g., data protection, financial regulation)
 - Engaged for specific matters or ongoing regulatory monitoring
 
-**Specialized Regulatory Counsel:**
+**Specialised Regulatory Counsel:**
 
 - Deep expertise in specific regulatory domains
 - Retained for complex compliance questions
@@ -373,7 +373,7 @@ Applicability assessment shall be initiated when [Organisation]:
 
 **Compliance Consultants:**
 
-- Specialized regulatory compliance advisory
+- Specialised regulatory compliance advisory
 - Regulatory program assessments
 - Compliance gap analysis services
 
@@ -937,7 +937,7 @@ A regulation or framework SHALL be classified as Tier 3 if:
 
 **Valuable for Reference:**
 
-- Industry-recognized best practice
+- Industry-recognised best practice
 - Used by peers for benchmarking
 - Provides useful guidance for control design
 - Referenced by other applicable regulations
@@ -1065,7 +1065,7 @@ For each regulation assessed (whether determined applicable or not), [Organisati
 
 - Applicability conclusion (Applicable / Conditionally Applicable / Not Applicable)
 - Tier assignment (1, 2, 3, or N/A)
-- Detailed rationale synthesizing three-dimensional assessment
+- Detailed rationale synthesising three-dimensional assessment
 - Any special considerations or edge cases
 - Dissenting views or areas of uncertainty
 
@@ -1087,7 +1087,7 @@ For each regulation assessed (whether determined applicable or not), [Organisati
 
 ### Documentation Templates
 
-**Assessment Workbook 2: Applicability Matrix** provides standardized template for documentation. All assessments shall be documented using this template to ensure consistency.
+**Assessment Workbook 2: Applicability Matrix** provides standardised template for documentation. All assessments shall be documented using this template to ensure consistency.
 
 Template includes:
 
@@ -1447,7 +1447,7 @@ All reviews (periodic and event-driven) shall be documented:
 - Rationale for outcome (if changed)
 - Approver and date (if determination changed)
 
-**Review Log**: Maintain centralized review log recording all reviews. Supports demonstration of diligent ongoing management of regulatory landscape.
+**Review Log**: Maintain centralised review log recording all reviews. Supports demonstration of diligent ongoing management of regulatory landscape.
 
 ---
 
@@ -1557,4 +1557,4 @@ This policy requires approval from the following roles:
 ---
 
 *This policy establishes [Organisation]'s systematic methodology for regulatory applicability determination, feeding into ISMS-POL-00 and enabling downstream requirements extraction and control mapping.*
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

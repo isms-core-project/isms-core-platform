@@ -128,7 +128,7 @@ This assessment (S1) MUST be completed first - you cannot assess baselines, prot
 #### Time Commitment
 
 - **Initial discovery:** 20-40 hours (depends on environment size and complexity)
-- **Monthly updates:** 2-4 hours (automated discovery synchronization, manual reconciliation)
+- **Monthly updates:** 2-4 hours (automated discovery synchronisation, manual reconciliation)
 - **Quarterly review:** 4-8 hours (validate coverage, update classification, gap remediation)
 
 ### Expected Outputs
@@ -141,7 +141,7 @@ Upon completion, you will have:
 4. ✅ **Quality metrics** - Coverage rate, accuracy percentage, inventory staleness
 5. ✅ **Gap analysis** - Identified undiscovered endpoints with remediation plans
 6. ✅ **Evidence register** - Supporting documentation (MDM exports, AD queries, network scans)
-7. ✅ **Monthly update process** - Automated discovery synchronization established
+7. ✅ **Monthly update process** - Automated discovery synchronisation established
 8. ✅ **Approved inventory** - Three-level approval workflow completed
 
 ---
@@ -244,7 +244,7 @@ Phase 6: Ongoing Maintenance & Updates
 **Activities:**
 1. **Import Discovery Data**: Import all discovery sources into Endpoint_Inventory.xlsx
 2. **Deduplication**: Identify and merge duplicate records (same device discovered multiple times)
-3. **Data Normalization**: Standardize device names, OS versions, IP addresses
+3. **Data Normalisation**: Standardise device names, OS versions, IP addresses
 4. **Data Quality Validation**: Verify mandatory attributes populated, validate data accuracy
 
 **Deliverable:** Consolidated endpoint inventory with duplicates removed
@@ -263,7 +263,7 @@ Phase 6: Ongoing Maintenance & Updates
 #### Phase 6: Ongoing Maintenance & Updates (Continuous)
 
 **Activities:**
-1. **Weekly Automated Sync**: Synchronize inventory with MDM, AD (automated via scripts)
+1. **Weekly Automated Sync**: Synchronise inventory with MDM, AD (automated via scripts)
 2. **Monthly Reconciliation**: Reconcile automated discovery with manual records
 3. **Quarterly Review**: Validate classification, update criticality, gap remediation
 4. **Stale Endpoint Flagging**: Flag endpoints not seen >30 days for investigation
@@ -307,7 +307,7 @@ Phase 6: Ongoing Maintenance & Updates
 3. **Data Quality Checks**
 
    - No blank Device_IDs (every endpoint must have unique identifier)
-   - Hostname format consistent (standardized naming convention)
+   - Hostname format consistent (standardised naming convention)
    - OS version format consistent (e.g., "Windows 11 23H2" not "Win11")
    - Last_Seen date within last 90 days (flag stale endpoints >30 days)
 
@@ -465,7 +465,7 @@ Phase 6: Ongoing Maintenance & Updates
 
 3. **Currency Metrics**
 
-   - **Last_Inventory_Update**: Date of last inventory synchronization
+   - **Last_Inventory_Update**: Date of last inventory synchronisation
    - **Stale_Endpoints_Count**: Endpoints not seen >30 days
    - **Stale_Endpoints_Percentage**: (Stale / Total) × 100%
    - **Currency_Status**: Green (<5% stale), Yellow (5-10% stale), Red (>10% stale)
@@ -507,7 +507,7 @@ Phase 6: Ongoing Maintenance & Updates
 
 2. **Evidence Storage**
 
-   - Store evidence files in centralized location (SharePoint, network share)
+   - Store evidence files in centralised location (SharePoint, network share)
    - Use consistent naming convention: `Evidence_<Type>_<Date>.ext`
    - Example: `Evidence_Intune_Export_2026-01-25.csv`
 
@@ -606,9 +606,9 @@ Phase 6: Ongoing Maintenance & Updates
    - **Target_Date**: Target completion date for remediation
    - **Remediation_Status**: Not Started, In Progress, Completed, Deferred
 
-3. **Gap Prioritization**
+3. **Gap Prioritisation**
 
-   - Prioritize gaps by Impact (Critical > High > Medium > Low)
+   - Prioritise gaps by Impact (Critical > High > Medium > Low)
    - Focus on gaps affecting critical endpoints first
    - Document risk acceptance for deferred gaps (with CISO approval)
 
@@ -659,7 +659,7 @@ For audit purposes, maintain the following evidence:
 ### Evidence Retention
 
 - **Retention Period**: 12 months minimum
-- **Storage Location**: Centralized repository (SharePoint, network share, document management system)
+- **Storage Location**: Centralised repository (SharePoint, network share, document management system)
 - **Access Controls**: Restrict access to authorised personnel (endpoint administrators, auditors)
 
 ---
@@ -712,7 +712,7 @@ For audit purposes, maintain the following evidence:
 
 **Mistake:** One-time discovery, no weekly/monthly updates  
 **Why It's Wrong:** Inventory becomes stale (new devices added, old devices removed), coverage degrades over time  
-**Solution:** Weekly automated synchronization, monthly reconciliation, quarterly review
+**Solution:** Weekly automated synchronisation, monthly reconciliation, quarterly review
 
 ### Coverage Calculation Errors
 
@@ -746,7 +746,7 @@ For audit purposes, maintain the following evidence:
 ### Data Quality (10 Items)
 
 - [ ] 11. Device_IDs are truly unique (no duplicates)
-- [ ] 12. Hostname format is consistent (standardized naming)
+- [ ] 12. Hostname format is consistent (standardised naming)
 - [ ] 13. Operating_System format is consistent (e.g., "Windows 11 23H2")
 - [ ] 14. Last_Seen dates are reasonable (within last 90 days for active devices)
 - [ ] 15. IP addresses are valid format (IPv4 or IPv6)
@@ -793,12 +793,12 @@ For audit purposes, maintain the following evidence:
 - [ ] 47. Discovery method coverage calculated per method
 - [ ] 48. Discovery method limitations documented
 - [ ] 49. Primary and secondary discovery methods identified
-- [ ] 50. Automated discovery synchronization scheduled (weekly minimum)
+- [ ] 50. Automated discovery synchronisation scheduled (weekly minimum)
 
 ### Evidence & Approval (10 Items)
 
 - [ ] 51. Evidence artifacts collected for each discovery method
-- [ ] 52. Evidence files stored in centralized location
+- [ ] 52. Evidence files stored in centralised location
 - [ ] 53. Evidence retention policy implemented (12 months minimum)
 - [ ] 54. Spot-check validation performed (20 endpoint sample)
 - [ ] 55. Spot-check accuracy ≥95% achieved
@@ -880,7 +880,7 @@ For audit purposes, maintain the following evidence:
 
 1. **Archive Approved Version:** Save approved workbook with date stamp (`Endpoint_Inventory_2026-01-25_Approved.xlsx`)
 2. **Communicate Results:** Share inventory summary with stakeholders
-3. **Schedule Updates:** Establish weekly automated synchronization
+3. **Schedule Updates:** Establish weekly automated synchronisation
 4. **Track Remediation:** Monitor gap remediation progress monthly
 5. **Plan Next Review:** Schedule quarterly inventory review
 
@@ -893,4 +893,4 @@ For audit purposes, maintain the following evidence:
 *"You cannot defend what you have not catalogued."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

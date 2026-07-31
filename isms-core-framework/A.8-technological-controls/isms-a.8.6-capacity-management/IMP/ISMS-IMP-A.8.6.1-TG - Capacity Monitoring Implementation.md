@@ -1,5 +1,5 @@
 <!-- ISMS-CORE:IMP:ISMS-IMP-A.8.6.1-TG:framework:TG:a.8.6.1 -->
-**ISMS-IMP-A.8.6.1-TG - Capacity Utilization Assessment**
+**ISMS-IMP-A.8.6.1-TG - Capacity Utilisation Assessment**
 **Technical Specification**
 ### ISO/IEC 27001:2022 Control A.8.6: Capacity Management
 
@@ -99,10 +99,10 @@
 | 12 | Business Function |
 | 13 | Total CPU (Cores) |
 | 14 | Used CPU (Cores) |
-| 15 | CPU Utilization (%) |
+| 15 | CPU Utilisation (%) |
 | 16 | Total Memory (GB) |
 | 17 | Used Memory (GB) |
-| 18 | Memory Utilization (%) |
+| 18 | Memory Utilisation (%) |
 | 19 | Peak CPU (%) |
 | 20 | Peak Memory (%) |
 | 21 | Threshold Status |
@@ -111,25 +111,25 @@
 | 24 | Total Capacity (GB) |
 | 25 | Used Capacity (GB) |
 | 26 | Available Capacity (GB) |
-| 27 | Utilization (%) |
-| 28 | Peak Utilization (%) |
+| 27 | Utilisation (%) |
+| 28 | Peak Utilisation (%) |
 | 29 | Growth Rate (GB/month) |
 | 30 | Network Type |
 | 31 | Location |
 | 32 | Link Capacity (Mbps) |
 | 33 | Avg Inbound (Mbps) |
 | 34 | Avg Outbound (Mbps) |
-| 35 | Total Utilization (%) |
+| 35 | Total Utilisation (%) |
 | 36 | Concurrent Connections |
 | 37 | Connection Limit |
 | 38 | Application Name |
 | 39 | Application Type |
 | 40 | Max Concurrent Users |
 | 41 | Current Active Users |
-| 42 | User Utilization (%) |
+| 42 | User Utilisation (%) |
 | 43 | Max Transactions/sec |
 | 44 | Current Transactions/sec |
-| 45 | Transaction Utilization (%) |
+| 45 | Transaction Utilisation (%) |
 | 46 | Avg Response Time (ms) |
 | 47 | Cloud Provider |
 | 48 | Service/Resource Type |
@@ -194,4 +194,4 @@ Approved, Approved with Conditions, Rejected, Deferred
 *"Differential cryptanalysis taught us that even small biases can lead to complete breaks of cryptographic systems."*
 — Adi Shamir
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

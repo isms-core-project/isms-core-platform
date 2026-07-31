@@ -101,7 +101,7 @@ This policy does NOT:
 - **Establish data retention schedules for all data types** (retention periods defined by Data Owners with legal/regulatory input, documented in ISMS-IMP-A.8.10.1)
 - **Define access control mechanisms** (access controls covered by A.5.15, A.5.18, A.8.3 policies)
 - **Replace cryptographic controls** (encryption for data protection covered by A.8.24 Cryptography Policy; cryptographic erasure as deletion method is within this policy's scope)
-- **Mandate specific sanitization standards** (NIST SP 800-88 used as informational reference unless contractually required)
+- **Mandate specific sanitisation standards** (NIST SP 800-88 used as informational reference unless contractually required)
 
 **Rationale**: Separating policy requirements from implementation guidance enables:
 
@@ -166,7 +166,7 @@ This policy does NOT:
 - **Archival records with permanent retention mandates**: Deletion not applicable per regulatory or business requirements (e.g., corporate records with perpetual retention); documented in retention schedule
 - **Third-party data where [Organisation] acts as processor only**: Deletion executed per data controller instruction, not independent [Organisation] decision (contractual obligation, not policy-driven)
 - **Public information intentionally published**: Deletion of published content follows separate content management and publication withdrawal procedures
-- **Anonymized data**: Data that has been irreversibly anonymized (no longer identifies individuals) does not require deletion under privacy regulations but may have business-driven retention limits
+- **Anonymised data**: Data that has been irreversibly anonymised (no longer identifies individuals) does not require deletion under privacy regulations but may have business-driven retention limits
 
 **Note**: Out-of-scope items do not exempt systems from assessment. ISMS-IMP-A.8.10 assessments determine applicability; documented exclusions require business justification and approval.
 
@@ -201,7 +201,7 @@ Apply only when specific business conditions trigger applicability:
 These frameworks inform implementation but do not constitute mandatory compliance unless contractually required:
 
 - **NIST SP 800-88 Rev. 1** - Guidelines for Media Sanitization (Clear, Purge, Destroy methods)
-- **ISO/IEC 27040:2015** - Storage security including sanitization guidance
+- **ISO/IEC 27040:2015** - Storage security including sanitisation guidance
 - **ISO/IEC 27555:2024** - Guidelines on personally identifiable information deletion
 - **ISO/IEC 27017:2026** - Cloud services information security controls (deletion guidance)
 - **DIN 66399** - Destruction of data media (German standard for paper/media destruction, 7 security levels)
@@ -329,13 +329,13 @@ Where automation is deemed infeasible, manual deletion procedures SHALL be docum
 
 **Approved Deletion Methods**:
 
-Deletion methods SHALL align with recognized sanitization standards (NIST SP 800-88 or equivalent):
+Deletion methods SHALL align with recognised sanitisation standards (NIST SP 800-88 or equivalent):
 
 | Method | NIST SP 800-88 Level | Description | Use Cases |
 |--------|---------------------|-------------|-----------|
 | **Clear** | Clear | Logical techniques (overwriting, block erasure) protecting against simple non-invasive recovery | Media remaining in organisational control with lower sensitivity data; file-level deletion |
 | **Purge** | Purge | Physical or logical techniques protecting against laboratory attack (degaussing, cryptographic erasure, secure erase) | Media leaving organisational control; sensitive data; end-of-lease equipment |
-| **Destroy** | Destroy | Physical destruction rendering media unusable (shredding, pulverizing, incineration, disintegration) | End-of-life media; highest sensitivity data; media with failed purge |
+| **Destroy** | Destroy | Physical destruction rendering media unusable (shredding, pulverising, incineration, disintegration) | End-of-life media; highest sensitivity data; media with failed purge |
 
 **Deletion Method by Media Type**:
 
@@ -343,7 +343,7 @@ Deletion methods SHALL align with recognized sanitization standards (NIST SP 800
 |------------|-------------------|-------|
 | **Magnetic HDD** | Overwrite (7+ passes for sensitive), Degauss, Physical destruction | ATA Secure Erase acceptable if supported |
 | **Solid-State (SSD, Flash)** | Cryptographic erasure (preferred), Secure erase command, Physical destruction | Overwriting unreliable due to wear leveling; secure erase must verify success |
-| **Optical Media** | Physical destruction (shredding, pulverizing) | Overwriting not applicable; purge-level destruction required |
+| **Optical Media** | Physical destruction (shredding, pulverising) | Overwriting not applicable; purge-level destruction required |
 | **Magnetic Tape** | Degaussing, Physical destruction | Overwriting acceptable for Clear but time-intensive |
 | **Paper Records** | Cross-cut shredding (DIN 66399 P-4 minimum for Confidential) | Security level based on data sensitivity |
 | **Mobile Devices** | Factory reset + encryption verification, Physical destruction if high-sensitivity | Verify encryption was enabled; factory reset alone insufficient for Restricted data |
@@ -420,7 +420,7 @@ The following practices are NOT acceptable as deletion methods:
 
 **(a) Maximum deletion timeline**: Data deleted within specified timeframe after contract termination or upon request (30-90 days typical)
 
-**(b) Sanitization standards**: Deletion methods appropriate for data sensitivity (reference to NIST SP 800-88 or equivalent)
+**(b) Sanitisation standards**: Deletion methods appropriate for data sensitivity (reference to NIST SP 800-88 or equivalent)
 
 **(c) Deletion scope**: All copies including backups, replicas, archives, disaster recovery, and development/test environments
 
@@ -578,7 +578,7 @@ Evidence generation and aggregation procedures are defined in **ISMS-IMP-A.8.10.
 
 | Evidence Type | Purpose | Maintained By | Retention Period | Location/System |
 |---------------|---------|---------------|------------------|-----------------|
-| **Deletion execution logs** | Prove deletions occurred per schedule with 7 required fields (timestamp, data category, method, media ID, trigger, responsible party, verification result) | IT Operations | 3 years minimum | [Logging system - e.g., SIEM, centralized log repository] |
+| **Deletion execution logs** | Prove deletions occurred per schedule with 7 required fields (timestamp, data category, method, media ID, trigger, responsible party, verification result) | IT Operations | 3 years minimum | [Logging system - e.g., SIEM, centralised log repository] |
 | **Retention schedule** | Define approved retention periods by data category with legal/regulatory basis | Records Manager | Current version + superseded versions (7 years) | [Document repository] |
 | **Third-party deletion certificates** | Verify third-party deletion compliance per Section 2.3 sufficiency criteria | IT Operations | 3 years from deletion date | Evidence register (ISMS-IMP-A.8.10.4) |
 | **Data subject request log** | Demonstrate GDPR/nDSG rights compliance with 30-day timeline | DPO | 3 years from request closure | [DPO system - e.g., privacy management platform] |
@@ -717,7 +717,7 @@ DPO SHALL maintain data subject request log including:
 | **Request ID** | Unique identifier |
 | **Receipt Date** | Date request received |
 | **Request Channel** | Email, web form, postal, in-person |
-| **Data Subject** | Name and contact (anonymized after closure) |
+| **Data Subject** | Name and contact (anonymised after closure) |
 | **Identity Verification** | Method and date |
 | **Request Type** | Erasure, access, rectification, portability, objection |
 | **Assessment** | DPO decision (approve, deny, partial) |
@@ -889,7 +889,7 @@ The following deletion-related events SHALL be logged where technically feasible
 **(b) Deletion configuration changes**:
 - Changes to retention schedules (retention period modifications)
 - Changes to deletion rules (automated deletion thresholds, triggers)
-- Changes to deletion methods (tool configurations, sanitization procedures)
+- Changes to deletion methods (tool configurations, sanitisation procedures)
 - User making change, change date, approval reference
 
 **(c) Deletion exceptions and bypasses**:
@@ -988,7 +988,7 @@ Deletion logging SHALL comply with applicable privacy regulations per ISMS-POL-0
 
 - **Accountable for**: GDPR/nDSG compliance for deletion controls; data subject rights management
 - **Data subject requests**: Processing erasure requests per Section 2.5; assessing legal exceptions; notifying third parties
-- **Privacy compliance**: Ensuring pseudonymization, anonymization, and deletion techniques meet regulatory standards
+- **Privacy compliance**: Ensuring pseudonymisation, anonymisation, and deletion techniques meet regulatory standards
 - **Legal exception review**: Evaluating GDPR Article 17(3) exceptions when erasure is denied
 - **Privacy impact**: Assessing privacy implications of deletion exceptions and legal holds
 - **Regulatory liaison**: Coordinating with Swiss FDPIC or EU DPAs on deletion-related inquiries
@@ -1044,7 +1044,7 @@ Deletion logging SHALL comply with applicable privacy regulations per ISMS-POL-0
 - **Responsible for**: Database record deletion; backup purging; database deletion verification
 - **Record deletion**: Executing SQL delete operations; managing referential integrity during deletion
 - **Backup coordination**: Coordinating with backup administrators to purge deleted data from backups
-- **Performance optimization**: Ensuring deletion operations don't impact database performance
+- **Performance optimisation**: Ensuring deletion operations don't impact database performance
 - **Verification queries**: Running database queries to verify absence of deleted data
 
 **Cloud/Vendor Management**:
@@ -1090,7 +1090,7 @@ Deletion logging SHALL comply with applicable privacy regulations per ISMS-POL-0
 - **Reporting**: Reporting suspected unmasked sensitive data in non-production environments; reporting deletion failures
 - **Exception requests**: Using exception process for legitimate business needs (Section 3.3); not bypassing controls
 - **Training**: Completing annual security awareness training including deletion policy overview
-- **Prohibited actions**: NOT attempting to bypass deletion controls, recover deleted data without authorisation, or re-identify anonymized data
+- **Prohibited actions**: NOT attempting to bypass deletion controls, recover deleted data without authorisation, or re-identify anonymised data
 
 **RACI Matrix Summary**:
 
@@ -1227,7 +1227,7 @@ The following exception requests are **NOT PERMITTED**:
 - **Indefinite retention without specific end date**: All exceptions must have defined duration or compliance milestone
 - **Exceptions to avoid legitimate data subject erasure requests**: GDPR/nDSG rights cannot be circumvented through exceptions
 - **Exceptions to circumvent regulatory retention requirements**: Exceptions to shorten legally mandated retention (e.g., SOX 7-year) are prohibited
-- **Blanket exceptions for entire data categories without specific justification**: Each exception must address specific system/dataset with individualized risk assessment
+- **Blanket exceptions for entire data categories without specific justification**: Each exception must address specific system/dataset with individualised risk assessment
 - **Exceptions without compensating controls**: Risk reduction measures are mandatory for all approved exceptions
 - **Exceptions to bypass legal hold requirements**: Legal holds cannot be overridden through exception process (managed by Legal/Compliance only per Section 2.6)
 - **Repeated exceptions for same issue without remediation progress**: Exception renewals require demonstration of compliance efforts; repeated renewals without progress are denied
@@ -1284,7 +1284,7 @@ Active exceptions are:
 
 **(b) Monitored for compliance**: Verify compensating controls remain effective; review access logs, monitoring alerts, audit logs
 
-**(c) Tracked in exception register**: Centralized register maintained by Security Team with status updates
+**(c) Tracked in exception register**: Centralised register maintained by Security Team with status updates
 
 **(d) Revoked if conditions change**:
 - Business justification no longer valid (operational need ceases)
@@ -1311,7 +1311,7 @@ Exception renewals require:
 
 **Exception Template**:
 
-Standardized exception request template provided in **Annex C: Exception Request Template** (see end of policy document).
+Standardised exception request template provided in **Annex C: Exception Request Template** (see end of policy document).
 
 > **Complete Form**: Annex C provides the full exception request template with business justification framework (technical infeasibility, operational necessity, cost disproportionality), comprehensive risk assessment criteria (inherent risk scoring, threat scenario identification, compensating control selection), approval workflow matrix based on data sensitivity, and monitoring/review procedures. The template includes path-to-compliance milestone tracking and renewal requirements.
 
@@ -1591,7 +1591,7 @@ Policy published in ISMS document repository (SharePoint, Confluence, document m
 **Policy Storage and Access Control**:
 
 **Primary Repository**:
-- Centralized ISMS policy repository (document management system, SharePoint, Confluence)
+- Centralised ISMS policy repository (document management system, SharePoint, Confluence)
 - Access-controlled (Internal classification - all employees can read)
 - Version history maintained (all previous versions retained for audit trail)
 - Change log documents all updates with rationale
@@ -1620,7 +1620,7 @@ Policy published in ISMS document repository (SharePoint, Confluence, document m
 - Information deletion overview and importance
 - User responsibilities for handling organisational data
 - Data retention and deletion basics (don't keep data longer than needed)
-- Recognizing unmasked sensitive data in non-production and reporting procedures
+- Recognising unmasked sensitive data in non-production and reporting procedures
 - Prohibition on circumventing deletion controls or recovering deleted data without authorisation
 - Data subject rights basics (GDPR/nDSG erasure requests)
 
@@ -1692,7 +1692,7 @@ This policy integrates with [Organisation]'s Information Security Management Sys
 | **A.5.33 (Protection of Records)** | Balance - retention requirements must be balanced with deletion obligations; legal retention takes precedence over data minimisation |
 | **A.5.34 (Privacy and Protection of PII)** | Integration - GDPR/nDSG erasure rights (Section 2.5) implement privacy requirements; deletion supports data minimisation principle |
 | **A.7.10 (Storage Media)** | Integration - physical handling of storage media before deletion; secure storage until deletion execution |
-| **A.7.14 (Secure Disposal or Re-use of Equipment)** | Integration - equipment disposal includes data sanitization per this policy; disposal procedures reference A.8.10 deletion methods |
+| **A.7.14 (Secure Disposal or Re-use of Equipment)** | Integration - equipment disposal includes data sanitisation per this policy; disposal procedures reference A.8.10 deletion methods |
 | **A.8.13 (Information Backup)** | Critical integration - backup retention must align with deletion requirements; backup purging (Section 2.2) essential for deletion effectiveness |
 | **A.8.24 (Use of Cryptography)** | Integration - cryptographic erasure (Section 2.2) as deletion method; key management integration for crypto erasure verification |
 
@@ -1754,7 +1754,7 @@ This policy integrates with [Organisation]'s Information Security Management Sys
 **Assessment Tools**:
 
 - Excel-based assessment workbooks with automated compliance calculations
-- Python generation scripts for workbook creation (standardized structure, validation rules)
+- Python generation scripts for workbook creation (standardised structure, validation rules)
 - Evidence registers and collection templates
 - Gap analysis frameworks with severity classification
 - Remediation tracking tools with milestone monitoring
@@ -1778,7 +1778,7 @@ This policy addresses information deletion requirements from:
 |---------------------|-----------|---------|----------------|---------|--------|--------|------------|
 | **Data minimisation / storage limitation** | Art. 6 | Art. 5(1)(e) | A.8.10 | Req. 3.1 | §164.514 | Risk-Based | Art. 21 (NIS2) |
 | **Retention schedules** | Art. 6 | Art. 5(1)(e) | A.8.10 | Req. 3.1 | HIPAA Gen Rules | FINMA Circ 2008/21 | Risk-Based |
-| **Deletion methods / sanitization** | Art. 8, 25, 30 | Art. 32(1) | A.8.10 | Req. 3.2 | §164.310(d)(2)(i) | Risk-Based | Art. 9 (DORA) |
+| **Deletion methods / sanitisation** | Art. 8, 25, 30 | Art. 32(1) | A.8.10 | Req. 3.2 | §164.310(d)(2)(i) | Risk-Based | Art. 9 (DORA) |
 | **Backup deletion** | Art. 8 | Art. 32 | A.8.10 | Req. 3.2 | §164.310(d)(2)(i) | Risk-Based | Risk-Based |
 | **Data subject right to erasure** | Art. 12 | Art. 17 | A.5.34 (ref) | N/A | Limited (§164.526 amendment) | N/A | N/A |
 | **Third-party deletion obligations** | Art. 8 | Art. 28(3)(g) | A.8.10 | Req. 12.8.2 | §164.314(a)(2) | FINMA Circ 2018/3 | Art. 28 (DORA) |
@@ -1819,7 +1819,7 @@ Supporting References (ISMS Governed)
 
 # Definitions
 
-**Anonymization**: Irreversible process of removing all identifying information from data such that re-identification is not reasonably achievable even with additional data or effort. Anonymized data is no longer personal data under GDPR/nDSG.
+**Anonymisation**: Irreversible process of removing all identifying information from data such that re-identification is not reasonably achievable even with additional data or effort. Anonymised data is no longer personal data under GDPR/nDSG.
 
 **Backup Purging**: Process of deleting data from backup systems (full/incremental backups, snapshots, disaster recovery replicas) to ensure deleted data doesn't persist in backup copies.
 
@@ -1827,7 +1827,7 @@ Supporting References (ISMS Governed)
 
 **Certificate of Destruction**: Third-party attestation documenting physical destruction of storage media, including media identifiers, destruction method (referencing NIST SP 800-88 or equivalent), destruction date, and certificate issuer information.
 
-**Clear (Deletion Method)**: Logical sanitization technique applying logical techniques to sanitize data using standard read and write commands, protecting against simple non-invasive data recovery techniques. Per NIST SP 800-88: overwriting, block erase.
+**Clear (Deletion Method)**: Logical sanitisation technique applying logical techniques to sanitise data using standard read and write commands, protecting against simple non-invasive data recovery techniques. Per NIST SP 800-88: overwriting, block erase.
 
 **Compensating Control**: Alternative security control implemented when primary control (deletion) is not technically or operationally feasible, providing equivalent risk reduction through different means (enhanced access controls, encryption, monitoring).
 
@@ -1839,7 +1839,7 @@ Supporting References (ISMS Governed)
 
 **Data Inventory**: Comprehensive record of data categories processed by [Organisation], including data type, classification, storage location, business purpose, data owner, and retention requirements.
 
-**Data Minimization**: Privacy principle requiring collection and retention of only data necessary for specified purposes, with deletion when no longer needed. Core principle in GDPR Article 5(1)(c) and Swiss nDSG Article 6.
+**Data Minimisation**: Privacy principle requiring collection and retention of only data necessary for specified purposes, with deletion when no longer needed. Core principle in GDPR Article 5(1)(c) and Swiss nDSG Article 6.
 
 **Data Owner**: Business or functional leader accountable for data within their domain, responsible for data classification, determining retention periods and deletion requirements, approving exceptions, and validating deletion effectiveness.
 
@@ -1847,31 +1847,31 @@ Supporting References (ISMS Governed)
 
 **Deletion Trigger**: Event or condition initiating the deletion process (retention period expiry, data subject erasure request, contract termination, legal hold release, asset decommissioning, consent withdrawal).
 
-**Destroy (Deletion Method)**: Physical destruction of storage media rendering media unusable and data recovery infeasible. Per NIST SP 800-88: disintegration, pulverization, melting, incineration, shredding.
+**Destroy (Deletion Method)**: Physical destruction of storage media rendering media unusable and data recovery infeasible. Per NIST SP 800-88: disintegration, pulverisation, melting, incineration, shredding.
 
 **Exception**: Formally approved deviation from policy requirements, documented with business justification, risk assessment, compensating controls, approval signatures, and time limitation. All exceptions have defined expiration dates and review schedules.
 
-**Format Preservation**: Maintaining original data format and structure in masked or substituted data to ensure application compatibility and data validation rules continue to function correctly (e.g., credit card format preservation in tokenization).
+**Format Preservation**: Maintaining original data format and structure in masked or substituted data to ensure application compatibility and data validation rules continue to function correctly (e.g., credit card format preservation in tokenisation).
 
-**Information Deletion**: Process of removing data from storage media such that it cannot be recovered through normal methods or specialized data recovery techniques, appropriate to the media type and data sensitivity.
+**Information Deletion**: Process of removing data from storage media such that it cannot be recovered through normal methods or specialised data recovery techniques, appropriate to the media type and data sensitivity.
 
 **Inherent Risk**: Risk level before application of security controls or compensating measures. Used in risk assessments to evaluate baseline risk of data exposure without deletion controls.
 
 **Legal Hold (Litigation Hold)**: Suspension of normal deletion processes to preserve data for litigation, investigation, regulatory examination, or audit. Legal holds override retention schedules and deletion triggers until hold is formally released by Legal/Compliance Officer.
 
-**Media Sanitization**: All methods of rendering data on storage media inaccessible, including clearing, purging, and destroying. Sanitization level (Clear/Purge/Destroy) selected based on media type, data sensitivity, and media destination.
+**Media Sanitisation**: All methods of rendering data on storage media inaccessible, including clearing, purging, and destroying. Sanitisation level (Clear/Purge/Destroy) selected based on media type, data sensitivity, and media destination.
 
 **Personal Data**: Any information relating to an identified or identifiable individual (GDPR/nDSG definition). Includes direct identifiers (name, ID number) and indirect identifiers (combination of attributes enabling identification).
 
-**Pseudonymization**: Replacement of direct identifiers with pseudonyms (reversible substitutes) such that data cannot identify individuals without additional information (key or mapping table) held separately. Pseudonymized data remains personal data under GDPR but with reduced risk.
+**Pseudonymisation**: Replacement of direct identifiers with pseudonyms (reversible substitutes) such that data cannot identify individuals without additional information (key or mapping table) held separately. Pseudonymised data remains personal data under GDPR but with reduced risk.
 
-**Purge (Deletion Method)**: Physical or logical sanitization technique protecting against laboratory attack methods. Per NIST SP 800-88: cryptographic erase, degaussing (magnetic media), physical destruction.
+**Purge (Deletion Method)**: Physical or logical sanitisation technique protecting against laboratory attack methods. Per NIST SP 800-88: cryptographic erase, degaussing (magnetic media), physical destruction.
 
-**Redaction**: Complete removal or replacement of sensitive data with placeholder characters (e.g., `****`, `XXXX`, `[REDACTED]`) without providing substitute values. Used in reports, exports, screenshots, or document sanitization.
+**Redaction**: Complete removal or replacement of sensitive data with placeholder characters (e.g., `****`, `XXXX`, `[REDACTED]`) without providing substitute values. Used in reports, exports, screenshots, or document sanitisation.
 
 **Referential Integrity**: Maintaining valid relationships between related data across tables or datasets, ensuring foreign keys and joins continue to function correctly after deletion or masking operations.
 
-**Re-identification**: Process of determining the original identity of a data subject from anonymized or pseudonymized data, either through reverse engineering, linking with external datasets, or inference from quasi-identifiers.
+**Re-identification**: Process of determining the original identity of a data subject from anonymised or pseudonymised data, either through reverse engineering, linking with external datasets, or inference from quasi-identifiers.
 
 **Residual Risk**: Risk remaining after application of security controls, compensating measures, or risk treatment. Residual risk from deletion control limitations must be formally accepted by CISO and Executive Management.
 
@@ -1881,7 +1881,7 @@ Supporting References (ISMS Governed)
 
 **Right to Erasure (Right to be Forgotten)**: Data subject right under GDPR Article 17 and Swiss nDSG Article 12 to request deletion of their personal data. Subject to legal exceptions (legal obligation, legal claims, public interest, archiving).
 
-**Sanitization**: See Media Sanitization.
+**Sanitisation**: See Media Sanitisation.
 
 **Secure Disposal**: Process of rendering storage media or equipment unusable and data irrecoverable before disposal, reuse, or transfer outside organisational control. Integrates with Control A.7.14 (Secure Disposal or Re-use of Equipment).
 
@@ -1893,7 +1893,7 @@ Supporting References (ISMS Governed)
 
 **Third-Party Processor**: External entity processing organisational data on behalf of [Organisation], including cloud providers, managed service providers, SaaS vendors, and outsourced service providers. Subject to data processing agreements (DPAs) with deletion obligations.
 
-**Tokenization**: Replacement of sensitive data with non-sensitive tokens (surrogate values) stored in a secure token vault, enabling reversibility when authorised. Original-to-token mapping maintained in separate secure system with strict access controls.
+**Tokenisation**: Replacement of sensitive data with non-sensitive tokens (surrogate values) stored in a secure token vault, enabling reversibility when authorised. Original-to-token mapping maintained in separate secure system with strict access controls.
 
 ---
 
@@ -1910,7 +1910,7 @@ Supporting References (ISMS Governed)
 | **Magnetic HDD** | Restricted/Confidential | External disposal | Degauss + Physical destruction | Certificate of destruction |
 | **Magnetic HDD** | Restricted/Confidential | Internal reuse | ATA Secure Erase OR Overwrite (7+ passes) | Tool completion log + sampling |
 | **Magnetic HDD** | Internal/Public | Internal reuse | Overwrite (3 passes) OR Quick format + overwrite | Tool completion log |
-| **Solid-State (SSD)** | Restricted/Confidential | External disposal | Physical destruction (shredding, pulverizing) | Certificate of destruction |
+| **Solid-State (SSD)** | Restricted/Confidential | External disposal | Physical destruction (shredding, pulverising) | Certificate of destruction |
 | **Solid-State (SSD)** | Restricted/Confidential | Internal reuse | Cryptographic erasure (if encrypted) OR Secure Erase command | Key destruction log OR tool completion log |
 | **Solid-State (SSD)** | Internal/Public | Internal reuse | Secure Erase command OR Factory reset | Tool completion log |
 | **Optical Media (CD/DVD)** | Any sensitivity | Disposal | Physical destruction (shredding P-4 or higher) | Certificate of destruction OR witnessed destruction |
@@ -1939,7 +1939,7 @@ Supporting References (ISMS Governed)
 | **Cryptographic Erase** | Purge | Destruction of encryption keys rendering data inaccessible | All encrypted media (keys must be irrecoverable) |
 | **Degaussing** | Purge | Magnetic field erasure | Magnetic media only (HDD, tape) - NOT SSD/optical |
 | **Physical Destruction (Disintegrate)** | Destroy | Media reduced to particles ≤2mm | All media types |
-| **Physical Destruction (Pulverize)** | Destroy | Media ground to powder | All media types |
+| **Physical Destruction (Pulverise)** | Destroy | Media ground to powder | All media types |
 | **Physical Destruction (Shred)** | Destroy | Media cut to specified dimensions | Paper (DIN 66399), optical media, some electronic |
 | **Physical Destruction (Incinerate)** | Destroy | Media burned to ash | All media types (environmental/regulatory considerations) |
 
@@ -1975,7 +1975,7 @@ Supporting References (ISMS Governed)
 
 **Warning**: SSD secure erase reliability varies by manufacturer. For Restricted data, physical destruction is preferred over secure erase alone.
 
-**Verification**: Command completion log; SMART log check; drive should report "Sanitize Complete" or equivalent.
+**Verification**: Command completion log; SMART log check; drive should report "Sanitise Complete" or equivalent.
 
 ### A.3.3 Cryptographic Erasure
 
@@ -2018,8 +2018,8 @@ Supporting References (ISMS Governed)
 
 | Media Type | Destruction Requirement | Standard Reference |
 |------------|------------------------|-------------------|
-| **HDD (magnetic)** | Platters shredded, pulverized, or disintegrated to ≤2mm particles | NIST SP 800-88 (Destroy) |
-| **SSD (solid-state)** | Chips physically destroyed (shredded, pulverized) to prevent chip-level recovery | NIST SP 800-88 (Destroy) |
+| **HDD (magnetic)** | Platters shredded, pulverised, or disintegrated to ≤2mm particles | NIST SP 800-88 (Destroy) |
+| **SSD (solid-state)** | Chips physically destroyed (shredded, pulverised) to prevent chip-level recovery | NIST SP 800-88 (Destroy) |
 | **Optical (CD/DVD/Blu-ray)** | Cross-cut shredding to ≤10mm² particles (DIN 66399 O-4 minimum for Confidential) | DIN 66399 |
 | **Magnetic Tape** | Tape shredded to ≤6mm strips (DIN 66399 T-4 minimum for Confidential) | DIN 66399 |
 | **Paper Records** | Cross-cut shredding to ≤160mm² particles (DIN 66399 P-4 minimum for Confidential) | DIN 66399 |
@@ -2081,7 +2081,7 @@ Supporting References (ISMS Governed)
 
 # Annex B: Data Subject Erasure Request Template
 
-**Purpose**: Standardized form for processing GDPR Article 17 and Swiss nDSG Article 12 erasure requests.
+**Purpose**: Standardised form for processing GDPR Article 17 and Swiss nDSG Article 12 erasure requests.
 
 **Usage**: DPO Office uses this template to document all data subject erasure requests, ensuring consistent processing and compliance with 30-day response timeline.
 
@@ -2397,7 +2397,7 @@ Best regards,
 
 # Annex C: Exception Request Template
 
-**Purpose**: Standardized format for requesting exceptions to information deletion policy requirements per Section 3.3 policy requirements.
+**Purpose**: Standardised format for requesting exceptions to information deletion policy requirements per Section 3.3 policy requirements.
 
 **Usage**: System Owners, Data Owners, or IT Operations use this template when standard deletion requirements cannot be met. All exceptions require documented business justification, risk assessment, compensating controls, and formal approval per Section 3.3 authority matrix.
 
@@ -2592,7 +2592,7 @@ Select and detail applicable compensating controls:
   - Quarterly access reviews: [Yes/No - reviewer]
   - SIEM integration: [Yes/No]
 
-- [ ] **Data Minimization**
+- [ ] **Data Minimisation**
   - Dataset scope reduced (removed unnecessary fields): [Yes/No - describe]
   - Dataset size reduced (deleted oldest records within exception scope): [Yes/No - describe]
   - Sensitive fields masked within exception data: [Yes/No - describe]
@@ -2867,4 +2867,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 ---
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

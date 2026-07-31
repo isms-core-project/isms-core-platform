@@ -555,7 +555,7 @@ Complete Sheet 3, Section A: Security Stakeholder Identification
    - Engagement Level: Reviewer (architecture review) / Approver (design sign-off)
    - Notes: Reviews security architecture, provides design guidance
 
-5. **Other Stakeholders** (customize based on project)
+5. **Other Stakeholders** (customise based on project)
 
    - Examples: Cloud Security Specialist, Application Security Lead, Network Security Engineer
    - Document: Name, contact, specific area of involvement
@@ -622,7 +622,7 @@ Low             Low        Low        Low        Medium       Medium
 Very Low        Low        Low        Low        Low          Medium
 ```
 
-**Step 3: Prioritize and Plan Treatment** (15-30 min)
+**Step 3: Prioritise and Plan Treatment** (15-30 min)
 
 - Sort risks by Risk Level (Critical first, then High, Medium, Low)
 - For Critical/High risks: Define treatment plan with specific security controls
@@ -887,7 +887,7 @@ Build tree showing:
 - **Branches:** Attack paths to achieve goal
 - **Leaves:** Specific attack steps
 
-Analyze each path, identify countermeasures, prioritize defenses
+Analyze each path, identify countermeasures, prioritise defenses
 
 **Documentation:**
 
@@ -1133,7 +1133,7 @@ DPIA must address:
 4. **Mitigation Measures:**
 
    - What technical/organisational measures will reduce risks?
-   - Encryption, pseudonymization, access controls, retention limits, etc.
+   - Encryption, pseudonymisation, access controls, retention limits, etc.
 
 5. **Residual Risk:**
 
@@ -1424,7 +1424,7 @@ Complete Sheet 5, Section C: Security Findings Remediation
 - Review all findings from all test types
 - Deduplicate (same finding from multiple tools)
 - Validate (confirm true positive vs. false positive)
-- Prioritize (Critical → High → Medium → Low)
+- Prioritise (Critical → High → Medium → Low)
 
 **Step 2: Create Remediation Plan (1-2 hours)**
 
@@ -1640,7 +1640,7 @@ Complete Sheet 5, Section D: Security Documentation
 
 **Issue:** "Too many Medium findings, we can't fix them all before deployment"
 
-- **Response:** Prioritize: Fix those with easiest remediation or highest business impact, accept rest with compensating controls
+- **Response:** Prioritise: Fix those with easiest remediation or highest business impact, accept rest with compensating controls
 - **Mitigation:** Earlier security testing (shift-left), SAST in CI/CD catches issues during development
 
 **Issue:** "SAST tool has 90% false positive rate, team ignores findings"
@@ -2124,7 +2124,7 @@ Examples:
 - "Use DAST tool's API mode for better accuracy. Tune out false positive categories after first scan"
 - "Start security handover documentation template at project kickoff. Update incrementally, not all at end"
 
-**4. What Should Be Standardized Across [Organisation]'s Projects?**
+**4. What Should Be Standardised Across [Organisation]'s Projects?**
 
 [Recommendations for policy/procedure updates, templates, tools]
 
@@ -2132,7 +2132,7 @@ Examples:
 
 - "Create standard threat model template for web applications (save 4 hours per project)"
 - "Require security architecture review checkpoint at 50% design complete (mandatory gate for High Risk projects)"
-- "Standardize security test plan template with recommended test types by project classification"
+- "Standardise security test plan template with recommended test types by project classification"
 - "Create security handover documentation template in PMO toolkit"
 - "Require security champion assignment in project team charter for Medium/High Risk projects"
 
@@ -2145,7 +2145,7 @@ Examples:
 - "Need automated DAST in CI/CD pipeline, not just manual pre-deployment scan"
 - "InfoSec Officer overloaded (supporting 15 projects simultaneously). Need additional security headcount"
 - "Project Managers lack basic security training. Recommend mandatory 4-hour security awareness for all PMs"
-- "No centralized security requirements library. Every project reinvents wheel. Build shared repository"
+- "No centralised security requirements library. Every project reinvents wheel. Build shared repository"
 - "Certificate management manual and error-prone. Need automated cert renewal (ACME protocol)"
 
 **Lessons Learned Report:**
@@ -2474,7 +2474,7 @@ IF Lessons learned not documented AND closure phase active THEN
 # Evidence Management (Sheet 9: Evidence Register)
 
 ## Purpose
-Centralized tracking of all security evidence for audit trail, compliance verification, and knowledge retention.
+Centralised tracking of all security evidence for audit trail, compliance verification, and knowledge retention.
 
 ## Evidence Register Structure
 
@@ -2520,7 +2520,7 @@ Centralized tracking of all security evidence for audit trail, compliance verifi
 - Capture evidence when activity occurs (screenshot configs immediately after implementation)
 - Link evidence as you complete activities in phase checklists
 
-**2. Organize Evidence Systematically**
+**2. Organise Evidence Systematically**
 
 - Folder structure: `/project_name/security/evidence/[phase]/[activity]/`
 - Naming convention: `YYYY-MM-DD_[Activity]_[Description].ext`
@@ -2776,4 +2776,4 @@ Once approved:
 *"Security built in from the start costs a fraction of security bolted on at the end."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -570,8 +570,8 @@ nfdump -R /var/cache/nfdump/flows -s dstport/bytes -n 20
 
 **Network Services Questions**:
 9. What DNS servers are in use? (authoritative, recursive, caching)
-10. How is DHCP deployed? (centralized, distributed, per-VLAN)
-11. What NTP servers do devices synchronize with?
+10. How is DHCP deployed? (centralised, distributed, per-VLAN)
+11. What NTP servers do devices synchronise with?
 12. Are there proxy servers or web gateways?
 13. What authentication services are used? (RADIUS, TACACS+, LDAP)
 
@@ -625,8 +625,8 @@ nfdump -R /var/cache/nfdump/flows -s dstport/bytes -n 20
 - Physical site surveys
 
 **Deduplication Strategy**:
-1. **Normalize IP addresses**: Ensure consistent format (remove leading zeros, standardize notation)
-2. **Normalize hostnames**: Convert to lowercase, remove domain suffixes if inconsistent
+1. **Normalise IP addresses**: Ensure consistent format (remove leading zeros, standardise notation)
+2. **Normalise hostnames**: Convert to lowercase, remove domain suffixes if inconsistent
 3. **Match by multiple attributes**: IP address + MAC address + hostname
 4. **Resolve conflicts**: If same IP has different hostnames in different sources, investigate
 
@@ -1188,4 +1188,4 @@ gcloud dns managed-zones list                 # List DNS zones
 *"You cannot secure a network you have not mapped."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

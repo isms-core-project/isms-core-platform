@@ -591,7 +591,7 @@ Phase 5: Review & Approval (Day 15)
      - Classified documents (if applicable)
    - **Frequency**: Annually (full audit), Monthly (sensitive document register review)
 
-6. **Other Equipment** (Printers, Scanners, Specialized Equipment):
+6. **Other Equipment** (Printers, Scanners, Specialised Equipment):
 
    - **Discovery Method**: Asset Tag Scan + Procurement Records
    - **Asset Tagging**: Yes - barcode or RFID preferred
@@ -617,7 +617,7 @@ Phase 5: Review & Approval (Day 15)
 **What This Sheet Captures**:
 
 - Critical role identification procedures
-- Specialized competency mapping
+- Specialised competency mapping
 - Succession planning alignment
 - Competency gap analysis
 - Training and certification tracking
@@ -629,7 +629,7 @@ Phase 5: Review & Approval (Day 15)
 | Column | Purpose | How to Complete |
 |--------|---------|-----------------|
 | **Role/Competency** | Generic role or skill | Free text: Role title or competency name (NEVER person name) |
-| **Category** | Type of personnel asset | Dropdown: Executive Role / Technical Role / Regulatory Role / Specialized Competency / Language Skill / Certification |
+| **Category** | Type of personnel asset | Dropdown: Executive Role / Technical Role / Regulatory Role / Specialised Competency / Language Skill / Certification |
 | **Business Criticality** | Impact if capability lost | Dropdown: Critical / High / Medium / Low |
 | **Discovery Method** | How role/competency identified | Dropdown: Org Chart Analysis / Job Description Review / Competency Matrix / HR System / Succession Plan / Manager Interview |
 | **Current Capacity** | How many people have this capability | Numeric (e.g., "3 DBAs", "2 CISSP certified") |
@@ -675,14 +675,14 @@ Phase 5: Review & Approval (Day 15)
    - **Current Capacity**: 1
    - **Succession Plan**: Document succession or external DPO backup
 
-4. **Specialized Competencies**:
+4. **Specialised Competencies**:
 
    - **Example**: "Legacy COBOL Programming"
-   - **Category**: Specialized Competency
+   - **Category**: Specialised Competency
    - **Business Criticality**: Assess based on legacy system importance
    - **Current Capacity**: 1 (only one person knows this)
    - **Risk**: Single point of failure
-   - **Remediation**: Knowledge transfer, documentation, or system modernization
+   - **Remediation**: Knowledge transfer, documentation, or system modernisation
 
 5. **Certifications**:
 
@@ -720,7 +720,7 @@ Phase 5: Review & Approval (Day 15)
 **What This Sheet Captures**:
 
 - Overall inventory completeness by category
-- Gap prioritization by severity
+- Gap prioritisation by severity
 - Remediation progress tracking
 - Trending over time (compare to previous quarters)
 
@@ -885,16 +885,16 @@ For each discovery activity, create evidence record:
    - **Evidence ID**: DISC-005
    - **Evidence Type**: System Export
    - **Related Domain**: Personnel Assets
-   - **Evidence Description**: "HR competency matrix (anonymized, roles only)"
+   - **Evidence Description**: "HR competency matrix (anonymised, roles only)"
    - **File Name**: hr_competency_matrix_20260122.xlsx
    - **Evidence Format**: Excel
-   - **Access Restriction**: Restricted (even anonymized, treat carefully)
+   - **Access Restriction**: Restricted (even anonymised, treat carefully)
    - **Retention Period**: 3 Years
 
 **Evidence Storage Best Practices**:
 
 - Store evidence centrally (SharePoint, document management system)
-- Organize by assessment period (Q1-2026, Q2-2026, etc.)
+- Organise by assessment period (Q1-2026, Q2-2026, etc.)
 - Restrict access (only security team and auditors)
 - Back up evidence (part of overall backup strategy)
 - Maintain chain of custody for audit purposes
@@ -1163,7 +1163,7 @@ Before submitting this assessment, verify:
 
 - [ ] Personnel assets documented as ROLES, not persons
 - [ ] No individual names in personnel sheet
-- [ ] HR data anonymized appropriately
+- [ ] HR data anonymised appropriately
 - [ ] Sensitive evidence marked "Restricted" or "Confidential"
 
 ### Review Checks
@@ -1267,4 +1267,4 @@ Document approval in assessment workbook:
 *"You cannot protect what you do not know you have."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -405,7 +405,7 @@ Before starting this assessment, gather:
 **Outputs:**
 
 - Comprehensive gap analysis
-- Risk-prioritized remediation plan
+- Risk-prioritised remediation plan
 - Timeline for gap closure
 
 #### Phase 9: Evidence Collection (1-2 hours)
@@ -710,7 +710,7 @@ Before starting this assessment, gather:
    - Estimated effort
    - Target completion date
 
-4. Prioritize gaps by risk severity
+4. Prioritise gaps by risk severity
 
 **Time:** 1-2 hours
 
@@ -718,7 +718,7 @@ Before starting this assessment, gather:
 
 - Be honest about gaps (audit will find them anyway)
 - Developer production access = HIGH severity (immediate remediation)
-- Prioritize High severity gaps first
+- Prioritise High severity gaps first
 - Include compensating controls if remediation delayed
 
 **Example Entry:**
@@ -1012,7 +1012,7 @@ Before submitting your assessment for approval, verify:
 **Review Criteria:**
 
 - Is zero developer production access enforced (or violations documented)?
-- Are gaps realistic and properly prioritized?
+- Are gaps realistic and properly prioritised?
 - Are remediation timelines appropriate for risk severity?
 - Is evidence sufficient for audit?
 
@@ -1095,4 +1095,4 @@ Document approvals in Sheet 9 (Evidence Register):
 *"The controls that protect production should never be tested in production."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

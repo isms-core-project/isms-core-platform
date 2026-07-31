@@ -282,7 +282,7 @@ The **Admin Tiering Model** (also called **Tiered Administration Model**) is a s
 - **Database Administrators**: SQL Server SA, Oracle DBA, PostgreSQL superuser, MongoDB admin
 - **Application Administrators**: SAP administrators, ERP admins, CRM admins
 - **Cloud Infrastructure**: Azure subscription Owners/Contributors, AWS account admins, GCP project Owners
-- **Virtualization**: VMware administrators, Hyper-V administrators
+- **Virtualisation**: VMware administrators, Hyper-V administrators
 - **Middleware**: Application server admins (Tomcat, IIS, Apache administrators)
 
 **Why Tier 1:**
@@ -811,7 +811,7 @@ For each piece of evidence:
 
 ## Pitfall 8: Cloud Admins Not Classified
 
-**Problem**: Azure Global Administrator or AWS root user not recognized as Tier 0
+**Problem**: Azure Global Administrator or AWS root user not recognised as Tier 0
 
 **Solution**:
 
@@ -896,7 +896,7 @@ Before submitting assessment for approval, verify:
 
 - **100%**: All privileged accounts vaulted (ideal state)
 - **90-99%**: Nearly complete coverage, document exceptions
-- **80-89%**: Good progress, prioritize remaining gaps
+- **80-89%**: Good progress, prioritise remaining gaps
 - **<80%**: Insufficient PAM coverage (high risk)
 
 **Tier 0 Security Score:**
@@ -911,7 +911,7 @@ Before submitting assessment for approval, verify:
 - **1-5 violations/quarter**: Acceptable - Investigate and remediate
 - **>5 violations/quarter**: CRITICAL - Tier isolation not enforced, architectural issue
 
-## Gap Prioritization
+## Gap Prioritisation
 
 **Priority 1 - CRITICAL (Immediate Action - Within 7 Days):**
 
@@ -936,7 +936,7 @@ Before submitting assessment for approval, verify:
 
 **Priority 4 - LOW (Ongoing Improvement):**
 
-- Optimization of PAM workflows
+- Optimisation of PAM workflows
 - Enhanced session recording analytics
 - Privileged access training improvements
 
@@ -978,7 +978,7 @@ Assessment is approved when:
 - [ ] Admin tier classifications documented
 - [ ] PAM coverage assessed
 - [ ] Tier isolation compliance verified
-- [ ] Critical gaps identified and prioritized
+- [ ] Critical gaps identified and prioritised
 - [ ] Remediation timeline defined
 
 ## Post-Approval Actions
@@ -998,4 +998,4 @@ After CISO approval:
 *"Privileges are the most valuable keys in the kingdom — and the most dangerous."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

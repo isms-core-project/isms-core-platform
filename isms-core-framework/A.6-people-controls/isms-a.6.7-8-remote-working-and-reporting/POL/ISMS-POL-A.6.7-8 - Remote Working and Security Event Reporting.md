@@ -59,7 +59,7 @@ This policy establishes [Organisation]'s requirements for remote working securit
 **Combined Control Framework**: These two controls are implemented as a unified framework because:
 
 1. **Remote workers are the front line of event detection** - Personnel working remotely are often the first to observe security anomalies affecting their devices, connections, or data access
-2. **Unique remote work threats require specialized reporting** - Remote workers face threats not present in office environments (unsecured networks, physical access by others, public space risks)
+2. **Unique remote work threats require specialised reporting** - Remote workers face threats not present in office environments (unsecured networks, physical access by others, public space risks)
 3. **ISO 27002:2022 explicitly links them** - Remote working guidance requires incident reporting procedures to be accessible from remote locations
 4. **Same personnel population** - Both controls address the same people and their security responsibilities; combined training is more effective
 
@@ -112,7 +112,7 @@ This policy establishes [Organisation]'s requirements for remote working securit
 
 **ISO/IEC 27002:2022 Guidance Summary**:
 
-- Simple, accessible, and well-publicized reporting channels
+- Simple, accessible, and well-publicised reporting channels
 - Multiple reporting options available
 - Clear definition of reportable events with examples
 - Include reporting in security awareness training
@@ -420,7 +420,7 @@ Where personal devices are permitted for organisational work, they SHALL:
 
 - Meet minimum security requirements defined by IT Security
 - Have organisational MDM/EMM solution installed (if required)
-- Maintain separation between personal and work data (containerization)
+- Maintain separation between personal and work data (containerisation)
 - Be subject to remote wipe of organisational data upon termination
 - Not store organisational data after access is revoked
 
@@ -617,7 +617,7 @@ Personnel reporting events SHALL:
 
 [Organisation] SHALL:
 
-- Recognize personnel who demonstrate exemplary reporting behavior
+- Recognise personnel who demonstrate exemplary reporting behavior
 - Use reported events as learning opportunities, not punishment triggers
 - Communicate the value of reporting through awareness programs
 - Provide feedback on reported events to demonstrate action is taken
@@ -909,7 +909,7 @@ This policy requires the following supporting documentation to be developed and 
 
 | Document Type | Purpose | Owner |
 |---------------|---------|-------|
-| **Security Event Report Form** | Standardized form for reporting security events | IT Security |
+| **Security Event Report Form** | Standardised form for reporting security events | IT Security |
 | **Event Classification Guide** | Guidance on event categories and severity levels | IT Security |
 | **Reporting Channel Quick Reference** | Contact information and reporting procedures | IT Security |
 | **Event Response Acknowledgment** | Template for acknowledging received reports | IT Security |
@@ -944,4 +944,4 @@ Optional reference templates and examples may be provided in:
 
 *This policy establishes requirements for remote working and information security event reporting. Implementation procedures, assessment templates, and detailed guidance are documented in ISMS-IMP-A.6.7-8 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

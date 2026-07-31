@@ -245,7 +245,7 @@ Each workbook follows this proven pattern:
 - R: MFA Enabled (Yes/No/Partial)
 - S: Encryption at Rest (Yes/No/Unknown)
 - T: Encryption in Transit (TLS 1.3/TLS 1.2/Weak)
-- U: Centralized Logging (Yes/No/Partial)
+- U: Centralised Logging (Yes/No/Partial)
 - V: SSO Integration (Yes/No/Planned)
 - W: Data Classification Labels Applied (Yes/No/Partial)
 - X: Configuration Baseline Documented (Yes/No)
@@ -436,7 +436,7 @@ def apply_border(cell):
 - **Real-time metrics** - stakeholders see live compliance %
 - **Audit trail** - formulas show exactly where data comes from
 
-## Dashboard Visualizations
+## Dashboard Visualisations
 
 **Compliance Summary Table:**
 | Assessment Area | Total | Compliant | Partial | Non-Compliant | N/A | Compliance % |
@@ -654,4 +654,4 @@ python3 generate_reg_a523_4_governance.py
 *— Richard Feynman*
 
 **Translation for ISMS:** Evidence-based compliance prevents cloud washing! ☁️🔍
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

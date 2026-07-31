@@ -315,7 +315,7 @@ Cloud service changes shall follow organisational change management:
 │ Runtime           │   YOU    │ PROVIDER │ PROVIDER │            │
 │ Middleware        │   YOU    │ PROVIDER │ PROVIDER │            │
 │ Operating System  │   YOU    │ PROVIDER │ PROVIDER │            │
-│ Virtualization    │ PROVIDER │ PROVIDER │ PROVIDER │            │
+│ Virtualisation    │ PROVIDER │ PROVIDER │ PROVIDER │            │
 │ Infrastructure    │ PROVIDER │ PROVIDER │ PROVIDER │            │
 │ Physical          │ PROVIDER │ PROVIDER │ PROVIDER │            │
 │                                                                 │
@@ -425,7 +425,7 @@ Migration to alternative cloud provider is the **default exit strategy** for mos
 ✅ **No regulatory mandate** for physical on-premises hosting  
 ✅ **Cloud TCO remains favorable** vs. on-premises over 3-5 year horizon  
 ✅ **Geographic distribution required** (multi-region, low-latency global access)  
-✅ **Modern cloud services utilized** (AI/ML, IoT, analytics, CDN)
+✅ **Modern cloud services utilised** (AI/ML, IoT, analytics, CDN)
 
 **Example Scenario:**
 
@@ -447,7 +447,7 @@ Hybrid approach maintains some workloads in cloud while repatriating selected co
 | Scenario | Cloud Component | On-Premises Component | Rationale |
 |----------|----------------|----------------------|-----------|
 | **Data Sovereignty** | Application tier, compute, dev/test | Database with sensitive/regulated data | Regulatory data residency requirements (FADP, sector laws) |
-| **Cost Optimization** | Burst capacity, non-production | Baseline production workload | Predictable baseline on-prem, elastic overflow in cloud |
+| **Cost Optimisation** | Burst capacity, non-production | Baseline production workload | Predictable baseline on-prem, elastic overflow in cloud |
 | **Latency-Sensitive** | Backup/DR, analytics, reporting | Real-time transaction processing | Reduce network latency for critical interactive workloads |
 | **Staged Migration** | New cloud-native services | Legacy systems being refactored | Gradual transition over 12-24 months, de-risk migration |
 | **Regulatory Hybrid** | Non-critical data processing | Confidential/Restricted data | GDPR Article 44-50 transfer limitations, data classification-driven |
@@ -457,7 +457,7 @@ Hybrid approach maintains some workloads in cloud while repatriating selected co
 | Criterion | Evaluation Method | Documentation |
 |-----------|-------------------|---------------|
 | **Workload segmentation** | Identify which components remain cloud vs. on-prem (by data classification, latency, compliance) | Workload placement matrix |
-| **Data synchronization** | Assess data replication requirements (latency tolerance, consistency model, volume) | Data flow diagram, sync SLA |
+| **Data synchronisation** | Assess data replication requirements (latency tolerance, consistency model, volume) | Data flow diagram, sync SLA |
 | **Network connectivity** | Evaluate hybrid connectivity options (VPN, AWS Direct Connect, Azure ExpressRoute, GCP Interconnect) | Network architecture diagram |
 | **Management complexity** | Document additional operational overhead (multiple platforms, tools, skills) | Operational runbook |
 | **Skill requirements** | Assess need for hybrid cloud expertise (both cloud and on-prem infrastructure) | Training plan, hiring needs |
@@ -483,7 +483,7 @@ Hybrid approach maintains some workloads in cloud while repatriating selected co
 | **Network connectivity** | CHF 10K-30K | CHF 5K-50K/year | VPN or dedicated circuits (1-10 Gbps) |
 | **Hybrid management tools** | CHF 0-20K | CHF 10K-50K/year | Orchestration (Terraform, Ansible), monitoring (Datadog, Prometheus) |
 | **Skills/training** | CHF 0-30K | CHF 20K-50K | Staff training on hybrid architectures, consulting |
-| **Data synchronization** | CHF 5K-20K | CHF 5K-20K | Replication tools, bandwidth costs |
+| **Data synchronisation** | CHF 5K-20K | CHF 5K-20K | Replication tools, bandwidth costs |
 | **Professional services** | CHF 30K-100K | CHF 10K-30K | Architecture design, implementation support |
 | **TOTAL** | **CHF 95K-700K** | **CHF 80K-300K/year** | **3-year TCO: CHF 335K-1.6M** |
 
@@ -495,8 +495,8 @@ Hybrid approach maintains some workloads in cloud while repatriating selected co
 | **Infrastructure Procurement** | 8-12 weeks | Hardware procurement, facility preparation, network circuits |
 | **Hybrid Connectivity Setup** | 4-6 weeks | VPN/Direct Connect configuration, testing |
 | **Workload Migration** | 8-16 weeks | Phased migration of selected workloads to on-prem |
-| **Integration & Testing** | 4-8 weeks | Data synchronization, failover testing, performance validation |
-| **Optimization** | 4-8 weeks | Cost optimization, performance tuning, operational handoff |
+| **Integration & Testing** | 4-8 weeks | Data synchronisation, failover testing, performance validation |
+| **Optimisation** | 4-8 weeks | Cost optimisation, performance tuning, operational handoff |
 
 **Total Timeline: 6-12 months typical**
 
@@ -545,7 +545,7 @@ Complete migration from cloud to [Organisation]-owned infrastructure. This is th
 | **Infrastructure requirements** | Size compute, storage, network, facilities, power/cooling | Infrastructure capacity plan |
 | **Capital expenditure** | Initial investment for hardware, software, facilities | CAPEX budget (CHF 200K-2M+) |
 | **Operational expenditure** | Staff, maintenance, utilities, software licenses | OPEX budget (annual) |
-| **Total Cost of Ownership** | 3-5 year amortized TCO vs. current cloud costs | TCO comparison model |
+| **Total Cost of Ownership** | 3-5 year amortised TCO vs. current cloud costs | TCO comparison model |
 | **Timeline** | Realistic build-out including procurement, deployment, testing | Project timeline (6-18 months) |
 | **Skills/staffing** | Hiring, training, retention for infrastructure operations | Staffing plan (3-10 FTEs) |
 | **Facilities** | Data center space, power/cooling capacity, physical security | Facility assessment |
@@ -564,7 +564,7 @@ Complete migration from cloud to [Organisation]-owned infrastructure. This is th
 | **Network** | Core switches (10/25 GbE), firewalls, load balancers | 40K-80K | 5 years |
 | **Backup** | Backup appliances, deduplication, tape library (optional) | 30K-60K | 5 years |
 | **Facilities** | Rack space, power distribution, cooling (if colo) | 0-100K | N/A (or colo contract) |
-| **Software licenses** | Virtualization (VMware, Hyper-V), backup (Veeam, Commvault) | 20K-50K | 1-3 years |
+| **Software licenses** | Virtualisation (VMware, Hyper-V), backup (Veeam, Commvault) | 20K-50K | 1-3 years |
 | **Professional services** | Migration consulting, implementation support | 50K-100K | One-time |
 | **Contingency** | 15-20% buffer for unexpected costs | 50K-150K | One-time |
 | **TOTAL CAPEX** | | **CHF 390K-990K** | |
@@ -575,11 +575,11 @@ Complete migration from cloud to [Organisation]-owned infrastructure. This is th
 |-----------|--------------|------------------|-------|
 | **Staffing** | 3-5 FTEs (sysadmin, network, security) @ CHF 100K-120K loaded | 300K-600K | Salaries, benefits, training |
 | **Maintenance** | Hardware support contracts (15-20% of CAPEX annually) | 30K-80K | Critical for uptime |
-| **Software licenses** | Virtualization, backup, monitoring, security tools | 30K-100K | Annual renewals, support |
+| **Software licenses** | Virtualisation, backup, monitoring, security tools | 30K-100K | Annual renewals, support |
 | **Facilities** | Colo rent, power, cooling (if no owned DC) | 30K-100K | Or CAPEX if owned facility |
 | **Network** | WAN connectivity, ISP, bandwidth | 10K-30K | Multi-homed for redundancy |
 | **Consulting** | Ongoing architecture, security, performance tuning | 20K-50K | Intermittent support |
-| **Technology refresh reserve** | Set aside for 3-5 year hardware replacement | 50K-150K | Amortized CAPEX |
+| **Technology refresh reserve** | Set aside for 3-5 year hardware replacement | 50K-150K | Amortised CAPEX |
 | **TOTAL OPEX** | | **CHF 470K-1.11M/year** | |
 
 **5-Year Total Cost of Ownership:**
@@ -615,7 +615,7 @@ Full on-premises repatriation is economically justified **ONLY** when one or mor
 - Annual cloud costs >CHF 500K **AND** workload characteristics:
   - Stable, predictable baseline (no burst requirements)
   - High-volume data processing (>500TB, low egress needs)
-  - CPU-intensive batch workloads (continuous high utilization)
+  - CPU-intensive batch workloads (continuous high utilisation)
 - 3-5 year on-prem TCO < 70% of equivalent cloud costs
 - **Example**: Genomics research (petabyte-scale data, continuous compute), large-scale batch processing
 
@@ -648,9 +648,9 @@ Full on-premises repatriation is economically justified **ONLY** when one or mor
 | **Design** | 6-8 weeks | Architecture, capacity planning, facility assessment | Data center selection (if needed) |
 | **Procurement** | 8-16 weeks | Hardware RFP, vendor selection, purchase orders | Lead times (network 12+ weeks) |
 | **Facility Preparation** | 4-8 weeks | Rack installation, power/cooling, physical security (if new DC) | Facility readiness inspection |
-| **Infrastructure Deployment** | 6-10 weeks | Hardware installation, network configuration, virtualization setup | Network connectivity established |
+| **Infrastructure Deployment** | 6-10 weeks | Hardware installation, network configuration, virtualisation setup | Network connectivity established |
 | **Migration & Testing** | 8-16 weeks | Phased workload migration, integration testing, performance validation | Cutover windows, rollback plans |
-| **Optimization** | 4-8 weeks | Performance tuning, cost optimization, operational handoff | Operational acceptance |
+| **Optimisation** | 4-8 weeks | Performance tuning, cost optimisation, operational handoff | Operational acceptance |
 
 **Total Timeline: 9-18 months typical (median: 12 months)**
 
@@ -670,7 +670,7 @@ Full on-premises repatriation is economically justified **ONLY** when one or mor
 | Risk | Impact | Mitigation |
 |------|--------|------------|
 | **Technology debt** | Hardware becomes obsolete, refresh needed every 3-5 years | Budget for refresh cycles, lifecycle planning |
-| **Capacity planning** | Over-provisioning (wasted cost) or under-provisioning (performance issues) | Start with 30% headroom, monitor utilization |
+| **Capacity planning** | Over-provisioning (wasted cost) or under-provisioning (performance issues) | Start with 30% headroom, monitor utilisation |
 | **Elasticity loss** | Cannot handle unexpected traffic spikes or growth | Hybrid architecture with cloud burst capacity |
 | **Skills retention** | Infrastructure staff turnover, knowledge loss | Documentation, cross-training, competitive compensation |
 | **Single points of failure** | On-prem infrastructure has failure domains | Redundancy (N+1), BC/DR to cloud or colo |
@@ -679,7 +679,7 @@ Full on-premises repatriation is economically justified **ONLY** when one or mor
 
 **When On-Premises Repatriation is NOT Justified:**
 
-❌ **Cloud costs are high but workload is elastic** → Stay in cloud, optimize costs (reserved instances, autoscaling)  
+❌ **Cloud costs are high but workload is elastic** → Stay in cloud, optimise costs (reserved instances, autoscaling)  
 ❌ **Management perception "we want control"** → Hybrid with proper governance achieves control without full repatriation  
 ❌ **Short-term cloud pricing increase** → Negotiate enterprise agreement, consider alternative cloud provider  
 ❌ **Security concerns** → Cloud providers have better security than most on-prem (leverage their economies of scale)  
@@ -688,7 +688,7 @@ Full on-premises repatriation is economically justified **ONLY** when one or mor
 **Example Scenario:**
 
 > **Large-Scale Batch Processing System (Justified On-Prem Repatriation)**  
-> - **Workload**: Nightly ETL processing, 800 TB data warehouse, predictable 90% CPU utilization  
+> - **Workload**: Nightly ETL processing, 800 TB data warehouse, predictable 90% CPU utilisation  
 > - **Current Cloud Cost**: CHF 1.2M/year (EC2, S3, RDS)  
 > - **On-Prem TCO**: CHF 600K CAPEX + CHF 400K/year OPEX = CHF 2.6M over 5 years  
 > - **Cloud 5-Year**: CHF 6M  
@@ -763,7 +763,7 @@ Use this decision tree for exit strategy selection:
 | Exit Strategy | Expected Usage | Primary Drivers |
 |--------------|----------------|-----------------|
 | **Cloud-to-Cloud** | 90%+ of services | Cost, speed, elasticity, innovation |
-| **Hybrid** | 5-10% of services | Regulatory compliance, latency, cost optimization |
+| **Hybrid** | 5-10% of services | Regulatory compliance, latency, cost optimisation |
 | **On-Premises** | <5% of services | Regulatory mandate, extreme cost inversion, strategic independence |
 
 ---
@@ -776,7 +776,7 @@ Exit strategies address **planned, voluntary transitions** from cloud services. 
 
 | Scenario Type | Planning Framework | Timeline | Example |
 |---------------|-------------------|----------|---------|
-| **Planned Exit** | This policy (A.5.23) | 3-18 months | Contract negotiation failure, cost optimization, strategic change |
+| **Planned Exit** | This policy (A.5.23) | 3-18 months | Contract negotiation failure, cost optimisation, strategic change |
 | **Emergency Failover** | BC/DR (A.5.30-8.13-14) | Hours-Days | Provider outage, security breach, geopolitical access loss |
 
 **Emergency Scenarios Requiring BC/DR:**
@@ -826,7 +826,7 @@ Exit strategy viability SHALL be reviewed and tested annually to ensure assumpti
 | Exit Strategy Type | Testing Requirement | Evidence | Frequency |
 |-------------------|---------------------|----------|-----------|
 | **Cloud-to-Cloud** | Export subset of data (10-20% sample), deploy on alternative provider | PoC screenshots, export validation report, cost quote | Annual |
-| **Hybrid** | Test hybrid connectivity, data synchronization latency, failover procedures | Network performance metrics, sync test results, failover log | Annual |
+| **Hybrid** | Test hybrid connectivity, data synchronisation latency, failover procedures | Network performance metrics, sync test results, failover log | Annual |
 | **On-Premises** | Update TCO calculation, verify infrastructure availability/capacity | TCO spreadsheet, capacity planning report, vendor quotes | Annual |
 
 **Testing Scope:**
@@ -950,7 +950,7 @@ Exit strategy reviews and testing results shall be retained for audit purposes:
 | Requirement | Implementation |
 |-------------|----------------|
 | Audit logging | All security-relevant events logged |
-| Log centralization | Logs exported to organisational SIEM |
+| Log centralisation | Logs exported to organisational SIEM |
 | Alerting | Security events trigger appropriate alerts |
 | Retention | Logs retained per policy (minimum 12 months) |
 | Threat detection | Provider and organisational detection |
@@ -963,11 +963,11 @@ Exit strategy reviews and testing results shall be retained for audit purposes:
 
 | Challenge | Mitigation |
 |-----------|------------|
-| Inconsistent controls | Standardized baseline across providers |
+| Inconsistent controls | Standardised baseline across providers |
 | Visibility gaps | Unified monitoring and logging |
 | Skill requirements | Training and documentation |
 | Complexity | Clear architecture and governance |
-| Cost management | Centralized tracking and optimization |
+| Cost management | Centralised tracking and optimisation |
 
 ## Multi-Cloud Governance
 
@@ -1000,4 +1000,4 @@ Exit strategy reviews and testing results shall be retained for audit purposes:
 ---
 
 *"The cloud is just someone else's computer — but you're still responsible for your data."*
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

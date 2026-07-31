@@ -1,7 +1,7 @@
 <!-- ISMS-CORE:IMP:ISMS-IMP-A.8.17.1-UG:framework:UG:a.8.17-s1 -->
 **ISMS-IMP-A.8.17.1-UG - Time Source Configuration & Assessment**
 **User Completion Guide**
-### ISO/IEC 27001:2022 Control A.8.17: Clock Synchronization
+### ISO/IEC 27001:2022 Control A.8.17: Clock Synchronisation
 
 ---
 
@@ -12,8 +12,8 @@
 | **Document Title** | Time Source Configuration |
 | **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.17.1-UG |
-| **Related Policy** | ISMS-POL-A.8.17 (Clock Synchronization) |
-| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.17 (Clock Synchronization) |
+| **Related Policy** | ISMS-POL-A.8.17 (Clock Synchronisation) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.17 (Clock Synchronisation) |
 | **Document Creator** | Chief Information Security Officer (CISO) |
 | **Document Owner** | CISO |
 | **Created Date** | [Date] |
@@ -32,8 +32,8 @@
 
 **Related Documents**:
 
-- ISMS-POL-A.8.17 (Clock Synchronization)
-- ISMS-IMP-A.8.17.2 (Synchronization Verification Process)
+- ISMS-POL-A.8.17 (Clock Synchronisation)
+- ISMS-IMP-A.8.17.2 (Synchronisation Verification Process)
 - ISMS-IMP-A.8.17.3 (Exception Management)
 
 ---
@@ -74,9 +74,9 @@ This assessment documents the time source infrastructure that provides authorita
 
 - **What are our authoritative time sources?** (GPS, NIST, Cloudflare, NTP Pool, etc.)
 - **Do we have sufficient redundancy?** (Policy requires minimum 2 sources)
-- **What is our internal NTP infrastructure?** (Which servers synchronize clients?)
+- **What is our internal NTP infrastructure?** (Which servers synchronise clients?)
 - **Are we compliant with policy requirements?** (Stratum levels, availability, monitoring)
-- **What is our time synchronization hierarchy?** (Stratum 0/1/2 architecture)
+- **What is our time synchronisation hierarchy?** (Stratum 0/1/2 architecture)
 
 **Key Principle:** "Garbage time in = garbage logs out." Without authoritative, redundant time sources, every timestamp in every log becomes unreliable. This assessment ensures your time infrastructure is rock-solid.
 
@@ -102,11 +102,11 @@ Think of this as documenting the "master clocks" for your organisation - just li
    - Monitoring status and health checks
    - Geographic distribution
 
-3. **Hierarchy** - Visual representation of time synchronization architecture
+3. **Hierarchy** - Visual representation of time synchronisation architecture
 
    - Auto-generated diagram showing Stratum 0/1/2 relationships
    - Source-to-server-to-client data flow
-   - Redundancy visualization
+   - Redundancy visualisation
 
 4. **Compliance_Summary** - Assessment results and policy compliance metrics
 
@@ -120,13 +120,13 @@ Think of this as documenting the "master clocks" for your organisation - just li
 | Assessment | Focus | Relationship to A.8.17-S1 |
 |------------|-------|---------------------------|
 | **ISMS-IMP-A.8.17.1** | **Time Source Infrastructure** | **THIS assessment - documents WHAT time sources exist** |
-| ISMS-IMP-A.8.17.2 | System Synchronization Verification | Uses S1 results to verify systems sync to documented sources |
+| ISMS-IMP-A.8.17.2 | System Synchronisation Verification | Uses S1 results to verify systems sync to documented sources |
 
 **Assessment Flow:**
 1. **A.8.17-S1 (THIS):** "We have NIST + Cloudflare as Stratum 1, plus 4 internal NTP servers"
 2. **A.8.17-S2 (NEXT):** "95% of 1,234 systems are syncing to those 4 internal NTP servers"
 
-You MUST complete S1 first - you can't verify systems synchronize (S2) until you've documented what they should synchronize TO (S1).
+You MUST complete S1 first - you can't verify systems synchronise (S2) until you've documented what they should synchronise TO (S1).
 
 ## Who Should Complete This Assessment
 
@@ -172,7 +172,7 @@ Upon completion, you will have:
 1. ✅ **Complete time source inventory** - All external authoritative sources documented
 2. ✅ **Internal NTP server catalog** - Every internal NTP server with config details
 3. ✅ **Redundancy verification** - Proof of ≥2 external sources and ≥2 internal servers (policy requirement)
-4. ✅ **Stratum hierarchy map** - Visual showing time synchronization architecture
+4. ✅ **Stratum hierarchy map** - Visual showing time synchronisation architecture
 5. ✅ **Monitoring coverage** - Verification that NTP infrastructure is monitored with alerting
 6. ✅ **Compliance status** - Pass/fail against policy requirements (REQ-817-001 through REQ-817-008)
 7. ✅ **Gap identification** - All non-compliant areas documented with remediation plans
@@ -184,7 +184,7 @@ When an auditor asks: *"How does your organisation ensure accurate time across a
 
 You hand them this assessment and say:
 
-> "We synchronize to two Stratum 1 external sources: NIST and Cloudflare. We operate 4 redundant internal NTP servers (Stratum 2) across two datacenters. All servers are monitored with alerting. 100% of our NTP infrastructure meets policy requirements. All documentation is in this assessment."
+> "We synchronise to two Stratum 1 external sources: NIST and Cloudflare. We operate 4 redundant internal NTP servers (Stratum 2) across two datacenters. All servers are monitored with alerting. 100% of our NTP infrastructure meets policy requirements. All documentation is in this assessment."
 
 **Auditor reaction:** ✅ "This demonstrates systematic time source management with appropriate redundancy and monitoring. Excellent."
 
@@ -231,7 +231,7 @@ Before starting, gather the following:
 **For Verification:**
 
 - `nslookup` or `dig` for DNS resolution of time sources
-- `chronyc tracking` or `ntpq -p` to verify NTP server synchronization
+- `chronyc tracking` or `ntpq -p` to verify NTP server synchronisation
 - Monitoring system UI to check NTP service status
 
 **For Documentation:**
@@ -241,7 +241,7 @@ Before starting, gather the following:
 
 ## Policy Requirements to Review
 
-Before starting, familiarize yourself with key policy requirements from **ISMS-POL-A.8.17**:
+Before starting, familiarise yourself with key policy requirements from **ISMS-POL-A.8.17**:
 
 **From Section 2.1 (External Authoritative Time Sources):**
 
@@ -253,7 +253,7 @@ Before starting, familiarize yourself with key policy requirements from **ISMS-P
 **From Section 2.2 (Internal NTP Infrastructure):**
 
 - **REQ-817-005**: Minimum TWO (2) internal NTP servers required
-- **REQ-817-006**: Internal servers must be Stratum 2 (synchronized to Stratum 1 external sources)
+- **REQ-817-006**: Internal servers must be Stratum 2 (synchronised to Stratum 1 external sources)
 - **REQ-817-007**: High availability configuration with automatic failover
 - **REQ-817-008**: Continuous monitoring with automated alerting for NTP infrastructure
 
@@ -307,7 +307,7 @@ You'll be verifying compliance with these requirements in the assessment.
 
 **STEP 8:** Review auto-generated Hierarchy sheet
 
-- Verify visualization accurately reflects your architecture
+- Verify visualisation accurately reflects your architecture
 - Check that external sources → internal servers relationships are correct
 
 **STEP 9:** Review Compliance_Summary sheet
@@ -445,7 +445,7 @@ You'll be verifying compliance with these requirements in the assessment.
 
 ## Sheet: Internal_NTP_Servers (Internal NTP Infrastructure)
 
-**Purpose:** Document all internal NTP servers that synchronize to external sources and provide time to client systems.
+**Purpose:** Document all internal NTP servers that synchronise to external sources and provide time to client systems.
 
 **Column-by-Column Guidance:**
 
@@ -458,10 +458,10 @@ You'll be verifying compliance with these requirements in the assessment.
 | | | | Example: `10.0.1.10`, `192.168.1.50` | `nslookup` or `dig` |
 | C | **Stratum [*]** | REQUIRED | Expected Stratum level (should be 2 or 3) | `chronyc tracking` or `ntpq -p` output |
 | | | | **Policy requirement (REQ-817-006):** Internal servers MUST be Stratum 2 | ISMS-POL-A.8.17 Section 2.2 |
-| | | | **Stratum 2**: Synchronized to Stratum 1 external sources (correct) | |
-| | | | **Stratum 3**: Synchronized to Stratum 2 servers (acceptable for secondary tier) | |
+| | | | **Stratum 2**: Synchronised to Stratum 1 external sources (correct) | |
+| | | | **Stratum 3**: Synchronised to Stratum 2 servers (acceptable for secondary tier) | |
 | | | | **⚠️ Stratum 16**: UNSYNCHRONIZED (FAILURE - needs remediation) | |
-| D | **Upstream Sources [*]** | REQUIRED | Which external time sources this server synchronizes to | `/etc/chrony.conf`, `chronyc sources` |
+| D | **Upstream Sources [*]** | REQUIRED | Which external time sources this server synchronises to | `/etc/chrony.conf`, `chronyc sources` |
 | | | | Example: `time.nist.gov, time.cloudflare.com` | NTP config file |
 | | | | **Must match sources from Time_Sources sheet** | Cross-reference |
 | | | | List multiple sources comma-separated | |
@@ -489,10 +489,10 @@ You'll be verifying compliance with these requirements in the assessment.
 | | | | **Update quarterly:** Re-verify health during each assessment | |
 | J | **Status [*]** | REQUIRED | Current operational status | Monitoring system, `chronyc tracking` |
 | | | | **Dropdown:** ✅ Active \| ❌ Inactive \| 🛠️ Maintenance \| ⚠️ Failed | |
-| | | | **Active**: Running and synchronized | |
+| | | | **Active**: Running and synchronised | |
 | | | | **Inactive**: Server exists but NTP service not running | |
 | | | | **Maintenance**: Temporarily offline for updates | |
-| | | | **Failed**: Service failure, not synchronizing (Stratum 16) | |
+| | | | **Failed**: Service failure, not synchronising (Stratum 16) | |
 | K | **Notes** | Optional | Additional context | Free text |
 | | | | Example: `Primary NTP server for DC1`, `Syncs to GPS on roof`, `Redundant pair with ntp2` | |
 
@@ -516,7 +516,7 @@ You'll be verifying compliance with these requirements in the assessment.
 - [ ] All servers show Stratum 2 or 3? (REQ-817-006 - Stratum 2 required for primary tier)
 - [ ] All servers have "✅ Monitored with Alerting" status? (REQ-817-008)
 - [ ] All servers have Last Health Check within 30 days? (Updated per verification frequency requirements)
-- [ ] All servers synchronized to external sources from Time_Sources sheet? (Cross-reference column D)
+- [ ] All servers synchronised to external sources from Time_Sources sheet? (Cross-reference column D)
 - [ ] Geographic distribution across datacenters documented? (REQ-817-004 - recommended)
 - [ ] Peer relationships configured for high availability? (REQ-817-007)
 
@@ -526,14 +526,14 @@ You'll be verifying compliance with these requirements in the assessment.
 - ❌ **Selecting "Monitored (No Alerting)"** - Policy requires alerting, not just monitoring
 - ❌ **Not updating Last Health Check dates** - Must verify health quarterly
 - ❌ **Upstream Sources don't match Time_Sources sheet** - Should reference same external sources
-- ❌ **Stratum 16 with Status "Active"** - Stratum 16 = not synchronized = must be "Failed" status
+- ❌ **Stratum 16 with Status "Active"** - Stratum 16 = not synchronised = must be "Failed" status
 - ❌ **Missing peer configurations** - High availability (REQ-817-007) requires peer relationships
 
 ---
 
-## Sheet: Hierarchy (Time Synchronization Architecture)
+## Sheet: Hierarchy (Time Synchronisation Architecture)
 
-**Purpose:** Auto-generated visualization of time synchronization hierarchy from Stratum 0/1/2 sources.
+**Purpose:** Auto-generated visualisation of time synchronisation hierarchy from Stratum 0/1/2 sources.
 
 **THIS SHEET IS AUTO-CALCULATED/GENERATED** - You don't manually fill it in.
 
@@ -965,4 +965,4 @@ Before submitting for approval, verify:
 *"Time is the invisible thread that ties every log entry together."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

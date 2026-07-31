@@ -79,10 +79,10 @@ This dashboard provides **executive-level visibility into project security integ
 2. **Project-by-Project Status** - Sortable table of all projects with security classification, compliance scores, critical gaps
 3. **Gap Analysis Across Portfolio** - Common security gaps identified across multiple projects, frequency analysis
 4. **Trend Analysis** - Quarter-over-quarter trends in portfolio compliance (charts showing improvement/decline)
-5. **Risk-Based Prioritization** - Projects ranked by risk level requiring immediate attention (Priority 1-4 matrix)
+5. **Risk-Based Prioritisation** - Projects ranked by risk level requiring immediate attention (Priority 1-4 matrix)
 6. **Lessons Learned Synthesis** - Aggregated insights from all project retrospectives, common themes
 7. **Regulatory Compliance View** - Compliance status by regulation (GDPR, nDSG, PCI DSS v4.0.1, sector-specific)
-8. **Resource & Budget Analysis** - Security budget utilization, resource allocation efficiency
+8. **Resource & Budget Analysis** - Security budget utilisation, resource allocation efficiency
 
 **Data Sources:**
 
@@ -144,7 +144,7 @@ This dashboard provides **executive-level visibility into project security integ
 **For Executive Management:**
 
 - Concise portfolio security summary (not overwhelmed with project details)
-- Risk-based prioritization for decision-making
+- Risk-based prioritisation for decision-making
 - Trend visibility (are we improving?)
 - Accountability (which projects/PMs struggling with security integration?)
 
@@ -152,7 +152,7 @@ This dashboard provides **executive-level visibility into project security integ
 
 - Project governance oversight (gate review effectiveness)
 - Process improvement insights (common gaps = process fixes needed)
-- Resource allocation optimization
+- Resource allocation optimisation
 
 **For Board of Directors:**
 
@@ -207,7 +207,7 @@ This dashboard provides **executive-level visibility into project security integ
 - **Actions:**
   - Update PMO processes based on lessons learned
   - Provide additional support to struggling projects
-  - Recognize/reward PMs excelling in security integration
+  - Recognise/reward PMs excelling in security integration
 
 **4. Board of Directors**
 
@@ -287,7 +287,7 @@ This dashboard provides **executive-level visibility into project security integ
 - **Automate data collection:** Python script to read all A.5.8.1 workbooks in folder, extract key cells
 - **Template executive summary:** Pre-built PowerPoint template, just update numbers/charts
 - **Dashboard tool:** Use Power BI or Tableau for interactive dashboards (vs. static Excel)
-- **Standardize file naming:** `A.5.8.1_ProjectName_YYYY-MM-DD.xlsx` for easy scripting
+- **Standardise file naming:** `A.5.8.1_ProjectName_YYYY-MM-DD.xlsx` for easy scripting
 - **PMO collaboration:** PMO provides project list, you add security data
 
 ## Connection to Policy and Standards
@@ -444,7 +444,7 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 
 - Advanced Excel: Pivot tables, charts, formulas (SUMIF, COUNTIF, AVERAGEIF)
 - OR Python: pandas for data manipulation, openpyxl for Excel
-- OR Power BI/Tableau: data modeling, visualization
+- OR Power BI/Tableau: data modeling, visualisation
 
 ## Tools Needed
 
@@ -458,7 +458,7 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 **Pros:**
 
 - No programming required
-- Easy to customize
+- Easy to customise
 - Familiar tool
 
 **Cons:**
@@ -489,7 +489,7 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 **Cons:**
 
 - Requires Python skills (or IT support to set up)
-- Initial setup time (4-8 hours to develop/customize script)
+- Initial setup time (4-8 hours to develop/customise script)
 
 **Best For:** Medium/large portfolios (15+ projects), organisations with technical capability
 
@@ -506,7 +506,7 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 
 - Interactive dashboards (drill-down, filtering, dynamic charts)
 - Real-time or near-real-time updates
-- Professional visualizations
+- Professional visualisations
 - Shareable (publish to Power BI Service or Tableau Server)
 
 **Cons:**
@@ -567,7 +567,7 @@ Determine which projects to include in dashboard:
 - Specify deadline: "Need by [date] for quarterly portfolio dashboard"
 - Provide file naming convention: `A.5.8.1_ProjectName_YYYY-MM-DD.xlsx`
 
-**From Centralized Repository:**
+**From Centralised Repository:**
 
 - If organisation has central ISMS documentation repository:
   - Navigate to `/isms/assessments/a58_1/YYYY_QX/`
@@ -581,7 +581,7 @@ Cross-check against PMO project list:
 - Are any projects missing assessments? (follow up with PM)
 - Are assessments current? (not 6 months old for active project)
 
-**1.4 Organize Files**
+**1.4 Organise Files**
 
 Create working folder structure:
 ```
@@ -651,7 +651,7 @@ Create working folder structure:
 
    - Scans folder for Excel files
    - Extracts data from configured cells
-   - Updates all visualizations
+   - Updates all visualisations
 
 5. Publish refreshed dashboard to Power BI Service
 
@@ -703,7 +703,7 @@ Create working folder structure:
 
 ## Step 4: Generate Dashboard and Insights (1-2 hours)
 
-**Objective:** Create visualizations, calculate portfolio metrics, identify insights
+**Objective:** Create visualisations, calculate portfolio metrics, identify insights
 
 **Activities:**
 
@@ -765,7 +765,7 @@ Top 5 Most Common Gaps:
 5. "Monitoring phase risk reviews not regular" - 4 projects (20%)
 ```
 
-**4.4 Risk Prioritization**
+**4.4 Risk Prioritisation**
 
 Rank projects by risk priority:
 ```
@@ -793,7 +793,7 @@ Priority 4 (Low - Standard monitoring):
 
 ```
 
-**4.5 Create Visualizations**
+**4.5 Create Visualisations**
 
 **Charts to Generate:**
 1. **Portfolio Health Pie Chart:** Projects by status (🟢🟡🔴)
@@ -857,7 +857,7 @@ Trend: ↑ Improving (+4% QoQ, 6 projects improved, 1 declined)
 - Bar chart: Projects improved vs. declined (current vs. previous quarter)
 - Key insight: "Portfolio security integration improving steadily, +15% over past year"
 
-**Slide 3: Risk-Based Prioritization**
+**Slide 3: Risk-Based Prioritisation**
 
 - Table: Priority 1 projects requiring immediate attention (details, actions, owners, deadlines)
 - Visual: Risk heat map (bubble chart: x=Risk Level, y=Compliance Score, bubble size=Budget)
@@ -977,7 +977,7 @@ Trend: ↑ Improving (+4% QoQ, 6 projects improved, 1 declined)
 - Proposed remediation:
 
   1. Pen test vendor MSA → saves 4 weeks per project, reduces cost
-  2. Security handover template → standardizes closure documentation
+  2. Security handover template → standardises closure documentation
   3. Threat modeling workshop service → InfoSec facilitates for High Risk projects
 
 - **Budget ask:** $50K for pen test MSA, 0.5 FTE InfoSec resource for workshops
@@ -1179,7 +1179,7 @@ Change: ↑ +15% (Significant Improvement)
 | **High Findings Open** | Number | Number | From Execution phase |
 | **Target Deployment** | Date | Date | When project goes live |
 | **Last Assessment Date** | Date | Date | Currency check (should be recent) |
-| **Priority** | 1-4 | Number | 1=Critical, 4=Low (from risk prioritization) |
+| **Priority** | 1-4 | Number | 1=Critical, 4=Low (from risk prioritisation) |
 | **Notes** | Text | Plain | Brief issue summary or "On track" |
 
 **Table Features:**
@@ -1245,7 +1245,7 @@ Sort gaps by frequency (most common first)
 | 5 | Monitoring risk reviews irregular | 4 projects | 16% | Monitoring | Medium | No recurring meeting, PM turnover |
 | 6 | DPIA not conducted | 3 projects | 12% | Planning | High | DPO not engaged early |
 | 7 | Security architecture review skipped | 3 projects | 12% | Planning | High | Architect unavailable, backlog |
-| 8 | SAST not integrated in CI/CD | 3 projects | 12% | Execution | Medium | DevOps pipeline not standardized |
+| 8 | SAST not integrated in CI/CD | 3 projects | 12% | Execution | Medium | DevOps pipeline not standardised |
 | 9 | MFA not implemented for admin access | 2 projects | 8% | Execution | High | Technical complexity, SSO delays |
 | 10 | Asset registration in A.5.9 missing | 2 projects | 8% | Closure | Low | Manual process, forgotten |
 
@@ -1259,7 +1259,7 @@ Sort gaps by frequency (most common first)
   - Earlier scheduling (6 weeks before deployment, not 2 weeks)
 
 - **Security handover gap (28%):** Indicates need for:
-  - Create standardized handover documentation template
+  - Create standardised handover documentation template
   - Include handover in Definition of Done for Closure phase
   - Operations team sign-off required before project closure
 
@@ -1385,11 +1385,11 @@ Projects Stable (±5%): 18 (72%)
 
 **STATUS: Document in progress, will complete with Components 5-8 and Part II**
 
-## Component 5: Risk-Based Prioritization Matrix
+## Component 5: Risk-Based Prioritisation Matrix
 
 **Purpose:** Rank projects by risk priority to guide resource allocation and executive attention
 
-**Prioritization Matrix:**
+**Prioritisation Matrix:**
 
 Projects categorised into 4 priority levels based on risk and compliance:
 
@@ -1468,7 +1468,7 @@ Example Projects:
 
 ---
 
-**Risk Heat Map Visualization:**
+**Risk Heat Map Visualisation:**
 
 ```
 Bubble Chart:
@@ -1533,7 +1533,7 @@ For each project, extract:
 - What worked well? (successes)
 - What didn't work? (challenges)
 - What would we do differently? (improvements)
-- Recommended standardizations
+- Recommended standardisations
 
 **Step 2: Thematic Analysis**
 
@@ -1649,7 +1649,7 @@ Target: Q1 2025 (update Agile project template)
 Status: 🔄 In Progress
 ```
 
-**Step 3: Prioritize Improvements**
+**Step 3: Prioritise Improvements**
 
 Rank improvements by:
 1. **Impact:** How many projects will benefit? (high=affects >30% of projects)
@@ -1703,9 +1703,9 @@ Q3-Q4 2025:
 |-------|-------------------|------------|--------------|-------|--------|--------|
 | Pen test timing | 8 (32%) | No standard timeline, late budgeting | Template update + MSA | PMO + InfoSec | Q1-Q2 2025 | 🔄 |
 | Requirements vagueness | 6 (24%) | No templates, late InfoSec | Requirements library + review gate | InfoSec + PMO | Q1 2025 | 🔄 |
-| Handover docs | 7 (28%) | No template, rushed | Standardized template + incremental updates | InfoSec + Ops | Q1 2025 | ✅ |
+| Handover docs | 7 (28%) | No template, rushed | Standardised template + incremental updates | InfoSec + Ops | Q1 2025 | ✅ |
 | InfoSec bandwidth | 5 (20%) | Resource constraint | Hire or contractor | CISO + HR | Q2 2025 | ⚠️ Budget |
-| Success patterns | 1 (Mobile App) | Security champion + early engagement | Standardize for all Med/High | PMO + InfoSec | Q1 2025 | 🔄 |
+| Success patterns | 1 (Mobile App) | Security champion + early engagement | Standardise for all Med/High | PMO + InfoSec | Q1 2025 | 🔄 |
 
 ---
 
@@ -1862,7 +1862,7 @@ Priority: 🟠 HIGH
 
 ## Component 8: Resource and Budget Analysis
 
-**Purpose:** Analyze security resource utilization and budget allocation across portfolio
+**Purpose:** Analyze security resource utilisation and budget allocation across portfolio
 
 **Data Sources:**
 
@@ -1942,7 +1942,7 @@ Contingency/Other: $10,000 (4%)
 **Insights:**
 
 - Penetration testing is largest single expense (32% of total security budget)
-- Vendor assessments significant cost (12%) - opportunity for standardization/templates
+- Vendor assessments significant cost (12%) - opportunity for standardisation/templates
 - Training relatively low (8%) - may need investment for PM skill building
 
 **C. InfoSec Officer Time Allocation**
@@ -1993,10 +1993,10 @@ Total Billable: 520 hours (100% utilization)
 
 **Insights:**
 
-- InfoSec Officer at 100% utilization (no slack time)
+- InfoSec Officer at 100% utilisation (no slack time)
 - 38% of time spent on project reviews (15 projects simultaneously = overload)
 - Only 8% time for continuous improvement (should be 15-20% for innovation)
-- **Conclusion:** InfoSec Officer overloaded, need additional headcount or process optimization
+- **Conclusion:** InfoSec Officer overloaded, need additional headcount or process optimisation
 
 **D. Security ROI Analysis**
 
@@ -2048,7 +2048,7 @@ Portfolio Security ROI: $900,000 / $250,000 = 360% ROI (or 3.6:1 return)
    - With MSA: 15 projects × $3,500 = $52,500 (volume discount)
    - Savings: $22,500/year (30% reduction)
 
-2. **Standardized Vendor Questionnaire:**
+2. **Standardised Vendor Questionnaire:**
 
    - Current: Custom assessment per vendor = 20 hours InfoSec time × $100/hour = $2,000 per vendor
    - With Standard: 5 hours InfoSec time = $500 per vendor
@@ -2087,7 +2087,7 @@ Portfolio Security ROI: $900,000 / $250,000 = 360% ROI (or 3.6:1 return)
 **Data-Driven Storytelling:**
 
 - Don't just present numbers, tell the story
-- Example: "We improved 15% over the year because we established pen test vendor MSA and standardized handover templates"
+- Example: "We improved 15% over the year because we established pen test vendor MSA and standardised handover templates"
 - Connect data to business outcomes
 
 **Focus on Decisions:**
@@ -2107,7 +2107,7 @@ We have 2 projects requiring immediate attention: CustomerPortal and API Gateway
 
 Our top portfolio gaps are penetration testing (affecting 40% of projects), security handover docs (28%), and threat modeling (20%). We have remediation plans for all three.
 
-The trend is positive: we've improved 15% over the past year due to process improvements like establishing pen test vendor relationships and standardized documentation templates."
+The trend is positive: we've improved 15% over the past year due to process improvements like establishing pen test vendor relationships and standardised documentation templates."
 
 **Key Visual:** Large traffic light (GREEN), compliance score gauge (82%), trend line (↑)
 
@@ -2149,11 +2149,11 @@ We have identified 3 more process improvements for next quarter based on lessons
 **Script:**
 "Based on portfolio analysis, we recommend 3 investments:
 
-1. **Additional InfoSec headcount (0.5 FTE, $60K/year):** Our InfoSec Officer is at 100% utilization supporting 15 simultaneous projects. This creates bottlenecks and delays. Adding 0.5 FTE enables us to support current portfolio plus growth.
+1. **Additional InfoSec headcount (0.5 FTE, $60K/year):** Our InfoSec Officer is at 100% utilisation supporting 15 simultaneous projects. This creates bottlenecks and delays. Adding 0.5 FTE enables us to support current portfolio plus growth.
 
 2. **Pen test vendor MSA ($0, saves $22K/year):** Volume pricing reduces per-project cost 30%. Pays for itself.
 
-3. **Standardized vendor assessment questionnaire ($0, saves 300 InfoSec hours/year):** Reduces time per vendor assessment from 20 hours to 5 hours.
+3. **Standardised vendor assessment questionnaire ($0, saves 300 InfoSec hours/year):** Reduces time per vendor assessment from 20 hours to 5 hours.
 
 Total ask: $60K/year for headcount, offset by $22K savings = net $38K increase.
 
@@ -2242,4 +2242,4 @@ Full Year 2024 Highlights:
 *"A portfolio is only as secure as its least secure project."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

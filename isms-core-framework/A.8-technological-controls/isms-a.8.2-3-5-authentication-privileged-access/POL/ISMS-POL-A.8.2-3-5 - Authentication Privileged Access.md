@@ -175,12 +175,12 @@ Each control maintains independent applicability:
 
 ## Single Sign-On (SSO)
 
-[Organisation] SHALL implement centralized SSO with a target of 90%+ SaaS application integration:
+[Organisation] SHALL implement centralised SSO with a target of 90%+ SaaS application integration:
 
 - New SaaS applications: SSO integration required before procurement approval
-- Existing applications: SSO integration prioritized based on risk and user volume
+- Existing applications: SSO integration prioritised based on risk and user volume
 - Reduces password fatigue and improves security posture
-- Enables centralized access revocation upon termination
+- Enables centralised access revocation upon termination
 
 **Exceptions**: Applications without SSO capability require documented exception with compensating controls (e.g., individual MFA, enhanced monitoring).
 
@@ -497,7 +497,7 @@ All authentication events SHALL be logged:
 | SSO application integration | ≥90% | Quarterly |
 | Privileged session recording (Tier 0) | 100% | Monthly |
 
-**Reporting and Visualization**: KPIs tracked in Summary Dashboards with trend visualization. Monthly reports to IT Security Manager; quarterly executive summary to CISO and Executive Management with compliance posture and remediation priorities.
+**Reporting and Visualisation**: KPIs tracked in Summary Dashboards with trend visualisation. Monthly reports to IT Security Manager; quarterly executive summary to CISO and Executive Management with compliance posture and remediation priorities.
 
 ---
 
@@ -634,4 +634,4 @@ All tier violations generate CRITICAL alerts. Repeated violations result in:
 
 *This policy establishes requirements for authentication security, privileged access management, and technical access enforcement. Implementation procedures, assessment methodologies, and workbook specifications are documented in ISMS-IMP-A.8 (UG/TG).2-3-5 (S1-S6).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

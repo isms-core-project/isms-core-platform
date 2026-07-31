@@ -450,7 +450,7 @@ These frameworks inform AI governance practices but do not constitute mandatory 
 - Governance structure for AI (A.3.2) informed by ISO 38507 board-level AI governance guidance
 - Top management accountability framework aligned with ISO 38507 principles
 
-**Reference**: ISO/IEC 38507:2022, Information technology — Artificial intelligence — Governance implications of the use of AI by organizations
+**Reference**: ISO/IEC 38507:2022, Information technology — Artificial intelligence — Governance implications of the use of AI by organisations
 
 ---
 

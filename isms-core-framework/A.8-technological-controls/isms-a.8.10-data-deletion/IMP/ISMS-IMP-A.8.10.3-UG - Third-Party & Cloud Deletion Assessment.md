@@ -137,7 +137,7 @@ Under GDPR, cloud providers and SaaS vendors are typically "processors" of perso
 - **Evidence Collection (1 hour):** Gather contracts, certificates, audit reports
 - **Quality Review (1 hour):** Final validation and approval preparation
 
-**Pro Tip:** If [Organisation] has >50 cloud/SaaS vendors, consider prioritizing by data sensitivity (assess Confidential/Restricted data vendors first).
+**Pro Tip:** If [Organisation] has >50 cloud/SaaS vendors, consider prioritising by data sensitivity (assess Confidential/Restricted data vendors first).
 
 ## Connection to Policy
 
@@ -402,7 +402,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 
 **Challenge 4: Third-Party Integrations**
 
-- SaaS data synchronized to other services (Zapier, integrations)
+- SaaS data synchronised to other services (Zapier, integrations)
 - **Risk:** Deleting from primary SaaS doesn't delete from integrated services
 - **Mitigation:** Map all integrations, delete from integrated services first
 
@@ -638,7 +638,7 @@ Shadow IT refers to cloud services and applications used by employees without IT
 - Import to approved, DPA-compliant service
 - Delete from Shadow IT service (verify if possible)
 
-**Option 2: Formalize Usage**
+**Option 2: Formalise Usage**
 
 - Upgrade to enterprise tier with DPA
 - Add vendor to approved vendor list
@@ -655,7 +655,7 @@ Shadow IT refers to cloud services and applications used by employees without IT
 - Shadow IT discovery methods deployed (not relying on one method)?
 - All discovered Shadow IT services documented (even low-risk ones)?
 - Data sensitivity assessed for each Shadow IT service?
-- Remediation plan defined (migrate, formalize, or delete)?
+- Remediation plan defined (migrate, formalise, or delete)?
 - User training planned to prevent future Shadow IT?
 
 ### Step 6: Evidence Collection (Sheet 8)
@@ -816,9 +816,9 @@ A: Red flag - investigate further:
 
 **Q: How do I handle SaaS data in integrations (Zapier, APIs)?**
 A: Multi-step deletion process:
-1. **Identify all integrations:** Map where SaaS data is synchronized
+1. **Identify all integrations:** Map where SaaS data is synchronised
 2. **Delete from downstream systems first:** Delete from integrated services (e.g., data warehouse, analytics platform)
-3. **Disable integrations:** Prevent re-synchronization
+3. **Disable integrations:** Prevent re-synchronisation
 4. **Delete from primary SaaS:** Remove data from source system
 5. **Verify:** Check all integrated systems confirm deletion
 
@@ -951,7 +951,7 @@ For each assessment area, gather supporting documentation:
 - Deletion procedure documentation (from vendor support docs)
 - Deletion confirmation emails (from past deletions)
 - Data export capabilities test results
-- Integration mapping (where SaaS data is synchronized)
+- Integration mapping (where SaaS data is synchronised)
 
 **Vendor Contract Assessment:**
 
@@ -980,7 +980,7 @@ For each assessment area, gather supporting documentation:
 
 **Where to Store Evidence:**
 
-- Centralized evidence repository (ISMS document management)
+- Centralised evidence repository (ISMS document management)
 - Contract management system (for vendor agreements)
 - Compliance management platform
 
@@ -1008,7 +1008,7 @@ For each assessment area, gather supporting documentation:
 
 **Common Audit Findings (And How to Avoid Them):**
 
-- ❌ **"Vendor contracts missing deletion clauses"** → Renegotiate contracts, prioritize high-risk vendors
+- ❌ **"Vendor contracts missing deletion clauses"** → Renegotiate contracts, prioritise high-risk vendors
 - ❌ **"Subprocessors not disclosed"** → Request subprocessor lists from all vendors, document in assessment
 - ❌ **"No deletion verification from vendors"** → Request deletion certificates or implement audit log verification
 - ❌ **"Shadow IT with sensitive data"** → Deploy CASB, remediate discovered Shadow IT, user training
@@ -1058,7 +1058,7 @@ For each assessment area, gather supporting documentation:
 
 **Prevention:**
 
-- Centralize subprocessor notification emails (route to DPO/vendor management)
+- Centralise subprocessor notification emails (route to DPO/vendor management)
 - Review subprocessor changes quarterly
 - Maintain subprocessor register (updated when notification received)
 - Exercise objection right if subprocessor lacks adequate deletion procedures
@@ -1231,7 +1231,7 @@ Once all three levels approve:
 
 1. **Contract Renegotiation:** Initiate contract amendments for vendors with weak/missing deletion clauses
 2. **Vendor Meetings:** Schedule meetings with high-risk vendors to discuss deletion capabilities
-3. **Shadow IT Remediation:** Execute remediation plans (migrate, formalize, or delete)
+3. **Shadow IT Remediation:** Execute remediation plans (migrate, formalise, or delete)
 4. **Request Deletion Certificates:** For vendors without certificates, initiate request process
 5. **CASB Deployment:** If not deployed, initiate CASB project for ongoing Shadow IT monitoring
 6. **Update ISMS Documentation:** If vendor list changed, update ISMS-POL-A.8.10, Section 2.3 (Third-Party & Cloud Deletion) and related documents
@@ -1246,4 +1246,4 @@ Once all three levels approve:
 *"Your cloud provider stores the data; the obligation to delete remains yours."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -58,7 +58,7 @@ This workbook contains the following 5 sheets:
 
 ## Purpose
 
-This implementation guide operationalizes the regulatory applicability methodology defined in ISMS-POL-A.5.31.2. It provides step-by-step instructions for compliance personnel to systematically identify regulations that may apply to [Organisation] and assess whether they are legally binding, conditionally applicable, or informational references.
+This implementation guide operationalises the regulatory applicability methodology defined in ISMS-POL-A.5.31.2. It provides step-by-step instructions for compliance personnel to systematically identify regulations that may apply to [Organisation] and assess whether they are legally binding, conditionally applicable, or informational references.
 
 **What This Guide Is**:
 
@@ -492,7 +492,7 @@ Check ALL that apply:
 - ☐ [Organisation] has employees located in this jurisdiction
 - ☐ [Organisation] serves customers located in this jurisdiction
 - ☐ [Organisation] processes data of individuals in this jurisdiction
-- ☐ [Organisation] targets this jurisdiction (website localization, marketing, sales efforts)
+- ☐ [Organisation] targets this jurisdiction (website localisation, marketing, sales efforts)
 - ☐ Regulation claims extraterritorial reach (applies regardless of location if certain criteria met)
 
 **Decision**:
@@ -666,13 +666,13 @@ For Regulation: [Regulation Name / Candidate ID: CAND-XXX]
 **Question G6: Does [Organisation] target customers or users in [Regulation's Jurisdiction]?**
 
 - Targeting indicators:
-  - Website localized for jurisdiction (language, currency, local payment methods)
+  - Website localised for jurisdiction (language, currency, local payment methods)
   - Marketing campaigns directed at jurisdiction
   - Social media advertising targeted to jurisdiction
   - Local domain name (e.g., .de for Germany, .fr for France)
   - Local phone numbers or support
 - **Evidence to Gather**:
-  - Website localization settings
+  - Website localisation settings
   - Marketing campaign targeting data (from Marketing)
   - Domain registrations
 - **Answer**: ☐ YES ☐ NO
@@ -988,7 +988,7 @@ Review scores from Sections 4.1, 4.2, 4.3:
 - Legal Counsel review (confirm legal obligation)
 - Executive Management approval (significant compliance investment)
 
-Before finalizing Tier 1:
+Before finalising Tier 1:
 1. Schedule legal counsel review
 2. Present applicability assessment evidence
 3. Obtain legal confirmation of Tier 1 status
@@ -1668,7 +1668,7 @@ Reviewed By: _________________ Date: ___________
 
 ## Quality Checklist
 
-Before finalizing and submitting applicability assessment for approval:
+Before finalising and submitting applicability assessment for approval:
 
 **Assessment Completeness**:
 
@@ -1779,7 +1779,7 @@ Before finalizing and submitting applicability assessment for approval:
 **Policy Documents**:
 
 - **ISMS-POL-A.5.31.2**: Regulatory Applicability Methodology
-  - Defines the three-dimensional assessment methodology this guide operationalizes
+  - Defines the three-dimensional assessment methodology this guide operationalises
 - **ISMS-POL-00**: Regulatory Applicability Framework
   - The regulatory register populated by this process
 - **ISMS-POL-A.5.31.1**: Executive Summary & Control Alignment
@@ -1823,4 +1823,4 @@ Before finalizing and submitting applicability assessment for approval:
 *"Not knowing which laws apply to you is itself a compliance risk."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

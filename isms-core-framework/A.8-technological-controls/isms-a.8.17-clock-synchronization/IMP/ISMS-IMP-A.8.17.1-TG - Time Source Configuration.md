@@ -1,7 +1,7 @@
 <!-- ISMS-CORE:IMP:ISMS-IMP-A.8.17.1-TG:framework:TG:a.8.17-s1 -->
 **ISMS-IMP-A.8.17.1-TG - Time Source Configuration & Assessment**
 **Technical Specification**
-### ISO/IEC 27001:2022 Control A.8.17: Clock Synchronization
+### ISO/IEC 27001:2022 Control A.8.17: Clock Synchronisation
 
 ---
 
@@ -12,8 +12,8 @@
 | **Document Title** | Time Source Configuration |
 | **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.17.1-TG |
-| **Related Policy** | ISMS-POL-A.8.17 (Clock Synchronization) |
-| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.17 (Clock Synchronization) |
+| **Related Policy** | ISMS-POL-A.8.17 (Clock Synchronisation) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.17 (Clock Synchronisation) |
 | **Document Creator** | Chief Information Security Officer (CISO) |
 | **Document Owner** | CISO |
 | **Created Date** | [Date] |
@@ -32,8 +32,8 @@
 
 **Related Documents**:
 
-- ISMS-POL-A.8.17 (Clock Synchronization)
-- ISMS-IMP-A.8.17.2 (Synchronization Verification Process)
+- ISMS-POL-A.8.17 (Clock Synchronisation)
+- ISMS-IMP-A.8.17.2 (Synchronisation Verification Process)
 - ISMS-IMP-A.8.17.3 (Exception Management)
 
 ---
@@ -138,4 +138,4 @@ Cloudflare, Google, Regional Government, Atomic Clock, Cloud Provider, 0, 1, 2
 *"Time is what keeps everything from happening at once."*
 — Ray Cummings
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -450,9 +450,9 @@ ISO/IEC 27017:2026 is the second edition of the cloud security controls standard
 
 **Action on Publication**:
 
-1. Review ISO/IEC 27017:2026 for structural changes vs. 2015 edition
+1. Review ISO/IEC 27017:2026 for structural changes vs. 2019 edition
 2. Assess impact on `priv-a.2.4.2-4` and `priv-a.2.5.7-9` control packs
-3. Update PRIV-POL-00 Tier 3 reference from 2015 to 2026 edition
+3. Update PRIV-POL-00 Tier 3 reference from 2019 to 2026 edition
 4. Communicate changes to relevant control group owners
 5. Update control pack IMPs where 27017 guidance is referenced
 

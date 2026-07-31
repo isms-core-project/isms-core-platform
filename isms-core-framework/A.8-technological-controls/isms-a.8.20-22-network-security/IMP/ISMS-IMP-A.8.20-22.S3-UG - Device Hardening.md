@@ -151,9 +151,9 @@ Phase 6: Ongoing Maintenance
 ## Key Principles
 
 - **Defense in Depth**: Multiple layers of security (not just one control)
-- **Least Privilege**: Minimize permissions and access (only what's needed)
+- **Least Privilege**: Minimise permissions and access (only what's needed)
 - **Secure by Default**: Default configurations should be secure
-- **Minimize Attack Surface**: Disable unnecessary services, protocols, ports
+- **Minimise Attack Surface**: Disable unnecessary services, protocols, ports
 - **Auditability**: All administrative actions must be logged
 - **Maintainability**: Balance security with operational needs
 
@@ -183,7 +183,7 @@ Phase 6: Ongoing Maintenance
 | Tool | Purpose | Type |
 |------|---------|------|
 | **RANCID** | Router/switch config backup | Open-source |
-| **Oxidized** | Network device config backup | Open-source |
+| **Oxidised** | Network device config backup | Open-source |
 | **Ansible** | Configuration automation | Open-source |
 | **SolarWinds NCM** | Network Configuration Manager | Commercial |
 | **Nessus / Qualys** | Configuration compliance scanning | Commercial |
@@ -212,13 +212,13 @@ Phase 6: Ongoing Maintenance
 
 ### Adapt Standards to [Organisation] Environment
 
-**Action**: Customize baseline to fit operational requirements.
+**Action**: Customise baseline to fit operational requirements.
 
-**Example Customizations**:
+**Example Customisations**:
 
 - **SNMP**: CIS recommends SNMPv3 only, but [Organisation] may need SNMPv2c for legacy monitoring tools (document as exception)
 - **SSH Version**: CIS recommends SSH v2 only → Adopt (no exceptions)
-- **Banner Messages**: CIS provides generic banner → Customize with [Organisation] legal language
+- **Banner Messages**: CIS provides generic banner → Customise with [Organisation] legal language
 
 **Document Exceptions**:
 ```
@@ -635,12 +635,12 @@ exit
 3. **Strong Authentication**:
 
    - Enforce MFA for administrative access
-   - Use RADIUS/TACACS+ for centralized authentication
+   - Use RADIUS/TACACS+ for centralised authentication
 
 4. **Logging**:
 
    - Log all traffic (allowed and denied)
-   - Send logs to centralized SIEM
+   - Send logs to centralised SIEM
    - Retain logs per regulatory requirements (90 days minimum)
 
 5. **Firmware Updates**:
@@ -837,7 +837,7 @@ Next Steps:
 **Configuration Drift**: Unauthorised changes to device configuration.
 
 **Detection Methods**:
-1. **Automated**: RANCID/Oxidized emails diffs daily
+1. **Automated**: RANCID/Oxidised emails diffs daily
 2. **Manual**: Compare current config to baseline
 3. **Scanning**: Run Nessus/Qualys compliance scan quarterly
 
@@ -1159,4 +1159,4 @@ print("Report generated: compliance_report.csv")
 *"A default configuration is a known vulnerability."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

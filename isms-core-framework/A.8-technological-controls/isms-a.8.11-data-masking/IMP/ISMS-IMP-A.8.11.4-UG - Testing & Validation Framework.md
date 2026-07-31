@@ -614,8 +614,8 @@ Base columns A-Q, plus:
 | T | With Masking | 15 | Text | Free text (e.g., "2.7 sec") |
 | U | Performance Impact % | 12 | Percentage | Calculated |
 | V | Acceptable? | 15 | Dropdown | Yes (<10%), No (≥10%), N/A |
-| W | Optimization Needed? | 15 | Dropdown | Yes, No, N/A |
-| X | Optimization Applied? | 15 | Dropdown | Yes, No, Pending, N/A |
+| W | Optimisation Needed? | 15 | Dropdown | Yes, No, N/A |
+| X | Optimisation Applied? | 15 | Dropdown | Yes, No, Pending, N/A |
 
 ### Data Entry Rows (8-37)
 
@@ -634,8 +634,8 @@ Base columns A-Q, plus:
 | ☐ | Query performance tested | [Dropdown] | |
 | ☐ | Data load/refresh performance tested | [Dropdown] | |
 | ☐ | Report generation performance tested | [Dropdown] | |
-| ☐ | If impact ≥10%: Optimization strategies implemented | [Dropdown] | |
-| ☐ | Performance re-tested after optimization | [Dropdown] | |
+| ☐ | If impact ≥10%: Optimisation strategies implemented | [Dropdown] | |
+| ☐ | Performance re-tested after optimisation | [Dropdown] | |
 | ☐ | Performance metrics tracked over time | [Dropdown] | |
 
 ---
@@ -846,4 +846,4 @@ Base columns A-Q, plus:
 *"A masking technique untested is a masking technique unproven."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

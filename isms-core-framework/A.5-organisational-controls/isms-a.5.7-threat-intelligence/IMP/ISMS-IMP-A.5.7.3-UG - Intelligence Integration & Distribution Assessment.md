@@ -747,7 +747,7 @@ A prevented incident is a situation where:
    - IOC lookups/enrichment
    - Threat feed integrations
    - Alert generation based on TI
-   - Dashboard visualizations
+   - Dashboard visualisations
 
 2. For each TI-enabled SIEM capability:
 
@@ -1352,4 +1352,4 @@ A decision where:
 *"An intelligence failure is not just a failure of information; it is a failure of sharing."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -63,7 +63,7 @@ This assessment evaluates [Organisation]'s **capability to prove information del
 
 **Scope:** Complete verification and evidence infrastructure across 5 critical areas:
 
-1. **Deletion Logging Assessment** - Centralized audit trail infrastructure and completeness
+1. **Deletion Logging Assessment** - Centralised audit trail infrastructure and completeness
 2. **Verification Testing Program** - Forensic testing of deletion methods using test datasets
 3. **Evidence Repository Assessment** - Secure storage, retention, and access control for deletion evidence
 4. **Certificate Management** - Validation and quality assessment of third-party deletion certificates
@@ -161,7 +161,7 @@ This assessment implements **ISMS-POL-A.8.10, Section 2.4 (Verification & Eviden
 **Dependencies:**
 
 - **From A.8.10.1:** Evidence retention schedules (typically 7 years for deletion logs per Swiss OR)
-- **From A.8.10.2:** List of deletion methods requiring forensic verification (e.g., crypto-erasure, SSD sanitization)
+- **From A.8.10.2:** List of deletion methods requiring forensic verification (e.g., crypto-erasure, SSD sanitisation)
 - **From A.8.10.3:** Vendor list requiring certificate validation and deletion SLA monitoring
 
 **Feeds Into:**
@@ -177,7 +177,7 @@ Before starting this assessment, ensure you have access to:
 
 **Systems:**
 
-- [ ] Centralized logging system (SIEM, log aggregation platform)
+- [ ] Centralised logging system (SIEM, log aggregation platform)
 - [ ] Evidence repository / document management system (where deletion certificates are stored)
 - [ ] Forensic testing lab or test environment (if verification testing is performed)
 - [ ] Backup and archive systems (to verify deletion from these systems as well)
@@ -203,8 +203,8 @@ Before starting this assessment, ensure you have access to:
 
 **Technical:**
 
-- Understanding of audit log formats and centralized logging architectures
-- Familiarity with forensic analysis concepts (data remanence, sanitization verification)
+- Understanding of audit log formats and centralised logging architectures
+- Familiarity with forensic analysis concepts (data remanence, sanitisation verification)
 - Basic understanding of NIST SP 800-88 Rev. 2 verification methodologies
 - Knowledge of cryptographic deletion verification (if crypto-erasure is used)
 
@@ -247,7 +247,7 @@ Before starting this assessment, ensure you have access to:
 
 1. **Sheet 2 - Deletion Logging Assessment**
 
-   - Identify centralized logging system(s) in use
+   - Identify centralised logging system(s) in use
    - Review log configuration for deletion events
    - Check log retention periods against policy requirements
    - Document tamper protection mechanisms (if any)
@@ -334,7 +334,7 @@ Before starting this assessment, ensure you have access to:
 
 **Key Questions Assessors Struggle With:**
 
-**Q: "What if we don't have a centralized logging system?"**
+**Q: "What if we don't have a centralised logging system?"**
 
 - A: Document current state as "Not Implemented" in Column B
 - Note in Column Q: "Deletion logs scattered across applications/systems"
@@ -362,7 +362,7 @@ Before starting this assessment, ensure you have access to:
 
 - A: **No** - Third-party deletion logging is assessed in Sheet 5 (Certificate Management)
 - Sheet 2 focuses on [Organisation]'s own logging infrastructure
-- However, if [Organisation] ingests vendor logs into a centralized SIEM, assess that integration here
+- However, if [Organisation] ingests vendor logs into a centralised SIEM, assess that integration here
 
 **Common Mistakes to Avoid:**
 
@@ -374,7 +374,7 @@ Before starting this assessment, ensure you have access to:
 2. ❌ **Assuming application-level logging is sufficient**
 
    - Application logs may not survive application deletion/decommissioning
-   - Centralized logging ensures logs outlive the systems they monitor
+   - Centralised logging ensures logs outlive the systems they monitor
 
 3. ❌ **Forgetting to assess log retention periods**
 
@@ -413,7 +413,7 @@ Instead of testing whether production data was deleted (which requires keeping t
 
 - A: Either approach is acceptable:
   - **In-house:** Requires forensic tools (e.g., EnCase, FTK, dd, hdparm) and trained staff
-  - **External:** Third-party forensic labs provide certificates of sanitization
+  - **External:** Third-party forensic labs provide certificates of sanitisation
   - Document approach in Column I (Responsible Party)
 
 **Q: "What's considered a 'pass' for a forensic test?"**
@@ -570,7 +570,7 @@ For each sheet, collect and document in Sheet 8 (Evidence Register):
 
 **Sheet 2 (Deletion Logging):**
 
-- [ ] Screenshot of centralized logging system configuration
+- [ ] Screenshot of centralised logging system configuration
 - [ ] Sample deletion log entries (redact sensitive data)
 - [ ] Log retention policy document
 - [ ] Access control list for logging system
@@ -748,4 +748,4 @@ Assessment may be rejected if:
 *"Trust the deletion process only when you have evidence to verify it."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -33,7 +33,7 @@
 **Related Documents**:
 
 - ISMS-POL-A.8.15 (Logging)
-- ISMS-IMP-A.8.15.2 (Log Collection & Centralization Assessment)
+- ISMS-IMP-A.8.15.2 (Log Collection & Centralisation Assessment)
 - ISMS-IMP-A.8.15.3 (Log Protection & Retention Assessment)
 - ISMS-IMP-A.8.15.4 (Log Analysis & Review Assessment)
 
@@ -268,4 +268,4 @@ Re-assessment required, Approved, Approved with Conditions, Rejected, Deferred
 *"Once you stop learning, you start dying."*
 - Albert Einstein
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

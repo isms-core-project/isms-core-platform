@@ -91,7 +91,7 @@ This assessment evaluates [Organisation]'s **data classification scheme and DLP 
 - **Ineffective DLP:** Without classification, DLP either blocks everything (false positives → business disruption) or nothing (false negatives → data breaches)
 - **Compliance Violations:** Regulators require demonstrating you know what data you have and where it is
 - **Incident Response:** Data breach notification obligations depend on knowing what data was leaked
-- **Risk Prioritization:** Can't assess data leakage risk without knowing data sensitivity
+- **Risk Prioritisation:** Can't assess data leakage risk without knowing data sensitivity
 
 **Why Classification Assessment Matters:**
 
@@ -167,12 +167,12 @@ Organisations fall into different data classification maturity levels. DLP effec
 | **Level 0: Ad-Hoc** | No classification scheme, data discovery incomplete | DLP ineffective (too many false positives or false negatives) | **Establish classification scheme FIRST before deploying DLP** |
 | **Level 1: Defined** | Classification scheme exists, manual labeling only | DLP partially effective (relies on users to label correctly) | Implement automated classification, regular audits |
 | **Level 2: Managed** | Automated classification in key systems, pattern library maintained | DLP effective for structured data | Extend to unstructured data, tune patterns |
-| **Level 3: Optimized** | ML-based classification, continuous pattern accuracy monitoring | DLP highly effective | Focus on edge cases, advanced threats |
+| **Level 3: Optimised** | ML-based classification, continuous pattern accuracy monitoring | DLP highly effective | Focus on edge cases, advanced threats |
 
 **What This Means for Assessment:**
 
 - **Level 0-1 organisations:** Will identify significant gaps in this assessment (expected, not a failure)
-- **Level 2-3 organisations:** Assessment focuses on optimization and edge case detection
+- **Level 2-3 organisations:** Assessment focuses on optimisation and edge case detection
 - **Honest assessment critical:** Don't inflate maturity level to "look good" - audit will expose gaps
 
 **Common Issue:** Organisations implement DLP before establishing data classification. Result = DLP deployed but doesn't know what to protect = waste of money and creates false sense of security.
@@ -352,7 +352,7 @@ Organisations fall into different data classification maturity levels. DLP effec
 
    - Content inspection: Send email with fake credit card number, verify detection
    - Document labeling: Create labeled document, verify DLP detects label
-   - Contextual: Export from HR database, verify DLP recognizes HR data
+   - Contextual: Export from HR database, verify DLP recognises HR data
 
 4. Calculate detection accuracy (if test data available)
 5. Status determination (see Section 4.3)
@@ -416,7 +416,7 @@ Organisations fall into different data classification maturity levels. DLP effec
    - Assign owner (Data Owner + DLP Admin)
    - Set target date (Critical <30 days, High <90 days)
 
-3. Prioritize based on data sensitivity and regulatory requirements
+3. Prioritise based on data sensitivity and regulatory requirements
 
 **STEP 8: Evidence Register & Final Review (15 minutes)**
 1. Navigate to Evidence_Register sheet
@@ -593,7 +593,7 @@ Organisations fall into different data classification maturity levels. DLP effec
 **Common Pitfalls:**
 
 **Pitfall 1:** "We have a classification scheme but users never use it"  
-**Problem:** Classification exists on paper only, not operationalized  
+**Problem:** Classification exists on paper only, not operationalised  
 **Root causes:**  
 
 - Too complex (5+ levels, unclear definitions)  
@@ -812,7 +812,7 @@ Sensitive data categories requiring DLP protection:
 **Reality check:**  
 
 - Data discovery tool finds sensitive data in unexpected locations → Do you remediate (move data to protected location) or just document?  
-- Discovery scan results in 10K+ findings → How do you prioritize? Are all findings reviewed?  
+- Discovery scan results in 10K+ findings → How do you prioritise? Are all findings reviewed?  
 - Discovery tool last run 18 months ago → Inventory stale  
 
 **Solution:**  
@@ -828,7 +828,7 @@ Sensitive data categories requiring DLP protection:
 
 - Expand discovery to unstructured data stores (file shares, SharePoint, email archives, endpoints)  
 - Use content-aware discovery (not just file name, but inspect file contents)  
-- Prioritize high-risk locations (shared drives, contractor endpoints, personal cloud storage)  
+- Prioritise high-risk locations (shared drives, contractor endpoints, personal cloud storage)  
 
 **Pitfall 3:** "Data inventory is DPO's job, not DLP team's job"  
 **Problem:** Siloed approach, inventory not used for DLP  
@@ -879,7 +879,7 @@ EV-[Domain]-[Category]-[Date]-[Description].[ext]
 
 - **Location:** `ISMS/Controls/A.8.12_DLP/Assessments/Data_Classification/Evidence/`
 - **Retention:** Audit cycle + 1 year (typically 2-3 years)
-- **Sensitivity:** Internal (may contain sample data, sanitize if needed)
+- **Sensitivity:** Internal (may contain sample data, sanitise if needed)
 - **Access Control:** Security Team, DPO, Auditors
 
 **Evidence Quality Criteria:**
@@ -888,7 +888,7 @@ EV-[Domain]-[Category]-[Date]-[Description].[ext]
 - **Complete:** Full policy documents, not excerpts
 - **Attributable:** Clear which system/process documented
 - **Verifiable:** Auditor can reproduce collection
-- **Protected:** Sanitize sensitive data in evidence files
+- **Protected:** Sanitise sensitive data in evidence files
 
 ## Evidence Types by Domain
 
@@ -1084,7 +1084,7 @@ Target: 100% for Restricted/Confidential data
    - Data owner interviews (where is your sensitive data?)
    - Sampling: Manually review high-risk locations (shared drives, contractor endpoints)
 
-3. **Prioritize high-risk locations:**
+3. **Prioritise high-risk locations:**
 
    - Start with most likely to contain sensitive data (HR systems, finance databases, customer CRM)
    - Expand coverage over time
@@ -1160,7 +1160,7 @@ Target: 100% for Restricted/Confidential data
 - [ ] Evidence files follow naming convention
 - [ ] Classification policy includes approval signatures
 - [ ] Test results include timestamps and methodology
-- [ ] Sensitive data sanitized in evidence files (no real credit cards, SSNs, etc.)
+- [ ] Sensitive data sanitised in evidence files (no real credit cards, SSNs, etc.)
 - [ ] Evidence Register links verified (files actually exist at specified paths)
 
 **Policy Alignment:**
@@ -1321,4 +1321,4 @@ This assessment shall be distributed to:
 *"What you do not classify, you cannot protect."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

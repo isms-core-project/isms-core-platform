@@ -573,7 +573,7 @@ This section describes the 6 sheets in the **Recovery Testing Assessment Workboo
 
 ## Sheet 1: Test_Schedule
 
-**Purpose:** Centralized calendar of all planned tests (when they're due)
+**Purpose:** Centralised calendar of all planned tests (when they're due)
 
 **Use When:**
 - Planning annual testing calendar
@@ -819,4 +819,4 @@ This section describes the 6 sheets in the **Recovery Testing Assessment Workboo
 *"Untested plans are merely untested assumptions."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

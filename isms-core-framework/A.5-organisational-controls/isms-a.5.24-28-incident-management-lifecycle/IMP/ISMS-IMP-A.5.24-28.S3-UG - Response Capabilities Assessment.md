@@ -165,7 +165,7 @@ This assessment evaluates [Organisation]'s **incident response execution capabil
   
 - **Gap Analysis:** 1-2 hours
   - Identify response capability gaps
-  - Prioritize improvements
+  - Prioritise improvements
   - Develop remediation recommendations
 
 **Complexity Factors:**
@@ -1087,4 +1087,4 @@ SLA Compliance = (Incidents Meeting SLA / Total Incidents) × 100
 *"Speed is the essence of war."*
 — Sun Tzu
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

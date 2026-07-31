@@ -1,7 +1,7 @@
 <!-- ISMS-CORE:IMP:ISMS-IMP-A.8.17.2-UG:framework:UG:a.8.17-s2 -->
-**ISMS-IMP-A.8.17.2-UG - Synchronization Verification Process & Assessment**
+**ISMS-IMP-A.8.17.2-UG - Synchronisation Verification Process & Assessment**
 **User Completion Guide**
-### ISO/IEC 27001:2022 Control A.8.17: Clock Synchronization
+### ISO/IEC 27001:2022 Control A.8.17: Clock Synchronisation
 
 ---
 
@@ -9,11 +9,11 @@
 
 | Attribute | Value |
 |-------|-------|
-| **Document Title** | Synchronization Verification Process |
+| **Document Title** | Synchronisation Verification Process |
 | **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.17.2-UG |
-| **Related Policy** | ISMS-POL-A.8.17 (Clock Synchronization) |
-| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.17 (Clock Synchronization) |
+| **Related Policy** | ISMS-POL-A.8.17 (Clock Synchronisation) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.17 (Clock Synchronisation) |
 | **Document Creator** | Chief Information Security Officer (CISO) |
 | **Document Owner** | CISO |
 | **Created Date** | [Date] |
@@ -32,7 +32,7 @@
 
 **Related Documents**:
 
-- ISMS-POL-A.8.17 (Clock Synchronization)
+- ISMS-POL-A.8.17 (Clock Synchronisation)
 - ISMS-IMP-A.8.17.1 (Time Source Configuration)
 - ISMS-IMP-A.8.17.3 (Exception Management)
 
@@ -44,7 +44,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ---
 
-**Audience:** System Administrators, Network Engineers, ISMS Officers completing the System Synchronization Status Assessment
+**Audience:** System Administrators, Network Engineers, ISMS Officers completing the System Synchronisation Status Assessment
 
 ---
 
@@ -66,19 +66,19 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ## Purpose & Scope
 
-**Assessment Name:** ISMS-IMP-A.8.17.2 - System Synchronization Status Assessment
+**Assessment Name:** ISMS-IMP-A.8.17.2 - System Synchronisation Status Assessment
 
 **What This Assessment Covers:**
 
 This assessment verifies that ALL organisational systems are ACTUALLY SYNCHRONIZED to approved time sources. While S1 documents WHAT time sources exist, S2 proves WHETHER systems use them correctly. This answers critical questions:
 
-- **Which systems are successfully synchronized?** (Status: Synced vs. Not Synced)
+- **Which systems are successfully synchronised?** (Status: Synced vs. Not Synced)
 - **What is the current time drift across infrastructure?** (Measure offset from authoritative time)
-- **Which systems are failing to synchronize?** (Identify broken NTP configurations)
+- **Which systems are failing to synchronise?** (Identify broken NTP configurations)
 - **Do we meet policy drift thresholds?** (±1s general, ±100ms security-critical, ±10ms high-precision)
-- **Are synchronization failures being detected and remediated?**
+- **Are synchronisation failures being detected and remediated?**
 
-**Key Principle:** "Configuration ≠ Synchronization." Having NTP configured does NOT mean it's working. This assessment PROVES synchronization through measurement.
+**Key Principle:** "Configuration ≠ Synchronisation." Having NTP configured does NOT mean it's working. This assessment PROVES synchronisation through measurement.
 
 Think of this as a health check - just like checking if every patient actually HAS a pulse (not just that they're registered in the system), this assessment checks if every system actually SYNCS to time sources (not just that they're configured to).
 
@@ -86,7 +86,7 @@ Think of this as a health check - just like checking if every patient actually H
 
 **Workbook Sheets You'll Complete:**
 
-1. **System_Inventory** - All systems requiring time synchronization
+1. **System_Inventory** - All systems requiring time synchronisation
 
    - System names, types (server, network device, etc.), OS/platform
    - NTP server configuration (which NTP servers configured)
@@ -102,7 +102,7 @@ Think of this as a health check - just like checking if every patient actually H
    - Trend analysis (is drift improving or degrading over time?)
    - Systems exceeding policy thresholds
 
-3. **Gaps_Failures** - Systems NOT synchronized or exceeding drift
+3. **Gaps_Failures** - Systems NOT synchronised or exceeding drift
 
    - Root cause analysis (NTP server unreachable, firewall blocking UDP 123, misconfiguration)
    - Severity rating (Critical for security systems, High for general systems)
@@ -121,7 +121,7 @@ Think of this as a health check - just like checking if every patient actually H
 | Assessment | Focus | Relationship to A.8.17-S2 |
 |------------|-------|---------------------------|
 | ISMS-IMP-A.8.17.1 | Time Source Infrastructure | Documents WHAT time sources exist |
-| **ISMS-IMP-A.8.17.2** | **System Synchronization Verification** | **Proves WHETHER systems sync to those sources (this assessment)** |
+| **ISMS-IMP-A.8.17.2** | **System Synchronisation Verification** | **Proves WHETHER systems sync to those sources (this assessment)** |
 
 **Assessment Flow:**
 1. **A.8.17-S1 (FIRST):** "We have NIST + Cloudflare as Stratum 1, plus 4 internal NTP servers"
@@ -169,7 +169,7 @@ Upon completion, you will have:
 
 1. ✅ **Complete system inventory** - All systems documented with sync status
 2. ✅ **Drift measurements** - Current time offset for every system
-3. ✅ **Compliance score** - % of systems synchronized within policy thresholds
+3. ✅ **Compliance score** - % of systems synchronised within policy thresholds
 4. ✅ **Drift analysis** - Statistical insights (average, median, distribution, trends)
 5. ✅ **Gap identification** - All sync failures documented with root causes
 6. ✅ **Remediation tracking** - Plans for every gap with target dates
@@ -178,11 +178,11 @@ Upon completion, you will have:
 
 **What This Looks Like for Audit:**
 
-When an auditor asks: *"How do you know all systems are synchronized to approved time sources?"*
+When an auditor asks: *"How do you know all systems are synchronised to approved time sources?"*
 
 You hand them this assessment and say:
 
-> "We verified 1,234 systems in our inventory. 1,173 systems (95%) are synchronized with drift <500ms. We identified 61 systems with sync issues documented in Sheet 3, of which 48 are already remediated, and 13 have remediation plans with target dates. All verification evidence is in the workbook."
+> "We verified 1,234 systems in our inventory. 1,173 systems (95%) are synchronised with drift <500ms. We identified 61 systems with sync issues documented in Sheet 3, of which 48 are already remediated, and 13 have remediation plans with target dates. All verification evidence is in the workbook."
 
 **Auditor reaction:** ✅ "This demonstrates systematic verification. Excellent."
 
@@ -197,7 +197,7 @@ Before starting, gather the following:
 **System Inventory:**
 
 - [ ] **Complete list of all systems** from A.5.9 Asset Management (servers, network devices, workstations requiring logging)
-- [ ] **Asset criticality ratings** (Critical, High, Medium, Low) to prioritize sync verification
+- [ ] **Asset criticality ratings** (Critical, High, Medium, Low) to prioritise sync verification
 - [ ] **System ownership** (System Owner for each system)
 
 **NTP Infrastructure (from S1):**
@@ -229,7 +229,7 @@ Before starting, gather the following:
 
 ## Policy Requirements to Review
 
-Before starting, familiarize yourself with drift thresholds from **ISMS-POL-A.8.17 Section 2.3**:
+Before starting, familiarise yourself with drift thresholds from **ISMS-POL-A.8.17 Section 2.3**:
 
 **Maximum Acceptable Time Drift (ISMS Copilot Correction - Updated):**
 
@@ -239,8 +239,8 @@ Before starting, familiarize yourself with drift thresholds from **ISMS-POL-A.8.
 
 **Compliance Target:**
 
-- **≥95% of systems** must be synchronized within acceptable drift
-- **100% of critical security systems** must be synchronized
+- **≥95% of systems** must be synchronised within acceptable drift
+- **100% of critical security systems** must be synchronised
 
 **Verification Frequency (ISMS Copilot Correction):**
 
@@ -338,7 +338,7 @@ You'll be measuring every system against these thresholds in the Compliance colu
 
 ## Sheet: System_Inventory (Core Assessment Data)
 
-**Purpose:** Document every system's NTP synchronization status and drift measurement.
+**Purpose:** Document every system's NTP synchronisation status and drift measurement.
 
 **Column-by-Column Guidance:**
 
@@ -359,11 +359,11 @@ You'll be measuring every system against these thresholds in the Compliance colu
 | F | **NTP Server(s) Configured [*]** | REQUIRED | Which NTP servers this system is configured to use | NTP config file, verification command |
 | | | | Example: `ntp1.dc1.example.com, ntp2.dc1.example.com` | `/etc/chrony.conf`, `chronyc sources` |
 | | | | **Should match servers from S1 assessment!** | Verify against S1 Internal_NTP_Servers |
-| G | **Sync Status [*]** | REQUIRED | Current synchronization status | Run verification command (see Section 4.2) |
+| G | **Sync Status [*]** | REQUIRED | Current synchronisation status | Run verification command (see Section 4.2) |
 | | | | **Dropdown:** ✅ Synced \| ❌ Not Synced \| ⚠️ Sync Failed \| ❓ Unknown \| ➖ Excluded | Platform-specific command |
 | | | | **ISMS Copilot Correction:** Need explicit criteria for each status (see table below) | |
 | H | **Stratum** | Optional | Stratum level reported by system | Verification command output |
-| | | | Example: `3` (synchronized to Stratum 2 internal NTP server), `16` (FAILURE) | `chronyc tracking`: "Stratum : 3" |
+| | | | Example: `3` (synchronised to Stratum 2 internal NTP server), `16` (FAILURE) | `chronyc tracking`: "Stratum : 3" |
 | | | | **Stratum 16 = NOT SYNCHRONIZED** (system is broken) | `ntpq -p`: Stratum column |
 | I | **Current Drift (ms) [*]** | REQUIRED | Time offset from authoritative source in milliseconds | Verification command output |
 | | | | **Positive values:** System clock is FAST (ahead of NTP time) | `chronyc tracking`: "System time" |
@@ -391,9 +391,9 @@ You'll be measuring every system against these thresholds in the Compliance colu
 
 | Status | Criteria | Stratum | Drift | Last Sync | Reach |
 |--------|----------|---------|-------|-----------|-------|
-| **✅ Synced** | System actively synchronized | 2-15 | Within threshold | <24 hours | >50% |
+| **✅ Synced** | System actively synchronised | 2-15 | Within threshold | <24 hours | >50% |
 | **⚠️ Sync Failed** | Syncing but degraded | 2-15 | Exceeds threshold | Any | >25% |
-| **❌ Not Synced** | No synchronization | 16 | N/A | >24 hours OR never | 0% |
+| **❌ Not Synced** | No synchronisation | 16 | N/A | >24 hours OR never | 0% |
 | **❓ Unknown** | Cannot verify | Unknown | Unknown | Unknown | Unknown |
 | **➖ Excluded** | Intentionally excluded (documented exception) | Any | Any | Any | Any |
 
@@ -548,7 +548,7 @@ user@router> show ntp associations
 **Azure:**
 
 - Uses platform NTP service
-- Check VM settings: Time synchronization enabled
+- Check VM settings: Time synchronisation enabled
 - Verify with `w32tm /query /status` (Windows) or `chronyc` (Linux)
 
 **GCP:**
@@ -608,7 +608,7 @@ user@router> show ntp associations
 
 ## Sheet: Gaps_Failures (Gap Documentation & Remediation)
 
-**Purpose:** Document all systems with synchronization failures or excessive drift, including root cause and remediation plans.
+**Purpose:** Document all systems with synchronisation failures or excessive drift, including root cause and remediation plans.
 
 **Column-by-Column Guidance:**
 
@@ -616,7 +616,7 @@ user@router> show ntp associations
 |--------|------------|----------|
 | A | **Gap ID** | Sequential: GAP-001, GAP-002, etc. |
 | B | **System Name** | Copy from System_Inventory where Compliance = ❌ or Sync Status = ❌ |
-| C | **Issue Description** | Brief: "Not synchronized - Stratum 16", "Drift 1250ms exceeds threshold" |
+| C | **Issue Description** | Brief: "Not synchronised - Stratum 16", "Drift 1250ms exceeds threshold" |
 | D | **Root Cause** | Why is it failing? (see common causes below) |
 | E | **Severity** | Critical (security system) / High (general system) / Medium / Low |
 | F | **Impact** | What breaks? "Cannot correlate logs", "Certificate validation may fail" |
@@ -633,7 +633,7 @@ user@router> show ntp associations
 | **Wrong NTP server configured** | NTP server not in S1 approved list | Update config to use approved internal NTP servers |
 | **Firewall blocking UDP 123** | Packets not reaching NTP server | Add firewall rule allowing UDP 123 outbound to NTP servers |
 | **NTP service not running** | `systemctl status chronyd` shows inactive | Start and enable service: `systemctl enable --now chronyd` |
-| **Stratum 16 (unsynchronized)** | `chronyc tracking` shows Stratum 16 | Check upstream NTP servers are reachable and working |
+| **Stratum 16 (unsynchronised)** | `chronyc tracking` shows Stratum 16 | Check upstream NTP servers are reachable and working |
 | **VM time sync conflict** | VMware VM with both guest tools and NTP enabled | Disable VMware Tools time sync OR disable NTP (not both) |
 | **Excessive network latency** | Very high "delay" values in ntpq/chronyc | Check network path to NTP server, consider closer NTP server |
 | **System clock far off** | Drift >1000 seconds | Manual time correction, then restart NTP service |
@@ -680,7 +680,7 @@ For gaps that cannot be remediated within 90 days or require permanent exception
 - Any risks or escalations
 
 **Example:**
-> "Assessed 1,234 systems for NTP synchronization compliance. 1,173 systems (95%) are synchronized within policy thresholds. Identified 61 sync failures, of which 48 are already remediated. Remaining 13 gaps have remediation plans with target completion by 2026-02-28. No critical security systems have sync failures."
+> "Assessed 1,234 systems for NTP synchronisation compliance. 1,173 systems (95%) are synchronised within policy thresholds. Identified 61 sync failures, of which 48 are already remediated. Remaining 13 gaps have remediation plans with target completion by 2026-02-28. No critical security systems have sync failures."
 
 ---
 
@@ -760,7 +760,7 @@ SYNC-drift-analysis-20260116.xlsx     (Export of Drift_Analysis sheet)
 System has NTP configured in `/etc/chrony.conf`, so you mark it as "✅ Synced" without verifying.
 
 **WHY IT'S WRONG:**
-Configuration ≠ Synchronization. NTP may be configured but firewall blocks UDP 123.
+Configuration ≠ Synchronisation. NTP may be configured but firewall blocks UDP 123.
 
 **HOW TO AVOID:**
 
@@ -949,4 +949,4 @@ Before submitting for approval, verify:
 *"Unsynchronised clocks are unreliable witnesses."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

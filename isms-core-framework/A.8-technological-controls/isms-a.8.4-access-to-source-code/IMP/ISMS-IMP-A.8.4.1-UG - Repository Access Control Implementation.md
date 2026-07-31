@@ -451,7 +451,7 @@ Step 10: Obtain Approvals
    - Who is responsible?
    - When will it be fixed?
 
-3. Prioritize gaps: 🔴 Critical > 🟠 High > 🟡 Medium > 🟢 Low
+3. Prioritise gaps: 🔴 Critical > 🟠 High > 🟡 Medium > 🟢 Low
 4. Create remediation plan with target dates
 
 **Critical gaps** (require immediate action):
@@ -1628,7 +1628,7 @@ BranchProtection_backend-api_2025-12-31.png
 
 ### Evidence Storage Structure
 
-Organize evidence in folders:
+Organise evidence in folders:
 
 ```
 Evidence_A.8.4_Repository_Access_Control/
@@ -1893,7 +1893,7 @@ Service accounts often have ADMIN access (most privileged). If compromised, atta
 
 **How to Avoid:**
 
-- Centralize approval records (ticketing system)
+- Centralise approval records (ticketing system)
 - Save approval emails to Evidence folder
 - Screenshot Slack approvals
 - Document verbal approvals in writing (post-facto)
@@ -1955,7 +1955,7 @@ Service accounts often have ADMIN access (most privileged). If compromised, atta
 
 **How to Avoid:**
 
-- Prioritize critical gaps
+- Prioritise critical gaps
 - Remediate before audit
 - Be realistic about readiness
 - Don't schedule audit until critical gaps closed
@@ -2207,4 +2207,4 @@ Once approved:
 *"Source code is the crown jewel; protect it accordingly."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

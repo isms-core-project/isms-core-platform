@@ -97,7 +97,7 @@ Bias in AI systems can enter at multiple points. Development teams must address 
 Before deployment, all AI systems with consequential outputs affecting individuals must pass:
 
 1. **Demographic parity analysis**: Does the system produce significantly different outcomes for different demographic groups?
-2. **Equalized opportunity analysis**: For positive-outcome systems (e.g., loan approval), is the true positive rate consistent across groups?
+2. **Equalised opportunity analysis**: For positive-outcome systems (e.g., loan approval), is the true positive rate consistent across groups?
 3. **Individual fairness spot-check**: Do similar individuals receive similar outputs?
 4. **Proxy variable audit**: Do any features serve as proxies for protected characteristics?
 
@@ -202,4 +202,4 @@ Development teams should treat the gate as a quality milestone, not a bureaucrat
 
 ---
 
-<!-- QA_VERIFIED: 2026-04-15 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

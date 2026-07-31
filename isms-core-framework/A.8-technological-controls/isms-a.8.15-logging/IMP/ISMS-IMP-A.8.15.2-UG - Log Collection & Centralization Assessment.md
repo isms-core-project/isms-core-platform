@@ -1,5 +1,5 @@
 <!-- ISMS-CORE:IMP:ISMS-IMP-A.8.15.2-UG:framework:UG:a.8.15.2 -->
-**ISMS-IMP-A.8.15.2-UG - Log Collection & Centralization Assessment**
+**ISMS-IMP-A.8.15.2-UG - Log Collection & Centralisation Assessment**
 **User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.8.15: Logging
 
@@ -9,7 +9,7 @@
 
 | Attribute | Value |
 |-------|-------|
-| **Document Title** | Log Collection & Centralization Assessment |
+| **Document Title** | Log Collection & Centralisation Assessment |
 | **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.15.2-UG |
 | **Related Policy** | ISMS-POL-A.8.15 (Logging) |
@@ -74,7 +74,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ## What This Assessment Evaluates
 
-This assessment evaluates the LOG COLLECTION INFRASTRUCTURE - how logs flow from source systems to centralized SIEM/log management, and whether this infrastructure is reliable, scalable, and properly configured.
+This assessment evaluates the LOG COLLECTION INFRASTRUCTURE - how logs flow from source systems to centralised SIEM/log management, and whether this infrastructure is reliable, scalable, and properly configured.
 
 **Key Questions Answered:**
 
@@ -91,36 +91,36 @@ This assessment evaluates the LOG COLLECTION INFRASTRUCTURE - how logs flow from
 - NOT about what's in the logs or how they're reviewed (that's IMP-A.8.15.4 - Log Analysis)
 - NOT about retention compliance (that's IMP-A.8.15.3 - Log Protection & Retention)
 
-This is purely about the **INFRASTRUCTURE** and **DATA FLOW** - getting logs from sources to centralized storage.
+This is purely about the **INFRASTRUCTURE** and **DATA FLOW** - getting logs from sources to centralised storage.
 
 ## Why This Matters
 
 This assessment verifies [Organisation]'s compliance with:
 
-- **ISO/IEC 27001:2022 Control A.8.15**: Logs must be "kept" - centralized collection ensures logs aren't lost when systems fail or are compromised
-- **ISMS-POL-A.8.15, Section 2.2 (Log Protection)**: Immediate forwarding to centralized SIEM prevents local log deletion/tampering
+- **ISO/IEC 27001:2022 Control A.8.15**: Logs must be "kept" - centralised collection ensures logs aren't lost when systems fail or are compromised
+- **ISMS-POL-A.8.15, Section 2.2 (Log Protection)**: Immediate forwarding to centralised SIEM prevents local log deletion/tampering
 - **ISMS-POL-A.8.15, Section 2.3 (Log Retention)**: Storage architecture must support minimum retention periods
-- **PCI DSS v4.0.1 Requirement 10.5.1** (if applicable): Centralized log management required for payment card systems
-- **DORA/NIS2** (if applicable): ICT system monitoring requires centralized logging infrastructure
+- **PCI DSS v4.0.1 Requirement 10.5.1** (if applicable): Centralised log management required for payment card systems
+- **DORA/NIS2** (if applicable): ICT system monitoring requires centralised logging infrastructure
 
 **Security Impact**: 
 
-- **Attackers delete local logs** - centralized collection preserves evidence even if source system compromised
+- **Attackers delete local logs** - centralised collection preserves evidence even if source system compromised
 - **Log gaps create blind spots** - unreliable collection means missed security events
-- **Investigation failures** - without centralized logs, incident investigation is impossible
+- **Investigation failures** - without centralised logs, incident investigation is impossible
 
 **Compliance Impact**: 
 
-- **Major non-conformity** if centralized logging not implemented for critical systems
+- **Major non-conformity** if centralised logging not implemented for critical systems
 - **Auditors verify** log collection reliability and coverage in ISO 27001 audits
 
-**Audit Evidence**: This assessment workbook provides **objective evidence** of centralized logging implementation.
+**Audit Evidence**: This assessment workbook provides **objective evidence** of centralised logging implementation.
 
 ## Assessment Outputs
 
 **Primary Deliverable**: Excel workbook with 11 sheets containing:
 
-1. **SIEM Infrastructure Inventory**: Centralized log management platforms documented
+1. **SIEM Infrastructure Inventory**: Centralised log management platforms documented
 2. **Log Collection Coverage**: % of identified log sources actually forwarding to SIEM
 3. **Collection Reliability Metrics**: Gaps, failures, delays quantified
 4. **Integration Methods**: How each log source connects to SIEM (protocol, agent, API)
@@ -211,7 +211,7 @@ Summary Dashboards (per workbook)
 
 - SIEM uptime/availability reports (last 3-6 months)
 - Log collection failure alerts/incidents
-- Storage capacity utilization trends
+- Storage capacity utilisation trends
 - Network bandwidth monitoring data
 
 ## Required Personnel
@@ -328,7 +328,7 @@ Summary Dashboards (per workbook)
 
 - SIEM uptime reports (prove availability meets policy requirement)
 - Collection failure alerts (quantify reliability issues)
-- Bandwidth utilization graphs (verify network capacity adequate)
+- Bandwidth utilisation graphs (verify network capacity adequate)
 
 ---
 
@@ -348,7 +348,7 @@ Summary Dashboards (per workbook)
 
 ## Sheet 2: SIEM Infrastructure Inventory
 
-**Purpose**: Document all centralized log management platforms.
+**Purpose**: Document all centralised log management platforms.
 
 **What to Document**:
 
@@ -359,7 +359,7 @@ Summary Dashboards (per workbook)
 - Version/Build
 - Primary Use Case (Security events, Compliance, Operations, All logs)
 - Capacity (Events Per Second - EPS rating)
-- Current Utilization (% of capacity used)
+- Current Utilisation (% of capacity used)
 - Licensing (Licensed EPS, license expiration, license type)
 - Geographic Location (Region, datacenter, availability zone)
 - High Availability (Clustered? DR/backup? RPO/RTO?)
@@ -387,7 +387,7 @@ Summary Dashboards (per workbook)
 **Cloud-Native Logging**:
 
 - Document cloud provider logging (CloudTrail, Azure Monitor, GCP Cloud Logging)
-- Note if forwarded to centralized SIEM or standalone
+- Note if forwarded to centralised SIEM or standalone
 - If standalone, assess coverage completeness
 
 **Time**: 1-2 hours
@@ -404,7 +404,7 @@ Summary Dashboards (per workbook)
 
 - Storage System (SIEM internal, SAN, NAS, Object Storage, Cloud Storage)
 - Total Capacity (TB)
-- Current Utilization (TB used, % utilization)
+- Current Utilisation (TB used, % utilisation)
 - Retention Period (Days/Months logs kept online)
 - Performance (IOPS, latency, search speed)
 - Redundancy (RAID level, replication, backup)
@@ -414,7 +414,7 @@ Summary Dashboards (per workbook)
 
 - Storage System (compressed storage, secondary storage tier)
 - Total Capacity (TB)
-- Current Utilization
+- Current Utilisation
 - Retention Period
 - Access Time (how long to retrieve logs)
 - Compression Ratio (if applicable)
@@ -423,7 +423,7 @@ Summary Dashboards (per workbook)
 
 - Storage System (tape, object storage, write-once media, cloud archive)
 - Total Capacity (TB)
-- Current Utilization
+- Current Utilisation
 - Retention Period (matches policy requirement - typically 7 years total)
 - Access Time (hours/days to retrieve)
 - Write-Once Capability (WORM storage for compliance)
@@ -438,7 +438,7 @@ Summary Dashboards (per workbook)
 **Evidence Required**:
 
 - Storage capacity reports from storage management console
-- SIEM storage utilization dashboard screenshot
+- SIEM storage utilisation dashboard screenshot
 - Capacity planning spreadsheet or forecast
 - Storage architecture diagram showing tiers
 
@@ -465,7 +465,7 @@ Summary Dashboards (per workbook)
 - Protocol Used (Syslog UDP/TCP, HTTPS, proprietary protocol)
 - Port Number
 - Bandwidth Available (Mbps/Gbps)
-- Current Utilization (% of bandwidth used for logs)
+- Current Utilisation (% of bandwidth used for logs)
 - Latency (milliseconds average)
 - Packet Loss (% packet loss observed)
 
@@ -494,8 +494,8 @@ Summary Dashboards (per workbook)
 **Evidence Required**:
 
 - Network diagram showing log forwarding paths
-- Firewall rule exports (sanitized for sensitivity)
-- Bandwidth utilization graphs
+- Firewall rule exports (sanitised for sensitivity)
+- Bandwidth utilisation graphs
 - Network monitoring data showing connectivity uptime
 
 **Common Issues to Identify**:
@@ -564,7 +564,7 @@ Summary Dashboards (per workbook)
 
 **Time**: 4-6 hours (most time-consuming sheet - verify EACH log source individually)
 
-**Pro Tip**: Filter by criticality first. Verify all "Critical" and "High" systems before "Medium" and "Low". Prioritize effort.
+**Pro Tip**: Filter by criticality first. Verify all "Critical" and "High" systems before "Medium" and "Low". Prioritise effort.
 
 ## Sheet 6: Integration Methods
 
@@ -580,7 +580,7 @@ Summary Dashboards (per workbook)
 - Agent Version
 - Installation Date
 - Auto-Update Enabled? (Yes/No - security consideration)
-- Configuration Source (centralized management, local config file)
+- Configuration Source (centralised management, local config file)
 - Health Monitoring (agent reports health status to SIEM?)
 - SSL/TLS Encryption (Yes/No)
 - Authentication Method (certificate, API key, username/password)
@@ -599,7 +599,7 @@ Summary Dashboards (per workbook)
 - API Type (REST API, GraphQL, proprietary API)
 - Authentication (OAuth 2.0, API key, certificate, bearer token)
 - Collection Frequency (real-time webhook, polling every X minutes)
-- Rate Limiting (API calls per hour limit, current utilization)
+- Rate Limiting (API calls per hour limit, current utilisation)
 - Error Handling (retry logic, exponential backoff, dead-letter queue)
 
 **Cloud Connectors**:
@@ -635,7 +635,7 @@ Summary Dashboards (per workbook)
 **Evidence Required**:
 
 - Configuration screenshots from SIEM showing integration settings
-- Agent configuration files (sample, sanitized for credentials)
+- Agent configuration files (sample, sanitised for credentials)
 - Cloud connector permission/role documentation
 - Network protocol packet captures (if troubleshooting Syslog issues)
 
@@ -805,7 +805,7 @@ Summary Dashboards (per workbook)
 
 ## Sheet 9: Gap Analysis
 
-**Purpose**: Consolidate all identified gaps, prioritize by risk, and create remediation plan.
+**Purpose**: Consolidate all identified gaps, prioritise by risk, and create remediation plan.
 
 **Gap Categories**:
 
@@ -904,7 +904,7 @@ Summary Dashboards (per workbook)
 
 - SIEM platform version and license information (screenshot from admin console)
 - Architecture diagram (showing SIEM components, collectors, indexers, storage)
-- Capacity report (current EPS utilization, storage consumption)
+- Capacity report (current EPS utilisation, storage consumption)
 - High availability configuration (clustering documentation, DR procedures)
 
 **For Storage Architecture (Sheet 3)**:
@@ -917,8 +917,8 @@ Summary Dashboards (per workbook)
 **For Network Infrastructure (Sheet 4)**:
 
 - Network diagram (showing log forwarding paths)
-- Firewall rules (exports or screenshots - sanitize sensitive IPs)
-- Bandwidth utilization graphs (from network monitoring system)
+- Firewall rules (exports or screenshots - sanitise sensitive IPs)
+- Bandwidth utilisation graphs (from network monitoring system)
 - Routing table excerpts (showing SIEM reachability)
 
 **For Log Source Coverage (Sheet 5)**:
@@ -968,7 +968,7 @@ Summary Dashboards (per workbook)
 
 - Export in readable formats (PDF, Excel, CSV)
 - Include metadata (date generated, who ran report, system/tool used)
-- Sanitize for sensitivity before storing in assessment workbook folder
+- Sanitise for sensitivity before storing in assessment workbook folder
 
 **Documentation References**:
 
@@ -1124,7 +1124,7 @@ Summary Dashboards (per workbook)
 ## Accuracy Checks
 
 - [ ] SIEM infrastructure information verified (Sheet 2 - version numbers, capacity, licensing accurate)
-- [ ] Storage capacity calculations correct (Sheet 3 - current utilization + projected growth reasonable)
+- [ ] Storage capacity calculations correct (Sheet 3 - current utilisation + projected growth reasonable)
 - [ ] Network infrastructure documentation current (Sheet 4 - firewall rules reflect current state, not historical)
 - [ ] Log source coverage verified with recent search results (Sheet 5 - verification timestamps within last week)
 - [ ] Collection reliability metrics from recent data (Sheet 7 - not outdated metrics from 6+ months ago)
@@ -1150,7 +1150,7 @@ Summary Dashboards (per workbook)
 - [ ] Assessment completed by qualified personnel (SIEM Admin, SOC Lead - not delegated to unqualified staff)
 - [ ] Cross-functional input obtained (IT Ops, Network Team, System Admins provided input where needed)
 - [ ] Review by InfoSec Manager scheduled (before final CISO approval)
-- [ ] Gaps socialized with stakeholders (no surprises in approval meeting)
+- [ ] Gaps socialised with stakeholders (no surprises in approval meeting)
 - [ ] Remediation plans have stakeholder buy-in (responsible parties aware and agree to timelines)
 
 **If ANY checkbox is unchecked**: Assessment is NOT ready for approval. Complete missing items before proceeding to approval.
@@ -1171,7 +1171,7 @@ Summary Dashboards (per workbook)
 **Level 2: Management Review**
 
 - **Reviewer**: Information Security Manager
-- **Focus**: Gap prioritization correct, remediation plans aligned with organisational priorities, resource requirements reasonable
+- **Focus**: Gap prioritisation correct, remediation plans aligned with organisational priorities, resource requirements reasonable
 - **Timeline**: 3-5 business days for review and discussion
 - **Outcome**: Remediation plans approved, resources committed, timelines realistic
 
@@ -1200,7 +1200,7 @@ Summary Dashboards (per workbook)
 **Step 3: Level 2 Management Review**
 
 - InfoSec Manager reviews assessment
-- Gap prioritization discussion (are priorities correct?)
+- Gap prioritisation discussion (are priorities correct?)
 - Remediation feasibility discussion (are timelines realistic?)
 - Resource requirements clarification (budget, personnel, vendor support)
 - InfoSec Manager signs Sheet 11 after satisfactory review
@@ -1246,4 +1246,4 @@ Summary Dashboards (per workbook)
 *"Centralised logging is the nervous system of security operations."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

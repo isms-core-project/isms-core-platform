@@ -49,7 +49,7 @@
 | **Version** | 1.0 |
 | **Assessment Area** | Test Data Governance & Protection |
 | **Related Policy** | ISMS-POL-A.8.33-34, Section 2.1 (Test Data Protection) |
-| **Purpose** | Assess organisational compliance with test data protection requirements including inventory, masking, anonymization, and environment registry management |
+| **Purpose** | Assess organisational compliance with test data protection requirements including inventory, masking, anonymisation, and environment registry management |
 | **Target Audience** | Test Managers, Development Teams, Security Officers, Data Protection Officers, QA Teams, Compliance Officers, IT Operations, Auditors |
 | **Assessment Type** | Process & Operational Compliance |
 | **Review Cycle** | Semi-Annual (minimum) or After Major System Changes |
@@ -92,7 +92,7 @@ This assessment evaluates [Organisation]'s implementation of **test data governa
 **Scope:** Complete test data lifecycle management across 5 critical areas:
 
 1. **Test Data Inventory** - Complete registry of what production data is copied to test environments
-2. **Data Masking/Anonymization** - Tracking of data protection techniques applied
+2. **Data Masking/Anonymisation** - Tracking of data protection techniques applied
 3. **Test Environment Registry** - Inventory of all test environments and their security posture
 4. **Data Refresh Schedule** - Management of data refresh cycles and authorisations
 5. **Compliance Verification** - Evidence of compliance with test data policies
@@ -110,8 +110,8 @@ This assessment evaluates [Organisation]'s implementation of **test data governa
 **Regulatory Context:**
 
 - **EU GDPR (Article 5.1.f):** "Integrity and confidentiality" principle - personal data must be protected against unauthorised processing
-- **EU GDPR (Article 25):** "Data protection by design" - implement technical measures like pseudonymization
-- **EU GDPR (Article 32):** "Security of processing" - implement appropriate technical measures including pseudonymization
+- **EU GDPR (Article 25):** "Data protection by design" - implement technical measures like pseudonymisation
+- **EU GDPR (Article 32):** "Security of processing" - implement appropriate technical measures including pseudonymisation
 - **Swiss FADP (Article 8):** Data security requirements including protection during processing
 - **ISO 27002:2022 (8.33):** Guidance on protecting test information in non-production environments
 
@@ -130,7 +130,7 @@ This assessment evaluates [Organisation]'s implementation of **test data governa
 **Required Knowledge:**
 
 - [Organisation]'s complete test environment inventory
-- Data masking and anonymization techniques in use
+- Data masking and anonymisation techniques in use
 - Test data provisioning processes
 - Data classification scheme and PII locations
 - Regulatory requirements affecting test data
@@ -150,7 +150,7 @@ This assessment evaluates [Organisation]'s implementation of **test data governa
 **Breakdown:**
 
 - **Test Data Inventory (3-4 hours):** Document all production data copied to test
-- **Masking Assessment (2-3 hours):** Evaluate masking/anonymization effectiveness
+- **Masking Assessment (2-3 hours):** Evaluate masking/anonymisation effectiveness
 - **Environment Registry (2-3 hours):** Document all test environments
 - **Refresh Schedule Review (1-2 hours):** Assess data refresh processes
 - **Evidence Collection (1-2 hours):** Gather supporting documentation
@@ -163,7 +163,7 @@ This assessment evaluates [Organisation]'s implementation of **test data governa
 This assessment implements **ISMS-POL-A.8.33-34, Section 2.1 (Test Data Protection)** which defines mandatory requirements for:
 
 - **Data Inventory:** All production data copied to test must be registered and authorised
-- **Masking Requirements:** Personal data must be masked/anonymized before copying to test
+- **Masking Requirements:** Personal data must be masked/anonymised before copying to test
 - **Environment Controls:** Test environments must have appropriate security controls
 - **Refresh Governance:** Data refresh must be authorised and logged
 - **Compliance Monitoring:** Regular verification of test data compliance
@@ -191,7 +191,7 @@ Before starting this assessment, ensure you have access to:
 **Systems:**
 
 - [ ] Test environment management platforms
-- [ ] Data masking/anonymization tools
+- [ ] Data masking/anonymisation tools
 - [ ] Database administration consoles
 - [ ] Test data provisioning systems
 - [ ] Environment monitoring dashboards
@@ -209,12 +209,12 @@ Before starting this assessment, ensure you have access to:
 
 - Understanding of GDPR Article 25 (data protection by design)
 - Understanding of GDPR Article 32 (security of processing)
-- Familiarity with pseudonymization vs. anonymization requirements
+- Familiarity with pseudonymisation vs. anonymisation requirements
 - Test data retention requirements
 
 **Technical:**
 
-- Data masking techniques (substitution, shuffling, tokenization, encryption)
+- Data masking techniques (substitution, shuffling, tokenisation, encryption)
 - Database replication and refresh mechanisms
 - Test environment architectures (Dev, QA, Staging, UAT)
 - Data classification and PII identification
@@ -299,12 +299,12 @@ Step 8: Quality Check & Approval (Sheet 9)
 
 ### Step 2: Data Masking Assessment (Sheet 3)
 
-**Objective:** Evaluate masking/anonymization effectiveness for each data set
+**Objective:** Evaluate masking/anonymisation effectiveness for each data set
 
 **Instructions:**
 1. Reference data sets from Sheet 2 in Column A
 2. Document Masking Status in Column B (Fully Masked, Partially Masked, Not Masked, N/A)
-3. Specify Masking Technique in Column C (Substitution, Shuffling, Tokenization, Encryption, Synthetic)
+3. Specify Masking Technique in Column C (Substitution, Shuffling, Tokenisation, Encryption, Synthetic)
 4. Identify Masking Tool in Column D (tool name or manual process)
 5. Record Masking Effectiveness Score in Column E (1-5 scale)
 6. Document PII Fields Masked in Column F (list specific fields)
@@ -314,15 +314,15 @@ Step 8: Quality Check & Approval (Sheet 9)
 **Masking Technique Definitions:**
 
 - **Substitution:** Replace real data with fictional but realistic values
-- **Shuffling:** Randomize data within a column across records
-- **Tokenization:** Replace sensitive data with non-sensitive tokens
+- **Shuffling:** Randomise data within a column across records
+- **Tokenisation:** Replace sensitive data with non-sensitive tokens
 - **Encryption:** Encrypt data (reversible with key)
 - **Synthetic Data:** Generate completely artificial data
-- **Anonymization:** Remove identifying elements entirely (irreversible)
+- **Anonymisation:** Remove identifying elements entirely (irreversible)
 
 **Masking Effectiveness Score:**
 
-- **5 - Excellent:** All PII fully anonymized, irreversible, no re-identification risk
+- **5 - Excellent:** All PII fully anonymised, irreversible, no re-identification risk
 - **4 - Good:** Strong masking, minimal re-identification risk
 - **3 - Adequate:** Reasonable masking, some re-identification risk
 - **2 - Poor:** Weak masking, significant re-identification risk
@@ -414,7 +414,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 
 **Key Compliance Requirements:**
 
-- **GDPR Article 25:** Data protection by design - pseudonymization required
+- **GDPR Article 25:** Data protection by design - pseudonymisation required
 - **GDPR Article 32:** Security of processing - appropriate technical measures
 - **ISO 27001 A.8.33:** Test information appropriately protected
 - **ISO 27001 A.8.34:** Audit testing planned and agreed
@@ -515,10 +515,10 @@ A: This is a finding. Document known data sets and create remediation plan to co
 
 ## Data Masking Assessment (Sheet 3)
 
-**Q: What's the difference between anonymization and pseudonymization?**
+**Q: What's the difference between anonymisation and pseudonymisation?**
 A:
-- **Anonymization:** Irreversible - data cannot be linked back to individual (not personal data under GDPR)
-- **Pseudonymization:** Reversible with key - data can be re-linked (still personal data under GDPR, but reduced risk)
+- **Anonymisation:** Irreversible - data cannot be linked back to individual (not personal data under GDPR)
+- **Pseudonymisation:** Reversible with key - data can be re-linked (still personal data under GDPR, but reduced risk)
 
 **Q: Is encryption the same as masking?**
 A: No. Encryption is reversible with the key. For test data, prefer irreversible techniques (substitution, synthetic) unless reversibility is required.
@@ -661,4 +661,4 @@ A: Only as long as needed for testing purposes. Recommend:
 *"Production data in a test environment is a production breach waiting to happen."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

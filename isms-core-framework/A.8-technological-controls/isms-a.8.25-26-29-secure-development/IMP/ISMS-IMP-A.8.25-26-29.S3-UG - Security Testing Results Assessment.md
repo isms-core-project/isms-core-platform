@@ -107,7 +107,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 6. **Penetration_Testing_Results** - Penetration testing and interactive testing results
 7. **Security_Acceptance_Testing** - Security test cases and acceptance criteria
 8. **Compliance_Summary** - Overall testing compliance scores
-9. **Evidence_Register** - Centralized audit evidence tracking
+9. **Evidence_Register** - Centralised audit evidence tracking
 10. **Approval_Sign_Off** - Stakeholder review and approval workflow
 
 **Estimated Completion Time:**
@@ -577,7 +577,7 @@ List top 5 most vulnerable dependencies:
 
 - Export SCA scan results (vulnerable dependency list)
 - Take screenshots of SCA dashboard
-- Identify critical/high vulnerabilities (prioritize remediation)
+- Identify critical/high vulnerabilities (prioritise remediation)
 - Check for known high-profile CVEs (Log4Shell, Spring4Shell, etc.)
 - Note if dependencies are outdated (may have unpatched vulnerabilities)
 
@@ -814,7 +814,7 @@ For each gap, provide recommendation:
 
 - Review all previous sheets (Sheets 2-6) before completing dashboard
 - Verify auto-calculated scores are correct
-- Prioritize gaps by risk (High-Risk apps without pen test = P1)
+- Prioritise gaps by risk (High-Risk apps without pen test = P1)
 - Be specific in recommendations (not "improve testing")
 
 **Common Mistakes:**
@@ -822,7 +822,7 @@ For each gap, provide recommendation:
 - ❌ Not aggregating findings across all test types (SAST + DAST + SCA + Pen test)
 - ❌ Not comparing against policy requirements (what's required vs. what was done)
 - ❌ Generic recommendations ("do more testing")
-- ❌ Not prioritizing gaps (all gaps treated equally)
+- ❌ Not prioritising gaps (all gaps treated equally)
 
 ## Sheet 8: Compliance_Summary
 
@@ -867,7 +867,7 @@ For each gap, provide recommendation:
 
 ## Sheet 9: Evidence_Register
 
-**Purpose:** Centralized tracking of all audit evidence supporting the assessment.
+**Purpose:** Centralised tracking of all audit evidence supporting the assessment.
 
 **Completion Time:** 20-30 minutes (ongoing throughout assessment)
 
@@ -1185,4 +1185,4 @@ For each gap, provide recommendation:
 *"Every bug found before release is a breach prevented."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

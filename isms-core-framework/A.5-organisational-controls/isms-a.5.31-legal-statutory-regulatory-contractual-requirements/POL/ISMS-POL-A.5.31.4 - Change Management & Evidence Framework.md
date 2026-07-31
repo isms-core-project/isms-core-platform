@@ -135,7 +135,7 @@ Regulatory change monitoring is the systematic, ongoing process of detecting cha
 
 **Regulatory Technology (RegTech) Platforms**:
 
-- Specialized compliance platforms (Compliance.ai, Ascent, ComplyAdvantage, or equivalent)
+- Specialised compliance platforms (Compliance.ai, Ascent, ComplyAdvantage, or equivalent)
 - Purpose-built for regulatory change monitoring
 - Features:
   - AI/ML-powered change detection
@@ -172,7 +172,7 @@ Regulatory change monitoring is the systematic, ongoing process of detecting cha
 
 **Public Comment Periods**:
 
-- Proposed regulations often open for public comment before finalization
+- Proposed regulations often open for public comment before finalisation
 - Monitoring proposals enables early awareness and preparation
 - Opportunity to participate in regulatory development (submit comments)
 - Advance warning (typically months before regulation becomes effective)
@@ -275,7 +275,7 @@ Regulatory change monitoring is the systematic, ongoing process of detecting cha
 
 **Professional Discussion Forums**:
 
-- Online communities (Reddit r/compliance, specialized forums, LinkedIn groups)
+- Online communities (Reddit r/compliance, specialised forums, LinkedIn groups)
 - Moderated discussions on regulatory changes and interpretations
 - Caution: Verify information from authoritative sources; forums are discussion not gospel
 
@@ -292,14 +292,14 @@ Regulatory change monitoring is the systematic, ongoing process of detecting cha
 
 **Compliance Consultants**:
 
-- Specialized consultancies focused on regulatory compliance
+- Specialised consultancies focused on regulatory compliance
 - Proactive monitoring and advisory services
 - Costly but high-touch, tailored to [Organisation]'s needs
 - May provide gap analysis, remediation planning, implementation support
 
-**Specialized Regulatory Advisors**:
+**Specialised Regulatory Advisors**:
 
-- Boutique firms specializing in specific regulations (GDPR specialists, HIPAA consultants, PCI DSS v4.0.1 QSAs)
+- Boutique firms specialising in specific regulations (GDPR specialists, HIPAA consultants, PCI DSS v4.0.1 QSAs)
 - Deep expertise in narrow domain
 - Valuable for complex, high-stakes regulatory requirements
 
@@ -316,7 +316,7 @@ Regulatory change monitoring is the systematic, ongoing process of detecting cha
 
 **Legal News Services**:
 
-- Specialized legal news (Law360, Legal Dive, JDSupra)
+- Specialised legal news (Law360, Legal Dive, JDSupra)
 - Regulatory enforcement actions and court decisions
 - Emerging regulatory trends and proposals
 
@@ -433,7 +433,7 @@ Monitoring frequency SHALL be risk-based, with higher-risk regulations monitored
 
 - During legislative sessions (when legislature is in session, more laws enacted)
 - When regulatory review or reform is expected (e.g., government announced comprehensive regulatory review)
-- When regulatory change is proposed (monitor through public comment, finalization, implementation)
+- When regulatory change is proposed (monitor through public comment, finalisation, implementation)
 - Industry events suggesting regulatory attention (major breach, scandal, enforcement action in sector)
 
 **Decrease Monitoring Frequency**:
@@ -454,7 +454,7 @@ All detected regulatory changes SHALL be systematically logged in a Regulatory C
 
 ### Regulatory Change Register
 
-**Purpose**: Centralized log of all detected regulatory changes affecting or potentially affecting [Organisation].
+**Purpose**: Centralised log of all detected regulatory changes affecting or potentially affecting [Organisation].
 
 **Register Fields**:
 
@@ -516,7 +516,7 @@ All detected regulatory changes SHALL be systematically logged in a Regulatory C
 
 - Entirely new law or regulation enacted
 - Creates new compliance obligations
-- Example: New data localization law enacted requiring data to be stored in-country
+- Example: New data localisation law enacted requiring data to be stored in-country
 - Impact: Triggers full applicability assessment per 5.31.2 methodology
 
 **Amendment**:
@@ -581,7 +581,7 @@ All detected regulatory changes SHALL be systematically logged in a Regulatory C
 
 - Compliance Officer reviews Change Register quarterly
 - Identify changes stuck in "Under Assessment" (escalate or close)
-- Identify changes with approaching effective dates (prioritize)
+- Identify changes with approaching effective dates (prioritise)
 - Report to management on regulatory change trends
 
 ---
@@ -748,7 +748,7 @@ Not every detected regulatory change requires full impact assessment. Clear trig
 
 - Add gaps to Gap Register (from 5.31.3 Section 4.4)
 - Link gaps to Regulatory Change ID (traceability)
-- Prioritize gaps per 5.31.3 Section 4.2 prioritization framework
+- Prioritise gaps per 5.31.3 Section 4.2 prioritisation framework
   - Consider regulatory tier, legal consequence, compliance deadline
 
 **Example**:
@@ -857,7 +857,7 @@ Assess risk across multiple factors:
 
 **Business Impact**:
 
-- Loss of ability to operate (e.g., data localization requirement not met → cannot serve customers in that jurisdiction)
+- Loss of ability to operate (e.g., data localisation requirement not met → cannot serve customers in that jurisdiction)
 - Loss of certification (e.g., non-compliance affects ISO 27001 certification)
 - Litigation risk (class action lawsuits for data breaches tied to non-compliance)
 
@@ -893,7 +893,7 @@ Assess risk across multiple factors:
 
 ## Assessment Documentation
 
-All impact assessments SHALL be documented in a standardized Impact Assessment Template for consistency, completeness, and auditability.
+All impact assessments SHALL be documented in a standardised Impact Assessment Template for consistency, completeness, and auditability.
 
 ### Impact Assessment Template
 
@@ -1013,7 +1013,7 @@ Impact Assessment provides recommendation. Decision Record documents management 
 **Storage**:
 
 - Decision Record attached to Impact Assessment Template
-- Both stored in centralized compliance repository
+- Both stored in centralised compliance repository
 - Linked from Regulatory Change Register (Impact Assessment ID field)
 
 ## Escalation Criteria
@@ -1026,7 +1026,7 @@ Certain regulatory changes require executive management involvement due to signi
 
 - Regulatory change creates major new compliance requirement
 - Examples:
-  - New regulation requiring significant operational changes (data localization, mandatory breach notification infrastructure)
+  - New regulation requiring significant operational changes (data localisation, mandatory breach notification infrastructure)
   - Amendment expanding scope dramatically (applies to more data, more systems, more jurisdictions)
 - Criterion: Fundamental change to compliance posture
 
@@ -1109,7 +1109,7 @@ Certain regulatory changes require executive management involvement due to signi
 
 ### Escalation Examples
 
-**Example 1: Data Localization Requirement**
+**Example 1: Data Localisation Requirement**
 
 - **Change**: New regulation requires personal data of Country X citizens to be stored exclusively in Country X
 - **Impact**: [Organisation] currently uses global cloud provider with data centers outside Country X; would require new cloud region or data center in Country X
@@ -1126,13 +1126,13 @@ Certain regulatory changes require executive management involvement due to signi
 - **Risk**: High (regulator actively enforces notification deadlines; severe fines for late notification)
 - **Effort**: $150K (automated detection tools, revised procedures, training), 4 months implementation
 - **Escalation Trigger**: High risk + tight timeline
-- **Decision Needed**: Approve budget and prioritize implementation OR accept risk of non-compliance
-- **Outcome**: Executive approves budget; directs Security team to prioritize over other projects
+- **Decision Needed**: Approve budget and prioritise implementation OR accept risk of non-compliance
+- **Outcome**: Executive approves budget; directs Security team to prioritise over other projects
 
 **Example 3: Ambiguous Cryptography Requirement**
 
 - **Change**: Regulation requires "quantum-resistant cryptography" but does not specify standards or timeline
-- **Impact**: Uncertain; post-quantum cryptography standards still evolving (NIST standardization ongoing)
+- **Impact**: Uncertain; post-quantum cryptography standards still evolving (NIST standardisation ongoing)
 - **Risk**: Medium-High (if interpreted strictly, massive cryptography migration; if interpreted flexibly, may defer until standards mature)
 - **Effort**: Depends on interpretation; could range from $0 (defer) to $1M+ (immediate migration)
 - **Escalation Trigger**: Legal uncertainty + significant budget variation based on interpretation
@@ -1272,7 +1272,7 @@ For each document requiring update:
 
 1. **Retrieve Current Version**:
 
-   - Access centralized repository
+   - Access centralised repository
    - Confirm working with latest version (avoid overwriting concurrent edits)
 
 2. **Make Changes**:
@@ -1302,7 +1302,7 @@ For each document requiring update:
 
 **Tools**:
 
-- Use Assessment Workbooks (standardized templates with data validation)
+- Use Assessment Workbooks (standardised templates with data validation)
 - Use version control systems (Git, SharePoint, document management system)
 - Automate where possible (scripts to update dashboards from underlying registers)
 
@@ -1341,7 +1341,7 @@ For each document requiring update:
   - Requirements without control mappings (gaps)
   - Controls without evidence (evidence gaps)
   - Orphaned records (requirements referencing non-existent regulations)
-- Resolve validation errors before finalizing updates
+- Resolve validation errors before finalising updates
 
 ### Step 4: Communicate Changes
 
@@ -1372,7 +1372,7 @@ For each document requiring update:
 
 **Timing**:
 
-- Communicate within 1 week of finalizing updates
+- Communicate within 1 week of finalising updates
 - Urgent changes (e.g., approaching compliance deadline): Immediate communication
 
 **Example Communication**:
@@ -1799,14 +1799,14 @@ Different types of controls generate different evidence.
 
 ## Evidence Storage & Retrieval
 
-### Centralized Evidence Repository
+### Centralised Evidence Repository
 
-**Requirement**: All compliance evidence SHALL be stored in a centralized, organised, access-controlled repository.
+**Requirement**: All compliance evidence SHALL be stored in a centralised, organised, access-controlled repository.
 
 **Repository Types**:
 
 - **Document Management System**: SharePoint, Google Drive, Box, OneDrive
-- **Compliance Management Platform**: Specialized software (Vanta, Drata, Secureframe, AuditBoard)
+- **Compliance Management Platform**: Specialised software (Vanta, Drata, Secureframe, AuditBoard)
 - **File Shares**: Network drives (if properly secured and backed up)
 - **Hybrid**: Combination (policies in DMS, logs in SIEM, configurations in infrastructure-as-code repository)
 
@@ -2113,7 +2113,7 @@ Format: [Control-ID]\_[Evidence-Type]\_[Date]\_[Version].[ext]
 **Disposal Method**:
 
 - **Electronic Evidence**:
-  - Secure deletion (data sanitization, overwrite, cryptographic erasure if encrypted at rest)
+  - Secure deletion (data sanitisation, overwrite, cryptographic erasure if encrypted at rest)
   - Not just "recycle bin delete" – must be unrecoverable
   - Tools: DBAN, Eraser, shred utilities, or built-in secure erase features
   
@@ -2229,7 +2229,7 @@ Format: [Control-ID]\_[Evidence-Type]\_[Date]\_[Version].[ext]
   - Policy exists but no distribution record → Add distribution email or portal publication evidence
   - Configuration exists but no explanation → Add narrative explaining what configuration demonstrates
 
-**Prioritization**:
+**Prioritisation**:
 
 - Close **Critical** gaps immediately (within 1 week)
 - Close **High** gaps within 1 month
@@ -2305,7 +2305,7 @@ Compliance reporting provides visibility into regulatory compliance status for i
 - Changes under assessment: [Y]
 - Changes implemented: [Z]
 
-**Visualization**:
+**Visualisation**:
 
 - **Charts**: Pie chart (regulations by tier), bar chart (gaps by priority), trend line (gap count over time)
 - **Heat Map**: Regulation × Requirements showing compliance status (green = full compliance, yellow = partial, red = gap)
@@ -2393,7 +2393,7 @@ Compliance reporting provides visibility into regulatory compliance status for i
 
 **Frequency**: Monthly or quarterly
 
-**Report Content** (Personalized per Control Owner):
+**Report Content** (Personalised per Control Owner):
 
 - **Your Controls**: List of controls you own (e.g., Control Owner for A.8.24 sees A.8.24-specific report)
 - **Requirements Mapped to Your Controls**: Which regulatory requirements your controls satisfy
@@ -2407,7 +2407,7 @@ Compliance reporting provides visibility into regulatory compliance status for i
   - Upcoming verification/validation activities
 - **Support Requests**: Option to request support from Compliance Team
 
-**Delivery**: Email report or dashboard portal (personalized login shows Control Owner's data only)
+**Delivery**: Email report or dashboard portal (personalised login shows Control Owner's data only)
 
 **Benefits**:
 
@@ -2631,7 +2631,7 @@ Compliance reporting provides visibility into regulatory compliance status for i
 - Deep dive into compliance posture
 - Review of all applicable regulations (reconfirm applicability)
 - Comprehensive evidence review
-- Gap analysis and prioritization
+- Gap analysis and prioritisation
 - Resource planning for next year
 - Delivered Q4 or Q1 (annual planning cycle)
 
@@ -2887,13 +2887,13 @@ Compliance records must be retained for specified periods to support audits, reg
 
 - Legal Hold Notice (written directive from Legal Counsel)
 - Custodian Acknowledgments (confirmation of receipt and understanding)
-- Legal Hold Log (centralized list of all active legal holds)
+- Legal Hold Log (centralised list of all active legal holds)
 - Release Notices (when holds lifted)
 
 **Training**:
 
 - Employees trained on legal hold obligations
-- Emphasize: Deliberate destruction of records under legal hold is spoliation (serious legal consequences)
+- Emphasise: Deliberate destruction of records under legal hold is spoliation (serious legal consequences)
 
 ## Secure Disposal
 
@@ -2917,7 +2917,7 @@ Compliance records must be retained for specified periods to support audits, reg
 
 **Electronic Evidence**:
 
-- **Secure Deletion** (Data Sanitization):
+- **Secure Deletion** (Data Sanitisation):
   - Overwrite data multiple times (DoD 5220.22-M standard: 3-pass overwrite minimum)
   - Cryptographic erasure (if data encrypted at rest, destroy encryption keys)
   - Tools: DBAN (Darik's Boot and Nuke), Eraser, shred utilities (Linux/Unix), BitLocker cryptographic erasure (Windows)
@@ -2935,7 +2935,7 @@ Compliance records must be retained for specified periods to support audits, reg
 - **Shredding** (Paper):
   - Cross-cut shredder minimum (strip-cut not secure)
   - Particle size: <5mm x <50mm recommended
-  - For highly sensitive: Industrial shredding or pulverization
+  - For highly sensitive: Industrial shredding or pulverisation
 - **Physical Destruction** (Hard Drives, USB Drives, CDs):
   - Degaussing (for magnetic media like hard drives)
   - Physical destruction (drill, shredder, hammer, incineration)
@@ -3051,4 +3051,4 @@ Compliance records must be retained for specified periods to support audits, reg
 ---
 
 *This policy establishes [Organisation]'s systematic approach to maintaining the regulatory compliance framework and demonstrating compliance through evidence, enabling audit readiness and regulatory confidence.*
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

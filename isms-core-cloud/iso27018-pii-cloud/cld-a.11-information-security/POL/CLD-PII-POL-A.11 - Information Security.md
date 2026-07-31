@@ -87,7 +87,7 @@ This policy establishes [Organisation]'s information security requirements for t
 
 **A.11.9 — User ID management**: User ID lifecycle managed; deactivated promptly on termination or role change; dormant accounts reviewed.
 
-**A.11.10 — Records of authorized users**: Up-to-date records of all authorised PII system users; reviewed at least quarterly; available to controller.
+**A.11.10 — Records of authorised users**: Up-to-date records of all authorised PII system users; reviewed at least quarterly; available to controller.
 
 **A.11.11 — Contract measures**: Processor–controller agreements include scope, security, breach notification, rights assistance, audit, sub-processor approval, return/deletion, jurisdiction.
 
@@ -325,4 +325,4 @@ Auditors verifying compliance with CLD-PII-POL-A.11 should expect to find:
 
 ---
 
-<!-- QA_VERIFIED: 2026-04-15 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

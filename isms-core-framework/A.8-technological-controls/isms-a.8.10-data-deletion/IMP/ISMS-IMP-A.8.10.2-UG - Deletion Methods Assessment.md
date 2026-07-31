@@ -59,7 +59,7 @@
 
 ## What This Assessment Measures
 
-This assessment evaluates [Organisation]'s implementation of **deletion methods and media sanitization techniques** to ensure data is permanently and irrecoverably deleted when retention periods expire, in compliance with ISO/IEC 27001:2022 Control A.8.10 and NIST SP 800-88 Rev. 2 media sanitization guidelines.
+This assessment evaluates [Organisation]'s implementation of **deletion methods and media sanitisation techniques** to ensure data is permanently and irrecoverably deleted when retention periods expire, in compliance with ISO/IEC 27001:2022 Control A.8.10 and NIST SP 800-88 Rev. 2 media sanitisation guidelines.
 
 **Scope:** Deletion method effectiveness across 5 critical media types:
 
@@ -88,13 +88,13 @@ NIST Special Publication 800-88 Rev. 2 "Guidelines for Media Sanitization" defin
 
 - **Data Breach Risk:** Ineffective deletion = data persists and can be recovered by attackers
 - **Regulatory Compliance:** GDPR Article 17 requires "erasure" not just "deletion" - method must be effective
-- **Disposal Risk:** Improper sanitization of disposed hardware = data leakage to third parties
+- **Disposal Risk:** Improper sanitisation of disposed hardware = data leakage to third parties
 - **Cloud Vendor Trust:** Reliance on cloud provider deletion without verification = compliance gap
 - **Forensic Recovery:** Deleted data recoverable with forensic tools = not truly deleted
 
 **Real-World Scenarios:**
 
-- Disposed hard drives sold on eBay containing customer data (improper sanitization)
+- Disposed hard drives sold on eBay containing customer data (improper sanitisation)
 - Cloud storage "delete" only marks files as deleted, actual deletion delayed months (cloud provider policy gap)
 - Database "DELETE" statements don't remove data from transaction logs (database-specific issue)
 - SSD TRIM command not executed, deleted files recoverable (SSD-specific vulnerability)
@@ -108,7 +108,7 @@ NIST Special Publication 800-88 Rev. 2 "Guidelines for Media Sanitization" defin
 - [Organisation]'s storage infrastructure and media types in use
 - Database deletion mechanisms and transaction log management
 - Cloud storage lifecycle policies and provider deletion methods
-- NIST SP 800-88 Rev. 2 sanitization categories (Clear, Purge, Destroy)
+- NIST SP 800-88 Rev. 2 sanitisation categories (Clear, Purge, Destroy)
 - Forensic data recovery techniques (to understand deletion effectiveness)
 
 **Support Roles:**
@@ -117,7 +117,7 @@ NIST Special Publication 800-88 Rev. 2 "Guidelines for Media Sanitization" defin
 - **Database Administrators:** For database purge procedures and log management
 - **Cloud Administrators:** For cloud provider deletion policies and verification
 - **Security Engineers:** For deletion verification testing and forensic validation
-- **Asset Management:** For hardware disposal procedures and sanitization records
+- **Asset Management:** For hardware disposal procedures and sanitisation records
 - **Compliance Team:** For regulatory requirement mapping and audit support
 
 ## Time Estimate
@@ -139,7 +139,7 @@ NIST Special Publication 800-88 Rev. 2 "Guidelines for Media Sanitization" defin
 
 This assessment implements **ISMS-POL-A.8.10, Section 2.2 (Deletion Methods Requirements)** which defines mandatory deletion standards for:
 
-- **Physical Media Sanitization:** NIST SP 800-88 Rev. 2 Purge or Destroy methods for Confidential/Restricted data
+- **Physical Media Sanitisation:** NIST SP 800-88 Rev. 2 Purge or Destroy methods for Confidential/Restricted data
 - **Database Deletion:** Row-level deletion + transaction log truncation + backup purge
 - **Cloud Storage Deletion:** Cryptographic erasure (crypto-shred) or provider-verified deletion with certificates
 - **Crypto-Erasure:** For encrypted media, destruction of encryption keys = effective deletion
@@ -148,11 +148,11 @@ This assessment implements **ISMS-POL-A.8.10, Section 2.2 (Deletion Methods Requ
 **Policy Authority:** Chief Information Security Officer (CISO) / IT Operations Director  
 **Compliance Status:** Mandatory for all systems storing Confidential or Restricted data
 
-## Critical: NIST SP 800-88 Rev. 2 Sanitization Categories
+## Critical: NIST SP 800-88 Rev. 2 Sanitisation Categories
 
 **⚠️ IMPORTANT - Understanding Deletion Effectiveness:**
 
-Not all "delete" operations are equal. NIST SP 800-88 Rev. 2 defines three sanitization categories based on effectiveness:
+Not all "delete" operations are equal. NIST SP 800-88 Rev. 2 defines three sanitisation categories based on effectiveness:
 
 **Category 1: CLEAR**
 
@@ -187,7 +187,7 @@ Not all "delete" operations are equal. NIST SP 800-88 Rev. 2 defines three sanit
 - **Examples:**
   - Shredding (particle size ≤ 2mm for Confidential data)
   - Disintegration
-  - Pulverization
+  - Pulverisation
   - Incineration
   - Physical destruction services (NAID AAA certified)
 
@@ -214,7 +214,7 @@ Before starting this assessment, ensure you have access to:
 - [ ] Storage architecture diagrams (SAN, NAS, DAS, cloud)
 - [ ] Database architecture documentation
 - [ ] Cloud provider service agreements and deletion policies
-- [ ] Hardware disposal procedures and sanitization records
+- [ ] Hardware disposal procedures and sanitisation records
 - [ ] Encryption key management documentation (if using crypto-erasure)
 
 **Systems:**
@@ -229,7 +229,7 @@ Before starting this assessment, ensure you have access to:
 **Technical Resources:**
 
 - [ ] NIST SP 800-88 Rev. 2 (freely available PDF)
-- [ ] Media sanitization tools (if available): DBAN, Blancco, Eraser, etc.
+- [ ] Media sanitisation tools (if available): DBAN, Blancco, Eraser, etc.
 - [ ] Forensic data recovery tools (for verification testing): PhotoRec, TestDisk, FTK, EnCase
 
 ## Required Knowledge
@@ -237,7 +237,7 @@ Before starting this assessment, ensure you have access to:
 **Technical:**
 
 - Understanding of storage technologies (HDD vs. SSD vs. Cloud)
-- Familiarity with NIST SP 800-88 Rev. 2 sanitization categories
+- Familiarity with NIST SP 800-88 Rev. 2 sanitisation categories
 - Database deletion mechanisms (row deletion, log truncation, vacuum)
 - Cloud storage lifecycle policies and deletion APIs
 - File system deletion behavior (soft delete, recycle bin, permanent delete)
@@ -255,7 +255,7 @@ Before starting this assessment, ensure you have access to:
 
 - GDPR Article 17 "right to erasure" effectiveness requirements
 - NIST SP 800-88 Rev. 2 applicability (US federal contractors, industry best practice)
-- Industry-specific sanitization requirements (healthcare HIPAA, finance PCI DSS v4.0.1)
+- Industry-specific sanitisation requirements (healthcare HIPAA, finance PCI DSS v4.0.1)
 
 ## Pre-Assessment Checklist
 
@@ -268,7 +268,7 @@ Complete these tasks before beginning the assessment:
 - [ ] **Document encryption status** of each storage system (encryption at rest = crypto-erasure eligible)
 - [ ] **Review cloud provider deletion policies** (AWS, Azure, GCP data deletion timelines)
 - [ ] **Schedule forensic testing** if no verification testing ever conducted (coordinate with Security team)
-- [ ] **Confirm hardware disposal process** with Asset Management (who sanitizes? how verified?)
+- [ ] **Confirm hardware disposal process** with Asset Management (who sanitises? how verified?)
 
 **Critical:** If [Organisation] uses encryption at rest extensively, crypto-erasure (destroying encryption keys) may be the most efficient deletion method. Verify key management processes before assessment.
 
@@ -438,7 +438,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 
 - Is soft delete disabled or accounted for in retention calculations?
 - Are all object versions being deleted (if versioning enabled)?
-- Is crypto-shred option utilized for encrypted data?
+- Is crypto-shred option utilised for encrypted data?
 - Has deletion been verified (certificates, audit logs, or testing)?
 
 ### Step 4: File Systems & Backup Media (Sheet 5)
@@ -501,7 +501,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 
 - Are recycle bins and shadow copies disabled for sensitive file shares?
 - Is backup retention aligned with production data retention?
-- Are decommissioned backup media being properly sanitized (Purge or Destroy)?
+- Are decommissioned backup media being properly sanitised (Purge or Destroy)?
 
 ### Step 5: Deletion Verification Testing (Sheet 6)
 
@@ -601,7 +601,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 
 - Cloud provider deletion policy documents (AWS, Azure, GCP deletion whitepapers)
 - Hardware disposal vendor certificates (NAID AAA certification)
-- Sanitization tool documentation (DBAN, Blancco reports)
+- Sanitisation tool documentation (DBAN, Blancco reports)
 
 **Compliance Evidence:**
 
@@ -688,11 +688,11 @@ A: Debated topic:
 - **Recommendation:** 3 passes minimum for internal reuse, 7 passes or degaussing for external disposal
 - **Reality:** Physical destruction increasingly preferred over time-consuming multi-pass overwrite
 
-**Q: Can I reuse media after sanitization?**
+**Q: Can I reuse media after sanitisation?**
 A: Depends on NIST category:
 
 - **Clear:** Reuse within organisation at same classification level (e.g., Internal data HDD → reuse for Internal data)
-- **Purge:** Reuse at different classification level or external transfer (e.g., Confidential HDD → sanitize → reuse for Internal)
+- **Purge:** Reuse at different classification level or external transfer (e.g., Confidential HDD → sanitise → reuse for Internal)
 - **Destroy:** Media destroyed, not reusable
 
 ## Database Deletion (Sheet 3)
@@ -791,7 +791,7 @@ A: Windows Volume Shadow Copy Service (VSS) creates point-in-time snapshots:
 
 **Solution:** Disable VSS for sensitive file shares, or purge VSS snapshots immediately after deletion.
 
-**Q: How should backup media be sanitized before disposal?**
+**Q: How should backup media be sanitised before disposal?**
 A: Based on data classification:
 
 - **Public/Internal:** Overwrite (Clear category), reuse acceptable
@@ -858,7 +858,7 @@ For each assessment area, gather supporting documentation:
 **Physical Storage Media:**
 
 - NIST SP 800-88 Rev. 2 compliance mapping for each media type
-- Sanitization tool configuration (DBAN, Blancco settings)
+- Sanitisation tool configuration (DBAN, Blancco settings)
 - Disposal vendor certificates (NAID AAA certification)
 - Crypto-erasure key destruction procedures (if applicable)
 
@@ -881,7 +881,7 @@ For each assessment area, gather supporting documentation:
 
 - File share deletion procedures (Recycle Bin policy, VSS configuration)
 - Backup retention policy documents
-- Backup media sanitization records
+- Backup media sanitisation records
 - NAID AAA certificates for disposed media
 
 **Verification Testing:**
@@ -895,7 +895,7 @@ For each assessment area, gather supporting documentation:
 
 **Where to Store Evidence:**
 
-- Centralized evidence repository (ISMS document management)
+- Centralised evidence repository (ISMS document management)
 - Access-controlled file share
 - Compliance management platform
 
@@ -916,14 +916,14 @@ For each assessment area, gather supporting documentation:
 **What Auditors Will Look For:**
 1. **NIST SP 800-88 Rev. 2 Alignment:** Are deletion methods categorised correctly (Clear/Purge/Destroy)?
 2. **Data Classification Match:** Are Confidential/Restricted systems using Purge or Destroy (not just Clear)?
-3. **SSD-Specific Methods:** Are SSDs being sanitized appropriately (not standard overwrite)?
+3. **SSD-Specific Methods:** Are SSDs being sanitised appropriately (not standard overwrite)?
 4. **Verification Evidence:** Has deletion effectiveness been tested and documented?
 5. **Cloud Deletion Proof:** Is cloud deletion verified or just assumed?
 6. **Database Completeness:** Does database deletion include transaction logs and backups?
 
 **Common Audit Findings (And How to Avoid Them):**
 
-- ❌ **"SSDs sanitized with standard overwrite"** → Use crypto-erase or ATA Secure Erase Enhanced
+- ❌ **"SSDs sanitised with standard overwrite"** → Use crypto-erase or ATA Secure Erase Enhanced
 - ❌ **"No deletion verification testing"** → Conduct annual forensic recovery testing
 - ❌ **"Cloud deletion not verified"** → Request deletion certificates or use crypto-shred
 - ❌ **"Database deletion incomplete (logs remain)"** → Include log truncation in deletion procedures
@@ -1028,9 +1028,9 @@ For each assessment area, gather supporting documentation:
 - **Implementation:** Cloud CMK per storage bucket, database encryption per database
 - **Key Management:** Separate key deletion from key rotation
 
-## Hardware Disposal Without Sanitization
+## Hardware Disposal Without Sanitisation
 
-**Pitfall:** Disposing hardware to recyclers without proper sanitization
+**Pitfall:** Disposing hardware to recyclers without proper sanitisation
 
 **Scenario:**
 
@@ -1041,7 +1041,7 @@ For each assessment area, gather supporting documentation:
 
 **Prevention:**
 
-- **Never:** Dispose hardware without NIST Purge or Destroy sanitization
+- **Never:** Dispose hardware without NIST Purge or Destroy sanitisation
 - **Vendor Selection:** Use NAID AAA certified disposal vendors only
 - **Certificate Requirement:** Obtain Certificate of Destruction for all disposed media
 - **Verification:** Witness destruction if possible (for highest-security media)
@@ -1151,4 +1151,4 @@ Once all three levels approve:
 *"Deleted is only deleted if deletion is verifiable."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -1458,7 +1458,7 @@ For each active privileged account:
 - [ ] Usage logs / SIEM screenshots
 - [ ] Approval records
 - [ ] Recertification evidence
-- [ ] All evidence sanitized
+- [ ] All evidence sanitised
 
 ### Remediation (5 items)
 
@@ -1568,4 +1568,4 @@ For each active privileged account:
 *"The more powerful the tool, the more dangerous it is in the wrong hands."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

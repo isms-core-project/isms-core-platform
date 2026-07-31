@@ -281,4 +281,4 @@ Tier 1 and Tier 2 regulations must be added to ISMS-POL-00 (master regulatory fr
 *"Ignorance of the law excuses no man."*
 — John Selden
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

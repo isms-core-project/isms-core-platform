@@ -293,7 +293,7 @@ Before starting this assessment, ensure you have access to:
 
 **Phase 2: Technical Verification (1-2 hours)**
 
-- Verify network DLP appliance operational status (inline mode, traffic volume, utilization)
+- Verify network DLP appliance operational status (inline mode, traffic volume, utilisation)
 - Check endpoint DLP agent deployment coverage (% of endpoints protected)
 - Test email DLP integration (send test email, verify inspection)
 - Review cloud CASB deployment status (connected SaaS apps, policy enforcement)
@@ -354,7 +354,7 @@ Before starting this assessment, ensure you have access to:
    - List network segments covered (DMZ, Internal, Branch Offices)
    - Document protocols inspected (HTTP, HTTPS, SMTP, FTP, etc.)
    - Verify SSL/TLS inspection status
-   - Check throughput capacity and current utilization
+   - Check throughput capacity and current utilisation
    - Assess technical capabilities (content inspection, pattern matching, fingerprinting, ML/AI)
 
 3. Status determination (see Section 4.3 for rules)
@@ -424,7 +424,7 @@ Before starting this assessment, ensure you have access to:
    - Assign ownership (who will fix it)
    - Set target date (when will it be fixed)
 
-3. Prioritize gaps: Critical first, then High, Medium, Low
+3. Prioritise gaps: Critical first, then High, Medium, Low
 
 **STEP 9: Evidence Register & Final Review (15 minutes)**
 1. Navigate to **Evidence_Register** sheet
@@ -527,7 +527,7 @@ Before starting this assessment, ensure you have access to:
   *How to verify:* Check vendor support portal, confirm renewal dates  
   *Escalation:* If support expired, escalate to CISO immediately
 
-- [ ] **DLP technologies integrated with SIEM for centralized logging**  
+- [ ] **DLP technologies integrated with SIEM for centralised logging**  
 
   *Why this matters:* DLP logs in isolation = no correlation with other security events  
   *How to verify:* SIEM query for DLP logs, confirm volume matches expected  
@@ -593,7 +593,7 @@ Before starting this assessment, ensure you have access to:
 | **Protocols Inspected** | What traffic is analysed | "HTTP, HTTPS, SMTP, FTP, FTPS" | DLP policy configuration |
 | **SSL/TLS Inspection** | Decrypt HTTPS traffic | Yes/No/Partial/Planned/N/A | DLP SSL inspection config |
 | **Throughput Capacity** | Maximum traffic volume | "10 Gbps", "5 Gbps", "1 Gbps" | Appliance specs, vendor datasheet |
-| **Current Utilization %** | How much capacity used | "45%", "80%", "25%" | DLP console performance metrics |
+| **Current Utilisation %** | How much capacity used | "45%", "80%", "25%" | DLP console performance metrics |
 | **Content Inspection** | Deep packet inspection | Yes/No/Partial/Planned/N/A | DLP capabilities test |
 | **Pattern Matching (Regex)** | Regex pattern detection | Yes/No/Partial/Planned/N/A | DLP rule configuration |
 | **Fingerprinting** | Document fingerprinting | Yes/No/Partial/Planned/N/A | DLP capabilities, test with fingerprinted file |
@@ -611,7 +611,7 @@ Before starting this assessment, ensure you have access to:
 - SSL/TLS inspection enabled for HTTPS traffic
 - Protocols covering HTTP, HTTPS, SMTP, FTP minimum
 - Content inspection, pattern matching, fingerprinting all operational
-- Throughput capacity sufficient (utilization <70%)
+- Throughput capacity sufficient (utilisation <70%)
 - High availability configured (redundant appliances)
 - SIEM integration confirmed
 
@@ -620,7 +620,7 @@ Before starting this assessment, ensure you have access to:
 - Network DLP deployed but only covers some segments (e.g., DMZ only, not internal)
 - SSL/TLS inspection partial (some traffic decrypted, not all - certificate issues, exceptions)
 - TAP/SPAN mode without plan to move to inline (acceptable short-term)
-- Throughput utilization high (>70%) - performance risk
+- Throughput utilisation high (>70%) - performance risk
 - No HA configuration (single point of failure)
 - Some advanced features disabled (ML/AI, fingerprinting not enabled)
 
@@ -629,7 +629,7 @@ Before starting this assessment, ensure you have access to:
 - No network DLP deployed (all egress points unmonitored at network level)
 - Network DLP deployed but not operational (appliance installed but not configured, bypass mode)
 - SSL/TLS inspection disabled (HTTPS traffic = blind spot, majority of modern traffic)
-- Throughput capacity exceeded (utilization >90% = dropped traffic, blind spots)
+- Throughput capacity exceeded (utilisation >90% = dropped traffic, blind spots)
 - Network DLP appliance EOL with no migration plan
 
 **N/A (Gray):**
@@ -677,7 +677,7 @@ Before starting this assessment, ensure you have access to:
 
 - Network architecture diagram showing DLP placement: `EV-1.2-Network-Architecture-DLP-20260119.pdf`
 - DLP appliance configuration screenshot (protocols, SSL inspection): `EV-1.2-DLP-Config-20260119.png`
-- Throughput utilization graph: `EV-1.2-Throughput-Utilization-20260119.png`
+- Throughput utilisation graph: `EV-1.2-Throughput-Utilization-20260119.png`
 - SSL inspection test results (test file upload blocked): `EV-1.2-SSL-Inspection-Test-20260119.pdf`
 - HA configuration and failover test results: `EV-1.2-HA-Config-20260119.pdf`
 
@@ -838,8 +838,8 @@ EV-[Domain]-[Category]-[Date].[ext]
 
 **Storage Requirements:**
 
-- **Location:** Centralized evidence repository (SharePoint, file share, ISMS document management system, dedicated evidence folder)
-- **Folder Structure:** Organize by assessment domain, then by date
+- **Location:** Centralised evidence repository (SharePoint, file share, ISMS document management system, dedicated evidence folder)
+- **Folder Structure:** Organise by assessment domain, then by date
 
   ```
   /Evidence/
@@ -854,16 +854,16 @@ EV-[Domain]-[Category]-[Date].[ext]
 - **Sensitivity:** Mark evidence files according to data classification
   - DLP configuration exports may contain sensitive patterns (PII regex, trade secret keywords) = **Confidential**
   - Architecture diagrams showing security architecture = **Internal**
-  - Sanitize any credentials, private keys, sensitive patterns before storing
+  - Sanitise any credentials, private keys, sensitive patterns before storing
 - **Access Control:** Restrict to security team, auditors, compliance officers
 
 **Evidence Quality Criteria:**
 
 - **Timestamped:** Must show date/time of collection (screenshot timestamps, report generation dates)
-- **Complete:** Full screenshots (not cropped unless sensitive data sanitization required), complete command output
+- **Complete:** Full screenshots (not cropped unless sensitive data sanitisation required), complete command output
 - **Attributable:** Clear which system/service it documents (hostname, IP, URL visible)
 - **Verifiable:** Auditor can reproduce the evidence collection process (document commands used, tools used)
-- **Protected:** Stored securely, sanitized if contains credentials or sensitive data
+- **Protected:** Stored securely, sanitised if contains credentials or sensitive data
 
 ## Evidence Types by Section
 
@@ -880,7 +880,7 @@ EV-[Domain]-[Category]-[Date].[ext]
 
 - Network topology diagram showing DLP appliance placement: `EV-1-NET-Topology-YYYYMMDD.pdf`
 - DLP appliance configuration screenshot (protocols, SSL inspection): `EV-1-NET-Appliance-Config-YYYYMMDD.png`
-- Throughput utilization graph (30-day average): `EV-1-NET-Throughput-YYYYMMDD.png`
+- Throughput utilisation graph (30-day average): `EV-1-NET-Throughput-YYYYMMDD.png`
 - SSL/TLS inspection test results: `EV-1-NET-SSL-Inspection-Test-YYYYMMDD.pdf`
 - Protocol coverage test (HTTP, HTTPS, SMTP, FTP): `EV-1-NET-Protocol-Test-YYYYMMDD.txt`
 - HA configuration and failover test: `EV-1-NET-HA-Config-YYYYMMDD.pdf`
@@ -949,7 +949,7 @@ EV-[Domain]-[Category]-[Date].[ext]
 
 - Set minimum threshold: 95% coverage required
 - Identify gap: Which specific endpoints lack agents? Why?
-- Prioritize closure: High-value endpoints first (executives, privileged users, sensitive data handlers)
+- Prioritise closure: High-value endpoints first (executives, privileged users, sensitive data handlers)
 - Document exceptions: If legitimate reason (incompatible OS, specific use case), require CISO approval
 
 ## "SSL inspection breaks applications, so we disabled it"
@@ -978,13 +978,13 @@ EV-[Domain]-[Category]-[Date].[ext]
 
 - Overly broad DLP rules (too many false positives)
 - Insufficient tuning after initial deployment
-- No prioritization (all alerts treated equally)
+- No prioritisation (all alerts treated equally)
 - Lack of automation (manual triage)
 
 **Solution:**
 
 - Tune aggressively: First 90 days post-deployment, dedicate resources to false positive reduction
-- Risk-based prioritization: Critical alerts (Restricted data) → immediate response, Medium alerts (Confidential) → investigate within 4 hours, Low alerts (Internal) → weekly review
+- Risk-based prioritisation: Critical alerts (Restricted data) → immediate response, Medium alerts (Confidential) → investigate within 4 hours, Low alerts (Internal) → weekly review
 - Automate triage: Use SIEM correlation, user reputation scoring, context enrichment to auto-dismiss obvious false positives
 - Measure effectiveness: Track false positive rate, target <10% false positive rate
 - Acceptable false positive rate: 5-10% (balance between over-blocking and under-detecting)
@@ -1020,7 +1020,7 @@ EV-[Domain]-[Category]-[Date].[ext]
 **Solution:**
 
 - If status = "Planned": Require target date and project plan
-- Escalation: If "Planned" for >2 quarters without progress, escalate to CISO for resource prioritization or risk acceptance
+- Escalation: If "Planned" for >2 quarters without progress, escalate to CISO for resource prioritisation or risk acceptance
 - Interim controls: While deploying DLP, implement compensating controls (enhanced monitoring, user training, access restrictions)
 - Risk documentation: Document residual risk of operating without DLP until deployment complete
 
@@ -1057,8 +1057,8 @@ EV-[Domain]-[Category]-[Date].[ext]
   - Cloud/CASB DLP: 3 evidence items minimum (connected apps, policy, test)
   - Web/Database DLP: 2 evidence items minimum (config, test)
 - [ ] Evidence files follow naming convention (EV-1-[Category]-[Description]-YYYYMMDD.ext)
-- [ ] Screenshots timestamped and complete (not cropped unless sanitizing sensitive data)
-- [ ] Sensitive data sanitized (credentials, private keys, sensitive regex patterns removed or redacted)
+- [ ] Screenshots timestamped and complete (not cropped unless sanitising sensitive data)
+- [ ] Sensitive data sanitised (credentials, private keys, sensitive regex patterns removed or redacted)
 - [ ] Evidence stored in designated repository with proper access controls
 
 **Status Determination Consistency:**
@@ -1071,7 +1071,7 @@ EV-[Domain]-[Category]-[Date].[ext]
 
 **Gap Analysis Quality:**
 
-- [ ] All gaps prioritized by risk level (Critical/High/Medium/Low)
+- [ ] All gaps prioritised by risk level (Critical/High/Medium/Low)
 - [ ] Each gap has clear remediation action (specific, actionable)
 - [ ] Ownership assigned to individuals/teams (not vague "IT" or "Security")
 - [ ] Target dates realistic (considering resources, dependencies, complexity)
@@ -1269,4 +1269,4 @@ This assessment shall be distributed to:
 *"Data has a natural tendency to flow where it is least protected."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

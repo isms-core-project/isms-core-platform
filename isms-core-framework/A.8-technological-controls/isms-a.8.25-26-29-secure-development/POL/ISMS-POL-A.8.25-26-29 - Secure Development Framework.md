@@ -46,14 +46,14 @@ This policy establishes [Organisation]'s Secure Development Framework, implement
 **Applications**:
 
 - All internally developed applications (web, mobile, desktop, embedded, APIs)
-- Acquired applications requiring customization or integration
+- Acquired applications requiring customisation or integration
 - Infrastructure-as-Code (IaC) and configuration management code
 
 **Development Activities**:
 
 - New application development
 - Application enhancements and security patches
-- Application modernization and cloud migration
+- Application modernisation and cloud migration
 
 **Development Models**:
 
@@ -68,7 +68,7 @@ This policy establishes [Organisation]'s Secure Development Framework, implement
 
 ## Out of Scope
 
-- Commercial Off-The-Shelf (COTS) software without customization (covered by vendor security assessment)
+- Commercial Off-The-Shelf (COTS) software without customisation (covered by vendor security assessment)
 - Production vulnerability management post-deployment (covered by ISMS-POL-A.8.8)
 - Operational security monitoring (covered by ISMS-POL-A.8.15-16)
 
@@ -349,7 +349,7 @@ Assessment procedures are documented in the respective assessment workbooks (S1â
 
 ## Gap Remediation and Tracking
 
-[Organisation] SHALL maintain a centralized gap register for secure development control deficiencies.
+[Organisation] SHALL maintain a centralised gap register for secure development control deficiencies.
 
 **Gap Identification Sources**:
 - Quarterly/semi-annual/annual assessments (per Assessment Frequency table)
@@ -487,7 +487,7 @@ Sector-specific requirements apply where [Organisation]'s business activities tr
 | **SAST** | Static Application Security Testing - analyses source code |
 | **SCA** | Software Composition Analysis - identifies dependency vulnerabilities |
 | **SDLC** | Software Development Lifecycle |
-| **Security Champion** | Developer with specialized security training serving as team security contact |
+| **Security Champion** | Developer with specialised security training serving as team security contact |
 | **Threat Modeling** | Structured approach to identify security threats in application design |
 
 ---
@@ -510,4 +510,4 @@ Sector-specific requirements apply where [Organisation]'s business activities tr
 
 *This policy establishes requirements for secure software development. Implementation procedures (HOW) are documented in ISMS-IMP-A.8 (UG/TG).25-26-29 Implementation Guides. Technical tool guidance is provided in ISMS-REF-A.8.25-26-29.*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

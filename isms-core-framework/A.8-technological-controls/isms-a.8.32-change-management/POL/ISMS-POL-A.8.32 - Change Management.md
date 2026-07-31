@@ -110,7 +110,7 @@ This policy establishes [Organisation]'s change management framework ensuring:
 
 **Operational Excellence**:
 
-- Standardized approach to changes
+- Standardised approach to changes
 - Clear accountability for change decisions
 - Efficient approval workflows based on risk
 - Continuous improvement through post-implementation review
@@ -122,7 +122,7 @@ This policy establishes [Organisation]'s change management framework ensuring:
 **Information Systems** (all systems processing, storing, or transmitting organisational information):
 
 - Production systems (business applications, databases, ERP, CRM, financial systems)
-- Infrastructure systems (servers, storage, virtualization, networking equipment)
+- Infrastructure systems (servers, storage, virtualisation, networking equipment)
 - Security systems (firewalls, IDS/IPS, SIEM, authentication systems, encryption systems)
 - Cloud services (IaaS, PaaS, SaaS - customer-controlled configurations)
 - Communication systems (email, collaboration platforms, telephony)
@@ -135,7 +135,7 @@ This policy establishes [Organisation]'s change management framework ensuring:
 - Hardware changes (server installations, network equipment upgrades, storage expansions)
 - Software changes (application updates, OS patches, security updates, new software installations)
 - Configuration changes (parameter modifications, rule updates, policy changes)
-- Infrastructure changes (network topology, virtualization, cloud resources)
+- Infrastructure changes (network topology, virtualisation, cloud resources)
 - Data changes (database schema modifications, data migrations, master data updates)
 - Process changes (workflow modifications, integration changes, automation updates)
 - Documentation changes (operating procedures, configuration documentation, runbooks)
@@ -526,7 +526,7 @@ This section defines change management requirements organised into three domains
 
 **PIR Timing**: Within [Organisation-defined] period (recommended: 7 business days for emergency changes, 14 days for normal changes).
 
-**Rationale**: Structured review drives continuous improvement, captures lessons learned, identifies process gaps, and recognizes successful practices.
+**Rationale**: Structured review drives continuous improvement, captures lessons learned, identifies process gaps, and recognises successful practices.
 
 **Assessment Criteria**: ISMS-IMP-A.8.32.1 shows PIR completion rates. PIR records demonstrate learning and improvement actions.
 
@@ -815,7 +815,7 @@ Normal changes SHALL follow full change management process including:
 [Organisation] SHALL protect production data in test environments:
 
 - Production data SHALL NOT be used in test environments without protection
-- If production data required for testing, data SHALL be masked/anonymized per ISMS-POL-A.8.11 (Data Masking)
+- If production data required for testing, data SHALL be masked/anonymised per ISMS-POL-A.8.11 (Data Masking)
 - Synthetic test data SHOULD be used where feasible
 - Test data SHALL be classified and protected per ISMS-POL-A.5.12 (Classification of Information)
 
@@ -823,7 +823,7 @@ Normal changes SHALL follow full change management process including:
 
 **Rationale**: Unprotected production data in test environments creates data breach risk, regulatory non-compliance risk, and unauthorised access risk.
 
-**Assessment Criteria**: Test environments show data masking/anonymization or synthetic data. No unprotected production data in test.
+**Assessment Criteria**: Test environments show data masking/anonymisation or synthetic data. No unprotected production data in test.
 
 ---
 
@@ -1084,7 +1084,7 @@ Timeframes SHALL be reviewed annually during policy review and updated to reflec
 - Technical constraints prevent full compliance
 - Business circumstances require temporary deviation
 - Alternative compensating controls provide equivalent protection
-- Emergency situations (formalized via emergency change process)
+- Emergency situations (formalised via emergency change process)
 
 **Exceptions NOT Appropriate:**
 
@@ -1119,7 +1119,7 @@ Timeframes SHALL be reviewed annually during policy review and updated to reflec
 - Change success rate
 - Emergency change percentage
 - PIR completion rate
-- Standard change catalog utilization
+- Standard change catalog utilisation
 - Change-related incidents
 - Average change duration
 - CAB meeting frequency and attendance
@@ -1190,7 +1190,7 @@ Change management (A.8.32) integrates with six related ISO 27001 controls:
 
 - Production data protected in test environments
 - Test data requirements enforced through change process
-- Data masking/anonymization validated before testing
+- Data masking/anonymisation validated before testing
 
 ## Implementation Resources
 
@@ -1223,7 +1223,7 @@ Change management (A.8.32) integrates with six related ISO 27001 controls:
 - Annual training module on change management
 - User responsibilities during changes
 - How to request changes
-- Recognizing unauthorised changes
+- Recognising unauthorised changes
 
 **Technical Training** (change implementers):
 
@@ -1266,4 +1266,4 @@ Change management (A.8.32) integrates with six related ISO 27001 controls:
 
 *This policy establishes requirements for change management. Implementation procedures, templates, tools, and quick reference guides are documented in ISMS-IMP-A.8.32 (assessment workbooks) and ISMS-REF-A.8.32 (technical reference).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

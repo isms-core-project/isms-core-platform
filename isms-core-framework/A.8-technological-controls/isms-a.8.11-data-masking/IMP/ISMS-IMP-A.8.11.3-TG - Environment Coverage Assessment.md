@@ -123,7 +123,7 @@
 | 32 | DPA Specifies Masking? |
 | 33 | Contractual Exception? |
 | 34 | Recipient Security Audit Date |
-| 35 | Data Minimization Applied? |
+| 35 | Data Minimisation Applied? |
 | 36 | Cloud Provider |
 | 37 | Cloud Service Type |
 | 38 | Region/Geography |
@@ -211,4 +211,4 @@ Approved with Conditions, Rejected, Deferred
 *"In the middle of difficulty lies opportunity."*
 — Albert Einstein
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

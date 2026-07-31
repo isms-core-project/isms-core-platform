@@ -107,9 +107,9 @@ Requirements extraction is the systematic process of parsing regulatory text to 
 Regulations have structure, though it varies by jurisdiction and type:
 
 - **Statutes and Acts**: Typically organised into chapters, sections, subsections, paragraphs
-- **Regulations and Directives**: Organized into articles, sections, annexes, schedules
-- **Standards**: Organized into clauses, subclauses, requirements, recommendations
-- **Contracts**: Organized into sections, clauses, exhibits, service level agreements
+- **Regulations and Directives**: Organised into articles, sections, annexes, schedules
+- **Standards**: Organised into clauses, subclauses, requirements, recommendations
+- **Contracts**: Organised into sections, clauses, exhibits, service level agreements
 
 Each structural element may contain:
 
@@ -119,7 +119,7 @@ Each structural element may contain:
 - **Prohibitions** - things [Organisation] must NOT do (requirements stated negatively)
 - **Procedures** - how to comply with obligations (may generate operational requirements)
 - **Reporting requirements** - what to submit and when
-- **Penalties** - consequences of non-compliance (inform prioritization, not extracted as requirements)
+- **Penalties** - consequences of non-compliance (inform prioritisation, not extracted as requirements)
 
 **Systematic Reading Process**:
 
@@ -227,7 +227,7 @@ Ask these questions when determining extraction granularity:
 4. **Can we collect evidence to prove compliance?** (If no → too vague)
 5. **Will this requirement remain valid as technology evolves?** (If no → too prescriptive)
 
-**General Principle**: Extract requirements at the level where the regulation ACTUALLY mandates specificity. If regulation says "encryption", don't add "AES-256". If regulation says "AES-256", don't generalize to "encryption".
+**General Principle**: Extract requirements at the level where the regulation ACTUALLY mandates specificity. If regulation says "encryption", don't add "AES-256". If regulation says "AES-256", don't generalise to "encryption".
 
 ## Requirements Categorisation
 
@@ -249,7 +249,7 @@ Requirements that mandate specific technical security measures, system configura
 - "Deploy anti-malware protection on all endpoints"
 - "Enable encryption for data in transit using TLS 1.2 or higher"
 - "Configure systems to enforce password complexity requirements"
-- "Implement automated log collection and centralized storage"
+- "Implement automated log collection and centralised storage"
 
 **Typical Control Mappings**: Technical requirements typically map to ISO 27001 controls in domains:
 
@@ -368,7 +368,7 @@ Categorisation serves multiple purposes:
 
 ## Requirements Register Structure
 
-The Requirements Register is the authoritative, centralized repository of all extracted requirements from applicable regulations. It provides the structured foundation for control mapping, gap analysis, and compliance reporting.
+The Requirements Register is the authoritative, centralised repository of all extracted requirements from applicable regulations. It provides the structured foundation for control mapping, gap analysis, and compliance reporting.
 
 ### Register Fields
 
@@ -423,7 +423,7 @@ Each requirement entry in the register SHALL contain the following fields:
 - **Purpose**: Requirement rewritten in clear, actionable language suitable for implementation
 - **Content**: What [Organisation] must DO to comply, written at appropriate granularity (per Section 2.1.3)
 - **Examples**:
-  - From original above: "Implement encryption and pseudonymization for personal data appropriate to assessed risk level"
+  - From original above: "Implement encryption and pseudonymisation for personal data appropriate to assessed risk level"
 - **Guidance**: Should be understandable by implementers without legal background
 
 **Requirement Category** (Classification)
@@ -521,13 +521,13 @@ Each requirement entry in the register SHALL contain the following fields:
 
 ### Register Maintenance
 
-**Centralized Repository**:
+**Centralised Repository**:
 The Requirements Register SHOULD be maintained in a structured, searchable format:
 
 - **Preferred**: Database (enables complex queries, reporting, traceability)
 - **Acceptable**: Structured spreadsheet (Excel/LibreOffice with data validation, protected sheets)
-- **Location**: Centralized location accessible to all stakeholders with appropriate permissions
-- **Tool**: Assessment Workbook 3 provides standardized template
+- **Location**: Centralised location accessible to all stakeholders with appropriate permissions
+- **Tool**: Assessment Workbook 3 provides standardised template
 
 **Access Control**:
 
@@ -748,7 +748,7 @@ This question has several possible answers:
 
 ## Mapping Types
 
-[Organisation] uses a four-level classification system to characterize the relationship between a requirement and a control.
+[Organisation] uses a four-level classification system to characterise the relationship between a requirement and a control.
 
 ### Primary (P): Direct, Substantial Satisfaction
 
@@ -909,13 +909,13 @@ The Control Mapping Matrix is the visual representation of requirement-to-contro
 **Control Reuse Analysis**:
 
 - Column with many P/S/Su markings = control satisfies many requirements
-- Identifies "high-value" controls for prioritization
+- Identifies "high-value" controls for prioritisation
 - Shows efficiency of control framework
 
 **Regulatory Coverage**:
 
 - Group rows by regulation to see coverage per regulation
-- Identify regulations with high gap counts (prioritization)
+- Identify regulations with high gap counts (prioritisation)
 - Support compliance reporting per regulation
 
 **Change Impact Analysis**:
@@ -932,7 +932,7 @@ The Control Mapping Matrix is the visual representation of requirement-to-contro
 
 ### Matrix Maintenance
 
-**Tool**: Assessment Workbook 4 provides standardized Control Mapping Matrix template with:
+**Tool**: Assessment Workbook 4 provides standardised Control Mapping Matrix template with:
 
 - Pre-populated 93 Annex A control columns
 - Data validation (only P, S, Su, blank allowed)
@@ -1062,7 +1062,7 @@ Real-world compliance scenarios frequently involve complex relationships between
 
 **Interpretation**:
 
-- Centralized logging infrastructure
+- Centralised logging infrastructure
 - Satisfies logging requirements across data protection, financial, security, and contractual regulations
 - Comprehensive logging approach benefits multiple compliance needs
 - Evidence efficiency (log samples satisfy multiple auditors)
@@ -1328,7 +1328,7 @@ Gap analysis is the systematic identification of regulatory requirements that ar
   - "We believe Requirement X is not satisfied by Control Y - do you concur?"
 - **Control Owners**: Confirm controls cannot satisfy requirement
   - "Your control A.8.15 is mapped to Requirement Z - does your control fully satisfy this requirement?"
-- **Compliance Officer**: Prioritize gaps based on regulatory risk
+- **Compliance Officer**: Prioritise gaps based on regulatory risk
 
 **Step 5: Gap Documentation**
 
@@ -1345,11 +1345,11 @@ Gap analysis is the systematic identification of regulatory requirements that ar
   - Target Date (when gap will be closed)
   - Status (Open, In Progress, Closed)
 
-## Gap Prioritization
+## Gap Prioritisation
 
-Not all gaps are equally urgent. Prioritization ensures [Organisation] addresses highest-risk gaps first with limited resources.
+Not all gaps are equally urgent. Prioritisation ensures [Organisation] addresses highest-risk gaps first with limited resources.
 
-### Prioritization Factors
+### Prioritisation Factors
 
 **Factor 1: Regulatory Tier** (from ISMS-POL-00)
 
@@ -1374,8 +1374,8 @@ Not all gaps are equally urgent. Prioritization ensures [Organisation] addresses
 
 **Factor 4: Implementation Complexity**
 
-- **Quick Wins** (low complexity, high impact): Prioritize for immediate action
-- **Complex, High-Impact**: Prioritize but plan carefully (may need phased approach)
+- **Quick Wins** (low complexity, high impact): Prioritise for immediate action
+- **Complex, High-Impact**: Prioritise but plan carefully (may need phased approach)
 - **Simple, Low-Impact**: Batch with other similar gaps
 - **Complex, Low-Impact**: Defer or accept risk
 
@@ -1386,9 +1386,9 @@ Not all gaps are equally urgent. Prioritization ensures [Organisation] addresses
 - **Revenue-Critical**: Highest priority (blocks business if non-compliant)
 - **Non-Critical**: Lower priority
 
-### Prioritization Matrix
+### Prioritisation Matrix
 
-Combine factors into prioritization decision:
+Combine factors into prioritisation decision:
 
 **Priority: CRITICAL** (Immediate Action Required)
 
@@ -1419,7 +1419,7 @@ Combine factors into prioritization decision:
 - Minor or no legal consequence
 - Non-critical operations
 
-**Example Prioritizations**:
+**Example Prioritisations**:
 
 | Gap Description | Reg Tier | Deadline | Consequence | Complexity | Priority | Rationale |
 |-----------------|----------|----------|-------------|------------|----------|-----------|
@@ -1581,7 +1581,7 @@ For each gap remediation:
 - **Verification**: How closure verified (audit, test, evidence review)
 - **Notes**: Additional context
 
-**Tool**: Maintained in centralized register (spreadsheet or compliance management system)
+**Tool**: Maintained in centralised register (spreadsheet or compliance management system)
 
 ### Gap Management Process
 
@@ -1589,7 +1589,7 @@ For each gap remediation:
 
 - ISMS Manager, Compliance Officer, Legal Counsel review Gap Register
 - Assess progress on remediation plans
-- Re-prioritize gaps if circumstances changed
+- Re-prioritise gaps if circumstances changed
 - Identify overdue remediations, escalate as needed
 - Report gap status to Executive Management
 
@@ -1774,7 +1774,7 @@ Source Regulation (in ISMS-POL-00)
 
 - Explain WHY control exists (which regulations mandate it)
 - Defend security investments (these controls are legally required, not optional)
-- Prioritize control improvements (controls satisfying multiple Tier 1 regulations are high priority)
+- Prioritise control improvements (controls satisfying multiple Tier 1 regulations are high priority)
 
 **Impact Analysis for Control Changes**:
 
@@ -1901,7 +1901,7 @@ Source Regulation (in ISMS-POL-00)
 - Trigger applicability re-assessment: PCI DSS v4.0.1 is now Tier 1
 - Extract PCI DSS v4.0.1 requirements (all 12 requirement categories → dozens of specific requirements)
 - Map to existing controls: Some controls already satisfy (encryption, access control), many gaps identified
-- Prioritize PCI gaps as HIGH (now mandatory, customer card processing depends on compliance)
+- Prioritise PCI gaps as HIGH (now mandatory, customer card processing depends on compliance)
 - Develop PCI remediation roadmap
 
 ### Tools for Change Traceability
@@ -1951,7 +1951,7 @@ Every change in the regulatory compliance framework SHALL be logged to create a 
 **Gap Register Changes**:
 
 - Gap identified (gap ID, description, priority, who identified, when)
-- Gap priority changed (re-prioritization rationale)
+- Gap priority changed (re-prioritisation rationale)
 - Gap remediation plan updated (plan changes, timeline adjustments)
 - Gap status changed (Open → In Progress → Closed)
 - Gap closure (how closed, verification method, who verified, when)
@@ -1981,7 +1981,7 @@ Every change in the regulatory compliance framework SHALL be logged to create a 
   - Evidence verification dates and verifiers
   - Evidence refresh/update history
 
-**Centralized Compliance Log** (Optional but Recommended):
+**Centralised Compliance Log** (Optional but Recommended):
 
 - Single log capturing ALL compliance framework changes
 - Chronological record across all documents
@@ -1995,7 +1995,7 @@ Every change in the regulatory compliance framework SHALL be logged to create a 
   - Approval (if applicable)
   - Rationale
 
-**Example Centralized Log Entries**:
+**Example Centralised Log Entries**:
 
 | Date | Document | Change Type | Description | User | Rationale |
 |------|----------|-------------|-------------|------|-----------|
@@ -2061,7 +2061,7 @@ Multiple regulations frequently mandate similar or identical security controls. 
 - Financial services: Multiple regulators (SEC, FINRA, Federal Reserve, state regulators) with overlapping cybersecurity requirements
 - Healthcare: HIPAA, HITECH, state health information laws overlap
 
-**Framework Harmonization**:
+**Framework Harmonisation**:
 
 - Many regulations reference or align with ISO 27001, NIST Cybersecurity Framework (CSF) 2.0, CIS Controls
 - Implementing ISO 27001 often satisfies multiple regulatory requirements
@@ -2269,7 +2269,7 @@ Despite leveraging overlaps, [Organisation] can still report compliance status p
 - Can report compliance by tier (Tier 1 vs. Tier 2 status)
 - Can report control efficiency (controls satisfying most requirements = high ROI controls)
 
-## Evidence Optimization
+## Evidence Optimisation
 
 ### Tagging Evidence with Multiple Requirements
 
@@ -2313,7 +2313,7 @@ Despite leveraging overlaps, [Organisation] can still report compliance status p
 **Collect Once, Tag Many**:
 
 - Identify high-overlap controls (controls satisfying many requirements)
-- Prioritize evidence collection for these controls (high ROI)
+- Prioritise evidence collection for these controls (high ROI)
 - Comprehensively tag evidence with all satisfied requirements
 - Maintain evidence to highest standard (satisfies most stringent requirement in any overlap set)
 
@@ -2384,11 +2384,11 @@ Despite leveraging overlaps, [Organisation] can still report compliance status p
 
 - **Assessment Workbook 3**: Requirements Extraction Register
   - Template for maintaining Requirements Register (Section 2.3)
-  - Standardized format with data validation
+  - Standardised format with data validation
 - **Assessment Workbook 4**: Control Mapping Matrix
   - Template for maintaining Control Mapping Matrix (Section 3.3)
   - Pre-populated with 93 Annex A controls
-  - Conditional formatting for gap visualization
+  - Conditional formatting for gap visualisation
   - Template for tracking evidence linked to controls and requirements
   - Supports traceability framework (Section 5)
 
@@ -2423,4 +2423,4 @@ Despite leveraging overlaps, [Organisation] can still report compliance status p
 ---
 
 *This policy establishes the translation methodology from regulatory text to actionable controls, enabling [Organisation] to demonstrate HOW it satisfies regulatory requirements through systematic control implementation.*
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

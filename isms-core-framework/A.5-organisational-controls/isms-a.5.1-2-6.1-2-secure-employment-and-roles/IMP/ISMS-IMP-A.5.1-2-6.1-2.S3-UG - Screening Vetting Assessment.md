@@ -869,7 +869,7 @@ For roles where the standard tier-level mapping does not apply (e.g., a Tier 3 r
 **Q18: Retention_Policy_Defined**
 - Question: Is a retention policy defined for screening data?
 - Dropdown: Yes / No
-- Legal Basis: FADP Art. 6(4) — data destroyed or anonymized when no longer required
+- Legal Basis: FADP Art. 6(4) — data destroyed or anonymised when no longer required
 - Compliant: "Yes"
 
 **Q19: Retention_Period_Appropriate**
@@ -1251,4 +1251,4 @@ This assessment (.S3 — Screening & Vetting) is part of the stacked control fra
 *"Trust, but verify."*
 — Ronald Reagan
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

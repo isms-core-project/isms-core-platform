@@ -60,7 +60,7 @@ This workbook contains the following 7 sheets:
 
 ## Purpose
 
-This implementation guide operationalizes the control mapping framework defined in ISMS-POL-A.5.31.3. It provides step-by-step instructions for compliance and security personnel to systematically map regulatory requirements to ISO 27001:2022 Annex A controls, identify gaps, and develop remediation plans.
+This implementation guide operationalises the control mapping framework defined in ISMS-POL-A.5.31.3. It provides step-by-step instructions for compliance and security personnel to systematically map regulatory requirements to ISO 27001:2022 Annex A controls, identify gaps, and develop remediation plans.
 
 **What This Guide Is**:
 
@@ -139,7 +139,7 @@ For each requirement:
          ↓
 [STEP 5: Gap Analysis & Prioritization]
 
-- Categorise gaps (Complete, Partial, Implementation)
+- Categorize gaps (Complete, Partial, Implementation)
 - Prioritize by regulatory tier, deadline, severity
 - Consult stakeholders (legal, control owners)
 
@@ -751,11 +751,11 @@ Notes: Legal counsel reviewing DPIA template for legal sufficiency. Benchmarking
 
 ---
 
-## Step 5: Gap Analysis & Prioritization
+## Step 5: Gap Analysis & Prioritisation
 
-### Gap Prioritization Framework
+### Gap Prioritisation Framework
 
-Not all gaps are equally urgent. Use this framework to prioritize remediation:
+Not all gaps are equally urgent. Use this framework to prioritise remediation:
 
 **Factor 1: Regulatory Tier** (from ISMS-POL-00)
 
@@ -781,8 +781,8 @@ Not all gaps are equally urgent. Use this framework to prioritize remediation:
 
 **Factor 4: Implementation Complexity**
 
-- **Quick Wins** (low complexity, high impact): Prioritize for fast closure
-- **Complex, High-Impact**: Prioritize but plan carefully (phased approach)
+- **Quick Wins** (low complexity, high impact): Prioritise for fast closure
+- **Complex, High-Impact**: Prioritise but plan carefully (phased approach)
 - **Simple, Low-Impact**: Batch with similar gaps
 - **Complex, Low-Impact**: Defer or accept risk
 
@@ -793,7 +793,7 @@ Not all gaps are equally urgent. Use this framework to prioritize remediation:
 - **Internal Operations**: Medium priority
 - **Non-Critical**: Lower priority
 
-**Prioritization Decision Matrix**:
+**Prioritisation Decision Matrix**:
 
 | Priority Level | Criteria | Action Timeline |
 |----------------|----------|-----------------|
@@ -802,7 +802,7 @@ Not all gaps are equally urgent. Use this framework to prioritize remediation:
 | **MEDIUM** | Tier 1 Partial Gap OR Tier 2 Complete Gap (if applicable) + Deadline 90 days - 1 year | Planned (3-12 months) |
 | **LOW** | Tier 3 OR Implementation Gap + Deadline >1 year + Minor consequence | Strategic (12+ months or accept risk) |
 
-**Example Prioritization**:
+**Example Prioritisation**:
 
 | Gap | Regulation | Tier | Deadline | Consequence | Complexity | Business Impact | **Priority** |
 |-----|------------|------|----------|-------------|------------|-----------------|--------------|
@@ -813,7 +813,7 @@ Not all gaps are equally urgent. Use this framework to prioritize remediation:
 
 ### Stakeholder Consultation
 
-**Before finalizing gap analysis**, consult key stakeholders:
+**Before finalising gap analysis**, consult key stakeholders:
 
 **Legal Counsel**:
 
@@ -1162,7 +1162,7 @@ How will we know remediation is complete?
 
 ## Step 7: Documentation & Approval
 
-### Finalize Control Mapping Matrix
+### Finalise Control Mapping Matrix
 
 **Actions**:
 1. **Review all mappings**: Ensure no blank cells where mapping should exist
@@ -1184,7 +1184,7 @@ How will we know remediation is complete?
 - [ ] Mapping rationale documented for complex cases
 - [ ] Matrix formatted professionally (freeze panes, colors, etc.)
 
-### Finalize Gap Register
+### Finalise Gap Register
 
 **Actions**:
 1. **Review all documented gaps**: Ensure all gaps from matrix appear in Gap Register
@@ -1501,7 +1501,7 @@ See Section 2.6.2 for complete template
 
 ## Mapping Quality Checklist
 
-**Before finalizing mappings**, verify:
+**Before finalising mappings**, verify:
 
 **Completeness**:
 
@@ -1569,11 +1569,11 @@ See Section 2.6.2 for complete template
 - **Problem**: Auditor will question why so many controls needed, unclear which to examine
 - **Fix**: Document why multiple controls needed, what each contributes
 
-**Error 6: Gaps Not Prioritized**
+**Error 6: Gaps Not Prioritised**
 
 - **Symptom**: All gaps marked "High" priority
 - **Problem**: No clear remediation sequence, resource allocation unclear
-- **Fix**: Use prioritization framework rigorously (Section 2.5.1)
+- **Fix**: Use prioritisation framework rigorously (Section 2.5.1)
 
 **Error 7: Gaps Without Remediation Plans**
 
@@ -1613,7 +1613,7 @@ See Section 2.6.2 for complete template
 
 - Requirements Register with all extracted requirements
 - Requirements categorised and approved
-- Requirements prioritized
+- Requirements prioritised
 
 **From IMP-5.31.3 (Applicability Assessment)**:
 
@@ -1699,7 +1699,7 @@ See Section 2.6.2 for complete template
 - % Gaps on track (target date not passed)
 - % Gaps overdue (target: <10%)
 
-**Control Utilization**:
+**Control Utilisation**:
 
 - Most-mapped controls (which controls satisfy most requirements)
 - Least-mapped controls (which controls rarely used - candidate for exclusion?)
@@ -1750,7 +1750,7 @@ See Section 2.6.2 for complete template
 | Role | Responsibilities in Control Mapping Process |
 |------|---------------------------------------------|
 | **ISMS Manager** | - Lead mapping process<br>- Coordinate stakeholders<br>- Approve final mappings<br>- Oversee gap remediation |
-| **Compliance Officer** | - Validate regulatory accuracy of mappings<br>- Approve gap categorisation<br>- Prioritize gaps based on regulatory risk |
+| **Compliance Officer** | - Validate regulatory accuracy of mappings<br>- Approve gap categorisation<br>- Prioritise gaps based on regulatory risk |
 | **Control Owners** | - Confirm controls can satisfy mapped requirements<br>- Provide implementation details<br>- Execute gap remediation for their controls |
 | **Legal Counsel** | - Interpret complex requirements<br>- Validate legal sufficiency of mappings<br>- Approve CRITICAL/HIGH gap remediation approaches |
 | **Information Security Team** | - Technical assessment of control capabilities<br>- Implement technical controls for gap remediation |
@@ -2009,4 +2009,4 @@ END OF DOCUMENT
 *"A map is not the territory."*
 — Alfred Korzybski
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

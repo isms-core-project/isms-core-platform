@@ -35,7 +35,7 @@
 - ISO/IEC 27001:2022 Control A.7.10 — Storage media
 - ISO/IEC 27002:2022 Section 7.10 — Implementation guidance
 - NIST SP 800-88 Rev. 2 — Guidelines for Media Sanitization (September 2025)
-- IEEE 2883:2022 — Standard for Sanitizing Storage
+- IEEE 2883:2022 — Standard for Sanitising Storage
 - DIN 66399 — Destruction of Data Carriers (security levels and media categories)
 - Swiss nFADP (revDSG) — Federal Act on Data Protection
 - Swiss DSV (Data Protection Ordinance) — Art. 1–3 (minimum data security requirements)
@@ -672,9 +672,9 @@ Storage Media Policy — ISO 27001 Controls Mapping
 | ISO/IEC 27001:2022 | Annex A Control 7.10 — Storage media lifecycle management |
 | ISO/IEC 27002:2022 | Section 7.10 — Implementation guidance for storage media |
 | NIST SP 800-88 Rev. 2 | Guidelines for media sanitisation — Clear, Purge, Destroy (September 2025; supersedes Rev. 1) |
-| IEEE 2883:2022 | Standard for sanitizing storage — technical methods for drives and media |
+| IEEE 2883:2022 | Standard for sanitising storage — technical methods for drives and media |
 | DIN 66399 | Destruction of data carriers — security levels (P/F/O/T/H/E categories, levels 1–7) and protection classes |
 
 ---
 
-<!-- QA_VERIFIED: 2026-02-07 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

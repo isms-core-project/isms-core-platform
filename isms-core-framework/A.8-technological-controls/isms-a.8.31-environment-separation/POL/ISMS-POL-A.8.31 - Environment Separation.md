@@ -180,22 +180,22 @@ Break-glass logs SHALL be:
 **3.3.2 Approved Data for Non-Production**
 
 - Synthetic data (generated, not derived from production) SHALL be preferred
-- Anonymized data MAY be used with Data Protection Officer approval
-- Anonymization SHALL be irreversible (not pseudonymization or encryption)
-- Anonymized data SHALL be deleted within 30 days of project completion
+- Anonymised data MAY be used with Data Protection Officer approval
+- Anonymisation SHALL be irreversible (not pseudonymisation or encryption)
+- Anonymised data SHALL be deleted within 30 days of project completion
 
-**3.3.2.1 Anonymization Validation Process**
+**3.3.2.1 Anonymisation Validation Process**
 
-Before DPO approves anonymized data for non-production use:
+Before DPO approves anonymised data for non-production use:
 
-- Data Protection Officer SHALL test anonymization effectiveness using re-identification attempts
+- Data Protection Officer SHALL test anonymisation effectiveness using re-identification attempts
 - Validation SHALL assess risk of re-identification through:
   - Direct identifier removal verification
   - Quasi-identifier combination analysis (k-anonymity assessment where k ≥ 5)
   - Linkage attack simulation using publicly available datasets
 - Results SHALL be documented in Data Handling Register (ISMS-IMP-A.8.31-S2)
-- Anonymization procedures SHALL be reviewed and approved by CISO and DPO before first use
-- Failed validation SHALL result in rejection or additional anonymization measures
+- Anonymisation procedures SHALL be reviewed and approved by CISO and DPO before first use
+- Failed validation SHALL result in rejection or additional anonymisation measures
 
 **3.3.3 Data Classification Enforcement**
 
@@ -265,7 +265,7 @@ Before DPO approves anonymized data for non-production use:
 | **IT Operations Manager** | Production environment security; production access approval; PAM management |
 | **Development Manager** | Development/test environment management; promotion workflow implementation |
 | **Information Security Manager** | Compliance assessments; policy violation investigations; policy maintenance |
-| **Data Protection Officer** | Anonymization approval; data handling compliance; re-identification testing |
+| **Data Protection Officer** | Anonymisation approval; data handling compliance; re-identification testing |
 
 ## Operational Roles
 
@@ -416,13 +416,13 @@ When exceptions are approved, compensating controls SHALL include one or more of
 
 | Term | Definition |
 |------|------------|
-| **Anonymization** | Irreversible process of removing personal data such that individuals cannot be re-identified |
+| **Anonymisation** | Irreversible process of removing personal data such that individuals cannot be re-identified |
 | **Break-Glass Access** | Emergency procedure allowing developers temporary production access during declared incidents |
 | **Environment** | Distinct set of infrastructure resources serving a specific SDLC purpose |
 | **Privileged Access Management (PAM)** | System for managing and securing privileged credentials |
 | **Production Environment** | Live operational environment serving real users with real business data |
 | **Promotion** | Process of moving changes from one environment to another through defined workflow |
-| **Pseudonymization** | Reversible process replacing identifiers with pseudonyms (still considered personal data) |
+| **Pseudonymisation** | Reversible process replacing identifiers with pseudonyms (still considered personal data) |
 | **Staging Environment** | Pre-production environment mirroring production for final validation |
 | **Synthetic Data** | Artificially generated data containing no real personal information |
 
@@ -476,4 +476,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for separation of development, test and production environments. Implementation procedures are documented in ISMS-IMP-A.8 (UG/TG).31-S1, S2, and S3.*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

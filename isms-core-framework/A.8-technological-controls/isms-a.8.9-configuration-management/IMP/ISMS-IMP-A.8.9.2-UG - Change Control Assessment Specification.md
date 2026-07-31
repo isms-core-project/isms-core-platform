@@ -159,7 +159,7 @@ This assessment tracks four primary change types, each with different approval r
 
 ## Change Priorities
 
-Changes are prioritized based on urgency and business impact:
+Changes are prioritised based on urgency and business impact:
 
 | Priority | Definition | Response Time | Typical Change Type |
 |----------|------------|---------------|---------------------|
@@ -1681,4 +1681,4 @@ Retain versions:
 *"Every deviation from baseline is a question to be answered."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

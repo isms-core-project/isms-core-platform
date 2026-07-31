@@ -400,7 +400,7 @@ Before starting this assessment, ensure:
 | Channel Documentation | Published contact information, intranet pages |
 | Procedures | Reporting procedures, quick reference guides |
 | Training Materials | Awareness content covering event reporting |
-| Sample Reports | Anonymized event reports (with consent) |
+| Sample Reports | Anonymised event reports (with consent) |
 | Response Logs | Acknowledgment records, ticket history |
 | Communications | Awareness communications, policy announcements |
 
@@ -443,7 +443,7 @@ Before starting this assessment, ensure:
 
 **The Problem:** Confirming event reporting is in training but not verifying staff actually know what to do.
 
-**Why It Matters:** Training completion doesn't equal retention. Staff may not recognize events. May not know how to report.
+**Why It Matters:** Training completion doesn't equal retention. Staff may not recognise events. May not know how to report.
 
 **The Fix:**
 - Include awareness questions in surveys
@@ -520,7 +520,7 @@ Before starting this assessment, ensure:
 #### Evidence Quality Checks
 
 - [ ] Channel tests documented
-- [ ] Sample reports anonymized appropriately
+- [ ] Sample reports anonymised appropriately
 - [ ] Response time evidence captured
 - [ ] Survey results documented
 
@@ -550,4 +550,4 @@ Before starting this assessment, ensure:
 *"The only bad incident is one that goes unreported."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

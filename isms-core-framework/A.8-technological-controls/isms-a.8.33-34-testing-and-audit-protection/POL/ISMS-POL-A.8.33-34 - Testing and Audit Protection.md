@@ -60,7 +60,7 @@ This policy establishes [Organisation]'s requirements for protecting test inform
 **Core Principles**:
 
 - Test data SHALL NOT contain unprotected production PII or sensitive data
-- Production data used in testing SHALL be masked or anonymized
+- Production data used in testing SHALL be masked or anonymised
 - Test environments SHALL be isolated from production systems
 - Audit testing SHALL be planned to minimise operational disruption
 - Audit tools and logs SHALL be protected and controlled
@@ -131,8 +131,8 @@ This policy does NOT apply to:
 
 **Preferred Data Sources** (in order of preference):
 1. Synthetic data - artificially generated, no relation to real data
-2. Anonymized data - irreversibly de-identified production data
-3. Masked/pseudonymized data - protected production data (requires approval)
+2. Anonymised data - irreversibly de-identified production data
+3. Masked/pseudonymised data - protected production data (requires approval)
 
 **Rationale**: Unprotected production data in test environments creates data breach risk, regulatory non-compliance, and unauthorised access exposure.
 
@@ -143,7 +143,7 @@ This policy does NOT apply to:
 Test data SHALL be classified according to [Organisation]'s data classification scheme:
 
 - **Synthetic data** (no production data source): Classified as Public or Internal based on business context
-- **Production-derived data** (masked, anonymized, or pseudonymized): Inherits production data classification until masking validation confirms non-reversibility, then MAY be downgraded with Data Owner approval
+- **Production-derived data** (masked, anonymised, or pseudonymised): Inherits production data classification until masking validation confirms non-reversibility, then MAY be downgraded with Data Owner approval
 - **Direct production copies** (during refresh process): Classified as Restricted until masking is applied
 - Classification determines protection requirements and access controls
 - Data Owner approval required for Confidential or Restricted test data
@@ -156,7 +156,7 @@ Test data SHALL be classified according to [Organisation]'s data classification 
 
 When production data is required for testing, [Organisation] SHALL apply data masking per ISMS-POL-A.8.11:
 
-- PII SHALL be masked, anonymized, or replaced with synthetic values
+- PII SHALL be masked, anonymised, or replaced with synthetic values
 - Financial data (account numbers, payment cards) SHALL be masked
 - Credentials and secrets SHALL be replaced with test values
 - Health information SHALL be de-identified per applicable regulations
@@ -380,7 +380,7 @@ Vulnerabilities discovered during audit testing SHALL:
 |------|------------------|
 | **CISO** | Policy owner; approves audit testing scope; reviews compliance; authorises penetration testing |
 | **IT Operations Manager** | Production protection; audit scheduling; incident response during testing |
-| **Data Protection Officer** | Test data privacy compliance; anonymization approval; regulatory alignment |
+| **Data Protection Officer** | Test data privacy compliance; anonymisation approval; regulatory alignment |
 | **Information Security Manager** | Audit coordination; testing standards; policy maintenance |
 | **Internal Audit** | Audit planning; engagement management; findings reporting |
 
@@ -476,7 +476,7 @@ When exceptions are approved, compensating controls SHALL include:
 | Regulation | Test Information (A.8.33) | Audit Testing (A.8.34) |
 |------------|---------------------------|------------------------|
 | **Swiss nDSG** | Art. 8 - Data protection by design; personal data minimisation in testing | Art. 8 - Appropriate technical measures during processing |
-| **EU GDPR** | Art. 5(1)(c) - Data minimisation; Art. 25 - Privacy by design; Art. 32 - Pseudonymization | Art. 32 - Security of processing; testing as security measure |
+| **EU GDPR** | Art. 5(1)(c) - Data minimisation; Art. 25 - Privacy by design; Art. 32 - Pseudonymisation | Art. 32 - Security of processing; testing as security measure |
 | **ISO 27001:2022** | Control A.8.33 - Test information selection and protection | Control A.8.34 - Audit testing planning and system protection |
 
 ## Conditional Applicability
@@ -522,12 +522,12 @@ When exceptions are approved, compensating controls SHALL include:
 
 | Term | Definition |
 |------|------------|
-| **Anonymization** | Irreversible process removing all identifying information such that re-identification is not possible |
+| **Anonymisation** | Irreversible process removing all identifying information such that re-identification is not possible |
 | **Audit Testing** | Systematic examination of systems, controls, and processes to verify compliance and effectiveness |
 | **Data Masking** | Process of obscuring original data with modified content while maintaining format and usability |
 | **Penetration Testing** | Authorised simulated attack on systems to identify security vulnerabilities |
 | **Production Data** | Live operational data from business systems containing real information |
-| **Pseudonymization** | Replacement of identifiers with pseudonyms; re-identifiable with separate key |
+| **Pseudonymisation** | Replacement of identifiers with pseudonyms; re-identifiable with separate key |
 | **Synthetic Data** | Artificially generated data containing no real personal or business information |
 | **Test Environment** | Non-production system used for development, testing, or training purposes |
 
@@ -579,4 +579,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for testing and audit protection. Implementation procedures are documented in ISMS-IMP-A.8.33-34.1-UG/TG, .2-UG/TG, and .3-UG/TG.*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

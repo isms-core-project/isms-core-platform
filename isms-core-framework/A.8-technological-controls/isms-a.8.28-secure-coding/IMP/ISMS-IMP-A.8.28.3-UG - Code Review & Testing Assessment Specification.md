@@ -429,7 +429,7 @@ Read the complete instructions including:
 - **Fuzzing**: API parameter fuzzing, negative testing
 - **Evidence**: Fuzzing reports, injection test results
 - **Effectiveness**: How many injection bugs found?
-- **Anti-Pattern**: "We sanitize inputs" without testing
+- **Anti-Pattern**: "We sanitise inputs" without testing
 - **Good Practice**: Automated fuzzing, comprehensive injection testing
 
 **Test Environment Reality Check**:
@@ -706,7 +706,7 @@ Pull 10 random recent reviews. Count:
 
 - **90-100%**: Excellent (but verify it's real, not theater)
 - **70-89%**: Good (identify and close gaps)
-- **50-69%**: Needs Improvement (prioritize critical gaps)
+- **50-69%**: Needs Improvement (prioritise critical gaps)
 - **<50%**: Critical (major review/testing gaps exist)
 
 ## What Good Looks Like
@@ -756,7 +756,7 @@ If answer is "no", you have process theater, not effective security.
 **Within 1 Week**:
 
 - Review findings with all stakeholders
-- Prioritize critical gaps (especially "no review" or "no testing")
+- Prioritise critical gaps (especially "no review" or "no testing")
 - Assign gap remediation owners
 - Set target dates for gap closure
 - Communicate results to CISO/CTO
@@ -863,4 +863,4 @@ If answer is "no", you have process theater, not effective security.
 *"Code that has not been reviewed has not been secured; it has merely been written."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

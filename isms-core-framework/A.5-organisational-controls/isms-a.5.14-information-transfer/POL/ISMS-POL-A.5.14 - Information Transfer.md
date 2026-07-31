@@ -523,4 +523,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for information transfer. Implementation procedures are documented in ISMS-IMP-A.5.14 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

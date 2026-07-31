@@ -538,7 +538,7 @@ Columns:
 
 - ✓ All systems from BIA included in inventory
 - ✓ Current backup status verified (not assumed)
-- ✓ Gaps prioritized by criticality tier
+- ✓ Gaps prioritised by criticality tier
 - ✓ P1 gaps escalated immediately
 
 ## STEP 2: DESIGN Backup Architecture
@@ -708,7 +708,7 @@ Example (Offsite Copy):
    [Azure Backup]
 ```
 
-**Use Case:** Hybrid environment, centralized backup management
+**Use Case:** Hybrid environment, centralised backup management
 
 **6. Document Backup Architecture**
 
@@ -764,7 +764,7 @@ Create architecture diagram showing:
 
 | Solution | Pros | Cons | Best For |
 |----------|------|------|----------|
-| **AWS Backup** | Native integration, centralized backup across AWS services | AWS only | EC2, RDS, EFS, DynamoDB, Aurora |
+| **AWS Backup** | Native integration, centralised backup across AWS services | AWS only | EC2, RDS, EFS, DynamoDB, Aurora |
 | **Veeam Backup for AWS** | Agentless EC2 backup | Requires Veeam licensing | Organisations using Veeam |
 
 **Recommendation:** AWS Backup for AWS-native workloads
@@ -1254,7 +1254,7 @@ Monitoring Checks:
 | Data Classification | Backup Encryption Requirement | Key Management |
 |---------------------|-------------------------------|----------------|
 | **Restricted** | AES-256 mandatory, encrypted at rest + in transit | Hardware Security Module (HSM) or Azure Key Vault |
-| **Confidential** | AES-256 required | Centralized key management |
+| **Confidential** | AES-256 required | Centralised key management |
 | **Internal** | Encryption recommended | Standard key storage |
 | **Public** | No encryption required | N/A |
 
@@ -1378,7 +1378,7 @@ Audit:
 
 **Benefits:**
 
-- Centralized key management
+- Centralised key management
 - Automated key rotation
 - Audit trail of key access
 - RBAC-based access control
@@ -1464,7 +1464,7 @@ Recovery Procedure:
 **Critical Principle:** "Backups running green" in the backup console is NOT sufficient monitoring. You need:
 
 - Automated alerts on failure
-- Centralized monitoring (not just backup console)
+- Centralised monitoring (not just backup console)
 - Escalation to on-call (24/7 for Tier 1)
 - Trend analysis (detecting degradation before failure)
 
@@ -1549,7 +1549,7 @@ Causes:
 
 **4. Storage Capacity (Capacity Metric)**
 
-Monitors: Backup repository capacity utilization
+Monitors: Backup repository capacity utilisation
 
 **Alert Thresholds:**
 
@@ -2015,7 +2015,7 @@ STEP 6: Post-Recovery
 
 ## Recovery Procedure Storage
 
-**Location:** Centralized documentation repository
+**Location:** Centralised documentation repository
 
 **Options:**
 
@@ -2669,7 +2669,7 @@ Action: Update Key Vault RBAC, update recovery procedure
 
    - Total Storage Capacity: SUM(Sheet4, Total_Capacity_TB)
    - Used Storage: SUM(Sheet4, Used_Capacity_TB)
-   - Overall Utilization %: Used / Total
+   - Overall Utilisation %: Used / Total
    - Critical Repositories: COUNTIF(Sheet4, Status="CRITICAL")
 
 5. **Compliance Summary:**
@@ -2677,11 +2677,11 @@ Action: Update Key Vault RBAC, update recovery procedure
    - RPO Compliance Rate: COUNTIF(Sheet2, RPO_Compliance="PASS") / COUNT(Sheet2)
    - RTO Compliance Rate: COUNTIF(Sheet3, RTO_Met="PASS") / COUNT(Sheet3)
 
-**Visualizations (Excel Charts):**
+**Visualisations (Excel Charts):**
 
 - Pie chart: Backup Coverage (Backed Up vs. Not Backed Up)
 - Bar chart: Gap Priority Distribution (P1, P2, P3)
-- Line chart: Storage Utilization Trend (over time)
+- Line chart: Storage Utilisation Trend (over time)
 - Gauge chart: Overall Backup Health Score (0-100%)
 
 **Health Score Calculation:**
@@ -2934,4 +2934,4 @@ Evidence:
 *"Two is one, and one is none."*
 — U.S. Special Forces saying
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

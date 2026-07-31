@@ -64,7 +64,7 @@
 | 5 | Exception Management |
 | 6 | Remediation Tracking |
 | 7 | Summary Dashboard |
-| 8 | Gap Prioritization |
+| 8 | Gap Prioritisation |
 | 9 | Evidence Register |
 | 10 | Approval Sign-Off |
 | 11 | Instructions & Legend |
@@ -308,4 +308,4 @@ Continuous, Until Changed, \u26A0\uFE0F Superseded, Very High, Very Low
 *"The more we study the major problems of our time, the more we come to realise that they cannot be understood in isolation."*
 — Fritjof Capra
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

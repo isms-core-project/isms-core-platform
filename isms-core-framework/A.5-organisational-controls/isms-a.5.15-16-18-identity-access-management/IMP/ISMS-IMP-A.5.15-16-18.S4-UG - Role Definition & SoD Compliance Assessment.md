@@ -303,7 +303,7 @@ Upon completion, you will have:
 - ✓ Justified violations have compensating controls
 - ✓ Justified violations have CISO approval
 - ✓ Unjustified violations have remediation plans
-- ✓ High-risk violations prioritized (30 days)
+- ✓ High-risk violations prioritised (30 days)
 
 **Target**: Zero unresolved SoD violations
 
@@ -373,19 +373,19 @@ Upon completion, you will have:
    - Description, Current State, Target State
    - Owner, Remediation Plan, Target Date, Status
 
-3. Prioritize:
+3. Prioritise:
 
    - **Critical**: Unresolved SoD violations, unauthorised direct access
    - **High**: Low RBAC adoption, missing SoD approvals, outdated roles
    - **Medium**: Obsolete roles active, roles not reviewed annually
    - **Low**: Minor improvements
 
-**Deliverable**: Complete Sheet 8 with prioritized gaps
+**Deliverable**: Complete Sheet 8 with prioritised gaps
 
 **Quality Check**:
 
 - ✓ All gaps identified
-- ✓ Prioritized by risk
+- ✓ Prioritised by risk
 - ✓ Owners assigned
 - ✓ Remediation plans specific (not vague)
 - ✓ Target dates realistic (30/60/90 days)
@@ -411,7 +411,7 @@ Upon completion, you will have:
    - Storage Location, Retention Period (3 years)
    - Audit Relevance (A.5.15, A.5.18)
 
-3. Organize by category
+3. Organise by category
 4. Verify accessibility
 
 **Deliverable**: Complete Sheet 9 with evidence register
@@ -486,7 +486,7 @@ Upon completion, you will have:
 **Problem**: "We detected SoD violations but haven't remediated them."
 
 **Solution**:
-1. Prioritize unresolved violations (Critical)
+1. Prioritise unresolved violations (Critical)
 2. **Option 1**: Remediate (remove role, reassign duties)
 3. **Option 2**: Justify (business reason, compensating controls, CISO approval)
 4. High-risk violations: 30 days
@@ -605,7 +605,7 @@ Upon completion, you will have:
 - [ ] Justified violations have controls
 - [ ] Justified violations have CISO approval
 - [ ] Unjustified violations have plans
-- [ ] High-risk prioritized (30 days)
+- [ ] High-risk prioritised (30 days)
 - [ ] Target: Zero unresolved
 
 ### Sheet 7: Compensating Controls
@@ -628,7 +628,7 @@ Upon completion, you will have:
 ### Sheet 9: Gap Analysis
 
 - [ ] All gaps identified
-- [ ] Prioritized by risk
+- [ ] Prioritised by risk
 - [ ] Owners assigned
 - [ ] Remediation plans specific
 - [ ] Target dates realistic
@@ -730,7 +730,7 @@ Upon completion, you will have:
 
 **Article 21(2)(d) - Access Control**:
 
-- Role Catalog: Formalized access control
+- Role Catalog: Formalised access control
 - SoD Matrix: Access control restrictions
 - RBAC Maturity: Access control effectiveness
 
@@ -750,4 +750,4 @@ Upon completion, you will have:
 *"To do two things at once is to do neither."*
 — Publilius Syrus
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

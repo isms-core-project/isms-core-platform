@@ -125,7 +125,7 @@ A well-defined disciplinary process delivers:
 
 ### ISO 27001:2022 Control A.6.4 - Disciplinary Process
 
-> *"A disciplinary process should be formalized and communicated to take actions against personnel and other relevant interested parties who have committed an information security policy violation."*
+> *"A disciplinary process should be formalised and communicated to take actions against personnel and other relevant interested parties who have committed an information security policy violation."*
 
 **Control Type:** Corrective, Preventive
 **Security Properties:** Confidentiality, Integrity, Availability
@@ -915,4 +915,4 @@ Upon approval:
 *"Discipline is the bridge between goals and accomplishment."*
 — Jim Rohn
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -645,7 +645,7 @@ A: GDPR requires "reasonable measures" to verify identity:
 Balance: Verification must be sufficient to prevent unauthorised deletion, but not so burdensome it obstructs legitimate requests.
 
 **Q: What about data in backups?**
-A: GDPR recognizes backup challenges. Options:
+A: GDPR recognises backup challenges. Options:
 1. **Document exception:** Backups retained for technical reasons, data isolated and not used (GDPR Recital 39)
 2. **Backup exclusion:** Exclude data subject's data from future backups
 3. **Backup scrubbing:** Remove data from existing backups (complex, may not be technically feasible)
@@ -702,7 +702,7 @@ For each assessment area, gather supporting documentation:
 
 - Data subject rights policy/procedure
 - Erasure request form (template)
-- Request tracking log (last 12 months, anonymized)
+- Request tracking log (last 12 months, anonymised)
 - Response time metrics
 - Third-party notification confirmations
 
@@ -710,7 +710,7 @@ For each assessment area, gather supporting documentation:
 
 **Where to Store Evidence:**
 
-- Centralized evidence repository (ISMS document management)
+- Centralised evidence repository (ISMS document management)
 - Access-controlled file share
 - Compliance management platform
 
@@ -740,7 +740,7 @@ For each assessment area, gather supporting documentation:
 
 - ❌ **"No retention schedule"** → Complete this assessment, get retention schedule approved
 - ❌ **"Retention periods excessive with no justification"** → Document legal basis, consider reducing periods
-- ❌ **"No deletion triggers implemented"** → Prioritize automation for high-risk data
+- ❌ **"No deletion triggers implemented"** → Prioritise automation for high-risk data
 - ❌ **"Backups retained longer than production data"** → Align backup retention ≤ production retention
 - ❌ **"Data subject erasure requests not tracked"** → Implement request log, monitor response times
 - ❌ **"No legal hold procedures"** → Document procedures, train IT staff
@@ -954,4 +954,4 @@ Once all three levels approve:
 *"Keeping data beyond its useful life is not preservation; it is accumulation of liability."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

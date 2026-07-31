@@ -656,7 +656,7 @@ cat /proc/sys/kernel/random/entropy_avail
 4. **Secrets Management - ACCEPTABLE**
 
    - HashiCorp Vault, CyberArk, AWS Secrets Manager
-   - Centralized secrets storage with access controls
+   - Centralised secrets storage with access controls
    - **Use for:** Application secrets, API keys, service account credentials
 
 5. **Config Files (encrypted) - POOR (but better than plaintext)**
@@ -808,8 +808,8 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 
 **Storage Requirements:**
 
-- **Location:** Centralized evidence repository (same as IMP-1, IMP-2, IMP-3)
-- **Folder Structure:** Organize by assessment section
+- **Location:** Centralised evidence repository (same as IMP-1, IMP-2, IMP-3)
+- **Folder Structure:** Organise by assessment section
 - **Retention:** Audit cycle + 1 year minimum
 - **Sensitivity:** Key management documentation is highly sensitive - strict access controls
 
@@ -827,8 +827,8 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 
 - Entropy source verification (cat /proc/sys/kernel/random/entropy_avail)
 - Hardware RNG status (TPM, HSM TRNG availability)
-- Key bit length verification (openssl rsa -text output, sanitized)
-- Key generation logs (HSM, KMS, CA logs - sanitized)
+- Key bit length verification (openssl rsa -text output, sanitised)
+- Key generation logs (HSM, KMS, CA logs - sanitised)
 - Key generation procedures documentation
 
 **2. Key Storage:**
@@ -896,11 +896,11 @@ cat /sys/class/misc/hw_random/rng_available > EV-1-Hardware-RNG-$(date +%Y%m%d).
 find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -in {} \; -print > EV-5-Expiring-Certs-$(date +%Y%m%d).txt
 ```
 
-## Evidence Sanitization
+## Evidence Sanitisation
 
 **CRITICAL:** Remove sensitive information:
 
-**Must Sanitize (NEVER include in evidence):**
+**Must Sanitise (NEVER include in evidence):**
 
 - Private keys (ANY form - PEM, DER, PKCS#12)
 - HSM PIN codes or authentication credentials
@@ -988,9 +988,9 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 ## ❌ MISTAKE #8: RSA 1024-bit "Good Enough for Internal"
 
 **Problem:** Using RSA 1024-bit keys for internal systems ("not exposed to internet")  
-**Why Wrong:** RSA 1024-bit factorization feasible with modern computing, insiders have access  
+**Why Wrong:** RSA 1024-bit factorisation feasible with modern computing, insiders have access  
 **Correct Approach:** RSA 2048-bit minimum for ALL keys (internal and external)  
-**Impact:** Cryptographic compromise via factorization or quantum computing
+**Impact:** Cryptographic compromise via factorisation or quantum computing
 
 ---
 
@@ -1094,7 +1094,7 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 
 - Run through Quality Checklist (Section 7)
 - Fix identified issues
-- Verify all evidence accessible (and sanitized - no private keys!)
+- Verify all evidence accessible (and sanitised - no private keys!)
 - Set status to "Draft"
 - Submit to Information Security Officer
 
@@ -1183,4 +1183,4 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 *"Lose the key and you lose everything; share the key and you lose everything else."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

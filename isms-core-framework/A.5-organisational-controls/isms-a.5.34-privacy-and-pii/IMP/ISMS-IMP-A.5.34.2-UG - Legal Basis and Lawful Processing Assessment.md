@@ -240,7 +240,7 @@ You will need access to:
 **Supporting Tools** (optional):
 
 - **Consent management platform** - Automated consent logging (OneTrust, Cookiebot, etc.)
-- **Contract management system** - Centralized contract repository
+- **Contract management system** - Centralised contract repository
 - **Legal obligation tracking** - Regulatory requirement mapping
 
 **Reference Materials:**
@@ -652,12 +652,12 @@ Special categories (GDPR Art. 9(1)):
 
 - Consent seems "safer" (but isn't if invalid)
 - Misunderstanding of GDPR hierarchy (no preferred legal basis)
-- Not recognizing power imbalances
+- Not recognising power imbalances
 
 **How to Avoid:**
 
 - Always check if legal obligation or contract applies first
-- Recognize power imbalances (employer-employee, authority-citizen)
+- Recognise power imbalances (employer-employee, authority-citizen)
 - Understand that invalid consent = unlawful processing
 
 **Assessment Impact:** Invalid consent = data subject can withdraw → processing must cease → business disruption
@@ -724,7 +724,7 @@ Special categories (GDPR Art. 9(1)):
 
 **Why It Happens:**
 
-- Not recognizing special category data
+- Not recognising special category data
 - Forgetting Art. 9 requires additional legal basis
 - Assuming Art. 6 basis is sufficient
 
@@ -887,7 +887,7 @@ Complete this checklist before seeking approvals:
 - [ ] Risk level assigned for each gap (Critical / High / Medium / Low)
 - [ ] Remediation action defined (specific and actionable)
 - [ ] Remediation owner assigned (person responsible)
-- [ ] Target completion date set (risk-based prioritization)
+- [ ] Target completion date set (risk-based prioritisation)
 - [ ] Critical gaps have immediate action plans (weeks, not months)
 - [ ] No critical gaps without executive awareness
 
@@ -1024,7 +1024,7 @@ After all reviews complete:
 
 2. **Begin Gap Remediation**
 
-   - Prioritize Critical and High risk gaps
+   - Prioritise Critical and High risk gaps
    - Assign resources and budget
    - Track progress weekly (update Sheet 5)
 
@@ -1073,4 +1073,4 @@ This assessment provides foundation for:
 *"Where there is no law, there is no freedom."*
 — John Locke
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

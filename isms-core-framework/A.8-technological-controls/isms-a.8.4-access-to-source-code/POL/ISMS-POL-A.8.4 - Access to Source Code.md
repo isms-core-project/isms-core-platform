@@ -217,7 +217,7 @@ All source code repositories SHALL implement role-based access control (RBAC). D
 
 **Quarterly Access Review Process**:
 
-- Reviews conducted using standardized access review form (template in ISMS-IMP-A.8.4.3)
+- Reviews conducted using standardised access review form (template in ISMS-IMP-A.8.4.3)
 - Repository owner reviews each user's access and confirms: access still required (yes/no), access level appropriate (yes/no), action (retain/modify/revoke)
 - Review completion documented with repository owner signature and date
 - Review records retained in evidence repository (SharePoint/Confluence ISMS Evidence Library or equivalent)
@@ -229,7 +229,7 @@ All repository access requests SHALL include requestor name and role, repository
 
 **Access Provisioning and Deprovisioning**:
 
-Repository access SHALL be provisioned through centralized identity management systems where technically feasible. Access SHALL be granted to specific repositories, not blanket access to all repositories (unless explicitly justified and approved). HR system SHALL trigger automated deprovisioning workflow within 1 hour of termination processing. Deprovisioning SHALL be verified within 24 hours of trigger event through automated reporting.
+Repository access SHALL be provisioned through centralised identity management systems where technically feasible. Access SHALL be granted to specific repositories, not blanket access to all repositories (unless explicitly justified and approved). HR system SHALL trigger automated deprovisioning workflow within 1 hour of termination processing. Deprovisioning SHALL be verified within 24 hours of trigger event through automated reporting.
 
 **Deprovisioning Verification Process**:
 
@@ -356,7 +356,7 @@ All code changes to protected branches SHALL be submitted via pull requests. Pul
 
 **Secret Prohibition**:
 
-Source code repositories SHALL NOT contain passwords/passphrases/credentials, API keys/tokens/access keys, private cryptographic keys/certificates, database connection strings with embedded credentials, SSH private keys/OAuth secrets, encryption keys/initialization vectors, or any other sensitive authentication material. Configuration files requiring secrets SHALL use environment variables, secrets management systems, encrypted configuration with external key management, or configuration templates with placeholder values. Developers SHALL be trained on secret management best practices including use of environment variables, secrets management systems, pre-commit hooks, and Git history remediation.
+Source code repositories SHALL NOT contain passwords/passphrases/credentials, API keys/tokens/access keys, private cryptographic keys/certificates, database connection strings with embedded credentials, SSH private keys/OAuth secrets, encryption keys/initialisation vectors, or any other sensitive authentication material. Configuration files requiring secrets SHALL use environment variables, secrets management systems, encrypted configuration with external key management, or configuration templates with placeholder values. Developers SHALL be trained on secret management best practices including use of environment variables, secrets management systems, pre-commit hooks, and Git history remediation.
 
 **Secret Scanning**:
 
@@ -682,7 +682,7 @@ Evidence required to demonstrate this policy is adequately documented and approv
 
 Evidence required to demonstrate this policy is operationally effective:
 
-**Evidence Repository**: All audit evidence stored in centralized ISMS Evidence Library (SharePoint, Confluence, or equivalent document management system) with folder structure by control and assessment period.
+**Evidence Repository**: All audit evidence stored in centralised ISMS Evidence Library (SharePoint, Confluence, or equivalent document management system) with folder structure by control and assessment period.
 
 **Repository Inventory Evidence**: Repository inventory with classification/owner/metadata, repository platform exports, quarterly inventory review records
 
@@ -735,7 +735,7 @@ This policy becomes effective 30 days after Executive Management approval to all
 
 **Medium-term (90-180 days)** - Full compliance: Complete compliance across all repositories, automated monitoring deployment, backup and recovery testing, training completion for all personnel
 
-**Long-term (180-365 days)** - Optimization: Automation enhancement, process optimization, advanced monitoring and analytics, continuous improvement initiatives
+**Long-term (180-365 days)** - Optimisation: Automation enhancement, process optimisation, advanced monitoring and analytics, continuous improvement initiatives
 
 **Transition Period Evidence**: During transition, collect evidence of progress for audits occurring before full compliance:
 
@@ -797,4 +797,4 @@ This policy SHALL be distributed to all personnel with source code repository ac
 
 *This policy establishes requirements for source code access control. Implementation procedures are documented in ISMS-IMP-A.8.4 (UG/TG).1 (Repository Access Control), ISMS-IMP-A.8.4.2 (Branch Protection), and ISMS-IMP-A.8.4.3 (Source Code Access Assessment).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

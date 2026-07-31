@@ -37,7 +37,7 @@
 - ISO/IEC 27001:2022 Control A.7.14 — Secure disposal or re-use of equipment
 - ISO/IEC 27002:2022 Sections 7.6, 7.7, 7.14 — Implementation guidance
 - NIST SP 800-88 Rev. 2 — Guidelines for Media Sanitization
-- IEEE 2883:2022 — Standard for Sanitizing Storage
+- IEEE 2883:2022 — Standard for Sanitising Storage
 
 **Related Annex A Controls**:
 
@@ -596,9 +596,9 @@ Secure Areas and Media Handling Policy — ISO 27001 Controls Mapping
 | ISO/IEC 27001:2022 | Annex A Controls 7.6, 7.7, 7.14 |
 | ISO/IEC 27002:2022 | Sections 7.6, 7.7, 7.14 — Implementation guidance |
 | NIST SP 800-88 Rev. 2 | Guidelines for media sanitisation (Clear, Purge, Destroy) |
-| IEEE 2883:2022 | Standard for sanitizing storage — technical methods for drives |
+| IEEE 2883:2022 | Standard for sanitising storage — technical methods for drives |
 | DIN 66399 | Destruction of data carriers — security levels for physical shredding |
 
 ---
 
-<!-- QA_VERIFIED: 2026-02-07 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -71,7 +71,7 @@ This assessment evaluates [Organisation]'s training needs to ensure all personne
 - Training tier assignments with justification
 - Training requirement mapping by tier
 - Gap analysis showing training deficits
-- Prioritized remediation plan
+- Prioritised remediation plan
 - Evidence register for audit trail
 - Approval sign-off workflow
 
@@ -96,7 +96,7 @@ This assessment evaluates [Organisation]'s training needs to ensure all personne
 - **Regulatory Compliance:** Training requirements are audited in virtually all compliance frameworks
 - **Human Factor Risk:** ~80% of security incidents involve human factors; training reduces this
 - **Audit Readiness:** Documented training needs analysis demonstrates systematic approach
-- **Resource Optimization:** Targeted training based on role reduces unnecessary training burden
+- **Resource Optimisation:** Targeted training based on role reduces unnecessary training burden
 - **Incident Reduction:** Role-appropriate training addresses actual risk exposures
 
 ## Who Should Complete This Assessment
@@ -161,7 +161,7 @@ This assessment evaluates [Organisation]'s training needs to ensure all personne
 - **Start with existing data:** Use HR systems, org charts, job descriptions
 - **Classify by role, not individual:** Reduces complexity and maintenance
 - **Leverage system access data:** IT can provide access level reports
-- **Prioritize high-risk roles first:** Privileged users, data handlers
+- **Prioritise high-risk roles first:** Privileged users, data handlers
 - **Align with HR processes:** Integrate with job family/grade structures
 
 ## Connection to Policy
@@ -174,7 +174,7 @@ This assessment implements **ISMS-POL-A.6.3, Section 2.2 (Training Audience Clas
 - **Tier 3:** Data Handlers - Data protection, privacy, classification
 - **Tier 4:** Technical Staff - Secure development, system security
 - **Tier 5:** Privileged Users - Privileged access, incident response
-- **Tier 6:** Security Roles - Specialized security training
+- **Tier 6:** Security Roles - Specialised security training
 - **Tier 7:** Management - Governance, risk, compliance
 
 **Classification Criteria (POL-A.6.3, Section 2.2):**
@@ -343,7 +343,7 @@ Before starting this assessment, ensure you have access to:
 
 **This sheet is pre-populated based on POL-A.6.3 Section 2.3-2.4.**
 
-**Review and customize:**
+**Review and customise:**
 
 1. **Verify pre-populated requirements align with current policy**
 
@@ -358,7 +358,7 @@ Before starting this assessment, ensure you have access to:
 
 4. **Identify regulatory drivers:**
    - Link each requirement to driving regulation/policy
-   - Helps prioritization and audit response
+   - Helps prioritisation and audit response
 
 ## Step 4: Perform Gap Analysis (Sheet 5)
 
@@ -485,7 +485,7 @@ Access Management:
 | Exception Requests | Approved training deferrals | ServiceNow/Email | PDF |
 | Remediation Plans | Documented improvement actions | Project Tool | Export |
 
-## Evidence Sanitization
+## Evidence Sanitisation
 
 **Before storing evidence, remove:**
 - Personal identifiable information (unless required for audit)
@@ -494,7 +494,7 @@ Access Management:
 - Salary/compensation data (not relevant to security training)
 
 **Retain:**
-- Employee IDs (anonymized if possible)
+- Employee IDs (anonymised if possible)
 - Role classifications
 - Department affiliations
 - Training completion status
@@ -744,7 +744,7 @@ Before submitting for review:
 - Tier assignment methodology applied correctly
 - Scoring criteria interpreted appropriately
 - Training requirements comprehensive
-- Gap prioritization reasonable
+- Gap prioritisation reasonable
 - Remediation plans realistic
 
 **Duration:** 3-5 business days
@@ -821,4 +821,4 @@ Before submitting for review:
 *"An investment in knowledge pays the best interest."*
 — Benjamin Franklin
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

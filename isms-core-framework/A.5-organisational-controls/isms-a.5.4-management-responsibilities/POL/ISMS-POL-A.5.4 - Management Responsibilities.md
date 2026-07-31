@@ -97,7 +97,7 @@ All management personnel SHALL demonstrate active commitment to information secu
 
 - Communicating the importance of information security to their teams
 - Participating in security awareness activities
-- Acknowledging and recognizing security-conscious behavior
+- Acknowledging and recognising security-conscious behavior
 - Allocating time for security-related activities
 
 **Resource Allocation**:
@@ -148,8 +148,8 @@ Management SHALL foster a positive security culture by:
 
 - Creating an environment where personnel feel safe reporting security issues
 - Responding constructively to security incident reports
-- Not penalizing good-faith security reporting
-- Recognizing employees who identify security improvements
+- Not penalising good-faith security reporting
+- Recognising employees who identify security improvements
 
 **Continuous Improvement**:
 
@@ -224,7 +224,7 @@ Participation tracked in ISMS-IMP-A.5.4.3 Leadership Dashboard.
 
 - Approving risk treatment decisions within delegated authority
 - Accepting residual risks with documented justification
-- Prioritizing security investments based on business impact
+- Prioritising security investments based on business impact
 
 ---
 
@@ -361,7 +361,7 @@ Evidence required to demonstrate this policy is operationally effective:
 - Training completion records for managers
 - Management review meeting minutes with attendance
 - Security budget allocation evidence
-- Policy enforcement examples (anonymized)
+- Policy enforcement examples (anonymised)
 - Security culture survey results
 
 ---
@@ -394,4 +394,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for management responsibilities. Implementation procedures are documented in ISMS-IMP-A.5.4 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

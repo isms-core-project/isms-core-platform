@@ -267,7 +267,7 @@ Notification obligations, deadlines, and thresholds are determined by applicable
 **Active Participation Includes**:
 
 - Receiving and acting on threat intelligence
-- Contributing anonymized incident data (where permitted)
+- Contributing anonymised incident data (where permitted)
 - Attending relevant conferences and meetings
 - Sharing best practices and lessons learned
 - Participating in joint exercises when appropriate
@@ -287,7 +287,7 @@ At minimum, "active participation" means: (1) membership/subscription is current
 
 - Receiving threat intelligence and advisories
 - Sharing technical indicators of compromise (IoCs)
-- Participating in industry benchmarking (anonymized)
+- Participating in industry benchmarking (anonymised)
 - Contributing to standards development
 - Attending educational events
 
@@ -449,7 +449,7 @@ Where no notifiable incidents occurred in the audit period, evidence may include
 |------|------------|
 | **Relevant Authority** | Any government body, law enforcement agency, or regulatory authority with jurisdiction over [Organisation]'s operations or data processing activities |
 | **Special Interest Group** | Professional associations, industry forums, information sharing organisations, and security communities focused on cybersecurity topics |
-| **Traffic Light Protocol (TLP)** | A standardized system for classifying sensitive information and controlling its distribution |
+| **Traffic Light Protocol (TLP)** | A standardised system for classifying sensitive information and controlling its distribution |
 | **ISAC/ISAO** | Information Sharing and Analysis Center/Organisation - sector-specific groups for sharing threat intelligence |
 | **Mandatory Notification** | A legally required report to authorities triggered by specific events (e.g., data breach, cyber incident) |
 
@@ -471,4 +471,4 @@ Where no notifiable incidents occurred in the audit period, evidence may include
 
 *This policy establishes requirements for external communications with authorities and special interest groups. Implementation procedures are documented in ISMS-IMP-A.5.5-6 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

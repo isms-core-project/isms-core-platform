@@ -269,7 +269,7 @@ Step 7: Submission (30 mins)
 2. **Review Instructions Sheet:**
 
    - Read Sheet 1 (Instructions_Legend) completely
-   - Familiarize yourself with dropdown values
+   - Familiarise yourself with dropdown values
    - Understand the status color codes
 
 3. **Fill in Document Information:**
@@ -342,7 +342,7 @@ Step 7: Submission (30 mins)
    - **Process Gaps:** Missing procedures, undefined SLAs
    - **Operational Gaps:** Dashboards not reviewed, reports not used
 
-3. **Prioritize gaps** using Critical/High/Medium/Low
+3. **Prioritise gaps** using Critical/High/Medium/Low
 4. **Develop remediation plans** with owners and target dates
 5. **Document in Sheet 9**
 
@@ -404,7 +404,7 @@ Document approvals in Sheet 11 with:
 ### Step 7: Integration with Dashboard
 
 Once approved:
-1. Run the normalization script (if using long filenames)
+1. Run the normalisation script (if using long filenames)
 2. Distribute results to relevant stakeholders
 3. Schedule quarterly update reminder
 
@@ -483,8 +483,8 @@ Once approved:
   - **Local_Storage** - Stored locally on the filtering device
   - **Archive** - Long-term archive storage
   - **Multiple** - Logs go to more than one destination
-- **Auditor Expects:** Centralized log management (SIEM preferred)
-- **Red Flag:** "Local_Storage" only = no centralized monitoring
+- **Auditor Expects:** Centralised log management (SIEM preferred)
+- **Red Flag:** "Local_Storage" only = no centralised monitoring
 
 **Q7: Format**
 
@@ -1899,7 +1899,7 @@ These are **calculated automatically:**
   - **Integration** - Integration gaps between systems
   - **Retention** - Log retention compliance
   - **Process** - Process/procedure gaps
-- **Tip:** Category helps prioritize and assign ownership
+- **Tip:** Category helps prioritise and assign ownership
 
 **Q3: Gap_Description**
 
@@ -2108,7 +2108,7 @@ These are **calculated automatically:**
   - "Confluence: https://wiki.example.com/security/evidence/a823/pir-inc-234"
   - "Email: CISO approval email dated 15.01.2026, Subject: 'RE: Whitelist Exception Request'"
   - "Attached to this workbook as embedded file"
-- **Best Practice:** Centralized evidence repository (SharePoint, Confluence)
+- **Best Practice:** Centralised evidence repository (SharePoint, Confluence)
 - **Auditor Expects:** Evidence readily accessible and retrievable
 
 **Q6: Date_Collected**
@@ -2145,7 +2145,7 @@ These are **calculated automatically:**
 - **Question:** Any additional context about this evidence?
 - **Examples:**
   - "Screenshot taken during production hours showing real data"
-  - "Configuration export sanitized to remove sensitive IPs"
+  - "Configuration export sanitised to remove sensitive IPs"
   - "Report covers period 01.01.2026 - 07.01.2026"
   - "Evidence shows 'before' state - 'after' screenshot in EVID-046"
 
@@ -2234,7 +2234,7 @@ These are **calculated automatically:**
 - **Examples:**
   - "Approved - monitoring and response capabilities well-documented"
   - "Conditionally approved - add evidence for ALR-025 and ALR-030 alert rules"
-  - "Approved with recommendation to prioritize GAP-003 and GAP-007 for Q2"
+  - "Approved with recommendation to prioritise GAP-003 and GAP-007 for Q2"
 
 ---
 
@@ -2321,7 +2321,7 @@ These are **calculated automatically:**
 - **SIEM screenshots** showing log ingestion from filtering sources
 - **Configuration exports** from filtering devices showing logging enabled
 - **Log retention policies** (documented)
-- **Sample log files** (sanitized) showing format and content
+- **Sample log files** (sanitised) showing format and content
 
 ### Sheet 3: Alert Configuration
 
@@ -2374,8 +2374,8 @@ These are **calculated automatically:**
 ✅ **Clear** - Readable, legible, not blurry
 ✅ **Contextual** - Includes date/timestamp, system identifier
 ✅ **Verifiable** - Auditor can independently verify if needed
-✅ **Sanitized** - PII/sensitive data removed or masked
-✅ **Organized** - Stored in logical folder structure
+✅ **Sanitised** - PII/sensitive data removed or masked
+✅ **Organised** - Stored in logical folder structure
 ✅ **Accessible** - Easily retrievable during audit
 
 ## Evidence Storage
@@ -2622,7 +2622,7 @@ Once all three levels approve:
    - Set Overall Assessment Status = "Approved"
    - Set Audit Readiness Confirmation = "Yes" (if criteria met)
 
-2. **Finalize Evidence**
+2. **Finalise Evidence**
 
    - Ensure all evidence is verified
    - Upload to final evidence repository
@@ -2630,7 +2630,7 @@ Once all three levels approve:
 
 3. **Finalise Submission**
 
-   - Run file normalization script if needed
+   - Run file normalisation script if needed
    - Distribute approved assessment to relevant stakeholders
 
 4. **Schedule Next Review**
@@ -2678,7 +2678,7 @@ Monitoring without response is theater. Alerts without resolution tracking is no
 **For CISO:**
 
 - Visibility into monitoring effectiveness
-- Risk-based gap prioritization
+- Risk-based gap prioritisation
 - Audit-ready documentation
 - Confidence in operational capability
 
@@ -2706,4 +2706,4 @@ Monitoring without response is theater. Alerts without resolution tracking is no
 *"Filtering is prevention; monitoring is detection; response is resolution."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -407,7 +407,7 @@ However, outputs from this assessment are INPUT to:
 
 **Column F - Detector Technology:**
 
-- Detector types deployed: "Photoelectric", "Ionization", "Dual-sensor", "Aspirating (ASD)"
+- Detector types deployed: "Photoelectric", "Ionisation", "Dual-sensor", "Aspirating (ASD)"
 - Example: "Photoelectric (standard), ASD (server room)"
 
 **Column G - Notification Devices:**
@@ -654,7 +654,7 @@ However, outputs from this assessment are INPUT to:
 **Gap Summary:**
 
 - Auto-generated list of non-compliant items requiring remediation
-- Prioritized by severity (Critical → High → Medium → Low)
+- Prioritised by severity (Critical → High → Medium → Low)
 
 **What YOU Do:**
 
@@ -758,7 +758,7 @@ However, outputs from this assessment are INPUT to:
 **Storage Best Practices:**
 
 - Use consistent file naming: [Facility]_[System]_[Type]_[Date].ext
-- Organize in folders by sheet: Evidence/Sheet2_FireDetection/, Evidence/Sheet3_WaterDetection/, etc.
+- Organise in folders by sheet: Evidence/Sheet2_FireDetection/, Evidence/Sheet3_WaterDetection/, etc.
 - Encrypt sensitive evidence if contains proprietary facility layouts
 - Backup evidence to secure location (required for audit)
 
@@ -925,7 +925,7 @@ However, outputs from this assessment are INPUT to:
 
 - **Secure network share:** \\server\ISMS\Assessments\A.7.4.2_Environmental_Protection\Evidence
 - **SharePoint/Cloud:** SharePoint > ISMS > Assessments > A.7.4.2 > Evidence folder
-- **Organized by sheet:** Evidence/Sheet2_FireDetection/, Evidence/Sheet3_WaterDetection/, Evidence/Sheet4_TempHumidity/
+- **Organised by sheet:** Evidence/Sheet2_FireDetection/, Evidence/Sheet3_WaterDetection/, Evidence/Sheet4_TempHumidity/
 
 **Access Control:**
 
@@ -1278,7 +1278,7 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Review Summary Dashboard (overall compliance score)
 - Review gap summary (non-compliant items requiring remediation)
 - Assess remediation resource requirements (fire system upgrades, water sensor installations, HVAC improvements)
-- Prioritize gaps for remediation (critical gaps first - e.g., missing fire detection in server room)
+- Prioritise gaps for remediation (critical gaps first - e.g., missing fire detection in server room)
 - Approve remediation plan (or request revised plan)
 - Complete Level 3 approval in Sheet 7 (name, date, signature, comments)
 
@@ -1324,7 +1324,7 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 
 **Post-Approval:**
 
-- Assessment workbook finalized (no further edits without re-approval)
+- Assessment workbook finalised (no further edits without re-approval)
 - Assessment stored in audit repository
 - Assessment available to Internal Audit and External Auditors
 - Assessment forms basis for Control A.7.5 compliance evidence
@@ -1379,4 +1379,4 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 *"It is not enough to protect data from people; you must also protect it from the environment."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

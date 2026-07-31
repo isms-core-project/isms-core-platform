@@ -409,7 +409,7 @@ For assessments covering multiple systems:
   - Minimum sample: 10% of population or 5 systems, whichever is greater
   - Non-homogeneous systems require individual assessment
 
-- **Risk-Based Prioritization**: Systems processing Restricted data receive enhanced scrutiny (100% coverage). Systems processing only Internal data may use sampling where automated validation is unavailable.
+- **Risk-Based Prioritisation**: Systems processing Restricted data receive enhanced scrutiny (100% coverage). Systems processing only Internal data may use sampling where automated validation is unavailable.
 
 **Auditor Access**: Full inventory and automated scan results provided to auditors. Sample selection methodology documented in assessment workbook to demonstrate statistical validity.
 
@@ -484,7 +484,7 @@ System Owners receive escalating communications. At 36-month expiration, excepti
 
 **Monitoring**: Active exceptions reviewed quarterly by CISO. Compensating control effectiveness verified. Exceptions revoked if risk profile changes or compensating controls fail.
 
-**Exception Template**: ISMS-IMP-A.8.24 Exception Request Form provides standardized documentation format.
+**Exception Template**: ISMS-IMP-A.8.24 Exception Request Form provides standardised documentation format.
 
 ## Incident Response
 
@@ -668,7 +668,7 @@ This policy addresses cryptographic requirements from:
 
 **Hardware Security Module (HSM)**: Tamper-resistant hardware device for secure cryptographic key storage and operations.
 
-**Key Management Service (KMS)**: Software or cloud service for centralized cryptographic key management.
+**Key Management Service (KMS)**: Software or cloud service for centralised cryptographic key management.
 
 **Crypto Agility**: Organisational capability to rapidly change cryptographic algorithms without major system re-architecture.
 
@@ -697,4 +697,4 @@ This policy addresses cryptographic requirements from:
 
 *This policy establishes requirements for use of cryptography. Implementation procedures are documented in ISMS-IMP-A.8.24 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

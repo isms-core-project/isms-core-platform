@@ -197,12 +197,12 @@ Before starting this assessment, ensure you have access to:
 
 - [ ] SCCM / Group Policy management console (Windows)
 - [ ] Jamf Pro / MDM console (macOS)
-- [ ] Centralized BitLocker recovery key repository (Active Directory, Entra ID)
+- [ ] Centralised BitLocker recovery key repository (Active Directory, Entra ID)
 - [ ] FileVault recovery key system
 
 **Server Infrastructure:**
 
-- [ ] Virtualization management console (VMware, Hyper-V, KVM)
+- [ ] Virtualisation management console (VMware, Hyper-V, KVM)
 - [ ] Physical server management (iDRAC, iLO, BMC)
 - [ ] Linux server SSH access (to check LUKS status)
 - [ ] Windows Server access (to check BitLocker status)
@@ -621,7 +621,7 @@ Check each item and mark "Yes", "No", or "N/A":
 
 **Where to Find This Information:**
 
-- SCCM / Intune / Jamf reports (centralized endpoint management)
+- SCCM / Intune / Jamf reports (centralised endpoint management)
 - Active Directory BitLocker Recovery (for Windows)
 - Entra ID BitLocker Recovery
 - Jamf Pro FileVault reports (for macOS)
@@ -678,7 +678,7 @@ lsblk -o NAME,TYPE,SIZE,FSTYPE,MOUNTPOINT
 - Full disk encryption enabled (BitLocker/FileVault/LUKS)
 - AES-256-XTS algorithm
 - TPM 2.0 (Windows) or secure enclave (macOS) or dm-crypt (Linux)
-- Recovery keys escrowed to centralized system
+- Recovery keys escrowed to centralised system
 - All devices with Confidential/Restricted data encrypted
 
 **⚠️ Partial:**
@@ -802,10 +802,10 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 
 **Storage Requirements:**
 
-- **Location:** Centralized evidence repository (same as IMP-1)
-- **Folder Structure:** Organize by assessment section
+- **Location:** Centralised evidence repository (same as IMP-1)
+- **Folder Structure:** Organise by assessment section
 - **Retention:** Audit cycle + 1 year minimum
-- **Sensitivity:** Encryption configs may contain sensitive info - sanitize keys/credentials
+- **Sensitivity:** Encryption configs may contain sensitive info - sanitise keys/credentials
 
 **Evidence Quality Criteria:**
 
@@ -813,7 +813,7 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - **Complete:** Full reports/screenshots
 - **Attributable:** Clear which system it documents
 - **Verifiable:** Auditor can reproduce
-- **Protected:** Stored securely, sanitized
+- **Protected:** Stored securely, sanitised
 
 ## Evidence Types by Section
 
@@ -930,11 +930,11 @@ gcloud kms keys list --location=global --keyring=my-keyring
 - Review backup file properties (file should not be readable without decryption)
 - Test restore to verify encryption/decryption works
 
-## Evidence Sanitization
+## Evidence Sanitisation
 
 **CRITICAL:** Remove sensitive information:
 
-**Must Sanitize:**
+**Must Sanitise:**
 
 - Encryption keys (database master keys, BitLocker recovery keys in screenshots)
 - Database connection strings with embedded passwords
@@ -1290,4 +1290,4 @@ gcloud kms keys list --location=global --keyring=my-keyring
 *"Unencrypted data at rest is a promise of future harm."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

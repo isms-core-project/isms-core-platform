@@ -34,7 +34,7 @@
 
 - ISMS-POL-A.8.15 (Logging)
 - ISMS-IMP-A.8.15.1 (Log Source Inventory Assessment)
-- ISMS-IMP-A.8.15.2 (Log Collection & Centralization Assessment)
+- ISMS-IMP-A.8.15.2 (Log Collection & Centralisation Assessment)
 - ISMS-IMP-A.8.15.4 (Log Analysis & Review Assessment)
 
 ---
@@ -231,7 +231,7 @@
 | 137 | Regulatory Notes |
 | 138 | PII/Sensitive Data Present |
 | 139 | Data Types |
-| 140 | Minimization Applied |
+| 140 | Minimisation Applied |
 | 141 | Justification |
 | 142 | GDPR Article |
 | 143 | Data Type |
@@ -303,4 +303,4 @@ Approved with Conditions, Rejected
 *"Information is not knowledge. The only source of knowledge is experience."*
 - Albert Einstein
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

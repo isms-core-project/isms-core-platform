@@ -159,8 +159,8 @@ Apply only when specific business conditions trigger applicability:
 
 These frameworks inform implementation but do not constitute mandatory compliance unless contractually required:
 
-- NIST SP 800-88 Rev. 2 (Media Sanitization Guidelines)
-- DoD 5220.22-M (Data sanitization standard)
+- NIST SP 800-88 Rev. 2 (Media Sanitisation Guidelines)
+- DoD 5220.22-M (Data sanitisation standard)
 - ISO/IEC 21964 (Destruction of data carriers)
 - Industry best practices for secure disposal
 
@@ -542,4 +542,4 @@ Evidence required to demonstrate this policy is operationally effective:
 
 *This policy establishes requirements for secure areas and media handling. Implementation procedures are documented in ISMS-IMP-A.7.6-7-14 (UG/TG).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

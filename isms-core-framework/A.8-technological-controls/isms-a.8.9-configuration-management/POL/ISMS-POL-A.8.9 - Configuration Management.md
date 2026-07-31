@@ -315,7 +315,7 @@ All Emergency Changes SHALL undergo post-implementation review within **5 busine
 - Review and approve/reject/defer Normal Changes
 - Assess change impact and risk
 - Verify testing and rollback plans
-- Prioritize changes when conflicts exist
+- Prioritise changes when conflicts exist
 - Conduct post-implementation reviews for Emergency Changes
 - Identify change trends and process improvements
 
@@ -447,7 +447,7 @@ Monitoring SHOULD:
 
 - Be automated (agent-based or agentless)
 - Cover OS settings, applications, network devices, security tools
-- Integrate with SIEM for centralized alerting
+- Integrate with SIEM for centralised alerting
 - Align frequency with asset criticality
 
 **Tool Selection**: [Organisation] selects tools based on technical environment and risk assessment; tools MUST support baseline comparison and drift detection
@@ -535,7 +535,7 @@ If drift remediation SLA is not met:
 
 **Selection Criteria**: Asset type/technology, regulatory requirements (per ISMS-POL-00), industry best practices, organisational risk appetite, operational feasibility
 
-**Recognized Standards** (Examples):
+**Recognised Standards** (Examples):
 
 | Standard | Provider | Usage |
 |----------|----------|-------|
@@ -544,7 +544,7 @@ If drift remediation SLA is not met:
 | **Vendor Guides** | Microsoft, AWS, Azure, GCP, etc. | Cloud and vendor platforms |
 | **NIST Baselines** | NIST SP 800-53, 800-128 | Framework alignment |
 
-**Prioritization**: Regulatory-mandated → Industry-specific → CIS Benchmarks → Vendor guides → Custom standards
+**Prioritisation**: Regulatory-mandated → Industry-specific → CIS Benchmarks → Vendor guides → Custom standards
 
 **2.5.2 Hardening Implementation**
 
@@ -601,7 +601,7 @@ Hardening compliance SHALL:
 
 **2.5.4 Gap Remediation**
 
-**Remediation Prioritization**:
+**Remediation Prioritisation**:
 
 | Gap Risk | Timeline | Exception Approval Authority |
 |----------|----------|------------------------------|
@@ -787,7 +787,7 @@ Exceptions to configuration requirements SHALL:
 
 **Golden Image**: Pre-configured system image implementing approved baseline configuration, used for rapid consistent deployment of new systems.
 
-**Hardening**: Process of securing system configurations by implementing recognized security standards (CIS Benchmarks, DISA STIGs) and removing unnecessary services, accounts, and features.
+**Hardening**: Process of securing system configurations by implementing recognised security standards (CIS Benchmarks, DISA STIGs) and removing unnecessary services, accounts, and features.
 
 **Infrastructure as Code (IaC)**: Practice of managing configuration baselines and infrastructure provisioning through machine-readable code stored in version control systems.
 
@@ -817,4 +817,4 @@ Exceptions to configuration requirements SHALL:
 
 *This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.8.9 (UG/TG). Technical reference information is provided in ISMS-CTX-A.8.9 (NOT ISMS).*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

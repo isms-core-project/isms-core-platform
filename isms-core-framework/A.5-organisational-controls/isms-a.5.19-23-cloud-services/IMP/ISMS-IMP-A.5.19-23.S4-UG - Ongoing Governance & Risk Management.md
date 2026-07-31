@@ -1384,7 +1384,7 @@ H: ✅ Compliant (plan adequate for Medium criticality service)
 ```
 
 **Implementer Perspective:**
-*"PoC testing is effort-intensive. Prioritize Critical services. For others, verify export capability works (download data, check format)."*
+*"PoC testing is effort-intensive. Prioritise Critical services. For others, verify export capability works (download data, check format)."*
 
 **Auditor Perspective:**
 *"I'll check if PoC test actually migrated data (not just reviewed export documentation). Test reports should have screenshots and metrics."*
@@ -2002,7 +2002,7 @@ Example: /evidence/jurisdictional/Q1_2026/Salesforce_Hyperforce_EU_data_residenc
 
 ### Evidence Register (Sheet 10) - How to Use
 
-**Purpose:** Centralized audit trail linking every assessment finding to its evidence.
+**Purpose:** Centralised audit trail linking every assessment finding to its evidence.
 
 **How to Complete:**
 ```
@@ -3556,7 +3556,7 @@ Examples:
 
 - Governance activities are reactive, not systematic
 - Access reviews happen only when someone complains
-- No centralized tracking of changes or incidents
+- No centralised tracking of changes or incidents
 - Vendor risk assessments done at onboarding only
 - **Improvement Target:** Implement quarterly access reviews, basic change tracking
 
@@ -3568,9 +3568,9 @@ Examples:
 - Vendor risk monitored annually
 - **Improvement Target:** Automate reminders, integrate with CMDB/ITSM
 
-**Level 3: Defined (Standardized)**
+**Level 3: Defined (Standardised)**
 
-- Governance framework standardized across all cloud services
+- Governance framework standardised across all cloud services
 - Automated reminders for access reviews, BC tests
 - Integration with CMDB, ITSM, risk management systems
 - Vendor risk scoring methodology consistent
@@ -3584,10 +3584,10 @@ Examples:
 - BC/DR testing includes multi-vendor failover scenarios
 - **Improvement Target:** Full automation, AI-assisted risk assessment
 
-**Level 5: Optimized (Continuous Improvement)**
+**Level 5: Optimised (Continuous Improvement)**
 
 - Governance is fully automated with human oversight
-- Predictive analytics identify risks before they materialize
+- Predictive analytics identify risks before they materialise
 - Industry-leading governance practices
 - Governance framework continuously evolves
 - **Maintain excellence, share best practices**
@@ -3659,7 +3659,7 @@ ACTION ITEMS:
 | **"Cannot select dropdown values"** | Data validation removed or corrupted | Reapply data validation using instructions sheet dropdown definitions. |
 | **"Evidence files not accessible"** | File paths changed or permissions issue | Update Column J (Evidence_Location) with current paths. Verify network share permissions. |
 | **"Integration script fails"** | CMDB/ITSM API credentials expired | Regenerate API tokens, update script credentials. |
-| **"Services missing from 5.23.4 that exist in 5.23.1"** | Inventory not synchronized | Run reconciliation (Section 9.3 Step 1). Copy services from 5.23.1 inventory. |
+| **"Services missing from 5.23.4 that exist in 5.23.1"** | Inventory not synchronised | Run reconciliation (Section 9.3 Step 1). Copy services from 5.23.1 inventory. |
 | **"Approval workflow stuck"** | Approver on leave or unresponsive | Escalate to backup approver per ISMS escalation procedure. |
 | **"Quarterly review overdue"** | Coordinator missed calendar reminder | Set recurring calendar invites. Consider automated reminder script (Section 9.5). |
 
@@ -3667,7 +3667,7 @@ ACTION ITEMS:
 
 ### Contact Information & Escalation Path
 
-**Template - Customize for [Organisation].**
+**Template - Customise for [Organisation].**
 
 ```
 GOVERNANCE ASSESSMENT SUPPORT CONTACTS
@@ -3761,4 +3761,4 @@ TOOL/WORKBOOK TECHNICAL ISSUES:
 *"Governance is not an event; it is a practice."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

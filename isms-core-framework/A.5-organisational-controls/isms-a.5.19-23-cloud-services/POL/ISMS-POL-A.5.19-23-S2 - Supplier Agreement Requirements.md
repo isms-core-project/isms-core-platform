@@ -161,7 +161,7 @@ This section applies to all formal agreements with suppliers including:
 | Data categories | Types of personal data processed |
 | Data subjects | Categories of individuals (employees, customers, etc.) |
 | Processing location | Geographic restrictions if applicable (EU, CH, specific jurisdictions) |
-| Technical measures | Security controls for personal data (encryption, pseudonymization) |
+| Technical measures | Security controls for personal data (encryption, pseudonymisation) |
 | Organisational measures | Policies, training, access controls |
 | Subprocessor rules | Prior approval required, flow-down requirements |
 | Data subject rights | Support for access, rectification, deletion, portability requests |
@@ -542,7 +542,7 @@ For suppliers providing ICT services subject to DORA, agreements must include:
 - Right to object to sub-outsourcing arrangements
 - Audit rights extending to subcontractors
 
-**Implementation**: DORA-covered agreements use specialized template incorporating all Article 28-31 requirements.
+**Implementation**: DORA-covered agreements use specialised template incorporating all Article 28-31 requirements.
 
 ## NIS2 Supply Chain Security
 
@@ -593,4 +593,4 @@ For suppliers processing personal data, Data Processing Agreement (DPA) must inc
 ---
 
 *"A contract without security clauses is an invitation to breach."*
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

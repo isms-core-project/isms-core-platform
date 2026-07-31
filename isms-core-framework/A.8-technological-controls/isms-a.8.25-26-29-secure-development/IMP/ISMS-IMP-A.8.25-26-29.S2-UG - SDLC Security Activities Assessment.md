@@ -108,7 +108,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 7. **Developer_Training** - Training completion and effectiveness
 8. **Security_Defect_Management** - Defect tracking and remediation
 9. **Compliance_Summary** - Overall SDLC security compliance scores
-10. **Evidence_Register** - Centralized audit evidence tracking
+10. **Evidence_Register** - Centralised audit evidence tracking
 11. **Approval_Sign_Off** - Stakeholder review and approval workflow
 
 **Estimated Completion Time:**
@@ -612,7 +612,7 @@ Score = Average of:
 
 - [ ] Authentication and authorisation logic
 - [ ] Cryptography implementation
-- [ ] Input validation and sanitization
+- [ ] Input validation and sanitisation
 - [ ] File upload and processing
 - [ ] Payment processing
 - [ ] PII processing
@@ -1029,7 +1029,7 @@ Score = Average of:
 
 Based on overall score:
 
-- **90-100%:** Level 4-5 (Quantitatively Managed / Optimizing)
+- **90-100%:** Level 4-5 (Quantitatively Managed / Optimising)
 - **70-89%:** Level 3 (Defined)
 - **50-69%:** Level 2 (Managed)
 - **<50%:** Level 1 (Initial/Ad Hoc)
@@ -1078,8 +1078,8 @@ If current maturity is <Level 3, provide phased roadmap:
 
 **Completion Tips:**
 
-- Review all scores before finalizing (verify they make sense)
-- Prioritize gaps by impact and effort (quick wins first)
+- Review all scores before finalising (verify they make sense)
+- Prioritise gaps by impact and effort (quick wins first)
 - Be specific in recommendations (not "improve security")
 - Consider dependencies (some improvements require others first)
 - Align recommendations with organisational maturity and resources
@@ -1088,12 +1088,12 @@ If current maturity is <Level 3, provide phased roadmap:
 
 - ❌ Generic recommendations ("improve security processes")
 - ❌ Unrealistic roadmap (trying to jump from Level 1 to Level 5 in 3 months)
-- ❌ Not prioritizing (recommending 20 actions with no prioritization)
+- ❌ Not prioritising (recommending 20 actions with no prioritisation)
 - ❌ Ignoring resource constraints (recommending expensive tools for small team)
 
 ## Sheet 10: Evidence_Register
 
-**Purpose:** Centralized register of all SDLC security evidence for audit readiness.
+**Purpose:** Centralised register of all SDLC security evidence for audit readiness.
 
 **Completion Time:** 15-30 minutes
 
@@ -1119,7 +1119,7 @@ If current maturity is <Level 3, provide phased roadmap:
 
 **Completion Tips:**
 
-- Maintain a centralized evidence repository (SharePoint, Confluence, etc.)
+- Maintain a centralised evidence repository (SharePoint, Confluence, etc.)
 - Use consistent naming conventions for evidence documents
 - Update evidence register whenever new evidence is collected
 - Mark outdated evidence clearly and schedule updates
@@ -1165,7 +1165,7 @@ Required approvers:
 - Schedule approval meetings in advance
 - Share draft findings with approvers before formal review
 - Document any disagreements or clarifications in comments
-- Obtain all signatures before finalizing assessment
+- Obtain all signatures before finalising assessment
 
 **Common Mistakes:**
 
@@ -1435,7 +1435,7 @@ Before submitting assessment for peer review, complete this quality checklist:
 **Evidence Collection:**
 
 - [ ] Evidence collected for all key findings
-- [ ] Evidence stored in centralized repository
+- [ ] Evidence stored in centralised repository
 - [ ] Screenshots are clear and readable
 - [ ] Reports are current (not outdated)
 - [ ] Interview notes are documented
@@ -1605,4 +1605,4 @@ Good luck! 📋✅
 *"Software security is a process, not a feature."*
 — Gary McGraw
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -934,7 +934,7 @@ Before submitting assessment for approval, verify:
 - **80-99%**: Minor segmentation gaps
 - **<80%**: POOR - Network segmentation not enforced
 
-## Gap Prioritization
+## Gap Prioritisation
 
 **Priority 1 - CRITICAL (Immediate Action - Within 7 Days):**
 
@@ -983,7 +983,7 @@ Before submitting assessment for approval, verify:
 
 - Validate access control configurations
 - Verify permission audit accuracy
-- Review gap prioritization
+- Review gap prioritisation
 - Confirm evidence completeness
 - Approve and forward to CISO
 
@@ -1002,7 +1002,7 @@ Assessment is approved when:
 - [ ] All systems with access controls audited
 - [ ] Permission audits completed
 - [ ] Access control effectiveness tested (or test planned)
-- [ ] Critical gaps identified and prioritized
+- [ ] Critical gaps identified and prioritised
 - [ ] Evidence collected and linked
 - [ ] Remediation timeline defined
 
@@ -1023,4 +1023,4 @@ After CISO approval:
 *"The least privilege is the most security."*
 — Anon
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

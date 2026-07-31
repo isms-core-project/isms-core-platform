@@ -1,7 +1,7 @@
 <!-- ISMS-CORE:IMP:ISMS-IMP-A.8.17.3-TG:framework:TG:a.8.17-s3 -->
 **ISMS-IMP-A.8.17.3-TG - Exception Management**
 **Technical Specification**
-### ISO/IEC 27001:2022 Control A.8.17: Clock Synchronization
+### ISO/IEC 27001:2022 Control A.8.17: Clock Synchronisation
 
 ---
 
@@ -12,8 +12,8 @@
 | **Document Title** | Exception Management |
 | **Document Type** | Implementation Specification |
 | **Document ID** | ISMS-IMP-A.8.17.3-TG |
-| **Related Policy** | ISMS-POL-A.8.17 (Clock Synchronization) |
-| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.17 (Clock Synchronization) |
+| **Related Policy** | ISMS-POL-A.8.17 (Clock Synchronisation) |
+| **Control Reference** | ISO/IEC 27001:2022 Annex A.8.17 (Clock Synchronisation) |
 | **Document Creator** | Chief Information Security Officer (CISO) |
 | **Document Owner** | CISO |
 | **Created Date** | [Date] |
@@ -32,9 +32,9 @@
 
 **Related Documents**:
 
-- ISMS-POL-A.8.17 (Clock Synchronization)
+- ISMS-POL-A.8.17 (Clock Synchronisation)
 - ISMS-IMP-A.8.17.1 (Time Source Configuration)
-- ISMS-IMP-A.8.17.2 (Synchronization Verification Process)
+- ISMS-IMP-A.8.17.2 (Synchronisation Verification Process)
 
 ---
 
@@ -144,4 +144,4 @@ Deferred
 *"Lost time is never found again."*
 — Benjamin Franklin
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

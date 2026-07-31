@@ -34,7 +34,7 @@
 
 - ISMS-POL-A.8.15 (Logging)
 - ISMS-IMP-A.8.15.1 (Log Source Inventory Assessment)
-- ISMS-IMP-A.8.15.2 (Log Collection & Centralization Assessment)
+- ISMS-IMP-A.8.15.2 (Log Collection & Centralisation Assessment)
 - ISMS-IMP-A.8.15.3 (Log Protection & Retention Assessment)
 
 ---
@@ -218,4 +218,4 @@ Approved, Approved with Conditions, Rejected
 *"We can only see a short distance ahead, but we can see plenty there that needs to be done."*
 - Alan Turing
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-07-31 -->
