@@ -299,7 +299,7 @@ Certain AI practices are **prohibited** due to unacceptable risks to fundamental
 - Exceptions (Article 5(2)): Strictly necessary and proportionate uses:
   - Targeted search for specific missing persons, abduction victims
   - Prevention of specific, substantial, imminent threat (terrorist attack)
-  - Localization/identification of person suspected of serious criminal offense (defined in Annex II - serious crimes)
+  - Localisation/identification of person suspected of serious criminal offense (defined in Annex II - serious crimes)
 - Requires prior judicial or independent administrative authorisation (except emergency)
 
 **ISO 27001:2022 Mapping**:
@@ -338,10 +338,10 @@ High-risk AI systems face **strict requirements** due to potential significant r
 | Category | Use Cases | Examples |
 |----------|-----------|----------|
 | **1. Biometric identification and categorisation** | Remote biometric identification, biometric categorisation (sensitive attributes exception), emotion recognition | Facial recognition access control, biometric categorisation systems |
-| **2. Critical infrastructure** | Management and operation of critical digital infrastructure, road traffic, water, gas, heating, electricity supply | AI-controlled traffic management, power grid optimization |
+| **2. Critical infrastructure** | Management and operation of critical digital infrastructure, road traffic, water, gas, heating, electricity supply | AI-controlled traffic management, power grid optimisation |
 | **3. Education and vocational training** | Determining access/admission, assessing students, detecting exam cheating | Automated university admissions, exam proctoring AI |
 | **4. Employment** | Recruitment, screening, evaluation/promotion decisions, task allocation, monitoring/evaluation of work performance, termination | AI resume screening, performance evaluation systems |
-| **5. Essential private/public services** | Credit scoring, assessing eligibility for public assistance, emergency response prioritization | Credit decision algorithms, benefit eligibility AI |
+| **5. Essential private/public services** | Credit scoring, assessing eligibility for public assistance, emergency response prioritisation | Credit decision algorithms, benefit eligibility AI |
 | **6. Law enforcement** | Individual risk assessment (victims, perpetrators, reoffending), polygraphs, emotion recognition, detecting deep fakes, evaluation of evidence reliability | Recidivism prediction, AI-assisted interrogation |
 | **7. Migration, asylum, border control** | Examination of applications, detection of fraudulent documents, assessing security/health risks, polygraph/lie detection | Automated visa screening, document verification AI |
 | **8. Administration of justice/democratic processes** | Assisting judicial authorities in legal research/interpretation, AI-influencing election outcomes | Legal research AI, electoral prediction systems |
@@ -858,7 +858,7 @@ For GPAI models with **systemic risk** (see Section 7.3):
 8. **Energy Efficiency** (Article 54(1)(d)):
 
    - Report on energy consumption during training
-   - Optimize energy efficiency where feasible
+   - Optimise energy efficiency where feasible
 
 ## Systemic Risk GPAI Models
 
@@ -1058,7 +1058,7 @@ Organisations with ISO 27001 typically require **40-60% additional effort** to a
 
 - Assess current AI governance and documentation
 - Identify gaps against AI Act requirements
-- Prioritize remediation (prohibited practices first, then high-risk)
+- Prioritise remediation (prohibited practices first, then high-risk)
 - Estimate budget and resources
 - Engage legal counsel for complex classification decisions
 
@@ -1080,7 +1080,7 @@ Organisations with ISO 27001 typically require **40-60% additional effort** to a
 
 **Phase 5: Conformity Assessment (Months 18-24)**
 
-- Finalize technical documentation
+- Finalise technical documentation
 - Conduct internal assessment or engage notified body
 - Address any non-conformities identified
 - Prepare EU declaration of conformity
@@ -1216,7 +1216,7 @@ AI Act compliance costs vary significantly by:
 **Challenge 7: GPAI Model Obligations**
 
 - Copyright compliance for training data difficult to verify
-- Transparency summaries require standardized formats (still being developed)
+- Transparency summaries require standardised formats (still being developed)
 - Systemic risk threshold (10^25 FLOPs) may capture many foundation models
 
 ## Best Practices
@@ -1283,7 +1283,7 @@ AI Act compliance costs vary significantly by:
 
 **AI Standards Hub**:
 
-- CEN-CENELEC AI standardization activities
+- CEN-CENELEC AI standardisation activities
 - Website: https://www.cencenelec.eu/areas-of-work/cen-cenelec-topics/artificial-intelligence/
 
 **Legal and Consulting Resources**:

@@ -121,7 +121,7 @@ Define minimum capabilities required from change management systems (ITSM tools,
 - Capture all required fields per Section 3 (Form Template)
 - Support rich text descriptions and file attachments
 - Link related changes, incidents, problems
-- Tag/categorize changes (by type, affected systems, priority)
+- Tag/categorise changes (by type, affected systems, priority)
 
 **Assessment:** Can users submit complete change requests? Are all required fields captured?
 
@@ -192,7 +192,7 @@ Define minimum capabilities required from change management systems (ITSM tools,
 - Average change duration
 - Change-related incidents
 - PIR completion rate
-- Standard change utilization
+- Standard change utilisation
 - Trend analysis
 
 ---
@@ -563,7 +563,7 @@ Provide detailed methodology for assessing change risk based on impact and likel
 ## Configuration Best Practices
 
 **When configuring change management tools:**
-1. Start with out-of-box workflows, customize only when necessary
+1. Start with out-of-box workflows, customise only when necessary
 2. Implement required fields to enforce completeness
 3. Configure approval workflows based on risk matrix
 4. Set up email notifications for all stakeholders
@@ -623,4 +623,4 @@ Provide detailed methodology for assessing change risk based on impact and likel
 
 *This technical reference supports implementation of ISMS-POL-A.8.32. All binding requirements are defined in the policy document.*
 
-<!-- QA_VERIFIED: 2026-01-31 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

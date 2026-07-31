@@ -42,7 +42,7 @@ The information contained herein provides technical guidance and methodological 
 
 ## Reference Objective
 
-This document provides **actionable security criteria** for code reviewers. It operationalizes the code review requirements from ISMS-POL-A.8.28 Section 2.3, translating policy into practical review steps.
+This document provides **actionable security criteria** for code reviewers. It operationalises the code review requirements from ISMS-POL-A.8.28 Section 2.3, translating policy into practical review steps.
 
 *"The first principle is that you must not fool yourself—and you are the easiest person to fool." - Richard Feynman*
 
@@ -220,7 +220,7 @@ This document provides **actionable security criteria** for code reviewers. It o
 
 - [ ] **SQL injection prevented**: Parameterized queries used, no string concatenation
   - *Check for*: String concatenation in SQL (f-strings, +, .format()), dynamic query building
-  - *Verify*: All database queries use parameterized statements or ORM safely
+  - *Verify*: All database queries use parameterised statements or ORM safely
   - *Example*: See ISMS-CTX-A.8.28 Python Section 2.2, SQL Section 7
 
 - [ ] **Command injection prevented**: No direct shell calls with user input
@@ -610,4 +610,4 @@ Findings:
 **END OF ISMS-REF-A.8.28**
 
 *This technical reference supports ISMS-POL-A.8.28 implementation. Binding requirements are in the policy, not this document.*
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -652,13 +652,13 @@ roleRef:
 **Development Cluster**:
 
 - Node count: Auto-scaling 2-10 nodes
-- Node size: Smaller instance types (cost optimization)
+- Node size: Smaller instance types (cost optimisation)
 - Monitoring: Basic (Prometheus)
 
 **Production Cluster**:
 
 - Node count: Auto-scaling 5-50 nodes
-- Node size: Performance-optimized instances
+- Node size: Performance-optimised instances
 - Monitoring: Full observability (Prometheus, Grafana, Jaeger tracing)
 - High Availability: Multi-AZ node pools
 
@@ -854,4 +854,4 @@ Database Tier VLAN (most restricted)
 
 *This technical reference supports ISMS-POL-A.8.31. Implementation decisions should be based on organisational risk assessment and approved by CISO.*
 
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

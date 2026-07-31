@@ -70,7 +70,7 @@ This document provides technical reference for log format standards, field namin
 - Technical implementation of logging requirements per ISMS-POL-A.8.15
 - Selection of appropriate log formats based on system type and integration requirements
 - Development of log parsing rules and SIEM integration
-- Standardization of field names across organisational log sources
+- Standardisation of field names across organisational log sources
 - Understanding of industry standard log formats (Syslog, CEF, JSON)
 - Future log format evolution and parser maintenance
 
@@ -190,7 +190,7 @@ YYYY-MM-DDTHH:MM:SS.SSSSSS+TZ
 
 - Always include timezone information
 - Use millisecond precision for high-volume systems where event ordering is critical
-- Synchronize system clocks via NTP per ISMS-POL-A.8.17
+- Synchronise system clocks via NTP per ISMS-POL-A.8.17
 - Use UTC for multi-site environments to simplify correlation
 
 ## Syslog Structured Data
@@ -242,7 +242,7 @@ logging source-interface Loopback0
 
 ## Overview
 
-**Common Event Format (CEF)** is a standardized log format for security events designed for SIEM integration.
+**Common Event Format (CEF)** is a standardised log format for security events designed for SIEM integration.
 
 **Developed By**: ArcSight (now Micro Focus), widely adopted industry standard
 
@@ -542,7 +542,7 @@ CEF:0|F5 Networks|BIG-IP ASM|15.1.0|SQL_INJECTION|SQL Injection Attack|9|rt=Jan 
 
 1. **Always include timestamp** with timezone (ISO 8601 format)
 2. **Use snake_case** for field names (consistent convention)
-3. **Minimize nesting** (1-2 levels maximum for readability and parsing efficiency)
+3. **Minimise nesting** (1-2 levels maximum for readability and parsing efficiency)
 4. **Avoid logging sensitive data** (no passwords, full credit cards, PII unless necessary)
 5. **Include context identifiers** (request_id, session_id, user_id) for correlation
 6. **Use structured data** instead of concatenating strings in message field
@@ -568,7 +568,7 @@ CEF:0|F5 Networks|BIG-IP ASM|15.1.0|SQL_INJECTION|SQL Injection Attack|9|rt=Jan 
 
 ## Timezone Handling
 
-**Recommendation**: Use UTC for all centralized log storage
+**Recommendation**: Use UTC for all centralised log storage
 
 **Rationale**:
 
@@ -581,7 +581,7 @@ CEF:0|F5 Networks|BIG-IP ASM|15.1.0|SQL_INJECTION|SQL Injection Attack|9|rt=Jan 
 
 - Acceptable for single-site deployments
 - MUST include timezone offset (e.g., +01:00, -05:00)
-- SIEM must normalize to UTC for correlation
+- SIEM must normalise to UTC for correlation
 
 ## Precision Requirements
 
@@ -598,16 +598,16 @@ CEF:0|F5 Networks|BIG-IP ASM|15.1.0|SQL_INJECTION|SQL Injection Attack|9|rt=Jan 
 - Useful for very high-performance systems
 - Database transaction logging with sub-millisecond granularity
 
-## Time Synchronization
+## Time Synchronisation
 
-**Requirement**: All log sources MUST synchronize time with authoritative time source per ISMS-POL-A.8.17 (Clock Synchronization).
+**Requirement**: All log sources MUST synchronise time with authoritative time source per ISMS-POL-A.8.17 (Clock Synchronisation).
 
 **NTP Configuration**:
 
 - Primary NTP server (Stratum 1 or 2)
 - Secondary NTP servers for redundancy
 - Maximum clock drift threshold: ±100ms
-- Alert on NTP synchronization failure
+- Alert on NTP synchronisation failure
 
 **Importance**: Accurate timestamps are critical for:
 
@@ -792,7 +792,7 @@ cs1=C:\\Program Files\\Application
 | **Network Devices** (Firewall, Router, Switch) | Syslog (RFC 5424) | Native support, minimal configuration |
 | **Unix/Linux OS** | Syslog (RFC 5424) | Native support, standard infrastructure |
 | **Windows OS** | Windows Event Log (native) | Native support, convert to CEF or JSON for SIEM |
-| **Security Tools** (IDS, Firewall, WAF) | CEF | SIEM integration, standardized security events |
+| **Security Tools** (IDS, Firewall, WAF) | CEF | SIEM integration, standardised security events |
 | **Web Applications** | JSON | Easy to generate, flexible schema |
 | **Microservices** | JSON | Cloud-native, container-friendly |
 | **Cloud Services** (AWS, Azure, GCP) | JSON (CloudWatch, Azure Monitor, Cloud Logging) | Native format, seamless integration |
@@ -802,17 +802,17 @@ cs1=C:\\Program Files\\Application
 
 **Parser Development**:
 
-- Syslog: Use built-in parsers, customize for structured data extraction
+- Syslog: Use built-in parsers, customise for structured data extraction
 - CEF: Use built-in CEF parsers, map extension fields to SIEM schema
 - JSON: Configure JSON parser, define field mappings
 
 **Field Mapping**:
 
-- Map log source fields to SIEM common schema (normalize field names)
+- Map log source fields to SIEM common schema (normalise field names)
 - Create calculated fields for derived data (e.g., geo-location from IP)
 - Enrich events with threat intelligence (malicious IP lookups)
 
-**Performance Optimization**:
+**Performance Optimisation**:
 
 - Use appropriate log level filtering (INFO and above for production)
 - Implement sampling for high-volume, low-value logs (debug logs)
@@ -886,7 +886,7 @@ This document provides **technical implementation guidance** that may inform:
 
 - Log format selection during system onboarding (ISMS-IMP-A.8.15.1)
 - Log parser development for SIEM integration (ISMS-IMP-A.8.15.2)
-- Field name standardization across organisational log sources
+- Field name standardisation across organisational log sources
 - Training for developers and system administrators on logging standards
 
 This document does NOT:
@@ -903,4 +903,4 @@ All logging control requirements are defined exclusively in ISMS-POL-A.8.15 and 
 **END OF DOCUMENT**
 
 *This is a technical reference document for awareness purposes only. It does not establish ISMS requirements or create compliance obligations.*
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

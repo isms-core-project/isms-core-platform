@@ -34,7 +34,7 @@
 
 ## Purpose
 
-This document provides standardized forms and templates to support operational implementation of ISMS-POL-A.8.10 (Information Deletion Policy).
+This document provides standardised forms and templates to support operational implementation of ISMS-POL-A.8.10 (Information Deletion Policy).
 
 **Forms Included**:
 1. Data Subject Erasure Request Form (GDPR Article 17 / Swiss nDSG)
@@ -52,7 +52,7 @@ This document provides standardized forms and templates to support operational i
 ## Form 1: Data Subject Erasure Request Form
 
 ### Purpose
-Standardized form for handling GDPR Article 17 "Right to Erasure" and Swiss nDSG erasure requests from data subjects.
+Standardised form for handling GDPR Article 17 "Right to Erasure" and Swiss nDSG erasure requests from data subjects.
 
 ### Instructions
 
@@ -646,7 +646,7 @@ Renewal follows same approval process
 ## Form 4: Deletion Log Template
 
 ### Purpose
-Standardized logging format for deletion activities.
+Standardised logging format for deletion activities.
 
 ---
 
@@ -712,7 +712,7 @@ Total Media Count: ________________________________________________
 
 ---
 
-**Destruction Method**: ⬜ Shredding ⬜ Degaussing ⬜ Incineration ⬜ Pulverization ⬜ Other: __________
+**Destruction Method**: ⬜ Shredding ⬜ Degaussing ⬜ Incineration ⬜ Pulverisation ⬜ Other: __________
 
 **Destruction Standard**: ⬜ DIN 66399 (specify level: _____) ⬜ NIST SP 800-88 ⬜ Other: __________
 
@@ -912,4 +912,4 @@ Certificate Filed Location: ______________________________________
 ---
 
 *These forms support operational implementation of ISMS-POL-A.8.10. Update as needed based on operational experience.*
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

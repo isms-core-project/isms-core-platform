@@ -110,7 +110,7 @@ Symmetric block ciphers commonly encountered in modern systems:
 | Algorithm | Block Size | Key Lengths | Status | Common Use Cases |
 |-----------|------------|-------------|--------|------------------|
 | **AES** (Advanced Encryption Standard) | 128-bit | 128, 192, 256-bit | Modern, widely deployed | Data encryption, TLS, VPN, disk encryption |
-| **ChaCha20** | 64-byte stream | 256-bit | Modern, mobile-optimized | TLS (mobile devices), VPN (WireGuard) |
+| **ChaCha20** | 64-byte stream | 256-bit | Modern, mobile-optimised | TLS (mobile devices), VPN (WireGuard) |
 | **3DES** (Triple DES) | 64-bit | 168-bit (effective 112-bit) | Legacy, deprecated | Legacy system support only |
 | **DES** (Data Encryption Standard) | 64-bit | 56-bit | Obsolete, broken | Historical reference only |
 | **Blowfish** | 64-bit | 32-448 bit | Legacy | Historical reference, replaced by AES |
@@ -230,7 +230,7 @@ Hash functions commonly encountered:
 
 ## Password Hashing Functions
 
-Specialized functions for password storage:
+Specialised functions for password storage:
 
 | Function | Type | Status | Notes |
 |----------|------|--------|-------|
@@ -256,13 +256,13 @@ The TLS cipher suite examples below are illustrative and non-exhaustive. They ar
 
 ## TLS 1.3 Cipher Suites
 
-TLS 1.3 simplified cipher suite design (5 standardized suites):
+TLS 1.3 simplified cipher suite design (5 standardised suites):
 
 | Cipher Suite | Key Exchange | Bulk Cipher | Status |
 |--------------|--------------|-------------|--------|
 | **TLS_AES_256_GCM_SHA384** | ECDHE | AES-256-GCM | Modern, recommended |
 | **TLS_AES_128_GCM_SHA256** | ECDHE | AES-128-GCM | Modern, recommended |
-| **TLS_CHACHA20_POLY1305_SHA256** | ECDHE | ChaCha20-Poly1305 | Modern, mobile-optimized |
+| **TLS_CHACHA20_POLY1305_SHA256** | ECDHE | ChaCha20-Poly1305 | Modern, mobile-optimised |
 | **TLS_AES_128_CCM_SHA256** | ECDHE | AES-128-CCM | Modern, IoT/constrained |
 | **TLS_AES_128_CCM_8_SHA256** | ECDHE | AES-128-CCM (8-byte tag) | Modern, constrained devices |
 
@@ -338,11 +338,11 @@ Classification of algorithm maturity and adoption status:
 | **Legacy** | Aging, being replaced, limited new deployment | 3DES, DSA, SHA-1 (non-certificate), TLS 1.1 |
 | **Deprecated** | No longer recommended, phase-out in progress | SSL v3, TLS 1.0, RC4, MD5 signatures |
 | **Obsolete** | Cryptographically broken or severely weakened | DES, MD5 (security use), RC4, SHA-1 (certificates) |
-| **Emerging** | Standardized but limited deployment | Post-quantum algorithms (ML-KEM, ML-DSA) |
+| **Emerging** | Standardised but limited deployment | Post-quantum algorithms (ML-KEM, ML-DSA) |
 
 ## Post-Quantum Cryptography Status
 
-NIST Post-Quantum Cryptography (PQC) standardization:
+NIST Post-Quantum Cryptography (PQC) standardisation:
 
 | Algorithm | Type | Status (2024-2025) | Notes |
 |-----------|------|-------------------|-------|
@@ -353,7 +353,7 @@ NIST Post-Quantum Cryptography (PQC) standardization:
 
 **Industry Observations**:
 
-- Post-quantum algorithms being standardized but not yet widely deployed
+- Post-quantum algorithms being standardised but not yet widely deployed
 - Hybrid modes (PQC + classical) expected during transition period
 - TLS 1.3 hybrid key exchange (X25519 + ML-KEM) under development
 - Certificate authorities beginning PQC trial issuance
@@ -456,7 +456,7 @@ Organisations commonly monitor algorithm status through:
 
 This reference document may be updated when:
 
-- Major algorithm standardization occurs (NIST, IETF RFCs)
+- Major algorithm standardisation occurs (NIST, IETF RFCs)
 - Significant algorithm deprecations announced
 - TLS/SSL protocol updates published
 - Post-quantum cryptography deployment milestones reached
@@ -494,4 +494,4 @@ All cryptographic control requirements are defined exclusively in ISMS-POL-A.8.2
 
 *This is a technical reference document for awareness purposes only. It does not establish ISMS requirements or create compliance obligations.*
 
-<!-- QA_VERIFIED: 2026-01-31 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

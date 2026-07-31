@@ -343,7 +343,7 @@ Personal data must be **collected for specified, explicit and legitimate purpose
 
 ---
 
-**Principle 3: Data Minimization** (Art. 5(1)(c))
+**Principle 3: Data Minimisation** (Art. 5(1)(c))
 
 Personal data must be **adequate, relevant and limited to what is necessary** in relation to purposes for which they are processed.
 
@@ -404,7 +404,7 @@ Personal data must be **kept in a form which permits identification of data subj
 **Retention Principles**:
 
 - Define retention period based on purpose
-- Delete or anonymize when no longer needed
+- Delete or anonymise when no longer needed
 - Cannot retain "just in case we need it later"
 - Document retention rationale
 
@@ -424,7 +424,7 @@ Personal data must be **kept in a form which permits identification of data subj
 - **Retention schedules**: Document retention period for each data category with justification
 - **Automated deletion**: Implement automated deletion rules where feasible
 - **Archiving vs. Deletion**: If long-term retention needed, consider archiving with restricted access vs. online operational storage
-- **Anonymization**: If statistical value remains but identification no longer needed, anonymize rather than delete
+- **Anonymisation**: If statistical value remains but identification no longer needed, anonymise rather than delete
 
 **Example Retention Periods**:
 
@@ -743,7 +743,7 @@ Data subject has given **explicit consent** to processing for one or more specif
 
 - Medical research participation
 - Sharing health data with family members
-- Processing religious/philosophical beliefs for specialized services
+- Processing religious/philosophical beliefs for specialised services
 
 **Limitations**:
 
@@ -863,7 +863,7 @@ Processing necessary for archiving in public interest, scientific/historical res
 
 - Appropriate safeguards (technical/organisational measures)
 - Data minimisation where possible
-- Pseudonymization where possible
+- Pseudonymisation where possible
 - May involve derogations from data subject rights (limited scope)
 
 ---
@@ -946,7 +946,7 @@ Supervisory authorities consider (non-exhaustive):
 
 - Amazon (Luxembourg DPA, 2021): €746 million - Violations of data protection principles, targeted advertising without proper legal basis
 - Meta/Facebook (Ireland DPC, 2023): €1.2 billion - Unlawful data transfers to US following Schrems II
-- Google (CNIL France, 2019): €50 million - Lack of transparency, inadequate consent for personalized ads
+- Google (CNIL France, 2019): €50 million - Lack of transparency, inadequate consent for personalised ads
 - H&M (Hamburg DPA, 2020): €35.3 million - Excessive employee surveillance and data collection
 - British Airways (UK ICO, 2020): £20 million (reduced from £183m) - Data breach affecting 400,000 customers, inadequate security
 
@@ -957,7 +957,7 @@ Supervisory authorities consider (non-exhaustive):
 - Repeat violations treated more harshly
 - Self-reporting and remediation efforts can reduce penalties
 - Inadequate security receives severe penalties
-- Cross-border transfer violations prioritized post-Schrems II
+- Cross-border transfer violations prioritised post-Schrems II
 
 ---
 
@@ -977,7 +977,7 @@ Supervisory authorities consider (non-exhaustive):
 **Switzerland-EU Relationship**:
 
 - Switzerland is **NOT** in EU or EEA
-- Switzerland has adequacy decision from EU (recognized as providing adequate data protection)
+- Switzerland has adequacy decision from EU (recognised as providing adequate data protection)
 - Adequacy facilitates data transfers between EU and Switzerland
 - Revised FADP necessary to maintain adequacy status post-GDPR
 
@@ -1122,12 +1122,12 @@ Processing must be carried out in **good faith** and be **proportionate**.
 **"Proportionate"**: Processing must be proportionate to purpose (similar to GDPR data minimisation).
 
 **3. Purpose Limitation** (Art. 6(3)):
-Personal data may only be **collected for a specific purpose** that data subject can recognize; may only be **further processed in manner compatible with this purpose**.
+Personal data may only be **collected for a specific purpose** that data subject can recognise; may only be **further processed in manner compatible with this purpose**.
 
 **Alignment with GDPR**: Same as GDPR purpose limitation (Art. 5(1)(b)).
 
-**4. Data Minimization / Storage Limitation** (Art. 6(4)):
-Personal data shall be **destroyed or anonymized as soon as no longer required** for purpose of processing.
+**4. Data Minimisation / Storage Limitation** (Art. 6(4)):
+Personal data shall be **destroyed or anonymised as soon as no longer required** for purpose of processing.
 
 **Combines GDPR Concepts**: Combines GDPR data minimisation (collect only necessary) and storage limitation (delete when no longer needed).
 
@@ -1385,7 +1385,7 @@ Transfer permitted without adequacy/safeguards if:
 | **Breach Notification - Timeline** | 72 hours to authority | "As quickly as possible" (no specific timeline) | GDPR more prescriptive |
 | **Breach Notification - Data Subjects** | Mandatory communication if "high risk" (Art. 34) | No explicit requirement | GDPR more prescriptive |
 | **Penalties** | Up to €20M or 4% global turnover (administrative fines on organisations) | Up to CHF 250,000 (criminal fines on individuals who intentionally/negligently violate) | Different enforcement model: GDPR targets organisations, FADP targets individuals |
-| **Enforcement** | EU DPAs (decentralized), EDPB coordination | FDPIC (centralized Swiss authority) | GDPR more complex (multiple DPAs), FADP simpler (single authority) |
+| **Enforcement** | EU DPAs (decentralised), EDPB coordination | FDPIC (centralised Swiss authority) | GDPR more complex (multiple DPAs), FADP simpler (single authority) |
 | **Age of Consent (Children)** | 16 (member states may lower to 13) | 13 | FADP lower threshold than default GDPR |
 
 ---
@@ -1559,7 +1559,7 @@ European Commission considers:
 
 **Swiss Adequacy List**:
 
-Switzerland recognizes adequacy for:
+Switzerland recognises adequacy for:
 
 - **All EU/EEA member states** (reciprocal adequacy with EU)
 - **United Kingdom**
@@ -1636,7 +1636,7 @@ Even with SCCs in place, data exporter must assess whether:
 1. **Know your transfers**: Map all transfers to third countries
 2. **Verify transfer tool**: Check if SCCs or other mechanism used
 3. **Assess third country**: Examine laws (data access, surveillance, conflicts of law)
-4. **Identify supplementary measures**: Technical (encryption, pseudonymization) or organisational (data minimisation)
+4. **Identify supplementary measures**: Technical (encryption, pseudonymisation) or organisational (data minimisation)
 5. **Procedural steps**: Document TIA, inform data subjects if cannot transfer
 6. **Re-evaluate**: Periodically review as circumstances change
 
@@ -1649,7 +1649,7 @@ Even with SCCs in place, data exporter must assess whether:
 **Technical Measures**:
 
 - **End-to-end encryption**: Data encrypted by exporter, importer has no decryption key
-- **Pseudonymization**: Identification fields replaced with pseudonyms held separately
+- **Pseudonymisation**: Identification fields replaced with pseudonyms held separately
 - **Data minimisation**: Transfer only strictly necessary data
 - **Access controls**: Restrict importer access to minimum necessary
 - **Confidentiality commitments**: Enhanced contractual confidentiality beyond SCC standard
@@ -1769,7 +1769,7 @@ Transfer permitted if **necessary for performance of contract** between data sub
 
 **Public Interest Derogation** (GDPR Art. 49(1)(d), FADP Art. 17(1)(c)):
 
-Transfer permitted if necessary for **important reasons of public interest** recognized in EU/member state law or Swiss law.
+Transfer permitted if necessary for **important reasons of public interest** recognised in EU/member state law or Swiss law.
 
 **Examples**: International judicial cooperation, public health emergencies, humanitarian purposes.
 
@@ -1920,7 +1920,7 @@ Transfer permitted if **NOT repetitive**, concerns **limited number of data subj
 
 **Google (CNIL France, 2019) - €50 million**:
 
-- **Violation**: Lack of transparency, inadequate consent for personalized ads
+- **Violation**: Lack of transparency, inadequate consent for personalised ads
 - **Lesson**: Consent must be freely given, specific, granular (cannot bundle); transparency obligations strict
 
 **H&M (Hamburg DPA, 2020) - €35.3 million**:
@@ -2054,4 +2054,4 @@ This context document provides supplementary information about the privacy regul
 
 *"Context informs, but policy governs. Understand the landscape to implement effectively."*
 
-<!-- QA_VERIFIED: 2026-01-31 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

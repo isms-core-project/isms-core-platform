@@ -144,7 +144,7 @@ This reference organises PCI DSS requirements by:
 
 - Protect cardholder data from theft and fraud
 - Establish minimum security requirements
-- Standardize security controls across payment ecosystem
+- Standardise security controls across payment ecosystem
 - Reduce risk of data breaches
 
 ## Who Must Comply with PCI DSS?
@@ -204,7 +204,7 @@ Payment brands (Visa, Mastercard, etc.) classify merchants into levels based on 
 
 **Scope Reduction Strategies**:
 
-- **Tokenization**: Replace PAN with non-sensitive token
+- **Tokenisation**: Replace PAN with non-sensitive token
 - **Point-to-point encryption (P2PE)**: Encrypt at point of entry, decrypt outside merchant environment
 - **Network segmentation**: Isolate CDE from rest of network
 - **Reduce data storage**: Don't store CHD if not needed
@@ -383,7 +383,7 @@ Payment brands (Visa, Mastercard, etc.) classify merchants into levels based on 
 
 **3.5 Primary Account Number (PAN) secured wherever stored**
 
-- **3.5.1**: PAN rendered unreadable (encryption, truncation, hashing, tokenization)
+- **3.5.1**: PAN rendered unreadable (encryption, truncation, hashing, tokenisation)
 - **3.5.1.1**: Hashes use keyed hash (HMAC) and key secured - **[New v4.0.1, Best Practice until March 31, 2025]**
 - **3.5.1.2**: PANs secured with disk-level or partition-level encryption - **[New v4.0.1, Best Practice until March 31, 2025]**
 - **3.5.1.3**: Cryptoperiods defined and implemented
@@ -709,7 +709,7 @@ Payment brands (Visa, Mastercard, etc.) classify merchants into levels based on 
 
 - **10.3.1**: Read access to audit log files limited to those with job-related need
 - **10.3.2**: Audit log files protected from unauthorised modification
-- **10.3.3**: Audit log files promptly backed up to secure centralized log server
+- **10.3.3**: Audit log files promptly backed up to secure centralised log server
 - **10.3.4**: File integrity monitoring or change detection software used on audit logs
 
 **10.4 Audit logs are reviewed to identify anomalies or suspicious activity**
@@ -723,10 +723,10 @@ Payment brands (Visa, Mastercard, etc.) classify merchants into levels based on 
 
 - **10.5.1**: Audit log history retained for at least 12 months (minimum 3 months immediately available)
 
-**10.6 Time-synchronization mechanisms support consistent time settings across all systems**
+**10.6 Time-synchronisation mechanisms support consistent time settings across all systems**
 
-- **10.6.1**: System clocks are synchronized using time synchronization technology
-- **10.6.2**: Time synchronization technologies configured consistently
+- **10.6.1**: System clocks are synchronised using time synchronisation technology
+- **10.6.2**: Time synchronisation technologies configured consistently
 - **10.6.3**: Critical time servers accept time from external sources (Stratum 0 or 1)
 
 **10.7 Failures of critical security control systems are detected, reported, and responded to promptly**
@@ -757,7 +757,7 @@ Payment brands (Visa, Mastercard, etc.) classify merchants into levels based on 
 - **11.2.1**: Authorised and unauthorised wireless access points detected
 - **11.2.2**: Wireless IDS/IPS or equivalent deployed
 
-**11.3 External and internal vulnerabilities are regularly identified, prioritized, and addressed**
+**11.3 External and internal vulnerabilities are regularly identified, prioritised, and addressed**
 
 - **11.3.1**: Internal vulnerability scans performed at least once every 3 months
 - **11.3.2**: External vulnerability scans performed at least once every 3 months (by Approved Scanning Vendor - ASV)
@@ -1108,12 +1108,12 @@ Organisations with ISO 27001 typically require **30-50% additional effort** to a
 - Network security controls (firewalls, IDS/IPS)
 - Encryption solutions (TLS for transmission, disk/database encryption)
 - Multi-factor authentication platform
-- SIEM or centralized logging
+- SIEM or centralised logging
 - Vulnerability scanning tools
 - Anti-malware solutions
 - File integrity monitoring (FIM)
-- Time synchronization (NTP)
-- Payment tokenization or P2PE (optional, for scope reduction)
+- Time synchronisation (NTP)
+- Payment tokenisation or P2PE (optional, for scope reduction)
 
 **External Services**:
 
@@ -1182,7 +1182,7 @@ PCI DSS compliance costs vary significantly by merchant level and environment co
 - Logs not retained for 12 months
 - Daily log review not performed consistently
 - SIEM not properly configured for CDE
-- Time synchronization issues (clocks out of sync)
+- Time synchronisation issues (clocks out of sync)
 
 **Challenge 5: Quarterly ASV Scan Failures**
 
@@ -1204,7 +1204,7 @@ PCI DSS compliance costs vary significantly by merchant level and environment co
 
 ## Best Practices
 
-**Practice 1**: Reduce scope through tokenization, P2PE, or outsourcing
+**Practice 1**: Reduce scope through tokenisation, P2PE, or outsourcing
 **Practice 2**: Implement strong network segmentation (reduce CDE scope)
 **Practice 3**: Use QSA for pre-assessment gap analysis (before formal audit)
 **Practice 4**: Automate compliance monitoring (continuous compliance)
@@ -1227,7 +1227,7 @@ PCI DSS compliance costs vary significantly by merchant level and environment co
 - PCI DSS v4.0.1: https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0_1.pdf
 - PCI DSS Quick Reference Guide
 - Self-Assessment Questionnaires (SAQs)
-- Prioritized Approach for PCI DSS v4.0
+- Prioritised Approach for PCI DSS v4.0
 
 **Payment Brand Resources**:
 
@@ -1304,7 +1304,7 @@ This checklist provides high-level coverage. Organisations should use official S
 | CHD storage minimised (only if needed) | ⬜ Yes ⬜ No | | |
 | Sensitive Authentication Data (SAD) NOT stored after authorisation | ⬜ Yes ⬜ No | | |
 | PAN masked when displayed (first 6, last 4 max) | ⬜ Yes ⬜ No | | |
-| PAN encrypted or tokenized when stored | ⬜ Yes ⬜ No | | |
+| PAN encrypted or tokenised when stored | ⬜ Yes ⬜ No | | |
 | Encryption keys secured and managed | ⬜ Yes ⬜ No ⬜ Partial | | |
 | TLS 1.2+ used for CHD transmission over open networks | ⬜ Yes ⬜ No | | |
 | PAN not sent via end-user messaging (email, chat, SMS) | ⬜ Yes ⬜ No | | |
@@ -1344,7 +1344,7 @@ This checklist provides high-level coverage. Organisations should use official S
 | Audit logs enabled for all system components | ⬜ Yes ⬜ No ⬜ Partial | | |
 | Audit logs reviewed at least once daily | ⬜ Yes ⬜ No | | |
 | Audit logs retained for at least 12 months | ⬜ Yes ⬜ No | | |
-| Time synchronization implemented (NTP) | ⬜ Yes ⬜ No | | |
+| Time synchronisation implemented (NTP) | ⬜ Yes ⬜ No | | |
 | Wireless access points detected (authorised/unauthorised) | ⬜ Yes ⬜ No ⬜ N/A | | |
 | Internal vulnerability scans every 3 months | ⬜ Yes ⬜ No | | |
 | External vulnerability scans (ASV) every 3 months - 4 passing scans | ⬜ Yes ⬜ No | | |
@@ -1409,4 +1409,4 @@ Organisations should create a detailed data flow diagram showing how CHD enters,
 
 *For organisations NOT processing payment cards, this document is for informational awareness only and does NOT create compliance obligations.*
 
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

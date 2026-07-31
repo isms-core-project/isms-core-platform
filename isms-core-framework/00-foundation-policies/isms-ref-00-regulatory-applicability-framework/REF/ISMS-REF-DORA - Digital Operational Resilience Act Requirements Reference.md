@@ -498,7 +498,7 @@ ICT systems protection through:
 
 - Training programs must be documented and measurable
 - Annual mandatory training minimum
-- Specialized training for privileged users
+- Specialised training for privileged users
 - Phishing testing expected as standard practice
 
 ---
@@ -583,7 +583,7 @@ Financial entities must classify incidents based on:
 **Reporting Channels**:
 
 - National competent authority portal
-- Standardized reporting templates (per RTS)
+- Standardised reporting templates (per RTS)
 - Secure communication channels
 
 **ISO 27001:2022 Mapping**:
@@ -602,7 +602,7 @@ Entities should coordinate reporting to avoid duplication and inconsistency.
 
 ---
 
-**Article 20: Centralized Reporting**
+**Article 20: Centralised Reporting**
 
 Financial entities report to single point of contact (national competent authority), which coordinates with:
 
@@ -869,7 +869,7 @@ DORA provides much more prescriptive contractual requirements than ISO 27001, pa
 - Access and audit rights for authorities
 - Mandatory exit strategies
 - Sub-contracting governance
-- Data localization and portability
+- Data localisation and portability
 
 ---
 
@@ -1129,7 +1129,7 @@ Estimated additional cost: 20-35% increase over base ISO 27001 compliance for me
 **Practice 1**: Engage competent authority early for guidance
 **Practice 2**: Leverage ISO 27001 as foundation, augment with DORA-specific requirements
 **Practice 3**: Establish incident reporting process and test quarterly
-**Practice 4**: Prioritize critical ICT service provider relationships
+**Practice 4**: Prioritise critical ICT service provider relationships
 **Practice 5**: Conduct internal TLPT preparation even if not yet designated
 **Practice 6**: Participate in sector information sharing arrangements
 
@@ -1375,4 +1375,4 @@ I confirm that the information provided in this notification is accurate to the 
 
 *For organisations NOT subject to DORA, this document is for informational awareness only and does NOT create compliance obligations.*
 
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

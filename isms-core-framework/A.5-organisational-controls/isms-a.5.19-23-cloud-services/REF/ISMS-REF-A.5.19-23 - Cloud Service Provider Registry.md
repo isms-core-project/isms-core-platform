@@ -46,7 +46,7 @@ This document provides the **authoritative reference registry** of cloud service
 **Usage:**
 
 - Pre-populate assessment workbooks (A.5.23, A.8.10, etc.)
-- Standardize provider categorisation across ISMS
+- Standardise provider categorisation across ISMS
 - Enable consistent vendor risk assessment
 - Support data deletion and retention compliance (A.8.10)
 
@@ -499,4 +499,4 @@ This registry SHALL be updated when:
 
 **END OF DOCUMENT**
 
-<!-- QA_VERIFIED: 2026-01-31 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -268,7 +268,7 @@ Regular information security risk assessments covering:
 
 - Identification of information assets
 - Threat and vulnerability assessment
-- Risk evaluation and prioritization
+- Risk evaluation and prioritisation
 - Risk treatment decisions
 - Residual risk acceptance
 
@@ -332,7 +332,7 @@ Information security awareness and training program ensuring:
 **FINMA Expectations**:
 
 - Annual mandatory training for all personnel
-- Specialized training for privileged users
+- Specialised training for privileged users
 - Phishing simulation and testing
 - Training completion tracking and metrics
 
@@ -482,7 +482,7 @@ Implement cryptography to protect sensitive data:
 
 **Key Management**:
 
-- Centralized key management system
+- Centralised key management system
 - Separation of key management from data access
 - Key rotation and lifecycle management
 - Secure key storage (Hardware Security Module preferred)
@@ -526,7 +526,7 @@ Comprehensive logging of security-relevant events:
 
 - Who: User identification
 - What: Action performed
-- When: Timestamp (synchronized)
+- When: Timestamp (synchronised)
 - Where: System/application/IP address
 - Result: Success or failure
 
@@ -543,10 +543,10 @@ Comprehensive logging of security-relevant events:
 
 ---
 
-**Margin 66-68: Centralized Log Management**
+**Margin 66-68: Centralised Log Management**
 
 **Requirement**:
-Centralized collection, storage, and analysis of security logs:
+Centralised collection, storage, and analysis of security logs:
 
 - SIEM (Security Information and Event Management) or equivalent
 - Real-time log collection from all critical systems
@@ -563,7 +563,7 @@ Centralized collection, storage, and analysis of security logs:
 
 **ISO 27001:2022 Mapping**:
 
-- A.8.15: Logging (centralized log management)
+- A.8.15: Logging (centralised log management)
 - A.8.16: Monitoring activities (SIEM correlation)
 
 **Implementation Examples**:
@@ -807,7 +807,7 @@ FINMA Circular 2008/7 establishes requirements for banks outsourcing business fu
 | Segregation of Duties | 58 | A.5.15, A.5.18, A.8.2 | Critical |
 | Encryption | 62 | A.8.24 | Critical |
 | Security Logging | 63-65 | A.8.15 | Critical |
-| Centralized Log Management | 66-68 | A.8.15, A.8.16 | Critical |
+| Centralised Log Management | 66-68 | A.8.15, A.8.16 | Critical |
 | Monitoring and Alerting | 69-72 | A.8.16, A.5.24, A.5.25 | Critical |
 | Business Impact Analysis | 73-75 | A.5.29, A.5.30 | Critical |
 | Business Continuity Plans | 76-80 | A.5.29, A.5.30, A.8.13, A.8.14 | Critical |
@@ -823,7 +823,7 @@ For organisations subject to FINMA:
 **Step 2**: Conduct ISO 27001:2022 compliance baseline assessment
 **Step 3**: Identify FINMA-specific requirements beyond ISO 27001
 **Step 4**: Document gaps and develop remediation plan
-**Step 5**: Prioritize FINMA critical margins (56, 58, 62, 63-72)
+**Step 5**: Prioritise FINMA critical margins (56, 58, 62, 63-72)
 **Step 6**: Implement controls with FINMA compliance evidence
 **Step 7**: Conduct internal audit with FINMA focus
 **Step 8**: Prepare for potential FINMA examination
@@ -854,7 +854,7 @@ FINMA expects documented evidence of:
 - Confirm FINMA applicability determination
 - Document current ISO 27001 compliance status
 - Identify FINMA-specific gaps
-- Prioritize remediation activities
+- Prioritise remediation activities
 
 **Month 4-6: Critical Controls Implementation**
 
@@ -1052,7 +1052,7 @@ This checklist supports initial gap assessment for organisations subject to FINM
 | TLS 1.2+ for all data in transit | ⬜ Yes ⬜ No ⬜ Partial | | |
 | Full disk encryption for endpoints | ⬜ Yes ⬜ No ⬜ Partial | | |
 | Database encryption for sensitive data | ⬜ Yes ⬜ No ⬜ Partial | | |
-| Centralized key management system | ⬜ Yes ⬜ No | | |
+| Centralised key management system | ⬜ Yes ⬜ No | | |
 | No use of deprecated encryption algorithms | ⬜ Yes ⬜ No | | |
 
 ## Logging and Monitoring (Margins 63-72)
@@ -1061,7 +1061,7 @@ This checklist supports initial gap assessment for organisations subject to FINM
 |-------------|--------|-------------------|-------|
 | Comprehensive security event logging | ⬜ Yes ⬜ No ⬜ Partial | | |
 | Log retention 12+ months | ⬜ Yes ⬜ No | | |
-| Centralized log management (SIEM) | ⬜ Yes ⬜ No | | |
+| Centralised log management (SIEM) | ⬜ Yes ⬜ No | | |
 | 24/7 security monitoring (SOC) | ⬜ Yes ⬜ No | | |
 | Real-time alerting for critical events | ⬜ Yes ⬜ No ⬜ Partial | | |
 
@@ -1147,4 +1147,4 @@ This checklist supports initial gap assessment for organisations subject to FINM
 
 *For organisations NOT subject to FINMA supervision, this document is for informational awareness only and does NOT create compliance obligations.*
 
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

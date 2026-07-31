@@ -51,7 +51,7 @@
 
 **Audience**: Configuration managers, system administrators, DevOps engineers, security engineers, operations personnel
 
-**Usage**: Reference for baseline definitions, change procedures, drift response, and quick operational guidance. Organisations customize this content to their specific technology stack, tools, and operational processes.
+**Usage**: Reference for baseline definitions, change procedures, drift response, and quick operational guidance. Organisations customise this content to their specific technology stack, tools, and operational processes.
 
 **Updates**: This document may be updated more frequently than ISMS policies to reflect evolving technologies, new tools, and updated standards. Updates do not require executive approval but must be communicated to affected personnel.
 
@@ -61,7 +61,7 @@
 
 ### Hardening Standards Landscape
 
-Configuration hardening applies security-focused configurations based on recognized industry standards. [Organisation] selects applicable standards based on asset type, regulatory requirements, and risk assessment.
+Configuration hardening applies security-focused configurations based on recognised industry standards. [Organisation] selects applicable standards based on asset type, regulatory requirements, and risk assessment.
 
 **1.1.1 CIS Benchmarks** (Center for Internet Security)
 
@@ -174,8 +174,8 @@ Configuration hardening applies security-focused configurations based on recogni
   - Console and VTY access control (SSH only, no Telnet)
   - SNMP v3 or disabled
   - AAA authentication
-  - Logging to centralized syslog
-  - NTP synchronization
+  - Logging to centralised syslog
+  - NTP synchronisation
   - Unused ports disabled
 
 **Load Balancers**:
@@ -432,7 +432,7 @@ ALWAYS: Document standard selection in baseline documentation
 - Review each Normal Change request
 - Assess risk and impact
 - Verify testing and rollback plans
-- Prioritize if resource conflicts
+- Prioritise if resource conflicts
 - Make approval decision (Approved / Approved with Conditions / Rejected / Deferred)
 - Document decision and rationale
 
@@ -644,7 +644,7 @@ Organisations maintain their own Standard Change Catalog based on operational ne
 
 **Low Drift Remediation** (<30 days):
 1. Add to remediation backlog
-2. Prioritize with other work
+2. Prioritise with other work
 3. Remediate when resources available
 4. Document in incident ticket
 
@@ -795,4 +795,4 @@ Updates are communicated via [Organisation's communication channels] and do not 
 
 *For binding policy requirements, refer to ISMS-POL-A.8.9 Configuration Management Policy.*
 
-<!-- QA_VERIFIED: 2026-01-31 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

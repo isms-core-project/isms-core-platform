@@ -1,6 +1,6 @@
 <!-- ISMS-CORE:REF:ISMS-REF-A.8.10-deletion-methods-reference:framework:REF:a.8.10 -->
 **ISMS-REF-A.8.10 — Deletion Methods Reference**
-**Media Sanitization Standards & Tool Selection (Non-ISMS Technical Reference)**
+**Media Sanitisation Standards & Tool Selection (Non-ISMS Technical Reference)**
 
 ---
 
@@ -48,7 +48,7 @@ All binding deletion requirements, obligations, and governance decisions are def
 
 This document serves solely as a technical reference to:
 
-- Describe commonly used deletion methods and media sanitization techniques
+- Describe commonly used deletion methods and media sanitisation techniques
 - Track industry standards evolution and tool availability
 - Support deletion method selection awareness
 - Inform technical discussions and future implementation planning
@@ -65,7 +65,7 @@ This document intentionally provides technical detail beyond what is required fo
 
 **Purpose**
 
-This document provides a technical overview of deletion methods and media sanitization techniques commonly used for information deletion. It is intended to support:
+This document provides a technical overview of deletion methods and media sanitisation techniques commonly used for information deletion. It is intended to support:
 
 - Technical awareness of available deletion options
 - Understanding of method effectiveness by media type
@@ -97,22 +97,22 @@ Implementation decisions are documented through ISMS-IMP-A.8.10 procedures based
 This reference organises deletion methods by:
 
 - Media type (magnetic, solid-state, cloud, paper, optical)
-- Sanitization method (Clear, Purge, Destroy)
+- Sanitisation method (Clear, Purge, Destroy)
 - Tool and vendor landscape
 - Cloud provider deletion capabilities
 - Industry standards alignment
 
 ---
 
-# NIST SP 800-88 Sanitization Framework
+# NIST SP 800-88 Sanitisation Framework
 
 ## Overview
 
 NIST Special Publication 800-88 Revision 1 ("Guidelines for Media Sanitization") provides authoritative guidance on media sanitization methods. While this is an informational reference (not mandatory unless contractually required), it represents industry best practice.
 
-**Three Sanitization Categories**:
+**Three Sanitisation Categories**:
 
-1. **Clear**: Apply logical techniques to sanitize data in all user-addressable storage locations for protection against simple non-invasive data recovery techniques
+1. **Clear**: Apply logical techniques to sanitise data in all user-addressable storage locations for protection against simple non-invasive data recovery techniques
 2. **Purge**: Apply physical or logical techniques to render target data recovery infeasible using state-of-the-art laboratory techniques
 3. **Destroy**: Render media unusable and target data recovery infeasible using state-of-the-art laboratory techniques
 
@@ -148,7 +148,7 @@ NIST Special Publication 800-88 Revision 1 ("Guidelines for Media Sanitization")
 - Data stored magnetically on rotating platters
 - Standard file deletion only removes file system pointers, not actual data
 - Data remains recoverable until overwritten
-- Well-established sanitization methods
+- Well-established sanitisation methods
 
 **3.1.1 Clear Methods**
 
@@ -187,7 +187,7 @@ NIST Special Publication 800-88 Revision 1 ("Guidelines for Media Sanitization")
 
 - Shred drive into small particles (≤2mm recommended per DIN 66399)
 - Incineration at high temperature
-- Pulverization
+- Pulverisation
 - Melting
 - Vendor Services: NAID AAA certified destruction vendors
 - Effectiveness: Highest level, data recovery infeasible
@@ -200,7 +200,7 @@ NIST Special Publication 800-88 Revision 1 ("Guidelines for Media Sanitization")
 - Hardware-based full disk encryption
 - Data encrypted with Data Encryption Key (DEK)
 - DEK encrypted with Authentication Key (AK)
-- Sanitization: Destroy cryptographic keys
+- Sanitisation: Destroy cryptographic keys
 - Tools: Manufacturer SED management utilities, sedutil
 - Effectiveness: Very high IF encryption was enabled from deployment
 - Limitations: Only effective if drive was encrypted; verify encryption status before relying on crypto erase
@@ -240,7 +240,7 @@ NIST Special Publication 800-88 Revision 1 ("Guidelines for Media Sanitization")
 
 - Shredding
 - Incineration
-- Pulverization
+- Pulverisation
 - Effectiveness: Highest
 - Use Case: End-of-life, highest sensitivity
 
@@ -256,15 +256,15 @@ NIST Special Publication 800-88 Revision 1 ("Guidelines for Media Sanitization")
 - Over-provisioning reserves storage cells not visible to OS
 - Garbage collection moves data blocks
 - TRIM command manages deleted blocks
-- Result: Standard overwriting does NOT reliably sanitize SSDs
+- Result: Standard overwriting does NOT reliably sanitise SSDs
 
-**Sanitization Challenges**:
+**Sanitisation Challenges**:
 
 - Cannot guarantee all physical storage locations overwritten
 - Firmware controls actual data placement
 - Hidden areas (over-provisioning, bad block remapping)
 
-## SSD / NVMe Sanitization Methods
+## SSD / NVMe Sanitisation Methods
 
 **4.2.1 Purge Methods**
 
@@ -295,7 +295,7 @@ NIST Special Publication 800-88 Revision 1 ("Guidelines for Media Sanitization")
 
 - Shred to ≤2mm particles
 - Disintegration
-- Pulverization
+- Pulverisation
 - Incineration
 - Effectiveness: Highest, data recovery infeasible
 - Use Case: High-sensitivity data, when Secure Erase not verified effective
@@ -304,12 +304,12 @@ NIST Special Publication 800-88 Revision 1 ("Guidelines for Media Sanitization")
 **4.2.3 NOT Recommended for SSDs**
 
 ❌ **Standard Overwriting**: Ineffective due to wear-leveling and over-provisioning
-❌ **Single-File Deletion Tools**: Do not sanitize deleted space on SSDs
+❌ **Single-File Deletion Tools**: Do not sanitise deleted space on SSDs
 ❌ **Multi-Pass Overwrite**: No additional benefit over single pass, wastes write cycles
 
 ## USB Flash Drives / SD Cards
 
-**Sanitization**:
+**Sanitisation**:
 
 - Similar challenges to SSDs (flash memory, wear-leveling)
 - Secure Erase: If supported (rare in consumer USB drives)
@@ -352,7 +352,7 @@ NIST Special Publication 800-88 Revision 1 ("Guidelines for Media Sanitization")
 - Examples: AWS S3 DeleteObject, Azure Blob Delete, GCP Storage Delete
 - Verification: API response codes (200/204 success)
 - Effectiveness: Removes logical access, provider purges physical storage per their schedule
-- Limitation: Trust provider to physically sanitize storage
+- Limitation: Trust provider to physically sanitise storage
 
 **5.2.2 Cryptographic Erasure (Purge - Preferred)**
 
@@ -405,7 +405,7 @@ Some cloud providers offer deletion attestations:
 
 ## Smartphones and Tablets
 
-**Sanitization Approach**:
+**Sanitisation Approach**:
 
 **Encrypted Devices** (Modern iOS, Android with encryption enabled):
 1. Mobile Device Management (MDM) remote wipe
@@ -427,12 +427,12 @@ Some cloud providers offer deletion attestations:
 
 ## Laptops and Desktops
 
-**Sanitization**:
+**Sanitisation**:
 
 - Magnetic HDD: ATA Secure Erase or physical destruction
 - SSD: Cryptographic erasure (BitLocker, FileVault) or physical destruction
-- Hybrid (HDD + SSD cache): Sanitize both components
-- Approach: Remove storage media, sanitize separately using media-specific methods
+- Hybrid (HDD + SSD cache): Sanitise both components
+- Approach: Remove storage media, sanitise separately using media-specific methods
 
 ---
 
@@ -570,7 +570,7 @@ Some cloud providers offer deletion attestations:
 
 - `hdparm` (Linux) - ATA Secure Erase for HDDs/SSDs
 - `nvme-cli` (Linux) - NVMe Sanitize commands
-- Parted Magic (Linux bootable) - drive sanitization suite
+- Parted Magic (Linux bootable) - drive sanitisation suite
 
 **Encryption**:
 
@@ -686,7 +686,7 @@ For Tier 2-10 providers per ISMS-REF-A.5.23:
 **Manual Verification**:
 
 - Sampling: Select random media, attempt data recovery
-- Forensic validation: Use recovery tools on sanitized media
+- Forensic validation: Use recovery tools on sanitised media
 - Visual inspection: Physical destruction verification
 - Certificate review: Third-party destruction certificates
 
@@ -710,7 +710,7 @@ For large-scale deletion operations:
 If verification fails:
 
 - Stop using the deletion method immediately
-- Quarantine media for re-sanitization
+- Quarantine media for re-sanitisation
 - Escalate to IT security team
 - Use more robust deletion method (e.g., physical destruction)
 - Document failure for lessons learned
@@ -723,11 +723,11 @@ If verification fails:
 
 - **NIST SP 800-88 Rev. 1**: Guidelines for Media Sanitization (primary reference)
 - NIST SP 800-53 Rev. 5: Security Controls (MP family - Media Protection)
-- NIST SP 800-171: Protecting CUI (media sanitization requirements)
+- NIST SP 800-171: Protecting CUI (media sanitisation requirements)
 
 **ISO Standards**:
 
-- ISO/IEC 27040:2015: Storage Security (sanitization guidance)
+- ISO/IEC 27040:2015: Storage Security (sanitisation guidance)
 - ISO/IEC 27555:2021: Guidelines on PII Deletion
 - ISO/IEC 27017:2026: Cloud Services Security (deletion requirements)
 
@@ -784,4 +784,4 @@ Organisations can use this worksheet during implementation to document deletion 
 
 *This technical reference supports implementation of ISMS-POL-A.8.10. All binding requirements are defined in the policy document.*
 
-<!-- QA_VERIFIED: 2026-02-11 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

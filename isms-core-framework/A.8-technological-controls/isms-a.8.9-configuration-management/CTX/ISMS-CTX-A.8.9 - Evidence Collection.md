@@ -9,7 +9,7 @@
 | **Version** | 1.0 |
 | **Document Type** | Technical Reference (NOT ISMS) |
 | **Related Policy** | ISMS-POL-A.8.9 (All Sections) |
-| **Purpose** | Provide standardized evidence repository structure for ISO 27001:2022 Control A.8.9 compliance demonstration and audit preparation |
+| **Purpose** | Provide standardised evidence repository structure for ISO 27001:2022 Control A.8.9 compliance demonstration and audit preparation |
 | **Target Audience** | Configuration Managers, System Administrators, Auditors, Compliance Officers, Evidence Custodians |
 | **Review Cycle** | Annual (or upon audit requirements change) |
 | **Date** | [Date] |
@@ -55,7 +55,7 @@ Configuration management team, system administrators, IT operations, security en
 
 **Audience**: Evidence custodians, audit coordinators, configuration managers responsible for preparing audit evidence packages.
 
-**Usage**: Reference for establishing evidence repository structure, naming conventions, retention policies, and audit preparation workflows. Organisations customize this content to their specific document management systems and audit requirements.
+**Usage**: Reference for establishing evidence repository structure, naming conventions, retention policies, and audit preparation workflows. Organisations customise this content to their specific document management systems and audit requirements.
 
 **Updates**: This document may be updated more frequently than ISMS policies to reflect evolving audit practices, document management tools, and compliance requirements. Updates do not require executive approval but must be communicated to affected personnel.
 
@@ -63,7 +63,7 @@ Configuration management team, system administrators, IT operations, security en
 
 ## Overview
 
-This guide defines the standardized evidence repository structure for ISO 27001:2022 Control A.8.9 (Configuration Management). Proper evidence organisation enables efficient audits, demonstrates control effectiveness, and supports compliance verification.
+This guide defines the standardised evidence repository structure for ISO 27001:2022 Control A.8.9 (Configuration Management). Proper evidence organisation enables efficient audits, demonstrates control effectiveness, and supports compliance verification.
 
 **Repository Location**: [Organisation to define - e.g., SharePoint/Network Drive/Document Management System]
 
@@ -160,7 +160,7 @@ Contains approved baseline configurations organised by asset type.
 - Role = Purpose (DC, WEB, APP, DB, etc.)
 - Version = Semantic versioning (major.minor)
 
-**Evidence Purpose**: Demonstrates baselines exist, are documented, and reference recognized standards.
+**Evidence Purpose**: Demonstrates baselines exist, are documented, and reference recognised standards.
 
 #### 3. Golden-Images/
 Contains golden image inventory and approval records.
@@ -622,4 +622,4 @@ Before filing evidence, verify:
 
 *For binding policy requirements, refer to ISMS-POL-A.8.9 Configuration Management Policy.*
 
-<!-- QA_VERIFIED: 2026-03-08 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

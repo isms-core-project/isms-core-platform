@@ -72,7 +72,7 @@ This document provides a technical deep-dive into data masking implementation pa
 - Practical guidance for data discovery and classification
 - Context for technology and tool evaluation (vendor-agnostic)
 - Implementation planning for development and operations teams
-- Troubleshooting and optimization of existing masking solutions
+- Troubleshooting and optimisation of existing masking solutions
 
 ## What This Document Is NOT
 
@@ -163,7 +163,7 @@ Configuration:
 - **Referential Integrity**: Use deterministic algorithms (hash-based) to ensure same input produces same output across tables
 - **Data Distribution**: Maintain statistical distribution for performance testing (e.g., name frequency distribution)
 - **Uniqueness**: Ensure masked values remain unique where original data was unique (primary keys)
-- **Performance**: Batch processing for large datasets, optimize for database operations
+- **Performance**: Batch processing for large datasets, optimise for database operations
 
 ### Shuffling (Permutation) Techniques
 
@@ -466,13 +466,13 @@ GROUP BY department;
 - Rounding level: Precision reduction for de-identification
 - NULL handling: Suppress results for insufficient data
 
-## Tokenization Techniques
+## Tokenisation Techniques
 
-**Overview**: Tokenization replaces sensitive data with non-sensitive tokens while storing the original in a secure token vault. Tokens maintain format but have no intrinsic meaning.
+**Overview**: Tokenisation replaces sensitive data with non-sensitive tokens while storing the original in a secure token vault. Tokens maintain format but have no intrinsic meaning.
 
-### Format-Preserving Tokenization
+### Format-Preserving Tokenisation
 
-**Credit Card Tokenization**:
+**Credit Card Tokenisation**:
 
 ```
 Original PAN: 4532-1234-5678-9010
@@ -536,12 +536,12 @@ class TokenVault:
 
 - Encryption: Vault data encrypted with strong encryption (AES-256)
 - Access control: Detokenization requires explicit authorisation
-- Audit logging: All tokenization and detokenization logged
+- Audit logging: All tokenisation and detokenization logged
 - Key management: Vault encryption keys managed per A.8.24 Cryptography Policy
 - Backup: Vault backed up separately with appropriate security
 - High availability: Vault availability critical for operations
 
-### Non-Format-Preserving Tokenization
+### Non-Format-Preserving Tokenisation
 
 **Random Token Generation**:
 
@@ -564,13 +564,13 @@ Configuration:
 - API keys, session tokens
 - Database foreign keys where format-independence acceptable
 
-## Pseudonymization Techniques (GDPR Compliance)
+## Pseudonymisation Techniques (GDPR Compliance)
 
-**Overview**: Pseudonymization replaces direct identifiers with pseudonyms such that data cannot identify individuals without additional information (key or mapping) held separately. Meets GDPR requirements for reduced-risk processing.
+**Overview**: Pseudonymisation replaces direct identifiers with pseudonyms such that data cannot identify individuals without additional information (key or mapping) held separately. Meets GDPR requirements for reduced-risk processing.
 
-### Cryptographic Pseudonymization
+### Cryptographic Pseudonymisation
 
-**HMAC-Based Pseudonymization**:
+**HMAC-Based Pseudonymisation**:
 
 ```python
 import hmac
@@ -604,7 +604,7 @@ pseudonym = pseudonymize(original_id, secret_key)
 - **Key management**: Secret key must be protected per cryptography policy
 - **Format**: Typically hex string, base64, or truncated hash
 
-**Key-Based Pseudonymization**:
+**Key-Based Pseudonymisation**:
 
 ```python
 from cryptography.fernet import Fernet
@@ -639,9 +639,9 @@ recovered = de_pseudonymize(pseudonym, key)
 
 **GDPR Compliance Considerations**:
 
-- Pseudonymization key stored separately from pseudonymized data (different system, access control)
+- Pseudonymisation key stored separately from pseudonymised data (different system, access control)
 - Re-identification requires explicit authorisation beyond data access
-- Key rotation: Plan for periodic key rotation (requires re-pseudonymization)
+- Key rotation: Plan for periodic key rotation (requires re-pseudonymisation)
 - Audit: Log all re-identification attempts
 
 ### Pseudonym Mapping Tables
@@ -665,7 +665,7 @@ PS003       | Bob Williams
 **Configuration**:
 
 - Storage separation: Mapping table in separate database/system
-- Access control: Different permissions for pseudonymized data vs. mapping
+- Access control: Different permissions for pseudonymised data vs. mapping
 - Encryption: Mapping table encrypted at rest
 - Audit: All mapping table access logged
 
@@ -732,14 +732,14 @@ Solution: At least 2 different sensitive attributes in group
 
 **Implementation Tool Examples** (vendor-agnostic):
 
-- ARX Data Anonymization Tool (open source)
+- ARX Data Anonymisation Tool (open source)
 - Amnesia (open source)
 - IBM InfoSphere Optim Data Privacy
 - Microsoft Azure Data Catalog (data classification features)
 
-## Anonymization Techniques (Irreversible)
+## Anonymisation Techniques (Irreversible)
 
-**Overview**: Anonymization irreversibly removes identifying information such that re-identification is not possible even with additional data. Anonymized data is no longer personal data under GDPR.
+**Overview**: Anonymisation irreversibly removes identifying information such that re-identification is not possible even with additional data. Anonymised data is no longer personal data under GDPR.
 
 ### Aggregation and Statistical Disclosure Control
 
@@ -1148,20 +1148,20 @@ Solutions:
 **PCI DSS Masking Requirements (Req. 3.4-3.5)**:
 
 - [ ] Primary Account Number (PAN) masked when displayed (max 6 first + 4 last digits)
-- [ ] PAN unreadable in non-production environments (masking, truncation, or tokenization)
+- [ ] PAN unreadable in non-production environments (masking, truncation, or tokenisation)
 - [ ] CVV2/CVC2 never stored (masking not applicable - must not store)
 - [ ] Masking solution prevents unauthorised access to unmasked PAN
 - [ ] Documented masking procedures and standards
 - [ ] Annual validation of masking effectiveness
 
-**GDPR Pseudonymization (Art. 32, 89)**:
+**GDPR Pseudonymisation (Art. 32, 89)**:
 
-- [ ] Pseudonymization key stored separately from pseudonymized data
+- [ ] Pseudonymisation key stored separately from pseudonymised data
 - [ ] Re-identification requires additional information not available to data processor
 - [ ] Technical and organisational measures prevent unauthorised re-identification
-- [ ] Pseudonymization documented in data protection impact assessment (DPIA)
-- [ ] Regular review of pseudonymization effectiveness
-- [ ] Data subjects informed about pseudonymization where applicable
+- [ ] Pseudonymisation documented in data protection impact assessment (DPIA)
+- [ ] Regular review of pseudonymisation effectiveness
+- [ ] Data subjects informed about pseudonymisation where applicable
 
 **HIPAA De-Identification (§164.514)**:
 
@@ -1270,11 +1270,11 @@ Solution: Enforce masking server-side (database or application layer)
 
 **Quasi-Identifier**: Attribute that can identify individuals when combined with other attributes (age + ZIP code + gender).
 
-**Re-identification Attack**: Attempt to recover original identity from masked, pseudonymized, or anonymized data through linking, inference, or statistical analysis.
+**Re-identification Attack**: Attempt to recover original identity from masked, pseudonymised, or anonymised data through linking, inference, or statistical analysis.
 
 **Salt (Cryptographic)**: Random data added to input before hashing/encryption to prevent rainbow table attacks and ensure unique outputs even for identical inputs.
 
-**Token Vault**: Secure database storing mapping between tokens and original sensitive values in tokenization systems.
+**Token Vault**: Secure database storing mapping between tokens and original sensitive values in tokenisation systems.
 
 ---
 
@@ -1286,4 +1286,4 @@ Solution: Enforce masking server-side (database or application layer)
 
 **Reminder**: This document is NOT ISMS. Binding requirements are in ISMS-POL-A.8.11 (Data Masking Policy).
 
-<!-- QA_VERIFIED: 2026-02-06 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

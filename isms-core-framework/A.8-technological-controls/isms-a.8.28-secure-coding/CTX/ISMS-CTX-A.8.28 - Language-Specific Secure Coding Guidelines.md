@@ -42,7 +42,7 @@ The information contained herein provides technical context, language-specific s
 
 ## Document Objective
 
-This document provides **language-specific secure coding patterns** that operationalize the generic security requirements from ISMS-POL-A.8.28. Security vulnerabilities manifest differently across programming languages due to:
+This document provides **language-specific secure coding patterns** that operationalise the generic security requirements from ISMS-POL-A.8.28. Security vulnerabilities manifest differently across programming languages due to:
 
 - Language design choices (memory safety, type systems)
 - Standard library implementations
@@ -679,7 +679,7 @@ object obj = formatter.Deserialize(stream);  // Deserialization vulnerability!
 1. **SQL Injection** (CWE-89): String formatting in queries
 2. **Command Injection** (CWE-78): Unsafe exec.Command usage
 3. **Path Traversal** (CWE-22): Unvalidated file paths
-4. **Race Conditions** (CWE-362): Improper goroutine synchronization
+4. **Race Conditions** (CWE-362): Improper goroutine synchronisation
 5. **Weak Cryptography** (CWE-327): Use of MD5, insecure random
 
 ## SQL Injection Prevention
@@ -854,4 +854,4 @@ END
 **END OF ISMS-CTX-A.8.28**
 
 *This technical reference supports ISMS-POL-A.8.28 implementation. Binding requirements are in the policy, not this document.*
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

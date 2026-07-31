@@ -49,7 +49,7 @@ NIS2 requirements apply ONLY IF [Organisation]:
 
 - Is an essential or important entity operating in the EU in covered sectors
 - Falls within size thresholds (medium/large enterprises typically)
-- Provides services categorized under NIS2 Annex I (essential) or Annex II (important)
+- Provides services categorised under NIS2 Annex I (essential) or Annex II (important)
 - Operates in an EU member state that has transposed NIS2 into national law
 
 For all other organisations, this document serves solely as:
@@ -424,7 +424,7 @@ Measures must be appropriate to:
 **Training Requirements**:
 
 - Annual mandatory training for all personnel
-- Specialized training for IT and security staff
+- Specialised training for IT and security staff
 - Phishing simulation testing
 - Training completion tracking
 
@@ -1276,4 +1276,4 @@ I confirm that the information provided in this notification is accurate to the 
 
 *For organisations NOT subject to NIS2, this document is for informational awareness only and does NOT create compliance obligations.*
 
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->
