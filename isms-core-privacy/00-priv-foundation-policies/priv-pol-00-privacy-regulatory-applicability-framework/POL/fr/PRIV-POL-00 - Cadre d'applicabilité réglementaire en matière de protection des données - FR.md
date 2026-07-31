@@ -176,8 +176,8 @@ Cadres et normes utilisés pour des orientations techniques et organisationnelle
 │  • ISO/IEC 27002:2022 (mise en œuvre des contrôles sécu.)      │
 │  • NIST Privacy Framework 2.0 (gestion des risques)            │
 │                                                                 │
-│  À VENIR (Surveiller — Adopter à la publication)               │
-│  • ISO/IEC 27017:2025 (sécurité cloud — pas encore publié)     │
+│  PUBLIÉE (Surveiller — Actions à la publication en attente)    │
+│  • ISO/IEC 27017:2026 (sécurité cloud — publiée le 29.07.2026) │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -445,17 +445,17 @@ Les organisations doivent évaluer et documenter des réglementations supplémen
 
 ---
 
-## ISO/IEC 27017:2025 — À venir (Surveiller — Adopter à la publication)
+## ISO/IEC 27017:2026 — Publiée (Surveiller — Actions à la publication en attente)
 
-**Statut** : **Pas encore publié** à la date de cette politique.
+**Statut** : **Publiée** (~29.07.2026). Les actions à la publication ci-dessous sont en attente — le développement du pack CLOUD SEC démarre le week-end du 01.08.2026 (Phase 53).
 
-ISO/IEC 27017:2025 est en cours d'élaboration comme deuxième édition de la norme sur les contrôles de sécurité pour les services cloud. Lors de sa publication, cette politique sera mise à jour pour référencer ISO/IEC 27017:2025 à la place de (ou parallèlement à) ISO/IEC 27017:2019.
+ISO/IEC 27017:2026 est la deuxième édition de la norme sur les contrôles de sécurité pour les services cloud, publiée le ~29.07.2026. Cette politique sera mise à jour pour référencer ISO/IEC 27017:2026 à la place de (ou parallèlement à) ISO/IEC 27017:2019 une fois les actions à la publication ci-dessous réalisées.
 
 **Actions à la publication** :
 
-1. Examiner ISO/IEC 27017:2025 pour les changements structurels par rapport à l'édition 2019
+1. Examiner ISO/IEC 27017:2026 pour les changements structurels par rapport à l'édition 2019
 2. Évaluer l'impact sur les packs de contrôle `priv-a.2.4.2-4` et `priv-a.2.5.7-9`
-3. Mettre à jour la référence Niveau 3 de PRIV-POL-00 de 2019 à l'édition 2025
+3. Mettre à jour la référence Niveau 3 de PRIV-POL-00 de 2019 à l'édition 2026
 4. Communiquer les changements aux propriétaires des groupes de contrôle concernés
 5. Mettre à jour les IMP des packs de contrôle où les orientations 27017 sont référencées
 
@@ -553,7 +553,7 @@ Utiliser ce modèle pour documenter l'applicabilité de chaque réglementation :
 | Contrat client avec exigences explicites de protection des données | Mise à jour du niveau spécifique au contrat |
 | Nouvelle réglementation publiée ou adoptée | Évaluer l'applicabilité, mettre à jour le registre |
 | Réglementation existante substantiellement modifiée | Réévaluer la classification du niveau concerné |
-| Publication d'ISO 27017:2025 | Mettre à jour la référence Niveau 3 ; évaluer l'impact sur les packs de contrôle |
+| Publication d'ISO 27017:2026 | Mettre à jour la référence Niveau 3 ; évaluer l'impact sur les packs de contrôle |
 | Changement d'activité (acquisition, nouvelle entité, externalisation) | Réévaluation complète d'applicabilité pour les activités concernées |
 
 ---
@@ -617,7 +617,7 @@ Les politiques des groupes de contrôle DOIVENT indiquer clairement le rôle org
 | Norme | Version | Statut | Utilisation |
 |------|---------|--------|------------|
 | ISO/IEC 27017:2019 | 2019 | En vigueur — Niveau 3 | Base de sécurité cloud (supporte la mise en œuvre 27018) |
-| ISO/IEC 27017:2025 | Pas encore publié | À venir | Adopter à la publication |
+| ISO/IEC 27017:2026 | Publiée ~29.07.2026 | Actions à la publication en attente | Développement Phase 53 en cours |
 | ISO/IEC 27002:2022 | 2022 | En vigueur — Niveau 3 | Orientations sur les contrôles de sécurité pour les contrôles partagés A.3 |
 | NIST Privacy Framework | 2.0, 2024 | En vigueur — Niveau 3 | Méthodologie de gestion des risques de protection des données |
 
@@ -671,7 +671,7 @@ Les politiques des groupes de contrôle DOIVENT indiquer clairement le rôle org
 | Révision annuelle complète | Annuelle (T4) | DPD + RSSI + Juridique | Politique mise à jour + note à la direction |
 | Surveillance trimestrielle | Trimestrielle | DPD + Juridique | Mise à jour du journal de surveillance réglementaire |
 | Évaluation déclenchée | Sur événement déclencheur | DPD (lead) | Rapport d'évaluation déclenchée |
-| Surveillance ISO 27017:2025 | À la publication | RSSI | Évaluation de l'impact sur les packs de contrôle |
+| Évaluation d'impact ISO 27017:2026 | Lancement Phase 53 (week-end du 01.08.2026) | RSSI | Évaluation de l'impact sur les packs de contrôle |
 
 ## Sources de surveillance réglementaire
 

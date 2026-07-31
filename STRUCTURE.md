@@ -284,7 +284,7 @@ The same pattern applies to OP-POL, PRIV-POL, CLD-POL, and AI-POL files.
 
 ## 📋 Screenshots/
 
-Platform UI screenshots referenced in README.md and PLATFORM.md. Named `NN_isms-core_feature-name.png`.
+Platform UI screenshots referenced in README.md and PLATFORM.md. `light/` and `dark/` subfolders, named `NN_isms_core_feature_name_<theme>.png`. Docs use light only.
 
 ---
 

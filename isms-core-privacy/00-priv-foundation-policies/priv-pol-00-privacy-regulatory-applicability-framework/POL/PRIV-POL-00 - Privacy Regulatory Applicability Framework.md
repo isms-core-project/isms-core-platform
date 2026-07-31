@@ -175,8 +175,8 @@ Frameworks and standards used for technical and organisational guidance, benchma
 │  • ISO/IEC 27002:2022 (security control implementation)        │
 │  • NIST Privacy Framework 2.0 (privacy risk management)        │
 │                                                                 │
-│  FORTHCOMING (Monitor — Adopt on Publication)                   │
-│  • ISO/IEC 27017:2025 (cloud security — not yet published)     │
+│  PUBLISHED (Monitor — Adopt-on-Publication Pending)              │
+│  • ISO/IEC 27017:2026 (cloud security — published 2026-07-29)  │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -444,17 +444,17 @@ Organisations should assess and document additional conditional privacy regulati
 
 ---
 
-## ISO/IEC 27017:2025 — Forthcoming (Monitor — Adopt on Publication)
+## ISO/IEC 27017:2026 — Published (Monitor — Adopt-on-Publication Actions Pending)
 
-**Status**: **Not yet published** as of the date of this policy.
+**Status**: **Published** ~2026-07-29. Adopt-on-publication actions below are pending — CLOUD SEC pack build starts weekend of 2026-08-01 (Phase 53).
 
-ISO/IEC 27017:2025 is under development as the second edition of the cloud security controls standard. When published, this policy shall be updated to reference ISO/IEC 27017:2025 in place of (or alongside) ISO/IEC 27017:2019.
+ISO/IEC 27017:2026 is the second edition of the cloud security controls standard, published ~2026-07-29. This policy shall be updated to reference ISO/IEC 27017:2026 in place of (or alongside) ISO/IEC 27017:2019 once the Action on Publication steps below are completed.
 
 **Action on Publication**:
 
-1. Review ISO/IEC 27017:2025 for structural changes vs. 2019 edition
+1. Review ISO/IEC 27017:2026 for structural changes vs. 2019 edition
 2. Assess impact on `priv-a.2.4.2-4` and `priv-a.2.5.7-9` control packs
-3. Update PRIV-POL-00 Tier 3 reference from 2019 to 2025 edition
+3. Update PRIV-POL-00 Tier 3 reference from 2019 to 2026 edition
 4. Communicate changes to relevant control group owners
 5. Update control pack IMPs where 27017 guidance is referenced
 
@@ -552,7 +552,7 @@ Use this template to document applicability for each regulation:
 | Customer contract with explicit privacy requirements | Contract-specific tier update |
 | New regulation published or enacted | Assess applicability, update register |
 | Existing regulation substantially amended | Re-assess affected tier classification |
-| ISO 27017:2025 published | Update Tier 3 reference; assess control pack impacts |
+| ISO 27017:2026 published | Update Tier 3 reference; assess control pack impacts |
 | Business change (acquisition, new entity, outsourcing) | Full applicability re-assessment for affected activities |
 
 ---
@@ -615,7 +615,7 @@ Control group policies SHALL clearly state the organisational role addressed:
 | Standard | Version | Status | Usage |
 |---------|---------|--------|-------|
 | ISO/IEC 27017:2019 | 2019 | Active — Tier 3 | Cloud security baseline (supports 27018 implementation) |
-| ISO/IEC 27017:2025 | Not yet published | Forthcoming | Adopt on publication |
+| ISO/IEC 27017:2026 | Published ~2026-07-29 | Adopt-on-publication pending | Phase 53 build starting |
 | ISO/IEC 27002:2022 | 2022 | Active — Tier 3 | Security control guidance for A.3 shared controls |
 | NIST Privacy Framework | 2.0, 2024 | Active — Tier 3 | Privacy risk management methodology |
 
@@ -669,7 +669,7 @@ Control group policies SHALL clearly state the organisational role addressed:
 | Annual comprehensive review | Annual (Q4) | DPO + CISO + Legal | Updated policy + Executive briefing |
 | Quarterly monitoring | Quarterly | DPO + Legal | Regulatory monitoring log update |
 | Triggered assessment | On trigger event | DPO (lead) | Triggered assessment report |
-| ISO 27017:2025 watch | On publication | CISO | Control pack impact assessment |
+| ISO 27017:2026 impact assessment | Phase 53 kickoff (weekend of 2026-08-01) | CISO | Control pack impact assessment |
 
 ## Regulatory Monitoring Sources
 

@@ -377,7 +377,7 @@ Les critères de conformité en matière de protection des données changent lor
 |------------|---------|---------------|
 | Changement réglementaire | Règlement d'application du RGPD publié ; LPD modifiée | Mise à jour PRIV-POL-00 + revue DCCA |
 | Nouvelles orientations APD | Mise à jour des lignes directrices CEPD (ex. consentement, intérêt légitime) | Évaluer l'impact sur les packs A.1.2.2-5 et A.1.3 |
-| Mise à jour d'édition de norme | ISO 27701:2025 → future édition ; publication ISO 27017:2025 | Revue DCCA ; mises à jour IMP des groupes de contrôle |
+| Mise à jour d'édition de norme | ISO 27701:2025 → future édition ; publication ISO 27017:2026 | Revue DCCA ; mises à jour IMP des groupes de contrôle |
 | Changement de détermination du rôle | L'organisation passe de pur sous-traitant à responsable du traitement | Changement de périmètre DCCA ; activation des packs contrôleur A.1 |
 | Changement d'activité commerciale | Nouveau produit, nouvelle juridiction, nouvelle catégorie de données | Évaluation déclenchée d'applicabilité per PRIV-POL-00 |
 | Résultat AIPD | Nouvelle approche de traitement requise | Mise à jour DCCA ; mise à jour IMP du groupe de contrôle |

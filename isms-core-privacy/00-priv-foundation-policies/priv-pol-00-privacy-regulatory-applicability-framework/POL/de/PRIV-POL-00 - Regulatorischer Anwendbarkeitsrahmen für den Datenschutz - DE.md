@@ -178,9 +178,9 @@ Rahmen und Standards, die für technische und organisatorische Leitlinien, Bench
 │  • ISO/IEC 27002:2022 (Sicherheitskontroll-Umsetzung)         │
 │  • NIST Privacy Framework 2.0 (Datenschutzrisikomanagement)   │
 │                                                                 │
-│  BEVORSTEHEND (Beobachten — Bei Veröffentlichung übernehmen)   │
-│  • ISO/IEC 27017:2025 (Cloud-Sicherheit — noch nicht          │
-│    veröffentlicht)                                              │
+│  VERÖFFENTLICHT (Beobachten — Massnahmen ausstehend)            │
+│  • ISO/IEC 27017:2026 (Cloud-Sicherheit — veröffentlicht      │
+│    29.07.2026)                                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -448,17 +448,17 @@ Organisationen sollten zusätzliche bedingt anwendbare Datenschutzvorschriften b
 
 ---
 
-## ISO/IEC 27017:2025 — Bevorstehend (Beobachten — Bei Veröffentlichung übernehmen)
+## ISO/IEC 27017:2026 — Veröffentlicht (Beobachten — Massnahmen bei Veröffentlichung ausstehend)
 
-**Status**: **Noch nicht veröffentlicht** zum Zeitpunkt dieser Richtlinie.
+**Status**: **Veröffentlicht** (~29.07.2026). Massnahmen bei Veröffentlichung stehen aus — CLOUD-SEC-Paket-Build startet am Wochenende des 01.08.2026 (Phase 53).
 
-ISO/IEC 27017:2025 wird als zweite Ausgabe des Cloud-Sicherheitskontroll-Standards entwickelt. Wenn veröffentlicht, ist diese Richtlinie zu aktualisieren, um ISO/IEC 27017:2025 an Stelle von (oder neben) ISO/IEC 27017:2019 zu referenzieren.
+ISO/IEC 27017:2026 ist die zweite Ausgabe des Cloud-Sicherheitskontroll-Standards und wurde am ~29.07.2026 veröffentlicht. Diese Richtlinie wird aktualisiert, um ISO/IEC 27017:2026 an Stelle von (oder neben) ISO/IEC 27017:2019 zu referenzieren, sobald die nachfolgenden Massnahmen abgeschlossen sind.
 
 **Massnahmen bei Veröffentlichung**:
 
-1. ISO/IEC 27017:2025 auf strukturelle Änderungen gegenüber der Ausgabe 2019 überprüfen
+1. ISO/IEC 27017:2026 auf strukturelle Änderungen gegenüber der Ausgabe 2019 überprüfen
 2. Auswirkungen auf Kontrollpakete `priv-a.2.4.2-4` und `priv-a.2.5.7-9` bewerten
-3. PRIV-POL-00 Stufe-3-Referenz von 2019 auf 2025 aktualisieren
+3. PRIV-POL-00 Stufe-3-Referenz von 2019 auf 2026 aktualisieren
 4. Änderungen an relevante Kontrollgruppen-Eigentümer kommunizieren
 5. Kontrollpaket-IMPs aktualisieren, wo 27017-Leitlinien referenziert werden
 
@@ -556,7 +556,7 @@ Diese Vorlage verwenden, um die Anwendbarkeit für jede Verordnung zu dokumentie
 | Kundenvertrag mit expliziten Datenschutzanforderungen | Vertragsspezifische Stufen-Aktualisierung |
 | Neue Verordnung veröffentlicht oder in Kraft getreten | Anwendbarkeit prüfen, Register aktualisieren |
 | Bestehende Verordnung wesentlich geändert | Betroffene Stufen-Klassifikation neu bewerten |
-| ISO 27017:2025 veröffentlicht | Stufe-3-Referenz aktualisieren; Kontrollpaket-Auswirkungen bewerten |
+| ISO 27017:2026 veröffentlicht | Stufe-3-Referenz aktualisieren; Kontrollpaket-Auswirkungen bewerten |
 | Geschäftliche Veränderung (Akquisition, neue Einheit, Auslagerung) | Vollständige Anwendbarkeits-Neubewertung für betroffene Aktivitäten |
 
 ---
@@ -620,7 +620,7 @@ Kontrollgruppen-Richtlinien SOLLEN die angesprochene organisatorische Rolle klar
 | Standard | Version | Status | Verwendung |
 |---------|---------|--------|------------|
 | ISO/IEC 27017:2019 | 2019 | Aktiv — Stufe 3 | Cloud-Sicherheits-Basis (unterstützt 27018-Umsetzung) |
-| ISO/IEC 27017:2025 | Noch nicht veröffentlicht | Bevorstehend | Bei Veröffentlichung übernehmen |
+| ISO/IEC 27017:2026 | Veröffentlicht ~29.07.2026 | Massnahmen ausstehend | Phase-53-Build startet |
 | ISO/IEC 27002:2022 | 2022 | Aktiv — Stufe 3 | Sicherheitskontroll-Leitlinien für A.3 gemeinsame Kontrollen |
 | NIST Privacy Framework | 2.0, 2024 | Aktiv — Stufe 3 | Datenschutzrisikomanagement-Methodik |
 
@@ -674,7 +674,7 @@ Kontrollgruppen-Richtlinien SOLLEN die angesprochene organisatorische Rolle klar
 | Jährliche umfassende Überprüfung | Jährlich (Q4) | DSB + ISB + Legal | Aktualisierte Richtlinie + Managementbriefing |
 | Vierteljährliches Monitoring | Vierteljährlich | DSB + Legal | Aktualisierung des Regulatorischen Monitoring-Logs |
 | Ausgelöste Bewertung | Bei Auslöserereignis | DSB (Leitung) | Bericht zur ausgelösten Bewertung |
-| ISO 27017:2025-Beobachtung | Bei Veröffentlichung | ISB | Kontrollpaket-Auswirkungsbewertung |
+| ISO 27017:2026-Auswirkungsbewertung | Phase-53-Start (Wochenende 01.08.2026) | ISB | Kontrollpaket-Auswirkungsbewertung |
 
 ## Regulatorische Monitoring-Quellen
 

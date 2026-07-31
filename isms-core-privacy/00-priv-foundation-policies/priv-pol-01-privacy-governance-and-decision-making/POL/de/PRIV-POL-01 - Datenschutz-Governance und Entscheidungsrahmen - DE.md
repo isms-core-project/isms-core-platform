@@ -379,7 +379,7 @@ Datenschutz-Compliance-Kriterien ändern sich, wenn:
 |---------|---------|-------------------------|
 | Regulierungsänderung | GDPR-Durchführungsverordnung veröffentlicht; FADP geändert | PRIV-POL-00-Aktualisierung + PCAS-Überprüfung |
 | Neue Aufsichtsbehördenleitlinien | EDPB-Leitlinien aktualisiert (z.B. Einwilligung, berechtigtes Interesse) | Auswirkung auf A.1.2.2-5 und A.1.3-Pakete beurteilen |
-| Standardausgabenaktualisierung | ISO 27701:2025 → zukünftige Ausgabe; ISO 27017:2025 veröffentlicht | PCAS-Überprüfung; IMP-Aktualisierungen für Kontrollpakete |
+| Standardausgabenaktualisierung | ISO 27701:2025 → zukünftige Ausgabe; ISO 27017:2026 veröffentlicht | PCAS-Überprüfung; IMP-Aktualisierungen für Kontrollpakete |
 | Rollenbestimmungsänderung | Organisation wechselt von reinem Auftragsverarbeiter zu Verantwortlichem | PCAS-Umfangsänderung; A.1-Verantwortlicher-Pakete aktiviert |
 | Geschäftstätigkeitsänderung | Neue Produktkategorie; neue Jurisdiktion; neue Datenkategorie | Anlassbezogene Anwendbarkeitsbewertung gemäss PRIV-POL-00 |
 | DPIA-Ergebnis | DPIA identifiziert neues Risiko, das zusätzliche Kontrollen erfordert | PCAS-Aktualisierung; Kontrollgruppen-IMP-Aktualisierung |

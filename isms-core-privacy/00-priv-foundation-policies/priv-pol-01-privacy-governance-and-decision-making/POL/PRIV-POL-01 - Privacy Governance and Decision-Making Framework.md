@@ -379,7 +379,7 @@ Privacy compliance criteria change when:
 |---------|---------|----------------|
 | Regulatory change | GDPR implementing regulation published; FADP amended | PRIV-POL-00 update + PCAS review |
 | New DPA guidance | EDPB Guidelines update (e.g., consent, legitimate interest) | Assess impact on A.1.2.2-5 and A.1.3 packs |
-| Standard edition update | ISO 27701:2025 → future edition; ISO 27017:2025 published | PCAS review; control pack IMP updates |
+| Standard edition update | ISO 27701:2025 → future edition; ISO 27017:2026 published | PCAS review; control pack IMP updates |
 | Role determination change | Organisation moves from pure processor to controller | PCAS scope change; A.1 controller packs activated |
 | Business activity change | New product category; new jurisdiction; new data category | Triggered applicability assessment per PRIV-POL-00 |
 | DPIA outcome | DPIA identifies new risk requiring additional controls | PCAS update; control group IMP update |

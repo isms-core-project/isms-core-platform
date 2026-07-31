@@ -377,7 +377,7 @@ I criteri di conformità in materia di privacy cambiano quando:
 |---------|---------|-----------------|
 | Cambiamento normativo | Regolamento di attuazione del RGPD pubblicato; LPD modificata | Aggiornamento PRIV-POL-00 + revisione DCCA |
 | Nuovi orientamenti APD | Aggiornamento delle linee guida dell'EDPB/CEPD (es. consenso, interesse legittimo) | Valutare l'impatto sui pack A.1.2.2-5 e A.1.3 |
-| Aggiornamento di edizione dello standard | ISO 27701:2025 → futura edizione; pubblicazione ISO 27017:2025 | Revisione DCCA; aggiornamenti IMP dei gruppi di controllo |
+| Aggiornamento di edizione dello standard | ISO 27701:2025 → futura edizione; pubblicazione ISO 27017:2026 | Revisione DCCA; aggiornamenti IMP dei gruppi di controllo |
 | Cambiamento della determinazione del ruolo | L'organizzazione passa da puro responsabile del trattamento a titolare | Cambio di perimetro DCCA; attivazione dei pack A.1 |
 | Cambiamento dell'attività aziendale | Nuovo prodotto, nuova giurisdizione, nuova categoria di dati | Valutazione innescata di applicabilità per PRIV-POL-00 |
 | Esito DPIA | Nuovo approccio di trattamento richiesto da ulteriori controlli | Aggiornamento DCCA; aggiornamento IMP del gruppo di controllo |

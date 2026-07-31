@@ -14,7 +14,7 @@
 |--------|--------|--------|----------------------|
 | PII Cloud Controls | `iso27018-pii-cloud/` | 12 | A.1–A.12 |
 
-The `iso27017-sec-cloud/` folder is reserved for the future ISO 27017:2025 SEC product (not yet built).
+The `iso27017-sec-cloud/` folder is reserved for the ISO 27017:2026 SEC product (published ~2026-07-29, build starting weekend of 2026-08-01 — not yet built).
 
 ## ISO 27018:2025
 

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="../screenshots/01_isms-core_logon.png" width="120" alt="ISMS CORE"/>
+  <img src="../screenshots/light/01_isms_core_login_light.png" width="120" alt="ISMS CORE"/>
 </p>
 
 <h1 align="center">ISMS CORE Platform — User Manual</h1>
