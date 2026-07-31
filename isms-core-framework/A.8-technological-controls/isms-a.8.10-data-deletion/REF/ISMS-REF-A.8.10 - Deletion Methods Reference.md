@@ -729,7 +729,7 @@ If verification fails:
 
 - ISO/IEC 27040:2015: Storage Security (sanitization guidance)
 - ISO/IEC 27555:2021: Guidelines on PII Deletion
-- ISO/IEC 27017:2015: Cloud Services Security (deletion requirements)
+- ISO/IEC 27017:2026: Cloud Services Security (deletion requirements)
 
 **Industry Standards**:
 

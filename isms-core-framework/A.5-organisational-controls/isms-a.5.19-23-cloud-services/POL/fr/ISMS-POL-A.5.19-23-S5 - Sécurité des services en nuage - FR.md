@@ -48,8 +48,8 @@
 - ISMS-IMP-A.5.19-23.S5-UG/TG (Tableau de bord de surveillance de la conformité)
 - ISMS-REF-A.5.23 (Registre des fournisseurs de services en nuage)
 - ISO/IEC 27001:2022 Contrôle A.5.23
-- ISO/IEC 27017:2015 (Contrôles de sécurité pour les services en nuage)
-- ISO/IEC 27018:2019 (Protection de la vie privée dans le nuage)
+- ISO/IEC 27017:2026 (Contrôles de sécurité pour les services en nuage)
+- ISO/IEC 27018:2025 (Protection de la vie privée dans le nuage)
 
 ---
 

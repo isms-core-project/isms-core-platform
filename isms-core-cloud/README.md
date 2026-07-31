@@ -32,11 +32,11 @@ ISO 27018:2025 (Ed. 3) specifies controls for public cloud service providers (PI
 | **CLOUD** (this product) | Cloud service providers processing PII | ISO 27018:2025 |
 | **PRIVACY** (`isms-core-privacy/`) | PII controllers and processors generally | ISO 27701:2025 |
 
-Both extend ISO 27001:2022 ISMS. If your organisation is both a cloud PII processor **and** needs a full PIMS, use both products together.
+Both are standalone standards (neither requires ISO 27001 certification), though both complement and are commonly implemented alongside an ISO 27001:2022 ISMS. If your organisation is both a cloud PII processor **and** needs a full PIMS, use both products together.
 
 ## Standards Reference
 
 - ISO/IEC 27018:2025 (Ed. 3) — PII in Public Cloud (Annex A)
-- ISO/IEC 27001:2022 — Information Security Management System (prerequisite)
+- ISO/IEC 27001:2022 — Information Security Management System (complements; not a prerequisite)
 - ISO/IEC 27017:2015 — Cloud Security Controls (Tier 3 informational reference)
 - GDPR (EU 2016/679) — Mandatory for EU-scope organisations

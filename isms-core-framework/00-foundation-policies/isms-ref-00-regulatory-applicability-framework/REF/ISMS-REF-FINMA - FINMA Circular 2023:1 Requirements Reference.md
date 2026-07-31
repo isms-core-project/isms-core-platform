@@ -981,8 +981,8 @@ Estimated additional cost: 15-25% increase over base ISO 27001 compliance for sm
 
 - ISO/IEC 27001:2022: Information Security Management
 - ISO/IEC 27002:2022: Information Security Controls
-- ISO/IEC 27017:2015: Cloud Services Security
-- ISO/IEC 27018:2019: PII Protection in Public Cloud
+- ISO/IEC 27017:2026: Cloud Services Security
+- ISO/IEC 27018:2025: PII Protection in Public Cloud
 
 **NIST Publications**:
 

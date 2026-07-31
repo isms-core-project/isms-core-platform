@@ -728,7 +728,7 @@ Se la verifica non riesce:
 
 - ISO/IEC 27040:2015: Sicurezza dell'archiviazione (linee guida sulla sanificazione)
 - ISO/IEC 27555:2021: Linee guida sulla cancellazione delle DCP
-- ISO/IEC 27017:2015: Sicurezza dei servizi cloud (requisiti di cancellazione)
+- ISO/IEC 27017:2026: Sicurezza dei servizi cloud (requisiti di cancellazione)
 
 **Standard di settore**:
 

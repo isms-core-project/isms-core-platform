@@ -981,8 +981,8 @@ Coût supplémentaire estimé : augmentation de 15–25 % par rapport à la conf
 
 - ISO/IEC 27001:2022 : Systèmes de Management de la Sécurité de l'Information
 - ISO/IEC 27002:2022 : Contrôles de sécurité de l'information
-- ISO/IEC 27017:2015 : Sécurité des services cloud
-- ISO/IEC 27018:2019 : Protection des DCP dans le cloud public
+- ISO/IEC 27017:2026 : Sécurité des services cloud
+- ISO/IEC 27018:2025 : Protection des DCP dans le cloud public
 
 **Publications NIST** :
 

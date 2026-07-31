@@ -981,8 +981,8 @@ Geschätzte Mehrkosten: 15–25% über die Basis-ISO-27001-Compliance für klein
 
 - ISO/IEC 27001:2022: Informationssicherheitsmanagementsysteme
 - ISO/IEC 27002:2022: Informationssicherheitskontrollen
-- ISO/IEC 27017:2015: Sicherheit für Cloud-Dienste
-- ISO/IEC 27018:2019: Schutz personenbezogener Daten in der öffentlichen Cloud
+- ISO/IEC 27017:2026: Sicherheit für Cloud-Dienste
+- ISO/IEC 27018:2025: Schutz personenbezogener Daten in der öffentlichen Cloud
 
 **NIST-Publikationen:**
 

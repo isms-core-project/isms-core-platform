@@ -46,7 +46,7 @@ Il **Regolamento (UE) 2024/1689** recante norme armonizzate sull'intelligenza ar
 **Date chiave**:
 - **Adozione**: 21 maggio 2024 (Parlamento europeo)
 - **Entrata in vigore**: 1° agosto 2024
-- **Attuazione graduale**: 2025-2027
+- **Attuazione graduale**: 2025-2028
 
 **Scopo**: Stabilire norme armonizzate per lo sviluppo e l'utilizzo dell'IA nell'UE; approccio normativo basato sul rischio (proporzionato); proteggere i diritti fondamentali, la salute, la sicurezza e la democrazia; promuovere l'innovazione IA affidabile.
 
@@ -96,10 +96,10 @@ Il Regolamento sull'IA utilizza una **piramide del rischio a quattro livelli**:
 |------------------------|---------------------|-------|
 | **Pratiche di IA vietate** (Articolo 5) | 2 febbraio 2025 | 6 mesi dopo l'entrata in vigore |
 | **Modelli di IA di uso generale** (Capitolo V) | 2 agosto 2025 | 12 mesi |
-| **Sistemi di IA ad alto rischio** (Capitolo III, Sezione 2) | 2 agosto 2026 | 24 mesi |
-| **IA ad alto rischio in prodotti regolamentati** | 2 agosto 2027 | 36 mesi |
+| **Sistemi di IA ad alto rischio** (Capitolo III, Sezione 2) | 2 dicembre 2027 | Rinviata dal 2 agosto 2026 dal Digital Omnibus (Regolamento (UE) 2026/1744, in vigore dal 27 luglio 2026) |
+| **IA ad alto rischio in prodotti regolamentati** | 2 agosto 2028 | Rinviata dal 2 agosto 2027 dal Digital Omnibus (Regolamento (UE) 2026/1744, in vigore dal 27 luglio 2026) |
 
-**Periodo transitorio per i sistemi esistenti**: I sistemi di IA già immessi sul mercato o messi in servizio prima del 2 agosto 2026 possono continuare ad essere utilizzati fino al 2 agosto 2030 senza conformità (salvo modifiche sostanziali).
+**Periodo transitorio per i sistemi esistenti**: I sistemi di IA già immessi sul mercato o messi in servizio prima della data di applicazione pertinente del Capitolo III (2 dicembre 2027 per i sistemi ad alto rischio dell'Allegato III; 2 agosto 2028 per l'IA ad alto rischio in prodotti regolamentati) possono continuare ad essere utilizzati fino a tale data senza conformità (salvo modifiche sostanziali), ai sensi dell'Articolo 111, paragrafo 2, come modificato dal Digital Omnibus (Regolamento (UE) 2026/1744). Per i sistemi di IA ad alto rischio destinati all'uso da parte di autorità pubbliche resta invariato l'obbligo di conformità entro il 2 agosto 2030.
 
 ---
 
@@ -261,7 +261,7 @@ Gli utilizzatori devono: usare il sistema in conformità alle istruzioni; assegn
 
 # Sistemi di IA a rischio limitato (Articolo 50) — Obblighi di trasparenza
 
-**Data di applicazione**: 2 agosto 2026
+**Data di applicazione**: 2 agosto 2026 (invariata dal Digital Omnibus — questa data non coincide più con la scadenza dei sistemi ad alto rischio, rinviata al 2 dicembre 2027 / 2 agosto 2028; vedere Sezione 2.6). I sistemi di IA già immessi sul mercato prima del 2 agosto 2026 dispongono di un periodo transitorio fino al 2 dicembre 2026 per conformarsi specificamente agli obblighi di marcatura dell'Articolo 50, paragrafo 2.
 **Sanzione**: Fino a 7.500.000 € o 1,5% del fatturato mondiale annuo
 
 | Requisito | Descrizione |
@@ -442,4 +442,4 @@ Mantenere un inventario di tutti i sistemi di IA sviluppati o utilizzati con: no
 
 *Per le organizzazioni che NON sviluppano o utilizzano sistemi di IA che incidono su persone nell'UE, questo documento è solo a scopo informativo e NON crea obblighi di conformità.*
 
-<!-- QA_VERIFIED: 2026-04-03 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

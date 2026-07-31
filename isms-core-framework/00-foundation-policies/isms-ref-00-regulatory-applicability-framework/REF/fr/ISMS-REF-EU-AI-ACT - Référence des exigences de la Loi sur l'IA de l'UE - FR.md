@@ -115,7 +115,7 @@ Cette référence organise les exigences du Règlement IA selon :
 - Le système de classification fondée sur les risques (Inacceptable, Haut risque, Risque limité, Risque minimal)
 - Les obligations des fournisseurs (développeurs, fabricants)
 - Les obligations des déployeurs (utilisateurs de systèmes d'IA)
-- Le calendrier de mise en œuvre par phases (2025–2027)
+- Le calendrier de mise en œuvre par phases (2025–2028)
 - Les exigences relatives aux modèles d'IA à usage général (MIAG)
 - La mise en correspondance avec ISO 27001:2022 et les normes connexes
 - Les exigences organisationnelles et de gouvernance
@@ -132,7 +132,7 @@ Cette référence organise les exigences du Règlement IA selon :
 
 - **Adoption** : 21 mai 2024 (Parlement européen)
 - **Entrée en vigueur** : 1er août 2024 (20 jours après publication au Journal officiel)
-- **Mise en œuvre par phases** : 2025–2027 (voir Section 2.6)
+- **Mise en œuvre par phases** : 2025–2028 (voir Section 2.6)
 
 **Objet** :
 
@@ -229,12 +229,12 @@ Le Règlement IA adopte une **pyramide des risques à quatre niveaux** :
 |-----------------------|-------------|--------|
 | **Pratiques d'IA interdites** (Article 5) | 2 février 2025 | 6 mois après l'entrée en vigueur |
 | **Modèles d'IA à usage général** (Chapitre V) | 2 août 2025 | 12 mois après l'entrée en vigueur |
-| **Systèmes d'IA à haut risque** (Chapitre III, Section 2) | 2 août 2026 | 24 mois après l'entrée en vigueur |
-| **IA à haut risque dans les produits réglementés** | 2 août 2027 | 36 mois après l'entrée en vigueur |
+| **Systèmes d'IA à haut risque** (Chapitre III, Section 2) | 2 décembre 2027 | Reporté du 2 août 2026 par le Digital Omnibus (Règlement (UE) 2026/1744, en vigueur depuis le 27 juillet 2026) |
+| **IA à haut risque dans les produits réglementés** | 2 août 2028 | Reporté du 2 août 2027 par le Digital Omnibus (Règlement (UE) 2026/1744, en vigueur depuis le 27 juillet 2026) |
 | **Bureau IA de l'UE, structure de gouvernance** | Immédiat | Août 2024 |
 
 **Période de grâce pour les systèmes existants** :
-Les systèmes d'IA déjà mis sur le marché ou mis en service avant le 2 août 2026 peuvent continuer à être utilisés jusqu'au 2 août 2030 sans mise en conformité (sauf en cas de modification substantielle).
+Les systèmes d'IA déjà mis sur le marché ou mis en service avant la date d'application applicable du Chapitre III (2 décembre 2027 pour les systèmes à haut risque de l'Annexe III ; 2 août 2028 pour l'IA à haut risque dans les produits réglementés) peuvent continuer à être utilisés jusqu'à cette date sans mise en conformité (sauf en cas de modification substantielle), conformément à l'Article 111, paragraphe 2, tel que modifié par le Digital Omnibus (Règlement (UE) 2026/1744). Les systèmes d'IA à haut risque destinés à être utilisés par des autorités publiques doivent néanmoins être conformes au 2 août 2030, sans changement.
 
 ---
 
@@ -327,7 +327,7 @@ Certaines pratiques d'IA sont **interdites** en raison des risques inacceptables
 
 Les systèmes d'IA à haut risque sont soumis à des **exigences strictes** en raison des risques significatifs potentiels pour la santé, la sécurité ou les droits fondamentaux.
 
-**Date d'effet** : 2 août 2026 (24 mois après l'entrée en vigueur)
+**Date d'effet** : 2 décembre 2027 (reporté du 2 août 2026 par le Digital Omnibus, Règlement (UE) 2026/1744, en vigueur depuis le 27 juillet 2026)
 
 **Sanction en cas de non-conformité** : jusqu'à 15 millions d'euros ou 3 % du chiffre d'affaires annuel mondial (le montant le plus élevé étant retenu)
 
@@ -475,7 +475,7 @@ Exigences :
 
 - A.8.15 : Journalisation
 - A.8.16 : Activités de surveillance
-- ISO/IEC 27018:2019 : Protection des données à caractère personnel dans les nuages publics (exigences de journalisation)
+- ISO/IEC 27018:2025 : Protection des données à caractère personnel dans les nuages publics (exigences de journalisation)
 
 ---
 
@@ -691,7 +691,7 @@ Requise pour les déployeurs qui sont :
 
 Certains systèmes d'IA présentent des **risques limités** mais nécessitent de la transparence pour permettre des décisions éclairées.
 
-**Date d'effet** : 2 août 2026 (identique aux systèmes à haut risque)
+**Date d'effet** : 2 août 2026 (inchangée par le Digital Omnibus — cette date n'est plus identique à l'échéance des systèmes à haut risque, reportée au 2 décembre 2027 / 2 août 2028 ; voir Section 2.6). Les systèmes d'IA déjà mis sur le marché avant le 2 août 2026 bénéficient d'une période transitoire jusqu'au 2 décembre 2026 pour se conformer spécifiquement aux obligations de marquage de l'article 50, paragraphe 2.
 
 **Sanction en cas de non-conformité** : jusqu'à 7,5 millions d'euros ou 1,5 % du chiffre d'affaires annuel mondial (le montant le plus élevé étant retenu)
 
@@ -1098,8 +1098,8 @@ Les organisations disposant d'ISO 27001 nécessitent généralement **40 à 60 %
 
 - Pratiques interdites : Action immédiate requise (2 février 2025)
 - MIAG : 2 août 2025
-- Systèmes à haut risque : 2 août 2026
-- Période de grâce pour les systèmes existants : Jusqu'au 2 août 2030 (sauf modification substantielle)
+- Systèmes à haut risque : 2 décembre 2027 (systèmes de l'Annexe III) ; 2 août 2028 (IA à haut risque dans les produits réglementés) — reportés par le Digital Omnibus (Règlement (UE) 2026/1744)
+- Période de grâce pour les systèmes existants : Jusqu'à la date applicable ci-dessus (2 décembre 2027 / 2 août 2028) ; 2 août 2030 sans changement pour les systèmes utilisés par des autorités publiques
 
 ## Ressources nécessaires
 
@@ -1476,4 +1476,4 @@ Les coûts de conformité au Règlement IA varient considérablement selon :
 
 *Pour les organisations ne développant pas ni ne déployant des systèmes d'IA affectant des personnes dans l'UE, ce document est fourni à titre de sensibilisation informative uniquement et ne crée aucune obligation de conformité.*
 
-<!-- QA_VERIFIED: 2026-03-30 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

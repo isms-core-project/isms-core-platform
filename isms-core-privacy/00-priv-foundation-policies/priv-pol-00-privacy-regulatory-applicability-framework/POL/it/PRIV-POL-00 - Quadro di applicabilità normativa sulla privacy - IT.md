@@ -451,9 +451,9 @@ ISO/IEC 27017:2026 è la seconda edizione dello standard sui controlli di sicure
 
 **Azioni alla pubblicazione** :
 
-1. Esaminare ISO/IEC 27017:2026 per le modifiche strutturali rispetto all'edizione 2019
+1. Esaminare ISO/IEC 27017:2026 per le modifiche strutturali rispetto all'edizione 2015
 2. Valutare l'impatto sui pack di controllo `priv-a.2.4.2-4` e `priv-a.2.5.7-9`
-3. Aggiornare il riferimento di Livello 3 di PRIV-POL-00 dall'edizione 2019 all'edizione 2026
+3. Aggiornare il riferimento di Livello 3 di PRIV-POL-00 dall'edizione 2015 all'edizione 2026
 4. Comunicare le modifiche ai proprietari dei gruppi di controllo pertinenti
 5. Aggiornare gli IMP dei pack di controllo dove sono referenziati gli orientamenti 27017
 

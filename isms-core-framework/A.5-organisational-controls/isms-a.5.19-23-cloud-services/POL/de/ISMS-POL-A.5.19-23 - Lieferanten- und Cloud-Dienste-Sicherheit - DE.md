@@ -717,8 +717,8 @@ Dieses Richtlinienrahmenwerk belegt Compliance mit:
 - ISO/IEC 27036 (Reihe) – Informationssicherheit für Lieferantenbeziehungen
 
 **Cloud-spezifische Standards:**
-- ISO/IEC 27017:2015 – Cloud-Sicherheitskontrollen
-- ISO/IEC 27018:2019 – Cloud-Datenschutz (Schutz personenbezogener Informationen)
+- ISO/IEC 27017:2026 – Cloud-Sicherheitskontrollen
+- ISO/IEC 27018:2025 – Cloud-Datenschutz (Schutz personenbezogener Informationen)
 - CSA CCM – Cloud Controls Matrix-Rahmenwerk-Ausrichtung
 
 **Regulatorische Ausrichtung:**

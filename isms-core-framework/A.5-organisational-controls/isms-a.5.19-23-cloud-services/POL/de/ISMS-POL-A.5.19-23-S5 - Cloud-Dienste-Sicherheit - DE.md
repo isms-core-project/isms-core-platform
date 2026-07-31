@@ -48,8 +48,8 @@
 - ISMS-IMP-A.5.19-23.S5-UG/TG (Compliance-Monitoring-Dashboard)
 - ISMS-REF-A.5.23 (Cloud-Anbieter-Referenzregister)
 - ISO/IEC 27001:2022 Massnahme A.5.23
-- ISO/IEC 27017:2015 (Cloud-Sicherheitskontrollen)
-- ISO/IEC 27018:2019 (Cloud-Datenschutz)
+- ISO/IEC 27017:2026 (Cloud-Sicherheitskontrollen)
+- ISO/IEC 27018:2025 (Cloud-Datenschutz)
 
 ---
 

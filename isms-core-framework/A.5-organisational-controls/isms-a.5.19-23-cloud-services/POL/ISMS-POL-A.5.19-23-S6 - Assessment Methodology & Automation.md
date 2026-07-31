@@ -625,8 +625,8 @@ An assessment is **ready for ISO/CISO sign-off** only when all of the following 
 
 - ISO/IEC 27001:2022 - Control A.5.23
 - ISO/IEC 27002:2022 - Cloud security guidance
-- ISO/IEC 27017:2015 - Cloud-specific controls
-- ISO/IEC 27018:2019 - PII in public clouds
+- ISO/IEC 27017:2026 - Cloud-specific controls
+- ISO/IEC 27018:2025 - PII in public clouds
 - NIST SP 800-144 - Guidelines on Security and Privacy in Public Cloud
 - CSA Cloud Controls Matrix (CCM) v4
 

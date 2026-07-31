@@ -40,9 +40,9 @@ Navigate to any framework from the **Compliance** section of the sidebar or from
 | Framework | Module | Scope |
 |-----------|--------|-------|
 | **CyberFundamentals (BE)** | CCN/CCB Belgium | 41 NIST CSF 2.0-aligned practices. Belgian Cyber Security Centre baseline. ISO 27001 crosswalk: 107 mappings. |
-| **BaFin BAIT (DE)** | Rundschreiben 10/2021 | 23 requirements across 12 modules. German banking IT supervisory requirements. ISO 27001 crosswalk: 69 mappings. |
+| **BaFin BAIT (DE)** | Rundschreiben 10/2017 (amended 2021) | 23 requirements across 12 modules. German banking IT supervisory requirements. ISO 27001 crosswalk: 69 mappings. |
 | **CSSF 20-750 (LU)** | CSSF Circulaire 20/750 | 19 requirements across 7 domains. Luxembourg financial sector ICT risk. ISO 27001 crosswalk: 47 mappings. |
-| **ACN Guidelines (IT)** | ACN Linee Guida Cyber Risk | 19 guidelines across 4 groups. Italian National Cybersecurity Agency baseline. ISO 27001 crosswalk: 43 mappings. |
+| **ACN Guidelines (IT)** | Determinazione obblighi di base (ACN, Apr 2025) | 37 measures/87 requirements (Important) or 43 measures/116 requirements (Essential). Italian National Cybersecurity Agency baseline, implementing Art. 24(2) of D.Lgs. 138/2024. ISO 27001 crosswalk: 43 mappings. |
 | **UK NIS** | UK NIS Regulations 2018 (SI 2018/506) | 13 requirements across 3 objectives. Post-Brexit equivalent of EU NIS. ISO 27001 crosswalk: 51 mappings. |
 | **UK Operational Resilience** | FCA/PRA PS21/3 + PS26/2 | 12 requirements across 4 objectives. UK financial sector operational resilience. ISO 27001 crosswalk: 34 mappings. |
 
@@ -55,10 +55,10 @@ Navigate to any framework from the **Compliance** section of the sidebar or from
 | **NIST SP 800-53 Rev 5** | NIST SP 800-53r5 | 324 base controls across 20 families. Assessed at base-control level. Maturity 0–4. |
 | **CIS Controls v8** | CIS Critical Security Controls v8 | 153 safeguards across 18 controls. Industry standard baseline for technical security hygiene. Maturity 0–4. |
 | **CSA CCM v4.1** | Cloud Security Alliance CCM | 207 controls across 17 domains. Cloud-specific security controls for cloud service providers and customers. |
-| **CSA AICM v1.0.3** | Cloud Security Alliance AI Controls Matrix | 243 controls across 18 domains. AI-specific security controls overlay. |
+| **CSA AICM v1.1** | Cloud Security Alliance AI Controls Matrix | 247 controls across 18 domains. AI-specific security controls overlay. |
 | **COBIT 2019** | ISACA COBIT 2019 | 40 governance and management objectives. IT governance capability scoring (0–4). |
-| **TISAX** | VDA ISA 6.0 | 53 requirements across 12 domains: Information Security, Physical Security, Prototype Protection, and more. Automotive industry standard (VDA/ENX). Maturity 0–4. |
-| **BSI IT-Grundschutz** | BSI Kompendium | 68 Bausteine across 10 layers. German Federal Office for Information Security baseline. ISO 27001 + ISO 27701 + ISO 27018 crosswalk: 269 total mappings. |
+| **TISAX** | VDA ISA 6.0 | 79 requirements across 9 domains: IS Policies and Organization, Physical Security, Prototype Protection, and more. Automotive industry standard (VDA/ENX). Maturity 0–4. |
+| **BSI IT-Grundschutz** | BSI Kompendium | 111 Bausteine across 10 layers. German Federal Office for Information Security baseline. ISO 27001 + ISO 27701 + ISO 27018 crosswalk: 538 total mappings. |
 | **BSI C5:2026** | BSI Cloud Computing Compliance Criteria Catalogue 2026 | 130+ criteria across 17 domains. German Federal Office for Information Security cloud security standard, 2026 edition. Successor to BSI C5:2020. |
 | **BSI C3A** | BSI Cybersecurity and Cloud Criteria for AI 2025 | AI-specific cloud security criteria overlaying BSI C5. For cloud-based AI deployments. |
 | **PCI DSS v4.0.1** | PCI SSC Payment Card Industry Data Security Standard | 12 requirements across 323 sub-requirements with 6 prioritised milestones. Applies to organisations that handle cardholder data. Maturity 0–4. |

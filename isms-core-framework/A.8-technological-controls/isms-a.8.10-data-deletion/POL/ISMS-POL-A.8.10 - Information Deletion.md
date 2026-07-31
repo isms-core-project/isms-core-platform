@@ -203,7 +203,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - **NIST SP 800-88 Rev. 1** - Guidelines for Media Sanitization (Clear, Purge, Destroy methods)
 - **ISO/IEC 27040:2015** - Storage security including sanitization guidance
 - **ISO/IEC 27555:2024** - Guidelines on personally identifiable information deletion
-- **ISO/IEC 27017:2015** - Cloud services information security controls (deletion guidance)
+- **ISO/IEC 27017:2026** - Cloud services information security controls (deletion guidance)
 - **DIN 66399** - Destruction of data media (German standard for paper/media destruction, 7 security levels)
 - **DoD 5220.22-M** - National Industrial Security Program (legacy standard, superseded by NIST SP 800-88 for US federal)
 

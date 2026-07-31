@@ -484,7 +484,7 @@ Services matériels externalisés par une banque à un prestataire de services, 
 ## Règlement de l'UE sur l'intelligence artificielle (AI Act)
 
 **Réglementation** : Règlement (UE) 2024/1689 établissant des règles harmonisées sur l'intelligence artificielle
-**Date d'entrée en vigueur** : 1er août 2024 (mise en œuvre progressive jusqu'en août 2027)
+**Date d'entrée en vigueur** : 1er août 2024 (mise en œuvre progressive jusqu'en août 2028)
 
 **Déclencheurs d'applicabilité** :
 
@@ -521,8 +521,8 @@ Services matériels externalisés par une banque à un prestataire de services, 
 
 - **Février 2025** : Interdictions sur les IA à risque inacceptable
 - **Août 2025** : Obligations pour les modèles d'IA à usage général
-- **Août 2026** : Application complète pour les systèmes d'IA à haut risque
-- **Août 2027** : IA à haut risque dans les produits réglementés (dispositifs médicaux, machines)
+- **Décembre 2027** : Application complète pour les systèmes d'IA à haut risque (reportée d'août 2026 par le Digital Omnibus, Règlement (UE) 2026/1744, en vigueur depuis le 27 juillet 2026)
+- **Août 2028** : IA à haut risque dans les produits réglementés (dispositifs médicaux, machines) (reportée d'août 2027 par le même Digital Omnibus)
 
 **Impact sur le SMSI** :
 
@@ -1230,7 +1230,7 @@ Pour les réglementations conditionnelles avec des exigences complexes (quel que
 | **FINMA** | ISMS-REF-FINMA — Référence des exigences de la Circulaire FINMA 2023/1 | Exigences de résilience opérationnelle et d'externalisation pour les établissements financiers suisses. Tenu pour l'applicabilité future si l'organisation obtient une licence FINMA ou sert des clients réglementés FINMA. | Tenu (mis à jour selon les révisions des circulaires FINMA) | [Date de revue de la Circulaire 2023/1] | Annuellement ou lors des révisions des circulaires FINMA |
 | **NIS2** | ISMS-REF-NIS2 — Référence des exigences de la Directive NIS2 | Gestion des risques de cybersécurité, notification des incidents, sécurité de la chaîne d'approvisionnement et exigences de gouvernance selon les Articles NIS2 20-23. Tenu pour l'applicabilité future si l'organisation est désignée entité essentielle/importante. | Tenu (mis à jour à mesure que les États membres UE transposent NIS2 en droit national) | [Date de revue des lois nationales NIS2] | Semestriel (surveillance des transpositions nationales) |
 | **PCI DSS v4.0.1** | ISMS-REF-PCI-DSS — Référence des exigences PCI DSS | 12 exigences PCI DSS v4.0.1 couvrant la sécurité réseau, la protection des données, la gestion des vulnérabilités, le contrôle d'accès, la surveillance et les tests. Tenu pour l'applicabilité future si l'organisation commence à traiter des cartes de paiement. | Tenu (mis à jour selon les publications PCI SSC, actuellement v4.0 en vigueur depuis mars 2024) | [Date d'incorporation de la v4.0.1] | Annuellement ou lors des mises à jour PCI SSC |
-| **AI Act UE** | ISMS-REF-EU-AI-ACT — Référence des exigences du règlement UE sur l'IA | Cadre de gouvernance de l'IA basé sur les risques couvrant les pratiques interdites (Article 5), les systèmes d'IA à haut risque (Articles 9-72), les obligations de transparence pour le risque limité (Article 50) et les exigences pour les modèles d'IA à usage général (Articles 53-54). Tenu pour l'applicabilité future si l'organisation développe ou déploie des systèmes d'IA affectant des personnes dans l'UE. | En développement (mis à jour à mesure que les actes délégués et d'exécution de l'AI Act UE sont publiés, mise en œuvre progressive 2025-2027) | [Date du brouillon initial] | Lors de la publication des actes délégués de l'AI Act |
+| **AI Act UE** | ISMS-REF-EU-AI-ACT — Référence des exigences du règlement UE sur l'IA | Cadre de gouvernance de l'IA basé sur les risques couvrant les pratiques interdites (Article 5), les systèmes d'IA à haut risque (Articles 9-72), les obligations de transparence pour le risque limité (Article 50) et les exigences pour les modèles d'IA à usage général (Articles 53-54). Tenu pour l'applicabilité future si l'organisation développe ou déploie des systèmes d'IA affectant des personnes dans l'UE. | En développement (mis à jour à mesure que les actes délégués et d'exécution de l'AI Act UE sont publiés, mise en œuvre progressive 2025-2028) | [Date du brouillon initial] | Lors de la publication des actes délégués de l'AI Act |
 
 **Justification du maintien des références d'exigences « Non applicable » :**
 
@@ -1282,7 +1282,7 @@ Le maintien des références d'exigences pour des réglementations non applicabl
 | Réglementation | Dates de mise en œuvre clés | Pertinence organisationnelle |
 |----------------|-----------------------------|-----------------------------|
 | **DORA** | **17 janvier 2025 :** Application complète pour les entités financières | Surveiller : Si l'organisation devient une entité financière UE ou un fournisseur TIC critique avant le 2025-01-17, DORA devient immédiatement Niveau 1 |
-| **AI Act UE** | **2 février 2025 :** Interdictions (IA à risque inacceptable)<br>**2 août 2025 :** Obligations pour les modèles d'IA à usage général<br>**2 août 2026 :** Systèmes d'IA à haut risque<br>**2 août 2027 :** IA à haut risque dans les produits réglementés<br>**2 août 2030 :** Fin de la période de grâce pour les systèmes existants | Surveiller : Si l'organisation développe ou déploie des systèmes d'IA affectant des personnes dans l'UE → Conformité requise avant l'échéance applicable. Les systèmes existants (antérieurs à août 2026) bénéficient d'une période de grâce jusqu'en 2030, sauf modification substantielle |
+| **AI Act UE** | **2 février 2025 :** Interdictions (IA à risque inacceptable)<br>**2 août 2025 :** Obligations pour les modèles d'IA à usage général<br>**2 décembre 2027 :** Systèmes d'IA à haut risque (reporté du 2 août 2026 par le Digital Omnibus, Règlement (UE) 2026/1744, en vigueur depuis le 27 juillet 2026)<br>**2 août 2028 :** IA à haut risque dans les produits réglementés (reporté du 2 août 2027 par le même Digital Omnibus)<br>**2 août 2030 :** Fin de la période de grâce pour les systèmes existants utilisés par des autorités publiques (inchangée) | Surveiller : Si l'organisation développe ou déploie des systèmes d'IA affectant des personnes dans l'UE → Conformité requise avant l'échéance applicable. Les systèmes existants bénéficient d'une période de grâce jusqu'à la date applicable ci-dessus (décembre 2027 / août 2028) ; les systèmes utilisés par des autorités publiques conservent une période de grâce jusqu'en 2030, sauf modification substantielle |
 | **PCI DSS v4.0.1** | **31 mars 2024 :** v4.0 en vigueur (v3.2.1 retirée)<br>**31 mars 2025 :** Les nouvelles exigences (marquées « futures » dans la v4.0) deviennent obligatoires | Actuellement non applicable. Si le traitement des cartes de paiement commence → Les exigences v4.0 s'appliquent immédiatement (v3.2.1 retirée). Les exigences à date future (extension MFA, améliorations cryptographiques, anti-hameçonnage) obligatoires à partir de mars 2025 |
 | **NIS2** | **17 octobre 2024 :** Les États membres UE doivent transposer en droit national<br>**2024-2025 :** Les mises en œuvre nationales varient selon l'État membre<br>**Variable selon l'État membre :** Les dates d'application dépendent de la loi nationale de transposition | Surveiller : Les mises en œuvre nationales peuvent affecter la détermination d'applicabilité si l'organisation opère dans plusieurs États membres UE. Consulter l'autorité nationale de cybersécurité pour les dates d'entrée en vigueur spécifiques |
 
@@ -1317,4 +1317,4 @@ Cette politique établit l'applicabilité réglementaire pour le Système de Man
 
 *« L'applicabilité réglementaire est le fondement. La mise en œuvre et la conformité sont la structure construite sur ce fondement. »*
 
-<!-- QA_VERIFIED: 2026-03-30 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

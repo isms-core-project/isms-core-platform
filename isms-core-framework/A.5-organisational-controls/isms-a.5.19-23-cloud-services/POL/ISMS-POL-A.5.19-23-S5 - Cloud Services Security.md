@@ -48,8 +48,8 @@
 - ISMS-IMP-A.5.19-23.S5-UG/TG (Compliance Monitoring Dashboard)
 - ISMS-REF-A.5.23 (Cloud Service Provider Registry)
 - ISO/IEC 27001:2022 Control A.5.23
-- ISO/IEC 27017:2015 (Cloud security controls)
-- ISO/IEC 27018:2019 (Cloud privacy)
+- ISO/IEC 27017:2026 (Cloud security controls)
+- ISO/IEC 27018:2025 (Cloud privacy)
 
 ---
 

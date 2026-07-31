@@ -29,7 +29,7 @@
 | [04](04-projects-workspace.md) | Projects Workspace | Creating projects, adding policies, editing documents, document variables, SCR checklists |
 | [05](05-policies-documents.md) | Policies & Documents | Policy browser, filtering, full-text search, document types |
 | [06](06-compliance-assessments.md) | Compliance Assessments | ISMS / Privacy / Cloud / AI checklists, per-item scoring |
-| [07](07-assessment-frameworks.md) | Assessment Frameworks | All 25 frameworks: NIS2, DORA, NIST CSF 2.0, BSI, TISAX, COBIT and more |
+| [07](07-assessment-frameworks.md) | Assessment Frameworks | All 29 frameworks: NIS2, DORA, NIST CSF 2.0, BSI, TISAX, COBIT and more |
 | [08](08-gap-management.md) | Gap Management | Creating gaps, assigning owners, SLA tracking, remediation |
 | [09](09-evidence-management.md) | Evidence Management | Manual evidence, connector evidence, expiry, verification |
 | [10](10-connectors.md) | Automated Evidence Connectors | What connectors do, 44 supported systems, how to configure |

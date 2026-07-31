@@ -628,8 +628,8 @@ Eine Bewertung ist **bereit zur ISO/ISB-Abzeichnung** nur wenn alle folgenden Be
 
 - ISO/IEC 27001:2022 – Massnahme A.5.23
 - ISO/IEC 27002:2022 – Cloud-Sicherheitsleitlinien
-- ISO/IEC 27017:2015 – Cloud-spezifische Kontrollen
-- ISO/IEC 27018:2019 – Personenbezogene Informationen in öffentlichen Clouds
+- ISO/IEC 27017:2026 – Cloud-spezifische Kontrollen
+- ISO/IEC 27018:2025 – Personenbezogene Informationen in öffentlichen Clouds
 - NIST SP 800-144 – Leitlinien zu Sicherheit und Datenschutz in der öffentlichen Cloud
 - CSA Cloud Controls Matrix (CCM) v4
 

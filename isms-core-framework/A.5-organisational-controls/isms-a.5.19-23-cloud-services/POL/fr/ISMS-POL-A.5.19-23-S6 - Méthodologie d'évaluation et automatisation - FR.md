@@ -626,8 +626,8 @@ Une évaluation est **prête pour la validation RSI/RSSI** uniquement lorsque to
 
 - ISO/IEC 27001:2022 — Contrôle A.5.23
 - ISO/IEC 27002:2022 — Lignes directrices pour la sécurité cloud
-- ISO/IEC 27017:2015 — Contrôles spécifiques au cloud
-- ISO/IEC 27018:2019 — DCP dans les clouds publics
+- ISO/IEC 27017:2026 — Contrôles spécifiques au cloud
+- ISO/IEC 27018:2025 — DCP dans les clouds publics
 - NIST SP 800-144 — Lignes directrices sur la sécurité et la confidentialité dans le cloud public
 - CSA Cloud Controls Matrix (CCM) v4
 

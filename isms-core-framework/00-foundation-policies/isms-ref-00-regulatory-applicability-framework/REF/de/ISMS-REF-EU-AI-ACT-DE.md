@@ -115,7 +115,7 @@ Diese Referenz organisiert AI-Act-Anforderungen nach:
 - Risikobasiertem Klassifizierungssystem (Inakzeptables Risiko, Hohes Risiko, Begrenztes Risiko, Minimales Risiko)
 - Anbieterpflichten (Entwickler, Hersteller)
 - Betreiberpflichten (Nutzer von KI-Systemen)
-- Stufenweisem Umsetzungszeitplan (2025–2027)
+- Stufenweisem Umsetzungszeitplan (2025–2028)
 - Anforderungen für KI-Modelle für allgemeine Zwecke (GPAI)
 - Zuordnung zu ISO 27001:2022 und verwandten Standards
 - Governance- und organisatorische Anforderungen
@@ -132,7 +132,7 @@ Diese Referenz organisiert AI-Act-Anforderungen nach:
 
 - **Verabschiedung**: 21. Mai 2024 (Europäisches Parlament)
 - **Inkrafttreten**: 1. August 2024 (20 Tage nach Veröffentlichung im Amtsblatt)
-- **Stufenweise Umsetzung**: 2025–2027 (siehe Abschnitt 2.6)
+- **Stufenweise Umsetzung**: 2025–2028 (siehe Abschnitt 2.6)
 
 **Zweck**:
 
@@ -230,12 +230,12 @@ Der AI Act verwendet eine **vierstufige Risikopyramide**:
 |-----------------------|-------------------|--------|
 | **Verbotene KI-Praktiken** (Artikel 5) | 2. Februar 2025 | 6 Monate nach Inkrafttreten |
 | **KI-Modelle für allgemeine Zwecke** (Kapitel V) | 2. August 2025 | 12 Monate nach Inkrafttreten |
-| **KI-Systeme mit hohem Risiko** (Kapitel III, Abschnitt 2) | 2. August 2026 | 24 Monate nach Inkrafttreten |
-| **Hochrisiko-KI in regulierten Produkten** | 2. August 2027 | 36 Monate nach Inkrafttreten |
+| **KI-Systeme mit hohem Risiko** (Kapitel III, Abschnitt 2) | 2. Dezember 2027 | Verschoben vom 2. August 2026 durch den Digital Omnibus (Verordnung (EU) 2026/1744, in Kraft seit 27. Juli 2026) |
+| **Hochrisiko-KI in regulierten Produkten** | 2. August 2028 | Verschoben vom 2. August 2027 durch den Digital Omnibus (Verordnung (EU) 2026/1744, in Kraft seit 27. Juli 2026) |
 | **KI-Büro, Governance-Struktur** | Sofort | August 2024 |
 
 **Übergangsfrist für bestehende Systeme**:
-KI-Systeme, die vor dem 2. August 2026 bereits auf dem Markt platziert oder in Betrieb genommen wurden, dürfen bis zum 2. August 2030 ohne Compliance weiter genutzt werden (sofern keine wesentlichen Änderungen vorgenommen werden).
+KI-Systeme, die vor dem jeweils anwendbaren Geltungsbeginn nach Kapitel III bereits auf dem Markt platziert oder in Betrieb genommen wurden (2. Dezember 2027 für KI-Systeme mit hohem Risiko nach Anhang III; 2. August 2028 für Hochrisiko-KI in regulierten Produkten), dürfen bis zu diesem Datum ohne Compliance weiter genutzt werden (sofern keine wesentlichen Änderungen vorgenommen werden), gemäss Artikel 111 Absatz 2 in der durch den Digital Omnibus (Verordnung (EU) 2026/1744) geänderten Fassung. Für KI-Systeme mit hohem Risiko, die für die Nutzung durch Behörden bestimmt sind, gilt unverändert eine Compliance-Frist bis zum 2. August 2030.
 
 ---
 
@@ -328,7 +328,7 @@ Bestimmte KI-Praktiken sind aufgrund inakzeptabler Risiken für Grundrechte, Sic
 
 KI-Systeme mit hohem Risiko unterliegen aufgrund potenzieller erheblicher Risiken für Gesundheit, Sicherheit oder Grundrechte **strengen Anforderungen**.
 
-**Wirksamkeitsdatum**: 2. August 2026 (24 Monate nach Inkrafttreten)
+**Wirksamkeitsdatum**: 2. Dezember 2027 (verschoben vom 2. August 2026 durch den Digital Omnibus, Verordnung (EU) 2026/1744, in Kraft seit 27. Juli 2026)
 
 **Strafe bei Nichtkonformität**: Bis zu 15 Millionen Euro oder 3 % des weltweiten Jahresumsatzes (je nachdem, welcher Betrag höher ist)
 
@@ -476,7 +476,7 @@ Anforderungen:
 
 - A.8.15: Protokollierung
 - A.8.16: Überwachungsaktivitäten
-- ISO/IEC 27018:2019: Schutz personenbezogener Daten in der öffentlichen Cloud (Protokollierungsanforderungen)
+- ISO/IEC 27018:2025: Schutz personenbezogener Daten in der öffentlichen Cloud (Protokollierungsanforderungen)
 
 ---
 
@@ -692,7 +692,7 @@ Erforderlich für Betreiber, die:
 
 Bestimmte KI-Systeme stellen ein **begrenztes Risiko** dar, erfordern aber Transparenz, um informierte Entscheidungen zu ermöglichen.
 
-**Wirksamkeitsdatum**: 2. August 2026 (gleich wie Hochrisiko-Systeme)
+**Wirksamkeitsdatum**: 2. August 2026 (unverändert durch den Digital Omnibus — dieses Datum entspricht nicht mehr der Frist für Hochrisiko-Systeme, die auf den 2. Dezember 2027 / 2. August 2028 verschoben wurde; siehe Abschnitt 2.6). KI-Systeme, die bereits vor dem 2. August 2026 in Verkehr gebracht wurden, verfügen über eine Übergangsfrist bis zum 2. Dezember 2026, um die Kennzeichnungspflichten nach Artikel 50 Absatz 2 zu erfüllen.
 
 **Strafe bei Nichtkonformität**: Bis zu 7,5 Millionen Euro oder 1,5 % des weltweiten Jahresumsatzes (je nachdem, welcher Betrag höher ist)
 
@@ -1099,8 +1099,8 @@ Organisationen mit ISO 27001 benötigen in der Regel **40–60 % zusätzlichen A
 
 - Verbotene Praktiken: Sofortiger Handlungsbedarf (2. Februar 2025)
 - GPAI: 2. August 2025
-- Hochrisiko-Systeme: 2. August 2026
-- Übergangsfrist bestehende Systeme: Bis 2. August 2030 (sofern keine wesentliche Änderung)
+- Hochrisiko-Systeme: 2. Dezember 2027 (Anhang-III-Systeme); 2. August 2028 (Hochrisiko-KI in regulierten Produkten) — verschoben durch den Digital Omnibus (Verordnung (EU) 2026/1744)
+- Übergangsfrist bestehende Systeme: Bis zum jeweils anwendbaren Datum oben (2. Dezember 2027 / 2. August 2028); für Behörden unverändert bis 2. August 2030
 
 ## Ressourcenanforderungen
 
@@ -1477,4 +1477,4 @@ AI-Act-Compliance-Kosten variieren erheblich je nach:
 
 <!-- ISMS-CORE:REF:ISMS-REF-EU-AI-ACT-DE:framework:REF:eu-ai-act -->
 
-<!-- QA_VERIFIED: 2026-03-28 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

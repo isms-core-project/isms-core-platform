@@ -218,7 +218,7 @@ Cadres et normes utilisés pour des orientations techniques et organisationnelle
 
 ## Règlement sur l'Intelligence Artificielle de l'UE (Règlement 2024/1689)
 
-**Applicabilité** : Lors de la mise sur le marché de l'UE d'un système d'IA, de la mise en service d'un système d'IA dans l'UE, ou lorsque les résultats d'un système d'IA sont utilisés dans l'UE — indépendamment du lieu d'établissement de l'organisation. S'applique intégralement à partir du 2 août 2026 (avec les dispositions relatives aux pratiques d'IA interdites en vigueur depuis le 2 février 2025, les dispositions GPAI depuis le 2 août 2025).
+**Applicabilité** : Lors de la mise sur le marché de l'UE d'un système d'IA, de la mise en service d'un système d'IA dans l'UE, ou lorsque les résultats d'un système d'IA sont utilisés dans l'UE — indépendamment du lieu d'établissement de l'organisation. Les systèmes d'IA à haut risque relevant de l'Article 6(2)/Annexe III s'appliquent intégralement à partir du 2 décembre 2027 (reporté du 2 août 2026 par le Digital Omnibus, Règlement (UE) 2026/1744, en vigueur depuis le 27 juillet 2026) ; l'IA à haut risque intégrée dans des produits réglementés relevant de l'Article 6(1)/Annexe I s'applique à partir du 2 août 2028 (reporté du 2 août 2027 par le même Digital Omnibus) — avec les dispositions relatives aux pratiques d'IA interdites en vigueur depuis le 2 février 2025, les dispositions GPAI depuis le 2 août 2025.
 
 **Cadre de classification des risques** :
 
@@ -271,7 +271,7 @@ Le Règlement IA de l'UE applique une approche basée sur les risques. Chaque sy
 
 **Autorité de surveillance** : Autorité nationale de surveillance du marché de chaque État membre de l'UE ; Bureau européen de l'IA (Commission européenne) pour les modèles GPAI
 
-**Référence** : Règlement (UE) 2024/1689, Journal officiel de l'UE, 12 juillet 2024. Dates d'application : pratiques d'IA interdites depuis le 2 février 2025 ; dispositions GPAI depuis le 2 août 2025 ; application complète depuis le 2 août 2026.
+**Référence** : Règlement (UE) 2024/1689, Journal officiel de l'UE, 12 juillet 2024, modifié par le Digital Omnibus (Règlement (UE) 2026/1744, Journal officiel de l'UE, en vigueur depuis le 27 juillet 2026). Dates d'application : pratiques d'IA interdites depuis le 2 février 2025 ; dispositions GPAI depuis le 2 août 2025 ; systèmes d'IA à haut risque (Article 6(2)/Annexe III) à partir du 2 décembre 2027 (reporté du 2 août 2026) ; IA à haut risque dans les produits réglementés (Article 6(1)/Annexe I) à partir du 2 août 2028 (reporté du 2 août 2027).
 
 ---
 
@@ -547,4 +547,4 @@ Cette politique DOIT être révisée annuellement par le Responsable de la Gouve
 
 ---
 
-<!-- QA_VERIFIED: 2026-04-15 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

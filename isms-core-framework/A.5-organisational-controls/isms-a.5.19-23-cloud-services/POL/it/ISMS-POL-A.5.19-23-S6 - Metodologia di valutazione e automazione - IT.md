@@ -275,7 +275,7 @@ Una valutazione è pronta per la validazione RSI/RSSI solo quando:
 
 **Specifiche di valutazione**: ISMS-IMP-A.5.19-23.S1–S4.
 
-**Norme esterne**: ISO/IEC 27001:2022 Controllo A.5.23; ISO/IEC 27017:2015; ISO/IEC 27018:2019; NIST SP 800-144; CSA Cloud Controls Matrix (CCM) v4.
+**Norme esterne**: ISO/IEC 27001:2022 Controllo A.5.23; ISO/IEC 27017:2026; ISO/IEC 27018:2025; NIST SP 800-144; CSA Cloud Controls Matrix (CCM) v4.
 
 ---
 

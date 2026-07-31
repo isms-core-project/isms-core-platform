@@ -219,7 +219,7 @@ Quadri e standard utilizzati per orientamenti tecnici e organizzativi, benchmark
 
 ## Regolamento sull'intelligenza artificiale dell'UE (Regolamento 2024/1689)
 
-**Applicabilità**: Ove si immetta un sistema IA sul mercato UE, lo si metta in servizio nell'UE, o ove i risultati del sistema IA siano utilizzati nell'UE — indipendentemente da dove sia stabilita l'organizzazione. Si applica integralmente dal 2 agosto 2026 (con le disposizioni sull'IA vietata in vigore dal 2 febbraio 2025 e le disposizioni GPAI dal 2 agosto 2025).
+**Applicabilità**: Ove si immetta un sistema IA sul mercato UE, lo si metta in servizio nell'UE, o ove i risultati del sistema IA siano utilizzati nell'UE — indipendentemente da dove sia stabilita l'organizzazione. I sistemi di IA ad alto rischio ai sensi dell'Articolo 6(2)/Allegato III si applicano integralmente dal 2 dicembre 2027 (rinviata dal 2 agosto 2026 dal Digital Omnibus, Regolamento (UE) 2026/1744, in vigore dal 27 luglio 2026); l'IA ad alto rischio integrata in prodotti regolamentati ai sensi dell'Articolo 6(1)/Allegato I si applica dal 2 agosto 2028 (rinviata dal 2 agosto 2027 dallo stesso Digital Omnibus) — con le disposizioni sull'IA vietata in vigore dal 2 febbraio 2025 e le disposizioni GPAI dal 2 agosto 2025.
 
 **Quadro di classificazione del rischio**:
 
@@ -272,7 +272,7 @@ Il Regolamento IA UE adotta un approccio basato sul rischio. Ogni sistema IA dev
 
 **Autorità di vigilanza**: Autorità nazionale di sorveglianza del mercato di ogni Stato membro UE; Ufficio europeo per l'IA (Commissione europea) per i modelli GPAI
 
-**Riferimento**: Regolamento (UE) 2024/1689, Gazzetta ufficiale dell'UE, 12 luglio 2024. Date di applicazione: IA vietata dal 2 febbraio 2025; disposizioni GPAI dal 2 agosto 2025; applicazione integrale dal 2 agosto 2026.
+**Riferimento**: Regolamento (UE) 2024/1689, Gazzetta ufficiale dell'UE, 12 luglio 2024, come modificato dal Digital Omnibus (Regolamento (UE) 2026/1744, Gazzetta ufficiale dell'UE, in vigore dal 27 luglio 2026). Date di applicazione: IA vietata dal 2 febbraio 2025; disposizioni GPAI dal 2 agosto 2025; sistemi di IA ad alto rischio (Articolo 6(2)/Allegato III) dal 2 dicembre 2027 (rinviata dal 2 agosto 2026); IA ad alto rischio in prodotti regolamentati (Articolo 6(1)/Allegato I) dal 2 agosto 2028 (rinviata dal 2 agosto 2027).
 
 ---
 
@@ -548,4 +548,4 @@ La presente politica deve essere rivista annualmente dal Responsabile della Gove
 
 ---
 
-<!-- QA_VERIFIED: 2026-04-15 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

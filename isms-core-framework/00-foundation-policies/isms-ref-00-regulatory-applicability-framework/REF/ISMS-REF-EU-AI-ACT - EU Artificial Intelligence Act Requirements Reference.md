@@ -115,7 +115,7 @@ This reference organises AI Act requirements by:
 - Risk-based classification system (Unacceptable, High-Risk, Limited Risk, Minimal Risk)
 - Provider obligations (developers, manufacturers)
 - Deployer obligations (users of AI systems)
-- Phased implementation timeline (2025-2027)
+- Phased implementation timeline (2025-2028)
 - General-purpose AI models (GPAI) requirements
 - Mapping to ISO 27001:2022 and related standards
 - Governance and organisational requirements
@@ -132,7 +132,7 @@ This reference organises AI Act requirements by:
 
 - **Adoption**: May 21, 2024 (European Parliament)
 - **Entry into Force**: August 1, 2024 (20 days after publication in Official Journal)
-- **Phased Implementation**: 2025-2027 (see Section 2.6)
+- **Phased Implementation**: 2025-2028 (see Section 2.6)
 
 **Purpose**:
 
@@ -229,12 +229,12 @@ The AI Act employs a **four-tier risk pyramid**:
 |---------------------|----------------|--------|
 | **Prohibited AI Practices** (Article 5) | February 2, 2025 | 6 months after entry into force |
 | **General-Purpose AI Models** (Chapter V) | August 2, 2025 | 12 months after entry into force |
-| **High-Risk AI Systems** (Chapter III, Section 2) | August 2, 2026 | 24 months after entry into force |
-| **High-Risk AI in Regulated Products** | August 2, 2027 | 36 months after entry into force |
+| **High-Risk AI Systems** (Chapter III, Section 2) | December 2, 2027 | Postponed from August 2, 2026 by the Digital Omnibus (Regulation (EU) 2026/1744, in force 27 July 2026) |
+| **High-Risk AI in Regulated Products** | August 2, 2028 | Postponed from August 2, 2027 by the Digital Omnibus (Regulation (EU) 2026/1744, in force 27 July 2026) |
 | **AI Office, Governance Structure** | Immediate | August 2024 |
 
 **Grace Period for Existing Systems**:
-AI systems already placed on market or put into service before August 2, 2026 may continue to be used until August 2, 2030 without compliance (unless substantial modifications made).
+AI systems already placed on market or put into service before the applicable Chapter III application date (December 2, 2027 for Annex III high-risk systems; August 2, 2028 for high-risk AI in regulated products) may continue to be used until that date without compliance (unless substantial modifications made), per Article 111(2) as amended by the Digital Omnibus (Regulation (EU) 2026/1744). High-risk AI systems intended for use by public authorities must comply by August 2, 2030 regardless of this grace period.
 
 ---
 
@@ -327,7 +327,7 @@ Certain AI practices are **prohibited** due to unacceptable risks to fundamental
 
 High-risk AI systems face **strict requirements** due to potential significant risks to health, safety, or fundamental rights.
 
-**Effective Date**: August 2, 2026 (24 months after entry into force)
+**Effective Date**: December 2, 2027 (postponed from August 2, 2026 by the Digital Omnibus, Regulation (EU) 2026/1744, in force 27 July 2026)
 
 **Penalty for Non-Compliance**: Up to €15 million or 3% of worldwide annual turnover (whichever higher)
 
@@ -475,7 +475,7 @@ Requirements:
 
 - A.8.15: Logging
 - A.8.16: Monitoring activities
-- ISO/IEC 27018:2019: Protection of PII in public cloud (logging requirements)
+- ISO/IEC 27018:2025: Protection of PII in public cloud (logging requirements)
 
 ---
 
@@ -691,7 +691,7 @@ Required for deployers who are:
 
 Certain AI systems pose **limited risks** but require transparency to enable informed decisions.
 
-**Effective Date**: August 2, 2026 (same as high-risk systems)
+**Effective Date**: August 2, 2026 (unchanged by the Digital Omnibus — this date is no longer the same as the high-risk systems deadline, which was postponed to December 2, 2027 / August 2, 2028; see Section 2.6). AI systems already placed on the market before August 2, 2026 have a transitional period until December 2, 2026 to comply with the Article 50(2) marking obligations specifically.
 
 **Penalty for Non-Compliance**: Up to €7.5 million or 1.5% of worldwide annual turnover (whichever higher)
 
@@ -1098,8 +1098,8 @@ Organisations with ISO 27001 typically require **40-60% additional effort** to a
 
 - Prohibited practices: Immediate action required (February 2, 2025)
 - GPAI: August 2, 2025
-- High-risk systems: August 2, 2026
-- Existing systems grace period: Until August 2, 2030 (unless substantial modification)
+- High-risk systems: December 2, 2027 (Annex III systems); August 2, 2028 (high-risk AI in regulated products) — postponed by the Digital Omnibus (Regulation (EU) 2026/1744)
+- Existing systems grace period: Until the applicable date above (December 2, 2027 / August 2, 2028); August 2, 2030 for systems used by public authorities (unchanged)
 
 ## Resource Requirements
 
@@ -1469,4 +1469,4 @@ AI Act compliance costs vary significantly by:
 
 *For organisations NOT developing or deploying AI systems affecting EU persons, this document is for informational awareness only and does NOT create compliance obligations.*
 
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

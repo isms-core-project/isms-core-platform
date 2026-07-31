@@ -484,7 +484,7 @@ Wesentliche Leistungen, die eine Bank an einen Dienstleister ausgelagert hat und
 ## EU Artificial Intelligence Act (AI Act)
 
 **Verordnung**: Regulation (EU) 2024/1689 zur Festlegung harmonisierter Vorschriften für künstliche Intelligenz
-**Inkrafttreten**: 1. August 2024 (stufenweise Umsetzung bis August 2027)
+**Inkrafttreten**: 1. August 2024 (stufenweise Umsetzung bis August 2028)
 
 **Anwendbarkeitsauslöser**:
 
@@ -521,8 +521,8 @@ Wesentliche Leistungen, die eine Bank an einen Dienstleister ausgelagert hat und
 
 - **Februar 2025**: Verbote für KI mit inakzeptablem Risiko
 - **August 2025**: Pflichten für KI-Modelle mit allgemeinem Verwendungszweck
-- **August 2026**: Vollständige Anwendung für Hochrisiko-KI-Systeme
-- **August 2027**: Hochrisiko-KI in regulierten Produkten (Medizinprodukte, Maschinen)
+- **Dezember 2027**: Vollständige Anwendung für Hochrisiko-KI-Systeme (verschoben vom August 2026 durch den Digital Omnibus, Verordnung (EU) 2026/1744, in Kraft seit 27. Juli 2026)
+- **August 2028**: Hochrisiko-KI in regulierten Produkten (Medizinprodukte, Maschinen) (verschoben vom August 2027 durch denselben Digital Omnibus)
 
 **Auswirkungen auf das ISMS**:
 
@@ -1230,7 +1230,7 @@ Für bedingte Verordnungen mit komplexen Anforderungen (unabhängig vom aktuelle
 | **FINMA** | ISMS-REF-FINMA — FINMA Circular 2023/1 Requirements Reference | Anforderungen zur operationellen Resilienz und zum Outsourcing für Schweizer Finanzinstitute. Wird für zukünftige Anwendbarkeit gepflegt, falls Organisation FINMA-Lizenz erwirbt oder FINMA-regulierten Kunden dient. | Gepflegt (aktualisiert gemäss FINMA-Rundschreibenrevisionen) | [Date Rundschreiben 2023/1 geprüft] | Jährlich oder bei FINMA-Rundschreiben-Revisionen |
 | **NIS2** | ISMS-REF-NIS2 — Network and Information Security Directive 2 Requirements Reference | Anforderungen an Cybersicherheits-Risikomanagement, Vorfallmeldung, Lieferkettensicherheit und Governance gemäss NIS2-Artikeln 20–23. Wird für zukünftige Anwendbarkeit gepflegt, falls Organisation als wesentliche/wichtige Einrichtung eingestuft wird. | Gepflegt (aktualisiert bei Umsetzung von NIS2 in nationales Recht durch EU-Mitgliedstaaten) | [Date nationale NIS2-Gesetze geprüft] | Halbjährlich (Monitoring der nationalen Umsetzung) |
 | **PCI DSS v4.0.1** | ISMS-REF-PCI-DSS — Payment Card Industry Data Security Standard Requirements Reference | 12 PCI-DSS-v4.0.1-Anforderungen für Netzwerksicherheit, Datenschutz, Schwachstellenmanagement, Zugriffskontrolle, Monitoring und Tests. Wird für zukünftige Anwendbarkeit gepflegt, falls Organisation beginnt Zahlungskarten zu verarbeiten. | Gepflegt (aktualisiert gemäss PCI-SSC-Veröffentlichungen, derzeit v4.0 gültig ab März 2024) | [Date v4.0.1 eingearbeitet] | Jährlich oder bei PCI-SSC-Aktualisierungen |
-| **EU AI Act** | ISMS-REF-EU-AI-ACT — EU Artificial Intelligence Act Requirements Reference | Risikobasiertes KI-Governance-Framework für verbotene Praktiken (Artikel 5), Hochrisiko-KI-Systeme (Artikel 9–72), Transparenzpflichten bei begrenztem Risiko (Artikel 50) und Anforderungen an KI-Modelle mit allgemeinem Verwendungszweck (Artikel 53–54). Wird für zukünftige Anwendbarkeit gepflegt, falls Organisation KI-Systeme entwickelt oder betreibt, die EU-Bürgerinnen und -Bürger betreffen. | In Entwicklung (aktualisiert bei Veröffentlichung delegierter und durchführender Rechtsakte des EU AI Act, stufenweise Umsetzung 2025–2027) | [Date Erstentwurf] | Bei Veröffentlichung delegierter Rechtsakte des AI Act |
+| **EU AI Act** | ISMS-REF-EU-AI-ACT — EU Artificial Intelligence Act Requirements Reference | Risikobasiertes KI-Governance-Framework für verbotene Praktiken (Artikel 5), Hochrisiko-KI-Systeme (Artikel 9–72), Transparenzpflichten bei begrenztem Risiko (Artikel 50) und Anforderungen an KI-Modelle mit allgemeinem Verwendungszweck (Artikel 53–54). Wird für zukünftige Anwendbarkeit gepflegt, falls Organisation KI-Systeme entwickelt oder betreibt, die EU-Bürgerinnen und -Bürger betreffen. | In Entwicklung (aktualisiert bei Veröffentlichung delegierter und durchführender Rechtsakte des EU AI Act, stufenweise Umsetzung 2025–2028) | [Date Erstentwurf] | Bei Veröffentlichung delegierter Rechtsakte des AI Act |
 
 **Begründung für die Pflege von Anforderungsreferenzen für „nicht anwendbare" Verordnungen:**
 
@@ -1282,7 +1282,7 @@ Die Pflege von Anforderungsreferenzen für nicht anwendbare Verordnungen ist ein
 | Verordnung | Wesentliche Umsetzungsdaten | Organisatorische Relevanz |
 |-----------|---------------------------|--------------------------|
 | **DORA** | **17. Januar 2025:** Vollständige Anwendung für Finanzunternehmen | Überwachen: Falls Organisation vor 2025-01-17 EU-Finanzunternehmen oder kritischer IKT-Dienstleister wird, gilt DORA sofort als Tier 1 |
-| **EU AI Act** | **2. Februar 2025:** Verbote (KI mit inakzeptablem Risiko)<br>**2. August 2025:** Pflichten für KI-Modelle mit allgemeinem Verwendungszweck<br>**2. August 2026:** Hochrisiko-KI-Systeme<br>**2. August 2027:** Hochrisiko-KI in regulierten Produkten<br>**2. August 2030:** Übergangsfrist für bestehende Systeme endet | Überwachen: Falls Organisation KI-Systeme entwickelt oder betreibt, die EU-Bürgerinnen und -Bürger betreffen → Compliance bis zur anwendbaren Frist erforderlich. Bestehende Systeme (vor August 2026) haben Übergangsfrist bis 2030, sofern nicht wesentlich geändert |
+| **EU AI Act** | **2. Februar 2025:** Verbote (KI mit inakzeptablem Risiko)<br>**2. August 2025:** Pflichten für KI-Modelle mit allgemeinem Verwendungszweck<br>**2. Dezember 2027:** Hochrisiko-KI-Systeme (verschoben vom 2. August 2026 durch den Digital Omnibus, Verordnung (EU) 2026/1744, in Kraft seit 27. Juli 2026)<br>**2. August 2028:** Hochrisiko-KI in regulierten Produkten (verschoben vom 2. August 2027 durch denselben Digital Omnibus)<br>**2. August 2030:** Übergangsfrist für bestehende Systeme bei Behörden endet (unverändert) | Überwachen: Falls Organisation KI-Systeme entwickelt oder betreibt, die EU-Bürgerinnen und -Bürger betreffen → Compliance bis zur anwendbaren Frist erforderlich. Bestehende Systeme haben eine Übergangsfrist bis zum jeweils anwendbaren Datum oben (Dezember 2027 / August 2028); für von Behörden genutzte Systeme gilt unverändert die Übergangsfrist bis 2030, sofern nicht wesentlich geändert |
 | **PCI DSS v4.0.1** | **31. März 2024:** v4.0 gültig (v3.2.1 eingestellt)<br>**31. März 2025:** Neue Anforderungen (in v4.0 als „zukünftig datiert" markiert) werden verpflichtend | Derzeit nicht anwendbar. Falls Zahlungskartenverarbeitung beginnt → v4.0-Anforderungen gelten sofort (v3.2.1 eingestellt). Zukünftig datierte Anforderungen (MFA-Erweiterung, kryptographische Verbesserungen, Anti-Phishing) ab März 2025 verpflichtend |
 | **NIS2** | **17. Oktober 2024:** EU-Mitgliedstaaten müssen in nationales Recht umsetzen<br>**2024–2025:** Nationale Umsetzungen variieren je Mitgliedstaat<br>**Variiert nach Mitgliedstaat:** Anwendungsdaten hängen von nationalem Umsetzungsgesetz ab | Überwachen: Nationale Umsetzungen können Anwendbarkeitsfeststellung beeinflussen, falls Organisation in mehreren EU-Mitgliedstaaten tätig ist. Nationale Cybersicherheitsbehörde für spezifische Inkraftretensdaten konsultieren |
 
@@ -1317,4 +1317,4 @@ Diese Richtlinie begründet die regulatorische Anwendbarkeit für das Informatio
 
 *„Regulatorische Anwendbarkeit ist das Fundament. Umsetzung und Compliance sind das darauf errichtete Bauwerk."*
 
-<!-- QA_VERIFIED: 2026-03-28 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

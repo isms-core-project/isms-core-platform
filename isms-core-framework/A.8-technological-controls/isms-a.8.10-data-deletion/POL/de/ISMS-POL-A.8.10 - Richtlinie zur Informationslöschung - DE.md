@@ -195,7 +195,7 @@ Diese Rahmenwerke informieren die Implementierung, begründen jedoch keine verbi
 - **NIST SP 800-88 Rev. 1** – Leitfaden zur Mediensanitierung (Clear, Purge, Destroy)
 - **ISO/IEC 27040:2015** – Speichersicherheit einschliesslich Sanitierungsleitfaden
 - **ISO/IEC 27555:2024** – Leitlinien zur Löschung personenbezogener Daten
-- **ISO/IEC 27017:2015** – Cloud-Dienste-Sicherheitskontrollen (Löschleitfaden)
+- **ISO/IEC 27017:2026** – Cloud-Dienste-Sicherheitskontrollen (Löschleitfaden)
 - **DIN 66399** – Vernichtung von Datenträgern (7 Sicherheitsstufen)
 - **DoD 5220.22-M** – Nationales Industrie-Sicherheitsprogramm (Altstandard, von NIST SP 800-88 abgelöst)
 

@@ -484,7 +484,7 @@ Material services outsourced by a bank to a service provider, where the service 
 ## EU Artificial Intelligence Act (AI Act)
 
 **Regulation**: Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence  
-**Effective Date**: August 1, 2024 (phased implementation through August 2027)
+**Effective Date**: August 1, 2024 (phased implementation through August 2028)
 
 **Applicability Triggers**:
 
@@ -521,8 +521,8 @@ Material services outsourced by a bank to a service provider, where the service 
 
 - **February 2025**: Prohibitions on unacceptable risk AI
 - **August 2025**: Obligations for general-purpose AI models
-- **August 2026**: Full application for high-risk AI systems
-- **August 2027**: High-risk AI in regulated products (medical devices, machinery)
+- **December 2027**: Full application for high-risk AI systems (postponed from August 2026 by the Digital Omnibus, Regulation (EU) 2026/1744, in force 27 July 2026)
+- **August 2028**: High-risk AI in regulated products (medical devices, machinery) (postponed from August 2027 by the same Digital Omnibus)
 
 **ISMS Impact**:
 
@@ -1228,7 +1228,7 @@ For conditional regulations with complex requirements (regardless of current app
 | **FINMA** | ISMS-REF-FINMA - FINMA Circular 2023/1 Requirements Reference | Operational resilience and outsourcing requirements for Swiss financial institutions. Maintained for future applicability if organisation obtains FINMA license or serves FINMA-regulated clients. | Maintained (updated per FINMA circular revisions) | [Date Circular 2023/1 reviewed] | Annually or upon FINMA circular revisions |
 | **NIS2** | ISMS-REF-NIS2 - Network and Information Security Directive 2 Requirements Reference | Cybersecurity risk management, incident notification, supply chain security, and governance requirements per NIS2 Articles 20-23. Maintained for future applicability if organisation designated as essential/important entity. | Maintained (updated as EU member states transpose NIS2 into national law) | [Date NIS2 national laws reviewed] | Semi-annually (national transposition monitoring) |
 | **PCI DSS v4.0.1** | ISMS-REF-PCI-DSS - Payment Card Industry Data Security Standard Requirements Reference | 12 PCI DSS v4.0.1 requirements covering network security, data protection, vulnerability management, access control, monitoring, and testing. Maintained for future applicability if organisation begins processing payment cards. | Maintained (updated per PCI SSC publications, currently v4.0 effective March 2024) | [Date v4.0.1 incorporated] | Annually or upon PCI SSC updates |
-| **EU AI Act** | ISMS-REF-EU-AI-ACT - EU Artificial Intelligence Act Requirements Reference | Risk-based AI governance framework covering prohibited practices (Article 5), high-risk AI systems (Articles 9-72), limited risk transparency obligations (Article 50), and general-purpose AI model requirements (Articles 53-54). Maintained for future applicability if organisation develops or deploys AI systems affecting EU persons. | In Development (updated as EU AI Act delegated acts and implementing acts published, phased implementation 2025-2027) | [Date initial draft] | Upon AI Act delegated acts publication |
+| **EU AI Act** | ISMS-REF-EU-AI-ACT - EU Artificial Intelligence Act Requirements Reference | Risk-based AI governance framework covering prohibited practices (Article 5), high-risk AI systems (Articles 9-72), limited risk transparency obligations (Article 50), and general-purpose AI model requirements (Articles 53-54). Maintained for future applicability if organisation develops or deploys AI systems affecting EU persons. | In Development (updated as EU AI Act delegated acts and implementing acts published, phased implementation 2025-2028) | [Date initial draft] | Upon AI Act delegated acts publication |
 
 **Rationale for Maintaining "Not Applicable" Requirements References:**
 
@@ -1280,7 +1280,7 @@ Maintaining requirements references for non-applicable regulations is a **maturi
 | Regulation | Key Implementation Dates | Organisational Relevance |
 |-----------|-------------------------|-------------------------|
 | **DORA** | **January 17, 2025:** Full application for financial entities | Monitor: If organisation becomes EU financial entity or critical ICT service provider before 2025-01-17, DORA becomes Tier 1 immediately |
-| **EU AI Act** | **February 2, 2025:** Prohibitions (unacceptable risk AI)<br>**August 2, 2025:** General-purpose AI obligations<br>**August 2, 2026:** High-risk AI systems<br>**August 2, 2027:** High-risk AI in regulated products<br>**August 2, 2030:** Grace period ends for existing systems | Monitor: If organisation develops or deploys AI systems affecting EU persons → Compliance required by applicable phase deadline. Existing systems (pre-August 2026) have grace period until 2030 unless substantially modified |
+| **EU AI Act** | **February 2, 2025:** Prohibitions (unacceptable risk AI)<br>**August 2, 2025:** General-purpose AI obligations<br>**December 2, 2027:** High-risk AI systems (postponed from August 2, 2026 by the Digital Omnibus, Regulation (EU) 2026/1744, in force 27 July 2026)<br>**August 2, 2028:** High-risk AI in regulated products (postponed from August 2, 2027 by the same Digital Omnibus)<br>**August 2, 2030:** Grace period ends for existing systems used by public authorities (unchanged) | Monitor: If organisation develops or deploys AI systems affecting EU persons → Compliance required by applicable phase deadline. Existing systems have a grace period until the applicable date above (December 2027 / August 2028), except systems used by public authorities, which retain the 2030 grace-period end date, unless substantially modified |
 | **PCI DSS v4.0.1** | **March 31, 2024:** v4.0 effective (v3.2.1 retired)<br>**March 31, 2025:** New requirements (marked "future-dated" in v4.0) become mandatory | Not currently applicable. If payment card processing begins → v4.0 requirements apply immediately (v3.2.1 retired). Future-dated requirements (MFA expansion, cryptographic enhancements, anti-phishing) mandatory March 2025 |
 | **NIS2** | **October 17, 2024:** EU member states must transpose into national law<br>**2024-2025:** National implementations vary by member state<br>**Varies by member state:** Application dates depend on national transposition law | Monitor: National implementations may affect applicability determination if organisation operates in multiple EU member states. Check national cybersecurity authority for specific effective dates |
 
@@ -1315,4 +1315,4 @@ This policy establishes regulatory applicability for the organisation's Informat
 
 *"Regulatory applicability is the foundation. Implementation and compliance are the structure built upon it."*
 
-<!-- QA_VERIFIED: 2026-03-01 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

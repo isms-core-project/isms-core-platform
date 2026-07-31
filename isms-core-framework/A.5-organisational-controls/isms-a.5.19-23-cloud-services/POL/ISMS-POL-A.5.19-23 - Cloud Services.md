@@ -896,8 +896,8 @@ This policy framework demonstrates compliance with:
 
 **Cloud-Specific Standards:**
 
-- ISO/IEC 27017:2015 - Cloud security controls
-- ISO/IEC 27018:2019 - Cloud privacy (PII protection)
+- ISO/IEC 27017:2026 - Cloud security controls
+- ISO/IEC 27018:2025 - Cloud privacy (PII protection)
 - CSA CCM (Cloud Controls Matrix) - cloud control framework alignment
 
 **Regulatory Alignment:**

@@ -39,21 +39,21 @@ All compliance assessment modules live under the **Compliance Assessments** side
 | [BSI IT-Grundschutz](#bsi-it-grundschutz-kompendium) | German standard | 111 Bausteine | 10 Layers | 0–4 | Germany / DACH / IT-Grundschutz cert |
 | [CSRM (NCSC CH)](#csrm-swiss-ncsc-2025) | Swiss NCSC | 20 baseline requirements | 5 CSF Functions | Binary | Swiss critical infrastructure |
 | [Swiss ISG (SR 128)](#swiss-isg-sr-128) | Swiss law | 27 requirements | 8 Sections | 0–4 | Swiss federal bodies & critical infrastructure operators |
-| [TISAX](#tisaxvida-isa-60) | VDA/ENX | 53 requirements | 12 Domains | 0–4 | Automotive supply chain |
+| [TISAX](#tisaxvida-isa-60) | VDA/ENX | 79 requirements | 9 Domains | 0–4 | Automotive supply chain |
 | [Swiss nDSG](#swiss-ndsg-2023) | Swiss law | 25 provisions | 6 Chapters | 0–4 | Organisations processing Swiss personal data |
 | [EU Cyber Resilience Act](#eu-cyber-resilience-act-20242847) | EU Regulation | 26 requirements | 6 Groups | 0–4 | EU product manufacturers |
 | [EU AI Act](#eu-ai-act-20241689) | EU Regulation | 9 articles | Ch. III Sec. 2 + Art. 27 | 0–4 | EU AI system providers/deployers |
 | [EU Cloud Sovereignty Framework](#eu-cloud-sovereignty-framework-v121) | EC DG DIGIT | 8 Sovereignty Objectives | 1 Group (SEAL) | SEAL 0–4 | EU institutions / public sector cloud procurement |
 | [CyberFundamentals (BE)](#cyberfundamentals-ccb) | Belgian regulation | 41 practices | 6 CSF Functions | 0–4 | Belgian organisations / CCB certification |
-| [BaFin BAIT (DE)](#bafin-bait-rundschreiben-102021) | German BaFin | 23 requirements | 12 Modules | 0–4 | German financial sector (banks, investment firms) |
+| [BaFin BAIT (DE)](#bafin-bait-rundschreiben-102017-amended-2021) | German BaFin | 23 requirements | 12 Modules | 0–4 | German financial sector (banks, investment firms) |
 | [CSSF Circulaire 20-750 (LU)](#cssf-circulaire-20-750-lu) | Luxembourg CSSF | 19 requirements | 7 Domains | 0–4 | Luxembourg financial sector |
-| [ACN Cyber Risk Management (IT)](#acn-cyber-risk-management-it) | Italian ACN | 19 guidelines | 4 Groups | 0–4 | Italian organisations / critical infrastructure |
+| [ACN Cyber Risk Management (IT)](#acn-cyber-risk-management-it) | Italian ACN | 43 measures / 116 requirements | 10 Legal Elements | 0–4 | Italian organisations / critical infrastructure |
 | [UK NIS Regulations](#uk-nis-regulations-2018) | UK law | 13 requirements | 3 Objectives | 0–4 | UK network and information systems operators |
 | [UK Operational Resilience (FCA/PRA)](#uk-operational-resilience-fcapra) | UK FCA/PRA | 12 requirements | 4 Objectives | 0–4 | UK financial sector — banks, insurers, FMIs |
 | [COBIT 2019 (ISACA)](#cobit-2019-isaca) | ISACA EGIT | 40 objectives | 5 Domains (EDM/APO/BAI/DSS/MEA) | 0–4 | Enterprise IT governance, audit, CISM/CISA/CGEIT holders |
 | [NIST SP 800-53 R5](#nist-sp-800-53-rev-5) | NIST | 20 control families | 3 Classes (Technical/Operational/Management) | 0–4 | US federal agencies, contractors, and any organisation seeking comprehensive security controls |
 | [CSA CCM v4.1](#csa-cloud-controls-matrix-v41) | CSA | 207 control specifications | 17 Domains | 0–4 | Cloud service providers, cloud consumers — any sector |
-| [CSA AICM v1.0.3](#csa-ai-controls-matrix-v103) | CSA | 243 controls | 18 Domains | 0–4 | Organisations developing, deploying, or procuring AI systems |
+| [CSA AICM v1.1](#csa-ai-controls-matrix-v11) | CSA | 247 controls | 18 Domains | 0–4 | Organisations developing, deploying, or procuring AI systems |
 | [NCSC CAF v4.0 (UK)](#ncsc-caf-v40-uk) | NCSC UK | 41 Contributing Outcomes | 14 Principles / 4 Objectives | 0/2/4 | UK operators of essential services / CNI |
 | [ReCyF v2.5 — France NIS2](#recyf-v25--france-nis2-anssi) | ANSSI | 20 Security Objectives | 4 Pillars | 0–4 | French NIS2 entities (EI & EE) — transposition pending |
 | [BSI C5:2026](#bsi-c52026) | BSI (Germany) | 168 criteria | 17 Domains | 0–4 | Cloud service providers (DE/EU) seeking C5 attestation |
@@ -122,18 +122,18 @@ Each collection shows derived statistics: completion %, compliance %, per-status
 
 **Function structure:**
 - **GOVERN (19 subcategories)** — organisational AI risk culture, policies, accountability structures, workforce practices
-- **MAP (21 subcategories)** — context and risk framing: intended purposes, categorisation, benefits, costs, societal impacts
-- **MEASURE (19 subcategories)** — quantitative, qualitative, and mixed-method tools to analyse, benchmark, and monitor AI risk
+- **MAP (18 subcategories)** — context and risk framing: intended purposes, categorisation, benefits, costs, societal impacts
+- **MEASURE (22 subcategories)** — quantitative, qualitative, and mixed-method tools to analyse, benchmark, and monitor AI risk
 - **MANAGE (13 subcategories)** — risk treatment, residual risk, incident response, post-market surveillance
 
 **Platform features:**
 - 72 subcategory practices grouped by Category (GOV-1 through MNG-4), maturity 0–4
-- EU AI Act ↔ NIST AI RMF 1.0 crosswalk in the Crosswalk Viewer (72 mappings)
+- No direct NIST AI RMF ↔ EU AI Act crosswalk axis — the two are connected transitively via ISO 42001 (NIST AI RMF ↔ ISO 42001: 32 mappings; ISO 42001 ↔ EU AI Act: 31 mappings) or via ISO 27001 (NIST AI RMF ↔ ISO 27001: 56 mappings; ISO 27001 ↔ EU AI Act: 58 mappings)
 - Assessment Collections — group AI RMF assessments alongside EU AI Act assessments
 
 **Coverage notes:**
 - Subcategory descriptions sourced from the official NIST AI RMF Playbook (72 suggested actions)
-- No ISO 27001 ↔ AI RMF official crosswalk exists — EU AI Act crosswalk is the primary mapping path
+- ISO 27001 ↔ AI RMF crosswalk exists (56 mappings); ISO 42001 ↔ AI RMF crosswalk exists (32 mappings) — both are viable mapping paths
 - Framework is voluntary — not a regulatory compliance requirement in any jurisdiction
 - Related: NIST CSF 2.0 GOVERN function directly mirrors AI RMF GOVERN structure
 
@@ -249,7 +249,7 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 ### TISAX / VDA ISA 6.0
 
 **Source:** Trusted Information Security Assessment Exchange — VDA Information Security Assessment (ISA) version 6.0
-**Scope:** 53 requirements across 12 domains: Information Security, HR, Physical Security, Identity & Access, Cryptography, Communications, Third Parties, Compliance, Prototype/Vehicle Protection, Connected Systems, Development, and Cloud
+**Scope:** 79 requirements across 9 domains: IS Policies and Organization, Human Resources, Physical Security, Identity and Access Management, IT / Cyber Security, Supplier Relationships, Compliance, Prototype Protection, and Data Protection
 **Scoring:** Maturity 0–4
 **Audience:** Automotive industry suppliers, OEM partners, and subcontractors handling sensitive data (especially prototype and vehicle data) — participation in TISAX certification is a supply chain requirement for most major OEMs (BMW, VW Group, Mercedes, Stellantis, etc.)
 
@@ -361,16 +361,16 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 
 ---
 
-### BaFin BAIT (Rundschreiben 10/2021)
+### BaFin BAIT (Rundschreiben 10/2017, amended 2021)
 
-**Source:** Bundesanstalt für Finanzdienstleistungsaufsicht — Bankaufsichtliche Anforderungen an die IT (BAIT), Rundschreiben 10/2021
+**Source:** Bundesanstalt für Finanzdienstleistungsaufsicht — Bankaufsichtliche Anforderungen an die IT (BAIT), Rundschreiben 10/2017, amended 16 August 2021
 **Scope:** 23 requirements across 12 modules: IT Strategy, IT Governance, Information Risk Management, Information Security, IT Projects, Application Development, IT Operations, IT Outsourcing, IT Emergency Management, IAM, Cryptography, BCM
 **Scoring:** Maturity 0–4
 **Audience:** German banks and financial institutions supervised by BaFin; applies in conjunction with MaRisk and DORA for EU-regulated entities
 
 **Coverage notes:**
 - BAIT is the primary IT supervisory circular for German-supervised banks; VAIT (insurance) and KAIT (capital management) share the same structure
-- Replaces the 2017 BAIT circular; includes MaRisk alignment and cloud-specific guidance
+- Amended 16 August 2021 (not a replacement circular); includes MaRisk alignment and cloud-specific guidance
 - Crosswalk: ISO 27001:2022 ↔ BaFin BAIT — 69 mappings
 
 ---
@@ -391,14 +391,14 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 
 ### ACN Cyber Risk Management (IT)
 
-**Source:** Agenzia per la Cybersicurezza Nazionale (ACN) — Linee Guida per la Gestione del Rischio Cyber, 2024
-**Scope:** 19 guidelines across 4 groups: Governance & Risk, Asset Management, Technical Controls, Incident & BCM
+**Source:** Agenzia per la Cybersicurezza Nazionale (ACN) — *Determinazione obblighi di base* (April 2025), implementing Article 24(2) of D.Lgs. 138/2024
+**Scope:** Two tiers — 37 measures/87 requirements for Important entities (Annex 1), 43 measures/116 requirements for Essential entities (Annex 2) — organised around the 10 legal elements of Article 24(2): risk analysis and system security policies, incident management, business continuity, supply chain security, secure acquisition/development/maintenance, risk-measure effectiveness review, basic cyber hygiene and training, cryptography policies, HR security/access control/asset management, and multi-factor authentication/secure communications
 **Scoring:** Maturity 0–4
 **Audience:** Italian organisations — public administration, critical infrastructure operators, NIS2-in-scope entities in Italy
 
 **Coverage notes:**
-- ACN is the Italian National Cybersecurity Agency; these guidelines align with NIS2 Italian transposition (D.Lgs. 138/2024)
-- Organisations subject to both ACN guidelines and NIS2 can use both modules
+- ACN is the Italian National Cybersecurity Agency and competent NIS2 authority; these basic security measures align with NIS2 Italian transposition (D.Lgs. 138/2024)
+- Organisations subject to both ACN obligations and NIS2 can use both modules
 - Crosswalk: ISO 27001:2022 ↔ ACN Guidelines — 43 mappings
 
 ---
@@ -477,10 +477,10 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 
 ---
 
-### CSA AI Controls Matrix v1.0.3
+### CSA AI Controls Matrix v1.1
 
-**Source:** Cloud Security Alliance — AI Controls Matrix (AICM) v1.0.3 (2024)
-**Scope:** 243 controls across 18 domains including: AI Governance & Accountability (AGA), Data Management & Privacy (DMP), Model Development & Validation (MDV), Security & Resilience (SAR), Transparency & Explainability (TEX), Human Oversight & Control (HOC), Regulatory Compliance & Legal (RCL), and 11 additional domains covering AI risk management, ethics, operations, supply chain, incident response, and more.
+**Source:** Cloud Security Alliance — AI Controls Matrix (AICM) v1.1
+**Scope:** 247 controls across 18 domains including: AI Governance & Accountability (AGA), Data Management & Privacy (DMP), Model Development & Validation (MDV), Security & Resilience (SAR), Transparency & Explainability (TEX), Human Oversight & Control (HOC), Regulatory Compliance & Legal (RCL), and 11 additional domains covering AI risk management, ethics, operations, supply chain, incident response, and more.
 **Scoring:** Maturity levels 0–4
 **Audience:** Organisations developing, deploying, or procuring AI systems; AI governance teams; cloud providers offering AI/ML services; teams managing EU AI Act or ISO 42001 compliance.
 
@@ -628,7 +628,7 @@ controls:
 All compliance assessment modules benefit from the Platform's Crosswalk Viewer, which shows cross-framework mappings between:
 
 - ISO 27001:2022 ↔ NIST CSF 2.0
-- NIST AI RMF 1.0 ↔ EU AI Act (72 mappings)
+- NIST AI RMF 1.0 ↔ ISO 27001:2022 (56 mappings) and ↔ ISO 42001:2023 (32 mappings) — no direct NIST AI RMF ↔ EU AI Act axis; connected transitively via ISO 42001 (31 mappings to EU AI Act)
 - ISO 27001:2022 ↔ NIST SP 800-53 Rev. 5
 - ISO 27001:2022 ↔ MITRE ATT&CK v19
 - ISO 27001:2022 ↔ DORA
@@ -646,7 +646,7 @@ All compliance assessment modules benefit from the Platform's Crosswalk Viewer, 
 - ISO 27001:2022 ↔ NCSC CAF v4.0 (65 mappings)
 - ISO 27001:2022 ↔ ReCyF v2.5 / FR NIS2 (50 mappings)
 
-Total: **4,563 crosswalk objects across 44 axes** available in the Crosswalk Viewer.
+Total: **5,222 crosswalk objects across 79 axes** available in the Crosswalk Viewer.
 
 ---
 

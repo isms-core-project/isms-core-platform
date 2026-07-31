@@ -218,7 +218,7 @@ Rahmenwerke und Normen für technische und organisatorische Orientierung, Benchm
 
 ## EU-Verordnung über Künstliche Intelligenz (Verordnung 2024/1689)
 
-**Anwendbarkeit**: Bei Inverkehrbringen eines KI-Systems auf dem EU-Markt, Inbetriebnahme eines KI-Systems in der EU, oder wenn Ausgaben von KI-Systemen in der EU verwendet werden — unabhängig vom Sitz der Organisation. Gilt vollständig ab dem 2. August 2026 (mit Verboten für KI-Praktiken ab dem 2. Februar 2025, GPAI-Bestimmungen ab dem 2. August 2025).
+**Anwendbarkeit**: Bei Inverkehrbringen eines KI-Systems auf dem EU-Markt, Inbetriebnahme eines KI-Systems in der EU, oder wenn Ausgaben von KI-Systemen in der EU verwendet werden — unabhängig vom Sitz der Organisation. Hochrisiko-KI-Systeme nach Artikel 6(2)/Anhang III gelten vollständig ab dem 2. Dezember 2027 (verschoben vom 2. August 2026 durch den Digital Omnibus, Verordnung (EU) 2026/1744, in Kraft seit 27. Juli 2026); Hochrisiko-KI in regulierten Produkten nach Artikel 6(1)/Anhang I gilt ab dem 2. August 2028 (verschoben vom 2. August 2027 durch denselben Digital Omnibus) — mit Verboten für KI-Praktiken ab dem 2. Februar 2025, GPAI-Bestimmungen ab dem 2. August 2025.
 
 **Risikoklassifikationsrahmen**:
 
@@ -271,7 +271,7 @@ Die EU-KI-Verordnung wendet einen risikobasierten Ansatz an. Jedes KI-System mus
 
 **Aufsichtsbehörde**: Nationale Marktüberwachungsbehörde jedes EU-Mitgliedstaates; Europäisches KI-Büro (Europäische Kommission) für GPAI-Modelle
 
-**Referenz**: Verordnung (EU) 2024/1689, Amtsblatt der EU, 12. Juli 2024. Anwendungsdaten: verbotene KI-Praktiken ab 2. Februar 2025; GPAI-Bestimmungen ab 2. August 2025; vollständige Anwendung ab 2. August 2026.
+**Referenz**: Verordnung (EU) 2024/1689, Amtsblatt der EU, 12. Juli 2024, geändert durch den Digital Omnibus (Verordnung (EU) 2026/1744, Amtsblatt der EU, in Kraft seit 27. Juli 2026). Anwendungsdaten: verbotene KI-Praktiken ab 2. Februar 2025; GPAI-Bestimmungen ab 2. August 2025; Hochrisiko-KI-Systeme (Artikel 6(2)/Anhang III) ab 2. Dezember 2027 (verschoben vom 2. August 2026); Hochrisiko-KI in regulierten Produkten (Artikel 6(1)/Anhang I) ab 2. August 2028 (verschoben vom 2. August 2027).
 
 ---
 
@@ -547,4 +547,4 @@ Diese Richtlinie MUSS jährlich vom KI-Governance-Beauftragten und Legal/Complia
 
 ---
 
-<!-- QA_VERIFIED: 2026-04-15 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

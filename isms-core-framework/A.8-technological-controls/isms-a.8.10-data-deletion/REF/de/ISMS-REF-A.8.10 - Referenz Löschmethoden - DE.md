@@ -710,7 +710,7 @@ Bei Verifizierungsversagen:
 
 - ISO/IEC 27040:2015: Speichersicherheit (Sanitierungsleitfaden)
 - ISO/IEC 27555:2021: Leitlinien zur PII-Löschung
-- ISO/IEC 27017:2015: Cloud-Dienste-Sicherheit (Löschanforderungen)
+- ISO/IEC 27017:2026: Cloud-Dienste-Sicherheit (Löschanforderungen)
 
 **Industriestandards**:
 

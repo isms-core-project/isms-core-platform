@@ -777,8 +777,8 @@ Ce cadre de politique démontre la conformité avec :
 
 **Normes spécifiques au nuage :**
 
-- ISO/IEC 27017:2015 — Contrôles de sécurité en nuage
-- ISO/IEC 27018:2019 — Protection de la vie privée en nuage (protection des DCP)
+- ISO/IEC 27017:2026 — Contrôles de sécurité en nuage
+- ISO/IEC 27018:2025 — Protection de la vie privée en nuage (protection des DCP)
 - CSA CCM (Cloud Controls Matrix) — Alignement avec le cadre de contrôle nuage
 
 **Alignement réglementaire :**

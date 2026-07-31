@@ -48,11 +48,11 @@
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/FINMA-Assessment_Tool-5D4037?style=flat-square" alt="FINMA"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/NIST_SP_800--53_R5-Assessment_Tool-FF6600?style=flat-square" alt="NIST SP 800-53 Rev 5"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/CSA_CCM_v4.1-Assessment_Tool-2E7D32?style=flat-square" alt="CSA CCM v4.1"/></a>
-  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/CSA_AICM_v1.0.3-Assessment_Tool-1B5E20?style=flat-square" alt="CSA AICM v1.0.3"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/CSA_AICM_v1.1-Assessment_Tool-1B5E20?style=flat-square" alt="CSA AICM v1.1"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/BSI_C5:2026-Assessment_Tool-C62828?style=flat-square" alt="BSI C5:2026"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/BSI_C3A-Assessment_Tool-AD1457?style=flat-square" alt="BSI C3A"/></a>
   <a href="#-framework-integration"><img src="https://img.shields.io/badge/MITRE_ATT&CK_v19-Mapped-DC143C?style=flat-square" alt="MITRE ATT&CK"/></a>
-  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/4%2C563_Crosswalk_Objects_%2F_44_Axes-Linked-2E8B57?style=flat-square" alt="Crosswalk Mappings"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/5%2C336_Crosswalk_Objects_%2F_45_Axes-Linked-2E8B57?style=flat-square" alt="Crosswalk Mappings"/></a>
 </p>
 </details>
 
@@ -153,7 +153,7 @@ EN · FR · DE · IT
 
 **Live compliance management system** — turns all content products into dashboards, gap tracking, evidence ingestion, risk registers, and audit reports. Docker Compose, 10 services, self-hosted.
 
-**44** connectors · **29** assessment modules · **4,563** crosswalk objects / 44 axes<br/>
+**44** connectors · **29** assessment modules · **5,222** crosswalk objects / 79 axes<br/>
 8 country jurisdictions · **20+** threat intelligence sources
 
 <img src="https://img.shields.io/badge/v1.0-Live-2E8B57?style=flat-square" alt="Live"/>
@@ -366,7 +366,7 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 ## 🔗 Framework Integration
 
 <details>
-<summary><strong>Show all 25+ framework integrations and crosswalk mappings</strong></summary>
+<summary><strong>Show all 29+ framework integrations and crosswalk mappings</strong></summary>
 <br/>
 
 | Framework / Standard | What ISMS CORE provides | Status |
@@ -383,7 +383,7 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 | CIS Critical Security Controls v8 | 153 safeguards across 18 controls, maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-2E7D32?style=flat-square) |
 | BSI IT-Grundschutz Kompendium | All 111 Bausteine across 10 layers, maturity 0–4. Crosswalk: ISO 27001↔BSI (386), ISO 27701↔BSI (101), ISO 27018↔BSI (51) | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-CC0000?style=flat-square) |
 | CSRM (Swiss NCSC, 2025) | Object-centric module — IT Protection Objects, 20 NIST CSF 2.0 baseline requirements, binary status, 6 Control Objectives | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-D32F2F?style=flat-square) |
-| TISAX / VDA ISA 6.0 | 53 requirements across 12 domains, maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-1B5E20?style=flat-square) |
+| TISAX / VDA ISA 6.0 | 79 requirements across 9 domains, maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-1B5E20?style=flat-square) |
 | Swiss nDSG 2023 | 25 provisions across 6 chapters, maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-C62828?style=flat-square) |
 | Swiss ISG (SR 128, 2024) | 27 requirements across 8 sections, 24h cyberattack reporting; ISO 27001 crosswalk: 40 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-B71C1C?style=flat-square) |
 | EU Cyber Resilience Act (2024/2847) | 26 essential requirements across 6 groups, maturity 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-1A237E?style=flat-square) |
@@ -395,7 +395,7 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 | BSI C5:2026 (DE) | 168 criteria across 17 domains — Cloud Computing Compliance Criteria Catalogue v1.0.1. Used for third-party attestation of cloud service providers in Germany and the EU. Replaces C5:2020. | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-C62828?style=flat-square) |
 | BSI C3A (DE) | 30 criterion groups across 6 sovereignty domains (Strategic / Legal / Data / Operational / Supply Chain / Technology) — Criteria enabling Cloud Computing Autonomy v1.0. Companion to C5:2026; presupposes C5 compliance. | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-AD1457?style=flat-square) |
 | CSSF 20-750 (LU) | 19 requirements across 7 domains, maturity 0–4; ISO 27001 crosswalk: 47 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-4A148C?style=flat-square) |
-| ACN Guidelines (IT) | 19 guidelines across 4 groups, maturity 0–4; ISO 27001 crosswalk: 43 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-006630?style=flat-square) |
+| ACN Guidelines (IT) | Determinazione obblighi di base (Apr 2025) — 37 measures/87 requirements (Important) or 43 measures/116 requirements (Essential), maturity 0–4; ISO 27001 crosswalk: 43 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-006630?style=flat-square) |
 | UK NIS Regulations | 13 requirements across 3 objectives, maturity 0–4; ISO 27001 crosswalk: 51 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-1A237E?style=flat-square) |
 | UK Operational Resilience | 12 requirements across 4 objectives, maturity 0–4; ISO 27001 crosswalk: 34 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-283593?style=flat-square) |
 | NCSC CAF v4.0 (UK) | 41 Contributing Outcomes across 14 Principles and 4 Objectives — outcome-based; ISO 27001 crosswalk: 65 mappings | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-003366?style=flat-square) |
@@ -469,7 +469,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 | 🔒 Privacy | 21 / 21 | 23 PRIV-POL · 42 IMPs · 21 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-7030A0?style=flat-square) |
 | ☁️ Cloud | 12 / 12 | 12 CLD-POL · 24 IMPs · 12 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-00897B?style=flat-square) |
 | 🤖 AI | 12 / 12 | 12 AI-POL · 20 IMPs · 10 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-FF6B35?style=flat-square) |
-| 🖥️ Platform | 99 total | 44 connectors · 29 assessments · 4,563 mappings / 44 axes | 8 jurisdictions | ![Live v1.0](https://img.shields.io/badge/Live-v1.0-2E8B57?style=flat-square) |
+| 🖥️ Platform | 99 total | 44 connectors · 29 assessments · 5,222 mappings / 79 axes | 8 jurisdictions | ![Live v1.0](https://img.shields.io/badge/Live-v1.0-2E8B57?style=flat-square) |
 
 ---
 

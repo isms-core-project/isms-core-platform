@@ -20,7 +20,7 @@
 
 **Catena di approvazione**: RSSI → RSI → Responsabile team architettura cloud → Responsabile Legale/Conformità → Direzione generale
 
-**Documenti correlati**: ISMS-POL-00; ISMS-POL-A.5.19-23; ISMS-IMP-A.5.19-23.S1-S5-UG/TG; ISMS-REF-A.5.23; ISO/IEC 27001:2022 Controllo A.5.23; ISO/IEC 27017:2015; ISO/IEC 27018:2019
+**Documenti correlati**: ISMS-POL-00; ISMS-POL-A.5.19-23; ISMS-IMP-A.5.19-23.S1-S5-UG/TG; ISMS-REF-A.5.23; ISO/IEC 27001:2022 Controllo A.5.23; ISO/IEC 27017:2026; ISO/IEC 27018:2025
 
 ---
 
@@ -407,8 +407,8 @@ Le strategie di uscita riguardano le **transizioni pianificate e volontarie** da
 | ISMS-POL-A.5.19-23-S3 | Gestione dei sub-responsabili cloud |
 | ISMS-POL-A.5.19-23-S4 | Monitoraggio dei servizi cloud |
 | ISMS-POL-A.5.30-8.13-14 | BCP/DRP per failover di emergenza |
-| ISO/IEC 27017:2015 | Controlli di sicurezza per i servizi cloud |
-| ISO/IEC 27018:2019 | Protezione della privacy nel cloud |
+| ISO/IEC 27017:2026 | Controlli di sicurezza per i servizi cloud |
+| ISO/IEC 27018:2025 | Protezione della privacy nel cloud |
 
 ---
 

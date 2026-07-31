@@ -416,7 +416,7 @@ Queste normative si applicano **solo quando si verificano condizioni aziendali s
 ## Regolamento UE sull'intelligenza artificiale (AI Act)
 
 **Normativa**: Regolamento (UE) 2024/1689 che stabilisce regole armonizzate sull'intelligenza artificiale
-**Data di entrata in vigore**: 1° agosto 2024 (implementazione graduale fino ad agosto 2027)
+**Data di entrata in vigore**: 1° agosto 2024 (implementazione graduale fino ad agosto 2028)
 
 **Trigger di applicabilità**:
 
@@ -438,8 +438,8 @@ Queste normative si applicano **solo quando si verificano condizioni aziendali s
 
 - **Febbraio 2025**: Divieti sui sistemi AI a rischio inaccettabile
 - **Agosto 2025**: Obblighi per i modelli AI di uso generale
-- **Agosto 2026**: Piena applicazione per i sistemi AI ad alto rischio
-- **Agosto 2027**: AI ad alto rischio in prodotti regolamentati
+- **Dicembre 2027**: Piena applicazione per i sistemi AI ad alto rischio (rinviata da agosto 2026 dal Digital Omnibus, Regolamento (UE) 2026/1744, in vigore dal 27 luglio 2026)
+- **Agosto 2028**: AI ad alto rischio in prodotti regolamentati (rinviata da agosto 2027 dallo stesso Digital Omnibus)
 
 **Valutazione**: Se l'organizzazione sviluppa, distribuisce o commercializza sistemi AI che riguardano persone nell'UE → Valutare la classificazione del rischio e gli obblighi applicabili
 
@@ -718,7 +718,7 @@ Per la categorizzazione normativa completa, consultare ISMS-POL-00.
 | Normativa | Date chiave di implementazione | Rilevanza organizzativa |
 |-----------|-------------------------------|------------------------|
 | **DORA** | **17 gennaio 2025**: Piena applicazione per le entità finanziarie | Monitorare: Se l'organizzazione diventa entità finanziaria UE prima del 2025-01-17 |
-| **AI Act UE** | **Feb 2025**: Divieti; **Ago 2025**: AI di uso generale; **Ago 2026**: Alto rischio; **Ago 2027**: Alto rischio in prodotti regolamentati | Monitorare: Scadenze applicabili ai sistemi AI sviluppati/distribuiti |
+| **AI Act UE** | **Feb 2025**: Divieti; **Ago 2025**: AI di uso generale; **Dic 2027**: Alto rischio (rinviata da ago 2026 dal Digital Omnibus, Regolamento (UE) 2026/1744); **Ago 2028**: Alto rischio in prodotti regolamentati (rinviata da ago 2027) | Monitorare: Scadenze applicabili ai sistemi AI sviluppati/distribuiti |
 | **PCI DSS v4.0.1** | **31 marzo 2024**: v4.0 in vigore; **31 marzo 2025**: Nuovi requisiti obbligatori | Non applicabile attualmente. Se inizia l'elaborazione delle carte → v4.0 applicabile immediatamente |
 | **NIS2** | **17 ottobre 2024**: Recepimento nazionale UE | Monitorare: Implementazioni nazionali che possono influire sulla determinazione dell'applicabilità |
 
@@ -741,4 +741,4 @@ La presente politica stabilisce l'applicabilità normativa per il Sistema di Ges
 
 *«L'applicabilità normativa è il fondamento. L'implementazione e la conformità sono la struttura costruita su di esso.»*
 
-<!-- QA_VERIFIED: 2026-04-03 -->
+<!-- QA_VERIFIED: 2026-07-31 -->

@@ -218,7 +218,7 @@ Frameworks and standards used for technical and organisational guidance, benchma
 
 ## EU Artificial Intelligence Act (Regulation 2024/1689)
 
-**Applicability**: When placing an AI system on the EU market, putting an AI system into service in the EU, or where AI system outputs are used in the EU — regardless of where the organisation is established. Applies in full from 2 August 2026 (with prohibited AI provisions in force from 2 February 2025, GPAI provisions from 2 August 2025).
+**Applicability**: When placing an AI system on the EU market, putting an AI system into service in the EU, or where AI system outputs are used in the EU — regardless of where the organisation is established. High-risk AI systems under Article 6(2)/Annex III apply in full from 2 December 2027 (postponed from 2 August 2026 by the Digital Omnibus, Regulation (EU) 2026/1744, in force 27 July 2026); high-risk AI embedded in regulated products under Article 6(1)/Annex I applies from 2 August 2028 (postponed from 2 August 2027 by the same Digital Omnibus) — with prohibited AI provisions in force from 2 February 2025, GPAI provisions from 2 August 2025.
 
 **Risk Classification Framework**:
 
@@ -271,7 +271,7 @@ The EU AI Act applies a risk-based approach. Every AI system must be classified:
 
 **Supervisory Authority**: National market surveillance authority of each EU Member State; European AI Office (European Commission) for GPAI models
 
-**Reference**: Regulation (EU) 2024/1689, Official Journal of the EU, 12 July 2024. Application dates: prohibited AI from 2 February 2025; GPAI provisions from 2 August 2025; full application from 2 August 2026.
+**Reference**: Regulation (EU) 2024/1689, Official Journal of the EU, 12 July 2024, as amended by the Digital Omnibus (Regulation (EU) 2026/1744, Official Journal of the EU, in force 27 July 2026). Application dates: prohibited AI from 2 February 2025; GPAI provisions from 2 August 2025; high-risk AI systems (Article 6(2)/Annex III) from 2 December 2027 (postponed from 2 August 2026); high-risk AI in regulated products (Article 6(1)/Annex I) from 2 August 2028 (postponed from 2 August 2027).
 
 ---
 
@@ -547,4 +547,4 @@ This policy shall be reviewed annually by the AI Governance Officer and Legal/Co
 
 ---
 
-<!-- QA_VERIFIED: 2026-04-15 -->
+<!-- QA_VERIFIED: 2026-07-31 -->
