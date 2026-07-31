@@ -271,7 +271,7 @@ Le jugement professionnel exercé par l'auditeur comprend :
 
 - **Niveau 1 (Obligatoire)** : RGPD UE, LPD suisse
 - **Niveau 2 (Conditionnel)** : ISO 27701:2025 (si certification recherchée ou contractuellement requise), ISO 27018:2025, UK GDPR, LGPD, PIPL, autres juridictions
-- **Niveau 3 (Informatif)** : ISO 27017:2019, ISO 27002:2022, NIST Privacy Framework 2.0
+- **Niveau 3 (Informatif)** : ISO 27017:2015, ISO 27002:2022, NIST Privacy Framework 2.0
 
 **Autorité de décision** :
 

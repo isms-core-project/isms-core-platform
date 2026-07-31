@@ -273,7 +273,7 @@ Professional judgment exercised by the auditor includes:
 
 - **Tier 1 (Mandatory)**: EU GDPR, CH FADP
 - **Tier 2 (Conditional)**: ISO 27701:2025 (where certification sought or contractually required), ISO 27018:2025, UK GDPR, LGPD, PIPL, other jurisdictions
-- **Tier 3 (Informational)**: ISO 27017:2019, ISO 27002:2022, NIST Privacy Framework 2.0
+- **Tier 3 (Informational)**: ISO 27017:2015, ISO 27002:2022, NIST Privacy Framework 2.0
 
 **Decision Authority**:
 

@@ -38,5 +38,5 @@ Both extend ISO 27001:2022 ISMS. If your organisation is both a cloud PII proces
 
 - ISO/IEC 27018:2025 (Ed. 3) — PII in Public Cloud (Annex A)
 - ISO/IEC 27001:2022 — Information Security Management System (prerequisite)
-- ISO/IEC 27017:2019 — Cloud Security Controls (Tier 3 informational reference)
+- ISO/IEC 27017:2015 — Cloud Security Controls (Tier 3 informational reference)
 - GDPR (EU 2016/679) — Mandatory for EU-scope organisations

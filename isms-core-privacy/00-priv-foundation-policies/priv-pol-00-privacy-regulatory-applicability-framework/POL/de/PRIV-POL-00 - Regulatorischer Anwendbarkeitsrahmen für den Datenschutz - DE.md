@@ -174,13 +174,10 @@ Rahmen und Standards, die für technische und organisatorische Leitlinien, Bench
 │  • Andere Ländergesetze (auslöserbasierte Bewertung)           │
 │                                                                 │
 │  STUFE 3: INFORMATIV (Bewährte Verfahren / Technische Leitlinien│
-│  • ISO/IEC 27017:2019 (Cloud-Sicherheits-Basis für 27018)      │
+│  • ISO/IEC 27017:2026 (Cloud-Sicherheits-Basis für 27018;      │
+│    löst Ausgabe 2015 ab — formelle Übernahme ausstehend)        │
 │  • ISO/IEC 27002:2022 (Sicherheitskontroll-Umsetzung)         │
 │  • NIST Privacy Framework 2.0 (Datenschutzrisikomanagement)   │
-│                                                                 │
-│  VERÖFFENTLICHT (Beobachten — Massnahmen ausstehend)            │
-│  • ISO/IEC 27017:2026 (Cloud-Sicherheit — veröffentlicht      │
-│    29.07.2026)                                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -426,9 +423,9 @@ Organisationen sollten zusätzliche bedingt anwendbare Datenschutzvorschriften b
 
 # Informativer Verweis / Bewährte Verfahren (Stufe 3)
 
-## ISO/IEC 27017:2019 — Cloud-Sicherheitskontrollen
+## ISO/IEC 27017:2015 — Cloud-Sicherheitskontrollen
 
-**Standard**: ISO/IEC 27017:2019 — Information technology — Security techniques — Code of practice for information security controls based on ISO/IEC 27002 for cloud services
+**Standard**: ISO/IEC 27017:2015 — Information technology — Security techniques — Code of practice for information security controls based on ISO/IEC 27002 for cloud services
 
 **Rolle in PRIV-POL-00**: ISO 27017 ist ein **Cloud-Sicherheits**-Standard (kein Datenschutzstandard). Er wird hier als unterstützende technische Basis referenziert, weil ISO 27018:2025 (Anhang A — Cloud-PII-Auftragsverarbeiter-Kontrollen) direkt auf dem durch ISO 27017 etablierten Sicherheitsfundament aufbaut. Organisationen, die ISO 27018 implementieren, sollten ISO 27017-Kontrollen als Sicherheitsbasis für Cloud-PII-Verarbeitungsumgebungen behandeln.
 
@@ -444,15 +441,15 @@ Organisationen sollten zusätzliche bedingt anwendbare Datenschutzvorschriften b
 
 **Verwendung im PIMS**: Referenziert in `priv-a.2.4.2-4-processor-lifecycle-controls` und `priv-a.2.5.7-9-sub-processor-management` (ISO 27018 Overlay-Pakete).
 
-**Referenz**: ISO/IEC 27017:2019, Information security controls for cloud services
+**Referenz**: ISO/IEC 27017:2015, Information security controls for cloud services
 
 ---
 
-## ISO/IEC 27017:2026 — Veröffentlicht (Beobachten — Massnahmen bei Veröffentlichung ausstehend)
+## ISO/IEC 27017:2026 — Veröffentlicht (Formelle Übernahme ausstehend)
 
-**Status**: **Veröffentlicht** (~29.07.2026). Massnahmen bei Veröffentlichung stehen aus — CLOUD-SEC-Paket-Build startet am Wochenende des 01.08.2026 (Phase 53).
+**Status**: **Veröffentlicht** (2026), löst die Ausgabe 2015 ab. Massnahmen bei Veröffentlichung stehen aus.
 
-ISO/IEC 27017:2026 ist die zweite Ausgabe des Cloud-Sicherheitskontroll-Standards und wurde am ~29.07.2026 veröffentlicht. Diese Richtlinie wird aktualisiert, um ISO/IEC 27017:2026 an Stelle von (oder neben) ISO/IEC 27017:2019 zu referenzieren, sobald die nachfolgenden Massnahmen abgeschlossen sind.
+ISO/IEC 27017:2026 ist die zweite Ausgabe des Cloud-Sicherheitskontroll-Standards. Diese Richtlinie wird aktualisiert, um ISO/IEC 27017:2026 an Stelle von (oder neben) ISO/IEC 27017:2015 zu referenzieren, sobald die nachfolgenden Massnahmen abgeschlossen sind.
 
 **Massnahmen bei Veröffentlichung**:
 
@@ -583,7 +580,7 @@ Folgende Pflichten sind für diese Kontrollgruppe relevant:
 - ISO/IEC 27018:2025: [Anhang A-Kontrollen, wenn Auftragsverarbeiter-Pakete]
 
 **Informativ (Stufe 3):**
-- ISO/IEC 27017:2019: [wenn Cloud-bezogene Kontrollen]
+- ISO/IEC 27017:2015: [wenn Cloud-bezogene Kontrollen]
 ```
 
 ## Rollenkennzeichnung in Kontrollpaketen
@@ -619,8 +616,8 @@ Kontrollgruppen-Richtlinien SOLLEN die angesprochene organisatorische Rolle klar
 
 | Standard | Version | Status | Verwendung |
 |---------|---------|--------|------------|
-| ISO/IEC 27017:2019 | 2019 | Aktiv — Stufe 3 | Cloud-Sicherheits-Basis (unterstützt 27018-Umsetzung) |
-| ISO/IEC 27017:2026 | Veröffentlicht ~29.07.2026 | Massnahmen ausstehend | Phase-53-Build startet |
+| ISO/IEC 27017:2015 | 2015 | Aktiv — Stufe 3 | Cloud-Sicherheits-Basis (unterstützt 27018-Umsetzung) |
+| ISO/IEC 27017:2026 | Veröffentlicht (2026) | Massnahmen ausstehend | Löst Ausgabe 2015 ab |
 | ISO/IEC 27002:2022 | 2022 | Aktiv — Stufe 3 | Sicherheitskontroll-Leitlinien für A.3 gemeinsame Kontrollen |
 | NIST Privacy Framework | 2.0, 2024 | Aktiv — Stufe 3 | Datenschutzrisikomanagement-Methodik |
 
@@ -659,7 +656,7 @@ Kontrollgruppen-Richtlinien SOLLEN die angesprochene organisatorische Rolle klar
 
 | Standard | Verwendung | Referenziert in |
 |---------|-----------|----------------|
-| ISO/IEC 27017:2019 | Cloud-Sicherheits-Basis | priv-a.2.4 und priv-a.2.5 Auftragsverarbeiter-Pakete |
+| ISO/IEC 27017:2015 | Cloud-Sicherheits-Basis | priv-a.2.4 und priv-a.2.5 Auftragsverarbeiter-Pakete |
 | ISO/IEC 27002:2022 | Sicherheitskontroll-Leitlinien | Alle A.3 gemeinsamen Kontrollpakete |
 | NIST Privacy Framework 2.0 | Risiko-Methodik-Referenz | PIMS-Risikobewertungsdokumentation |
 
@@ -674,7 +671,7 @@ Kontrollgruppen-Richtlinien SOLLEN die angesprochene organisatorische Rolle klar
 | Jährliche umfassende Überprüfung | Jährlich (Q4) | DSB + ISB + Legal | Aktualisierte Richtlinie + Managementbriefing |
 | Vierteljährliches Monitoring | Vierteljährlich | DSB + Legal | Aktualisierung des Regulatorischen Monitoring-Logs |
 | Ausgelöste Bewertung | Bei Auslöserereignis | DSB (Leitung) | Bericht zur ausgelösten Bewertung |
-| ISO 27017:2026-Auswirkungsbewertung | Phase-53-Start (Wochenende 01.08.2026) | ISB | Kontrollpaket-Auswirkungsbewertung |
+| ISO 27017:2026-Auswirkungsbewertung | Nach Abschluss der Massnahmen bei Veröffentlichung | ISB | Kontrollpaket-Auswirkungsbewertung |
 
 ## Regulatorische Monitoring-Quellen
 

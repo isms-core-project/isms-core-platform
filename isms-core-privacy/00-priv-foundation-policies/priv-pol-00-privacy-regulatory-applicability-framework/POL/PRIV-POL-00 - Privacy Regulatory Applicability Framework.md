@@ -171,12 +171,10 @@ Frameworks and standards used for technical and organisational guidance, benchma
 │  • Other jurisdiction laws (trigger-based assessment)           │
 │                                                                 │
 │  TIER 3: INFORMATIONAL (Best Practice / Technical Guidance)     │
-│  • ISO/IEC 27017:2019 (cloud security baseline for 27018)      │
+│  • ISO/IEC 27017:2026 (cloud security baseline for 27018;      │
+│    supersedes 2015 — formal adoption pending)                   │
 │  • ISO/IEC 27002:2022 (security control implementation)        │
 │  • NIST Privacy Framework 2.0 (privacy risk management)        │
-│                                                                 │
-│  PUBLISHED (Monitor — Adopt-on-Publication Pending)              │
-│  • ISO/IEC 27017:2026 (cloud security — published 2026-07-29)  │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -422,9 +420,9 @@ Organisations should assess and document additional conditional privacy regulati
 
 # Informational Reference / Best Practice (Tier 3)
 
-## ISO/IEC 27017:2019 — Cloud Security Controls
+## ISO/IEC 27017:2015 — Cloud Security Controls
 
-**Standard**: ISO/IEC 27017:2019 — Information technology — Security techniques — Code of practice for information security controls based on ISO/IEC 27002 for cloud services
+**Standard**: ISO/IEC 27017:2015 — Information technology — Security techniques — Code of practice for information security controls based on ISO/IEC 27002 for cloud services
 
 **Role in PRIV-POL-00**: ISO 27017 is a **cloud security** standard (not a privacy standard). It is referenced here as a supporting technical baseline because ISO 27018:2025 (Annex A — cloud PII processor controls) builds directly on the security foundation established by ISO 27017. Organisations implementing ISO 27018 should treat ISO 27017 controls as the security bedrock for cloud PII processing environments.
 
@@ -440,15 +438,15 @@ Organisations should assess and document additional conditional privacy regulati
 
 **Usage in PIMS**: Referenced in `priv-a.2.4.2-4-processor-lifecycle-controls` and `priv-a.2.5.7-9-sub-processor-management` (ISO 27018 overlay packs).
 
-**Reference**: ISO/IEC 27017:2019, Information security controls for cloud services
+**Reference**: ISO/IEC 27017:2015, Information security controls for cloud services
 
 ---
 
-## ISO/IEC 27017:2026 — Published (Monitor — Adopt-on-Publication Actions Pending)
+## ISO/IEC 27017:2026 — Published (Formal Adoption Pending)
 
-**Status**: **Published** ~2026-07-29. Adopt-on-publication actions below are pending — CLOUD SEC pack build starts weekend of 2026-08-01 (Phase 53).
+**Status**: **Published** (2026), superseding the 2015 edition. Action on Publication steps below are pending.
 
-ISO/IEC 27017:2026 is the second edition of the cloud security controls standard, published ~2026-07-29. This policy shall be updated to reference ISO/IEC 27017:2026 in place of (or alongside) ISO/IEC 27017:2019 once the Action on Publication steps below are completed.
+ISO/IEC 27017:2026 is the second edition of the cloud security controls standard. This policy shall be updated to reference ISO/IEC 27017:2026 in place of (or alongside) ISO/IEC 27017:2015 once the Action on Publication steps below are completed.
 
 **Action on Publication**:
 
@@ -578,7 +576,7 @@ The following obligations are relevant to this control group:
 - ISO/IEC 27018:2025: [Annex A controls, if processor packs]
 
 **Informational (Tier 3):**
-- ISO/IEC 27017:2019: [if cloud-related controls]
+- ISO/IEC 27017:2015: [if cloud-related controls]
 ```
 
 ## Role Labelling in Control Packs
@@ -614,8 +612,8 @@ Control group policies SHALL clearly state the organisational role addressed:
 
 | Standard | Version | Status | Usage |
 |---------|---------|--------|-------|
-| ISO/IEC 27017:2019 | 2019 | Active — Tier 3 | Cloud security baseline (supports 27018 implementation) |
-| ISO/IEC 27017:2026 | Published ~2026-07-29 | Adopt-on-publication pending | Phase 53 build starting |
+| ISO/IEC 27017:2015 | 2015 | Active — Tier 3 | Cloud security baseline (supports 27018 implementation) |
+| ISO/IEC 27017:2026 | Published (2026) | Adopt-on-publication pending | Supersedes 2015 edition |
 | ISO/IEC 27002:2022 | 2022 | Active — Tier 3 | Security control guidance for A.3 shared controls |
 | NIST Privacy Framework | 2.0, 2024 | Active — Tier 3 | Privacy risk management methodology |
 
@@ -654,7 +652,7 @@ Control group policies SHALL clearly state the organisational role addressed:
 
 | Standard | Usage | Referenced In |
 |---------|-------|--------------|
-| ISO/IEC 27017:2019 | Cloud security baseline | priv-a.2.4 and priv-a.2.5 processor packs |
+| ISO/IEC 27017:2015 | Cloud security baseline | priv-a.2.4 and priv-a.2.5 processor packs |
 | ISO/IEC 27002:2022 | Security control guidance | All A.3 shared control packs |
 | NIST Privacy Framework 2.0 | Risk methodology reference | PIMS risk assessment documentation |
 
@@ -669,7 +667,7 @@ Control group policies SHALL clearly state the organisational role addressed:
 | Annual comprehensive review | Annual (Q4) | DPO + CISO + Legal | Updated policy + Executive briefing |
 | Quarterly monitoring | Quarterly | DPO + Legal | Regulatory monitoring log update |
 | Triggered assessment | On trigger event | DPO (lead) | Triggered assessment report |
-| ISO 27017:2026 impact assessment | Phase 53 kickoff (weekend of 2026-08-01) | CISO | Control pack impact assessment |
+| ISO 27017:2026 impact assessment | On completion of Action on Publication | CISO | Control pack impact assessment |
 
 ## Regulatory Monitoring Sources
 
