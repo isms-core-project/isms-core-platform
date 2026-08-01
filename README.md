@@ -123,8 +123,9 @@ EN · FR · DE · IT
 
 ### ☁️ [Cloud](isms-core-cloud/)
 <img src="https://img.shields.io/badge/ISO_27018-2025-00897B?style=flat-square" alt="ISO 27018:2025"/>
+<img src="https://img.shields.io/badge/ISO_27017--2026-Pending_promotion-FF9800?style=flat-square" alt="ISO 27017:2026 pending promotion"/>
 
-**PII protection in public cloud** — compliance checklists for cloud service providers processing PII on behalf of controllers. ISO 27018:2025 Annex A.
+**PII protection in public cloud** — compliance checklists for cloud service providers processing PII on behalf of controllers. ISO 27018:2025 Annex A. ISO 27017:2026 Cloud Sec (4 standalone controls) is built and live on the Platform — see [isms-core-cloud/README.md](isms-core-cloud/README.md) — pending promotion to this repository.
 
 **12** control groups · **12** CLD-POL docs<br/>
 **24** IMP docs · **12** generators<br/>
