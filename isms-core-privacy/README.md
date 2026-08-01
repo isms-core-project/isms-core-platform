@@ -28,6 +28,6 @@ The 93 body controls of 27018 are ISO 27002 content and are not duplicated.
 
 - ISO/IEC 27701:2025 (Ed. 2) — Privacy Information Management System
 - ISO/IEC 27018:2025 (Ed. 3) — PII in Public Cloud (Annex A)
-- ISO/IEC 27017:2015 — Cloud Security Controls (Tier 3 informational reference)
+- ISO/IEC 27017:2026 (Ed. 2) — Cloud Security Controls; cancels and replaces the 2015 first edition. Standalone SEC product, see `isms-core-cloud/`
 - GDPR (EU 2016/679) — Mandatory for EU-scope organisations
 - CH-nDSG/FADP — Mandatory for Swiss-scope organisations

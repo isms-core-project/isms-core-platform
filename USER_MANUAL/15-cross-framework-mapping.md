@@ -14,7 +14,7 @@ Navigate to **Analytics → Cross-Framework Mapping** in the sidebar.
 
 ## What Cross-Framework Mapping Does
 
-The platform contains 3,449 pre-built, curated crosswalk mappings between ISO 27001:2022 controls and other frameworks (out of 5,222 total crosswalk mappings across all 79 framework-pair axes, including non-ISO-27001-anchored pairs like NIST AI RMF ↔ ISO 42001). When you complete your ISO 27001 assessment, those scores are automatically inferred into the mapped frameworks.
+The platform contains 2,880 pre-built, curated crosswalk mappings between ISO 27001:2022 controls and other frameworks (out of 4,671 total crosswalk mappings across all 59 framework-pair axes, including non-ISO-27001-anchored pairs like NIST AI RMF ↔ ISO 42001). When you complete your ISO 27001 assessment, those scores are automatically inferred into the mapped frameworks.
 
 This means:
 

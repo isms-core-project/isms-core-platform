@@ -12,6 +12,7 @@
   <a href="https://www.iso.org/standard/27001"><img src="https://img.shields.io/badge/ISO_27001-2022-0066CC?style=flat-square" alt="ISO 27001:2022"/></a>
   <a href="https://www.iso.org/standard/71670.html"><img src="https://img.shields.io/badge/ISO_27701-2025-7030A0?style=flat-square" alt="ISO 27701:2025"/></a>
   <a href="https://www.iso.org/standard/76559.html"><img src="https://img.shields.io/badge/ISO_27018-2025-00897B?style=flat-square" alt="ISO 27018:2025"/></a>
+  <a href="https://www.iso.org/standard/82878.html"><img src="https://img.shields.io/badge/ISO_27017-2026-0288D1?style=flat-square" alt="ISO 27017:2026"/></a>
   <a href="https://www.iso.org/standard/81230.html"><img src="https://img.shields.io/badge/ISO_42001-2023-FF6B35?style=flat-square" alt="ISO 42001:2023"/></a>
   <a href="isms-core-framework/STATUS.md"><img src="https://img.shields.io/badge/Control_Packs-53_of_53-00AA00?style=flat-square" alt="Control Packs"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/Content-AGPL_3.0-9400D3?style=flat-square" alt="Content License"/></a>
@@ -52,7 +53,7 @@
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/BSI_C5:2026-Assessment_Tool-C62828?style=flat-square" alt="BSI C5:2026"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/BSI_C3A-Assessment_Tool-AD1457?style=flat-square" alt="BSI C3A"/></a>
   <a href="#-framework-integration"><img src="https://img.shields.io/badge/MITRE_ATT&CK_v19-Mapped-DC143C?style=flat-square" alt="MITRE ATT&CK"/></a>
-  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/5%2C336_Crosswalk_Objects_%2F_45_Axes-Linked-2E8B57?style=flat-square" alt="Crosswalk Mappings"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/4%2C671_Crosswalk_Objects_%2F_59_Axes-Linked-2E8B57?style=flat-square" alt="Crosswalk Mappings"/></a>
 </p>
 </details>
 
@@ -149,11 +150,11 @@ EN · FR · DE · IT
 <td align="center" valign="top" width="34%">
 
 ### 🖥️ [Platform](PLATFORM.md)
-<img src="https://img.shields.io/badge/All_Four_Standards-Live-2E8B57?style=flat-square" alt="All four standards"/>
+<img src="https://img.shields.io/badge/All_Five_Standards-Live-2E8B57?style=flat-square" alt="All five standards"/>
 
 **Live compliance management system** — turns all content products into dashboards, gap tracking, evidence ingestion, risk registers, and audit reports. Docker Compose, 10 services, self-hosted.
 
-**44** connectors · **29** assessment modules · **5,222** crosswalk objects / 79 axes<br/>
+**44** connectors · **29** assessment modules · **4,671** crosswalk objects / 59 axes<br/>
 8 country jurisdictions · **20+** threat intelligence sources
 
 <img src="https://img.shields.io/badge/v1.0-Live-2E8B57?style=flat-square" alt="Live"/>
@@ -252,7 +253,7 @@ This is not a framework reference or a checklist template library. **Every contr
 - Engineers who prefer **automation + tests** over "security theater"
 - SMEs needing **practical, audit-ready policies** without over-engineering
 - Organisations processing PII needing **ISO 27701 controller/processor controls**
-- Cloud service providers needing **ISO 27018 PII compliance**
+- Cloud service providers needing **ISO 27018 PII compliance** or **ISO 27017 cloud security controls**
 - Organisations developing AI systems needing **ISO 42001 AIMS governance**
 - Consultants and auditors needing **structured, traceable control packs**
 
@@ -292,12 +293,16 @@ cd isms-core-privacy/privacy-controller/priv-a.1.2.2-5-lawful-basis-and-consent/
 python3 generate_priv_checklist_a1225.py
 ```
 
-### Cloud — ISO 27018:2025
+### Cloud PII — ISO 27018:2025
 
 ```bash
 cd isms-core-cloud/iso27018-pii-cloud/cld-a.11-information-security/SCR
 python3 generate_cld_checklist_a11.py
 ```
+
+### Cloud Sec — ISO 27017:2026
+
+ISO/IEC 27017:2026 Edition 2 was published 2026-07-29. The Cloud Sec content pack (4 standalone controls: A.5.38, A.5.39, A.8.35, A.8.36) is built and live on the ISMS CORE Platform, but has not yet been promoted to this repository — `isms-core-cloud/iso27017-sec-cloud/` is currently a placeholder. Check back after the next content promotion.
 
 ### AI — ISO 42001:2023
 
@@ -469,7 +474,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 | 🔒 Privacy | 21 / 21 | 23 PRIV-POL · 42 IMPs · 21 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-7030A0?style=flat-square) |
 | ☁️ Cloud | 12 / 12 | 12 CLD-POL · 24 IMPs · 12 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-00897B?style=flat-square) |
 | 🤖 AI | 12 / 12 | 12 AI-POL · 20 IMPs · 10 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-FF6B35?style=flat-square) |
-| 🖥️ Platform | 99 total | 44 connectors · 29 assessments · 5,222 mappings / 79 axes | 8 jurisdictions | ![Live v1.0](https://img.shields.io/badge/Live-v1.0-2E8B57?style=flat-square) |
+| 🖥️ Platform | 100 total | 44 connectors · 29 assessments · 4,671 mappings / 59 axes | 8 jurisdictions | ![Live v1.0](https://img.shields.io/badge/Live-v1.0-2E8B57?style=flat-square) |
 
 ---
 

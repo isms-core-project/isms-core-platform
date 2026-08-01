@@ -50,7 +50,7 @@ factory_isms/
 ├── isms-core-framework/       # 🏗️ ISO 27001:2022 — Full Engineering Product
 ├── isms-core-operational/     # ⚡ ISO 27001:2022 — Lightweight SME Product
 ├── isms-core-privacy/         # 🔒 ISO 27701:2025 — Privacy Extension Pack
-├── isms-core-cloud/           # ☁️ ISO 27018:2025 — Cloud Extension Pack
+├── isms-core-cloud/           # ☁️ ISO 27018:2025 — Cloud Extension Pack (+ ISO 27017:2026 Cloud Sec, pending promotion)
 ├── isms-core-ai/              # 🤖 ISO 42001:2023 — AI Extension Pack
 ├── isms-core-platform/        # 🖥️ Platform Deployment Package — own LICENSE (Apache 2.0)
 ├── USER_MANUAL/               # 📖 Full user manual (21 chapters) — served in-app at /docs/user-manual.md
@@ -165,22 +165,25 @@ isms-core-privacy/
 
 ---
 
-## ☁️ isms-core-cloud/ — ISO 27018:2025 Cloud Extension Pack
+## ☁️ isms-core-cloud/ — ISO 27018:2025 Cloud Extension Pack + ISO 27017:2026 Cloud Sec
 
-12 control groups covering PII protection requirements for cloud service providers.
+12 control groups covering PII protection requirements for cloud service providers (ISO 27018:2025).
+`iso27017-sec-cloud/` is reserved for the ISO 27017:2026 Cloud Sec product (4 standalone controls) —
+built and live on the ISMS CORE Platform, but not yet promoted to this repository.
 
 ```
 isms-core-cloud/
 │
 ├── README.md
-└── iso27018-pii-cloud/
-    └── cld-a.X-control-name/              # 12 Annex A control groups
-        ├── POL/                           # CLD-POL (EN + fr/ + de/ + it/)
-        ├── IMP/
-        │   ├── IMP-UG/
-        │   └── IMP-TG/
-        ├── SCR/
-        └── WKBK/
+├── iso27018-pii-cloud/
+│   └── cld-a.X-control-name/              # 12 Annex A control groups
+│       ├── POL/                           # CLD-POL (EN + fr/ + de/ + it/)
+│       ├── IMP/
+│       │   ├── IMP-UG/
+│       │   └── IMP-TG/
+│       ├── SCR/
+│       └── WKBK/
+└── iso27017-sec-cloud/                    # placeholder — pending promotion
 ```
 
 ---

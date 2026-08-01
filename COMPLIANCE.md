@@ -645,8 +645,9 @@ All compliance assessment modules benefit from the Platform's Crosswalk Viewer, 
 - ISO 27001:2022 ↔ UK Operational Resilience (34 mappings)
 - ISO 27001:2022 ↔ NCSC CAF v4.0 (65 mappings)
 - ISO 27001:2022 ↔ ReCyF v2.5 / FR NIS2 (50 mappings)
+- ISO 27017:2026 ↔ CSA CCM v4.1 (11), NIST CSF 2.0 (9), FINMA (7), ISO 27001:2022 (4), DORA (4), NIS2 (2) — curated mappings for the 4 CLD-prefixed standalone controls (5.38, 5.39, 8.35, 8.36); no Swiss nDSG axis, as those controls have no PII content
 
-Total: **5,222 crosswalk objects across 79 axes** available in the Crosswalk Viewer.
+Total: **4,671 crosswalk objects across 59 axes** available in the Crosswalk Viewer.
 
 ---
 

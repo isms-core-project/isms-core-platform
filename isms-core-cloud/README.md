@@ -14,7 +14,7 @@
 |--------|--------|--------|----------------------|
 | PII Cloud Controls | `iso27018-pii-cloud/` | 12 | A.1–A.12 |
 
-The `iso27017-sec-cloud/` folder is reserved for the ISO 27017:2026 SEC product (published ~2026-07-29, build starting weekend of 2026-08-01 — not yet built).
+The `iso27017-sec-cloud/` folder is reserved for the ISO 27017:2026 SEC product. ISO/IEC 27017:2026 Edition 2 was published 2026-07-29; the Cloud Sec content pack (4 standalone controls: A.5.38, A.5.39, A.8.35, A.8.36) is built and live on the ISMS CORE Platform, but has not yet been promoted to this repository — check back after the next content promotion.
 
 ## ISO 27018:2025
 
@@ -38,5 +38,5 @@ Both are standalone standards (neither requires ISO 27001 certification), though
 
 - ISO/IEC 27018:2025 (Ed. 3) — PII in Public Cloud (Annex A)
 - ISO/IEC 27001:2022 — Information Security Management System (complements; not a prerequisite)
-- ISO/IEC 27017:2015 — Cloud Security Controls (Tier 3 informational reference)
+- ISO/IEC 27017:2026 (Ed. 2) — Cloud Security Controls; cancels and replaces the 2015 first edition. Standalone SEC product, see `iso27017-sec-cloud/` above
 - GDPR (EU 2016/679) — Mandatory for EU-scope organisations
