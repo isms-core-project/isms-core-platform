@@ -123,12 +123,12 @@ EN · FR · DE · IT
 
 ### ☁️ [Cloud](isms-core-cloud/)
 <img src="https://img.shields.io/badge/ISO_27018-2025-00897B?style=flat-square" alt="ISO 27018:2025"/>
-<img src="https://img.shields.io/badge/ISO_27017--2026-Pending_promotion-FF9800?style=flat-square" alt="ISO 27017:2026 pending promotion"/>
+<img src="https://img.shields.io/badge/ISO_27017-2026-0288D1?style=flat-square" alt="ISO 27017:2026"/>
 
-**PII protection in public cloud** — compliance checklists for cloud service providers processing PII on behalf of controllers. ISO 27018:2025 Annex A. ISO 27017:2026 Cloud Sec (4 standalone controls) is built and live on the Platform — see [isms-core-cloud/README.md](isms-core-cloud/README.md) — pending promotion to this repository.
+**PII protection + cloud security controls** — checklists for cloud service providers processing PII (ISO 27018:2025 Annex A) plus 4 standalone cloud security extension controls (ISO 27017:2026), each a standalone standard alongside ISO 27001.
 
-**12** control groups · **12** CLD-POL docs<br/>
-**24** IMP docs · **12** generators<br/>
+**16** control groups · **16** POL docs<br/>
+**32** IMP docs · **16** generators<br/>
 EN · FR · DE · IT
 
 <img src="https://img.shields.io/badge/v1.0-Complete-00897B?style=flat-square" alt="Complete"/>
@@ -303,7 +303,10 @@ python3 generate_cld_checklist_a11.py
 
 ### Cloud Sec — ISO 27017:2026
 
-ISO/IEC 27017:2026 Edition 2 was published 2026-07-29. The Cloud Sec content pack (4 standalone controls: A.5.38, A.5.39, A.8.35, A.8.36) is built and live on the ISMS CORE Platform, but has not yet been promoted to this repository — `isms-core-cloud/iso27017-sec-cloud/` is currently a placeholder. Check back after the next content promotion.
+```bash
+cd isms-core-cloud/iso27017-sec-cloud/cld-sec-a.5.38-shared-roles-responsibilities/SCR
+python3 generate_cld_sec_checklist_a538.py
+```
 
 ### AI — ISO 42001:2023
 
@@ -473,7 +476,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 | 🏗️ Framework | 53 / 53 | 376 IMPs · 188 generators · 188 workbooks | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-00AA00?style=flat-square) |
 | ⚡ Operational | 53 / 53 | 53 OP-POL · 53 checklist generators | EN FR DE IT | ![v0.1](https://img.shields.io/badge/v0.1-Complete-00AA00?style=flat-square) |
 | 🔒 Privacy | 21 / 21 | 23 PRIV-POL · 42 IMPs · 21 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-7030A0?style=flat-square) |
-| ☁️ Cloud | 12 / 12 | 12 CLD-POL · 24 IMPs · 12 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-00897B?style=flat-square) |
+| ☁️ Cloud | 16 / 16 | 16 CLD-POL · 32 IMPs · 16 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-00897B?style=flat-square) |
 | 🤖 AI | 12 / 12 | 12 AI-POL · 20 IMPs · 10 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-FF6B35?style=flat-square) |
 | 🖥️ Platform | 100 total | 44 connectors · 29 assessments · 4,671 mappings / 59 axes | 8 jurisdictions | ![Live v1.0](https://img.shields.io/badge/Live-v1.0-2E8B57?style=flat-square) |
 

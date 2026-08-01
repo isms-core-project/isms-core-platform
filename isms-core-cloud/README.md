@@ -1,20 +1,19 @@
 # ISMS CORE Cloud Extension Pack
 
-**Status:** v1.0 Complete (2026-03-09)
-**Standards:** ISO/IEC 27018:2025 (Ed. 3) — PII Protection in Public Cloud
+**Status:** v1.0 Complete (2026-03-09) — Cloud Sec added 2026-08-01
+**Standards:** ISO/IEC 27018:2025 (Ed. 3) — PII Protection in Public Cloud · ISO/IEC 27017:2026 (Ed. 2) — Cloud Security Controls
 **Prerequisite:** ISMS CORE Framework must be installed
 
 ---
 
 ## Scope
 
-12 control groups across 1 cloud privacy family:
+Two standalone families, 16 control groups total:
 
-| Family | Folder | Groups | ISO 27018:2025 Annex |
-|--------|--------|--------|----------------------|
-| PII Cloud Controls | `iso27018-pii-cloud/` | 12 | A.1–A.12 |
-
-The `iso27017-sec-cloud/` folder is reserved for the ISO 27017:2026 SEC product. ISO/IEC 27017:2026 Edition 2 was published 2026-07-29; the Cloud Sec content pack (4 standalone controls: A.5.38, A.5.39, A.8.35, A.8.36) is built and live on the ISMS CORE Platform, but has not yet been promoted to this repository — check back after the next content promotion.
+| Family | Folder | Groups | Standard |
+|--------|--------|--------|----------|
+| PII Cloud Controls | `iso27018-pii-cloud/` | 12 | ISO 27018:2025 Annex A |
+| Cloud Security Controls | `iso27017-sec-cloud/` | 4 | ISO 27017:2026 (4 standalone extension controls) |
 
 ## ISO 27018:2025
 
@@ -24,6 +23,17 @@ ISO 27018:2025 (Ed. 3) specifies controls for public cloud service providers (PI
 - Data collection limitation and minimisation
 - Data subject access and correction rights
 - Accountability, transparency, and information security for PII
+
+## ISO 27017:2026
+
+ISO/IEC 27017:2026 Edition 2 was published 2026-07-29, cancelling and replacing the 2015 first edition. The Cloud Sec content pack covers the 4 controls that are genuinely standalone extensions to ISO 27001 Annex A — everything else in ISO 27017 maps onto an existing ISMS-CORE Framework control and is covered by the guidance addendum instead of being duplicated:
+
+- **A.5.38** — Shared roles and responsibilities in a cloud environment
+- **A.5.39** — Agreement on cloud service partner roles and responsibilities
+- **A.8.35** — Segregation in virtual computing environments
+- **A.8.36** — Detection and prevention of unauthorised use of cloud services
+
+Plus a guidance addendum (`cld-sec-guidance-addendum/`) covering how the remaining 38 existing Annex A controls apply in a cloud context.
 
 ## Relationship to ISMS CORE Privacy (ISO 27701:2025)
 

@@ -41,7 +41,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms the ISMS CORE 
 
 **With Platform:** You have a live compliance system — searchable, scored, gap-tracked, evidence-linked, audit-ready, and (with connectors) continuously fed by automated evidence from your real infrastructure.
 
-> Platform is additive. The five content products shipped in this repository (Framework, Operational, Privacy, Cloud PII, AI) work perfectly without it. Cloud Sec (ISO 27017:2026) is live on the deployed Platform as a sixth product family; its content pack is built but not yet promoted to this repository — see `isms-core-cloud/README.md`. Platform is the operational layer for teams who need continuous compliance management rather than periodic file reviews.
+> Platform is additive. The six content products shipped in this repository (Framework, Operational, Privacy, Cloud PII, Cloud Sec, AI) work perfectly without it. Platform is the operational layer for teams who need continuous compliance management rather than periodic file reviews.
 
 ---
 

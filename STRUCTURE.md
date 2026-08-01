@@ -50,7 +50,7 @@ factory_isms/
 ├── isms-core-framework/       # 🏗️ ISO 27001:2022 — Full Engineering Product
 ├── isms-core-operational/     # ⚡ ISO 27001:2022 — Lightweight SME Product
 ├── isms-core-privacy/         # 🔒 ISO 27701:2025 — Privacy Extension Pack
-├── isms-core-cloud/           # ☁️ ISO 27018:2025 — Cloud Extension Pack (+ ISO 27017:2026 Cloud Sec, pending promotion)
+├── isms-core-cloud/           # ☁️ ISO 27018:2025 Cloud Extension Pack + ISO 27017:2026 Cloud Sec
 ├── isms-core-ai/              # 🤖 ISO 42001:2023 — AI Extension Pack
 ├── isms-core-platform/        # 🖥️ Platform Deployment Package — own LICENSE (Apache 2.0)
 ├── USER_MANUAL/               # 📖 Full user manual (21 chapters) — served in-app at /docs/user-manual.md
@@ -167,9 +167,10 @@ isms-core-privacy/
 
 ## ☁️ isms-core-cloud/ — ISO 27018:2025 Cloud Extension Pack + ISO 27017:2026 Cloud Sec
 
-12 control groups covering PII protection requirements for cloud service providers (ISO 27018:2025).
-`iso27017-sec-cloud/` is reserved for the ISO 27017:2026 Cloud Sec product (4 standalone controls) —
-built and live on the ISMS CORE Platform, but not yet promoted to this repository.
+16 control groups across two standalone standards: 12 covering PII protection requirements for
+cloud service providers (ISO 27018:2025), and 4 standalone cloud security extension controls
+(ISO 27017:2026), plus a guidance addendum for the 38 existing Annex A controls that already
+apply in a cloud context.
 
 ```
 isms-core-cloud/
@@ -183,7 +184,15 @@ isms-core-cloud/
 │       │   └── IMP-TG/
 │       ├── SCR/
 │       └── WKBK/
-└── iso27017-sec-cloud/                    # placeholder — pending promotion
+└── iso27017-sec-cloud/
+    ├── cld-sec-a.X-control-name/           # 4 standalone extension controls
+    │   ├── POL/                            # CLD-SEC-POL (EN + fr/ + de/ + it/)
+    │   ├── IMP/
+    │   │   ├── IMP-UG/
+    │   │   └── IMP-TG/
+    │   └── SCR/
+    └── cld-sec-guidance-addendum/
+        └── REF/                            # existing-control guidance for the 38 remaining Annex A controls
 ```
 
 ---
