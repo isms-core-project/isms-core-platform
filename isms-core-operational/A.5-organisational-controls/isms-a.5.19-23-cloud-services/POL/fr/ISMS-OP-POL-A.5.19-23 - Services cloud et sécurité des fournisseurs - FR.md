@@ -401,7 +401,7 @@ Politique relative aux services cloud et à la sécurité des fournisseurs — C
 | Cadre de confidentialité des données Suisse-États-Unis | Mécanisme d'adéquation pour les transferts vers les organisations américaines certifiées |
 | ISO/IEC 27001:2022 | Contrôles Annexe A 5.19–5.23 |
 | ISO/IEC 27002:2022 | Sections 5.19–5.23 — Lignes directrices de mise en œuvre |
-| ISO/IEC 27017:2015 | Contrôles de sécurité cloud (informatif) |
+| ISO/IEC 27017:2026 | Contrôles de sécurité cloud (informatif) |
 | ISO/IEC 27018:2025 | Lignes directrices pour la protection des DCP dans le cloud (informatif) |
 
 ---

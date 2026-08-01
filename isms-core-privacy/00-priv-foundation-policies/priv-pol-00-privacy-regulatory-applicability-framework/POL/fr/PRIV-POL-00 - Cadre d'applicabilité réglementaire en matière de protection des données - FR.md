@@ -173,7 +173,7 @@ Cadres et normes utilisés pour des orientations techniques et organisationnelle
 │                                                                 │
 │  NIVEAU 3 : INFORMATIF (Meilleures pratiques / Orientations)    │
 │  • ISO/IEC 27017:2026 (base sécurité cloud pour 27018 ;        │
-│    remplace l'édition 2015 — adoption formelle en attente)      │
+│    annule et remplace la première édition de 2015)              │
 │  • ISO/IEC 27002:2022 (mise en œuvre des contrôles sécu.)      │
 │  • NIST Privacy Framework 2.0 (gestion des risques)            │
 └─────────────────────────────────────────────────────────────────┘
@@ -421,13 +421,13 @@ Les organisations doivent évaluer et documenter des réglementations supplémen
 
 # Référence informative / Meilleures pratiques (Niveau 3)
 
-## ISO/IEC 27017:2015 — Contrôles de sécurité pour les services cloud
+## ISO/IEC 27017:2026 — Contrôles de sécurité pour les services cloud
 
-**Norme** : ISO/IEC 27017:2015 — Technologies de l'information — Techniques de sécurité — Code de bonnes pratiques pour les contrôles de sécurité de l'information basés sur ISO/IEC 27002 pour les services cloud
+**Norme** : ISO/IEC 27017:2026 (2e éd.) — Technologies de l'information — Techniques de sécurité — Code de bonnes pratiques pour les contrôles de sécurité de l'information basés sur ISO/IEC 27002 pour les services cloud. Publiée le 2026-07-29, annule et remplace la première édition de 2015.
 
 **Rôle dans PRIV-POL-00** : ISO 27017 est une norme de **sécurité cloud** (pas une norme de protection des données). Elle est référencée ici comme base technique de support car ISO 27018:2025 (Annexe A — contrôles des sous-traitants DCP en cloud) s'appuie directement sur le fondement de sécurité établi par ISO 27017. Les organisations mettant en œuvre ISO 27018 doivent traiter les contrôles ISO 27017 comme le socle de sécurité pour les environnements de traitement DCP en cloud.
 
-**Référence principale** : ISO 27017 est référencé dans **ISMS-POL-00** (Niveau 3) comme meilleure pratique de sécurité cloud. Sa présence dans PRIV-POL-00 est uniquement comme référence de support à la protection des données.
+**Référence principale** : ISO 27017 est référencé dans **ISMS-POL-00** (Niveau 3) comme meilleure pratique de sécurité cloud, et est disponible comme pack produit autonome (Cloud Sec) sur la plateforme ISMS CORE. Sa présence dans PRIV-POL-00 est uniquement comme référence de support à la protection des données.
 
 **Domaines d'orientation clés** (pertinents pour le traitement DCP en cloud) :
 
@@ -439,25 +439,7 @@ Les organisations doivent évaluer et documenter des réglementations supplémen
 
 **Utilisation dans le SGDP** : Référencé dans `priv-a.2.4.2-4-processor-lifecycle-controls` et `priv-a.2.5.7-9-sub-processor-management` (packs overlay ISO 27018).
 
-**Référence** : ISO/IEC 27017:2015, Contrôles de sécurité de l'information pour les services cloud
-
----
-
-## ISO/IEC 27017:2026 — Publiée (Adoption formelle en attente)
-
-**Statut** : **Publiée** (2026), remplace l'édition 2015. Les actions à la publication ci-dessous sont en attente.
-
-ISO/IEC 27017:2026 est la deuxième édition de la norme sur les contrôles de sécurité pour les services cloud. Cette politique sera mise à jour pour référencer ISO/IEC 27017:2026 à la place de (ou parallèlement à) ISO/IEC 27017:2015 une fois les actions à la publication ci-dessous réalisées.
-
-**Actions à la publication** :
-
-1. Examiner ISO/IEC 27017:2026 pour les changements structurels par rapport à l'édition 2019
-2. Évaluer l'impact sur les packs de contrôle `priv-a.2.4.2-4` et `priv-a.2.5.7-9`
-3. Mettre à jour la référence Niveau 3 de PRIV-POL-00 de 2019 à l'édition 2026
-4. Communiquer les changements aux propriétaires des groupes de contrôle concernés
-5. Mettre à jour les IMP des packs de contrôle où les orientations 27017 sont référencées
-
-**Surveiller** : Publications ISO.org — programme de travail SC 27 — WG 4 (Contrôles et services de sécurité)
+**Référence** : ISO/IEC 27017:2026, Contrôles de sécurité de l'information pour les services cloud
 
 ---
 
@@ -578,7 +560,7 @@ Les obligations suivantes sont pertinentes pour ce groupe de contrôle :
 - ISO/IEC 27018:2025 : [contrôles Annexe A, si packs sous-traitants]
 
 **Informatif (Niveau 3) :**
-- ISO/IEC 27017:2015 : [si contrôles liés au cloud]
+- ISO/IEC 27017:2026 : [si contrôles liés au cloud]
 ```
 
 ## Étiquetage des rôles dans les packs de contrôle
@@ -614,8 +596,7 @@ Les politiques des groupes de contrôle DOIVENT indiquer clairement le rôle org
 
 | Norme | Version | Statut | Utilisation |
 |------|---------|--------|------------|
-| ISO/IEC 27017:2015 | 2015 | En vigueur — Niveau 3 | Base de sécurité cloud (supporte la mise en œuvre 27018) |
-| ISO/IEC 27017:2026 | Publiée (2026) | Actions à la publication en attente | Remplace l'édition 2015 |
+| ISO/IEC 27017:2026 | 2e éd., 2026 | En vigueur — Niveau 3 | Base de sécurité cloud (supporte la mise en œuvre 27018) ; remplace la première édition de 2015 |
 | ISO/IEC 27002:2022 | 2022 | En vigueur — Niveau 3 | Orientations sur les contrôles de sécurité pour les contrôles partagés A.3 |
 | NIST Privacy Framework | 2.0, 2024 | En vigueur — Niveau 3 | Méthodologie de gestion des risques de protection des données |
 
@@ -654,7 +635,7 @@ Les politiques des groupes de contrôle DOIVENT indiquer clairement le rôle org
 
 | Norme | Utilisation | Référencé dans |
 |------|-----------|--------------|
-| ISO/IEC 27017:2015 | Base de sécurité cloud | Packs sous-traitants priv-a.2.4 et priv-a.2.5 |
+| ISO/IEC 27017:2026 | Base de sécurité cloud | Packs sous-traitants priv-a.2.4 et priv-a.2.5 |
 | ISO/IEC 27002:2022 | Orientations sur les contrôles de sécurité | Tous les packs de contrôle partagés A.3 |
 | NIST Privacy Framework 2.0 | Référence de méthodologie des risques | Documentation d'évaluation des risques SGDP |
 
@@ -669,7 +650,6 @@ Les politiques des groupes de contrôle DOIVENT indiquer clairement le rôle org
 | Révision annuelle complète | Annuelle (T4) | DPD + RSSI + Juridique | Politique mise à jour + note à la direction |
 | Surveillance trimestrielle | Trimestrielle | DPD + Juridique | Mise à jour du journal de surveillance réglementaire |
 | Évaluation déclenchée | Sur événement déclencheur | DPD (lead) | Rapport d'évaluation déclenchée |
-| Évaluation d'impact ISO 27017:2026 | Une fois les actions à la publication réalisées | RSSI | Évaluation de l'impact sur les packs de contrôle |
 
 ## Sources de surveillance réglementaire
 

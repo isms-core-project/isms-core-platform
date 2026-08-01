@@ -273,7 +273,7 @@ Fachliches Ermessen, das vom Prüfer ausgeübt wird, umfasst:
 
 - **Tier 1 (Obligatorisch)**: EU GDPR, CH FADP
 - **Tier 2 (Bedingt)**: ISO 27701:2025 (bei angestrebter oder vertraglich erforderlicher Zertifizierung), ISO 27018:2025, UK GDPR, LGPD, PIPL, weitere Jurisdiktionen
-- **Tier 3 (Informativ)**: ISO 27017:2015, ISO 27002:2022, NIST Privacy Framework 2.0
+- **Tier 3 (Informativ)**: ISO 27017:2026, ISO 27002:2022, NIST Privacy Framework 2.0
 
 **Entscheidungsautorität**:
 

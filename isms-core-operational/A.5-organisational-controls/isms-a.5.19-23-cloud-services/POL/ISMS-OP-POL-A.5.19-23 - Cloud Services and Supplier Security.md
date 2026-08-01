@@ -401,7 +401,7 @@ Cloud Services and Supplier Security Policy — ISO 27001 Controls Mapping
 | Swiss-U.S. Data Privacy Framework | Adequacy mechanism for transfers to certified US organisations |
 | ISO/IEC 27001:2022 | Annex A Controls 5.19–5.23 |
 | ISO/IEC 27002:2022 | Sections 5.19–5.23 — Implementation guidance |
-| ISO/IEC 27017:2015 | Cloud security controls (informational) |
+| ISO/IEC 27017:2026 | Cloud security controls (informational) |
 | ISO/IEC 27018:2025 | Cloud PII protection guidelines (informational) |
 
 ---

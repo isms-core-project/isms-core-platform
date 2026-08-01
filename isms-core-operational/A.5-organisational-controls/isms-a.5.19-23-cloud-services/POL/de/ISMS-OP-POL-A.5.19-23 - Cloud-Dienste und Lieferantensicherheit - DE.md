@@ -401,7 +401,7 @@ Richtlinie für Cloud-Dienste und Lieferantensicherheit — ISO-27001-Kontrollma
 | Swiss-U.S. Data Privacy Framework | Angemessenheitsmechanismus für Übermittlungen an zertifizierte US-Organisationen |
 | ISO/IEC 27001:2022 | Annex A Kontrollen 5.19–5.23 |
 | ISO/IEC 27002:2022 | Abschnitte 5.19–5.23 — Implementierungsleitfaden |
-| ISO/IEC 27017:2015 | Cloud-Sicherheitskontrollen (informativ) |
+| ISO/IEC 27017:2026 | Cloud-Sicherheitskontrollen (informativ) |
 | ISO/IEC 27018:2025 | Cloud-PII-Schutzrichtlinien (informativ) |
 
 ---

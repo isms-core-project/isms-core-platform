@@ -401,7 +401,7 @@ Policy sulla sicurezza dei servizi cloud e dei fornitori — Mappatura dei contr
 | Swiss-U.S. Data Privacy Framework | Meccanismo di adeguatezza per i trasferimenti verso organizzazioni statunitensi certificate |
 | ISO/IEC 27001:2022 | Controlli Annex A 5.19–5.23 |
 | ISO/IEC 27002:2022 | Sezioni 5.19–5.23 — Linee guida per l'implementazione |
-| ISO/IEC 27017:2015 | Controlli di sicurezza del cloud (informativo) |
+| ISO/IEC 27017:2026 | Controlli di sicurezza del cloud (informativo) |
 | ISO/IEC 27018:2025 | Linee guida per la protezione dei dati personali nel cloud (informativo) |
 
 ---
