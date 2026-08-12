@@ -63,7 +63,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms the ISMS CORE 
                         │  ┌──────────────┐  ┌──────────────────┐        │
                         │  │ isms-core-   │  │  isms-core-      │        │
                         │  │ frontend     │  │  backend         │        │
-                        │  │ Angular 21   │  │  FastAPI         │        │
+                        │  │ Angular 22   │  │  FastAPI         │        │
                         │  │ + Material 3 │  │  + SQLAlchemy    │        │
                         │  └──────────────┘  └────┬──────┬──────┘        │
                         │                         │      │                 │
@@ -107,7 +107,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms the ISMS CORE 
 |-----------|-----------|------|
 | `isms-core-nginx` | nginx (Alpine) | Reverse proxy — TLS termination, routes `/api/` to backend, `/` to frontend. Ports 80 + 443. |
 | `isms-core-backend` | FastAPI 0.109+ | REST API, auth (JWT), business logic, import orchestration. Internal only — nginx proxies it. |
-| `isms-core-frontend` | Angular 21 + Material 3 | WebUI — dashboards, control explorer, evidence management. Internal only — nginx proxies it. |
+| `isms-core-frontend` | Angular 22 + Material 3 | WebUI — dashboards, control explorer, evidence management. Internal only — nginx proxies it. |
 | `isms-core-postgres` | PostgreSQL 18 Alpine | Primary data store — all compliance data. Internal only (no exposed port in prod). |
 | `isms-core-redis` | Redis 8 Alpine | Session cache + Celery task broker. Internal only. |
 | `isms-core-opensearch` | OpenSearch 3.x | Full-text search over policy and IMP content + NVD CVE/CPE indices. Internal only. |

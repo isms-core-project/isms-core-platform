@@ -254,7 +254,7 @@ isms-core-platform/
 |-----------|------|
 | `isms-core-nginx` | TLS termination + reverse proxy |
 | `isms-core-backend` | FastAPI REST API |
-| `isms-core-frontend` | Angular 21 + Material 3 WebUI |
+| `isms-core-frontend` | Angular 22 + Material 3 WebUI |
 | `isms-core-postgres` | PostgreSQL 18 — primary data store |
 | `isms-core-redis` | Redis 8 — session cache + Celery broker |
 | `isms-core-opensearch` | OpenSearch 3.x — full-text search + threat intelligence |
