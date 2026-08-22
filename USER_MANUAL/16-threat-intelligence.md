@@ -1,12 +1,12 @@
 # Threat Intelligence
 
-<!-- ISMS-CORE:USER-MANUAL:16-threat-intelligence:v1.2:2026-05-02 -->
+<!-- ISMS-CORE:USER-MANUAL:16-threat-intelligence:v1.3:2026-08-22 -->
 
 ---
 
 ## Overview
 
-The Threat Intelligence section gives you live access to 17+ threat and vulnerability intelligence sources integrated directly into the platform. This supports ISO 27001:2022 control A.5.7 (Threat intelligence) and provides the technical depth needed to assess your exposure to current adversary techniques, actively exploited vulnerabilities, and real-world IOC data from public OSINT feeds.
+The Threat Intelligence section gives you live access to 18+ threat and vulnerability intelligence sources integrated directly into the platform. This supports ISO 27001:2022 control A.5.7 (Threat intelligence) and provides the technical depth needed to assess your exposure to current adversary techniques, actively exploited vulnerabilities, and real-world IOC data from public OSINT feeds.
 
 Navigate to **Intelligence** in the sidebar.
 
@@ -37,6 +37,7 @@ These feeds run in the `isms-core-feeds` container and are always active.
 | **NVD CPE** | Weekly, Sun 01:30 | Software/hardware product identifiers — enables correlating CVEs to specific products |
 | **ENISA EUVD** | Daily | EU Vulnerability Database — exploited-flag CVEs and high-severity (CVSS ≥ 4.0) EU-assigned entries; cross-enriched into NVD CVE docs with `in_euvd` flag |
 | **Exploit-DB** | Daily | ~52,000 public exploits; cross-enriches CVEs with `edb_id`, `edb_verified` (Metasploit flag), and `edb_description` |
+| **VulnCheck KEV** | Daily 04:45 | VulnCheck's own Known Exploited Vulnerabilities catalogue — broader than CISA's; ~67% of its entries aren't in CISA KEV. Adds `in_vulncheck_kev` flag on CVE Explorer, separate from CISA's `in_kev`. Requires `VULNCHECK_API_KEY` (free Community tier) |
 | **MaxMind GeoLite2** | Weekly, Tue 01:00 | GeoIP database used for IP-to-country resolution across all feeds |
 
 ---
@@ -158,6 +159,7 @@ Search and filter the NVD CVE index (~250,000 entries):
 | Severity | Critical / High / Medium / Low (CVSS v3 base score) |
 | EPSS score | Slider (0.00–1.00) — filter by exploitation probability |
 | KEV only | Show only CVEs on the CISA KEV list |
+| VulnCheck only | Show only CVEs on VulnCheck's own, broader KEV catalogue |
 | EUVD flag | Show only CVEs present in the EU Vulnerability Database |
 | EDB only | Show only CVEs with a known public exploit in Exploit-DB |
 | Year | CVE publication year |
@@ -171,6 +173,7 @@ Click any CVE to open the detail panel:
 - CPE applicability list (which products are affected)
 - EPSS score and percentile
 - KEV status and date added to the KEV list
+- VulnCheck KEV status (independent of CISA KEV — a CVE can be on one, the other, or both)
 - EUVD flag and EU-assigned identifier where available
 - EDB chip — `EDB` if a public exploit exists, `EDB✓` if a Metasploit module exists
 - NVD reference links
@@ -259,7 +262,7 @@ The correlation model stamps ATT&CK TIDs, Malpedia family slugs, and actor slugs
 
 Navigate to **Intelligence → IP Enrichment**.
 
-Enter any IP address to retrieve on-demand enrichment from two sources:
+Enter any IP address to retrieve on-demand enrichment from five sources:
 
 ### AbuseIPDB Check
 
@@ -283,7 +286,19 @@ If no Shodan API key is set, the **Shodan InternetDB** free service is used as a
 
 If an IP is not indexed in Shodan (common for transit IPs and private ranges), the widget shows "IP not indexed" rather than an error.
 
-Enrichment results are cached for 24 hours to respect API rate limits.
+### MaxMind GeoLite2
+
+If `MAXMIND_ACCOUNT_ID` and `MAXMIND_LICENSE_KEY` are configured: country, city, and ASN from MaxMind's GeoLite2 City web service.
+
+### IPInfo Privacy
+
+If `IPINFO_API_KEY` is configured: a privacy classification (Clean / VPN / Proxy / Tor / Relay / Hosting) plus the underlying service name.
+
+### GreyNoise
+
+If `GREYNOISE_API_KEY` is configured: internet-noise/scanner classification (benign / malicious / unknown), whether the IP is a known internet-wide scanner, and RIOT status (a known, legitimate business service — search engines, CDNs — rather than a threat). GreyNoise's free Community tier is limited to 50 lookups/week (business email required for the API key), so this source is deliberately on-demand only, never part of a scheduled bulk feed.
+
+Enrichment results are cached to respect each source's rate limits — 24 hours for AbuseIPDB and Shodan, 30 days for MaxMind, IPInfo, and GreyNoise (all lower-volume or stricter-quota sources).
 
 ---
 
@@ -352,6 +367,8 @@ Feed configuration is an administrator function. See your administrator if a fee
 | `VT_DAILY_LIMIT` | Max IOCs enriched per VT run (default: `450`, free-tier safe cap) | — |
 | `MAXMIND_ACCOUNT_ID` / `MAXMIND_LICENSE_KEY` | GeoLite2 database for IP geolocation | maxmind.com |
 | `IPINFO_API_KEY` | Enhanced geo + ASN enrichment for AbuseIPDB IPs | ipinfo.io |
+| `VULNCHECK_API_KEY` | VulnCheck KEV feed (free tier: 1,000 req/min) | console.vulncheck.com |
+| `GREYNOISE_API_KEY` | GreyNoise on-demand IP lookup on the IP Enrichment page (free tier: 50 lookups/week, business email required) | greynoise.io |
 | `TI_MISP_IMPORT_FROM_DATE` | MISP first-run date floor (default `2024-01-01`) | — |
 | `TI_RUN_ON_START` | Force all OSINT feeds to run on every container start | — |
 

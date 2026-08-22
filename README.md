@@ -156,7 +156,7 @@ EN · FR · DE · IT
 **Live compliance management system** — turns all content products into dashboards, gap tracking, evidence ingestion, risk registers, and audit reports. Docker Compose, 10 services, self-hosted.
 
 **44** connectors · **29** assessment modules · **4,671** crosswalk objects / 59 axes<br/>
-8 country jurisdictions · **20+** threat intelligence sources
+8 country jurisdictions · **21+** threat intelligence sources
 
 <img src="https://img.shields.io/badge/v1.0-Live-2E8B57?style=flat-square" alt="Live"/>
 
@@ -416,6 +416,7 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 | MITRE ATLAS | AI/ML adversarial threat techniques | ![Mapped](https://img.shields.io/badge/Mapped-DC143C?style=flat-square) |
 | ENISA EUVD | European Vulnerability Database — exploited + critical CVEs; daily feed; EUVD Explorer + cross-enrichment of NVD CVE index with `in_euvd` flag | ![Feed](https://img.shields.io/badge/TI_Feed-003399?style=flat-square) |
 | Exploit-DB | Daily exploit database (~52K entries) — cross-referenced to NVD CVE by CVE ID; adds `edb_id`, `edb_verified` (Metasploit module flag), `edb_description` to matching CVEs. EDB/EDB✓ chips in CVE Explorer; EDB-only filter. | ![Feed](https://img.shields.io/badge/TI_Feed-8B0000?style=flat-square) |
+| VulnCheck KEV | Daily feed — VulnCheck's own Known Exploited Vulnerabilities catalogue, broader than CISA's (~67% of entries aren't in CISA KEV); adds `in_vulncheck_kev` flag, separate from CISA's `in_kev`, on CVE Explorer. VC-KEV chip; VulnCheck-only filter. Requires `VULNCHECK_API_KEY` (free Community tier). | ![Feed](https://img.shields.io/badge/TI_Feed-6A1B9A?style=flat-square) |
 | CIRCL MISP OSINT Feed | Public MISP feed (Luxembourg) — 6-hourly manifest delta; 100K+ IOCs (IPs, domains, URLs, hashes) cross-enriched with ATT&CK TIDs, Malpedia family slugs, actor slugs at ingest | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | Botvrij MISP OSINT Feed | Public MISP feed (Botvrij.eu) — 6-hourly manifest delta; deduplicated against CIRCL by IOC value + source | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | AbuseIPDB | Daily blacklist (top 10K confidence=100 IPs); on-demand single-IP enrichment with 24h cache; OpenSearch `ti-abuseipdb-blacklist` index | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
@@ -429,6 +430,7 @@ Read [PLATFORM.md](PLATFORM.md) for the full deployment guide, TLS options, conn
 | Red Flag Domains | Daily suspicious newly-registered domain feed — `ti-red-flag-domains` index | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | Stopforumspam | Daily spammer IP/email/username database — `ti-stopforumspam` index | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | VirusTotal enrichment | Daily IOC confidence enrichment — queries existing IOCs against VT v3 API, updates confidence scores based on AV engine detection ratios; free tier (~500 req/day); requires `VT_API_KEY` | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
+| GreyNoise enrichment | On-demand IP Enrichment lookup — internet-noise/scanner classification, RIOT (known-legitimate-service) status; free Community tier capped at 50 lookups/week, so manual-lookup only, never a scheduled bulk feed; requires `GREYNOISE_API_KEY` | ![Enrichment](https://img.shields.io/badge/Enrichment-6A1B9A?style=flat-square) |
 | EU GDPR / Swiss DSG | Security and privacy control mapping, operational checklists | ![Toolkit](https://img.shields.io/badge/Toolkit-FFD700?style=flat-square) |
 
 </details>

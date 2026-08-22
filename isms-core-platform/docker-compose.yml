@@ -414,6 +414,7 @@ services:
       - MAXMIND_ACCOUNT_ID=${MAXMIND_ACCOUNT_ID:-}
       - MAXMIND_LICENSE_KEY=${MAXMIND_LICENSE_KEY:-}
       - IPINFO_API_KEY=${IPINFO_API_KEY:-}
+      - GREYNOISE_API_KEY=${GREYNOISE_API_KEY:-}
     depends_on:
       isms-core-postgres:
         condition: service_healthy
@@ -610,6 +611,8 @@ services:
       - FEEDS_CVE_ENABLED=${FEEDS_CVE_ENABLED:-false}
       - FEEDS_CPE_FULL=${FEEDS_CPE_FULL:-false}
       - FEEDS_EXPLOITDB_ENABLED=${FEEDS_EXPLOITDB_ENABLED:-true}
+      - FEEDS_VULNCHECK_ENABLED=${FEEDS_VULNCHECK_ENABLED:-true}
+      - VULNCHECK_API_KEY=${VULNCHECK_API_KEY:-}
       - NIST_API_KEY=${NIST_API_KEY:-}
       - ISMS_API_URL=http://isms-core-backend:8000
       - CONNECTORS_WORKER_SECRET=${CONNECTORS_WORKER_SECRET}
