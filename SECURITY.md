@@ -1,6 +1,6 @@
 # Security Policy
 
-ISMS CORE takes security seriously. If you discover a vulnerability in this repository (including scripts, workbook generators, templates, or documentation that could cause unsafe outcomes), please report it responsibly.
+ISMS CORE takes security seriously. If you discover a vulnerability in this repository — including scripts, workbook generators, templates, or documentation that could cause unsafe outcomes — or in the running ISMS CORE platform itself (the backend API and services distributed as the Docker images referenced by this repo's `docker-compose.yml`), please report it responsibly.
 
 ## Reporting a Vulnerability
 
@@ -25,6 +25,9 @@ We will:
 ## Scope
 
 **In scope:**
+- The ISMS CORE platform itself — the backend API and services shipped in the Docker images this
+  repo's `docker-compose.yml` pulls, including authentication, authorisation, and multi-tenant
+  (organisation-level) data isolation
 - Python scripts and generators in `SCR/`
 - Workbook templates and outputs where repository-provided logic may be unsafe
 - Promotion/QA scripts and automation
