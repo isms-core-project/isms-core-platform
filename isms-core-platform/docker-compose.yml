@@ -79,6 +79,7 @@ services:
   isms-core-opensearch:
     profiles: [opensearch-single]
     image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-opensearch-${PLATFORM_TAG:-latest}
+    platform: linux/amd64
     container_name: isms-core-opensearch
     environment:
       - TZ=${TZ:-Europe/Zurich}
@@ -115,6 +116,7 @@ services:
 
   isms-core-opensearch-node1:
     image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-opensearch-${PLATFORM_TAG:-latest}
+    platform: linux/amd64
     container_name: isms-core-opensearch-node1
     profiles: [opensearch-cluster]
     environment:
@@ -151,6 +153,7 @@ services:
 
   isms-core-opensearch-node2:
     image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-opensearch-${PLATFORM_TAG:-latest}
+    platform: linux/amd64
     container_name: isms-core-opensearch-node2
     profiles: [opensearch-cluster]
     environment:
@@ -185,6 +188,7 @@ services:
 
   isms-core-opensearch-node3:
     image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-opensearch-${PLATFORM_TAG:-latest}
+    platform: linux/amd64
     container_name: isms-core-opensearch-node3
     profiles: [opensearch-cluster]
     environment:
@@ -224,6 +228,7 @@ services:
 
   isms-core-opensearch-setup:
     image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-opensearch-setup-${PLATFORM_TAG:-latest}
+    platform: linux/amd64
     container_name: isms-core-opensearch-setup
     environment:
       - TZ=${TZ:-Europe/Zurich}
@@ -277,6 +282,7 @@ services:
 
   isms-core-garage-setup:
     image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-garage-setup-${PLATFORM_TAG:-latest}
+    platform: linux/amd64
     container_name: isms-core-garage-setup
     profiles: [garage]
     environment:
@@ -328,6 +334,7 @@ services:
 
   isms-core-dashboards-setup:
     image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-dashboards-setup-${PLATFORM_TAG:-latest}
+    platform: linux/amd64
     container_name: isms-core-dashboards-setup
     profiles: [dashboards]
     environment:
@@ -348,6 +355,7 @@ services:
 
   isms-core-data-init:
     image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-data-${PLATFORM_TAG:-latest}
+    platform: linux/amd64
     container_name: isms-core-data-init
     entrypoint: ["sh", "-c", "cp -r /content/. /app/datasets/"]
     volumes:
@@ -360,6 +368,7 @@ services:
 
   isms-core-backend:
     image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-backend-${PLATFORM_TAG:-latest}
+    platform: linux/amd64
     container_name: isms-core-backend
     volumes:
       - datasets-data:/app/datasets:ro
@@ -443,6 +452,7 @@ services:
 
   isms-core-beat:
     image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-backend-${PLATFORM_TAG:-latest}
+    platform: linux/amd64
     container_name: isms-core-beat
     command: celery -A src.worker.celery_app beat --loglevel=info
     volumes:
@@ -484,6 +494,7 @@ services:
 
   isms-core-worker:
     image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-backend-${PLATFORM_TAG:-latest}
+    platform: linux/amd64
     container_name: isms-core-worker
     command: celery -A src.worker.celery_app worker --loglevel=info --queues=isms
     volumes:
@@ -535,6 +546,7 @@ services:
 
   isms-core-frontend:
     image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-frontend-${PLATFORM_TAG:-latest}
+    platform: linux/amd64
     container_name: isms-core-frontend
     environment:
       - TZ=${TZ:-Europe/Zurich}
@@ -549,6 +561,7 @@ services:
 
   isms-core-nginx:
     image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-nginx-${PLATFORM_TAG:-latest}
+    platform: linux/amd64
     container_name: isms-core-nginx
     ports:
       - "80:80"
@@ -580,6 +593,7 @@ services:
 
   isms-core-connectors:
     image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-connectors-${PLATFORM_TAG:-latest}
+    platform: linux/amd64
     container_name: isms-core-connectors
     environment:
       - TZ=${TZ:-Europe/Zurich}
@@ -598,6 +612,7 @@ services:
 
   isms-core-feeds:
     image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-feeds-${PLATFORM_TAG:-latest}
+    platform: linux/amd64
     container_name: isms-core-feeds
     environment:
       - TZ=${TZ:-Europe/Zurich}
@@ -627,6 +642,7 @@ services:
 
   isms-core-threat-intel:
     image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-threat-intel-${PLATFORM_TAG:-latest}
+    platform: linux/amd64
     container_name: isms-core-threat-intel
     profiles: [threat-intel]
     environment:
@@ -693,6 +709,7 @@ services:
 
   isms-core-smtp-bridge:
     image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-smtp-bridge-${PLATFORM_TAG:-latest}
+    platform: linux/amd64
     container_name: isms-core-smtp-bridge
     profiles: [smtp-bridge]
     environment:
