@@ -158,7 +158,7 @@ EN · FR · DE · IT
 **44** connectors · **29** assessment modules · **4,671** crosswalk objects / 59 axes<br/>
 8 country jurisdictions · **21+** threat intelligence sources
 
-<img src="https://img.shields.io/badge/v1.0-Live-2E8B57?style=flat-square" alt="Live"/>
+<img src="https://img.shields.io/badge/v1.1-Live-2E8B57?style=flat-square" alt="Live"/>
 
 </td>
 </tr>
@@ -480,7 +480,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 | 🔒 Privacy | 21 / 21 | 23 PRIV-POL · 42 IMPs · 21 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-7030A0?style=flat-square) |
 | ☁️ Cloud | 16 / 16 | 16 CLD-POL · 32 IMPs · 16 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-00897B?style=flat-square) |
 | 🤖 AI | 12 / 12 | 12 AI-POL · 20 IMPs · 10 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-FF6B35?style=flat-square) |
-| 🖥️ Platform | 100 total | 44 connectors · 29 assessments · 4,671 mappings / 59 axes | 8 jurisdictions | ![Live v1.0](https://img.shields.io/badge/Live-v1.0-2E8B57?style=flat-square) |
+| 🖥️ Platform | 100 total | 44 connectors · 29 assessments · 4,671 mappings / 59 axes | 8 jurisdictions | ![Live v1.1](https://img.shields.io/badge/Live-v1.1-2E8B57?style=flat-square) |
 
 ---
 
@@ -504,6 +504,8 @@ See [STRUCTURE.md](STRUCTURE.md) for the complete repository map with per-folder
 | [PHILOSOPHY.md](PHILOSOPHY.md) | ✈️ Anti-cargo-cult methodology |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | 🔧 QA process and standards |
 | [SECURITY.md](SECURITY.md) | 🔒 Vulnerability reporting policy |
+| [isms-core-platform/CHANGELOG.md](isms-core-platform/CHANGELOG.md) | 📝 Platform release notes |
+| [CREDITS.md](CREDITS.md) | 🙏 Third-party tools and open-source acknowledgements |
 
 ---
 

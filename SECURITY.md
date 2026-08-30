@@ -44,6 +44,15 @@ ISMS CORE supports TOTP-based MFA (RFC 6238) for all user accounts. We recommend
 - Rotating the `SECRET_KEY` environment variable when deploying to a new environment
 - Using strong, unique values for `POSTGRES_PASSWORD` and `SECRET_KEY` (minimum 32 characters, randomly generated)
 
+## Proactive Security Reviews
+
+Beyond responding to external reports, we periodically run the platform's own codebase
+through [Visa's Vulnerability Agentic Harness (VVAH)](https://github.com/visa/visa-vulnerability-agentic-harness),
+an open-source agentic SAST tool, and fix every independently-verified finding before
+it ships. The most recent full pass (backend, frontend, and every connector/feed/
+threat-intel/SMTP-bridge service) landed in v1.1 — see
+[isms-core-platform/CHANGELOG.md](isms-core-platform/CHANGELOG.md) for the summary.
+
 ## Safe Handling
 
 - Do not include secrets, tokens, private keys, or customer data in vulnerability reports.

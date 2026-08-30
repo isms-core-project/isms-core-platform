@@ -2,6 +2,7 @@
 .env
 .env.local
 .env.*.local
+.env.connector-certs
 backup.env
 
 # Python
@@ -30,3 +31,10 @@ backend/cache/
 .DS_Store
 .idea/
 *.swp
+
+# VVAH scan output (93-isms-core-vvah/run-scan.sh writes here) — never commit exploit detail
+*/security-scan/
+*/security-remediation/
+
+# VVAH finding #21 — pickle-based Celery beat schedule, never commit (CWE-502 deserialization RCE risk)
+backend/celerybeat-schedule*

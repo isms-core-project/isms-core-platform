@@ -5,11 +5,11 @@
 <h1 align="center">ISMS CORE Platform — User Manual</h1>
 
 <p align="center">
-  <strong>Version 1.0 &nbsp;·&nbsp; For ISMS Managers, Auditors, and Control Owners</strong>
+  <strong>Version 1.1 &nbsp;·&nbsp; For ISMS Managers, Auditors, and Control Owners</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Platform-v1.0-00AA00?style=flat-square" alt="v1.0"/>
+  <img src="https://img.shields.io/badge/Platform-v1.1-00AA00?style=flat-square" alt="v1.1"/>
   <img src="https://img.shields.io/badge/Audience-ISMS_Manager_%7C_Auditor_%7C_Control_Owner-0066CC?style=flat-square" alt="Audience"/>
 </p>
 

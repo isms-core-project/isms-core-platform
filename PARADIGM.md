@@ -639,7 +639,7 @@ The **ISMS CORE Platform** is the operational layer built on top. It ingests bot
 | Manual evidence collection | Evidence items with expiry tracking and freshness alerts |
 | No audit trail | Full immutable log of who did what and when |
 
-The Platform is a Docker Compose stack deployed on-premises. The core services are FastAPI + PostgreSQL + Redis + OpenSearch + Celery + Angular 22 + nginx TLS + Celery Beat + a dedicated vulnerability feed container (MITRE ATT&CK, CISA KEV, EPSS, NVD CVE, ENISA EUVD, Exploit-DB) + an automated connector runner (44 native connectors). An optional OSINT feed container adds 12 live threat intelligence sources. **v1.0 is live.** Same data sovereignty principle applies — your compliance data does not leave your infrastructure.
+The Platform is a Docker Compose stack deployed on-premises. The core services are FastAPI + PostgreSQL + Redis + OpenSearch + Celery + Angular 22 + nginx TLS + Celery Beat + a dedicated vulnerability feed container (MITRE ATT&CK, CISA KEV, EPSS, NVD CVE, ENISA EUVD, Exploit-DB) + an automated connector runner (44 native connectors). An optional OSINT feed container adds 12 live threat intelligence sources. **v1.1 is live.** Same data sovereignty principle applies — your compliance data does not leave your infrastructure.
 
 The Platform also includes 44 native connectors (Microsoft, network, identity, vulnerability, ITSM, monitoring, cloud posture, threat intel) that push live evidence directly into the compliance database — no manual evidence collection for supported systems.
 

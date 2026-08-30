@@ -9,10 +9,10 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Status-Live_(v1.0)-00AA00?style=flat-square" alt="Live"/>
+  <img src="https://img.shields.io/badge/Status-Live_(v1.1)-00AA00?style=flat-square" alt="Live"/>
   <img src="https://img.shields.io/badge/Backend-FastAPI-0066CC?style=flat-square" alt="FastAPI"/>
   <img src="https://img.shields.io/badge/Database-PostgreSQL_18-336791?style=flat-square" alt="PostgreSQL 18"/>
-  <img src="https://img.shields.io/badge/Frontend-Angular_21_+_Material_3-DD0031?style=flat-square" alt="Angular"/>
+  <img src="https://img.shields.io/badge/Frontend-Angular_22_+_Material_3-DD0031?style=flat-square" alt="Angular"/>
   <img src="https://img.shields.io/badge/Deployment-Docker_Compose-2496ED?style=flat-square" alt="Docker"/>
   <img src="https://img.shields.io/badge/Services-11_containers-2E8B57?style=flat-square" alt="11 Services"/>
 </p>

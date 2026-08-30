@@ -234,6 +234,7 @@ isms-core-platform/
 ├── backup.env.example                     # Backup-service environment template
 ├── docker-compose.yml                     # Multi-service production stack (profile-based, image: not build:)
 ├── bootstrap.sh                           # First-boot import script (idempotent, safe to re-run)
+├── CHANGELOG.md                           # Platform release notes
 ├── LICENSE                                # Apache 2.0 — governs this directory only (see README §License)
 ├── .gitignore
 │
