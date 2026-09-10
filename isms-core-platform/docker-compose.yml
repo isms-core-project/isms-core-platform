@@ -90,7 +90,12 @@ services:
     environment:
       - TZ=${TZ:-Europe/Zurich}
       - discovery.type=single-node
-      - DISABLE_SECURITY_PLUGIN=${OPENSEARCH_DISABLE_SECURITY:-true}
+      # Fallback (used only when OPENSEARCH_DISABLE_SECURITY is entirely
+      # unset, e.g. no .env present) is fail-closed by design. .env.example
+      # still ships an explicit documented `true` quick-start value, so any
+      # deployment that copied it is unaffected — this only changes the
+      # truly-unconfigured case.
+      - DISABLE_SECURITY_PLUGIN=${OPENSEARCH_DISABLE_SECURITY:-false}
       - OPENSEARCH_INITIAL_ADMIN_PASSWORD=${OPENSEARCH_ADMIN_PASSWORD:-}
       - OPENSEARCH_JAVA_OPTS=-Xms${OPENSEARCH_HEAP:-1g} -Xmx${OPENSEARCH_HEAP:-1g} -Dopensearch.allow_insecure_settings=true
       - bootstrap.memory_lock=true
@@ -131,7 +136,7 @@ services:
       - cluster.name=isms-core-cluster
       - discovery.seed_hosts=isms-core-opensearch-node2,isms-core-opensearch-node3
       - cluster.initial_master_nodes=isms-core-opensearch-node1,isms-core-opensearch-node2,isms-core-opensearch-node3
-      - DISABLE_SECURITY_PLUGIN=${OPENSEARCH_DISABLE_SECURITY:-true}
+      - DISABLE_SECURITY_PLUGIN=${OPENSEARCH_DISABLE_SECURITY:-false}
       - OPENSEARCH_INITIAL_ADMIN_PASSWORD=${OPENSEARCH_ADMIN_PASSWORD:-}
       - OPENSEARCH_JAVA_OPTS=-Xms${OPENSEARCH_HEAP:-1g} -Xmx${OPENSEARCH_HEAP:-1g} -Dopensearch.allow_insecure_settings=true
       - bootstrap.memory_lock=true
@@ -168,7 +173,7 @@ services:
       - cluster.name=isms-core-cluster
       - discovery.seed_hosts=isms-core-opensearch-node1,isms-core-opensearch-node3
       - cluster.initial_master_nodes=isms-core-opensearch-node1,isms-core-opensearch-node2,isms-core-opensearch-node3
-      - DISABLE_SECURITY_PLUGIN=${OPENSEARCH_DISABLE_SECURITY:-true}
+      - DISABLE_SECURITY_PLUGIN=${OPENSEARCH_DISABLE_SECURITY:-false}
       - OPENSEARCH_INITIAL_ADMIN_PASSWORD=${OPENSEARCH_ADMIN_PASSWORD:-}
       - OPENSEARCH_JAVA_OPTS=-Xms${OPENSEARCH_HEAP:-1g} -Xmx${OPENSEARCH_HEAP:-1g} -Dopensearch.allow_insecure_settings=true
       - bootstrap.memory_lock=true
@@ -203,7 +208,7 @@ services:
       - cluster.name=isms-core-cluster
       - discovery.seed_hosts=isms-core-opensearch-node1,isms-core-opensearch-node2
       - cluster.initial_master_nodes=isms-core-opensearch-node1,isms-core-opensearch-node2,isms-core-opensearch-node3
-      - DISABLE_SECURITY_PLUGIN=${OPENSEARCH_DISABLE_SECURITY:-true}
+      - DISABLE_SECURITY_PLUGIN=${OPENSEARCH_DISABLE_SECURITY:-false}
       - OPENSEARCH_INITIAL_ADMIN_PASSWORD=${OPENSEARCH_ADMIN_PASSWORD:-}
       - OPENSEARCH_JAVA_OPTS=-Xms${OPENSEARCH_HEAP:-1g} -Xmx${OPENSEARCH_HEAP:-1g} -Dopensearch.allow_insecure_settings=true
       - bootstrap.memory_lock=true
@@ -318,7 +323,7 @@ services:
     environment:
       - TZ=${TZ:-Europe/Zurich}
       - 'OPENSEARCH_HOSTS=["http://isms-core-opensearch:9200"]'
-      - DISABLE_SECURITY_DASHBOARDS_PLUGIN=${OPENSEARCH_DISABLE_SECURITY:-true}
+      - DISABLE_SECURITY_DASHBOARDS_PLUGIN=${OPENSEARCH_DISABLE_SECURITY:-false}
       - SERVER_BASEPATH=
       - SERVER_REWRITEBASEPATH=false
     ports:
@@ -419,6 +424,8 @@ services:
       - CONNECTORS_WORKER_SECRET=${CONNECTORS_WORKER_SECRET:-}
       - MAIL_HOST=${MAIL_HOST:-}
       - MAIL_PORT=${MAIL_PORT:-1025}
+      - MAIL_USERNAME=${MAIL_USERNAME:-}
+      - MAIL_PASSWORD=${MAIL_PASSWORD:-}
       - NOTIFICATION_EMAIL=${NOTIFICATION_EMAIL:-}
       - PLATFORM_URL=${PLATFORM_URL}
       # Garage S3 object storage (leave empty to use default local Postgres storage)
@@ -494,6 +501,8 @@ services:
       - OPENSEARCH_PASSWORD=${OPENSEARCH_PASSWORD:-}
       - MAIL_HOST=${MAIL_HOST:-}
       - MAIL_PORT=${MAIL_PORT:-1025}
+      - MAIL_USERNAME=${MAIL_USERNAME:-}
+      - MAIL_PASSWORD=${MAIL_PASSWORD:-}
       - NOTIFICATION_EMAIL=${NOTIFICATION_EMAIL:-}
       - PLATFORM_URL=${PLATFORM_URL}
       - GARAGE_ENDPOINT=${GARAGE_ENDPOINT:-http://isms-core-garage:3900}
@@ -543,6 +552,8 @@ services:
       - OPENSEARCH_PASSWORD=${OPENSEARCH_PASSWORD:-}
       - MAIL_HOST=${MAIL_HOST:-}
       - MAIL_PORT=${MAIL_PORT:-1025}
+      - MAIL_USERNAME=${MAIL_USERNAME:-}
+      - MAIL_PASSWORD=${MAIL_PASSWORD:-}
       - NOTIFICATION_EMAIL=${NOTIFICATION_EMAIL:-}
       - PLATFORM_URL=${PLATFORM_URL}
       - GARAGE_ENDPOINT=${GARAGE_ENDPOINT:-http://isms-core-garage:3900}
@@ -778,6 +789,13 @@ services:
       - SMTP_PORT=1025
       - LOG_LEVEL=INFO
       - SMTP_ALLOWED_DOMAINS=${SMTP_BRIDGE_ALLOWED_DOMAINS:-}
+      # The bridge requires SMTP AUTH from callers to prevent unauthenticated
+      # relay of spoofed mail through the org's M365 identity. Defaults to
+      # the same MAIL_USERNAME/MAIL_PASSWORD the backend/worker/beat services
+      # already authenticate with, so one credential pair configures both
+      # sides.
+      - SMTP_USERNAME=${SMTP_BRIDGE_USERNAME:-${MAIL_USERNAME:-}}
+      - SMTP_PASSWORD=${SMTP_BRIDGE_PASSWORD:-${MAIL_PASSWORD:-}}
     restart: unless-stopped
     networks:
       - isms-core-network
