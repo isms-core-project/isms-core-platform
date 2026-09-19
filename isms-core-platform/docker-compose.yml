@@ -816,20 +816,32 @@ services:
   # container list/inspect (needed to enumerate the target for backup) and
   # start/stop (needed for the stop-during-backup label) — POST is denied by
   # default, blocking container-create and every other write operation.
+  # Docker API proxy for the backup tool, which has to stop Postgres briefly so
+  # the archive is consistent. Two things are non-obvious:
+  #  - The tool queries /info and the Swarm /services API before it stops
+  #    anything (even on a non-Swarm host), hence INFO=1 and SERVICES=1.
+  #  - With POST=0 this proxy denies every non-GET request before it looks at
+  #    ALLOW_START/ALLOW_STOP, so stopping a container is impossible; POST=1 is
+  #    required. That also permits container create/exec, which is why the proxy
+  #    sits on its own network reachable only by the backup container, never on
+  #    the shared platform network. Pinned to a release tag on purpose: this
+  #    ACL behaviour is exactly what a floating :latest can silently change.
   isms-core-docker-proxy:
-    image: tecnativa/docker-socket-proxy:latest
+    image: tecnativa/docker-socket-proxy:v0.5.0
     container_name: isms-core-docker-proxy
     profiles: [backup]
     environment:
       - CONTAINERS=1
-      - POST=0
+      - POST=1
       - ALLOW_START=1
       - ALLOW_STOP=1
+      - INFO=1
+      - SERVICES=1
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     restart: unless-stopped
     networks:
-      - isms-core-network
+      - isms-core-backup-network
 
   isms-core-backup:
     image: offen/docker-volume-backup:v2
@@ -847,10 +859,13 @@ services:
       - isms-core-docker-proxy
     restart: unless-stopped
     networks:
-      - isms-core-network
+      - isms-core-backup-network
 
 networks:
   isms-core-network:
+    driver: bridge
+  # Only the backup tool and its Docker API proxy — see isms-core-docker-proxy.
+  isms-core-backup-network:
     driver: bridge
 
 volumes:
