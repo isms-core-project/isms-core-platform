@@ -641,10 +641,10 @@ services:
       - CONNECTORS_WORKER_SECRET=${CONNECTORS_WORKER_SECRET}
       - RUNNER_REFRESH_INTERVAL=${RUNNER_REFRESH_INTERVAL:-60}
       - POLL_INTERVAL=${POLL_INTERVAL:-86400}
-    # Self-signed/internal-CA cert trust for connectors that need it (e.g.
-    # Kubernetes Dashboard). Generate with 95-isms-core-factory/
-    # trust-connector-cert.sh, never by disabling *_VERIFY_SSL. One line per
-    # trusted connector INSTANCE (DASHBOARD_CA_CERT_B64__<connector_id> —
+    # Self-signed/internal-CA cert trust for connectors is normally managed in
+    # the WebUI (connector Configure dialog -> Fetch Certificate -> Trust),
+    # never by disabling *_VERIFY_SSL. This optional env_file is the headless
+    # fallback: one line per trusted connector INSTANCE (DASHBOARD_CA_CERT_B64__<connector_id> —
     # the worker runs one thread per registered connector, so 8 Kubernetes
     # Dashboards need 8 different certs, not one shared value). Loaded via
     # env_file rather than a fixed environment: list so adding device #9
