@@ -639,7 +639,7 @@ services:
       - TZ=${TZ:-Europe/Zurich}
       - ISMS_API_URL=http://isms-core-backend:8000
       - CONNECTORS_WORKER_SECRET=${CONNECTORS_WORKER_SECRET}
-      - RUNNER_REFRESH_INTERVAL=${RUNNER_REFRESH_INTERVAL:-60}
+      - RUNNER_REFRESH_INTERVAL=${RUNNER_REFRESH_INTERVAL:-15}
       - POLL_INTERVAL=${POLL_INTERVAL:-86400}
     # Self-signed/internal-CA cert trust for connectors is normally managed in
     # the WebUI (connector Configure dialog -> Fetch Certificate -> Trust),
