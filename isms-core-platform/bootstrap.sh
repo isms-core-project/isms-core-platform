@@ -26,6 +26,15 @@ ok()   { echo -e "${GREEN}  ✓ $*${NC}"; }
 info() { echo -e "${YELLOW}  → $*${NC}"; }
 fail() { echo -e "${RED}  ✗ $*${NC}"; exit 1; }
 
+# VVAH scan 2026-09-29, integrations finding #8 (CWE-214): the admin password
+# and bearer token used to be passed to curl as literal -d/-H argv strings,
+# visible to any other local user via `ps aux` for the run's duration. Both
+# now go through 0600 temp files instead, cleaned up on exit.
+LOGIN_BODY_FILE=$(mktemp)
+AUTH_CONFIG_FILE=$(mktemp)
+chmod 600 "$LOGIN_BODY_FILE" "$AUTH_CONFIG_FILE"
+trap 'rm -f "$LOGIN_BODY_FILE" "$AUTH_CONFIG_FILE"' EXIT
+
 echo "============================================================================"
 echo " ISMS CORE Platform — First Boot Bootstrap"
 echo "============================================================================"
@@ -49,11 +58,13 @@ BOOTSTRAP_EMAIL="${ADMIN_EMAIL:-admin@isms-core.dev}"
 BOOTSTRAP_PASSWORD="${ADMIN_PASSWORD:-admin123}"
 
 info "Getting admin token (${BOOTSTRAP_EMAIL})..."
+printf '{"email":"%s","password":"%s"}' "${BOOTSTRAP_EMAIL}" "${BOOTSTRAP_PASSWORD}" > "$LOGIN_BODY_FILE"
 RESPONSE=$(curl -sfk -X POST "$API/api/v1/auth/login" \
     -H 'Content-Type: application/json' \
-    -d "{\"email\":\"${BOOTSTRAP_EMAIL}\",\"password\":\"${BOOTSTRAP_PASSWORD}\"}") || \
+    -d @"$LOGIN_BODY_FILE") || \
     fail "Login failed — check backend logs"
 TOKEN=$(echo "$RESPONSE" | python3 -c 'import sys,json; print(json.load(sys.stdin)["access_token"])')
+printf 'header = "Authorization: Bearer %s"\n' "$TOKEN" > "$AUTH_CONFIG_FILE"
 ok "Authenticated as admin@isms-core.dev"
 
 # Helper: POST an admin endpoint and show result
@@ -62,7 +73,7 @@ run_import() {
     local endpoint="$2"
     info "$label..."
     RESULT=$(curl -sfk -X POST "$API/api/v1/admin/$endpoint" \
-        -H "Authorization: Bearer $TOKEN") || \
+        -K "$AUTH_CONFIG_FILE") || \
         fail "$label failed — check backend logs"
     echo "$RESULT" | python3 -c "
 import sys, json
@@ -92,7 +103,7 @@ run_import "Step 6/7: Importing framework workbook structure" "import-framework-
 
 info "Step 7/7: Seeding QA keyword translations..."
 RESULT=$(curl -sfk -X POST "$API/api/v1/qa/seed-keyword-translations" \
-    -H "Authorization: Bearer $TOKEN") || \
+    -K "$AUTH_CONFIG_FILE") || \
     fail "Keyword translations seed failed — check backend logs"
 echo "$RESULT" | python3 -c "
 import sys, json
@@ -105,7 +116,7 @@ ok "QA keyword translations seeded"
 
 info "Reindexing OpenSearch..."
 curl -sfk -X POST "$API/api/v1/admin/reindex" \
-    -H "Authorization: Bearer $TOKEN" > /dev/null
+    -K "$AUTH_CONFIG_FILE" > /dev/null
 ok "OpenSearch reindex complete"
 
 # ---- Summary ---------------------------------------------------------------
@@ -114,7 +125,7 @@ echo "==========================================================================
 ok "Bootstrap complete!"
 echo ""
 OVERVIEW=$(curl -sfk "$API/api/v1/dashboard/overview" \
-    -H "Authorization: Bearer $TOKEN" 2>/dev/null || echo '{}')
+    -K "$AUTH_CONFIG_FILE" 2>/dev/null || echo '{}')
 echo "$OVERVIEW" | python3 -c "
 import sys, json
 try:
@@ -144,7 +155,7 @@ _get_host_ip() {
 HOST="${HOST_IP:-$(_get_host_ip)}"
 echo "  Platform:  https://${HOST}  (accept self-signed cert or use FQDN)"
 echo "  API docs:  https://${HOST}/api/docs"
-echo "  Login:     ${BOOTSTRAP_EMAIL} / ${BOOTSTRAP_PASSWORD}"
+echo "  Login:     ${BOOTSTRAP_EMAIL} — password is your .env ADMIN_PASSWORD"
 echo ""
 echo "  Email Local:        docker compose --profile mailpit up -d  (then http://${HOST}:8025)"
 echo "  Email GraphAPI:     docker compose --profile smtp-bridge up -d"
