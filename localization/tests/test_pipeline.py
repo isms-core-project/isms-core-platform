@@ -198,3 +198,20 @@ def test_cli_audit_reports_coverage(capsys):
     out = capsys.readouterr().out
     assert "English documents:" in out
     assert "Translated in no language:" in out
+
+
+def test_coordinated_term_beats_its_own_component():
+    """A term inside a coordination must still be substituted as a whole.
+
+    'risk assessment and treatment' is 風險評鑑與處理 in Traditional, and the
+    mainland rendering of 'risk treatment' alone is 风险处置 — deliberately,
+    not 风险处理, which is the plain OpenCC output. The entry for 'risk
+    treatment' keys on the contiguous 風險處理, so the coordinated form never
+    matched it and only the residual 處理 reached OpenCC, which renders it
+    处理. One Simplified file then carried 风险处置 for the ISO term and
+    处理程序 for the same concept (CLD-SEC-POL-A.5.38). Entries are applied
+    longest-first, so an entry for the coordinated form wins over both parts.
+    """
+    assert pipeline.to_hans("風險評鑑與處理程序", TERMBASE, CC) == "风险评估与处置程序"
+    # The verb sense must not be dragged along by the term entry.
+    assert pipeline.to_hans("風險予以處理", TERMBASE, CC) == "风险予以处理"

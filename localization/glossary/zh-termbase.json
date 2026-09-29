@@ -52,255 +52,1553 @@
     "QA_VERIFIED"
   ],
   "entries": [
-    {"en": "Document Control", "hant": "文件管制", "hans": "文件控制", "kind": "label"},
-    {"en": "Field", "hant": "欄位", "hans": "字段", "kind": "label"},
-    {"en": "Value", "hant": "值", "hans": "值", "kind": "label", "same": true},
-    {"en": "Document Title", "hant": "文件標題", "hans": "文件标题", "kind": "label"},
-    {"en": "Document Type", "hant": "文件類型", "hans": "文件类型", "kind": "label"},
-    {"en": "Document ID", "hant": "文件編號", "hans": "文件编号", "kind": "label", "note": "Label is translated; the value beside it stays bare: ISMS-OP-POL-A.8.9"},
-    {"en": "Document Creator", "hant": "文件建立者", "hans": "文件创建者", "kind": "label"},
-    {"en": "Document Owner", "hant": "文件擁有者", "hans": "文件所有者", "kind": "label"},
-    {"en": "Approved By", "hant": "核准者", "hans": "批准者", "kind": "label"},
-    {"en": "Created Date", "hant": "建立日期", "hans": "创建日期", "kind": "label"},
-    {"en": "Version", "hant": "版本", "hans": "版本", "kind": "label", "same": true},
-    {"en": "Version Date", "hant": "版本日期", "hans": "版本日期", "kind": "label", "same": true},
-    {"en": "Classification", "hant": "機密等級", "hans": "密级", "kind": "label", "note": "Holds Internal / Confidential / Public."},
-    {"en": "Status", "hant": "狀態", "hans": "状态", "kind": "label"},
-    {"en": "Version History", "hant": "版本歷程", "hans": "版本历史", "kind": "label"},
-    {"en": "Changes", "hant": "變更", "hans": "变更", "kind": "label"},
-    {"en": "Author", "hant": "作者", "hans": "作者", "kind": "label", "same": true},
-    {"en": "Date", "hant": "日期", "hans": "日期", "kind": "label", "same": true},
-    {"en": "Notes", "hant": "備註", "hans": "备注", "kind": "label"},
-    {"en": "Review Cycle", "hant": "審查週期", "hans": "评审周期", "kind": "label"},
-    {"en": "Next Review Date", "hant": "下次審查日期", "hans": "下次评审日期", "kind": "label"},
-    {"en": "Related Policy", "hant": "相關政策", "hans": "相关政策", "kind": "label"},
-    {"en": "Control Reference", "hant": "控制項參照", "hans": "控制项引用", "kind": "label"},
-    {"en": "Document Structure", "hant": "文件結構", "hans": "文件结构", "kind": "label"},
-    {"en": "Evidence Register", "hant": "證據登記表", "hans": "证据登记表", "kind": "label"},
-    {"en": "Approval Sign-Off", "hant": "核准簽核", "hans": "批准签署", "kind": "label"},
-    {"en": "Summary Dashboard", "hant": "摘要儀表板", "hans": "摘要仪表板", "kind": "label"},
-    {"en": "Instructions & Legend", "hant": "使用說明與圖例", "hans": "使用说明与图例", "kind": "label"},
-    {"en": "Sheet Name", "hant": "工作表名稱", "hans": "工作表名称", "kind": "label"},
-    {"en": "Sheet Structure", "hant": "工作表結構", "hans": "工作表结构", "kind": "label"},
-    {"en": "Column Header", "hant": "欄位標題", "hans": "列标题", "kind": "label"},
-    {"en": "Column Headers (All Sheets)", "hant": "欄位標題（所有工作表）", "hans": "列标题（所有工作表）", "kind": "label"},
-    {"en": "Column", "hant": "欄", "hans": "列", "kind": "label"},
-    {"en": "Color Palette", "hant": "色彩配置", "hans": "配色方案", "kind": "label"},
-    {"en": "Data Validation Values", "hant": "資料驗證值", "hans": "数据验证值", "kind": "label"},
-    {"en": "Hex Code", "hant": "色碼", "hans": "色码", "kind": "label"},
-    {"en": "Attribute", "hant": "屬性", "hans": "属性", "kind": "label"},
-    {"en": "Description", "hant": "說明", "hans": "描述", "kind": "label"},
-    {"en": "Role", "hant": "角色", "hans": "角色", "kind": "label", "same": true},
-    {"en": "Type", "hant": "類型", "hans": "类型", "kind": "label"},
-    {"en": "Header", "hant": "標頭", "hans": "表头", "kind": "label"},
-    {"en": "Schema", "hant": "結構定義", "hans": "结构定义", "kind": "label"},
-
-    {"en": "Draft", "hant": "草稿", "hans": "草稿", "kind": "value", "same": true},
-    {"en": "Internal", "hant": "內部", "hans": "内部", "kind": "value"},
-    {"en": "Confidential", "hant": "機密", "hans": "机密", "kind": "value"},
-    {"en": "Restricted", "hant": "限閱", "hans": "限阅", "kind": "value"},
-    {"en": "Public", "hant": "公開", "hans": "公开", "kind": "value"},
-    {"en": "Critical", "hant": "重大", "hans": "严重", "kind": "value"},
-    {"en": "High", "hant": "高", "hans": "高", "kind": "value", "same": true},
-    {"en": "Medium", "hant": "中", "hans": "中", "kind": "value", "same": true},
-    {"en": "Low", "hant": "低", "hans": "低", "kind": "value", "same": true},
-    {"en": "Annual", "hant": "每年", "hans": "每年", "kind": "value", "same": true},
-    {"en": "Quarterly", "hant": "每季", "hans": "每季度", "kind": "value"},
-    {"en": "Monthly", "hant": "每月", "hans": "每月", "kind": "value", "same": true},
-    {"en": "Free text", "hant": "自由文字", "hans": "自由文本", "kind": "value"},
-    {"en": "Text", "hant": "文字", "hans": "文本", "kind": "value"},
-    {"en": "Dropdown", "hant": "下拉選單", "hans": "下拉列表", "kind": "value"},
-    {"en": "Yes", "hant": "是", "hans": "是", "kind": "value", "same": true},
-    {"en": "No", "hant": "否", "hans": "否", "kind": "value", "same": true},
-    {"en": "N/A", "hant": "不適用", "hans": "不适用", "kind": "value"},
-    {"en": "[To Be Determined]", "hant": "[待定]", "hans": "[待定]", "kind": "value", "same": true},
-    {"en": "[Date to be set]", "hant": "[待設定日期]", "hans": "[待设定日期]", "kind": "value"},
-    {"en": "[Date]", "hant": "[日期]", "hans": "[日期]", "kind": "value", "same": true},
-    {"en": "[Name]", "hant": "[姓名]", "hans": "[姓名]", "kind": "value", "same": true},
-    {"en": "Executive Management", "hant": "高階管理層", "hans": "高级管理层", "kind": "value"},
-    {"en": "All Personnel", "hant": "全體人員", "hans": "全体人员", "kind": "value"},
-    {"en": "IT Operations", "hant": "IT 營運", "hans": "IT 运维", "kind": "value"},
-    {"en": "Legal/Compliance Officer", "hant": "法務／合規主管", "hans": "法务/合规主管", "kind": "value"},
-    {"en": "Chief Information Security Officer (CISO)", "hant": "資訊安全長（CISO）", "hans": "首席信息安全官（CISO）", "kind": "value"},
-    {"en": "Chief Executive Officer (CEO)", "hant": "執行長（CEO）", "hans": "首席执行官（CEO）", "kind": "value"},
-    {"en": "Chief Information Officer (CIO)", "hant": "資訊長（CIO）", "hans": "首席信息官（CIO）", "kind": "value"},
-    {"en": "Data Protection Officer (DPO)", "hant": "資料保護長（DPO）", "hans": "数据保护官（DPO）", "kind": "value"},
-    {"en": "Initial operational policy for ISO 27001:2022", "hant": "ISO 27001:2022 初次作業政策", "hans": "ISO 27001:2022 初次运营政策", "kind": "value"},
-
-    {"en": "Generator Alignment Reference", "hant": "產生器對齊參考", "hans": "生成器对齐参考", "kind": "heading"},
-    {"en": "Workbook at a Glance", "hant": "工作簿總覽", "hans": "工作簿概览", "kind": "heading"},
-    {"en": "Executive Summary", "hant": "執行摘要", "hans": "执行摘要", "kind": "heading"},
-    {"en": "Scope", "hant": "範圍", "hans": "范围", "kind": "heading"},
-    {"en": "Purpose", "hant": "目的", "hans": "目的", "kind": "heading", "same": true},
-    {"en": "Purpose of This Guide", "hant": "本指南目的", "hans": "本指南目的", "kind": "heading", "same": true},
-    {"en": "Purpose & Scope", "hant": "目的與範圍", "hans": "目的与范围", "kind": "heading"},
-    {"en": "Prerequisites", "hant": "前置條件", "hans": "前置条件", "kind": "heading"},
-    {"en": "Quality Checklist", "hant": "品質檢核表", "hans": "质量检查清单", "kind": "heading"},
-    {"en": "Common Pitfalls", "hant": "常見陷阱", "hans": "常见陷阱", "kind": "heading"},
-    {"en": "Evidence Collection", "hant": "證據蒐集", "hans": "证据收集", "kind": "heading"},
-    {"en": "Evidence Checklist", "hant": "證據檢核表", "hans": "证据检查清单", "kind": "heading"},
-    {"en": "Evidence Requirements", "hant": "證據要求", "hans": "证据要求", "kind": "heading"},
-    {"en": "Evidence Storage", "hant": "證據存放", "hans": "证据存储", "kind": "heading"},
-    {"en": "Evidence", "hant": "證據", "hans": "证据", "kind": "heading"},
-    {"en": "Roles and Responsibilities", "hant": "角色與職責", "hans": "角色与职责", "kind": "heading"},
-    {"en": "Non-Compliance", "hant": "不符合", "hans": "不符合", "kind": "heading", "same": true},
-    {"en": "Exceptions", "hant": "例外", "hans": "例外", "kind": "heading", "same": true},
-    {"en": "Exception Management", "hant": "例外管理", "hans": "例外管理", "kind": "heading", "same": true},
-    {"en": "Compliance Measurement", "hant": "合規衡量", "hans": "合规度量", "kind": "heading"},
-    {"en": "Continual Improvement", "hant": "持續改善", "hans": "持续改进", "kind": "heading"},
-    {"en": "Continuous Improvement", "hant": "持續改善", "hans": "持续改进", "kind": "heading"},
-    {"en": "Principle", "hant": "原則", "hans": "原则", "kind": "heading"},
-    {"en": "Assessment Overview", "hant": "評鑑概觀", "hans": "评估概览", "kind": "heading"},
-    {"en": "Assessment Framework", "hant": "評鑑架構", "hans": "评估框架", "kind": "heading"},
-    {"en": "Assessment Workflow", "hant": "評鑑流程", "hans": "评估流程", "kind": "heading"},
-    {"en": "Assessment Frequency", "hant": "評鑑頻率", "hans": "评估频率", "kind": "heading"},
-    {"en": "Who Should Complete This Assessment", "hant": "本評鑑應由誰完成", "hans": "本评估应由谁完成", "kind": "heading"},
-    {"en": "What This Assessment Measures", "hant": "本評鑑衡量什麼", "hans": "本评估衡量什么", "kind": "heading"},
-    {"en": "What This Policy Does", "hant": "本政策的作用", "hans": "本政策的作用", "kind": "heading", "same": true},
-    {"en": "What This Policy Does NOT Do", "hant": "本政策不涵蓋的範圍", "hans": "本政策不涵盖的范围", "kind": "heading"},
-    {"en": "What This Policy Does NOT Cover", "hant": "本政策未涵蓋的範圍", "hans": "本政策未涵盖的范围", "kind": "heading"},
-    {"en": "Why This Matters", "hant": "為何重要", "hans": "为何重要", "kind": "heading"},
-    {"en": "Review & Approval", "hant": "審查與核准", "hans": "评审与批准", "kind": "heading"},
-    {"en": "Review and Approval", "hant": "審查與核准", "hans": "评审与批准", "kind": "heading"},
-    {"en": "Regulatory Applicability", "hant": "法規適用性", "hans": "法规适用性", "kind": "heading"},
-    {"en": "Regulatory Framework", "hant": "法規架構", "hans": "法规框架", "kind": "heading"},
-    {"en": "Regulatory Mapping", "hant": "法規對應", "hans": "法规映射", "kind": "heading"},
-    {"en": "Time Estimate", "hant": "時間估計", "hans": "时间估计", "kind": "heading"},
-    {"en": "Access Required", "hant": "所需存取權", "hans": "所需访问权限", "kind": "heading"},
-    {"en": "Required Access", "hant": "所需存取權", "hans": "所需访问权限", "kind": "heading"},
-    {"en": "Completion Walkthrough", "hant": "完成導引", "hans": "完成引导", "kind": "heading"},
-    {"en": "Completing Each Sheet", "hant": "完成各工作表", "hans": "完成各工作表", "kind": "heading", "same": true},
-    {"en": "Implementation Resources", "hant": "實施資源", "hans": "实施资源", "kind": "heading"},
-    {"en": "Connection to Policy", "hant": "與政策的關聯", "hans": "与政策的关联", "kind": "heading"},
-    {"en": "Workflow", "hant": "流程", "hans": "流程", "kind": "heading", "same": true},
-    {"en": "Detailed Workflow", "hant": "詳細流程", "hans": "详细流程", "kind": "heading"},
-    {"en": "High-Level Process", "hant": "高階流程", "hans": "高层流程", "kind": "heading"},
-    {"en": "Accountability Matrix", "hant": "權責矩陣", "hans": "权责矩阵", "kind": "heading"},
-    {"en": "Policy Review", "hant": "政策審查", "hans": "政策评审", "kind": "heading"},
-    {"en": "Integration with ISMS", "hant": "與 ISMS 的整合", "hans": "与 ISMS 的整合", "kind": "heading"},
-    {"en": "Definitions", "hant": "定義", "hans": "定义", "kind": "heading"},
-    {"en": "Control Requirements", "hant": "控制措施要求", "hans": "控制措施要求", "kind": "heading", "same": true},
-    {"en": "Related Controls", "hant": "相關控制措施", "hans": "相关控制措施", "kind": "heading"},
-    {"en": "Escalation Path", "hant": "升級通報路徑", "hans": "升级通报路径", "kind": "heading"},
-    {"en": "Post-Approval Actions", "hant": "核准後行動", "hans": "批准后行动", "kind": "heading"},
-    {"en": "Corrective Action Linkage", "hant": "矯正措施連結", "hans": "纠正措施关联", "kind": "heading"},
-    {"en": "Pre-Assessment Checklist", "hant": "評鑑前檢核表", "hans": "评估前检查清单", "kind": "heading"},
-    {"en": "Completeness", "hant": "完整性", "hans": "完整性", "kind": "heading", "same": true},
-    {"en": "Overview", "hant": "概觀", "hans": "概览", "kind": "heading"},
-    {"en": "Tools Needed", "hant": "所需工具", "hans": "所需工具", "kind": "heading", "same": true},
-    {"en": "Required Tools", "hant": "所需工具", "hans": "所需工具", "kind": "heading", "same": true},
-    {"en": "Knowledge Required", "hant": "所需知識", "hans": "所需知识", "kind": "heading"},
-    {"en": "Expected Outputs", "hant": "預期產出", "hans": "预期产出", "kind": "heading"},
-    {"en": "Information You'll Need", "hant": "您需要的資訊", "hans": "您需要的信息", "kind": "heading"},
-    {"en": "Business Value", "hant": "業務價值", "hans": "业务价值", "kind": "heading"},
-    {"en": "Dependencies", "hant": "相依性", "hans": "依赖项", "kind": "heading"},
-    {"en": "What Evidence to Collect", "hant": "應蒐集哪些證據", "hans": "应收集哪些证据", "kind": "heading"},
-    {"en": "Review Process", "hant": "審查流程", "hans": "评审流程", "kind": "heading"},
-    {"en": "Approval Workflow", "hant": "核准流程", "hans": "批准流程", "kind": "heading"},
-    {"en": "What Auditors Look For", "hant": "稽核人員關注重點", "hans": "审计人员关注重点", "kind": "heading"},
-    {"en": "Before Starting This Assessment", "hant": "開始本評鑑前", "hans": "开始本评估前", "kind": "heading"},
-    {"en": "Review Workflow", "hant": "審查流程", "hans": "评审流程", "kind": "heading"},
-    {"en": "Column-by-Column Guidance", "hant": "逐欄說明", "hans": "逐栏说明", "kind": "heading", "note": "欄 is 栏 in Simplified, not 列 — 逐列 would read as row-by-row."},
-
-    {"en": "information security", "hant": "資訊安全", "hans": "信息安全", "kind": "term", "variant_note": "HK/TW 資訊; mainland 信息. Applied consistently, including 資訊資產 / 信息资产."},
-    {"en": "information", "hant": "資訊", "hans": "信息", "kind": "term"},
-    {"en": "data", "hant": "資料", "hans": "数据", "kind": "term", "variant_note": "HK/TW 資料, not 數據."},
-    {"en": "personal data", "hant": "個人資料", "hans": "个人数据", "kind": "term"},
-    {"en": "network", "hant": "網路", "hans": "网络", "kind": "term"},
-    {"en": "Internet", "hant": "網際網路", "hans": "互联网", "kind": "term"},
-    {"en": "software", "hant": "軟體", "hans": "软件", "kind": "term"},
-    {"en": "hardware", "hant": "硬體", "hans": "硬件", "kind": "term"},
-    {"en": "server", "hant": "伺服器", "hans": "服务器", "kind": "term"},
-    {"en": "database", "hant": "資料庫", "hans": "数据库", "kind": "term"},
-    {"en": "application", "hant": "應用程式", "hans": "应用程序", "kind": "term"},
-    {"en": "user", "hant": "使用者", "hans": "用户", "kind": "term"},
-    {"en": "account", "hant": "帳戶", "hans": "账户", "kind": "term"},
-    {"en": "access", "hant": "存取", "hans": "访问", "kind": "term"},
-    {"en": "access control", "hant": "存取控制", "hans": "访问控制", "kind": "term"},
-    {"en": "authentication", "hant": "身分驗證", "hans": "身份验证", "kind": "term", "variant_note": "HK/TW write 身分 (cf. 身分證), so the Traditional column uses 身分 throughout."},
-    {"en": "authorisation", "hant": "授權", "hans": "授权", "kind": "term"},
-    {"en": "privilege", "hant": "特權", "hans": "特权", "kind": "term"},
-    {"en": "audit", "hant": "稽核", "hans": "审计", "kind": "term"},
-    {"en": "audit trail", "hant": "稽核軌跡", "hans": "审计跟踪", "kind": "term"},
-    {"en": "key", "hant": "金鑰", "hans": "密钥", "kind": "term", "variant_note": "HK/TW 金鑰; mainland 密钥. OpenCC alone yields 金钥."},
-    {"en": "Boolean", "hant": "布林", "hans": "布尔", "kind": "term", "variant_note": "TW 布林; mainland 布尔."},
-    {"en": "Enum", "hant": "列舉", "hans": "枚举", "kind": "term"},
-    {"en": "String", "hant": "字串", "hans": "字符串", "kind": "term", "variant_note": "TW 字串; mainland 字符串."},
-    {"en": "response", "hant": "應變", "hans": "响应", "kind": "term", "variant_note": "Bare form; 'incident response' 事件應變 is listed separately and wins on length."},
-    {"en": "support", "hant": "支援", "hans": "支持", "kind": "term"},
-    {"en": "schedule", "hant": "排程", "hans": "计划", "kind": "term", "variant_note": "TW 排程; mainland 计划. OpenCC alone yields 排程."},
-    {"en": "cloud computing", "hant": "雲端運算", "hans": "云计算", "kind": "term", "variant_note": "The mainland standard is 云计算, not a literal 云端运算."},
-    {"en": "detection", "hant": "偵測", "hans": "检测", "kind": "term", "variant_note": "OpenCC alone yields 侦测."},
-    {"en": "approval", "hant": "核准", "hans": "批准", "kind": "term", "variant_note": "Bare form; 'Approval Workflow' 核准流程 is listed separately."},
-    {"en": "documentation", "hant": "說明文件", "hans": "说明文件", "kind": "term", "variant_note": "Longer than the Description label (說明/描述), so it wins the longest-match pass — without it every 說明文件 becomes 描述文件."},
-    {"en": "manual", "hant": "說明書", "hans": "说明书", "kind": "term"},
-    {"en": "risk assessment", "hant": "風險評鑑", "hans": "风险评估", "kind": "term", "note": "ISO 27000 Traditional splits risk assessment (風險評鑑) from risk evaluation (風險評估)."},
-    {"en": "risk evaluation", "hant": "風險評估", "hans": "风险评价", "kind": "term", "note": "Distinct from risk assessment; see above."},
-    {"en": "risk analysis", "hant": "風險分析", "hans": "风险分析", "kind": "term"},
-    {"en": "risk treatment", "hant": "風險處理", "hans": "风险处置", "kind": "term"},
-    {"en": "risk owner", "hant": "風險擁有者", "hans": "风险所有者", "kind": "term"},
-    {"en": "residual risk", "hant": "殘餘風險", "hans": "残余风险", "kind": "term"},
-    {"en": "vulnerability", "hant": "弱點", "hans": "漏洞", "kind": "term"},
-    {"en": "vulnerability management", "hant": "弱點管理", "hans": "漏洞管理", "kind": "term"},
-    {"en": "threat", "hant": "威脅", "hans": "威胁", "kind": "term"},
-    {"en": "impact", "hant": "衝擊", "hans": "影响", "kind": "term"},
-    {"en": "incident", "hant": "事件", "hans": "事件", "kind": "term", "same": true},
-    {"en": "incident response", "hant": "事件應變", "hans": "事件响应", "kind": "term"},
-    {"en": "business continuity", "hant": "營運持續", "hans": "业务连续性", "kind": "term"},
-    {"en": "backup", "hant": "備份", "hans": "备份", "kind": "term"},
-    {"en": "recovery", "hant": "復原", "hans": "恢复", "kind": "term"},
-    {"en": "disaster recovery", "hant": "災難復原", "hans": "灾难恢复", "kind": "term"},
-    {"en": "supplier", "hant": "供應商", "hans": "供应商", "kind": "term"},
-    {"en": "supply chain", "hant": "供應鏈", "hans": "供应链", "kind": "term"},
-    {"en": "outsourcing", "hant": "委外", "hans": "外包", "kind": "term"},
-    {"en": "contract", "hant": "合約", "hans": "合同", "kind": "term"},
-    {"en": "cloud", "hant": "雲端", "hans": "云端", "kind": "term"},
-    {"en": "patch", "hant": "修補", "hans": "修补", "kind": "term"},
-    {"en": "log", "hant": "日誌", "hans": "日志", "kind": "term"},
-    {"en": "monitoring", "hant": "監控", "hans": "监控", "kind": "term"},
-    {"en": "management review", "hant": "管理審查", "hans": "管理评审", "kind": "term"},
-    {"en": "corrective action", "hant": "矯正措施", "hans": "纠正措施", "kind": "term"},
-    {"en": "preventive action", "hant": "預防措施", "hans": "预防措施", "kind": "term"},
-    {"en": "nonconformity", "hant": "不符合事項", "hans": "不符合项", "kind": "term"},
-    {"en": "documented information", "hant": "文件化資訊", "hans": "文件化信息", "kind": "term"},
-    {"en": "Statement of Applicability", "hant": "適用性聲明", "hans": "适用性声明", "kind": "term"},
-    {"en": "top management", "hant": "最高管理階層", "hans": "最高管理层", "kind": "term"},
-    {"en": "competence", "hant": "能力", "hans": "能力", "kind": "term", "same": true},
-    {"en": "awareness", "hant": "認知", "hans": "意识", "kind": "term"},
-    {"en": "training", "hant": "訓練", "hans": "培训", "kind": "term"},
-    {"en": "communication", "hant": "溝通", "hans": "沟通", "kind": "term"},
-    {"en": "procedure", "hant": "程序", "hans": "程序", "kind": "term", "same": true},
-    {"en": "process", "hant": "流程", "hans": "流程", "kind": "term", "same": true},
-    {"en": "record", "hant": "紀錄", "hans": "记录", "kind": "term"},
-    {"en": "document", "hant": "文件", "hans": "文件", "kind": "term", "same": true},
-    {"en": "classification", "hant": "分類", "hans": "分类", "kind": "term", "note": "The generic act of classifying. Distinct from the Document Control field 'Classification' (機密等級/密级), which holds Internal / Confidential / Public — see the label entry of the same spelling."},
-    {"en": "labelling", "hant": "標示", "hans": "标记", "kind": "term"},
-    {"en": "retention", "hant": "留存", "hans": "保留", "kind": "term"},
-    {"en": "physical security", "hant": "實體安全", "hans": "物理安全", "kind": "term"},
-    {"en": "remote access", "hant": "遠端存取", "hans": "远程访问", "kind": "term"},
-    {"en": "mobile device", "hant": "行動裝置", "hans": "移动设备", "kind": "term"},
-    {"en": "encryption", "hant": "加密", "hans": "加密", "kind": "term", "same": true},
-    {"en": "asset", "hant": "資產", "hans": "资产", "kind": "term"},
-    {"en": "control", "hant": "控制措施", "hans": "控制措施", "kind": "term", "same": true},
-    {"en": "clause", "hant": "條款", "hans": "条款", "kind": "term"},
-    {"en": "Annex A", "hant": "附錄 A", "hans": "附录 A", "kind": "term"},
-    {"en": "shall", "hant": "應", "hans": "应", "kind": "term"},
-    {"en": "should", "hant": "宜", "hans": "宜", "kind": "term", "same": true},
-    {"en": "may", "hant": "得", "hans": "可", "kind": "term"},
-    {"en": "organisational", "hant": "組織", "hans": "组织", "kind": "term"},
-    {"en": "operational", "hant": "營運", "hans": "运营", "kind": "term"},
-    {"en": "guidance", "hant": "指引", "hans": "指南", "kind": "term"},
-    {"en": "instruction", "hant": "指示", "hans": "指示", "kind": "term", "same": true},
-    {"en": "template", "hant": "範本", "hans": "模板", "kind": "term"},
-    {"en": "workbook", "hant": "工作簿", "hans": "工作簿", "kind": "term", "same": true},
-    {"en": "effectiveness", "hant": "有效性", "hans": "有效性", "kind": "term", "same": true},
-    {"en": "measurement", "hant": "衡量", "hans": "度量", "kind": "term"},
-    {"en": "metrics", "hant": "指標", "hans": "指标", "kind": "term"},
-    {"en": "compliance", "hant": "合規", "hans": "合规", "kind": "term"},
-    {"en": "regulatory", "hant": "法規", "hans": "法规", "kind": "term"},
-    {"en": "privacy", "hant": "隱私", "hans": "隐私", "kind": "term"},
-    {"en": "customer", "hant": "客戶", "hans": "客户", "kind": "term"},
-    {"en": "Infrastructure as Code", "hant": "基礎設施即程式碼", "hans": "基础设施即代码", "kind": "term", "note": "German left this in English; Chinese has an established rendering, so it is translated."},
-    {"en": "Golden Image", "hant": "黃金映像", "hans": "黄金镜像", "kind": "term"}
+    {
+      "en": "Document Control",
+      "hant": "文件管制",
+      "hans": "文件控制",
+      "kind": "label"
+    },
+    {
+      "en": "Field",
+      "hant": "欄位",
+      "hans": "字段",
+      "kind": "label"
+    },
+    {
+      "en": "Value",
+      "hant": "值",
+      "hans": "值",
+      "kind": "label",
+      "same": true
+    },
+    {
+      "en": "Document Title",
+      "hant": "文件標題",
+      "hans": "文件标题",
+      "kind": "label"
+    },
+    {
+      "en": "Document Type",
+      "hant": "文件類型",
+      "hans": "文件类型",
+      "kind": "label"
+    },
+    {
+      "en": "Document ID",
+      "hant": "文件編號",
+      "hans": "文件编号",
+      "kind": "label",
+      "note": "Label is translated; the value beside it stays bare: ISMS-OP-POL-A.8.9"
+    },
+    {
+      "en": "Document Creator",
+      "hant": "文件建立者",
+      "hans": "文件创建者",
+      "kind": "label"
+    },
+    {
+      "en": "Document Owner",
+      "hant": "文件擁有者",
+      "hans": "文件所有者",
+      "kind": "label"
+    },
+    {
+      "en": "Approved By",
+      "hant": "核准者",
+      "hans": "批准者",
+      "kind": "label"
+    },
+    {
+      "en": "Created Date",
+      "hant": "建立日期",
+      "hans": "创建日期",
+      "kind": "label"
+    },
+    {
+      "en": "Version",
+      "hant": "版本",
+      "hans": "版本",
+      "kind": "label",
+      "same": true
+    },
+    {
+      "en": "Version Date",
+      "hant": "版本日期",
+      "hans": "版本日期",
+      "kind": "label",
+      "same": true
+    },
+    {
+      "en": "Classification",
+      "hant": "機密等級",
+      "hans": "密级",
+      "kind": "label",
+      "note": "Holds Internal / Confidential / Public."
+    },
+    {
+      "en": "Status",
+      "hant": "狀態",
+      "hans": "状态",
+      "kind": "label"
+    },
+    {
+      "en": "Version History",
+      "hant": "版本歷程",
+      "hans": "版本历史",
+      "kind": "label"
+    },
+    {
+      "en": "Changes",
+      "hant": "變更",
+      "hans": "变更",
+      "kind": "label"
+    },
+    {
+      "en": "Author",
+      "hant": "作者",
+      "hans": "作者",
+      "kind": "label",
+      "same": true
+    },
+    {
+      "en": "Date",
+      "hant": "日期",
+      "hans": "日期",
+      "kind": "label",
+      "same": true
+    },
+    {
+      "en": "Notes",
+      "hant": "備註",
+      "hans": "备注",
+      "kind": "label"
+    },
+    {
+      "en": "Review Cycle",
+      "hant": "審查週期",
+      "hans": "评审周期",
+      "kind": "label"
+    },
+    {
+      "en": "Next Review Date",
+      "hant": "下次審查日期",
+      "hans": "下次评审日期",
+      "kind": "label"
+    },
+    {
+      "en": "Related Policy",
+      "hant": "相關政策",
+      "hans": "相关政策",
+      "kind": "label"
+    },
+    {
+      "en": "Control Reference",
+      "hant": "控制項參照",
+      "hans": "控制项引用",
+      "kind": "label"
+    },
+    {
+      "en": "Document Structure",
+      "hant": "文件結構",
+      "hans": "文件结构",
+      "kind": "label"
+    },
+    {
+      "en": "Evidence Register",
+      "hant": "證據登記表",
+      "hans": "证据登记表",
+      "kind": "label"
+    },
+    {
+      "en": "Approval Sign-Off",
+      "hant": "核准簽核",
+      "hans": "批准签署",
+      "kind": "label"
+    },
+    {
+      "en": "Summary Dashboard",
+      "hant": "摘要儀表板",
+      "hans": "摘要仪表板",
+      "kind": "label"
+    },
+    {
+      "en": "Instructions & Legend",
+      "hant": "使用說明與圖例",
+      "hans": "使用说明与图例",
+      "kind": "label"
+    },
+    {
+      "en": "Sheet Name",
+      "hant": "工作表名稱",
+      "hans": "工作表名称",
+      "kind": "label"
+    },
+    {
+      "en": "Sheet Structure",
+      "hant": "工作表結構",
+      "hans": "工作表结构",
+      "kind": "label"
+    },
+    {
+      "en": "Column Header",
+      "hant": "欄位標題",
+      "hans": "列标题",
+      "kind": "label"
+    },
+    {
+      "en": "Column Headers (All Sheets)",
+      "hant": "欄位標題（所有工作表）",
+      "hans": "列标题（所有工作表）",
+      "kind": "label"
+    },
+    {
+      "en": "Column",
+      "hant": "欄",
+      "hans": "列",
+      "kind": "label"
+    },
+    {
+      "en": "Color Palette",
+      "hant": "色彩配置",
+      "hans": "配色方案",
+      "kind": "label"
+    },
+    {
+      "en": "Data Validation Values",
+      "hant": "資料驗證值",
+      "hans": "数据验证值",
+      "kind": "label"
+    },
+    {
+      "en": "Hex Code",
+      "hant": "色碼",
+      "hans": "色码",
+      "kind": "label"
+    },
+    {
+      "en": "Attribute",
+      "hant": "屬性",
+      "hans": "属性",
+      "kind": "label"
+    },
+    {
+      "en": "Description",
+      "hant": "說明",
+      "hans": "描述",
+      "kind": "label"
+    },
+    {
+      "en": "Role",
+      "hant": "角色",
+      "hans": "角色",
+      "kind": "label",
+      "same": true
+    },
+    {
+      "en": "Type",
+      "hant": "類型",
+      "hans": "类型",
+      "kind": "label"
+    },
+    {
+      "en": "Header",
+      "hant": "標頭",
+      "hans": "表头",
+      "kind": "label"
+    },
+    {
+      "en": "Schema",
+      "hant": "結構定義",
+      "hans": "结构定义",
+      "kind": "label"
+    },
+    {
+      "en": "Draft",
+      "hant": "草稿",
+      "hans": "草稿",
+      "kind": "value",
+      "same": true
+    },
+    {
+      "en": "Internal",
+      "hant": "內部",
+      "hans": "内部",
+      "kind": "value"
+    },
+    {
+      "en": "Confidential",
+      "hant": "機密",
+      "hans": "机密",
+      "kind": "value"
+    },
+    {
+      "en": "Restricted",
+      "hant": "限閱",
+      "hans": "限阅",
+      "kind": "value"
+    },
+    {
+      "en": "Public",
+      "hant": "公開",
+      "hans": "公开",
+      "kind": "value"
+    },
+    {
+      "en": "Critical",
+      "hant": "重大",
+      "hans": "严重",
+      "kind": "value"
+    },
+    {
+      "en": "High",
+      "hant": "高",
+      "hans": "高",
+      "kind": "value",
+      "same": true
+    },
+    {
+      "en": "Medium",
+      "hant": "中",
+      "hans": "中",
+      "kind": "value",
+      "same": true
+    },
+    {
+      "en": "Low",
+      "hant": "低",
+      "hans": "低",
+      "kind": "value",
+      "same": true
+    },
+    {
+      "en": "Annual",
+      "hant": "每年",
+      "hans": "每年",
+      "kind": "value",
+      "same": true
+    },
+    {
+      "en": "Quarterly",
+      "hant": "每季",
+      "hans": "每季度",
+      "kind": "value"
+    },
+    {
+      "en": "Monthly",
+      "hant": "每月",
+      "hans": "每月",
+      "kind": "value",
+      "same": true
+    },
+    {
+      "en": "Free text",
+      "hant": "自由文字",
+      "hans": "自由文本",
+      "kind": "value"
+    },
+    {
+      "en": "Text",
+      "hant": "文字",
+      "hans": "文本",
+      "kind": "value"
+    },
+    {
+      "en": "Dropdown",
+      "hant": "下拉選單",
+      "hans": "下拉列表",
+      "kind": "value"
+    },
+    {
+      "en": "Yes",
+      "hant": "是",
+      "hans": "是",
+      "kind": "value",
+      "same": true
+    },
+    {
+      "en": "No",
+      "hant": "否",
+      "hans": "否",
+      "kind": "value",
+      "same": true
+    },
+    {
+      "en": "N/A",
+      "hant": "不適用",
+      "hans": "不适用",
+      "kind": "value"
+    },
+    {
+      "en": "[To Be Determined]",
+      "hant": "[待定]",
+      "hans": "[待定]",
+      "kind": "value",
+      "same": true
+    },
+    {
+      "en": "[Date to be set]",
+      "hant": "[待設定日期]",
+      "hans": "[待设定日期]",
+      "kind": "value"
+    },
+    {
+      "en": "[Date]",
+      "hant": "[日期]",
+      "hans": "[日期]",
+      "kind": "value",
+      "same": true
+    },
+    {
+      "en": "[Name]",
+      "hant": "[姓名]",
+      "hans": "[姓名]",
+      "kind": "value",
+      "same": true
+    },
+    {
+      "en": "Executive Management",
+      "hant": "高階管理層",
+      "hans": "高级管理层",
+      "kind": "value"
+    },
+    {
+      "en": "All Personnel",
+      "hant": "全體人員",
+      "hans": "全体人员",
+      "kind": "value"
+    },
+    {
+      "en": "IT Operations",
+      "hant": "IT 營運",
+      "hans": "IT 运维",
+      "kind": "value"
+    },
+    {
+      "en": "Legal/Compliance Officer",
+      "hant": "法務／合規主管",
+      "hans": "法务/合规主管",
+      "kind": "value"
+    },
+    {
+      "en": "Chief Information Security Officer (CISO)",
+      "hant": "資訊安全長（CISO）",
+      "hans": "首席信息安全官（CISO）",
+      "kind": "value"
+    },
+    {
+      "en": "Chief Executive Officer (CEO)",
+      "hant": "執行長（CEO）",
+      "hans": "首席执行官（CEO）",
+      "kind": "value"
+    },
+    {
+      "en": "Chief Information Officer (CIO)",
+      "hant": "資訊長（CIO）",
+      "hans": "首席信息官（CIO）",
+      "kind": "value"
+    },
+    {
+      "en": "Data Protection Officer (DPO)",
+      "hant": "資料保護長（DPO）",
+      "hans": "数据保护官（DPO）",
+      "kind": "value"
+    },
+    {
+      "en": "Initial operational policy for ISO 27001:2022",
+      "hant": "ISO 27001:2022 初次作業政策",
+      "hans": "ISO 27001:2022 初次运营政策",
+      "kind": "value"
+    },
+    {
+      "en": "Generator Alignment Reference",
+      "hant": "產生器對齊參考",
+      "hans": "生成器对齐参考",
+      "kind": "heading"
+    },
+    {
+      "en": "Workbook at a Glance",
+      "hant": "工作簿總覽",
+      "hans": "工作簿概览",
+      "kind": "heading"
+    },
+    {
+      "en": "Executive Summary",
+      "hant": "執行摘要",
+      "hans": "执行摘要",
+      "kind": "heading"
+    },
+    {
+      "en": "Scope",
+      "hant": "範圍",
+      "hans": "范围",
+      "kind": "heading"
+    },
+    {
+      "en": "Purpose",
+      "hant": "目的",
+      "hans": "目的",
+      "kind": "heading",
+      "same": true
+    },
+    {
+      "en": "Purpose of This Guide",
+      "hant": "本指南目的",
+      "hans": "本指南目的",
+      "kind": "heading",
+      "same": true
+    },
+    {
+      "en": "Purpose & Scope",
+      "hant": "目的與範圍",
+      "hans": "目的与范围",
+      "kind": "heading"
+    },
+    {
+      "en": "Prerequisites",
+      "hant": "前置條件",
+      "hans": "前置条件",
+      "kind": "heading"
+    },
+    {
+      "en": "Quality Checklist",
+      "hant": "品質檢核表",
+      "hans": "质量检查清单",
+      "kind": "heading"
+    },
+    {
+      "en": "Common Pitfalls",
+      "hant": "常見陷阱",
+      "hans": "常见陷阱",
+      "kind": "heading"
+    },
+    {
+      "en": "Evidence Collection",
+      "hant": "證據蒐集",
+      "hans": "证据收集",
+      "kind": "heading"
+    },
+    {
+      "en": "Evidence Checklist",
+      "hant": "證據檢核表",
+      "hans": "证据检查清单",
+      "kind": "heading"
+    },
+    {
+      "en": "Evidence Requirements",
+      "hant": "證據要求",
+      "hans": "证据要求",
+      "kind": "heading"
+    },
+    {
+      "en": "Evidence Storage",
+      "hant": "證據存放",
+      "hans": "证据存储",
+      "kind": "heading"
+    },
+    {
+      "en": "Evidence",
+      "hant": "證據",
+      "hans": "证据",
+      "kind": "heading"
+    },
+    {
+      "en": "Roles and Responsibilities",
+      "hant": "角色與職責",
+      "hans": "角色与职责",
+      "kind": "heading"
+    },
+    {
+      "en": "Non-Compliance",
+      "hant": "不符合",
+      "hans": "不符合",
+      "kind": "heading",
+      "same": true
+    },
+    {
+      "en": "Exceptions",
+      "hant": "例外",
+      "hans": "例外",
+      "kind": "heading",
+      "same": true
+    },
+    {
+      "en": "Exception Management",
+      "hant": "例外管理",
+      "hans": "例外管理",
+      "kind": "heading",
+      "same": true
+    },
+    {
+      "en": "Compliance Measurement",
+      "hant": "合規衡量",
+      "hans": "合规度量",
+      "kind": "heading"
+    },
+    {
+      "en": "Continual Improvement",
+      "hant": "持續改善",
+      "hans": "持续改进",
+      "kind": "heading"
+    },
+    {
+      "en": "Continuous Improvement",
+      "hant": "持續改善",
+      "hans": "持续改进",
+      "kind": "heading"
+    },
+    {
+      "en": "Principle",
+      "hant": "原則",
+      "hans": "原则",
+      "kind": "heading"
+    },
+    {
+      "en": "Assessment Overview",
+      "hant": "評鑑概觀",
+      "hans": "评估概览",
+      "kind": "heading"
+    },
+    {
+      "en": "Assessment Framework",
+      "hant": "評鑑架構",
+      "hans": "评估框架",
+      "kind": "heading"
+    },
+    {
+      "en": "Assessment Workflow",
+      "hant": "評鑑流程",
+      "hans": "评估流程",
+      "kind": "heading"
+    },
+    {
+      "en": "Assessment Frequency",
+      "hant": "評鑑頻率",
+      "hans": "评估频率",
+      "kind": "heading"
+    },
+    {
+      "en": "Who Should Complete This Assessment",
+      "hant": "本評鑑應由誰完成",
+      "hans": "本评估应由谁完成",
+      "kind": "heading"
+    },
+    {
+      "en": "What This Assessment Measures",
+      "hant": "本評鑑衡量什麼",
+      "hans": "本评估衡量什么",
+      "kind": "heading"
+    },
+    {
+      "en": "What This Policy Does",
+      "hant": "本政策的作用",
+      "hans": "本政策的作用",
+      "kind": "heading",
+      "same": true
+    },
+    {
+      "en": "What This Policy Does NOT Do",
+      "hant": "本政策不涵蓋的範圍",
+      "hans": "本政策不涵盖的范围",
+      "kind": "heading"
+    },
+    {
+      "en": "What This Policy Does NOT Cover",
+      "hant": "本政策未涵蓋的範圍",
+      "hans": "本政策未涵盖的范围",
+      "kind": "heading"
+    },
+    {
+      "en": "Why This Matters",
+      "hant": "為何重要",
+      "hans": "为何重要",
+      "kind": "heading"
+    },
+    {
+      "en": "Review & Approval",
+      "hant": "審查與核准",
+      "hans": "评审与批准",
+      "kind": "heading"
+    },
+    {
+      "en": "Review and Approval",
+      "hant": "審查與核准",
+      "hans": "评审与批准",
+      "kind": "heading"
+    },
+    {
+      "en": "Regulatory Applicability",
+      "hant": "法規適用性",
+      "hans": "法规适用性",
+      "kind": "heading"
+    },
+    {
+      "en": "Regulatory Framework",
+      "hant": "法規架構",
+      "hans": "法规框架",
+      "kind": "heading"
+    },
+    {
+      "en": "Regulatory Mapping",
+      "hant": "法規對應",
+      "hans": "法规映射",
+      "kind": "heading"
+    },
+    {
+      "en": "Time Estimate",
+      "hant": "時間估計",
+      "hans": "时间估计",
+      "kind": "heading"
+    },
+    {
+      "en": "Access Required",
+      "hant": "所需存取權",
+      "hans": "所需访问权限",
+      "kind": "heading"
+    },
+    {
+      "en": "Required Access",
+      "hant": "所需存取權",
+      "hans": "所需访问权限",
+      "kind": "heading"
+    },
+    {
+      "en": "Completion Walkthrough",
+      "hant": "完成導引",
+      "hans": "完成引导",
+      "kind": "heading"
+    },
+    {
+      "en": "Completing Each Sheet",
+      "hant": "完成各工作表",
+      "hans": "完成各工作表",
+      "kind": "heading",
+      "same": true
+    },
+    {
+      "en": "Implementation Resources",
+      "hant": "實施資源",
+      "hans": "实施资源",
+      "kind": "heading"
+    },
+    {
+      "en": "Connection to Policy",
+      "hant": "與政策的關聯",
+      "hans": "与政策的关联",
+      "kind": "heading"
+    },
+    {
+      "en": "Workflow",
+      "hant": "流程",
+      "hans": "流程",
+      "kind": "heading",
+      "same": true
+    },
+    {
+      "en": "Detailed Workflow",
+      "hant": "詳細流程",
+      "hans": "详细流程",
+      "kind": "heading"
+    },
+    {
+      "en": "High-Level Process",
+      "hant": "高階流程",
+      "hans": "高层流程",
+      "kind": "heading"
+    },
+    {
+      "en": "Accountability Matrix",
+      "hant": "權責矩陣",
+      "hans": "权责矩阵",
+      "kind": "heading"
+    },
+    {
+      "en": "Policy Review",
+      "hant": "政策審查",
+      "hans": "政策评审",
+      "kind": "heading"
+    },
+    {
+      "en": "Integration with ISMS",
+      "hant": "與 ISMS 的整合",
+      "hans": "与 ISMS 的整合",
+      "kind": "heading"
+    },
+    {
+      "en": "Definitions",
+      "hant": "定義",
+      "hans": "定义",
+      "kind": "heading"
+    },
+    {
+      "en": "Control Requirements",
+      "hant": "控制措施要求",
+      "hans": "控制措施要求",
+      "kind": "heading",
+      "same": true
+    },
+    {
+      "en": "Related Controls",
+      "hant": "相關控制措施",
+      "hans": "相关控制措施",
+      "kind": "heading"
+    },
+    {
+      "en": "Escalation Path",
+      "hant": "升級通報路徑",
+      "hans": "升级通报路径",
+      "kind": "heading"
+    },
+    {
+      "en": "Post-Approval Actions",
+      "hant": "核准後行動",
+      "hans": "批准后行动",
+      "kind": "heading"
+    },
+    {
+      "en": "Corrective Action Linkage",
+      "hant": "矯正措施連結",
+      "hans": "纠正措施关联",
+      "kind": "heading"
+    },
+    {
+      "en": "Pre-Assessment Checklist",
+      "hant": "評鑑前檢核表",
+      "hans": "评估前检查清单",
+      "kind": "heading"
+    },
+    {
+      "en": "Completeness",
+      "hant": "完整性",
+      "hans": "完整性",
+      "kind": "heading",
+      "same": true
+    },
+    {
+      "en": "Overview",
+      "hant": "概觀",
+      "hans": "概览",
+      "kind": "heading"
+    },
+    {
+      "en": "Tools Needed",
+      "hant": "所需工具",
+      "hans": "所需工具",
+      "kind": "heading",
+      "same": true
+    },
+    {
+      "en": "Required Tools",
+      "hant": "所需工具",
+      "hans": "所需工具",
+      "kind": "heading",
+      "same": true
+    },
+    {
+      "en": "Knowledge Required",
+      "hant": "所需知識",
+      "hans": "所需知识",
+      "kind": "heading"
+    },
+    {
+      "en": "Expected Outputs",
+      "hant": "預期產出",
+      "hans": "预期产出",
+      "kind": "heading"
+    },
+    {
+      "en": "Information You'll Need",
+      "hant": "您需要的資訊",
+      "hans": "您需要的信息",
+      "kind": "heading"
+    },
+    {
+      "en": "Business Value",
+      "hant": "業務價值",
+      "hans": "业务价值",
+      "kind": "heading"
+    },
+    {
+      "en": "Dependencies",
+      "hant": "相依性",
+      "hans": "依赖项",
+      "kind": "heading"
+    },
+    {
+      "en": "What Evidence to Collect",
+      "hant": "應蒐集哪些證據",
+      "hans": "应收集哪些证据",
+      "kind": "heading"
+    },
+    {
+      "en": "Review Process",
+      "hant": "審查流程",
+      "hans": "评审流程",
+      "kind": "heading"
+    },
+    {
+      "en": "Approval Workflow",
+      "hant": "核准流程",
+      "hans": "批准流程",
+      "kind": "heading"
+    },
+    {
+      "en": "What Auditors Look For",
+      "hant": "稽核人員關注重點",
+      "hans": "审计人员关注重点",
+      "kind": "heading"
+    },
+    {
+      "en": "Before Starting This Assessment",
+      "hant": "開始本評鑑前",
+      "hans": "开始本评估前",
+      "kind": "heading"
+    },
+    {
+      "en": "Review Workflow",
+      "hant": "審查流程",
+      "hans": "评审流程",
+      "kind": "heading"
+    },
+    {
+      "en": "Column-by-Column Guidance",
+      "hant": "逐欄說明",
+      "hans": "逐栏说明",
+      "kind": "heading",
+      "note": "欄 is 栏 in Simplified, not 列 — 逐列 would read as row-by-row."
+    },
+    {
+      "en": "information security",
+      "hant": "資訊安全",
+      "hans": "信息安全",
+      "kind": "term",
+      "variant_note": "HK/TW 資訊; mainland 信息. Applied consistently, including 資訊資產 / 信息资产."
+    },
+    {
+      "en": "information",
+      "hant": "資訊",
+      "hans": "信息",
+      "kind": "term"
+    },
+    {
+      "en": "data",
+      "hant": "資料",
+      "hans": "数据",
+      "kind": "term",
+      "variant_note": "HK/TW 資料, not 數據."
+    },
+    {
+      "en": "personal data",
+      "hant": "個人資料",
+      "hans": "个人数据",
+      "kind": "term"
+    },
+    {
+      "en": "network",
+      "hant": "網路",
+      "hans": "网络",
+      "kind": "term"
+    },
+    {
+      "en": "Internet",
+      "hant": "網際網路",
+      "hans": "互联网",
+      "kind": "term"
+    },
+    {
+      "en": "software",
+      "hant": "軟體",
+      "hans": "软件",
+      "kind": "term"
+    },
+    {
+      "en": "hardware",
+      "hant": "硬體",
+      "hans": "硬件",
+      "kind": "term"
+    },
+    {
+      "en": "server",
+      "hant": "伺服器",
+      "hans": "服务器",
+      "kind": "term"
+    },
+    {
+      "en": "database",
+      "hant": "資料庫",
+      "hans": "数据库",
+      "kind": "term"
+    },
+    {
+      "en": "application",
+      "hant": "應用程式",
+      "hans": "应用程序",
+      "kind": "term"
+    },
+    {
+      "en": "user",
+      "hant": "使用者",
+      "hans": "用户",
+      "kind": "term"
+    },
+    {
+      "en": "account",
+      "hant": "帳戶",
+      "hans": "账户",
+      "kind": "term"
+    },
+    {
+      "en": "access",
+      "hant": "存取",
+      "hans": "访问",
+      "kind": "term"
+    },
+    {
+      "en": "access control",
+      "hant": "存取控制",
+      "hans": "访问控制",
+      "kind": "term"
+    },
+    {
+      "en": "authentication",
+      "hant": "身分驗證",
+      "hans": "身份验证",
+      "kind": "term",
+      "variant_note": "HK/TW write 身分 (cf. 身分證), so the Traditional column uses 身分 throughout."
+    },
+    {
+      "en": "authorisation",
+      "hant": "授權",
+      "hans": "授权",
+      "kind": "term"
+    },
+    {
+      "en": "privilege",
+      "hant": "特權",
+      "hans": "特权",
+      "kind": "term"
+    },
+    {
+      "en": "audit",
+      "hant": "稽核",
+      "hans": "审计",
+      "kind": "term"
+    },
+    {
+      "en": "audit trail",
+      "hant": "稽核軌跡",
+      "hans": "审计跟踪",
+      "kind": "term"
+    },
+    {
+      "en": "key",
+      "hant": "金鑰",
+      "hans": "密钥",
+      "kind": "term",
+      "variant_note": "HK/TW 金鑰; mainland 密钥. OpenCC alone yields 金钥."
+    },
+    {
+      "en": "Boolean",
+      "hant": "布林",
+      "hans": "布尔",
+      "kind": "term",
+      "variant_note": "TW 布林; mainland 布尔."
+    },
+    {
+      "en": "Enum",
+      "hant": "列舉",
+      "hans": "枚举",
+      "kind": "term"
+    },
+    {
+      "en": "String",
+      "hant": "字串",
+      "hans": "字符串",
+      "kind": "term",
+      "variant_note": "TW 字串; mainland 字符串."
+    },
+    {
+      "en": "response",
+      "hant": "應變",
+      "hans": "响应",
+      "kind": "term",
+      "variant_note": "Bare form; 'incident response' 事件應變 is listed separately and wins on length."
+    },
+    {
+      "en": "support",
+      "hant": "支援",
+      "hans": "支持",
+      "kind": "term"
+    },
+    {
+      "en": "schedule",
+      "hant": "排程",
+      "hans": "计划",
+      "kind": "term",
+      "variant_note": "TW 排程; mainland 计划. OpenCC alone yields 排程."
+    },
+    {
+      "en": "cloud computing",
+      "hant": "雲端運算",
+      "hans": "云计算",
+      "kind": "term",
+      "variant_note": "The mainland standard is 云计算, not a literal 云端运算."
+    },
+    {
+      "en": "detection",
+      "hant": "偵測",
+      "hans": "检测",
+      "kind": "term",
+      "variant_note": "OpenCC alone yields 侦测."
+    },
+    {
+      "en": "approval",
+      "hant": "核准",
+      "hans": "批准",
+      "kind": "term",
+      "variant_note": "Bare form; 'Approval Workflow' 核准流程 is listed separately."
+    },
+    {
+      "en": "documentation",
+      "hant": "說明文件",
+      "hans": "说明文件",
+      "kind": "term",
+      "variant_note": "Longer than the Description label (說明/描述), so it wins the longest-match pass — without it every 說明文件 becomes 描述文件."
+    },
+    {
+      "en": "manual",
+      "hant": "說明書",
+      "hans": "说明书",
+      "kind": "term"
+    },
+    {
+      "en": "risk assessment",
+      "hant": "風險評鑑",
+      "hans": "风险评估",
+      "kind": "term",
+      "note": "ISO 27000 Traditional splits risk assessment (風險評鑑) from risk evaluation (風險評估)."
+    },
+    {
+      "en": "risk evaluation",
+      "hant": "風險評估",
+      "hans": "风险评价",
+      "kind": "term",
+      "note": "Distinct from risk assessment; see above."
+    },
+    {
+      "en": "risk analysis",
+      "hant": "風險分析",
+      "hans": "风险分析",
+      "kind": "term"
+    },
+    {
+      "en": "risk treatment",
+      "hant": "風險處理",
+      "hans": "风险处置",
+      "kind": "term"
+    },
+    {
+      "en": "risk owner",
+      "hant": "風險擁有者",
+      "hans": "风险所有者",
+      "kind": "term"
+    },
+    {
+      "en": "residual risk",
+      "hant": "殘餘風險",
+      "hans": "残余风险",
+      "kind": "term"
+    },
+    {
+      "en": "vulnerability",
+      "hant": "弱點",
+      "hans": "漏洞",
+      "kind": "term"
+    },
+    {
+      "en": "vulnerability management",
+      "hant": "弱點管理",
+      "hans": "漏洞管理",
+      "kind": "term"
+    },
+    {
+      "en": "threat",
+      "hant": "威脅",
+      "hans": "威胁",
+      "kind": "term"
+    },
+    {
+      "en": "impact",
+      "hant": "衝擊",
+      "hans": "影响",
+      "kind": "term"
+    },
+    {
+      "en": "incident",
+      "hant": "事件",
+      "hans": "事件",
+      "kind": "term",
+      "same": true
+    },
+    {
+      "en": "incident response",
+      "hant": "事件應變",
+      "hans": "事件响应",
+      "kind": "term"
+    },
+    {
+      "en": "business continuity",
+      "hant": "營運持續",
+      "hans": "业务连续性",
+      "kind": "term"
+    },
+    {
+      "en": "backup",
+      "hant": "備份",
+      "hans": "备份",
+      "kind": "term"
+    },
+    {
+      "en": "recovery",
+      "hant": "復原",
+      "hans": "恢复",
+      "kind": "term"
+    },
+    {
+      "en": "disaster recovery",
+      "hant": "災難復原",
+      "hans": "灾难恢复",
+      "kind": "term"
+    },
+    {
+      "en": "supplier",
+      "hant": "供應商",
+      "hans": "供应商",
+      "kind": "term"
+    },
+    {
+      "en": "supply chain",
+      "hant": "供應鏈",
+      "hans": "供应链",
+      "kind": "term"
+    },
+    {
+      "en": "outsourcing",
+      "hant": "委外",
+      "hans": "外包",
+      "kind": "term"
+    },
+    {
+      "en": "contract",
+      "hant": "合約",
+      "hans": "合同",
+      "kind": "term"
+    },
+    {
+      "en": "cloud",
+      "hant": "雲端",
+      "hans": "云端",
+      "kind": "term"
+    },
+    {
+      "en": "patch",
+      "hant": "修補",
+      "hans": "修补",
+      "kind": "term"
+    },
+    {
+      "en": "log",
+      "hant": "日誌",
+      "hans": "日志",
+      "kind": "term"
+    },
+    {
+      "en": "monitoring",
+      "hant": "監控",
+      "hans": "监控",
+      "kind": "term"
+    },
+    {
+      "en": "management review",
+      "hant": "管理審查",
+      "hans": "管理评审",
+      "kind": "term"
+    },
+    {
+      "en": "corrective action",
+      "hant": "矯正措施",
+      "hans": "纠正措施",
+      "kind": "term"
+    },
+    {
+      "en": "preventive action",
+      "hant": "預防措施",
+      "hans": "预防措施",
+      "kind": "term"
+    },
+    {
+      "en": "nonconformity",
+      "hant": "不符合事項",
+      "hans": "不符合项",
+      "kind": "term"
+    },
+    {
+      "en": "documented information",
+      "hant": "文件化資訊",
+      "hans": "文件化信息",
+      "kind": "term"
+    },
+    {
+      "en": "Statement of Applicability",
+      "hant": "適用性聲明",
+      "hans": "适用性声明",
+      "kind": "term"
+    },
+    {
+      "en": "top management",
+      "hant": "最高管理階層",
+      "hans": "最高管理层",
+      "kind": "term"
+    },
+    {
+      "en": "competence",
+      "hant": "能力",
+      "hans": "能力",
+      "kind": "term",
+      "same": true
+    },
+    {
+      "en": "awareness",
+      "hant": "認知",
+      "hans": "意识",
+      "kind": "term"
+    },
+    {
+      "en": "training",
+      "hant": "訓練",
+      "hans": "培训",
+      "kind": "term"
+    },
+    {
+      "en": "communication",
+      "hant": "溝通",
+      "hans": "沟通",
+      "kind": "term"
+    },
+    {
+      "en": "procedure",
+      "hant": "程序",
+      "hans": "程序",
+      "kind": "term",
+      "same": true
+    },
+    {
+      "en": "process",
+      "hant": "流程",
+      "hans": "流程",
+      "kind": "term",
+      "same": true
+    },
+    {
+      "en": "record",
+      "hant": "紀錄",
+      "hans": "记录",
+      "kind": "term"
+    },
+    {
+      "en": "document",
+      "hant": "文件",
+      "hans": "文件",
+      "kind": "term",
+      "same": true
+    },
+    {
+      "en": "classification",
+      "hant": "分類",
+      "hans": "分类",
+      "kind": "term",
+      "note": "The generic act of classifying. Distinct from the Document Control field 'Classification' (機密等級/密级), which holds Internal / Confidential / Public — see the label entry of the same spelling."
+    },
+    {
+      "en": "labelling",
+      "hant": "標示",
+      "hans": "标记",
+      "kind": "term"
+    },
+    {
+      "en": "retention",
+      "hant": "留存",
+      "hans": "保留",
+      "kind": "term"
+    },
+    {
+      "en": "physical security",
+      "hant": "實體安全",
+      "hans": "物理安全",
+      "kind": "term"
+    },
+    {
+      "en": "remote access",
+      "hant": "遠端存取",
+      "hans": "远程访问",
+      "kind": "term"
+    },
+    {
+      "en": "mobile device",
+      "hant": "行動裝置",
+      "hans": "移动设备",
+      "kind": "term"
+    },
+    {
+      "en": "encryption",
+      "hant": "加密",
+      "hans": "加密",
+      "kind": "term",
+      "same": true
+    },
+    {
+      "en": "asset",
+      "hant": "資產",
+      "hans": "资产",
+      "kind": "term"
+    },
+    {
+      "en": "control",
+      "hant": "控制措施",
+      "hans": "控制措施",
+      "kind": "term",
+      "same": true
+    },
+    {
+      "en": "clause",
+      "hant": "條款",
+      "hans": "条款",
+      "kind": "term"
+    },
+    {
+      "en": "Annex A",
+      "hant": "附錄 A",
+      "hans": "附录 A",
+      "kind": "term"
+    },
+    {
+      "en": "shall",
+      "hant": "應",
+      "hans": "应",
+      "kind": "term"
+    },
+    {
+      "en": "should",
+      "hant": "宜",
+      "hans": "宜",
+      "kind": "term",
+      "same": true
+    },
+    {
+      "en": "may",
+      "hant": "得",
+      "hans": "可",
+      "kind": "term"
+    },
+    {
+      "en": "organisational",
+      "hant": "組織",
+      "hans": "组织",
+      "kind": "term"
+    },
+    {
+      "en": "operational",
+      "hant": "營運",
+      "hans": "运营",
+      "kind": "term"
+    },
+    {
+      "en": "guidance",
+      "hant": "指引",
+      "hans": "指南",
+      "kind": "term"
+    },
+    {
+      "en": "instruction",
+      "hant": "指示",
+      "hans": "指示",
+      "kind": "term",
+      "same": true
+    },
+    {
+      "en": "template",
+      "hant": "範本",
+      "hans": "模板",
+      "kind": "term"
+    },
+    {
+      "en": "workbook",
+      "hant": "工作簿",
+      "hans": "工作簿",
+      "kind": "term",
+      "same": true
+    },
+    {
+      "en": "effectiveness",
+      "hant": "有效性",
+      "hans": "有效性",
+      "kind": "term",
+      "same": true
+    },
+    {
+      "en": "measurement",
+      "hant": "衡量",
+      "hans": "度量",
+      "kind": "term"
+    },
+    {
+      "en": "metrics",
+      "hant": "指標",
+      "hans": "指标",
+      "kind": "term"
+    },
+    {
+      "en": "compliance",
+      "hant": "合規",
+      "hans": "合规",
+      "kind": "term"
+    },
+    {
+      "en": "regulatory",
+      "hant": "法規",
+      "hans": "法规",
+      "kind": "term"
+    },
+    {
+      "en": "privacy",
+      "hant": "隱私",
+      "hans": "隐私",
+      "kind": "term"
+    },
+    {
+      "en": "customer",
+      "hant": "客戶",
+      "hans": "客户",
+      "kind": "term"
+    },
+    {
+      "en": "Infrastructure as Code",
+      "hant": "基礎設施即程式碼",
+      "hans": "基础设施即代码",
+      "kind": "term",
+      "note": "German left this in English; Chinese has an established rendering, so it is translated."
+    },
+    {
+      "en": "Golden Image",
+      "hant": "黃金映像",
+      "hans": "黄金镜像",
+      "kind": "term"
+    },
+    {
+      "en": "risk assessment and treatment",
+      "hant": "風險評鑑與處理",
+      "hans": "风险评估与处置",
+      "kind": "term",
+      "note": "Added because the coordinated form defeats single-term substitution: in 風險評鑑與處理程序 the entry for 'risk treatment' (風險處理) is not contiguous, so only 處理 was rewritten and the mainland 处置 was lost. Entries are applied longest-first, so this one wins over both parts."
+    }
   ]
 }

@@ -61,7 +61,11 @@ TRADITIONAL_ONLY = set(
 #   系  系統 (T)          vs 系 (S, of 係/繫)
 #   制  控制 (T)          vs 制 (S, of 製)
 #   面  方面 (T)          vs 面 (S, of 麵)
-KNOWN_SHARED = set("准台只干云于里松划采系制面")
+#   游  上游/下游 (T)     vs 游 (S, of 遊)    — 游 is the correct Traditional
+#        character for flow/direction; 遊 is the separate word play/travel.
+#        OpenCC gets 上游 right as a word but 游->遊 per character, so the
+#        per-character test flags it. Found on 上游 CSP in CLD-SEC-POL-A.5.38.
+KNOWN_SHARED = set("准台只干云于里松划采系制面游")
 
 # 后 is deliberately absent from KNOWN_SHARED despite 皇后 being legitimate
 # Traditional: in governance prose it is overwhelmingly the Simplified form of

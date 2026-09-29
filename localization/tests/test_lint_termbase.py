@@ -97,14 +97,38 @@ def test_duplicate_same_kind_is_caught():
 
 
 def test_same_term_may_carry_two_senses():
-    """'Classification' the label and 'classification' the term are both valid."""
+    """'Classification' the label and 'classification' the term are both valid.
+
+    Each must carry a note: the two columns alone cannot show whether a split
+    is deliberate or a stale duplicate.
+    """
+    entries = [
+        base_entry(en="Classification", kind="label",
+                   hant="機密等級", hans="密级",
+                   note="Holds Internal / Confidential / Public."),
+        base_entry(en="classification", kind="term",
+                   hant="分類", hans="分类",
+                   note="The generic act of classifying."),
+    ]
+    assert lint(tb(*entries)) == []
+
+
+def test_second_sense_without_a_note_is_caught():
+    """A same-named entry that does not say how it differs is a trap.
+
+    Reading the two columns cannot distinguish a deliberate second sense from
+    a stale duplicate, and an ad-hoc query keyed on `en` alone silently returns
+    whichever entry it saw last — which is how 機密等級 nearly became 分類 in
+    the Document Control table.
+    """
     entries = [
         base_entry(en="Classification", kind="label",
                    hant="機密等級", hans="密级"),
         base_entry(en="classification", kind="term",
                    hant="分類", hans="分类"),
     ]
-    assert lint(tb(*entries)) == []
+    errors = lint(tb(*entries))
+    assert sum("has no note explaining" in e for e in errors) == 2, errors
 
 
 def test_term_also_in_keep_as_is_is_caught():

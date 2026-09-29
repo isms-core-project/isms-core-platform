@@ -45,6 +45,12 @@ def lint(termbase: dict) -> list[str]:
     # 分類/分类. Same word, different decision — both belong in the file.
     seen: dict[tuple[str, str], int] = {}
 
+    counts: dict[str, int] = {}
+    for e in entries:
+        if isinstance(e.get("en"), str):
+            counts[e["en"].strip().lower()] = counts.get(e["en"].strip().lower(), 0) + 1
+    shared_en = {k for k, n in counts.items() if n > 1}
+
     for i, e in enumerate(entries):
         where = f"entry[{i}] {e.get('en', '?')!r}"
 
@@ -89,6 +95,20 @@ def lint(termbase: dict) -> list[str]:
                 f"{where}: Traditional characters in hans column: {''.join(hit_t)}"
                 f" — hans={e['hans']!r}"
             )
+
+        # The same English surface form may carry two senses ('Classification'
+        # as a Document Control label is 機密等級/密级; as a term it is
+        # 分類/分类). That is legitimate, but the distinction has to be
+        # readable from the data: an entry sharing its `en` with another must
+        # say why it is separate. Reading the two columns alone cannot tell a
+        # deliberate split from a stale duplicate, and anything a reader has
+        # to infer from a source comment will eventually be inferred wrongly.
+        if e["en"].strip().lower() in shared_en:
+            if not (e.get("note") or e.get("variant_note")):
+                errors.append(
+                    f"{where}: shares its English form with another entry but "
+                    f"has no note explaining how the two differ"
+                )
 
         identical = e["hant"] == e["hans"]
         if identical and not e.get("same"):
