@@ -145,3 +145,24 @@ def test_missing_field_is_caught():
 def test_bad_kind_is_caught():
     errors = lint(tb(base_entry(kind="sentence")))
     assert any("not in" in e for e in errors), errors
+
+
+def test_a_hant_key_may_not_map_to_two_different_hans():
+    """The dangerous duplicate: derivation keys its lookup dict on hant.
+
+    Two entries sharing a hant key but disagreeing on hans means the later one
+    silently wins and the earlier becomes dead text — no error, just a
+    different translation depending on which documents happen to hit it. A
+    shared hant key with the *same* hans is fine and intentional (Workflow and
+    process are both 流程 in this corpus), so the check is on the pair.
+    """
+    base = {"entries": [{"en": "cache", "hant": "快取", "hans": "缓存",
+                         "kind": "term"}]}
+
+    clash = dict(base, entries=base["entries"] + [
+        {"en": "cache store", "hant": "快取", "hans": "高速缓存", "kind": "term"}])
+    assert any("already maps to" in e for e in lint(clash))
+
+    agreed = dict(base, entries=base["entries"] + [
+        {"en": "cache store", "hant": "快取", "hans": "缓存", "kind": "term"}])
+    assert not [e for e in lint(agreed) if "already maps to" in e]

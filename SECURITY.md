@@ -1,5 +1,7 @@
 # Security Policy
 
+<p align="center"><strong>English</strong> · <a href="SECURITY.zh-TW.md">繁體中文</a> · <a href="SECURITY.zh-CN.md">简体中文</a></p>
+
 ISMS CORE takes security seriously. If you discover a vulnerability in this repository — including scripts, workbook generators, templates, or documentation that could cause unsafe outcomes — or in the running ISMS CORE platform itself (the backend API and services distributed as the Docker images referenced by this repo's `docker-compose.yml`), please report it responsibly.
 
 ## Reporting a Vulnerability

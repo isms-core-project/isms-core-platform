@@ -22,7 +22,7 @@
 </p>
 
 <details>
-<summary><strong>29 个合规评鉴模组 — 点击展开</strong></summary>
+<summary><strong>29 个合规评估模块 — 点击展开</strong></summary>
 <br/>
 <p align="center">
   <a href="COMPLIANCE.zh-CN.md"><img src="https://img.shields.io/badge/NIST_CSF_2.0-Assessment_Tool-FF6600?style=flat-square" alt="NIST CSF"/></a>
@@ -82,10 +82,10 @@ ISMS CORE 是一套生产等级的**控制工程**平台，用来建置与运营
 ### 🏗️ [框架](isms-core-framework/)
 <img src="https://img.shields.io/badge/ISO_27001-2022-0066CC?style=flat-square" alt="ISO 27001:2022"/>
 
-**完整的工程产品**，供成熟的安全团队与顾问使用。治理政策、实施指南、评鉴脚本、产出的工作簿 — 每一项控制措施一个完整套件。
+**完整的工程产品**，供成熟的安全团队与顾问使用。治理政策、实施指南、评估脚本、产出的工作簿 — 每一项控制措施一个完整套件。
 
 **53** 个控制套件 · **93** 项附录 A 控制措施<br/>
-**376** 份 IMP 文件 · **188** 个产生器<br/>
+**376** 份 IMP 文件 · **188** 个生成器<br/>
 EN · FR · DE · IT
 
 <img src="https://img.shields.io/badge/v1.0-Complete-00AA00?style=flat-square" alt="Complete"/>
@@ -96,10 +96,10 @@ EN · FR · DE · IT
 ### ⚡ [运营版](isms-core-operational/)
 <img src="https://img.shields.io/badge/ISO_27001-2022-0066CC?style=flat-square" alt="ISO 27001:2022"/>
 
-**给中小企业的基础 ISMS**（10–500 人）。作业政策搭配单表合规检核表。没有工程负担 — 读政策、跑检核表，完成。
+**给中小企业的基础 ISMS**（10–500 人）。作业政策搭配单表合规检查表。没有工程负担 — 读政策、跑检查表，完成。
 
 **53** 个控制群组 · **53** 份 OP-POL 文件<br/>
-**53** 个检核表产生器<br/>
+**53** 个检查表生成器<br/>
 EN · FR · DE · IT
 
 <img src="https://img.shields.io/badge/v0.1-Complete-00AA00?style=flat-square" alt="Complete"/>
@@ -113,7 +113,7 @@ EN · FR · DE · IT
 **隐私信息管理** — 针对 ISO 27701:2025 的控管者、处理者与共同控制群组。可搭配框架版或运营版使用。
 
 **21** 个控制群组 · **23** 份 PRIV-POL 文件<br/>
-**42** 份 IMP 文件 · **21** 个产生器<br/>
+**42** 份 IMP 文件 · **21** 个生成器<br/>
 EN · FR · DE · IT
 
 <img src="https://img.shields.io/badge/v1.0-Complete-7030A0?style=flat-square" alt="Complete"/>
@@ -127,10 +127,10 @@ EN · FR · DE · IT
 <img src="https://img.shields.io/badge/ISO_27018-2025-00897B?style=flat-square" alt="ISO 27018:2025"/>
 <img src="https://img.shields.io/badge/ISO_27017-2026-0288D1?style=flat-square" alt="ISO 27017:2026"/>
 
-**PII 保护与云端安全控制措施** — 供处理 PII 的云端服务供应商使用的检核表（ISO 27018:2025 附录 A），加上 4 项独立的云端安全延伸控制措施（ISO 27017:2026）；两者都是与 ISO 27001 并列的独立标准。
+**PII 保护与云端安全控制措施** — 供处理 PII 的云服务提供商使用的检查表（ISO 27018:2025 附录 A），加上 4 项独立的云端安全延伸控制措施（ISO 27017:2026）；两者都是与 ISO 27001 并列的独立标准。
 
 **16** 个控制群组 · **16** 份 POL 文件<br/>
-**32** 份 IMP 文件 · **16** 个产生器<br/>
+**32** 份 IMP 文件 · **16** 个生成器<br/>
 EN · FR · DE · IT
 
 <img src="https://img.shields.io/badge/v1.0-Complete-00897B?style=flat-square" alt="Complete"/>
@@ -141,10 +141,10 @@ EN · FR · DE · IT
 ### 🤖 [AI](isms-core-ai/)
 <img src="https://img.shields.io/badge/ISO_42001-2023-FF6B35?style=flat-square" alt="ISO 42001:2023"/>
 
-**AI 管理系统** — 涵盖 AI 开发、部署、影响评鉴、负责任使用与第三方 AI 关系的治理政策。
+**AI 管理系统** — 涵盖 AI 开发、部署、影响评估、负责任使用与第三方 AI 关系的治理政策。
 
 **12** 个 AI 控制群组 · **12** 项 AI-POL 政策<br/>
-**20** 份 IMP 文件 · **10** 个检核表产生器<br/>
+**20** 份 IMP 文件 · **10** 个检查表生成器<br/>
 EN · FR · DE · IT
 
 <img src="https://img.shields.io/badge/v1.0-Complete-FF6B35?style=flat-square" alt="Complete"/>
@@ -155,9 +155,9 @@ EN · FR · DE · IT
 ### 🖥️ [平台](PLATFORM.zh-CN.md)
 <img src="https://img.shields.io/badge/All_Five_Standards-Live-2E8B57?style=flat-square" alt="All five standards"/>
 
-**可实际运作的合规管理系统** — 把所有内容产品变成仪表板、缺口追踪、证据汇入、风险登录与审计报告。Docker Compose、10 个服务、自架。
+**可实际运作的合规管理系统** — 把所有内容产品变成仪表板、缺口追踪、证据导入、风险登录与审计报告。Docker Compose、10 个服务、自架。
 
-**44** 个连接器 · **29** 个评鉴模组 · **4,671** 个对照物件 / 59 个轴<br/>
+**44** 个连接器 · **29** 个评估模块 · **4,671** 个对照对象 / 59 个轴<br/>
 8 个国家司法管辖区 · **21+** 个威胁情报来源
 
 <img src="https://img.shields.io/badge/v1.1-Live-2E8B57?style=flat-square" alt="Live"/>
@@ -170,7 +170,7 @@ EN · FR · DE · IT
 
 ## 📦 你会拿到什么 — 开箱即用
 
-这不是框架参考手册，也不是检核表模板库。**每一个控制套件都附上可直接上线的成品，你打开、调整、发布即可。**
+这不是框架参考手册，也不是检查表模板库。**每一个控制套件都附上可直接上线的成品，你打开、调整、发布即可。**
 
 <table>
 <tr>
@@ -197,21 +197,21 @@ EN · FR · DE · IT
 <tr>
 <td><strong>IMP-TG</strong></td>
 <td>Markdown</td>
-<td>实施技术指南 — 给工程师的逐步操作。指令、配置片段、厂商特定注意事项、强化检核表。</td>
+<td>实施技术指南 — 给工程师的逐步操作。指令、配置片段、厂商特定注意事项、强化检查表。</td>
 <td>安全工程师</td>
 <td>框架 · 隐私 · 云端 · AI</td>
 </tr>
 <tr>
 <td><strong>SCR</strong></td>
 <td>Python 3.11+</td>
-<td>评鉴产生器 — 执行 <code>python3 generate_*.py</code> 产出结构化、已排版的合规证据工作簿。唯一相依套件：<code>openpyxl</code>。</td>
+<td>评估生成器 — 执行 <code>python3 generate_*.py</code> 产出结构化、已排版的合规证据工作簿。唯一相依套件：<code>openpyxl</code>。</td>
 <td>ISMS 经理 → 审计人员</td>
 <td>全部五项产品</td>
 </tr>
 <tr>
 <td><strong>WKBK</strong></td>
 <td>Excel (.xlsx)</td>
-<td>产出的合规工作簿 — 逐控制措施的评鉴项目、证据状态、评分与审计人员备注。由 SCR 产生器产出。可直接交给审计人员。</td>
+<td>产出的合规工作簿 — 逐控制措施的评估项目、证据状态、评分与审计人员备注。由 SCR 生成器产出。可直接交给审计人员。</td>
 <td>审计人员／控制措施负责人</td>
 <td>全部五项产品</td>
 </tr>
@@ -242,10 +242,10 @@ EN · FR · DE · IT
 > 1. 打开 `POL/` → 组织的密码学政策，签核后即可发布
 > 2. 打开 `IMP/IMP-UG/` → 如何推动密钥管理计划（KPI、评审周期、权责归属）
 > 3. 打开 `IMP/IMP-TG/` → TLS 配置、凭证生命周期、HSM 建置、厂商注意事项
-> 4. 执行 `SCR/generate_a824_*.py` → 产出 `.xlsx` 评鉴工作簿
+> 4. 执行 `SCR/generate_a824_*.py` → 产出 `.xlsx` 评估工作簿
 > 5. 把工作簿交给审计人员，作为结构化的合规证据
 
-**产生器的前置条件：** Python 3.11+、`pip install openpyxl`
+**生成器的前置条件：** Python 3.11+、`pip install openpyxl`
 
 ---
 
@@ -256,14 +256,14 @@ EN · FR · DE · IT
 - 偏好**自动化＋测试**、不要「安全表演」的工程师
 - 需要**实用、可审计政策**、不想过度工程化的中小企业
 - 处理 PII、需要 **ISO 27701 控管者／处理者控制措施**的组织
-- 需要 **ISO 27018 PII 合规**或 **ISO 27017 云端安全控制措施**的云端服务供应商
+- 需要 **ISO 27018 PII 合规**或 **ISO 27017 云端安全控制措施**的云服务提供商
 - 开发 AI 系统、需要 **ISO 42001 AIMS 治理**的组织
 - 需要**结构化、可追溯控制套件**的顾问与审计人员
 
 **不适合：**
 - 期待「一键合规」的人
 - 需要 GDPR／DORA／NIS2 法律解释的场合（请咨询律师）
-- 执行自己没读过的脚本（请把它当程式码看待）
+- 执行自己没读过的脚本（请把它当代码看待）
 
 ---
 
@@ -322,12 +322,12 @@ cat "isms-core-ai/00-ai-foundation-policies/ai-pol-01-aims-governance-and-decisi
 ```bash
 cd isms-core-platform
 cp .env.example .env         # 填入 HOST_IP、密码、ADMIN_PASSWORD
-docker compose up -d             # COMPOSE_PROFILES=opensearch-single 已在 .env.example 设定
-bash bootstrap.sh            # 一键完成：建立所有控制群组、汇入所有内容
+docker compose up -d             # COMPOSE_PROFILES=opensearch-single 已在 .env.example 设置
+bash bootstrap.sh            # 一键完成：建立所有控制群组、导入所有内容
 # → 开启 https://{HOST_IP}
 ```
 
-完整部署指南、TLS 选项、连接器设定与上线检核表，请见 [PLATFORM.zh-CN.md](PLATFORM.zh-CN.md)。
+完整部署指南、TLS 选项、连接器设置与上线检查表，请见 [PLATFORM.zh-CN.md](PLATFORM.zh-CN.md)。
 
 ---
 
@@ -335,7 +335,7 @@ bash bootstrap.sh            # 一键完成：建立所有控制群组、汇入�
 
 <table>
 <tr>
-<td align="center"><strong>登入</strong><br/><img src="screenshots/light/01_isms_core_login_light.png" width="380" alt="登入画面"/></td>
+<td align="center"><strong>登录</strong><br/><img src="screenshots/light/01_isms_core_login_light.png" width="380" alt="登录画面"/></td>
 <td align="center"><strong>首页仪表板</strong><br/><img src="screenshots/light/02_isms_core_home_light.png" width="380" alt="首页仪表板 — ISMS + 隐私 + 云端 + AI 产品切换器，附合规快速访问列"/></td>
 </tr>
 <tr>
@@ -347,16 +347,16 @@ bash bootstrap.sh            # 一键完成：建立所有控制群组、汇入�
 <td align="center"><strong>系统状态</strong><br/><img src="screenshots/light/77_isms_core_system_light.png" width="380" alt="系统状态 — 所有服务健康、OpenSearch 绿灯、Celery 运作中"/></td>
 </tr>
 <tr>
-<td align="center"><strong>评鉴与集合</strong><br/><img src="screenshots/light/06_isms_core_assessments_light.png" width="380" alt="平台的评鉴与集合 — 分组评分、CSV/XLSX/PDF 汇出"/></td>
+<td align="center"><strong>评估与集合</strong><br/><img src="screenshots/light/06_isms_core_assessments_light.png" width="380" alt="平台的评估与集合 — 分组评分、CSV/XLSX/PDF 导出"/></td>
 <td align="center"><strong>缺口登录表</strong><br/><img src="screenshots/light/08_isms_core_gaps_analysis_light.png" width="380" alt="缺口登录表，采 BSI 200-3 风险评分 — 可能性、影响、风险等级"/></td>
 </tr>
 <tr>
-<td align="center"><strong>NIST CSF 2.0 评鉴</strong><br/><img src="screenshots/light/25_isms_core_nist_csf20_light.png" width="380" alt="NIST CSF 2.0 — 106 项子类别评鉴，含等级评分、功能拆解与缺口分析"/></td>
-<td align="center"><strong>NIS2 评鉴</strong><br/><img src="screenshots/light/35_isms_core_nis2_light.png" width="380" alt="NIS2 指令（EU 2022/2555）— 第 21 条安全措施与第 23 条通报义务"/></td>
+<td align="center"><strong>NIST CSF 2.0 评估</strong><br/><img src="screenshots/light/25_isms_core_nist_csf20_light.png" width="380" alt="NIST CSF 2.0 — 106 项子类别评估，含等级评分、功能拆解与缺口分析"/></td>
+<td align="center"><strong>NIS2 评估</strong><br/><img src="screenshots/light/35_isms_core_nis2_light.png" width="380" alt="NIS2 指令（EU 2022/2555）— 第 21 条安全措施与第 23 条通报义务"/></td>
 </tr>
 <tr>
-<td align="center"><strong>DORA 评鉴</strong><br/><img src="screenshots/light/37_isms_core_dora_light.png" width="380" alt="DORA（EU 2022/2554）— 5 大支柱下的 27 条条文，ICT 风险成熟度评分 0–4"/></td>
-<td align="center"><strong>BSI IT-Grundschutz 评鉴</strong><br/><img src="screenshots/light/50_isms_core_bsiitgrund_light.png" width="380" alt="BSI IT-Grundschutz 手册 — 全部 111 个模组对应至 ISO 27001:2022"/></td>
+<td align="center"><strong>DORA 评估</strong><br/><img src="screenshots/light/37_isms_core_dora_light.png" width="380" alt="DORA（EU 2022/2554）— 5 大支柱下的 27 条条文，ICT 风险成熟度评分 0–4"/></td>
+<td align="center"><strong>BSI IT-Grundschutz 评估</strong><br/><img src="screenshots/light/50_isms_core_bsiitgrund_light.png" width="380" alt="BSI IT-Grundschutz 手册 — 全部 111 个模块对应至 ISO 27001:2022"/></td>
 </tr>
 <tr>
 <td align="center"><strong>风险登录表与热图</strong><br/><img src="screenshots/light/11_isms_core_risk_register_light.png" width="380" alt="风险登录表 — 5×5 可能性／影响矩阵、风险热图、处理流程"/></td>
@@ -386,24 +386,24 @@ bash bootstrap.sh            # 一键完成：建立所有控制群组、汇入�
 | ISO/IEC 27002:2022 | 实施指南已整合进 IMP-TG 文件 | ![Integrated](https://img.shields.io/badge/Integrated-0066CC?style=flat-square) |
 | ISO/IEC 27701:2025 | 完整的隐私延伸套件 — 控管者、处理者与共同控制措施 | ![Complete](https://img.shields.io/badge/Complete-7030A0?style=flat-square) |
 | ISO/IEC 27018:2025 | 完整的云端延伸套件 — 云端 PII 的 12 个附录 A 控制群组 | ![Complete](https://img.shields.io/badge/Complete-00897B?style=flat-square) |
-| ISO/IEC 42001:2023 | 完整的 AI 延伸套件 — 12 个 AI 控制群组，涵盖 AIMS 治理、影响评鉴、负责任使用与第三方 AI | ![Complete](https://img.shields.io/badge/Complete-FF6B35?style=flat-square) |
-| NIST CSF 2.0 | 完整评鉴工具 — 106 项子类别、等级 1–4 评分、XLSX 汇入／汇出、雷达图。ISO 27001 对照。 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-FF6600?style=flat-square) |
-| NIST AI RMF 1.0 | 完整评鉴工具 — 72 项子类别、0–4 成熟度；ISO 42001 对照：32 组对应，EU AI Act：31 组对应 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-FF6600?style=flat-square) |
+| ISO/IEC 42001:2023 | 完整的 AI 延伸套件 — 12 个 AI 控制群组，涵盖 AIMS 治理、影响评估、负责任使用与第三方 AI | ![Complete](https://img.shields.io/badge/Complete-FF6B35?style=flat-square) |
+| NIST CSF 2.0 | 完整评估工具 — 106 项子类别、等级 1–4 评分、XLSX 导入／导出、雷达图。ISO 27001 对照。 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-FF6600?style=flat-square) |
+| NIST AI RMF 1.0 | 完整评估工具 — 72 项子类别、0–4 成熟度；ISO 42001 对照：32 组对应，EU AI Act：31 组对应 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-FF6600?style=flat-square) |
 | NIS2 指令（EU 2022/2555） | 第 21 条 10 项措施 + 第 23 条 5 项义务，成熟度 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-003399?style=flat-square) |
 | DORA（EU 2022/2554） | 5 大支柱下的 27 条条文（ICT 风险、事件通报、测试、TPRM、信息分享），成熟度 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-1565C0?style=flat-square) |
 | CIS Critical Security Controls v8 | 18 项控制下的 153 项防护措施，成熟度 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-2E7D32?style=flat-square) |
-| BSI IT-Grundschutz Kompendium | 10 个层级下的全部 111 个模组，成熟度 0–4。对照：ISO 27001↔BSI（386）、ISO 27701↔BSI（101）、ISO 27018↔BSI（51） | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-CC0000?style=flat-square) |
-| CSRM（瑞士 NCSC，2025） | 以物件为中心的模组 — IT 防护物件、20 项 NIST CSF 2.0 基线要求、二元状态、6 项控制目标 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-D32F2F?style=flat-square) |
+| BSI IT-Grundschutz Kompendium | 10 个层级下的全部 111 个模块，成熟度 0–4。对照：ISO 27001↔BSI（386）、ISO 27701↔BSI（101）、ISO 27018↔BSI（51） | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-CC0000?style=flat-square) |
+| CSRM（瑞士 NCSC，2025） | 以对象为中心的模块 — IT 防护对象、20 项 NIST CSF 2.0 基线要求、二元状态、6 项控制目标 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-D32F2F?style=flat-square) |
 | TISAX / VDA ISA 6.0 | 9 个领域下的 79 项要求，成熟度 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-1B5E20?style=flat-square) |
 | 瑞士 nDSG 2023 | 6 章下的 25 项条款，成熟度 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-C62828?style=flat-square) |
 | 瑞士 ISG（SR 128，2024） | 8 节下的 27 项要求、24 小时网络攻击通报；ISO 27001 对照：40 组对应 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-B71C1C?style=flat-square) |
 | EU 网络韧性法（2024/2847） | 6 个群组下的 26 项必要要求，成熟度 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-1A237E?style=flat-square) |
-| EU AI 法（2024/1689） | 9 条条文 — 第三章第二节高风险系统要求（第 8–15 条）加上第 27 条基本权利影响评鉴，成熟度 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-4527A0?style=flat-square) |
+| EU AI 法（2024/1689） | 9 条条文 — 第三章第二节高风险系统要求（第 8–15 条）加上第 27 条基本权利影响评估，成熟度 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-4527A0?style=flat-square) |
 | EU 云端主权框架（v1.2.1） | 8 项主权目标（SOV-1 至 SOV-8）、SEAL-0 至 SEAL-4 评分、加权主权分数 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-01579B?style=flat-square) |
 | COBIT 2019 | 40 项治理／管理目标，能力评分 0–4 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-7B1FA2?style=flat-square) |
 | CyberFundamentals（BE） | 41 项对齐 NIST CSF 2.0 的实务，成熟度 0–4；ISO 27001 对照：107 组对应 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-1A237E?style=flat-square) |
-| BaFin BAIT（DE） | 12 个模组下的 23 项要求，成熟度 0–4；ISO 27001 对照：69 组对应 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-B71C1C?style=flat-square) |
-| BSI C5:2026（DE） | 17 个领域下的 168 项准则 — 云计算合规准则目录 v1.0.1。用于德国与欧盟境内云端服务供应商的第三方认证。取代 C5:2020。 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-C62828?style=flat-square) |
+| BaFin BAIT（DE） | 12 个模块下的 23 项要求，成熟度 0–4；ISO 27001 对照：69 组对应 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-B71C1C?style=flat-square) |
+| BSI C5:2026（DE） | 17 个领域下的 168 项准则 — 云计算合规准则目录 v1.0.1。用于德国与欧盟境内云服务提供商的第三方认证。取代 C5:2020。 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-C62828?style=flat-square) |
 | BSI C3A（DE） | 6 个主权领域（策略／法律／数据／运营／供应链／技术）下的 30 个准则群组 — 促成云计算自主性的准则 v1.0。C5:2026 的配套，以符合 C5 为前提。 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-AD1457?style=flat-square) |
 | CSSF 20-750（LU） | 7 个领域下的 19 项要求，成熟度 0–4；ISO 27001 对照：47 组对应 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-4A148C?style=flat-square) |
 | ACN 指南（IT） | Determinazione obblighi di base（2025 年 4 月）— 37 项措施／87 项要求（重要）或 43 项措施／116 项要求（关键），成熟度 0–4；ISO 27001 对照：43 组对应 | ![Assessment Tool](https://img.shields.io/badge/Assessment_Tool-006630?style=flat-square) |
@@ -417,23 +417,23 @@ bash bootstrap.sh            # 一键完成：建立所有控制群组、汇入�
 | MITRE ATT&CK v19 | 威胁技术对应（Enterprise／ICS／Mobile）— 15 个战术下的 697 项技术，EPSS + CISA KEV 关联。 | ![v19](https://img.shields.io/badge/v19-DC143C?style=flat-square) |
 | MITRE ATLAS | AI/ML 对抗式威胁技术 | ![Mapped](https://img.shields.io/badge/Mapped-DC143C?style=flat-square) |
 | ENISA EUVD | 欧洲漏洞数据库 — 已遭利用与严重 CVE；每日更新；EUVD 浏览器，并以 `in_euvd` 旗标交叉充实 NVD CVE 索引 | ![Feed](https://img.shields.io/badge/TI_Feed-003399?style=flat-square) |
-| Exploit-DB | 每日攻击程式数据库（约 52K 笔）— 以 CVE ID 交叉参照至 NVD CVE；在相符的 CVE 上加入 `edb_id`、`edb_verified`（Metasploit 模组旗标）、`edb_description`。CVE 浏览器中有 EDB/EDB✓ 标签；支持仅 EDB 筛选。 | ![Feed](https://img.shields.io/badge/TI_Feed-8B0000?style=flat-square) |
+| Exploit-DB | 每日攻击程式数据库（约 52K 笔）— 以 CVE ID 交叉参照至 NVD CVE；在相符的 CVE 上加入 `edb_id`、`edb_verified`（Metasploit 模块旗标）、`edb_description`。CVE 浏览器中有 EDB/EDB✓ 标签；支持仅 EDB 筛选。 | ![Feed](https://img.shields.io/badge/TI_Feed-8B0000?style=flat-square) |
 | VulnCheck KEV | 每日更新 — VulnCheck 自家的已知遭利用漏洞目录，范围比 CISA 更广（约 67% 的项目不在 CISA KEV 中）；在 CVE 浏览器上加入 `in_vulncheck_kev` 旗标，与 CISA 的 `in_kev` 分开。VC-KEV 标签；支持仅 VulnCheck 筛选。需要 `VULNCHECK_API_KEY`（免费 Community 方案）。 | ![Feed](https://img.shields.io/badge/TI_Feed-6A1B9A?style=flat-square) |
-| CIRCL MISP OSINT Feed | 公开 MISP 情报源（卢森堡）— 每 6 小时清单差异；10 万+ 个 IOC（IP、网域、URL、杂凑），汇入时以 ATT&CK TID、Malpedia 家族代号、行为者代号交叉充实 | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
+| CIRCL MISP OSINT Feed | 公开 MISP 情报源（卢森堡）— 每 6 小时清单差异；10 万+ 个 IOC（IP、网域、URL、哈希），导入时以 ATT&CK TID、Malpedia 家族代号、行为者代号交叉充实 | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | Botvrij MISP OSINT Feed | 公开 MISP 情报源（Botvrij.eu）— 每 6 小时清单差异；以 IOC 值 + 来源与 CIRCL 去重 | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
-| AbuseIPDB | 每日黑名单（信心值 100 的前 1 万个 IP）；单一 IP 随选充实，快取 24 小时；OpenSearch `ti-abuseipdb-blacklist` 索引 | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
-| Malpedia | 每周恶意程式知识库 — 家族（别名、ATT&CK TID）、威胁行为者（国家、动机）；把 IOC 连结到恶意程式与行为者归因 | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
-| URLhaus | 每日恶意程式下载 URL 情报（abuse.ch）— URL 及对应的酬载杂凑；`ti-urlhaus` OpenSearch 索引 | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
-| ThreatFox | 每日恶意程式 IOC 情报（abuse.ch）— IP、网域、URL、杂凑，附信心分数与恶意程式家族标签；需要 `THREATFOX_API_KEY` | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
-| SSL Blacklist（SSLBL） | 每日 SSL 凭证黑名单（abuse.ch）— 恶意程式 C2 基础设施所用凭证的 SHA1 指纹；`ti-sslbl` 索引 | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
-| MalwareBazaar | 每日恶意程式样本杂凑情报（abuse.ch）— MD5/SHA1/SHA256 杂凑与家族分类；需要 `MALWAREBAZAAR_API_KEY` | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
+| AbuseIPDB | 每日黑名单（信心值 100 的前 1 万个 IP）；单一 IP 随选充实，缓存 24 小时；OpenSearch `ti-abuseipdb-blacklist` 索引 | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
+| Malpedia | 每周恶意程序知识库 — 家族（别名、ATT&CK TID）、威胁行为者（国家、动机）；把 IOC 连结到恶意程序与行为者归因 | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
+| URLhaus | 每日恶意程序下载 URL 情报（abuse.ch）— URL 及对应的载荷哈希；`ti-urlhaus` OpenSearch 索引 | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
+| ThreatFox | 每日恶意程序 IOC 情报（abuse.ch）— IP、网域、URL、哈希，附信心分数与恶意程序家族标签；需要 `THREATFOX_API_KEY` | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
+| SSL Blacklist（SSLBL） | 每日 SSL 凭证黑名单（abuse.ch）— 恶意程序 C2 基础设施所用凭证的 SHA1 指纹；`ti-sslbl` 索引 | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
+| MalwareBazaar | 每日恶意程序样本哈希情报（abuse.ch）— MD5/SHA1/SHA256 哈希与家族分类；需要 `MALWAREBAZAAR_API_KEY` | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | Feodo Tracker | 每日 C2 IP 黑名单（abuse.ch）— Emotet、QakBot、TrickBot、Dridex 僵尸网络的命令控制 IP；信心值 85；`ti-feodotracker` 索引 | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | AlienVault OTX | 每日 Open Threat Exchange pulses — 带 TLP 标记（WHITE/GREEN/AMBER/RED）、ATT&CK TID 的 IOC，以及由 pulse 订阅人数推得的信心分数；需要 `OTX_API_KEY` | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | Red Flag Domains | 每日可疑新注册网域情报 — `ti-red-flag-domains` 索引 | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
-| Stopforumspam | 每日垃圾讯息 IP／电子邮件／用户名称数据库 — `ti-stopforumspam` 索引 | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
-| VirusTotal 充实 | 每日 IOC 信心度充实 — 以 VT v3 API 查询既有 IOC，依各家防毒引擎检测比例更新信心分数；免费方案（约 500 次请求／日）；需要 `VT_API_KEY` | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
+| Stopforumspam | 每日垃圾消息 IP／电子邮件／用户名称数据库 — `ti-stopforumspam` 索引 | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
+| VirusTotal 充实 | 每日 IOC 信心度充实 — 以 VT v3 API 查询既有 IOC，依各家杀毒引擎检测比例更新信心分数；免费方案（约 500 次请求／日）；需要 `VT_API_KEY` | ![OSINT Feed](https://img.shields.io/badge/OSINT_Feed-8B0000?style=flat-square) |
 | GreyNoise 充实 | 随选 IP 充实查询 — 互联网噪音／扫描器分类、RIOT（已知合法服务）状态；免费 Community 方案每周上限 50 次查询，因此仅供手动查询，永不计划为批次情报；需要 `GREYNOISE_API_KEY` | ![Enrichment](https://img.shields.io/badge/Enrichment-6A1B9A?style=flat-square) |
-| EU GDPR / 瑞士 DSG | 安全与隐私控制措施对应、作业检核表 | ![Toolkit](https://img.shields.io/badge/Toolkit-FFD700?style=flat-square) |
+| EU GDPR / 瑞士 DSG | 安全与隐私控制措施对应、作业检查表 | ![Toolkit](https://img.shields.io/badge/Toolkit-FFD700?style=flat-square) |
 
 </details>
 
@@ -461,13 +461,13 @@ bash bootstrap.sh            # 一键完成：建立所有控制群组、汇入�
 
 ```
 ┌─────────────┐     ┌───────────────────┐     ┌────────────────┐
-│ Claude Code │     │ ISMS QA 引擎      │     │ ISMS Core 专案 │
+│ Claude Code │     │ ISMS QA 引擎      │     │ ISMS Core 项目 │
 │ (建置 + QA) │────▶│ 存在性 + 关键词 + │────▶│ (最终)         │
 │             │     │ 语意 三层检查     │     │                │
 └─────────────┘     └───────────────────┘     └────────────────┘
 ```
 
-全部 188 个框架产生器、53 项运营政策、21 个隐私控制群组、12 个云端控制群组与 12 个 AI 控制群组，都带有 `QA_VERIFIED` 标记，确认已通过完整 QA。
+全部 188 个框架生成器、53 项运营政策、21 个隐私控制群组、12 个云端控制群组与 12 个 AI 控制群组，都带有 `QA_VERIFIED` 标记，确认已通过完整 QA。
 
 详细 QA 标准请见 [CONTRIBUTING.zh-CN.md](CONTRIBUTING.zh-CN.md)。
 
@@ -477,18 +477,18 @@ bash bootstrap.sh            # 一键完成：建立所有控制群组、汇入�
 
 | 产品 | 控制群组 | 主要成品 | 语言 | 版本 |
 |---------|---------------|---------------|-----------|---------|
-| 🏗️ 框架 | 53 / 53 | 376 份 IMP · 188 个产生器 · 188 本工作簿 | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-00AA00?style=flat-square) |
-| ⚡ 运营 | 53 / 53 | 53 份 OP-POL · 53 个检核表产生器 | EN FR DE IT | ![v0.1](https://img.shields.io/badge/v0.1-Complete-00AA00?style=flat-square) |
-| 🔒 隐私 | 21 / 21 | 23 份 PRIV-POL · 42 份 IMP · 21 个产生器 | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-7030A0?style=flat-square) |
-| ☁️ 云端 | 16 / 16 | 16 份 CLD-POL · 32 份 IMP · 16 个产生器 | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-00897B?style=flat-square) |
-| 🤖 AI | 12 / 12 | 12 项 AI-POL · 20 份 IMP · 10 个产生器 | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-FF6B35?style=flat-square) |
-| 🖥️ 平台 | 共 100 | 44 个连接器 · 29 项评鉴 · 4,671 组对应 / 59 个轴 | 8 个司法管辖区 | ![Live v1.1](https://img.shields.io/badge/Live-v1.1-2E8B57?style=flat-square) |
+| 🏗️ 框架 | 53 / 53 | 376 份 IMP · 188 个生成器 · 188 本工作簿 | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-00AA00?style=flat-square) |
+| ⚡ 运营 | 53 / 53 | 53 份 OP-POL · 53 个检查表生成器 | EN FR DE IT | ![v0.1](https://img.shields.io/badge/v0.1-Complete-00AA00?style=flat-square) |
+| 🔒 隐私 | 21 / 21 | 23 份 PRIV-POL · 42 份 IMP · 21 个生成器 | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-7030A0?style=flat-square) |
+| ☁️ 云端 | 16 / 16 | 16 份 CLD-POL · 32 份 IMP · 16 个生成器 | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-00897B?style=flat-square) |
+| 🤖 AI | 12 / 12 | 12 项 AI-POL · 20 份 IMP · 10 个生成器 | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-FF6B35?style=flat-square) |
+| 🖥️ 平台 | 共 100 | 44 个连接器 · 29 项评估 · 4,671 组对应 / 59 个轴 | 8 个司法管辖区 | ![Live v1.1](https://img.shields.io/badge/Live-v1.1-2E8B57?style=flat-square) |
 
 ---
 
 ## 📂 储存库结构
 
-完整的储存库地图（含逐数据夹与逐成品类型描述）请见 [STRUCTURE.zh-CN.md](STRUCTURE.zh-CN.md)。
+完整的储存库地图（含逐文件夹与逐成品类型描述）请见 [STRUCTURE.zh-CN.md](STRUCTURE.zh-CN.md)。
 
 ---
 
@@ -498,8 +498,8 @@ bash bootstrap.sh            # 一键完成：建立所有控制群组、汇入�
 |----------|-------------|
 | [PARADIGM.zh-CN.md](PARADIGM.zh-CN.md) | 🧭 产品总览与范式转移指南 — 从这里开始 |
 | [PLATFORM.zh-CN.md](PLATFORM.zh-CN.md) | 🖥️ 平台架构、功能与完整部署指南（含 Docker Compose 快速开始） |
-| [STRUCTURE.zh-CN.md](STRUCTURE.zh-CN.md) | 📂 储存库地图 — 所有数据夹与成品类型描述 |
-| [COMPLIANCE.zh-CN.md](COMPLIANCE.zh-CN.md) | 📋 全部 29 个合规评鉴模组 — 涵盖范围、缺口、适用对象 |
+| [STRUCTURE.zh-CN.md](STRUCTURE.zh-CN.md) | 📂 储存库地图 — 所有文件夹与成品类型描述 |
+| [COMPLIANCE.zh-CN.md](COMPLIANCE.zh-CN.md) | 📋 全部 29 个合规评估模块 — 涵盖范围、缺口、适用对象 |
 | [isms-core-framework/CONTROLS.md](isms-core-framework/CONTROLS.md) | 📋 框架控制套件索引（53 个套件） |
 | [isms-core-framework/COVERAGE.md](isms-core-framework/COVERAGE.md) | 🗺️ 93 项附录 A 控制措施 → 53 个套件的对应 |
 | [isms-core-framework/STACKING.md](isms-core-framework/STACKING.md) | 🔗 控制措施分组方法论 |
@@ -515,7 +515,7 @@ bash bootstrap.sh            # 一键完成：建立所有控制群组、汇入�
 
 - **漏洞通报：** 安全问题请寄至 **info@isms-core.com**（主旨：「ISMS CORE Security」）
 - **安全使用：** 执行前先阅读脚本。请在虚拟环境中执行。在证明并非如此之前，请把产出的成品当作机密数据处理。
-- **不要放机密：** 请勿把凭证、权杖、私密密钥或客户数据提交到本储存库或产出的工作簿中。
+- **不要放机密：** 请勿把凭证、令牌、私钥或客户数据提交到本储存库或产出的工作簿中。
 
 ---
 
@@ -530,7 +530,7 @@ bash bootstrap.sh            # 一键完成：建立所有控制群组、汇入�
 
 ---
 
-## 📞 联络我们
+## 📞 联系我们
 
 <p align="center">
   <strong>The ISMS Core Project</strong>

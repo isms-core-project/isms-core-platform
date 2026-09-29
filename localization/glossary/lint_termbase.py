@@ -44,6 +44,7 @@ def lint(termbase: dict) -> list[str]:
     # Internal / Confidential / Public); 'classification' as a term is
     # 分類/分类. Same word, different decision — both belong in the file.
     seen: dict[tuple[str, str], int] = {}
+    hant_seen: dict[str, tuple[int, str]] = {}
 
     counts: dict[str, int] = {}
     for e in entries:
@@ -75,6 +76,20 @@ def lint(termbase: dict) -> list[str]:
                 f"{where}: duplicate of entry[{seen[key]}] (same term and kind)"
             )
         seen[key] = i
+
+        # Same hant key, different hans: the dangerous one. Derivation builds a
+        # dict keyed on hant, so the later entry silently wins and the earlier
+        # one becomes dead text — no error, just a different translation of
+        # whichever documents happen to hit it. Two entries sharing a hant key
+        # *and* a hans are fine and intentional (Workflow and process are both
+        # 流程 in this corpus), which is why the check is on the pair.
+        prior = hant_seen.get(e["hant"].strip())
+        if prior is not None and prior[1] != e["hans"].strip():
+            errors.append(
+                f"{where}: hant {e['hant']!r} already maps to {prior[1]!r} "
+                f"at entry[{prior[0]}], but this entry says {e['hans']!r}"
+            )
+        hant_seen.setdefault(e["hant"].strip(), (i, e["hans"].strip()))
 
         if e["en"].strip().lower() in keep:
             errors.append(f"{where}: also listed in keep_as_is")

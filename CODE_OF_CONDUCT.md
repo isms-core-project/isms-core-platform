@@ -1,5 +1,7 @@
 # Code of Conduct
 
+<p align="center"><strong>English</strong> · <a href="CODE_OF_CONDUCT.zh-TW.md">繁體中文</a> · <a href="CODE_OF_CONDUCT.zh-CN.md">简体中文</a></p>
+
 ISMS CORE is an engineering-first security project. We aim for a professional, respectful environment focused on high-quality, verifiable work.
 
 ## Our Standards

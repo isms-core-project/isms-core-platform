@@ -1618,6 +1618,181 @@
       "hans": "自定义",
       "kind": "term",
       "note": "OpenCC yields 自订, which falls short of the mainland 自定义."
+    },
+    {
+      "en": "generator",
+      "hant": "產生器",
+      "hans": "生成器",
+      "kind": "term",
+      "variant_note": "TW 產生器; mainland 生成器."
+    },
+    {
+      "en": "module",
+      "hant": "模組",
+      "hans": "模块",
+      "kind": "term",
+      "variant_note": "TW 模組; mainland 模块."
+    },
+    {
+      "en": "hash",
+      "hant": "雜湊",
+      "hans": "哈希",
+      "kind": "term",
+      "variant_note": "TW 雜湊; mainland 哈希 (杂凑 is not a word)."
+    },
+    {
+      "en": "import",
+      "hant": "匯入",
+      "hans": "导入",
+      "kind": "term",
+      "variant_note": "TW 匯入; mainland 导入."
+    },
+    {
+      "en": "export",
+      "hant": "匯出",
+      "hans": "导出",
+      "kind": "term",
+      "variant_note": "TW 匯出; mainland 导出."
+    },
+    {
+      "en": "folder",
+      "hant": "資料夾",
+      "hans": "文件夹",
+      "kind": "term",
+      "variant_note": "Longer than the data entry, so it wins: without it 資料夾 would be rendered 数据夹, which is not a word."
+    },
+    {
+      "en": "sign in",
+      "hant": "登入",
+      "hans": "登录",
+      "kind": "term",
+      "variant_note": "TW 登入; mainland 登录."
+    },
+    {
+      "en": "message",
+      "hant": "訊息",
+      "hans": "消息",
+      "kind": "term",
+      "variant_note": "TW 訊息; mainland 消息."
+    },
+    {
+      "en": "source code",
+      "hant": "程式碼",
+      "hans": "代码",
+      "kind": "term",
+      "variant_note": "TW 程式碼; mainland 代码."
+    },
+    {
+      "en": "token",
+      "hant": "權杖",
+      "hans": "令牌",
+      "kind": "term",
+      "variant_note": "TW 權杖 (a token); mainland 令牌."
+    },
+    {
+      "en": "cache",
+      "hant": "快取",
+      "hans": "缓存",
+      "kind": "term",
+      "variant_note": "TW 快取; mainland 缓存."
+    },
+    {
+      "en": "project",
+      "hant": "專案",
+      "hans": "项目",
+      "kind": "term",
+      "variant_note": "TW 專案; mainland 项目."
+    },
+    {
+      "en": "asynchronous",
+      "hant": "非同步",
+      "hans": "异步",
+      "kind": "term",
+      "variant_note": "TW 非同步; mainland 异步."
+    },
+    {
+      "en": "call graph",
+      "hant": "呼叫圖",
+      "hans": "调用图",
+      "kind": "term",
+      "variant_note": "Keyed on the three-character form: 呼叫 alone is 'call' in 呼叫中心, where mainland also writes 呼叫, so a bare 呼叫 entry would break it."
+    },
+    {
+      "en": "character",
+      "hant": "字元",
+      "hans": "字符",
+      "kind": "term",
+      "variant_note": "TW 字元; mainland 字符. Distinct from 字串 (String -> 字符串), which is already listed."
+    },
+    {
+      "en": "private key",
+      "hant": "私密金鑰",
+      "hans": "私钥",
+      "kind": "term",
+      "variant_note": "Longer than the key entry, so it wins: 金鑰 alone would give 私密密钥, and mainland writes 私钥."
+    },
+    {
+      "en": "assessment",
+      "hant": "評鑑",
+      "hans": "评估",
+      "kind": "term",
+      "variant_note": "TW 評鑑; mainland 评估. The coordinated form 風險評鑑與處理 is listed separately and wins on length."
+    },
+    {
+      "en": "checklist",
+      "hant": "檢核表",
+      "hans": "检查表",
+      "kind": "term",
+      "variant_note": "TW 檢核表; mainland 检查表."
+    },
+    {
+      "en": "contact",
+      "hant": "聯絡",
+      "hans": "联系",
+      "kind": "term",
+      "variant_note": "TW 聯絡; mainland 联系. The window entry 聯絡窗口 is listed separately and wins on length."
+    },
+    {
+      "en": "object",
+      "hant": "物件",
+      "hans": "对象",
+      "kind": "term",
+      "variant_note": "TW 物件; mainland 对象."
+    },
+    {
+      "en": "setting",
+      "hant": "設定",
+      "hans": "设置",
+      "kind": "term",
+      "variant_note": "TW 設定; mainland 设置."
+    },
+    {
+      "en": "malware",
+      "hant": "惡意程式",
+      "hans": "恶意程序",
+      "kind": "term",
+      "variant_note": "TW 惡意程式; mainland 恶意程序. The software entry 軟體 -> 软件 covers the 惡意軟體 spelling separately."
+    },
+    {
+      "en": "payload",
+      "hant": "酬載",
+      "hans": "载荷",
+      "kind": "term",
+      "variant_note": "TW 酬載; mainland 载荷."
+    },
+    {
+      "en": "antivirus engine",
+      "hant": "防毒引擎",
+      "hans": "杀毒引擎",
+      "kind": "term",
+      "variant_note": "TW 防毒引擎; mainland 杀毒引擎."
+    },
+    {
+      "en": "cloud service provider",
+      "hant": "雲端服務供應商",
+      "hans": "云服务提供商",
+      "kind": "term",
+      "variant_note": "TW 雲端服務供應商; mainland 云服务提供商. OpenCC alone yields 云端服务供应商."
     }
   ]
 }

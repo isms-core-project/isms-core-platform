@@ -1,5 +1,7 @@
 # Credits & Acknowledgements
 
+<p align="center"><strong>English</strong> · <a href="CREDITS.zh-TW.md">繁體中文</a> · <a href="CREDITS.zh-CN.md">简体中文</a></p>
+
 The connector architecture, asynchronous worker patterns (Celery beat/worker split),
 service topology, and Docker Compose structure in ISMS CORE draw from production-grade
 patterns established by [Filigran](https://filigran.io) and their open-source projects:

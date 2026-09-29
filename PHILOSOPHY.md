@@ -1,5 +1,7 @@
 # 🎋 ISMS CORE Philosophy
 
+<p align="center"><strong>English</strong> · <a href="PHILOSOPHY.zh-TW.md">繁體中文</a> · <a href="PHILOSOPHY.zh-CN.md">简体中文</a></p>
+
 > *"The first principle is that you must not fool yourself—and you are the easiest person to fool."*
 > — Richard Feynman
 
