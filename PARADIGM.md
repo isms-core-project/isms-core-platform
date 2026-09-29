@@ -4,6 +4,8 @@
 
 <h1 align="center">🧭 Understanding the Paradigm</h1>
 
+<p align="center"><strong>English</strong> · <a href="PARADIGM.zh-TW.md">繁體中文</a> · <a href="PARADIGM.zh-CN.md">简体中文</a></p>
+
 <p align="center">
   <strong>Why ISMS CORE is engineered differently — and how to choose between its products</strong>
 </p>
@@ -14,7 +16,7 @@
   <a href="https://www.iso.org/standard/76559.html"><img src="https://img.shields.io/badge/ISO_27018-2025-00897B?style=flat-square" alt="ISO 27018:2025"/></a>
   <a href="https://www.iso.org/standard/82878.html"><img src="https://img.shields.io/badge/ISO_27017-2026-0288D1?style=flat-square" alt="ISO 27017:2026"/></a>
   <a href="#framework-sse--secure-systems-engineering"><img src="https://img.shields.io/badge/🏗️_FRAMEWORK-SSE_Engineering-9400D3?style=flat-square" alt="FRAMEWORK SSE"/></a>
-  <a href="#operational-foundation-isms-for-smes"><img src="https://img.shields.io/badge/⚡_OPERATIONAL-SME_Foundation-FF6600?style=flat-square" alt="OPERATIONAL"/></a>
+  <a href="#-operational-foundation-isms-for-smes"><img src="https://img.shields.io/badge/⚡_OPERATIONAL-SME_Foundation-FF6600?style=flat-square" alt="OPERATIONAL"/></a>
   <a href="PHILOSOPHY.md"><img src="https://img.shields.io/badge/Anti--Cargo--Cult-Engineering-DC143C?style=flat-square" alt="Anti-Cargo-Cult"/></a>
 </p>
 

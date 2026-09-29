@@ -4,6 +4,8 @@
 
 <h1 align="center">📂 Repository Structure</h1>
 
+<p align="center"><strong>English</strong> · <a href="STRUCTURE.zh-TW.md">繁體中文</a> · <a href="STRUCTURE.zh-CN.md">简体中文</a></p>
+
 <p align="center">
   <em>Complete map of all folders, files, and artifact types in this repository.</em>
 </p>

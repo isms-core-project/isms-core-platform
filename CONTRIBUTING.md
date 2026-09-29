@@ -1,5 +1,7 @@
 <h1 align="center">🎋 Contributing to ISMS CORE</h1>
 
+<p align="center"><strong>English</strong> · <a href="CONTRIBUTING.zh-TW.md">繁體中文</a> · <a href="CONTRIBUTING.zh-CN.md">简体中文</a></p>
+
 <p align="center">
   <img src="https://img.shields.io/badge/QA-Engineering_First-2E8B57?style=for-the-badge" alt="QA Engineering First"/>
 </p>

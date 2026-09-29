@@ -4,6 +4,8 @@
 
 <h1 align="center">🎋 ISMS CORE Platform</h1>
 
+<p align="center"><strong>English</strong> · <a href="PLATFORM.zh-TW.md">繁體中文</a> · <a href="PLATFORM.zh-CN.md">简体中文</a></p>
+
 <p align="center">
   <strong>Production Deployment Guide — API, WebUI, and Connector Layer</strong>
 </p>
@@ -956,7 +958,7 @@ docker compose logs isms-core-beat --tail=20   # Confirm scheduler is running
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `COMPOSE_PROFILES` | Yes | Activates service groups — see [Deployment Profiles](#deployment-profiles--set-in-env-not-on-the-cli) table above |
+| `COMPOSE_PROFILES` | Yes | Activates service groups — see [Deployment Profiles](#services) table above |
 | `HOST_IP` | Yes | Server IP — used in nginx self-signed cert SAN and frontend API URL |
 | `FQDN` | No | Domain name — enables Let's Encrypt TLS when set |
 | `PLATFORM_URL` | Yes | Full URL (e.g. `https://10.0.0.112`) |
