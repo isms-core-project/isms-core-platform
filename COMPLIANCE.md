@@ -4,6 +4,8 @@
 
 <h1 align="center">🎋 ISMS CORE — Compliance Assessment Modules</h1>
 
+<p align="center"><strong>English</strong> · <a href="COMPLIANCE.zh-TW.md">繁體中文</a> · <a href="COMPLIANCE.zh-CN.md">简体中文</a></p>
+
 <p align="center">
   <strong>Twenty-nine built-in frameworks + custom YAML import. One platform. No separate tools required.</strong>
 </p>
@@ -39,7 +41,7 @@ All compliance assessment modules live under the **Compliance Assessments** side
 | [BSI IT-Grundschutz](#bsi-it-grundschutz-kompendium) | German standard | 111 Bausteine | 10 Layers | 0–4 | Germany / DACH / IT-Grundschutz cert |
 | [CSRM (NCSC CH)](#csrm-swiss-ncsc-2025) | Swiss NCSC | 20 baseline requirements | 5 CSF Functions | Binary | Swiss critical infrastructure |
 | [Swiss ISG (SR 128)](#swiss-isg-sr-128) | Swiss law | 27 requirements | 8 Sections | 0–4 | Swiss federal bodies & critical infrastructure operators |
-| [TISAX](#tisaxvida-isa-60) | VDA/ENX | 79 requirements | 9 Domains | 0–4 | Automotive supply chain |
+| [TISAX](#tisax--vda-isa-60) | VDA/ENX | 79 requirements | 9 Domains | 0–4 | Automotive supply chain |
 | [Swiss nDSG](#swiss-ndsg-2023) | Swiss law | 25 provisions | 6 Chapters | 0–4 | Organisations processing Swiss personal data |
 | [EU Cyber Resilience Act](#eu-cyber-resilience-act-20242847) | EU Regulation | 26 requirements | 6 Groups | 0–4 | EU product manufacturers |
 | [EU AI Act](#eu-ai-act-20241689) | EU Regulation | 9 articles | Ch. III Sec. 2 + Art. 27 | 0–4 | EU AI system providers/deployers |
@@ -57,7 +59,7 @@ All compliance assessment modules live under the **Compliance Assessments** side
 | [NCSC CAF v4.0 (UK)](#ncsc-caf-v40-uk) | NCSC UK | 41 Contributing Outcomes | 14 Principles / 4 Objectives | 0/2/4 | UK operators of essential services / CNI |
 | [ReCyF v2.5 — France NIS2](#recyf-v25--france-nis2-anssi) | ANSSI | 20 Security Objectives | 4 Pillars | 0–4 | French NIS2 entities (EI & EE) — transposition pending |
 | [BSI C5:2026](#bsi-c52026) | BSI (Germany) | 168 criteria | 17 Domains | 0–4 | Cloud service providers (DE/EU) seeking C5 attestation |
-| [BSI C3A](#bsi-c3a-criteria-enabling-cloud-computing-autonomy) | BSI (Germany) | 30 criterion groups | 6 SOV Domains | 0–4 | Cloud CSPs + customers evaluating cloud sovereignty |
+| [BSI C3A](#bsi-c3a--criteria-enabling-cloud-computing-autonomy) | BSI (Germany) | 30 criterion groups | 6 SOV Domains | 0–4 | Cloud CSPs + customers evaluating cloud sovereignty |
 | [PCI DSS v4.0.1](#pci-dss-v401) | PCI SSC | 323 sub-requirements | 12 requirements / 6 milestones | Milestone | Organisations handling cardholder data |
 | [FINMA](#finma) | Swiss regulator | 21 requirements | 3 circulars/guidance | 0–4 | Swiss financial institutions (banks, insurers) |
 | [Custom (YAML)](#custom-frameworks-yaml-import) | User-defined | User-defined | User-defined | User-defined | All |
