@@ -26,29 +26,10 @@ TERMBASE = Path(__file__).with_name("zh-termbase.json")
 
 VALID_KINDS = {"label", "heading", "term", "value"}
 
-# Characters that exist only in Simplified Chinese. None may appear in hant.
-SIMPLIFIED_ONLY = set(
-    "网络据软应权审记录风险评训练认识营运产场结构户账问访远动设实体确档标级态历变周"
-    "质证范围键点执讯资简单复备库览报径联义项适声沟类条规隐础码镜华员层务护严开阅机"
-    "与关后说们为谁么盖图称价业赖预头顶构则续频见没书让从内义气"
-    "测试验读写储传输费转达违该个会区难进过还这对时题样种统线织习学"
-)
-# Characters shared by both scripts are excluded on purpose (事, 它, 只...),
-# as are the word-split merges 准/準 (核准 vs 標準) and 只/隻: neither set may
-# contain a character whose script depends on the word rather than the glyph.
-# The two sets below mirror each other one character at a time.
-
-# Characters that exist only in Traditional Chinese. None may appear in hans.
-TRADITIONAL_ONLY = set(
-    "網絡據軟應權審記錄風險評訓練認識營運產場結構戶帳問訪遠動設實體確檔標級態歷變週"
-    "質證範圍鍵點執訊資簡單復備庫覽報徑聯義項適聲溝類條規隱礎碼鏡華員層務護嚴開閱機"
-    "與關後說們為誰麼蓋圖稱價業賴預頭頂構則續頻見沒書讓從內義氣"
-    "測試驗讀寫儲傳輸費轉達違該個會區難進過還這對時題樣種統線織習學"
-)
-
-
-def cjk(text: str) -> str:
-    return "".join(ch for ch in text if "㐀" <= ch <= "鿿")
+# The character sets live in their own module because the document gate
+# (localization/zh_check.py) needs the same facts. See charsets.py for why the
+# sets are validated against OpenCC rather than trusted as typed.
+from charsets import SIMPLIFIED_ONLY, TRADITIONAL_ONLY, cjk  # noqa: E402
 
 
 def lint(termbase: dict) -> list[str]:

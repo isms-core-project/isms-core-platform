@@ -25,6 +25,9 @@ import sys
 from dataclasses import dataclass
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent / "glossary"))
+from charsets import leaks  # noqa: E402
+
 # Structural markers whose counts must match the source exactly.
 H2_RE = re.compile(r"^## ")
 H3_RE = re.compile(r"^### ")
@@ -149,6 +152,20 @@ def check(source_text: str, translated_text: str, lang: str) -> list[Finding]:
         findings.append(Finding(
             "promotion",
             "missing '<!-- QA_VERIFIED: YYYY-MM-DD -->' footer",
+        ))
+
+    # --- Gate 5: one script, not two --------------------------------------
+    # A hand-written translation picks up stray characters from the other
+    # script: 发现 typed into a Traditional file, or 記錄 into a Simplified one.
+    # It reads as normal Chinese and survives every other gate, so it needs its
+    # own check. Reported per character with line numbers, because a bare list
+    # of glyphs is not actionable in a 150-line document.
+    for ch, lines in sorted(leaks(translated_text, lang).items()):
+        shown = ", ".join(str(n) for n in lines[:8])
+        more = f" (+{len(lines) - 8} more)" if len(lines) > 8 else ""
+        findings.append(Finding(
+            "script",
+            f"{ch!r} is not a {lang} character — lines {shown}{more}",
         ))
 
     return findings

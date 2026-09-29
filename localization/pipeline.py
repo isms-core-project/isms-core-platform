@@ -123,7 +123,10 @@ def derive_simplified(hant_path: Path, out_path: Path | None = None,
     if out_path is None:
         name = hant_path.name.replace(f" - {lang_suffix(from_lang)}.md",
                                       f" - {lang_suffix(to_lang)}.md")
-        out_path = hant_path.parent / to_lang / name
+        # Language directories are siblings under the document-type directory
+        # (POL/de, POL/fr, POL/zh-CN), so the target is hant's grandparent —
+        # not hant.parent, which would nest zh-CN inside zh-TW.
+        out_path = hant_path.parent.parent / to_lang / name
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(derived, encoding="utf-8")
     return out_path
@@ -201,7 +204,8 @@ def main(argv: list[str] | None = None) -> int:
     p_audit.add_argument("--pack", action="append", default=[])
 
     args = ap.parse_args(argv)
-    packs = args.pack or PACKS
+    # Only plan and audit take --pack; derive names its file directly.
+    packs = getattr(args, "pack", None) or PACKS
 
     if args.cmd == "plan":
         pending = plan(packs, args.lang)

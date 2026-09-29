@@ -109,7 +109,11 @@ def test_derivation_preserves_line_count(tmp_path):
     )
     out = pipeline.derive_simplified(hant, termbase=TERMBASE)
     assert out.name == "ISMS-OP-POL-T.1 - 範例 - ZH-CN.md"
+    # Sibling of zh-TW, not nested inside it: assert on the grandparent too,
+    # or an IMP/zh-TW/zh-CN path would satisfy a check on .parent.name alone.
     assert out.parent.name == "zh-CN"
+    assert out.parent.parent == hant.parent.parent
+    assert out.parent.parent.name != "zh-TW"
     derived = out.read_text(encoding="utf-8")
     assert derived.count("\n") + 1 == hant.read_text(encoding="utf-8").count("\n") + 1
     assert "信息安全" in derived and "网络" in derived
@@ -161,3 +165,36 @@ def test_audit_counts_real_packs():
     assert report["english_documents"] > 40
     assert report["languages"]["de"] > 40
     assert report["languages"]["zh-TW"] == 0
+
+
+# --- CLI entry points -------------------------------------------------------
+# The functions above are the tested units, so a break in the argument wiring
+# between main() and them stays invisible: `derive` shipped reading args.pack,
+# which only plan and audit declare, and crashed on every invocation.
+
+def test_cli_derive_writes_the_simplified_sibling(tmp_path, capsys):
+    hant = tmp_path / "zh-TW" / "ISMS-OP-POL-T.1 - 範例 - ZH-TW.md"
+    hant.parent.mkdir(parents=True)
+    hant.write_text(
+        "<!-- ISMS-CORE:POLICY:ISMS-OP-POL-T.1-ZH-TW:operational:OP-POL:t.1 -->\n"
+        "**ISMS-OP-POL-T.1 — 範例**\n\n本政策說明資訊安全。\n",
+        encoding="utf-8",
+    )
+    assert pipeline.main(["derive", str(hant)]) == 0
+    out = hant.parent.parent / "zh-CN" / "ISMS-OP-POL-T.1 - 範例 - ZH-CN.md"
+    assert out.exists(), capsys.readouterr().out
+    assert "信息安全" in out.read_text(encoding="utf-8")
+
+
+def test_cli_plan_lists_pending_and_exits_zero(capsys):
+    assert pipeline.main(["plan", "--pack", "isms-core-operational",
+                          "--lang", "zh-TW"]) == 0
+    out = capsys.readouterr().out
+    assert "pending for zh-TW" in out
+
+
+def test_cli_audit_reports_coverage(capsys):
+    assert pipeline.main(["audit", "--pack", "isms-core-operational"]) == 0
+    out = capsys.readouterr().out
+    assert "English documents:" in out
+    assert "Translated in no language:" in out
