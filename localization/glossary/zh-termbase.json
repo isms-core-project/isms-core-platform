@@ -1599,6 +1599,27 @@
       "hans": "风险评估与处置",
       "kind": "term",
       "note": "Added because the coordinated form defeats single-term substitution: in 風險評鑑與處理程序 the entry for 'risk treatment' (風險處理) is not contiguous, so only 處理 was rewritten and the mainland 处置 was lost. Entries are applied longest-first, so this one wins over both parts."
+    },
+    {
+      "en": "configuration",
+      "hant": "組態",
+      "hans": "配置",
+      "kind": "term",
+      "note": "Neither OpenCC dictionary localises this: t2s and tw2sp both emit 组态, and 组态 is not mainland usage. Found on 存取控制組態 in CLD-SEC-IMP-A.5.38-UG."
+    },
+    {
+      "en": "point of contact",
+      "hant": "聯絡窗口",
+      "hans": "联系窗口",
+      "kind": "term",
+      "note": "聯絡 is the Taiwan/HK form; the mainland press writes 联系. OpenCC leaves 联络 alone, which reads as an unlocalised phrase rather than a wrong glyph. Found by diffing the derived output against the tw2sp dictionary."
+    },
+    {
+      "en": "custom",
+      "hant": "自訂",
+      "hans": "自定义",
+      "kind": "term",
+      "note": "OpenCC yields 自订, which falls short of the mainland 自定义."
     }
   ]
 }

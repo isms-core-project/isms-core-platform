@@ -215,3 +215,46 @@ def test_coordinated_term_beats_its_own_component():
     assert pipeline.to_hans("風險評鑑與處理程序", TERMBASE, CC) == "风险评估与处置程序"
     # The verb sense must not be dragged along by the term entry.
     assert pipeline.to_hans("風險予以處理", TERMBASE, CC) == "风险予以处理"
+
+
+def test_residue_converter_may_not_override_the_termbase():
+    """The residue pass runs last, so it must only convert glyphs, never words.
+
+    Swapping t2s for tw2sp looks like a quality upgrade: it is word-aware for
+    Taiwan vocabulary and it did earn two real termbase entries (聯絡窗口 ->
+    联系窗口 and 組態 -> 配置, the latter it does not fix either). But it also
+    contradicts terms the termbase has already decided — 程序 'procedure', an
+    entry deliberately declared identical in both scripts, becomes 进程 (an OS
+    process); 核心原則 becomes 内核原則 (a kernel). Running last, it wins every
+    such disagreement silently, and a dictionary is the wrong layer to overrule
+    a reviewed decision.
+
+    So the converter is pinned by behaviour rather than by name. Two groups
+    below: the strings the two dictionaries disagree on, and the gaps that were
+    closed in the termbase instead — for those, the termbase runs first, so
+    both converters agree and the cheaper fix carries no risk at all.
+    """
+    tw2sp = opencc.OpenCC("tw2sp")
+
+    # Where tw2sp disagrees with a curated decision. Because it runs last, each
+    # of these would silently win. The fixed strings say what the shipped
+    # pipeline must keep producing.
+    for hant, shipped in (
+        ("程序", "程序"),          # termbase entry, declared same in both scripts
+        ("文件標題", "文件标题"),    # ditto — tw2sp says 文档标题
+        ("核心原則", "核心原则"),    # residue prose — tw2sp says 内核原则 (a kernel)
+    ):
+        got = pipeline.to_hans(hant, TERMBASE, CC)
+        assert got == shipped, f"shipped converter now yields {got!r} for {hant}"
+        assert pipeline.to_hans(hant, TERMBASE, tw2sp) != shipped, (
+            f"{hant} no longer demonstrates the tw2sp hazard — re-check whether "
+            f"switching the residue converter is now safe"
+        )
+
+    # Gaps closed in the termbase rather than by the converter. 稽核 is the ISO
+    # mainland term 审计, not the generic 审核 tw2sp would give; 聯絡窗口 and
+    # 組態 are Taiwan phrasings OpenCC leaves alone. All three now resolve
+    # before either converter sees them.
+    for hant, hans in (("稽核", "审计"), ("聯絡窗口", "联系窗口"), ("組態", "配置")):
+        assert pipeline.to_hans(hant, TERMBASE, CC) == hans
+        assert pipeline.to_hans(hant, TERMBASE, tw2sp) == hans
