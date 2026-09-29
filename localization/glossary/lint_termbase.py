@@ -73,6 +73,12 @@ def lint(termbase: dict) -> list[str]:
         if errors and errors[-1].startswith(where):
             continue
 
+        # The derivation pass substitutes these literally; a newline inside a
+        # term would change the file's line count.
+        for field in ("en", "hant", "hans"):
+            if "\n" in e[field]:
+                errors.append(f"{where}: {field} contains a newline")
+
         if e["kind"] not in VALID_KINDS:
             errors.append(f"{where}: kind {e['kind']!r} not in {sorted(VALID_KINDS)}")
 
