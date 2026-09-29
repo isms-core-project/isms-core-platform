@@ -1,5 +1,7 @@
 # Threat Intelligence
 
+<p align="center"><strong>English</strong> · <a href="16-threat-intelligence.zh-TW.md">繁體中文</a> · <a href="16-threat-intelligence.zh-CN.md">简体中文</a></p>
+
 <!-- ISMS-CORE:USER-MANUAL:16-threat-intelligence:v1.3:2026-08-22 -->
 
 ---

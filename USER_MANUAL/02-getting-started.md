@@ -1,5 +1,7 @@
 # Getting Started
 
+<p align="center"><strong>English</strong> · <a href="02-getting-started.zh-TW.md">繁體中文</a> · <a href="02-getting-started.zh-CN.md">简体中文</a></p>
+
 <!-- ISMS-CORE:USER-MANUAL:02-getting-started:v1.0:2026-04-16 -->
 
 ---

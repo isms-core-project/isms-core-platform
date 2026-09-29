@@ -1,5 +1,7 @@
 # Policies & Documents
 
+<p align="center"><strong>English</strong> · <a href="05-policies-documents.zh-TW.md">繁體中文</a> · <a href="05-policies-documents.zh-CN.md">简体中文</a></p>
+
 <!-- ISMS-CORE:USER-MANUAL:05-policies-documents:v1.0:2026-04-16 -->
 
 ---

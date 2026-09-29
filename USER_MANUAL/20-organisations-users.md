@@ -1,5 +1,7 @@
 # Organisations & Users
 
+<p align="center"><strong>English</strong> · <a href="20-organisations-users.zh-TW.md">繁體中文</a> · <a href="20-organisations-users.zh-CN.md">简体中文</a></p>
+
 <!-- ISMS-CORE:USER-MANUAL:20-organisations-users:v1.0:2026-04-16 -->
 
 ---

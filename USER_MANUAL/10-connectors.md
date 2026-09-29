@@ -1,5 +1,7 @@
 # Automated Evidence Connectors
 
+<p align="center"><strong>English</strong> · <a href="10-connectors.zh-TW.md">繁體中文</a> · <a href="10-connectors.zh-CN.md">简体中文</a></p>
+
 <!-- ISMS-CORE:USER-MANUAL:10-connectors:v1.0:2026-04-16 -->
 
 ---

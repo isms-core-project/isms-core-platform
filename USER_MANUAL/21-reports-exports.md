@@ -1,5 +1,7 @@
 # Reports & Exports
 
+<p align="center"><strong>English</strong> · <a href="21-reports-exports.zh-TW.md">繁體中文</a> · <a href="21-reports-exports.zh-CN.md">简体中文</a></p>
+
 <!-- ISMS-CORE:USER-MANUAL:21-reports-exports:v1.0:2026-04-16 -->
 
 ---

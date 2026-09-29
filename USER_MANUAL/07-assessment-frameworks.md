@@ -1,5 +1,7 @@
 # Assessment Frameworks
 
+<p align="center"><strong>English</strong> · <a href="07-assessment-frameworks.zh-TW.md">繁體中文</a> · <a href="07-assessment-frameworks.zh-CN.md">简体中文</a></p>
+
 <!-- ISMS-CORE:USER-MANUAL:07-assessment-frameworks:v1.0:2026-04-16 -->
 
 ---

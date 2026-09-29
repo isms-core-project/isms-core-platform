@@ -1,5 +1,7 @@
 # Gap Management
 
+<p align="center"><strong>English</strong> · <a href="08-gap-management.zh-TW.md">繁體中文</a> · <a href="08-gap-management.zh-CN.md">简体中文</a></p>
+
 <!-- ISMS-CORE:USER-MANUAL:08-gap-management:v1.0:2026-04-16 -->
 
 ---

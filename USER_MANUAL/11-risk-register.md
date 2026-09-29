@@ -1,5 +1,7 @@
 # Risk Register
 
+<p align="center"><strong>English</strong> · <a href="11-risk-register.zh-TW.md">繁體中文</a> · <a href="11-risk-register.zh-CN.md">简体中文</a></p>
+
 <!-- ISMS-CORE:USER-MANUAL:11-risk-register:v1.0:2026-04-16 -->
 
 ---

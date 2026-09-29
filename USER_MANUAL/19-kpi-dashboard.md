@@ -1,5 +1,7 @@
 # KPI Dashboard
 
+<p align="center"><strong>English</strong> · <a href="19-kpi-dashboard.zh-TW.md">繁體中文</a> · <a href="19-kpi-dashboard.zh-CN.md">简体中文</a></p>
+
 <!-- ISMS-CORE:USER-MANUAL:19-kpi-dashboard:v1.0:2026-04-16 -->
 
 ---
