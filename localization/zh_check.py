@@ -29,8 +29,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent / "glossary"))
 from charsets import leaks  # noqa: E402
 
 # Structural markers whose counts must match the source exactly.
-H2_RE = re.compile(r"^## ")
-H3_RE = re.compile(r"^### ")
+#
+# Headings are counted at every level, not just ## and ###: the cloud policy
+# documents put their major sections at level 1, so a check limited to h2/h3
+# would silently skip the entire heading structure of those files.
+HEADING_RE = re.compile(r"^(#{1,6}) ")
 TABLE_ROW_RE = re.compile(r"^\|")
 FENCE_RE = re.compile(r"^```")
 CHECKBOX_RE = re.compile(r"^\s*[-*] \[[ xX]\]")
@@ -58,12 +61,19 @@ class Finding:
         return f"[{self.severity.upper()}] {self.gate}: {self.detail}"
 
 
+def _heading_counts(text: str) -> dict[int, int]:
+    counts: dict[int, int] = {}
+    for ln in text.splitlines():
+        m = HEADING_RE.match(ln)
+        if m:
+            counts[len(m.group(1))] = counts.get(len(m.group(1)), 0) + 1
+    return counts
+
+
 def _counts(text: str) -> dict[str, int]:
     lines = text.splitlines()
     return {
         "lines": len(lines),
-        "h2": sum(1 for ln in lines if H2_RE.match(ln)),
-        "h3": sum(1 for ln in lines if H3_RE.match(ln)),
         "table_rows": sum(1 for ln in lines if TABLE_ROW_RE.match(ln)),
         "fences": sum(1 for ln in lines if FENCE_RE.match(ln)),
         "checkboxes": sum(1 for ln in lines if CHECKBOX_RE.match(ln)),
@@ -93,8 +103,16 @@ def check(source_text: str, translated_text: str, lang: str) -> list[Finding]:
     src, dst = _counts(source_text), _counts(translated_text)
 
     # --- Gate 1: structure preserved (the alignment guarantee) -------------
-    for key, label in (("h2", "## headings"), ("h3", "### headings"),
-                       ("table_rows", "table rows"), ("fences", "code fences"),
+    src_h, dst_h = _heading_counts(source_text), _heading_counts(translated_text)
+    for level in sorted(set(src_h) | set(dst_h)):
+        if src_h.get(level, 0) != dst_h.get(level, 0):
+            findings.append(Finding(
+                "structure",
+                f"h{level} headings: source {src_h.get(level, 0)} "
+                f"vs translation {dst_h.get(level, 0)}",
+            ))
+
+    for key, label in (("table_rows", "table rows"), ("fences", "code fences"),
                        ("checkboxes", "checkboxes")):
         if src[key] != dst[key]:
             findings.append(Finding(

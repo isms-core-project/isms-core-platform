@@ -155,7 +155,7 @@ def test_dropped_heading_is_caught():
     broken = ZH_SMALL.replace("## 範圍\n", "")
     findings = check(EN_SMALL, broken, lang="zh-Hant")
     assert "structure" in gates(findings)
-    assert "## headings" in " ".join(str(f) for f in findings)
+    assert "h2 headings" in " ".join(str(f) for f in findings)
 
 
 def test_line_delta_tolerance():
@@ -200,3 +200,45 @@ def test_cli_exit_codes(tmp_path):
     assert main([str(src), str(dst), "--quiet"]) == 0
     dst.write_text(PR2_STUB, encoding="utf-8")
     assert main([str(src), str(dst), "--quiet"]) == 1
+
+
+# --------------------------------------------------------------------------
+# Heading levels beyond ## and ###
+# --------------------------------------------------------------------------
+# The cloud policy documents put their major sections at level 1. A gate that
+# only counted ## and ### would check nothing but the table rows in those
+# files, so every level is compared.
+
+CLD_POL_DIR = REPO / ("isms-core-cloud/iso27017-sec-cloud/"
+                      "cld-sec-a.5.38-shared-roles-responsibilities/POL")
+EN_POL = CLD_POL_DIR / "CLD-SEC-POL-A.5.38 - Shared Roles and Responsibilities.md"
+DE_POL = CLD_POL_DIR / ("de/CLD-SEC-POL-A.5.38 - Gemeinsame Rollen und "
+                        "Verantwortlichkeiten - DE.md")
+
+
+def test_dropped_h1_is_caught():
+    src = "# Scope and Applicability\n\nBody text.\n"
+    dst = ("<!-- ISMS-CORE:POLICY:X-ZH-TW:sec:POL:x -->\n"
+           "**X — 範圍**\n\n正文內容。\n<!-- QA_VERIFIED: 2026-01-01 -->\n")
+    findings = check(src, dst, lang="zh-TW")
+    assert any("h1 headings" in f.detail for f in findings), \
+        [str(f) for f in findings]
+
+
+@pytest.mark.skipif(not (EN_POL.exists() and DE_POL.exists()),
+                    reason="cloud policy pair not present in this checkout")
+def test_real_h1_policy_pair_is_heading_aligned():
+    """Positive control on a real upstream pair that uses level-1 sections.
+
+    Only the heading alignment is asserted. The other gates are out of scope
+    here in both directions: the CJK ratio is a Chinese check and will always
+    fail a German document, and this pair happens to be one of the ~2% that
+    drift by more than one line (176 vs 178). Asserting the whole structure
+    gate would pin a tolerance the fixture does not meet, which says nothing
+    about whether the heading fix works.
+    """
+    src = EN_POL.read_text(encoding="utf-8")
+    assert src.count("\n# ") >= 5, "fixture no longer uses level-1 sections"
+    findings = check(src, DE_POL.read_text(encoding="utf-8"), lang="de")
+    heading_findings = [f for f in findings if "headings" in f.detail]
+    assert not heading_findings, [str(f) for f in heading_findings]
