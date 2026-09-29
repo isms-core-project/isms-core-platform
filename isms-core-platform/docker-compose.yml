@@ -604,8 +604,8 @@ services:
     platform: linux/amd64
     container_name: isms-core-nginx
     ports:
-      - "80:80"
-      - "443:443"
+      - "${NGINX_HTTP_PORT:-80}:80"
+      - "${NGINX_HTTPS_PORT:-443}:443"
     volumes:
       - ./certs:/etc/nginx/certs
       - /etc/letsencrypt:/etc/letsencrypt:ro

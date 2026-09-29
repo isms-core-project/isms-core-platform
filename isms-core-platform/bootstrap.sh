@@ -18,7 +18,7 @@ if [ -f ".env" ]; then
     ADMIN_PASSWORD="${ADMIN_PASSWORD:-$(grep -E '^ADMIN_PASSWORD=' .env | cut -d= -f2- | tr -d "'\"")}"
 fi
 
-API=https://localhost
+API="${PLATFORM_API:-https://localhost:8443}"
 
 # ---- Colours ---------------------------------------------------------------
 GREEN='\033[0;32m'; YELLOW='\033[1;33m'; RED='\033[0;31m'; NC='\033[0m'
