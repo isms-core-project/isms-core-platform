@@ -26,6 +26,22 @@ in either set; those live in KNOWN_SHARED with their reasoning.
 
 from __future__ import annotations
 
+import re
+
+# The one line in a localized repository document that legitimately carries
+# both scripts. README.zh-TW.md and its siblings open with a language line
+# naming each variant in its own characters — 繁體中文, 简体中文 — because a
+# reader looks for their own label in their own characters and the names are
+# not translated. So 简体中文 sits in the Traditional file and 繁體中文 in the
+# Simplified one, by design. The script gate must skip this line or it would
+# report every correctly localized README as broken in both directions.
+#
+# Defined here rather than in either consumer because the document gate
+# (zh_check), its coverage probe, and the derivation pipeline all need the same
+# pattern, and a subtle pattern kept in three places drifts.
+LANGUAGE_LINE_RE = re.compile(r'^<p align="center">.*繁體中文.*简体中文.*</p>$',
+                              re.MULTILINE)
+
 # Characters that exist only in Simplified Chinese. None may appear in hant.
 SIMPLIFIED_ONLY = set(
     "网络据软应权审记录风险评训练认识营运产场结构户账问访远动设实体确档标级态历变"
@@ -65,7 +81,11 @@ TRADITIONAL_ONLY = set(
 #        character for flow/direction; 遊 is the separate word play/travel.
 #        OpenCC gets 上游 right as a word but 游->遊 per character, so the
 #        per-character test flags it. Found on 上游 CSP in CLD-SEC-POL-A.5.38.
-KNOWN_SHARED = set("准台只干云于里松划采系制面游")
+#   群  群組 (T)          vs 群 (S, of 羣)    — 羣 is a rare variant form and
+#        群 is the ordinary Traditional spelling (群組, 群體). OpenCC's s2t
+#        rewrites 群->羣 per character, so the audit reads it as Simplified-
+#        only. Found on 控制群組 in README.zh-TW.md.
+KNOWN_SHARED = set("准台只干云于里松划采系制面游群")
 
 # 后 is deliberately absent from KNOWN_SHARED despite 皇后 being legitimate
 # Traditional: in governance prose it is overwhelmingly the Simplified form of
@@ -89,9 +109,30 @@ for _tag in SIMPLIFIED_TAGS:
 del _tag
 SCRIPT_NAME = {id(SIMPLIFIED_ONLY): "Simplified", id(TRADITIONAL_ONLY): "Traditional"}
 
+# Every accepted spelling of a tag collapses to the one the repo actually
+# writes. The primary tags are zh-TW/zh-CN — five characters, so they fit the
+# existing String(5) language column — and both the file names and the
+# watermarks use them throughout; zh-Hant/zh-Hans are accepted on input because
+# they are the BCP-47-correct spelling and the CLI says so.
+#
+# Without this, a gate run with --lang zh-Hant predicts a watermark suffix of
+# ZH-HANT and reports every correct document as having the wrong one. That is
+# the CLI's own default, so the failure is guaranteed rather than incidental.
+CANONICAL: dict[str, str] = {}
+for _tag in TRADITIONAL_TAGS:
+    CANONICAL[_tag] = "zh-TW"
+for _tag in SIMPLIFIED_TAGS:
+    CANONICAL[_tag] = "zh-CN"
+del _tag
+
 
 def normalise(lang: str) -> str:
     return lang.lower().replace("_", "-")
+
+
+def canonical(lang: str) -> str:
+    """The spelling the repo writes for `lang`, whatever synonym came in."""
+    return CANONICAL.get(normalise(lang), lang)
 
 
 def leak_candidates(text: str, lang: str, cc_s2t, cc_t2s) -> set[str]:
@@ -116,7 +157,12 @@ def leak_candidates(text: str, lang: str, cc_s2t, cc_t2s) -> set[str]:
         outward, inward = cc_t2s, cc_s2t
     else:
         return set()
-    return {ch for ch in cjk(text)
+    # The language line is dropped for the same reason leaks() skips it: its
+    # labels are written in their own script on purpose, so the characters they
+    # contribute are not gaps in the curated sets — they are correct, and
+    # leaving them in would have the coverage audit report 简 and 体 as
+    # forever-uncovered Simplified-only characters found in a Traditional file.
+    return {ch for ch in cjk(LANGUAGE_LINE_RE.sub("", text))
             if outward.convert(ch) != ch and inward.convert(ch) == ch}
 
 
@@ -138,12 +184,18 @@ def leaks(text: str, lang: str) -> dict[str, list[int]]:
 
     Line numbers matter: a bare list of characters is not actionable in a
     150-line document.
+
+    The language line is skipped: a localized repository document names each
+    variant in its own characters (繁體中文, 简体中文) and is the one place both
+    scripts belong in the same file. See LANGUAGE_LINE_RE.
     """
     forbidden = FORBIDDEN.get(normalise(lang))
     if forbidden is None:
         return {}
     found: dict[str, list[int]] = {}
     for n, line in enumerate(text.splitlines(), 1):
+        if LANGUAGE_LINE_RE.match(line):
+            continue
         for ch in cjk(line):
             if ch in forbidden:
                 found.setdefault(ch, []).append(n)

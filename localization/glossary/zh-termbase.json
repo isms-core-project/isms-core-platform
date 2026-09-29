@@ -23,7 +23,9 @@
         },
         "alternative_rationale": "BCP-47 correct and script-based rather than region-based, but 7 characters and would need the language column widened. Raised with upstream in issue #4; the pipeline takes --lang so switching is a flag, not a rewrite."
       },
-      "variant_choice": "Traditional side targets Hong Kong/Taiwan information-security usage, not mainland-traditional. See variant_note fields: notably 身分 (HK/TW) rather than 身份, and 資料 rather than 數據."
+      "variant_choice": "Traditional side targets Hong Kong/Taiwan information-security usage, not mainland-traditional. See variant_note fields: notably 身分 (HK/TW) rather than 身份, and 資料 rather than 數據.",
+      "single_character_keys": "A one-character hant key is glossary guidance only; the derivation pass holds it back (see pipeline.derivable). Substitution has no word segmentation to anchor on, so a one-character key fires inside every word containing it — 得 -> 可 rewrote 取得 (to obtain) as 取可. Entries like 得 (may), 欄 (Column) and 應 (shall) stay listed because a translator still needs them; every one of them is glyph-neutral or handled by OpenCC anyway, so derivation is unaffected.",
+      "sense_collisions": "A hant key shared by two English senses may not be listed: 重大 is 'material' in 重大變更 and 'Critical' only as a severity value, so mapping it to 严重 rewrote every material change in the corpus as 严重变更. Severity is written 嚴重 on the Traditional side, which OpenCC converts correctly on its own."
     }
   },
   "keep_as_is": [
@@ -255,7 +257,8 @@
       "en": "Column",
       "hant": "欄",
       "hans": "列",
-      "kind": "label"
+      "kind": "label",
+      "note": "Glossary only — see meta.conventions.single_character_keys. The packs write 欄位 (Field) wherever a column header appears, so derivation loses nothing."
     },
     {
       "en": "Color Palette",
@@ -341,12 +344,6 @@
       "en": "Public",
       "hant": "公開",
       "hans": "公开",
-      "kind": "value"
-    },
-    {
-      "en": "Critical",
-      "hant": "重大",
-      "hans": "严重",
       "kind": "value"
     },
     {
@@ -1497,7 +1494,8 @@
       "en": "may",
       "hant": "得",
       "hans": "可",
-      "kind": "term"
+      "kind": "term",
+      "note": "Glossary only — see meta.conventions.single_character_keys."
     },
     {
       "en": "organisational",

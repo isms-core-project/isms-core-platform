@@ -16,6 +16,7 @@ Run: python3 -m pytest localization/tests/ -q
 
 from __future__ import annotations
 
+import re
 import sys
 from pathlib import Path
 
@@ -30,12 +31,27 @@ from charsets import (KNOWN_SHARED, SIMPLIFIED_ONLY, TRADITIONAL_ONLY,  # noqa: 
 
 opencc = pytest.importorskip("opencc", reason="opencc not installed")
 
+REPO_DOC_RE = re.compile(r"\.(?P<lang>zh-TW|zh-CN)\.md$")
 
-def chinese_documents() -> list[Path]:
-    """Every zh-TW / zh-CN document currently in the checkout."""
-    out: list[Path] = []
+
+def chinese_documents() -> list[tuple[Path, str]]:
+    """Every Chinese document in the checkout, paired with its language.
+
+    The repo has two layouts and both have to be scanned. Content packs keep
+    translations in a language directory (POL/zh-TW/…), while the repository
+    documents sit next to their English original (README.zh-TW.md). Scanning
+    only the first — which is all this did at first — leaves the whole second
+    class outside the net, and those are the files most likely to carry the
+    language line that this module now exempts.
+    """
+    out: list[tuple[Path, str]] = []
     for d in REPO.glob("isms-core-*"):
-        out.extend(p for p in d.rglob("*.md") if p.parent.name in ("zh-TW", "zh-CN"))
+        out.extend((p, p.parent.name) for p in d.rglob("*.md")
+                   if p.parent.name in ("zh-TW", "zh-CN"))
+    for p in REPO.glob("*.md"):
+        m = REPO_DOC_RE.search(p.name)
+        if m:
+            out.append((p, m.group("lang")))
     return sorted(out)
 
 
@@ -133,8 +149,7 @@ def test_every_leak_in_the_repo_is_covered():
         pytest.skip("no Chinese documents in this checkout yet")
     s2t, t2s = opencc.OpenCC("s2t"), opencc.OpenCC("t2s")
     missing: dict[str, set[str]] = {}
-    for path in docs:
-        lang = path.parent.name
+    for path, lang in docs:
         cands = leak_candidates(path.read_text(encoding="utf-8"), lang, s2t, t2s)
         gap = uncovered(cands, lang)
         if gap:
@@ -160,3 +175,86 @@ def test_coverage_net_is_direction_aware():
     hans = "这是一份简体文件，包含密钥与字符串。"
     assert leak_candidates(hans, "zh-CN", s2t, t2s) == set()
     assert leak_candidates(hans, "zh-TW", s2t, t2s) != set()
+
+
+# --------------------------------------------------------------------------
+# The language line: the one place both scripts belong in the same file.
+# --------------------------------------------------------------------------
+
+# Canonical shape, as emitted by pipeline.switcher. The order is fixed —
+# English, then 繁體中文, then 简体中文 — which is what lets one pattern
+# recognise the line in all three of its spellings.
+LANG_LINE = ('<p align="center"><a href="README.md">English</a> · '
+             '<strong>繁體中文</strong> · '
+             '<a href="README.zh-CN.md">简体中文</a></p>')
+
+
+def test_language_line_is_not_a_leak_in_either_direction():
+    """Each variant is named in its own characters, so both files trip the gate.
+
+    A reader looks for their own label in their own script — 繁體中文 is not
+    translated to 繁体中文 and 简体中文 is not rendered as 簡體中文 — which
+    puts Simplified characters in the Traditional file and Traditional ones in
+    the Simplified file. Read literally the gate would call that line a leak in
+    both directions at once, so the line is exempt.
+    """
+    assert charsets.LANGUAGE_LINE_RE.match(LANG_LINE)
+
+    assert leaks(LANG_LINE, "zh-TW") == {}   # 简体中文 sits here on purpose
+    assert leaks(LANG_LINE, "zh-CN") == {}   # and 繁體中文 on the other side
+
+    # It is the line that is exempt, not the characters. The same glyphs
+    # anywhere else still fail — otherwise this would be a hole big enough to
+    # drive a real leak through.
+    assert "简" in leaks("简体中文是简体字。\n", "zh-TW")
+    assert "简" in leaks(LANG_LINE + "\n简体中文是简体字。\n", "zh-TW")
+
+
+def test_language_line_stays_out_of_the_coverage_audit():
+    """Left in, its characters would read as permanent gaps in the sets.
+
+    简 and 体 are correctly Simplified-only and correctly present in a
+    Traditional README, so the net would report them as characters the gate
+    fails to catch, on every run, forever.
+    """
+    s2t, t2s = opencc.OpenCC("s2t"), opencc.OpenCC("t2s")
+    assert leak_candidates(LANG_LINE, "zh-TW", s2t, t2s) == set()
+    assert leak_candidates(LANG_LINE, "zh-CN", s2t, t2s) == set()
+    # The same text without the markup is still audited.
+    assert leak_candidates("简体中文", "zh-TW", s2t, t2s) != set()
+
+
+def test_a_document_that_looks_like_the_language_line_is_still_audited():
+    """The exemption is anchored on the markup, not on the words.
+
+    A prose line mentioning both scripts in a <p> is not a language line
+    unless it is the centred switcher, so it must keep being checked.
+    """
+    prose = "<p>繁體中文與简体中文的對照表</p>"
+    assert not charsets.LANGUAGE_LINE_RE.match(prose)
+    assert "简" in leaks(prose, "zh-TW")
+
+
+def test_canonical_collapses_the_bcp47_synonyms():
+    """zh-Hant and zh-TW name the same tree; the repo writes the short form.
+
+    The CLI accepts --lang zh-Hant because it is the correct BCP-47 spelling,
+    and that used to be the default. A gate that then predicted a watermark
+    suffix of ZH-HANT flagged every correct document it was given, because no
+    file in the repository carries that suffix — the tag has to collapse to the
+    spelling the repo actually writes before it is used to build one.
+    """
+    assert charsets.canonical("zh-Hant") == "zh-TW"
+    assert charsets.canonical("zh-Hans") == "zh-CN"
+    assert charsets.canonical("zh_TW") == "zh-TW"      # underscore variant
+    assert charsets.canonical("ZH-CN") == "zh-CN"      # case-insensitive
+    assert charsets.canonical("zh-TW") == "zh-TW"      # already canonical
+    # An unknown tag has no canonical form to invent, so it passes through and
+    # the caller sees the name they typed in any error message.
+    assert charsets.canonical("ja") == "ja"
+
+
+def test_every_accepted_tag_has_a_canonical_form():
+    """A tag the script gate honours but canonical() ignores would be a hole."""
+    for tag in charsets.TRADITIONAL_TAGS + charsets.SIMPLIFIED_TAGS:
+        assert charsets.canonical(tag) in ("zh-TW", "zh-CN"), tag

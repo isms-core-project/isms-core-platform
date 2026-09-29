@@ -118,7 +118,13 @@ This policy states the purpose.
 <!-- QA_VERIFIED: 2026-01-01 -->
 """
 
-ZH_SMALL = """<!-- ISMS-CORE:POLICY:ISMS-OP-POL-T.1-ZH-HANT:operational:OP-POL:t.1 -->
+# The watermark carries the tag the repository writes (zh-TW), not the BCP-47
+# synonym. The calls below deliberately pass lang="zh-Hant" anyway: both
+# spellings must name the same tree, so the synonym has to reach the same
+# expected suffix. That seam used to be broken in the opposite direction —
+# zh-Hant was the CLI default and predicted ZH-HANT, which no file carries, so
+# the gate failed every correct document it was handed.
+ZH_SMALL = """<!-- ISMS-CORE:POLICY:ISMS-OP-POL-T.1-ZH-TW:operational:OP-POL:t.1 -->
 # ISMS-OP-POL-T.1
 
 **ISMS-OP-POL-T.1 - 範例控制措施**
@@ -166,9 +172,46 @@ def test_line_delta_tolerance():
 
 
 def test_wrong_watermark_suffix_is_caught():
-    broken = ZH_SMALL.replace("ISMS-OP-POL-T.1-ZH-HANT:", "ISMS-OP-POL-T.1-ZH:")
+    broken = ZH_SMALL.replace("ISMS-OP-POL-T.1-ZH-TW:", "ISMS-OP-POL-T.1-ZH:")
     findings = check(EN_SMALL, broken, lang="zh-Hant")
     assert "identifier" in gates(findings)
+
+
+def test_the_bcp47_synonym_matches_the_repos_own_suffix():
+    """--lang zh-Hant and --lang zh-TW must accept the same documents.
+
+    zh-Hant is the correct BCP-47 spelling and used to be the CLI default, so
+    the synonym path is not a corner case — it is what a caller gets by
+    omitting the flag. It has to collapse to zh-TW before the expected
+    watermark suffix is built, or every correctly watermarked file fails.
+    """
+    assert check(EN_SMALL, ZH_SMALL, lang="zh-Hant") == []
+    assert check(EN_SMALL, ZH_SMALL, lang="zh-TW") == []
+    # The Simplified side, same contract. Written out rather than derived by
+    # string surgery: patching a Traditional fixture in place leaves glyphs the
+    # script gate correctly rejects, which would test the patch, not the tag.
+    hans = """<!-- ISMS-CORE:POLICY:ISMS-OP-POL-T.1-ZH-CN:operational:OP-POL:t.1 -->
+# ISMS-OP-POL-T.1
+
+**ISMS-OP-POL-T.1 - 示例控制措施**
+
+## 目的
+
+本政策说明其目的。
+
+| **Document ID** | ISMS-OP-POL-T.1 |
+| --- | --- |
+| **Owner** | 信息安全长 |
+
+## 范围
+
+- 第一项要求
+- 第二项要求
+
+<!-- QA_VERIFIED: 2026-01-01 -->
+"""
+    assert check(EN_SMALL, hans, lang="zh-Hans") == []
+    assert check(EN_SMALL, hans, lang="zh-CN") == []
 
 
 def test_missing_watermark_is_caught():

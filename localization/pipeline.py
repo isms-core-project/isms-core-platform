@@ -25,6 +25,7 @@ tests/test_pipeline.py pins that order.
 Commands:
     python3 localization/pipeline.py plan [--pack PACK ...] [--lang zh-TW]
     python3 localization/pipeline.py derive <hant.md> [--out hans.md]
+    python3 localization/pipeline.py derive-doc <README.zh-TW.md> [--out OUT]
     python3 localization/pipeline.py audit [--pack PACK ...]
 """
 
@@ -39,6 +40,9 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[1]
 LOCALIZATION = REPO / "localization"
 TERMBASE_PATH = LOCALIZATION / "glossary" / "zh-termbase.json"
+
+sys.path.insert(0, str(LOCALIZATION / "glossary"))
+from charsets import LANGUAGE_LINE_RE  # noqa: E402
 
 PACKS = ["isms-core-framework", "isms-core-operational", "isms-core-privacy",
          "isms-core-cloud", "isms-core-ai", "isms-core-ext", "isms-core-sec"]
@@ -67,26 +71,48 @@ def _opencc():
     return opencc.OpenCC("t2s")
 
 
-def _term_pattern(termbase: dict, from_col: str) -> re.Pattern | None:
-    """Alternation of every source-side term, longest first.
+def derivable(termbase: dict) -> list[dict]:
+    """Termbase entries the substitution pass is allowed to apply.
+
+    Single-character hant keys are held back, and that is the whole reason this
+    function exists. Substitution is an alternation over raw text with no word
+    segmentation — Chinese does not have word boundaries to anchor on — so a
+    one-character key fires inside every word that happens to contain the
+    character. 得 -> 可 turned 取得 (to obtain) into 取可 in the shipped
+    CLD-SEC-POL-A.5.38, and 欄 -> 列 fired inside 欄位 (saved only because the
+    longer entry 欄位 -> 字段 matched first).
+
+    Neither entry is *wrong*. 得 really is the Traditional modal "may" and 欄
+    really is "column"; they belong in the glossary for whoever translates the
+    next document. What a one-character key cannot do is express a word-level
+    decision, so they stay in the termbase and out of derivation.
+
+    Nothing is lost by holding them back: every one-character entry is
+    glyph-neutral or a glyph pair OpenCC already handles (得 converts to
+    itself, 應 -> 应, 欄 -> 栏), so the residue pass produces the right
+    characters either way.
+    """
+    return [e for e in termbase["entries"]
+            if e.get("hant") and e.get("hans") and "\n" not in e["hant"]
+            and len(e["hant"]) > 1]
+
+
+def _term_pattern(termbase: dict) -> re.Pattern | None:
+    """Alternation of every derivable term, longest first.
 
     A single pass, so a shorter term can never rewrite part of a longer one
     that has not been matched yet (資訊 must not eat into 資訊安全).
     """
-    terms = [e[from_col] for e in termbase["entries"] if e.get(from_col)]
-    terms = [t for t in terms if t and "\n" not in t]
+    terms = sorted({e["hant"] for e in derivable(termbase)}, key=len, reverse=True)
     if not terms:
         return None
-    terms.sort(key=len, reverse=True)
     return re.compile("|".join(re.escape(t) for t in terms))
 
 
 def to_hans(hant_text: str, termbase: dict, cc=None) -> str:
     """Traditional -> Simplified: termbase first, OpenCC for the residue."""
-    lookup = {e["hant"]: e["hans"]
-              for e in termbase["entries"]
-              if e.get("hant") and e.get("hans") and "\n" not in e["hant"]}
-    pattern = _term_pattern(termbase, "hant")
+    lookup = {e["hant"]: e["hans"] for e in derivable(termbase)}
+    pattern = _term_pattern(termbase)
     text = pattern.sub(lambda m: lookup[m.group(0)], hant_text) if pattern else hant_text
     cc = cc if cc is not None else _opencc()
     return cc.convert(text)
@@ -128,6 +154,100 @@ def derive_simplified(hant_path: Path, out_path: Path | None = None,
         # not hant.parent, which would nest zh-CN inside zh-TW.
         out_path = hant_path.parent.parent / to_lang / name
     out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(derived, encoding="utf-8")
+    return out_path
+
+
+# --- Repository documents ---------------------------------------------------
+# README.md and the other top-level documents are localized in place, as
+# <base>.zh-TW.md / <base>.zh-CN.md, rather than under a language directory.
+# Each copy opens with one line naming the three variants. The names are
+# written in their own script — 繁體中文, 简体中文 — and are deliberately not
+# translated: a reader looks for their own label in their own characters. So
+# the deriver may not convert that line, or one pass of t2s would leave the
+# Simplified copy advertising 繁体中文.
+
+LANGUAGE_NAMES = {"en": "English", "zh-TW": "繁體中文", "zh-CN": "简体中文"}
+SWITCHER_LANGS = ("en", "zh-TW", "zh-CN")
+
+# Matches the language line in any of its three spellings. Only that one line
+# carries both labels, so the test does not need to be anchored on markup.
+#
+# The pattern lives in charsets because the script gate has to recognise this
+# same line and exempt it — it is the one place both scripts legitimately
+# appear in a single file. Two copies of a subtle pattern drift, and the
+# failure mode is silent: the gate would just start rejecting every localized
+# README it had previously accepted.
+SWITCHER_RE = LANGUAGE_LINE_RE
+
+# The line is lifted out before conversion and put back afterwards. It has to
+# survive as a single ASCII line, so the placeholder is an HTML comment the
+# termbase cannot match; converting first and repairing afterwards would mean
+# writing a second pattern for the damaged spelling.
+SWITCHER_PLACEHOLDER = "<!--ISMS-CORE:LANG-SWITCHER-->"
+
+DOC_LANG_RE = re.compile(r"^(?P<base>.+)\.(?P<lang>zh-TW|zh-CN)\.md$")
+
+
+def switcher(base: str, lang: str) -> str:
+    """The language line for <base>.md seen from <lang>, in one canonical form."""
+    parts = []
+    for other in SWITCHER_LANGS:
+        name = LANGUAGE_NAMES[other]
+        if other == lang:
+            parts.append(f"<strong>{name}</strong>")
+        else:
+            href = f"{base}.md" if other == "en" else f"{base}.{other}.md"
+            parts.append(f'<a href="{href}">{name}</a>')
+    return f'<p align="center">{" · ".join(parts)}</p>'
+
+
+def derive_doc(hant_path: Path, out_path: Path | None = None,
+               termbase: dict | None = None) -> Path:
+    """Write the Simplified sibling of a repository document.
+
+    Same contract as derive_simplified — termbase first, OpenCC for the
+    residue, line count unchanged — but the pair sits side by side as
+    <base>.zh-TW.md / <base>.zh-CN.md and the language line is restored
+    verbatim instead of converted.
+    """
+    m = DOC_LANG_RE.match(hant_path.name)
+    if not m or m.group("lang") != "zh-TW":
+        raise ValueError(f"not a zh-TW repository document: {hant_path.name}")
+    if out_path is None:
+        out_path = hant_path.with_name(f"{m.group('base')}.zh-CN.md")
+    termbase = termbase or load_termbase()
+
+    text = hant_path.read_text(encoding="utf-8")
+    protected = SWITCHER_RE.sub(SWITCHER_PLACEHOLDER, text, count=1)
+    if SWITCHER_PLACEHOLDER not in protected:
+        raise ValueError(
+            f"{hant_path.name} has no language line; every localized repository "
+            f"document opens with one (see switcher())"
+        )
+
+    derived = to_hans(protected, termbase)
+
+    # Cross-links between repository documents name the Chinese sibling by its
+    # language tag, and that tag means "mine": from the Traditional README,
+    # PARADIGM.zh-TW.md is the Traditional PARADIGM. In the derived file the
+    # same sentence has to reach PARADIGM.zh-CN.md, or every cross-link lands
+    # on the other script. Rewriting the tag moves link targets and link text
+    # together, which is why they are written the same way.
+    #
+    # Done before the switcher is restored, so the switcher's link to the
+    # *other* variant — the one link that must keep the zh-TW tag — is not
+    # caught up in it.
+    derived = derived.replace(".zh-TW.md", ".zh-CN.md")
+
+    derived = derived.replace(SWITCHER_PLACEHOLDER, switcher(m.group("base"), "zh-CN"))
+
+    src_lines, dst_lines = text.count("\n") + 1, derived.count("\n") + 1
+    if src_lines != dst_lines:
+        raise ValueError(
+            f"derivation changed line count: {src_lines} -> {dst_lines}"
+        )
+
     out_path.write_text(derived, encoding="utf-8")
     return out_path
 
@@ -200,6 +320,11 @@ def main(argv: list[str] | None = None) -> int:
     p_derive.add_argument("hant", type=Path)
     p_derive.add_argument("--out", type=Path, default=None)
 
+    p_doc = sub.add_parser("derive-doc",
+                           help="README.zh-TW.md -> README.zh-CN.md")
+    p_doc.add_argument("hant", type=Path)
+    p_doc.add_argument("--out", type=Path, default=None)
+
     p_audit = sub.add_parser("audit", help="translation coverage across packs")
     p_audit.add_argument("--pack", action="append", default=[])
 
@@ -216,6 +341,11 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.cmd == "derive":
         out = derive_simplified(args.hant, args.out)
+        print(f"wrote {out}")
+        return 0
+
+    if args.cmd == "derive-doc":
+        out = derive_doc(args.hant, args.out)
         print(f"wrote {out}")
         return 0
 

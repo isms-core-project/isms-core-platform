@@ -14,6 +14,7 @@ Run: python3 -m pytest localization/tests/ -q
 
 from __future__ import annotations
 
+import re
 import sys
 from pathlib import Path
 
@@ -217,6 +218,66 @@ def test_coordinated_term_beats_its_own_component():
     assert pipeline.to_hans("風險予以處理", TERMBASE, CC) == "风险予以处理"
 
 
+def test_single_character_keys_are_not_substituted():
+    """A one-character key cannot be applied without word boundaries.
+
+    得 -> 可 is a correct glossary entry (得 is the Traditional modal "may")
+    and still rewrote 取得, "to obtain", as 取可 in a shipped Simplified file.
+    Substitution is an alternation over raw text — Chinese has no word
+    boundaries to anchor on — so a one-character key fires inside every word
+    that happens to contain the character.
+
+    Such entries stay in the termbase as guidance for translators and are held
+    back from derivation. Nothing is lost: 得 is glyph-neutral, so the residue
+    pass leaves it alone and the Simplified keeps the 得 that was always
+    correct there.
+    """
+    assert pipeline.to_hans("取得 CSP 提出的資訊", TERMBASE, CC) == "取得 CSP 提出的信息"
+    assert pipeline.to_hans("長得快", TERMBASE, CC) == "长得快"
+    # 欄 is held back too. It is safe in this corpus only because the longer
+    # entry 欄位 -> 字段 matches first; that is luck, not a guarantee.
+    assert pipeline.to_hans("欄位", TERMBASE, CC) == "字段"
+
+    held_back = {e["hant"] for e in TERMBASE["entries"]} - \
+                {e["hant"] for e in pipeline.derivable(TERMBASE)}
+    assert held_back == {"欄", "得", "值", "高", "中", "低", "是", "否", "應", "宜"}, \
+        f"the set of held-back single-character keys changed: {sorted(held_back)}"
+
+
+def test_derivable_keeps_every_multi_character_entry():
+    """The rule is about key length only — it must not quietly drop real terms."""
+    derivable = {e["hant"] for e in pipeline.derivable(TERMBASE)}
+    for hant in ("資訊安全", "稽核", "風險評鑑與處理", "聯絡窗口", "組態", "欄位"):
+        assert hant in derivable, hant
+
+
+def test_a_key_with_two_senses_is_not_in_the_termbase():
+    """重大 is 'material' in 重大變更 and 'Critical' only as a severity value.
+
+    Mapping it to 严重 rewrote all seven material-change occurrences in the
+    corpus as 严重变更 — the exact mistake that looks like a translation win.
+    Severity is written 嚴重 on the Traditional side, which OpenCC converts on
+    its own, so the entry had nothing to do.
+    """
+    assert pipeline.to_hans("重大變更", TERMBASE, CC) == "重大变更"
+    assert pipeline.to_hans("嚴重 CVE", TERMBASE, CC) == "严重 CVE"
+    assert not any(e["hant"] == "重大" for e in TERMBASE["entries"])
+
+
+def test_derived_corpus_has_no_broken_words():
+    """End-to-end guard: derive every shipped Traditional file and look for the
+    damage patterns the held-back keys used to produce."""
+    broken = re.compile("取可|严重变更|可力|可到")
+    sources = [p for p in (REPO / "isms-core-cloud").rglob("*.md")
+               if p.parent.name == "zh-TW"]
+    sources += list(REPO.glob("*.zh-TW.md"))
+    assert sources, "no Traditional sources found — has the corpus moved?"
+    for path in sources:
+        derived = pipeline.to_hans(path.read_text(encoding="utf-8"), TERMBASE, CC)
+        for n, line in enumerate(derived.splitlines(), 1):
+            assert not broken.search(line), f"{path.name}:{n}: {line.strip()}"
+
+
 def test_residue_converter_may_not_override_the_termbase():
     """The residue pass runs last, so it must only convert glyphs, never words.
 
@@ -258,3 +319,102 @@ def test_residue_converter_may_not_override_the_termbase():
     for hant, hans in (("稽核", "审计"), ("聯絡窗口", "联系窗口"), ("組態", "配置")):
         assert pipeline.to_hans(hant, TERMBASE, CC) == hans
         assert pipeline.to_hans(hant, TERMBASE, tw2sp) == hans
+
+
+# --- Repository documents (README.md and friends) ---------------------------
+# These are the only files localized in place rather than under a language
+# directory, and the only ones carrying a language line.
+
+def test_switcher_marks_exactly_the_current_language():
+    sys.path.insert(0, str(REPO / "localization" / "glossary"))
+    from charsets import LANGUAGE_LINE_RE
+
+    for lang in pipeline.SWITCHER_LANGS:
+        line = pipeline.switcher("README", lang)
+        assert line.count("<strong>") == 1, line
+        assert f"<strong>{pipeline.LANGUAGE_NAMES[lang]}</strong>" in line, line
+        # Every other variant is a link to its own file.
+        for other in pipeline.SWITCHER_LANGS:
+            if other == lang:
+                continue
+            href = "README.md" if other == "en" else f"README.{other}.md"
+            assert f'href="{href}"' in line, line
+        # The script gate has to recognise this line in all three spellings, or
+        # every localized repository document fails the script check in both
+        # directions — 简体中文 in the Traditional file and 繁體中文 in the
+        # Simplified one are correct there and nowhere else. Anchored on the
+        # markup, so the two modules have to agree on the shape, not just on
+        # the words: this assertion is the seam.
+        assert LANGUAGE_LINE_RE.match(line), line
+
+
+def test_derived_repository_document_keeps_the_language_line_intact(tmp_path):
+    """The language names are not translated, so t2s must not touch them.
+
+    A reader looks for their own label in their own characters. Converting the
+    line would leave the Simplified copy advertising 繁体中文 — a label nobody
+    searches for — while the prose around it converts normally.
+    """
+    src = tmp_path / "README.zh-TW.md"
+    src.write_text(
+        pipeline.switcher("README", "zh-TW") + "\n\n## 範圍\n\n資訊安全與風險評鑑。\n",
+        encoding="utf-8",
+    )
+    out = pipeline.derive_doc(src, termbase=TERMBASE)
+    assert out.name == "README.zh-CN.md"
+    assert out.parent == src.parent       # side by side, not in a subdirectory
+    text = out.read_text(encoding="utf-8")
+    assert pipeline.switcher("README", "zh-CN") in text
+    assert "繁體中文" in text             # the other variant's own label, kept
+    assert "繁体中文" not in text
+    assert "信息安全与风险评估" in text    # the prose did convert
+
+
+def test_derived_repository_document_links_to_its_own_siblings(tmp_path):
+    """Cross-links carry a language tag, and the tag means "mine".
+
+    A link in README.zh-TW.md to PARADIGM.zh-TW.md reads as "the Traditional
+    PARADIGM" — from the Simplified copy the same sentence has to reach
+    PARADIGM.zh-CN.md, or every cross-link in the derived tree lands on the
+    wrong script. Link text and target are written the same way, so one
+    substitution moves both.
+    """
+    src = tmp_path / "README.zh-TW.md"
+    src.write_text(
+        pipeline.switcher("README", "zh-TW")
+        + "\n\n請先讀 [PARADIGM.zh-TW.md](PARADIGM.zh-TW.md)，"
+          "或英文的 [PLATFORM.md](PLATFORM.md)。\n",
+        encoding="utf-8",
+    )
+    out = pipeline.derive_doc(src, termbase=TERMBASE)
+    text = out.read_text(encoding="utf-8")
+    assert "[PARADIGM.zh-CN.md](PARADIGM.zh-CN.md)" in text
+    assert "[PLATFORM.md](PLATFORM.md)" in text      # English targets untouched
+    # The switcher is the one link that must keep pointing the other way.
+    assert text.count(".zh-TW.md") == 1, text
+
+
+def test_derive_doc_requires_a_language_line(tmp_path):
+    src = tmp_path / "PLATFORM.zh-TW.md"
+    src.write_text("## 範圍\n\n沒有語言列。\n", encoding="utf-8")
+    with pytest.raises(ValueError, match="no language line"):
+        pipeline.derive_doc(src, termbase=TERMBASE)
+
+
+def test_derive_doc_rejects_a_simplified_source(tmp_path):
+    src = tmp_path / "README.zh-CN.md"
+    src.write_text(pipeline.switcher("README", "zh-CN") + "\n", encoding="utf-8")
+    with pytest.raises(ValueError, match="not a zh-TW repository document"):
+        pipeline.derive_doc(src, termbase=TERMBASE)
+
+
+def test_cli_derive_doc_writes_the_sibling(tmp_path):
+    src = tmp_path / "README.zh-TW.md"
+    src.write_text(
+        pipeline.switcher("README", "zh-TW") + "\n\n## 範圍\n\n資訊安全。\n",
+        encoding="utf-8",
+    )
+    assert pipeline.main(["derive-doc", str(src)]) == 0
+    out = src.with_name("README.zh-CN.md")
+    assert out.exists()
+    assert pipeline.switcher("README", "zh-CN") in out.read_text(encoding="utf-8")

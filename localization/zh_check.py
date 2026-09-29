@@ -12,7 +12,7 @@ real documents deleted in passing. Those failure modes are encoded here as
 checks, and as tests in tests/test_zh_check.py.
 
 Usage:
-    python3 localization/zh_check.py <source_en.md> <translated.md> [--lang zh-Hant]
+    python3 localization/zh_check.py <source_en.md> <translated.md> [--lang zh-TW]
 
 Exit code is 0 when every gate passes, 1 when any gate fails.
 """
@@ -26,7 +26,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent / "glossary"))
-from charsets import leaks  # noqa: E402
+from charsets import canonical, leaks  # noqa: E402
 
 # Structural markers whose counts must match the source exactly.
 #
@@ -153,20 +153,29 @@ def check(source_text: str, translated_text: str, lang: str) -> list[Finding]:
             ))
 
     # --- Gate 3: identifiers ---------------------------------------------
+    # The watermark is the content-pack contract, and the source is what
+    # defines it: a repository document (README.md and friends) carries none
+    # and is not a promotion candidate. So the rule is "whatever the source
+    # has, the translation preserves" rather than "a watermark must exist",
+    # which would fail every correctly translated repository document.
     src_wm = WATERMARK_RE.search(source_text)
     dst_wm = WATERMARK_RE.search(translated_text)
-    if not dst_wm:
-        findings.append(Finding("identifier", "watermark comment missing"))
-    elif src_wm:
-        want = f"{src_wm.group(1)}-{lang.upper()}"
-        if dst_wm.group(1) != want:
-            findings.append(Finding(
-                "identifier",
-                f"watermark id {dst_wm.group(1)!r}, expected {want!r}",
-            ))
+    if src_wm:
+        if not dst_wm:
+            findings.append(Finding("identifier", "watermark comment missing"))
+        else:
+            # The suffix is written in the repo's own tag spelling, so a
+            # gate invoked with the zh-Hant synonym must normalise first or
+            # it predicts ZH-HANT and fails a correct file.
+            want = f"{src_wm.group(1)}-{canonical(lang).upper()}"
+            if dst_wm.group(1) != want:
+                findings.append(Finding(
+                    "identifier",
+                    f"watermark id {dst_wm.group(1)!r}, expected {want!r}",
+                ))
 
     # --- Gate 4: QA marker required for promotion -------------------------
-    if not QA_FOOTER_RE.search(translated_text):
+    if src_wm and not QA_FOOTER_RE.search(translated_text):
         findings.append(Finding(
             "promotion",
             "missing '<!-- QA_VERIFIED: YYYY-MM-DD -->' footer",
@@ -193,7 +202,7 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("source", type=Path, help="English source markdown")
     ap.add_argument("translated", type=Path, help="translated markdown")
-    ap.add_argument("--lang", default="zh-Hant", help="target language tag")
+    ap.add_argument("--lang", default="zh-TW", help="target language tag (zh-TW/zh-CN, or the zh-Hant/zh-Hans synonyms)")
     ap.add_argument("--quiet", action="store_true")
     args = ap.parse_args(argv)
 
