@@ -220,11 +220,12 @@ def create_executive_summary(ws, styles, domain_config, document_id, control_nam
     ws[f"A{row}"] = "Status"
     ws[f"A{row}"].font = Font(name="Calibri", size=12, bold=True)
     ws[f"B{row}"] = (
-        f'=IF(Dashboard!G{total_row_dash}="N/A","NOT ASSESSED",'
+        f'=IF(Dashboard!H{total_row_dash}>0,"INCOMPLETE",'
+        f'IF(Dashboard!G{total_row_dash}="N/A","NOT ASSESSED",'
         f'IF(ISNUMBER(VALUE(SUBSTITUTE(Dashboard!G{total_row_dash},"%",""))),'
         f'IF(VALUE(SUBSTITUTE(Dashboard!G{total_row_dash},"%",""))>=90,"GREEN",'
         f'IF(VALUE(SUBSTITUTE(Dashboard!G{total_row_dash},"%",""))>=70,"AMBER","RED")),'
-        f'"NOT ASSESSED"))'
+        f'"NOT ASSESSED")))'
     )
     ws[f"B{row}"].font = Font(name="Calibri", size=16, bold=True)
     ws[f"B{row}"].alignment = Alignment(horizontal="center", vertical="center")
@@ -253,6 +254,7 @@ def create_executive_summary(ws, styles, domain_config, document_id, control_nam
         ("Partial", f"='Dashboard'!D{total_row_dash}"),
         ("Non-Compliant", f"='Dashboard'!E{total_row_dash}"),
         ("Not Applicable", f"='Dashboard'!F{total_row_dash}"),
+        ("Unanswered",       f"='Dashboard'!H{total_row_dash}"),
         ("Owner Coverage", owner_formula),
     ]
     for label, formula in metrics:
@@ -283,11 +285,12 @@ def create_executive_summary(ws, styles, domain_config, document_id, control_nam
         ws.cell(row=row, column=3, value=f"='Dashboard'!C{dash_row}").border = styles["border"]
         ws.cell(row=row, column=4, value=f"='Dashboard'!E{dash_row}").border = styles["border"]
         ws.cell(row=row, column=5,
-                value=f'=IF(Dashboard!G{dash_row}="N/A","--",'
+                value=f'=IF(Dashboard!H{dash_row}>0,"INCOMPLETE",'
+                      f'IF(Dashboard!G{dash_row}="N/A","--",'
                       f'IF(ISNUMBER(VALUE(SUBSTITUTE(Dashboard!G{dash_row},"%",""))),'
                       f'IF(VALUE(SUBSTITUTE(Dashboard!G{dash_row},"%",""))>=90,"PASS",'
                       f'IF(VALUE(SUBSTITUTE(Dashboard!G{dash_row},"%",""))>=70,"REVIEW","FAIL")),'
-                      f'"--"))').border = styles["border"]
+                      f'"--")))').border = styles["border"]
         row += 1
 
     # --- Critical Issues ---
@@ -379,24 +382,26 @@ def create_dashboard(ws, styles, domain_config, control_name):
 
     # --- Domain Summary ---
     row = 3
-    for ci, h in enumerate(["Domain", "Total Reqs", "Compliant", "Partial", "Non-Compliant", "N/A", "Compliance %"], 1):
+    for ci, h in enumerate(["Domain", "Total Reqs", "Compliant", "Partial", "Non-Compliant", "N/A", "Compliance %", "Unassessed"], 1):
         cell = ws.cell(row=row, column=ci, value=h)
         apply_style(cell, styles["column_header"])
 
     row = 4
     for dname, dstart, dend in domain_config:
         sr = f"'{dname}'!D{dstart}:D{dend}"
+        id_range = f"'{dname}'!A{dstart}:A{dend}"
         ws.cell(row=row, column=1, value=dname)
         ws.cell(row=row, column=1).font = Font(name="Calibri", size=10, bold=True)
         ws.cell(row=row, column=1).border = styles["border"]
-        ws.cell(row=row, column=2, value=f"=COUNTA({sr})")
+        ws.cell(row=row, column=2, value=f"=COUNTA({id_range})")
         ws.cell(row=row, column=3, value=f'=COUNTIF({sr},"Compliant")')
         ws.cell(row=row, column=4, value=f'=COUNTIF({sr},"Partial")')
         ws.cell(row=row, column=5, value=f'=COUNTIF({sr},"Non-Compliant")')
         ws.cell(row=row, column=6, value=f'=COUNTIF({sr},"N/A")')
         ws.cell(row=row, column=7,
                 value=f'=IF((B{row}-F{row})=0,"N/A",ROUND(C{row}/(B{row}-F{row})*100,1)&"%")')
-        for col in range(2, 8):
+        ws.cell(row=row, column=8, value=f"=B{row}-(C{row}+D{row}+E{row}+F{row})")
+        for col in range(2, 9):
             apply_style(ws.cell(row=row, column=col), styles["formula_cell"])
         row += 1
 
@@ -414,6 +419,9 @@ def create_dashboard(ws, styles, domain_config, control_name):
             value=f'=IF((B{row}-F{row})=0,"N/A",ROUND(C{row}/(B{row}-F{row})*100,1)&"%")')
     apply_style(ws.cell(row=row, column=7), styles["total_row"])
     ws.cell(row=row, column=7).font = Font(name="Calibri", size=11, bold=True, color=C_WHITE)
+    ws.cell(row=row, column=8, value=f"=SUM(H4:H{row - 1})")
+    apply_style(ws.cell(row=row, column=8), styles["total_row"])
+    ws.cell(row=row, column=8).font = Font(name="Calibri", size=11, bold=True, color=C_WHITE)
 
     # --- Status Breakdown ---
     row += 2
