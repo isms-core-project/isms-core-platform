@@ -5,6 +5,7 @@
 </p>
 
 <p align="center">
+  <a href="#-before-you-open-a-pull-request"><img src="https://img.shields.io/badge/Issue_First-Required-FF0000?style=flat-square" alt="Issue First Required"/></a>
   <a href="#-qa-gates"><img src="https://img.shields.io/badge/QA_Gates-Enforced-00AA00?style=flat-square" alt="QA Gates"/></a>
   <a href="#-python-script-standards"><img src="https://img.shields.io/badge/Python-Standardized-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/></a>
   <a href="#-online-research-requirement"><img src="https://img.shields.io/badge/Research-Required-FF6600?style=flat-square" alt="Research Required"/></a>
@@ -14,6 +15,24 @@
 <p align="center">
   <em>Not all documents require the same level of standardization. Apply rigor where it matters.</em>
 </p>
+
+---
+
+## 🚧 Before You Open a Pull Request
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Issue_First-Required-FF0000?style=for-the-badge" alt="Issue First Required"/>
+</p>
+
+**Open an issue before you write any code or content.** Describe what you want to contribute and why, and wait for a maintainer response before starting the work. This applies to every kind of contribution — code, documentation, and especially new-language content packs — and it protects your time as much as ours: a PR built on an assumption we don't share (scope, approach, or whether we're set up to maintain it long-term) gets closed regardless of how much work went into it.
+
+A good issue states:
+
+- **What** you want to add or change, and **why** it matters to you
+- **How** you'd approach it (structure, tooling, scope)
+- Whether you'd like to **start with a small sample** before committing to the full scope
+
+PRs opened without a prior issue will be closed and the contributor asked to open one instead — not a judgment on the work, just the order we need it in.
 
 ---
 
