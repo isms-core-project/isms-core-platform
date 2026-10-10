@@ -31,6 +31,37 @@ services:
 
   # ── Core infrastructure (always on) ────────────────────────────────────────
 
+  # Internal Postgres TLS — one self-signed cert, generated once and
+  # persisted in a named volume (regenerating on every boot would force
+  # every client below to re-trust a new cert each restart). postgres:18-
+  # alpine runs as uid 70, so the key must be owned by that uid and mode
+  # 0600 or the server refuses to start.
+  isms-core-internal-certs-init:
+    image: alpine:3.20
+    container_name: isms-core-internal-certs-init
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        set -e
+        apk add --no-cache openssl >/dev/null
+        dir="/certs/postgres"
+        mkdir -p "$$dir"
+        if [ ! -f "$$dir/server.crt" ] || [ ! -f "$$dir/server.key" ]; then
+          openssl req -x509 -nodes -newkey rsa:2048 -days 3650 \
+            -keyout "$$dir/server.key" -out "$$dir/server.crt" \
+            -subj "/C=EU/ST=Local/L=Local/O=ISMS-CORE/CN=isms-core-postgres" \
+            -addext "subjectAltName=DNS:isms-core-postgres" 2>/dev/null
+          echo "[internal-certs-init] generated postgres cert"
+        else
+          echo "[internal-certs-init] postgres cert already present, reusing"
+        fi
+        chmod 600 "$$dir/server.key"
+        chown -R 70:70 "$$dir"
+    volumes:
+      - isms-core-internal-certs:/certs
+    networks:
+      - isms-core-network
+
   isms-core-postgres:
     image: postgres:18-alpine
     container_name: isms-core-postgres
@@ -43,9 +74,18 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_INITDB_ARGS: "-E UTF8"
       PGDATA: /var/lib/postgresql/data
+    # ssl=on + cert/key from the shared internal-certs-init volume above —
+    # DATABASE_URL previously had no explicit sslmode, so traffic (including
+    # the connection password) travelled in plaintext whenever the server
+    # didn't offer SSL, which it never did.
+    command: ["postgres", "-c", "ssl=on", "-c", "ssl_cert_file=/certs/postgres/server.crt", "-c", "ssl_key_file=/certs/postgres/server.key"]
     volumes:
       - postgres-data:/var/lib/postgresql/data
+      - isms-core-internal-certs:/certs:ro
       - ./schemas/init_db.sql:/docker-entrypoint-initdb.d/01_init.sql:ro
+    depends_on:
+      isms-core-internal-certs-init:
+        condition: service_completed_successfully
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U isms_user -d isms_db"]
       interval: 10s
@@ -393,11 +433,12 @@ services:
       - ${SEC_HOST_PATH:-../isms-core-sec}:/app/isms-sec:ro
       - ${EXT_HOST_PATH:-../isms-core-ext}:/app/isms-ext:ro
       - ti-data:/data/ti:ro   # GeoLite2 MMDB files (downloaded by threat-intel container)
+      - isms-core-internal-certs:/certs:ro
     environment:
       - TZ=${TZ:-Europe/Zurich}
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
-      - DB_SSLMODE=${DB_SSLMODE:-prefer}
-      - DB_SSL_ROOT_CERT=${DB_SSL_ROOT_CERT:-}
+      - DB_SSLMODE=${DB_SSLMODE:-verify-full}
+      - DB_SSL_ROOT_CERT=${DB_SSL_ROOT_CERT:-/certs/postgres/server.crt}
       - REDIS_URL=redis://:${REDIS_PASSWORD}@isms-core-redis:6379/0
       - DATASETS_PATH=/app/datasets
       - FRAMEWORK_PATH=/app/isms-framework
@@ -486,11 +527,12 @@ services:
       - ${AI_HOST_PATH:-../isms-core-ai}:/app/isms-ai:ro
       - ${SEC_HOST_PATH:-../isms-core-sec}:/app/isms-sec:ro
       - ${EXT_HOST_PATH:-../isms-core-ext}:/app/isms-ext:ro
+      - isms-core-internal-certs:/certs:ro
     environment:
       - TZ=${TZ:-Europe/Zurich}
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
-      - DB_SSLMODE=${DB_SSLMODE:-prefer}
-      - DB_SSL_ROOT_CERT=${DB_SSL_ROOT_CERT:-}
+      - DB_SSLMODE=${DB_SSLMODE:-verify-full}
+      - DB_SSL_ROOT_CERT=${DB_SSL_ROOT_CERT:-/certs/postgres/server.crt}
       - REDIS_URL=redis://:${REDIS_PASSWORD}@isms-core-redis:6379/0
       - DATASETS_PATH=/app/datasets
       - OPENSEARCH_URL=http://isms-core-opensearch:9200
@@ -537,11 +579,12 @@ services:
       - ${AI_HOST_PATH:-../isms-core-ai}:/app/isms-ai:ro
       - ${SEC_HOST_PATH:-../isms-core-sec}:/app/isms-sec:ro
       - ${EXT_HOST_PATH:-../isms-core-ext}:/app/isms-ext:ro
+      - isms-core-internal-certs:/certs:ro
     environment:
       - TZ=${TZ:-Europe/Zurich}
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
-      - DB_SSLMODE=${DB_SSLMODE:-prefer}
-      - DB_SSL_ROOT_CERT=${DB_SSL_ROOT_CERT:-}
+      - DB_SSLMODE=${DB_SSLMODE:-verify-full}
+      - DB_SSL_ROOT_CERT=${DB_SSL_ROOT_CERT:-/certs/postgres/server.crt}
       - REDIS_URL=redis://:${REDIS_PASSWORD}@isms-core-redis:6379/0
       - DATASETS_PATH=/app/datasets
       - OPENSEARCH_URL=http://isms-core-opensearch:9200
@@ -667,11 +710,13 @@ services:
     image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-feeds-${PLATFORM_TAG:-latest}
     platform: linux/amd64
     container_name: isms-core-feeds
+    volumes:
+      - isms-core-internal-certs:/certs:ro
     environment:
       - TZ=${TZ:-Europe/Zurich}
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
-      - DB_SSLMODE=${DB_SSLMODE:-prefer}
-      - DB_SSL_ROOT_CERT=${DB_SSL_ROOT_CERT:-}
+      - DB_SSLMODE=${DB_SSLMODE:-verify-full}
+      - DB_SSL_ROOT_CERT=${DB_SSL_ROOT_CERT:-/certs/postgres/server.crt}
       - OPENSEARCH_URL=http://isms-core-opensearch:9200
       - OPENSEARCH_USE_SSL=${OPENSEARCH_USE_SSL:-false}
       - OPENSEARCH_VERIFY_CERTS=${OPENSEARCH_VERIFY_CERTS:-false}
@@ -708,8 +753,8 @@ services:
     environment:
       - TZ=${TZ:-Europe/Zurich}
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
-      - DB_SSLMODE=${DB_SSLMODE:-prefer}
-      - DB_SSL_ROOT_CERT=${DB_SSL_ROOT_CERT:-}
+      - DB_SSLMODE=${DB_SSLMODE:-verify-full}
+      - DB_SSL_ROOT_CERT=${DB_SSL_ROOT_CERT:-/certs/postgres/server.crt}
       - OPENSEARCH_URL=http://isms-core-opensearch:9200
       - OPENSEARCH_USE_SSL=${OPENSEARCH_USE_SSL:-false}
       - OPENSEARCH_VERIFY_CERTS=${OPENSEARCH_VERIFY_CERTS:-false}
@@ -750,6 +795,7 @@ services:
       - TI_RUN_ON_START=${TI_RUN_ON_START:-false}
     volumes:
       - ti-data:/data/ti   # persistent store for MMDB files + future TI downloads
+      - isms-core-internal-certs:/certs:ro
     expose:
       - "9002"          # on-demand trigger server (backend → TI container)
     depends_on:
@@ -844,7 +890,7 @@ services:
       - isms-core-backup-network
 
   isms-core-backup:
-    image: offen/docker-volume-backup:v2
+    image: offen/docker-volume-backup:v2.49.1
     container_name: isms-core-backup
     profiles: [backup]
     env_file: backup.env
@@ -870,6 +916,8 @@ networks:
 
 volumes:
   postgres-data:
+    driver: local
+  isms-core-internal-certs:
     driver: local
   redis-data:
     driver: local

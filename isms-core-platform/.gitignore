@@ -36,5 +36,10 @@ backend/cache/
 */security-scan/
 */security-remediation/
 
+# vvaharness v1.5.0 (2026-10-10) injects its 17 detection skills directly into the scanned
+# target's own tree (e.g. backend/.vvaharness/skills/) — scan-tool scaffolding, not our code,
+# same treatment as security-scan/ above.
+*/.vvaharness/
+
 # VVAH finding #21 — pickle-based Celery beat schedule, never commit (CWE-502 deserialization RCE risk)
 backend/celerybeat-schedule*
