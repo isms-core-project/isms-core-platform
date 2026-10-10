@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Platform-v1.1-00AA00?style=flat-square" alt="v1.1"/>
+  <img src="https://img.shields.io/badge/Platform-v1.2-00AA00?style=flat-square" alt="v1.2"/>
   <img src="https://img.shields.io/badge/Audience-ISMS_Manager_%7C_Auditor_%7C_Control_Owner-0066CC?style=flat-square" alt="Audience"/>
 </p>
 
