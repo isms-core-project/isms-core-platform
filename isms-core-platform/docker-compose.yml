@@ -22,9 +22,8 @@ name: isms-core-platform
 #   ./bootstrap.sh   (first boot only)
 #
 # No local build required — every service pulls a pre-built image (see
-# PLATFORM_REGISTRY / PLATFORM_TAG in .env.example). Building from source is a
-# separate workflow in the private factory_isms_project repo
-# (95-isms-core-factory/build-isms-core.sh), not something this repo needs.
+# PLATFORM_REGISTRY / PLATFORM_TAG in .env.example); this compose file has
+# no `build:` directives.
 # ============================================================================
 
 services:
