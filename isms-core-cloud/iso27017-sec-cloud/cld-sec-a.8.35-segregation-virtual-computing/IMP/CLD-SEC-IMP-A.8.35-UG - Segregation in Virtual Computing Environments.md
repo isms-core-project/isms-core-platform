@@ -53,7 +53,7 @@ This guide explains how [Organisation] defines, verifies, and enforces tenant se
 
 1. **Classify the workload.** The Cloud Security Manager classifies the data and workload to be run on the cloud service by sensitivity, using the organisation's standard data classification scheme.
 2. **Set the isolation requirement.** Based on the classification, define the minimum acceptable tenant isolation level — for example, logical isolation via hypervisor-enforced virtual machine boundaries, or a higher requirement such as dedicated/single-tenant infrastructure for the most sensitive workloads.
-3. **Record the requirement.** Document the segregation requirement in the Segregation Requirements Statement (schema in CLD-SEC-IMP-A.8.35-TG, Section 1) before the service is selected.
+3. **Record the requirement.** Document the segregation requirement in the Segregation Requirements Statement — recording the service reference, data classification, minimum isolation level required (logical/dedicated-host/physical), justification, and who defined it and when (full schema in CLD-SEC-IMP-A.8.35-TG, Section 1) — before the service is selected.
 
 ### 1.2 Verifying the CSP Meets the Requirement
 
@@ -61,7 +61,7 @@ This guide explains how [Organisation] defines, verifies, and enforces tenant se
 
 1. **Request CSP documentation.** Obtain the CSP's published documentation on tenant isolation — hypervisor security, storage segregation, network segregation (VPCs, security groups, or equivalent).
 2. **Cross-check against certifications.** Where available, cross-check the CSP's claims against independent assurance (ISO/IEC 27001 certification scope, SOC 2 report, CSA STAR entry).
-3. **Record the verification.** Record the outcome in the CSP Segregation Verification Record (CLD-SEC-IMP-A.8.35-TG, Section 2), including any gaps identified.
+3. **Record the verification.** Record the outcome in the CSP Segregation Verification Record — linking back to the requirement, naming the CSP, the evidence reviewed, a Yes/No determination of whether the requirement was met, any gap identified, and the next scheduled verification date (full schema in CLD-SEC-IMP-A.8.35-TG, Section 2).
 4. **Re-verify periodically.** Repeat verification at least annually, and whenever the CSP announces a material change to its virtualisation or multi-tenancy architecture.
 
 ---
@@ -75,7 +75,7 @@ This guide explains how [Organisation] defines, verifies, and enforces tenant se
 1. **Enumerate resource layers.** The Cloud Engineering Lead enumerates the layers requiring tenant segregation: CSC data, virtualized applications, operating systems, storage, and network.
 2. **Select segregation mechanisms per layer.** For each layer, select and document the segregation mechanism — for example, hypervisor-level VM isolation, container namespace/cgroup isolation, storage volume encryption with per-tenant keys, and network-level segmentation (VLANs, security groups, or software-defined network policies).
 3. **Separate internal administration.** Design access paths so that [Organisation]'s own internal administration functions (platform management, support tooling) are separated from — and cannot be reached through — CSC-facing resources.
-4. **Document the architecture.** Record the completed design in the Segregation Architecture Documentation (CLD-SEC-IMP-A.8.35-TG, Section 3).
+4. **Document the architecture.** Record the completed design in the Segregation Architecture Documentation — the segregation mechanism used at each layer (CSC data, virtualized applications, operating systems, storage, network), how internal administration access is kept separate from CSC-facing resources, and a log of segregation testing performed with results (full template in CLD-SEC-IMP-A.8.35-TG, Section 3).
 
 ### 2.2 Assessing Risk of CSC-Supplied Software
 
@@ -84,7 +84,7 @@ Where [Organisation]'s cloud service permits CSCs to run their own software with
 1. Identify the execution model (e.g. containerised, VM-based, serverless) and its isolation boundary.
 2. Assess whether the isolation boundary is sufficient to contain a compromise of the CSC-supplied software.
 3. Where the assessment identifies insufficient isolation, apply additional compensating controls (e.g. stricter resource quotas, runtime monitoring, sandboxing) before permitting the software to run.
-4. Record the assessment outcome in the CSC-Supplied Software Risk Assessment (CLD-SEC-IMP-A.8.35-TG, Section 4).
+4. Record the assessment outcome in the CSC-Supplied Software Risk Assessment — the execution model, the isolation boundary description, whether it was assessed as sufficient, any compensating controls applied, and who assessed and approved it (full schema in CLD-SEC-IMP-A.8.35-TG, Section 4).
 
 ---
 
