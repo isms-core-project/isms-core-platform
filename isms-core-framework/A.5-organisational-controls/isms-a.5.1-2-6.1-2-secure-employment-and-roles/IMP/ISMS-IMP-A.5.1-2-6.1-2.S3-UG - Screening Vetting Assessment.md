@@ -616,53 +616,48 @@ For roles where the standard tier-level mapping does not apply (e.g., a Tier 3 r
 
 ---
 
-### Sheet 5: Screening_Compliance_Verification
+### Sheet 5: Screening Compliance Verif
 
-**Purpose**: Per-person detailed compliance verification. Auto-populated from Sheets 3 and 4 to identify exactly which screening checks each individual is missing.
+**Purpose**: Per-person compliance gap identification. Auto-populated from the Personnel Screening Registry to flag whether each individual's screening checks are complete and their actual screening level matches what their role requires.
 
-**Structure**: 150 data rows (rows 5–154), 16 columns (A–P).
+**Structure**: 250 data rows (rows 5–254), 15 columns (A–O).
 
 **Columns:**
 
 | Col | Header | Type | Description |
 |-----|--------|------|-------------|
-| A | Personnel_ID | Text | Auto-populated from Sheet 4 |
-| B | Full_Name | Text | Auto-populated from Sheet 4 |
-| C | Required_Level | Text | Auto-populated from Sheet 4 (col I) |
-| D | Identity_Required | Dropdown | Yes (always required) |
-| E | Identity_Status | Text | Auto-populated from Sheet 4 (col M) |
-| F | References_Required | Text | Auto-calculated: Yes if Level ≥ 2, else N/A |
-| G | References_Status | Text | Auto-populated from Sheet 4 (col N) |
-| H | Criminal_Required | Text | Auto-calculated: Yes if Level ≥ 3, else N/A |
-| I | Criminal_Status | Text | Auto-populated from Sheet 4 (col O) |
-| J | CV_Required | Dropdown | Yes (always required) |
-| K | CV_Status | Text | Auto-populated from Sheet 4 (col P) |
-| L | Screening_Before_Start | Text | Auto-populated from Sheet 4 (col L) |
-| M | Missing_Checks | Text | Auto-calculated: lists which required checks are incomplete |
-| N | Compliance_Rating | Text | Auto-calculated: Compliant / Partial / Non-Compliant |
-| O | Gap_Description | Text | Auto-generated description of gaps |
-| P | Evidence_Reference | Text | User input: Evidence IDs |
+| A | Employee ID | Text | Auto-populated from Personnel Screening Registry |
+| B | Full Name | Text | Auto-populated: `VLOOKUP` on Employee ID |
+| C | Role Tier | Text | Auto-populated: `VLOOKUP` on Employee ID |
+| D | Identity Verified | Dropdown | Yes / No / N/A / Pending |
+| E | Employment History Checked | Dropdown | Yes / No / N/A / Pending |
+| F | Education Verified | Dropdown | Yes / No / N/A / Pending |
+| G | Criminal Check Complete | Dropdown | Yes / No / N/A / Pending |
+| H | Credit Check Complete | Dropdown | Yes / No / N/A / Pending |
+| I | References Checked | Dropdown | Yes / No / N/A / Pending |
+| J | Right to Work Verified | Dropdown | Yes / No / N/A / Pending |
+| K | All Required Checks Complete | Text | Auto-calculated from D, E, J |
+| L | Screening Level Appropriate | Text | Auto-calculated: Required vs. Actual Screening Level |
+| M | Compliance Status | Text | Auto-calculated: Compliant / Non-Compliant / Partial |
+| N | Gap Description | Text | User input: free-text description of any gap |
+| O | Evidence Reference | Text | User input: Evidence IDs |
 
 **Key Auto-Calculate Formulas:**
 
-**F (References_Required):**
+**K (All Required Checks Complete):**
 ```excel
-=IF(C5="","",IF(OR(C5="Level-2-Standard",C5="Level-3-Enhanced",C5="Level-4-Comprehensive"),"Yes","N/A"))
+=IF(A5="","",IF(AND(D5="Yes",E5="Yes",J5="Yes"),"Yes","No"))
 ```
 
-**H (Criminal_Required):**
+**L (Screening Level Appropriate):**
 ```excel
-=IF(C5="","",IF(OR(C5="Level-3-Enhanced",C5="Level-4-Comprehensive"),"Yes","N/A"))
+=IF(A5="","",IF(VLOOKUP(A5,'Personnel Screening Registry'!$A:$I,8,FALSE)=VLOOKUP(A5,'Personnel Screening Registry'!$A:$I,9,FALSE),"Yes","No"))
 ```
+Compares the Registry's Required Screening Level (col H) against its Actual Screening Level (col I) for this Employee ID.
 
-**M (Missing_Checks):**
+**M (Compliance Status):**
 ```excel
-=IF(B5="","",IF(AND(E5="Yes",IF(F5="Yes",G5="Yes",TRUE),IF(H5="Yes",I5="Yes",TRUE),K5="Yes"),"None","Missing: "&IF(E5<>"Yes","Identity ",""}&IF(AND(F5="Yes",G5<>"Yes"),"References ",""}&IF(AND(H5="Yes",I5<>"Yes"),"Criminal ",""}&IF(K5<>"Yes","CV ","")))
-```
-
-**N (Compliance_Rating):**
-```excel
-=IF(B5="","",IF(M5="None",IF(L5="Yes","Compliant","Partial"),IF(OR(AND(F5="Yes",G5="No"),AND(H5="Yes",I5="No"),E5="No",K5="No"),"Non-Compliant","Partial")))
+=IF(A5="","",IF(AND(K5="Yes",L5="Yes"),"Compliant",IF(OR(K5="No",L5="No"),"Non-Compliant","Partial")))
 ```
 
 ---
