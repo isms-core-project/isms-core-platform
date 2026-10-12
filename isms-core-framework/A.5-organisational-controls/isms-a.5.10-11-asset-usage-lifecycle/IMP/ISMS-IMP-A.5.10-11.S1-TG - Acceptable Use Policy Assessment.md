@@ -45,8 +45,6 @@
 
 ## Generator Alignment Reference
 
-> Auto-generated from `generate_a510_11_1_acceptable_use_policy.py` — DO NOT EDIT MANUALLY.
-> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
 **Document ID:** `ISMS-IMP-A.5.10-11.S1`
 

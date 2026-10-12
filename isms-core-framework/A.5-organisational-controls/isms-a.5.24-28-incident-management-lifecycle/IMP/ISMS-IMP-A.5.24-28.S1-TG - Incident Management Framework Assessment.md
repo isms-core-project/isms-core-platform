@@ -47,8 +47,6 @@
 
 ## Generator Alignment Reference
 
-> Auto-generated from `generate_a524_28_s1_framework_assessment.py` — DO NOT EDIT MANUALLY.
-> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
 **Document ID:** `ISMS-IMP-A.5.24-28.S1`
 

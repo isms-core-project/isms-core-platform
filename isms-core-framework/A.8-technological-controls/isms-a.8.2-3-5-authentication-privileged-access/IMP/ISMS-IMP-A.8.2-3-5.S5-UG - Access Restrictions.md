@@ -308,15 +308,7 @@ Before starting the assessment, gather the following information:
 
 ## Step-by-Step Completion Guide
 
-**Step 1: Generate Workbook**
-
-Option A - Automated (Recommended):
-```bash
-python3 generate_a8235_5_access_restrictions.py
-```
-This creates: `ISMS-IMP-A.8.2-3-5.5_Access_Restrictions_YYYYMMDD.xlsx`
-
-Option B - Manual:
+**Step 1: Get the Workbook**
 
 - Use Excel template
 - Save as: `ISMS-IMP-A.8.2-3-5.5_Access_Restrictions_[DATE].xlsx`

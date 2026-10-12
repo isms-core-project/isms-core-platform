@@ -46,8 +46,6 @@
 
 ## Generator Alignment Reference
 
-> Auto-generated from `generate_a523_2_vendor_dd.py` — DO NOT EDIT MANUALLY.
-> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
 **Document ID:** `ISMS-IMP-A.5.19-23.S2`
 

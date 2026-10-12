@@ -46,8 +46,6 @@
 
 ## Generator Alignment Reference
 
-> Auto-generated from `generate_a81-7-18-19_1_endpoint_inventory.py` — DO NOT EDIT MANUALLY.
-> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
 **Document ID:** `ISMS-IMP-A.8.1-7-18-19.1`
 

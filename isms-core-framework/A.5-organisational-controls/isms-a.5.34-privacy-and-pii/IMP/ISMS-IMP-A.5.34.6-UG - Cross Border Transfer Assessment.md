@@ -170,15 +170,9 @@ Before starting, gather:
 
 ## Step-by-Step Completion Instructions
 
-### Step 1: Generate Assessment Workbook
+### Step 1: Get the Assessment Workbook
 
-**Action:** Run Python script to create blank assessment workbook
-
-```bash
-python3 generate_a5346_cross_border_transfer_assessment.py
-```
-
-**Output:** `ISMS_A_5_34_6_Cross_Border_Transfer_Assessment_YYYYMMDD.xlsx`
+**Action:** Use the workbook template provided in this content pack: `ISMS_A_5_34_6_Cross_Border_Transfer_Assessment_[DATE].xlsx`
 
 **Next:** Open workbook and review Sheet 1 (Instructions & Legend) for terminology
 

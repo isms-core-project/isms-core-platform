@@ -45,8 +45,6 @@
 
 ## Generator Alignment Reference
 
-> Auto-generated from `generate_a57_2_collection_analysis.py` — DO NOT EDIT MANUALLY.
-> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
 **Document ID:** `ISMS-IMP-A.5.7.2`
 

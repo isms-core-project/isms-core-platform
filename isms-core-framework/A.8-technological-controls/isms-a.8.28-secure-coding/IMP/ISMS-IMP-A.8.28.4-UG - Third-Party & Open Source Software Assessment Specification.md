@@ -122,8 +122,7 @@ Scanning for vulnerabilities ≠ Vulnerabilities are fixed.
 
 ## Assessment Output
 
-**Generated Workbook**: `ISMS-IMP-A.8.28.4_Third_Party_OSS_Assessment_YYYYMMDD.xlsx`  
-**Python Generator**: `generate_a828_4_third_party_oss.py`
+**Workbook**: `ISMS-IMP-A.8.28.4_Third_Party_OSS_Assessment_YYYYMMDD.xlsx`
 
 **Workbook Contains**:
 
@@ -276,14 +275,9 @@ Scanning for vulnerabilities ≠ Vulnerabilities are fixed.
 
 # Assessment Workflow (Step-by-Step)
 
-## Step 1: Generate Assessment Workbook
+## Step 1: Get the Assessment Workbook
 
-```bash
-# Generate fresh assessment workbook
-python3 generate_a828_4_third_party_oss.py
-
-# Output: ISMS-IMP-A.8.28.4_Third_Party_OSS_Assessment_20260125.xlsx
-```
+Use the workbook template provided in this content pack: `ISMS-IMP-A.8.28.4_Third_Party_OSS_Assessment_[DATE].xlsx`
 
 **What This Creates**:
 

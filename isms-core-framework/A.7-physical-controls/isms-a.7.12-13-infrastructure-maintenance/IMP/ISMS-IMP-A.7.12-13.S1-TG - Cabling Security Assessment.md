@@ -45,8 +45,6 @@
 
 ## Generator Alignment Reference
 
-> Auto-generated from `generate_a712_1_cabling_security.py` — DO NOT EDIT MANUALLY.
-> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
 **Document ID:** `ISMS-IMP-A.7.12-13.S1`
 

@@ -298,17 +298,9 @@ curl -X GET "https://your-domain.okta.com/api/v1/users?limit=200" \
 - Select "2-Step Verification" enrollment report
 - Export to CSV
 
-**Step 2: Generate Workbook**
+**Step 2: Get the Workbook**
 
-Option A - Automated (Recommended):
-```bash
-python3 generate_a8235_2_mfa_coverage.py --input EntraID_MFA_Status.csv
-```
-This creates: `ISMS-IMP-A.8.2-3-5.2_MFA_Coverage_YYYYMMDD.xlsx`
-
-Option B - Manual:
-
-- Use Excel template (provided in ISMS repository)
+- Use the Excel template provided in this content pack
 - Import user data manually
 - Save as: `ISMS-IMP-A.8.2-3-5.2_MFA_Coverage_[DATE].xlsx`
 

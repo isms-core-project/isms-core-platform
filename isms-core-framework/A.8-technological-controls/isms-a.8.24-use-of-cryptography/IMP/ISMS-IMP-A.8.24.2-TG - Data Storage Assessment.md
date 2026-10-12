@@ -46,8 +46,6 @@
 
 ## Generator Alignment Reference
 
-> Auto-generated from `generate_a824_2_data_storage_assessment.py` — DO NOT EDIT MANUALLY.
-> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
 **Document ID:** `ISMS-IMP-A.8.24.2`
 

@@ -108,8 +108,7 @@ As Feynman said: *"The first principle is that you must not fool yourself—and 
 
 ## Assessment Output
 
-**Generated Workbook**: `ISMS-IMP-A.8.28.3_Code_Review_Testing_Assessment_YYYYMMDD.xlsx`  
-**Python Generator**: `generate_a828_3_code_review_testing.py`
+**Workbook**: `ISMS-IMP-A.8.28.3_Code_Review_Testing_Assessment_YYYYMMDD.xlsx`
 
 **Workbook Contains**:
 
@@ -236,14 +235,9 @@ As Feynman said: *"The first principle is that you must not fool yourself—and 
 
 # Assessment Workflow (Step-by-Step)
 
-## Step 1: Generate Assessment Workbook
+## Step 1: Get the Assessment Workbook
 
-```bash
-# Generate fresh assessment workbook
-python3 generate_a828_3_code_review_testing.py
-
-# Output: ISMS-IMP-A.8.28.3_Code_Review_Testing_Assessment_20260125.xlsx
-```
+Use the workbook template provided in this content pack: `ISMS-IMP-A.8.28.3_Code_Review_Testing_Assessment_[DATE].xlsx`
 
 **What This Creates**:
 

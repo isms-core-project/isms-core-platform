@@ -288,10 +288,9 @@ Before starting this assessment, gather:
 
 **Phase 1: Preparation (Week 1, Days 1-2)**
 
-**Step 1**: Generate Excel workbook
+**Step 1**: Get the Excel workbook
 
-- Run Python script: `python3 generate_a828_1_sdlc_assessment.py`
-- Output: `ISMS-IMP-A.8.28.1_SDLC_Assessment_YYYYMMDD.xlsx`
+- Use the workbook template provided in this content pack: `ISMS-IMP-A.8.28.1_SDLC_Assessment_[DATE].xlsx`
 - Save to shared location for collaboration
 
 **Step 2**: Review Instructions sheet

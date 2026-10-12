@@ -262,17 +262,9 @@ Before starting the assessment, gather the following information:
 
 ## Step-by-Step Completion Guide
 
-**Step 1: Generate Workbook**
+**Step 1: Get the Workbook**
 
-Option A - Automated (Recommended):
-```bash
-python3 generate_a8235_1_authentication_inventory.py
-```
-This creates: `ISMS-IMP-A.8.2-3-5.1_Authentication_Inventory_YYYYMMDD.xlsx`
-
-Option B - Manual:
-
-- Use Excel template (provided in ISMS repository)
+- Use the Excel template provided in this content pack
 - Save as: `ISMS-IMP-A.8.2-3-5.1_Authentication_Inventory_[DATE].xlsx`
 
 **Step 2: Complete Sheet 1 - Authentication Mechanism Inventory**

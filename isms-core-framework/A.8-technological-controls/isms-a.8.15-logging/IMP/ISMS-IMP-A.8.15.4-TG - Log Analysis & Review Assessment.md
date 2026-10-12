@@ -46,8 +46,6 @@
 
 ## Generator Alignment Reference
 
-> Auto-generated from `generate_a815_4_log_analysis_review.py` — DO NOT EDIT MANUALLY.
-> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
 **Document ID:** `ISMS-IMP-A.8.15.4`
 

@@ -47,8 +47,6 @@
 
 ## Generator Alignment Reference
 
-> Auto-generated from `generate_a8235_4_privileged_monitoring.py` — DO NOT EDIT MANUALLY.
-> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
 **Document ID:** `ISMS-IMP-A.8.2-3-5.S4`
 

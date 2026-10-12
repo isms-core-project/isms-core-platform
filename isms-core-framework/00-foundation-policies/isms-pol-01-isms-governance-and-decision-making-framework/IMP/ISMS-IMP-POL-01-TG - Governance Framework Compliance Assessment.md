@@ -44,9 +44,6 @@
 
 ---
 
-> Auto-generated from `ISMS-SCR-CHK-POL-01.py` — DO NOT EDIT MANUALLY.
-> Re-generate with: `python3 generate_tg_from_scr.py --single .../SCR/ISMS-SCR-CHK-POL-01.py`
-
 **Document ID:** `ISMS-CHK-POL-01`
 
 ## Workbook Overview

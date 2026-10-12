@@ -45,8 +45,6 @@
 
 ## Generator Alignment Reference
 
-> Auto-generated from `generate_a66_2_nda_execution_tracking.py` — DO NOT EDIT MANUALLY.
-> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
 **Document ID:** `ISMS-IMP-A.6.6.2`
 

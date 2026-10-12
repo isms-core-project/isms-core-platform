@@ -482,15 +482,7 @@ aws iam list-policies --scope Local --query 'Policies[?PolicyName==`Administrato
   xargs -I {} aws iam list-entities-for-policy --policy-arn {}
 ```
 
-**Step 2: Generate Workbook**
-
-Option A - Automated (Recommended):
-```bash
-python3 generate_a8235_3_privileged_accounts.py
-```
-This creates: `ISMS-IMP-A.8.2-3-5.3_Privileged_Accounts_YYYYMMDD.xlsx`
-
-Option B - Manual:
+**Step 2: Get the Workbook**
 
 - Use Excel template
 - Save as: `ISMS-IMP-A.8.2-3-5.3_Privileged_Accounts_[DATE].xlsx`

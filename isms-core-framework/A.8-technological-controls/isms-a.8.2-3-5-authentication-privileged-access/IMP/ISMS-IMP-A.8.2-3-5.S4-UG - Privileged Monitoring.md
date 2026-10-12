@@ -324,17 +324,7 @@ grep "COMMAND" /var/log/auth.log |
   grep -E "2025-10|2025-11|2025-12"
 ```
 
-**Step 2: Generate Workbook**
-
-Option A - Automated (Recommended):
-```bash
-python3 generate_a8235_4_privileged_monitoring.py \
-  --siem-export privileged_access_logs.csv \
-  --period 2025-Q4
-```
-This creates: `ISMS-IMP-A.8.2-3-5.4_Privileged_Monitoring_YYYYMMDD.xlsx`
-
-Option B - Manual:
+**Step 2: Get the Workbook**
 
 - Use Excel template
 - Import log data manually

@@ -44,8 +44,6 @@
 
 ## Generator Alignment Reference
 
-> Auto-generated from `generate_a83334_2_audit_activity_management.py` — DO NOT EDIT MANUALLY.
-> Re-generate with: `python3 align_tg_to_scr.py --apply`
 
 **Document ID:** `ISMS-IMP-A.8.33-34.2`
 
