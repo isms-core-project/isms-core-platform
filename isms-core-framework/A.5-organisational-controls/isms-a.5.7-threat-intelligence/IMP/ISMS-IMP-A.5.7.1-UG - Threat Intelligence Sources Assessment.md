@@ -907,7 +907,7 @@ For each source in Sheet 2:
 
 **Sub-Table 4: MITRE ATT&CK Coverage**
 
-**Reference:** MITRE ATT&CK Enterprise v19.0 (15 tactics, ~220 techniques)
+**Reference:** MITRE ATT&CK Enterprise v20.0 (15 tactics, 227 techniques)
 
 | Source_ID | Source_Name | Tactics_Covered | Techniques_Covered | Coverage_Percentage |
 |-----------|-------------|-----------------|--------------------|--------------------|
@@ -917,7 +917,7 @@ For each source in Sheet 2:
 1. Review source documentation for ATT&CK mapping
 2. Count how many of 15 tactics are covered (Reconnaissance, Resource Development, Initial Access, Execution, Persistence, Privilege Escalation, Stealth, Defense Impairment, Credential Access, Discovery, Lateral Movement, Collection, Command & Control, Exfiltration, Impact)
 3. Count how many techniques are covered (approximate if exact count not available)
-4. Coverage_Percentage auto-calculated: (Techniques_Covered / 222) × 100%
+4. Coverage_Percentage auto-calculated: (Techniques_Covered / 227) × 100%
 
 **Conditional Formatting:**
 
