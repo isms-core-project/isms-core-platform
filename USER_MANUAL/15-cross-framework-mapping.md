@@ -14,7 +14,7 @@ Navigate to **ISMS → Coverage** (the Mapping Matrix and Inferred Coverage tabs
 
 ## What Cross-Framework Mapping Does
 
-The platform ships **5,249 curated crosswalk mappings on 85 framework-pair axes** (4,632 on 60 axes in the core crosswalk, plus the ISO 42001 / ISO 42005 and EU-country mapping files); **3,277** of them are anchored on ISO 27001:2022 controls, the rest connect other pairs such as NIST AI RMF ↔ ISO 42001 or ISO 27701 ↔ GDPR. When you complete your ISO 27001 assessment, the platform uses these mappings to infer coverage for the related frameworks.
+The platform ships **5,478 mappings on 86 framework-pair axes**: 5,249 curated crosswalk mappings on 85 axes (4,632 on 60 axes in the core crosswalk, plus the ISO 42001 / ISO 42005 and EU-country mapping files) and 229 control-dependency links; **3,277** of them are anchored on ISO 27001:2022 controls, the rest connect other pairs such as NIST AI RMF ↔ ISO 42001 or ISO 27701 ↔ GDPR. When you complete your ISO 27001 assessment, the platform uses these mappings to infer coverage for the related frameworks.
 
 This means:
 
