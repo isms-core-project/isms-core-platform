@@ -36,13 +36,16 @@ services:
   # alpine runs as uid 70, so the key must be owned by that uid and mode
   # 0600 or the server refuses to start.
   isms-core-internal-certs-init:
-    image: alpine:3.20
+    # Pinned by digest, not just a tag: this container runs as root, installs openssl at start-up and writes the Postgres TLS private key
+    # into the shared certs volume, so a swapped image behind a mutable tag would compromise the database. Bump deliberately
+    # (utils/release_check.py reports when a newer digest exists).
+    image: alpine:3.20@sha256:d9e853e87e55526f6b2917df91a2115c36dd7c696a35be12163d44e6e2a4b6bc
     container_name: isms-core-internal-certs-init
     entrypoint: ["/bin/sh", "-c"]
     command:
       - |
         set -e
-        apk add --no-cache openssl >/dev/null
+        apk add --no-cache openssl apache2-utils >/dev/null
         dir="/certs/postgres"
         mkdir -p "$$dir"
         if [ ! -f "$$dir/server.crt" ] || [ ! -f "$$dir/server.key" ]; then
@@ -56,6 +59,107 @@ services:
         fi
         chmod 600 "$$dir/server.key"
         chown -R 70:70 "$$dir"
+        # Garage's TLS proxy (isms-core-garage-tls): its own certificate, same shape as the one above. The SANs cover the service name the
+        # clients use and the loopback address the published port is reached on.
+        gdir="/certs/garage"
+        mkdir -p "$$gdir"
+        if [ ! -f "$$gdir/server.crt" ] || [ ! -f "$$gdir/server.key" ]; then
+          openssl req -x509 -nodes -newkey rsa:2048 -days 3650 \
+            -keyout "$$gdir/server.key" -out "$$gdir/server.crt" \
+            -subj "/C=EU/ST=Local/L=Local/O=ISMS-CORE/CN=isms-core-garage-tls" \
+            -addext "subjectAltName=DNS:isms-core-garage-tls,DNS:localhost,IP:127.0.0.1" 2>/dev/null
+          echo "[internal-certs-init] generated garage cert"
+        else
+          echo "[internal-certs-init] garage cert already present, reusing"
+        fi
+        # Trust store for the OpenSearch nodes (Java): the system CAs plus this certificate. Rebuilt on every run so it always matches the
+        # certificate on disk. The password only protects the file format; the file holds public certificates only.
+        cat /etc/ssl/certs/ca-certificates.crt "$$gdir/server.crt" > /tmp/garage-trust.pem
+        openssl pkcs12 -export -nokeys -in /tmp/garage-trust.pem -out "$$gdir/truststore.p12" \
+          -passout pass:changeit -jdktrust anyExtendedKeyUsage
+        cp /tmp/garage-trust.pem "$$gdir/ca-bundle.pem"      # the same trust, as PEM, for the snapshot plugin's native (CRT) HTTP client — see SSL_CERT_FILE
+        chmod 644 "$$gdir/server.crt" "$$gdir/truststore.p12" "$$gdir/ca-bundle.pem"
+        chmod 600 "$$gdir/server.key"
+        chown 101:101 "$$gdir/server.key"        # uid of the unprivileged nginx that reads it
+        # ── OpenSearch: ONE CA and one certificate per node (REST layer + node-to-node transport layer). Real, per-deployment certificates — never the
+        # security plugin's bundled demo ones, whose private key is public and identical in every image.
+        #  * Every node certificate carries its own DNS name (hostname verification between nodes is on), `localhost` for the container's own healthcheck,
+        #    and the registered-ID OID 1.2.3.4.5.5, which is how the security plugin recognises a certificate as a NODE certificate without a nodes_dn list.
+        #  * serverAuth AND clientAuth: a node is both the server and the client of its peers.
+        #  * The CA key stays in /certs/opensearch-ca (root-only, mode 600) and is read by nothing but this job; services mount single sub-directories.
+        oca="/certs/opensearch-ca"
+        mkdir -p "$$oca"
+        if [ ! -f "$$oca/ca.crt" ] || [ ! -f "$$oca/ca.key" ]; then
+          openssl req -x509 -nodes -newkey rsa:2048 -days 3650 \
+            -keyout "$$oca/ca.key" -out "$$oca/ca.crt" \
+            -subj "/C=EU/ST=Local/L=Local/O=ISMS-CORE/CN=isms-core-opensearch-ca" \
+            -addext "basicConstraints=critical,CA:TRUE" -addext "keyUsage=critical,keyCertSign,cRLSign" 2>/dev/null
+          echo "[internal-certs-init] generated OpenSearch CA"
+        else
+          echo "[internal-certs-init] OpenSearch CA already present, reusing"
+        fi
+        os_cert() {   # os_cert <name = directory = CN> [extra SAN entries, e.g. ,DNS:alias]
+          d="/certs/$$1"
+          mkdir -p "$$d"
+          if [ ! -f "$$d/server.crt" ] || [ ! -f "$$d/server.key" ]; then
+            openssl req -new -nodes -newkey rsa:2048 -keyout "$$d/server.key" -out "/tmp/$$1.csr" \
+              -subj "/C=EU/ST=Local/L=Local/O=ISMS-CORE/CN=$$1" 2>/dev/null
+            printf '%s\n' "basicConstraints=CA:FALSE" "keyUsage=digitalSignature,keyEncipherment" "extendedKeyUsage=serverAuth,clientAuth" \
+              "subjectAltName=DNS:$$1,DNS:localhost,IP:127.0.0.1$$2" > "/tmp/$$1.ext"
+            openssl x509 -req -in "/tmp/$$1.csr" -CA "$$oca/ca.crt" -CAkey "$$oca/ca.key" -CAcreateserial \
+              -out "$$d/server.crt" -days 3650 -extfile "/tmp/$$1.ext" 2>/dev/null
+            echo "[internal-certs-init] generated $$1 cert"
+          else
+            echo "[internal-certs-init] $$1 cert already present, reusing"
+          fi
+        }
+        node_id=",RID:1.2.3.4.5.5"
+        os_cert isms-core-opensearch "$$node_id"                                       # the single-node service (and the name clients use)
+        os_cert isms-core-opensearch-node1 ",DNS:isms-core-opensearch$$node_id"       # node1 also answers to the shared alias
+        os_cert isms-core-opensearch-node2 "$$node_id"
+        os_cert isms-core-opensearch-node3 "$$node_id"
+        os_cert isms-core-opensearch-admin                 # fills the security plugin's "kirk" (admin client) slot; we use password login, not client certificates
+        # Redis (REDIS_TLS=true): its server certificate from the same platform CA. Generated on every install (harmless when TLS is off). Clients
+        # verify it with the CA certificate and authenticate with the password; no client certificates.
+        os_cert isms-core-redis
+        chmod 644 /certs/isms-core-redis/server.crt
+        chmod 600 /certs/isms-core-redis/server.key
+        chown 999:1000 /certs/isms-core-redis/server.key    # uid:gid of the redis user in redis:8-alpine
+        # OpenSearch Dashboards' own web listener (browsers connect here). It carries NO node identity, so the key of this internet-facing certificate
+        # can never be used to join the cluster. Rewritten on every run so DASHBOARDS_TLS_EXTRA_SAN (e.g. DNS:isms.example.com,IP:192.0.2.10 — the name or
+        # address people type in the browser) always matches.
+        rm -rf /certs/isms-core-dashboards
+        os_cert isms-core-dashboards "$${DASHBOARDS_TLS_EXTRA_SAN:+,$$DASHBOARDS_TLS_EXTRA_SAN}"
+        chmod 644 "$$oca/ca.crt"
+        chmod 600 "$$oca/ca.key" "$$oca"/ca.srl
+        for n in isms-core-opensearch isms-core-opensearch-node1 isms-core-opensearch-node2 isms-core-opensearch-node3 isms-core-opensearch-admin isms-core-dashboards; do
+          chmod 644 "/certs/$$n/server.crt"
+          chmod 600 "/certs/$$n/server.key"
+          chown 1000:1000 "/certs/$$n/server.key"           # uid of the opensearch / opensearch-dashboards user inside its image (both 1000)
+        done
+        # ── OpenSearch users: the security plugin's installer ships demo accounts (kibanaserver, kibanaro, logstash, readall, snapshotrestore,
+        # anomalyadmin) whose passwords are public and equal to their names, and marks kibanaserver "reserved" so the REST API cannot change it.
+        # So the user file is ours: exactly the accounts this platform uses, bcrypt-hashed from the passwords in .env, none reserved (an Admin can
+        # still change a password through the API). Read by the security plugin only when it first initialises its index; rewritten on every run.
+        udir="/certs/opensearch-users"
+        mkdir -p "$$udir"
+        {
+          printf '%s\n' '---' '_meta:' '  type: "internalusers"' '  config_version: 2'
+          if [ -n "$$OPENSEARCH_ADMIN_PASSWORD" ]; then
+            h=$$(printf '%s' "$$OPENSEARCH_ADMIN_PASSWORD" | htpasswd -niBC 12 x | cut -d: -f2-)
+            printf '%s\n' 'admin:' "  hash: \"$$h\"" '  reserved: false' '  backend_roles:' '  - "admin"' '  description: "ISMS CORE administrator"'
+          fi
+          if [ -n "$$OPENSEARCH_DASHBOARDS_PASSWORD" ]; then
+            h=$$(printf '%s' "$$OPENSEARCH_DASHBOARDS_PASSWORD" | htpasswd -niBC 12 x | cut -d: -f2-)
+            printf '%s\n' 'kibanaserver:' "  hash: \"$$h\"" '  reserved: false' '  description: "OpenSearch Dashboards server user"'
+          fi
+        } > "$$udir/internal_users.yml"
+        chmod 600 "$$udir/internal_users.yml"
+        chown 1000:1000 "$$udir/internal_users.yml"
+    environment:
+      - OPENSEARCH_ADMIN_PASSWORD=${OPENSEARCH_ADMIN_PASSWORD:-}
+      - OPENSEARCH_DASHBOARDS_PASSWORD=${OPENSEARCH_DASHBOARDS_PASSWORD:-}
+      - DASHBOARDS_TLS_EXTRA_SAN=${DASHBOARDS_TLS_EXTRA_SAN:-}
     volumes:
       - isms-core-internal-certs:/certs
     networks:
@@ -90,6 +194,19 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    # Container hardening: this image's entrypoint starts as root only to fix ownership/permissions of the data directory and then
+    # switches to the postgres user, so the capabilities for exactly those two steps are kept and everything else is dropped.
+    # Same recipe as, and proven live for, the identical image elsewhere in this project family. read_only is not set.
+    cap_drop:
+      - ALL
+    cap_add:
+      - DAC_OVERRIDE
+      - CHOWN
+      - FOWNER
+      - SETUID
+      - SETGID
+    security_opt:
+      - no-new-privileges:true
     restart: unless-stopped
     networks:
       - isms-core-network
@@ -97,9 +214,24 @@ services:
   isms-core-redis:
     image: redis:8-alpine
     container_name: isms-core-redis
-    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}
+    # The password is read from the container environment by the shell, not written on the command line (where `docker inspect` and
+    # the host process list would show it).
+    # docker-entrypoint.sh is called explicitly: a plain `sh -c` would skip the image entrypoint, which is what drops root to the redis user.
+    # REDIS_TLS=true: TLS only (the plain port is closed), the certificate comes from the platform CA (isms-core-internal-certs-init), clients verify it
+    # and still send the password.
+    command:
+      - sh
+      - -c
+      - |
+        if [ "$$REDIS_TLS" = "true" ]; then
+          set -- --port 0 --tls-port 6379 --tls-cert-file /certs/redis/server.crt --tls-key-file /certs/redis/server.key \
+                 --tls-ca-cert-file /certs/ca/ca.crt --tls-auth-clients no
+        fi
+        exec docker-entrypoint.sh redis-server --appendonly yes --requirepass "$$REDIS_PASSWORD" "$$@"
     environment:
       - TZ=${TZ:-Europe/Zurich}
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+      - REDIS_TLS=${REDIS_TLS:-false}
       # Lets the healthcheck's redis-cli authenticate without putting the
       # password in argv (visible via `docker inspect`/`ps` otherwise). An
       # unauthenticated healthcheck previously forced operators to run Redis
@@ -108,11 +240,37 @@ services:
       - REDISCLI_AUTH=${REDIS_PASSWORD}
     volumes:
       - redis-data:/data
+      - type: volume
+        source: isms-core-internal-certs
+        target: /certs/redis
+        volume: { subpath: isms-core-redis }
+        read_only: true
+      - type: volume
+        source: isms-core-internal-certs
+        target: /certs/ca/ca.crt
+        volume: { subpath: opensearch-ca/ca.crt }
+        read_only: true
+    depends_on:
+      isms-core-internal-certs-init:
+        condition: service_completed_successfully
     healthcheck:
-      test: ["CMD", "redis-cli", "--no-auth-warning", "--raw", "incr", "ping"]
+      test: ["CMD-SHELL", "if [ \"$$REDIS_TLS\" = \"true\" ]; then T='--tls --cacert /certs/ca/ca.crt'; fi; redis-cli $$T --no-auth-warning --raw incr ping"]
       interval: 10s
       timeout: 3s
       retries: 5
+    # Container hardening: the image entrypoint (called explicitly above) starts as root, fixes ownership of /data and switches to the
+    # redis user — only the capabilities for those steps are kept. DAC_OVERRIDE is one of them: the data directory is owned by the redis user
+    # with mode 700, which root can only enter with it; without it the entrypoint's ownership check logs "find: ./appendonlydir: Permission
+    # denied" on every restart and could not repair a wrongly owned file (e.g. after a restore). Dropped again together with root. read_only is not set.
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_OVERRIDE
+      - SETUID
+      - SETGID
+    security_opt:
+      - no-new-privileges:true
     restart: unless-stopped
     networks:
       - isms-core-network
@@ -136,11 +294,59 @@ services:
       # truly-unconfigured case.
       - DISABLE_SECURITY_PLUGIN=${OPENSEARCH_DISABLE_SECURITY:-false}
       - OPENSEARCH_INITIAL_ADMIN_PASSWORD=${OPENSEARCH_ADMIN_PASSWORD:-}
-      - OPENSEARCH_JAVA_OPTS=-Xms${OPENSEARCH_HEAP:-1g} -Xmx${OPENSEARCH_HEAP:-1g} -Dopensearch.allow_insecure_settings=true
+      - OPENSEARCH_JAVA_OPTS=-Xms${OPENSEARCH_HEAP:-1g} -Xmx${OPENSEARCH_HEAP:-1g} -Dopensearch.allow_insecure_settings=true -Djavax.net.ssl.trustStore=/certs/garage/truststore.p12 -Djavax.net.ssl.trustStoreType=PKCS12 -Djavax.net.ssl.trustStorePassword=changeit
+      # The S3 snapshot plugin has TWO HTTP stacks: the Java one (trusts via the trust store above) and AWS's native CRT client (ignores it and reads
+      # the system CA file instead). Both must trust Garage's certificate, so the native one is pointed at the same trust as PEM.
+      - SSL_CERT_FILE=/certs/garage/ca-bundle.pem
       - bootstrap.memory_lock=true
+      # Refuse the security plugin's public demo certificates (its own default is to ALLOW them). A no-op while OPENSEARCH_DISABLE_SECURITY=true.
+      - plugins.security.allow_unsafe_democertificates=false
+      # Node-to-node: check that the name a peer answers to is in its certificate (every node certificate carries its DNS name). The demo installer turns this
+      # off because its public demo certificates carry no real names; ours do.
+      - transport.ssl.enforce_hostname_verification=true
       - logger.org.opensearch.discovery=ERROR
     volumes:
       - opensearch-data:/usr/share/opensearch/data
+      - type: volume
+        source: isms-core-internal-certs
+        target: /certs/garage
+        volume: { subpath: garage }
+        read_only: true
+      # Real certificates at the EXACT filenames the security plugin's demo installer uses, so it neither writes its public demo certificates nor trips its
+      # own check for them (see isms-core-opensearch-tls.md): this node's certificate and key, the CA, and the admin-client slot.
+      - type: volume
+        source: isms-core-internal-certs
+        target: /usr/share/opensearch/config/esnode.pem
+        volume: { subpath: isms-core-opensearch/server.crt }
+        read_only: true
+      - type: volume
+        source: isms-core-internal-certs
+        target: /usr/share/opensearch/config/esnode-key.pem
+        volume: { subpath: isms-core-opensearch/server.key }
+        read_only: true
+      - type: volume
+        source: isms-core-internal-certs
+        target: /usr/share/opensearch/config/root-ca.pem
+        volume: { subpath: opensearch-ca/ca.crt }
+        read_only: true
+      - type: volume
+        source: isms-core-internal-certs
+        target: /usr/share/opensearch/config/kirk.pem
+        volume: { subpath: isms-core-opensearch-admin/server.crt }
+        read_only: true
+      - type: volume
+        source: isms-core-internal-certs
+        target: /usr/share/opensearch/config/kirk-key.pem
+        volume: { subpath: isms-core-opensearch-admin/server.key }
+        read_only: true
+      - type: volume
+        source: isms-core-internal-certs
+        target: /usr/share/opensearch/config/opensearch-security/internal_users.yml
+        volume: { subpath: opensearch-users/internal_users.yml }
+        read_only: true
+    depends_on:
+      isms-core-internal-certs-init:
+        condition: service_completed_successfully
     ulimits:
       memlock:
         soft: -1
@@ -149,7 +355,7 @@ services:
         soft: 65536
         hard: 65536
     healthcheck:
-      test: ["CMD-SHELL", "curl -sf http://localhost:9200/_cluster/health || exit 1"]
+      test: ["CMD-SHELL", "if [ \"$$DISABLE_SECURITY_PLUGIN\" = \"true\" ]; then curl -sf 'http://localhost:9200/_cluster/health'; else curl -sf --cacert /usr/share/opensearch/config/root-ca.pem -u admin:$$OPENSEARCH_INITIAL_ADMIN_PASSWORD 'https://localhost:9200/_cluster/health'; fi || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 10
@@ -177,11 +383,62 @@ services:
       - cluster.initial_master_nodes=isms-core-opensearch-node1,isms-core-opensearch-node2,isms-core-opensearch-node3
       - DISABLE_SECURITY_PLUGIN=${OPENSEARCH_DISABLE_SECURITY:-false}
       - OPENSEARCH_INITIAL_ADMIN_PASSWORD=${OPENSEARCH_ADMIN_PASSWORD:-}
-      - OPENSEARCH_JAVA_OPTS=-Xms${OPENSEARCH_HEAP:-1g} -Xmx${OPENSEARCH_HEAP:-1g} -Dopensearch.allow_insecure_settings=true
+      - OPENSEARCH_JAVA_OPTS=-Xms${OPENSEARCH_HEAP:-1g} -Xmx${OPENSEARCH_HEAP:-1g} -Dopensearch.allow_insecure_settings=true -Djavax.net.ssl.trustStore=/certs/garage/truststore.p12 -Djavax.net.ssl.trustStoreType=PKCS12 -Djavax.net.ssl.trustStorePassword=changeit
+      # The S3 snapshot plugin has TWO HTTP stacks: the Java one (trusts via the trust store above) and AWS's native CRT client (ignores it and reads
+      # the system CA file instead). Both must trust Garage's certificate, so the native one is pointed at the same trust as PEM.
+      - SSL_CERT_FILE=/certs/garage/ca-bundle.pem
       - bootstrap.memory_lock=true
+      # Refuse the security plugin's public demo certificates (its own default is to ALLOW them). A no-op while OPENSEARCH_DISABLE_SECURITY=true.
+      - plugins.security.allow_unsafe_democertificates=false
+      # Node-to-node: check that the name a peer answers to is in its certificate (every node certificate carries its DNS name). The demo installer turns this
+      # off because its public demo certificates carry no real names; ours do.
+      - transport.ssl.enforce_hostname_verification=true
+      # Peers must be reached by NAME, not by container IP (which changes on every recreate and can never be in a certificate): publish this node's
+      # hostname so the hostname check above runs against the DNS names its certificate carries.
+      - network.publish_host=isms-core-opensearch-node1
       - logger.org.opensearch.discovery=ERROR
     volumes:
       - osdata01:/usr/share/opensearch/data
+      - type: volume
+        source: isms-core-internal-certs
+        target: /certs/garage
+        volume: { subpath: garage }
+        read_only: true
+      # Real certificates at the EXACT filenames the security plugin's demo installer uses, so it neither writes its public demo certificates nor trips its
+      # own check for them (see isms-core-opensearch-tls.md): this node's certificate and key, the CA, and the admin-client slot.
+      - type: volume
+        source: isms-core-internal-certs
+        target: /usr/share/opensearch/config/esnode.pem
+        volume: { subpath: isms-core-opensearch-node1/server.crt }
+        read_only: true
+      - type: volume
+        source: isms-core-internal-certs
+        target: /usr/share/opensearch/config/esnode-key.pem
+        volume: { subpath: isms-core-opensearch-node1/server.key }
+        read_only: true
+      - type: volume
+        source: isms-core-internal-certs
+        target: /usr/share/opensearch/config/root-ca.pem
+        volume: { subpath: opensearch-ca/ca.crt }
+        read_only: true
+      - type: volume
+        source: isms-core-internal-certs
+        target: /usr/share/opensearch/config/kirk.pem
+        volume: { subpath: isms-core-opensearch-admin/server.crt }
+        read_only: true
+      - type: volume
+        source: isms-core-internal-certs
+        target: /usr/share/opensearch/config/kirk-key.pem
+        volume: { subpath: isms-core-opensearch-admin/server.key }
+        read_only: true
+      - type: volume
+        source: isms-core-internal-certs
+        target: /usr/share/opensearch/config/opensearch-security/internal_users.yml
+        volume: { subpath: opensearch-users/internal_users.yml }
+        read_only: true
+    depends_on:
+      isms-core-internal-certs-init:
+        condition: service_completed_successfully
     ulimits:
       memlock:
         soft: -1
@@ -190,7 +447,7 @@ services:
         soft: 65536
         hard: 65536
     healthcheck:
-      test: ["CMD-SHELL", "curl -sf 'http://localhost:9200/_cluster/health?wait_for_status=yellow&timeout=3s' || exit 1"]
+      test: ["CMD-SHELL", "if [ \"$$DISABLE_SECURITY_PLUGIN\" = \"true\" ]; then curl -sf 'http://localhost:9200/_cluster/health?wait_for_status=yellow&timeout=3s'; else curl -sf --cacert /usr/share/opensearch/config/root-ca.pem -u admin:$$OPENSEARCH_INITIAL_ADMIN_PASSWORD 'https://localhost:9200/_cluster/health?wait_for_status=yellow&timeout=3s'; fi || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 120
@@ -214,11 +471,62 @@ services:
       - cluster.initial_master_nodes=isms-core-opensearch-node1,isms-core-opensearch-node2,isms-core-opensearch-node3
       - DISABLE_SECURITY_PLUGIN=${OPENSEARCH_DISABLE_SECURITY:-false}
       - OPENSEARCH_INITIAL_ADMIN_PASSWORD=${OPENSEARCH_ADMIN_PASSWORD:-}
-      - OPENSEARCH_JAVA_OPTS=-Xms${OPENSEARCH_HEAP:-1g} -Xmx${OPENSEARCH_HEAP:-1g} -Dopensearch.allow_insecure_settings=true
+      - OPENSEARCH_JAVA_OPTS=-Xms${OPENSEARCH_HEAP:-1g} -Xmx${OPENSEARCH_HEAP:-1g} -Dopensearch.allow_insecure_settings=true -Djavax.net.ssl.trustStore=/certs/garage/truststore.p12 -Djavax.net.ssl.trustStoreType=PKCS12 -Djavax.net.ssl.trustStorePassword=changeit
+      # The S3 snapshot plugin has TWO HTTP stacks: the Java one (trusts via the trust store above) and AWS's native CRT client (ignores it and reads
+      # the system CA file instead). Both must trust Garage's certificate, so the native one is pointed at the same trust as PEM.
+      - SSL_CERT_FILE=/certs/garage/ca-bundle.pem
       - bootstrap.memory_lock=true
+      # Refuse the security plugin's public demo certificates (its own default is to ALLOW them). A no-op while OPENSEARCH_DISABLE_SECURITY=true.
+      - plugins.security.allow_unsafe_democertificates=false
+      # Node-to-node: check that the name a peer answers to is in its certificate (every node certificate carries its DNS name). The demo installer turns this
+      # off because its public demo certificates carry no real names; ours do.
+      - transport.ssl.enforce_hostname_verification=true
+      # Peers must be reached by NAME, not by container IP (which changes on every recreate and can never be in a certificate): publish this node's
+      # hostname so the hostname check above runs against the DNS names its certificate carries.
+      - network.publish_host=isms-core-opensearch-node2
       - logger.org.opensearch.discovery=ERROR
     volumes:
       - osdata02:/usr/share/opensearch/data
+      - type: volume
+        source: isms-core-internal-certs
+        target: /certs/garage
+        volume: { subpath: garage }
+        read_only: true
+      # Real certificates at the EXACT filenames the security plugin's demo installer uses, so it neither writes its public demo certificates nor trips its
+      # own check for them (see isms-core-opensearch-tls.md): this node's certificate and key, the CA, and the admin-client slot.
+      - type: volume
+        source: isms-core-internal-certs
+        target: /usr/share/opensearch/config/esnode.pem
+        volume: { subpath: isms-core-opensearch-node2/server.crt }
+        read_only: true
+      - type: volume
+        source: isms-core-internal-certs
+        target: /usr/share/opensearch/config/esnode-key.pem
+        volume: { subpath: isms-core-opensearch-node2/server.key }
+        read_only: true
+      - type: volume
+        source: isms-core-internal-certs
+        target: /usr/share/opensearch/config/root-ca.pem
+        volume: { subpath: opensearch-ca/ca.crt }
+        read_only: true
+      - type: volume
+        source: isms-core-internal-certs
+        target: /usr/share/opensearch/config/kirk.pem
+        volume: { subpath: isms-core-opensearch-admin/server.crt }
+        read_only: true
+      - type: volume
+        source: isms-core-internal-certs
+        target: /usr/share/opensearch/config/kirk-key.pem
+        volume: { subpath: isms-core-opensearch-admin/server.key }
+        read_only: true
+      - type: volume
+        source: isms-core-internal-certs
+        target: /usr/share/opensearch/config/opensearch-security/internal_users.yml
+        volume: { subpath: opensearch-users/internal_users.yml }
+        read_only: true
+    depends_on:
+      isms-core-internal-certs-init:
+        condition: service_completed_successfully
     ulimits:
       memlock:
         soft: -1
@@ -227,7 +535,7 @@ services:
         soft: 65536
         hard: 65536
     healthcheck:
-      test: ["CMD-SHELL", "curl -sf 'http://localhost:9200/_cluster/health?wait_for_status=yellow&timeout=3s' || exit 1"]
+      test: ["CMD-SHELL", "if [ \"$$DISABLE_SECURITY_PLUGIN\" = \"true\" ]; then curl -sf 'http://localhost:9200/_cluster/health?wait_for_status=yellow&timeout=3s'; else curl -sf --cacert /usr/share/opensearch/config/root-ca.pem -u admin:$$OPENSEARCH_INITIAL_ADMIN_PASSWORD 'https://localhost:9200/_cluster/health?wait_for_status=yellow&timeout=3s'; fi || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 120
@@ -249,11 +557,62 @@ services:
       - cluster.initial_master_nodes=isms-core-opensearch-node1,isms-core-opensearch-node2,isms-core-opensearch-node3
       - DISABLE_SECURITY_PLUGIN=${OPENSEARCH_DISABLE_SECURITY:-false}
       - OPENSEARCH_INITIAL_ADMIN_PASSWORD=${OPENSEARCH_ADMIN_PASSWORD:-}
-      - OPENSEARCH_JAVA_OPTS=-Xms${OPENSEARCH_HEAP:-1g} -Xmx${OPENSEARCH_HEAP:-1g} -Dopensearch.allow_insecure_settings=true
+      - OPENSEARCH_JAVA_OPTS=-Xms${OPENSEARCH_HEAP:-1g} -Xmx${OPENSEARCH_HEAP:-1g} -Dopensearch.allow_insecure_settings=true -Djavax.net.ssl.trustStore=/certs/garage/truststore.p12 -Djavax.net.ssl.trustStoreType=PKCS12 -Djavax.net.ssl.trustStorePassword=changeit
+      # The S3 snapshot plugin has TWO HTTP stacks: the Java one (trusts via the trust store above) and AWS's native CRT client (ignores it and reads
+      # the system CA file instead). Both must trust Garage's certificate, so the native one is pointed at the same trust as PEM.
+      - SSL_CERT_FILE=/certs/garage/ca-bundle.pem
       - bootstrap.memory_lock=true
+      # Refuse the security plugin's public demo certificates (its own default is to ALLOW them). A no-op while OPENSEARCH_DISABLE_SECURITY=true.
+      - plugins.security.allow_unsafe_democertificates=false
+      # Node-to-node: check that the name a peer answers to is in its certificate (every node certificate carries its DNS name). The demo installer turns this
+      # off because its public demo certificates carry no real names; ours do.
+      - transport.ssl.enforce_hostname_verification=true
+      # Peers must be reached by NAME, not by container IP (which changes on every recreate and can never be in a certificate): publish this node's
+      # hostname so the hostname check above runs against the DNS names its certificate carries.
+      - network.publish_host=isms-core-opensearch-node3
       - logger.org.opensearch.discovery=ERROR
     volumes:
       - osdata03:/usr/share/opensearch/data
+      - type: volume
+        source: isms-core-internal-certs
+        target: /certs/garage
+        volume: { subpath: garage }
+        read_only: true
+      # Real certificates at the EXACT filenames the security plugin's demo installer uses, so it neither writes its public demo certificates nor trips its
+      # own check for them (see isms-core-opensearch-tls.md): this node's certificate and key, the CA, and the admin-client slot.
+      - type: volume
+        source: isms-core-internal-certs
+        target: /usr/share/opensearch/config/esnode.pem
+        volume: { subpath: isms-core-opensearch-node3/server.crt }
+        read_only: true
+      - type: volume
+        source: isms-core-internal-certs
+        target: /usr/share/opensearch/config/esnode-key.pem
+        volume: { subpath: isms-core-opensearch-node3/server.key }
+        read_only: true
+      - type: volume
+        source: isms-core-internal-certs
+        target: /usr/share/opensearch/config/root-ca.pem
+        volume: { subpath: opensearch-ca/ca.crt }
+        read_only: true
+      - type: volume
+        source: isms-core-internal-certs
+        target: /usr/share/opensearch/config/kirk.pem
+        volume: { subpath: isms-core-opensearch-admin/server.crt }
+        read_only: true
+      - type: volume
+        source: isms-core-internal-certs
+        target: /usr/share/opensearch/config/kirk-key.pem
+        volume: { subpath: isms-core-opensearch-admin/server.key }
+        read_only: true
+      - type: volume
+        source: isms-core-internal-certs
+        target: /usr/share/opensearch/config/opensearch-security/internal_users.yml
+        volume: { subpath: opensearch-users/internal_users.yml }
+        read_only: true
+    depends_on:
+      isms-core-internal-certs-init:
+        condition: service_completed_successfully
     ulimits:
       memlock:
         soft: -1
@@ -262,7 +621,7 @@ services:
         soft: 65536
         hard: 65536
     healthcheck:
-      test: ["CMD-SHELL", "curl -sf 'http://localhost:9200/_cluster/health?wait_for_status=yellow&timeout=3s' || exit 1"]
+      test: ["CMD-SHELL", "if [ \"$$DISABLE_SECURITY_PLUGIN\" = \"true\" ]; then curl -sf 'http://localhost:9200/_cluster/health?wait_for_status=yellow&timeout=3s'; else curl -sf --cacert /usr/share/opensearch/config/root-ca.pem -u admin:$$OPENSEARCH_INITIAL_ADMIN_PASSWORD 'https://localhost:9200/_cluster/health?wait_for_status=yellow&timeout=3s'; fi || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 120
@@ -282,11 +641,21 @@ services:
     container_name: isms-core-opensearch-setup
     environment:
       - TZ=${TZ:-Europe/Zurich}
-      - OPENSEARCH_URL=http://isms-core-opensearch:9200
-      - GARAGE_ENDPOINT=${GARAGE_ENDPOINT:-http://isms-core-garage:3900}
+      - OPENSEARCH_URL=${OPENSEARCH_URL:-http://isms-core-opensearch:9200}
+      - OPENSEARCH_CA_CERT=${OPENSEARCH_CA_CERT:-/certs/opensearch-ca/ca.crt}
+      - OPENSEARCH_ALLOW_UNVERIFIED_TLS=${OPENSEARCH_ALLOW_UNVERIFIED_TLS:-false}
+      - OPENSEARCH_USERNAME=${OPENSEARCH_USERNAME:-}
+      - OPENSEARCH_PASSWORD=${OPENSEARCH_PASSWORD:-}
+      - GARAGE_ENDPOINT=${GARAGE_ENDPOINT:-https://isms-core-garage-tls:3900}
       - GARAGE_ACCESS_KEY=${GARAGE_ACCESS_KEY:-}
       - GARAGE_SECRET_KEY=${GARAGE_SECRET_KEY:-}
       - GARAGE_BUCKET_SNAPSHOTS=${GARAGE_BUCKET_SNAPSHOTS:-isms-snapshots}
+    volumes:
+      - type: volume                                  # only the OpenSearch CA certificate (never a key)
+        source: isms-core-internal-certs
+        target: /certs/opensearch-ca
+        volume: { subpath: opensearch-ca }
+        read_only: true
     depends_on:
       isms-core-opensearch:
         condition: service_healthy
@@ -302,8 +671,8 @@ services:
   # Apache 2.0, S3-compatible. Replaces MinIO (Community Edition archived).
   # Single-node mode (replication_factor=1 in garage.toml).
   # Buckets: isms-evidence | isms-snapshots | isms-exports
-  # S3 API:   http://isms-core-garage:3900
-  # Admin API: http://isms-core-garage:3903  (token: see garage/garage.toml)
+  # S3 API:   https://isms-core-garage-tls:3900   (TLS proxy in front of Garage — see isms-core-garage-tls)
+  # Admin API: https://isms-core-garage-tls:3903  (token: see garage/garage.toml)
   #
   # isms-core-garage-setup runs once on first start: assigns layout, creates
   # buckets, imports access key. Idempotent — skipped if already configured.
@@ -325,12 +694,49 @@ services:
       - TZ=${TZ:-Europe/Zurich}
       - GARAGE_RPC_SECRET=${GARAGE_RPC_SECRET}
       - GARAGE_ADMIN_TOKEN=${GARAGE_ADMIN_TOKEN}
+    # No published ports and not on the platform network: Garage speaks plain HTTP, so the only way in is the TLS proxy below, which shares
+    # the private isms-core-garage-network with it. Nothing else on the platform can open a plaintext connection to Garage.
+    restart: unless-stopped
+    networks:
+      - isms-core-garage-network
+
+  # ── TLS in front of Garage (--profile garage) ───────────────────────────────
+  # Garage cannot terminate TLS itself. This proxy answers on the two Garage ports with the certificate made by isms-core-internal-certs-init
+  # and passes the decrypted traffic to Garage over the private network. Config: garage/tls-proxy.conf.
+  # S3 API:    https://isms-core-garage-tls:3900     Admin API: https://isms-core-garage-tls:3903
+  isms-core-garage-tls:
+    image: nginxinc/nginx-unprivileged:alpine@sha256:378d0c32f6562f7fd9629170797f57d2b953aa09be983b3daaf4809bb039ca00
+    container_name: isms-core-garage-tls
+    profiles: [garage]
+    volumes:
+      - ./garage/tls-proxy.conf:/etc/nginx/nginx.conf:ro
+      - type: volume                                  # only the Garage certificate and key
+        source: isms-core-internal-certs
+        target: /certs/garage
+        volume: { subpath: garage }
+        read_only: true
     ports:
-      - "${GARAGE_BIND:-127.0.0.1}:3900:3900"   # S3 API — set GARAGE_BIND=0.0.0.0 to expose
-      - "127.0.0.1:3903:3903"                    # Admin API — never expose externally
+      - "${GARAGE_BIND:-127.0.0.1}:3900:3900"   # S3 API (TLS) — set GARAGE_BIND=0.0.0.0 to expose
+      - "127.0.0.1:3903:3903"                    # Admin API (TLS) — never expose externally
+    depends_on:
+      isms-core-internal-certs-init:
+        condition: service_completed_successfully
+      isms-core-garage:
+        condition: service_started
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z 127.0.0.1 3900 && nc -z 127.0.0.1 3903"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    # Container hardening — see isms-core-backend above.
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
     restart: unless-stopped
     networks:
       - isms-core-network
+      - isms-core-garage-network
 
   isms-core-garage-setup:
     image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-garage-setup-${PLATFORM_TAG:-latest}
@@ -339,12 +745,20 @@ services:
     profiles: [garage]
     environment:
       - TZ=${TZ:-Europe/Zurich}
-      - GARAGE_ADMIN_URL=http://isms-core-garage:3903
+      - GARAGE_ADMIN_URL=https://isms-core-garage-tls:3903
+      - GARAGE_CA_CERT=/certs/garage/server.crt
       - GARAGE_ADMIN_TOKEN=${GARAGE_ADMIN_TOKEN}
       - GARAGE_ACCESS_KEY=${GARAGE_ACCESS_KEY}
       - GARAGE_SECRET_KEY=${GARAGE_SECRET_KEY}
+    volumes:
+      - type: volume                                  # only the Garage certificate
+        source: isms-core-internal-certs
+        target: /certs/garage
+        volume: { subpath: garage }
+        read_only: true
     depends_on:
-      - isms-core-garage
+      isms-core-garage-tls:
+        condition: service_healthy
     restart: "no"
     networks:
       - isms-core-network
@@ -352,23 +766,53 @@ services:
   # ── OpenSearch Dashboards (--profile dashboards) ───────────────────────────
   # Open-source Kibana fork by AWS. Apache 2.0.
   # Works with both single-node and cluster — connects via isms-core-opensearch alias.
-  # Access: http://<HOST_IP>:5601
-  # To enable the Security plugin: set OPENSEARCH_DISABLE_SECURITY=false + OPENSEARCH_USERNAME/PASSWORD.
+  # Access: https://<HOST_IP>:5601 (http:// while OPENSEARCH_DISABLE_SECURITY=true). Log in as admin with OPENSEARCH_ADMIN_PASSWORD.
 
   isms-core-dashboards:
-    image: opensearchproject/opensearch-dashboards:latest
+    image: opensearchproject/opensearch-dashboards:3
     container_name: isms-core-dashboards
     profiles: [dashboards]
+    # With the OpenSearch security plugin ON (the default) Dashboards (1) talks to OpenSearch over HTTPS, checking its certificate and name against the
+    # platform's own CA, logging in as the dedicated "kibanaserver" user; (2) serves its OWN web page over HTTPS with a certificate from the same CA
+    # (browsers show a warning until that CA is trusted — see the upgrade notes); (3) marks its session cookie Secure and signs it with a key derived
+    # from that password instead of the plugin's published default. With OPENSEARCH_DISABLE_SECURITY=true it is plain HTTP, as before.
+    # The options the image has no environment variable for go in a generated config file (in /tmp, mode 600), never on the command line.
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        if [ "$$DISABLE_SECURITY_DASHBOARDS_PLUGIN" = "true" ]; then exec ./opensearch-dashboards-docker-entrypoint.sh opensearch-dashboards; fi
+        umask 077
+        grep -v '^opensearch_security.cookie\.' config/opensearch_dashboards.yml > /tmp/osd.yml
+        printf '%s\n' "opensearch_security.cookie.secure: true" \
+          "opensearch_security.cookie.password: \"$$(printf '%s' "osd-cookie:$$OPENSEARCH_PASSWORD" | sha256sum | cut -d' ' -f1)\"" >> /tmp/osd.yml
+        exec ./opensearch-dashboards-docker-entrypoint.sh opensearch-dashboards --config=/tmp/osd.yml \
+          --server.ssl.enabled=true --server.ssl.certificate=/certs/dashboards/server.crt --server.ssl.key=/certs/dashboards/server.key
     environment:
       - TZ=${TZ:-Europe/Zurich}
-      - 'OPENSEARCH_HOSTS=["http://isms-core-opensearch:9200"]'
+      - 'OPENSEARCH_HOSTS=["${OPENSEARCH_URL:-http://isms-core-opensearch:9200}"]'
+      - OPENSEARCH_USERNAME=kibanaserver
+      - OPENSEARCH_PASSWORD=${OPENSEARCH_DASHBOARDS_PASSWORD:-}
+      - OPENSEARCH_SSL_VERIFICATIONMODE=full
+      - 'OPENSEARCH_SSL_CERTIFICATEAUTHORITIES=["/certs/opensearch-ca/ca.crt"]'
       - DISABLE_SECURITY_DASHBOARDS_PLUGIN=${OPENSEARCH_DISABLE_SECURITY:-false}
       - SERVER_BASEPATH=
       - SERVER_REWRITEBASEPATH=false
+    volumes:
+      - type: volume
+        source: isms-core-internal-certs
+        target: /certs/opensearch-ca
+        volume: { subpath: opensearch-ca }
+        read_only: true
+      - type: volume                                  # this service's own certificate and key (a different directory from the OpenSearch nodes')
+        source: isms-core-internal-certs
+        target: /certs/dashboards
+        volume: { subpath: isms-core-dashboards }
+        read_only: true
     ports:
       - "${DASHBOARDS_BIND:-127.0.0.1}:5601:5601"
     healthcheck:
-      test: ["CMD-SHELL", "curl -sf http://localhost:5601/api/status > /dev/null"]
+      test: ["CMD-SHELL", "if [ \"$$DISABLE_SECURITY_DASHBOARDS_PLUGIN\" = \"true\" ]; then curl -sf http://localhost:5601/api/status > /dev/null; else curl -sf --cacert /certs/opensearch-ca/ca.crt -u \"kibanaserver:$$OPENSEARCH_PASSWORD\" https://localhost:5601/api/status > /dev/null; fi"]
       interval: 15s
       timeout: 10s
       retries: 20
@@ -391,8 +835,17 @@ services:
     profiles: [dashboards]
     environment:
       - TZ=${TZ:-Europe/Zurich}
-      - DASHBOARDS_URL=http://isms-core-dashboards:5601
-      - OPENSEARCH_URL=http://isms-core-opensearch:9200
+      - OPENSEARCH_URL=${OPENSEARCH_URL:-http://isms-core-opensearch:9200}
+      - OPENSEARCH_CA_CERT=${OPENSEARCH_CA_CERT:-/certs/opensearch-ca/ca.crt}
+      - OPENSEARCH_ALLOW_UNVERIFIED_TLS=${OPENSEARCH_ALLOW_UNVERIFIED_TLS:-false}
+      - OPENSEARCH_USERNAME=${OPENSEARCH_USERNAME:-}
+      - OPENSEARCH_PASSWORD=${OPENSEARCH_PASSWORD:-}
+    volumes:
+      - type: volume                                  # only the OpenSearch CA certificate (never a key)
+        source: isms-core-internal-certs
+        target: /certs/opensearch-ca
+        volume: { subpath: opensearch-ca }
+        read_only: true
     depends_on:
       isms-core-dashboards:
         condition: service_healthy
@@ -432,13 +885,23 @@ services:
       - ${SEC_HOST_PATH:-../isms-core-sec}:/app/isms-sec:ro
       - ${EXT_HOST_PATH:-../isms-core-ext}:/app/isms-ext:ro
       - ti-data:/data/ti:ro   # GeoLite2 MMDB files (downloaded by threat-intel container)
-      - isms-core-internal-certs:/certs:ro
+      - type: volume                                  # only the Postgres CA certificate; the volume also holds other services' keys
+        source: isms-core-internal-certs
+        target: /certs/postgres
+        volume: { subpath: postgres }
+        read_only: true
+      - type: volume                                  # only the OpenSearch CA certificate (never the CA key or any node key)
+        source: isms-core-internal-certs
+        target: /certs/opensearch-ca
+        volume: { subpath: opensearch-ca }
+        read_only: true
     environment:
       - TZ=${TZ:-Europe/Zurich}
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
       - DB_SSLMODE=${DB_SSLMODE:-verify-full}
       - DB_SSL_ROOT_CERT=${DB_SSL_ROOT_CERT:-/certs/postgres/server.crt}
       - REDIS_URL=redis://:${REDIS_PASSWORD}@isms-core-redis:6379/0
+      - REDIS_TLS=${REDIS_TLS:-false}      # true: the URL above is used as rediss:// and the certificate is verified against REDIS_CA_FILE (default: the platform CA below)
       - DATASETS_PATH=/app/datasets
       - FRAMEWORK_PATH=/app/isms-framework
       - OPERATIONAL_PATH=/app/isms-operational
@@ -450,10 +913,11 @@ services:
       - SECRET_KEY=${SECRET_KEY}
       - DEBUG=false
       - LOG_LEVEL=INFO
-      - OPENSEARCH_URL=http://isms-core-opensearch:9200
+      - OPENSEARCH_URL=${OPENSEARCH_URL:-http://isms-core-opensearch:9200}
       - OPENSEARCH_USE_SSL=${OPENSEARCH_USE_SSL:-false}
       - OPENSEARCH_VERIFY_CERTS=${OPENSEARCH_VERIFY_CERTS:-false}
-      - OPENSEARCH_CA_CERT=${OPENSEARCH_CA_CERT:-}
+      - OPENSEARCH_CA_CERT=${OPENSEARCH_CA_CERT:-/certs/opensearch-ca/ca.crt}
+      - OPENSEARCH_ALLOW_UNVERIFIED_TLS=${OPENSEARCH_ALLOW_UNVERIFIED_TLS:-false}
       - OPENSEARCH_USERNAME=${OPENSEARCH_USERNAME:-}
       - OPENSEARCH_PASSWORD=${OPENSEARCH_PASSWORD:-}
       - CORS_ORIGINS=${CORS_ORIGINS}
@@ -461,15 +925,27 @@ services:
       - ADMIN_PASSWORD=${ADMIN_PASSWORD}
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
       - NIST_API_KEY=${NIST_API_KEY:-}
+      # Encrypts the third-party API keys saved in the WebUI (Admin -> API keys). Only backend, feeds and threat-intel get it (never SECRET_KEY).
+      - PLATFORM_KEY_ENCRYPTION_SECRET=${PLATFORM_KEY_ENCRYPTION_SECRET:-}
+      # Only used for the one-time migration of keys that are still in .env into the WebUI (src/cli/seed_platform_api_keys.py). A new installation leaves these empty and enters its keys in the WebUI.
+      - VULNCHECK_API_KEY=${VULNCHECK_API_KEY:-}
+      - THREATFOX_API_KEY=${THREATFOX_API_KEY:-}
+      - MALWAREBAZAAR_API_KEY=${MALWAREBAZAAR_API_KEY:-}
+      - OTX_API_KEY=${OTX_API_KEY:-}
+      - VT_API_KEY=${VT_API_KEY:-}
       - CONNECTORS_WORKER_SECRET=${CONNECTORS_WORKER_SECRET:-}
+      - FEEDS_TRIGGER_SECRET=${FEEDS_TRIGGER_SECRET:-}
+      - TI_TRIGGER_SECRET=${TI_TRIGGER_SECRET:-}
       - MAIL_HOST=${MAIL_HOST:-}
       - MAIL_PORT=${MAIL_PORT:-1025}
       - MAIL_USERNAME=${MAIL_USERNAME:-}
       - MAIL_PASSWORD=${MAIL_PASSWORD:-}
+      - MAIL_REQUIRE_TLS=${MAIL_REQUIRE_TLS:-false}
+      - MAIL_CA_FILE=${MAIL_CA_FILE:-}
       - NOTIFICATION_EMAIL=${NOTIFICATION_EMAIL:-}
       - PLATFORM_URL=${PLATFORM_URL}
       # Garage S3 object storage (leave empty to use default local Postgres storage)
-      - GARAGE_ENDPOINT=${GARAGE_ENDPOINT:-http://isms-core-garage:3900}
+      - GARAGE_ENDPOINT=${GARAGE_ENDPOINT:-https://isms-core-garage-tls:3900}
       - GARAGE_ACCESS_KEY=${GARAGE_ACCESS_KEY:-}
       - GARAGE_SECRET_KEY=${GARAGE_SECRET_KEY:-}
       - GARAGE_BUCKET_EVIDENCE=${GARAGE_BUCKET_EVIDENCE:-isms-evidence}
@@ -508,6 +984,13 @@ services:
       timeout: 10s
       retries: 3
       start_period: 150s
+    # Container hardening: no Linux capabilities and no privilege escalation. This container runs as an unprivileged user and needs
+    # neither (no raw sockets, no ports below 1024). read_only is deliberately not set: the connectors keep their state under /tmp and
+    # beat its schedule file, so a read-only root would need a tmpfs there and lose that state on every restart.
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
     restart: unless-stopped
     networks:
       - isms-core-network
@@ -516,7 +999,7 @@ services:
     image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-backend-${PLATFORM_TAG:-latest}
     platform: linux/amd64
     container_name: isms-core-beat
-    command: celery -A src.worker.celery_app beat --loglevel=info
+    command: celery -A src.worker.celery_app beat --loglevel=info --schedule=/tmp/celerybeat-schedule
     volumes:
       - datasets-data:/app/datasets:ro
       - ${FRAMEWORK_HOST_PATH:-../isms-core-framework}:/app/isms-framework:ro
@@ -526,27 +1009,40 @@ services:
       - ${AI_HOST_PATH:-../isms-core-ai}:/app/isms-ai:ro
       - ${SEC_HOST_PATH:-../isms-core-sec}:/app/isms-sec:ro
       - ${EXT_HOST_PATH:-../isms-core-ext}:/app/isms-ext:ro
-      - isms-core-internal-certs:/certs:ro
+      - type: volume                                  # only the Postgres CA certificate; the volume also holds other services' keys
+        source: isms-core-internal-certs
+        target: /certs/postgres
+        volume: { subpath: postgres }
+        read_only: true
+      - type: volume                                  # only the OpenSearch CA certificate (never the CA key or any node key)
+        source: isms-core-internal-certs
+        target: /certs/opensearch-ca
+        volume: { subpath: opensearch-ca }
+        read_only: true
     environment:
       - TZ=${TZ:-Europe/Zurich}
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
       - DB_SSLMODE=${DB_SSLMODE:-verify-full}
       - DB_SSL_ROOT_CERT=${DB_SSL_ROOT_CERT:-/certs/postgres/server.crt}
       - REDIS_URL=redis://:${REDIS_PASSWORD}@isms-core-redis:6379/0
+      - REDIS_TLS=${REDIS_TLS:-false}      # true: the URL above is used as rediss:// and the certificate is verified against REDIS_CA_FILE (default: the platform CA below)
       - DATASETS_PATH=/app/datasets
-      - OPENSEARCH_URL=http://isms-core-opensearch:9200
+      - OPENSEARCH_URL=${OPENSEARCH_URL:-http://isms-core-opensearch:9200}
       - OPENSEARCH_USE_SSL=${OPENSEARCH_USE_SSL:-false}
       - OPENSEARCH_VERIFY_CERTS=${OPENSEARCH_VERIFY_CERTS:-false}
-      - OPENSEARCH_CA_CERT=${OPENSEARCH_CA_CERT:-}
+      - OPENSEARCH_CA_CERT=${OPENSEARCH_CA_CERT:-/certs/opensearch-ca/ca.crt}
+      - OPENSEARCH_ALLOW_UNVERIFIED_TLS=${OPENSEARCH_ALLOW_UNVERIFIED_TLS:-false}
       - OPENSEARCH_USERNAME=${OPENSEARCH_USERNAME:-}
       - OPENSEARCH_PASSWORD=${OPENSEARCH_PASSWORD:-}
       - MAIL_HOST=${MAIL_HOST:-}
       - MAIL_PORT=${MAIL_PORT:-1025}
       - MAIL_USERNAME=${MAIL_USERNAME:-}
       - MAIL_PASSWORD=${MAIL_PASSWORD:-}
+      - MAIL_REQUIRE_TLS=${MAIL_REQUIRE_TLS:-false}
+      - MAIL_CA_FILE=${MAIL_CA_FILE:-}
       - NOTIFICATION_EMAIL=${NOTIFICATION_EMAIL:-}
       - PLATFORM_URL=${PLATFORM_URL}
-      - GARAGE_ENDPOINT=${GARAGE_ENDPOINT:-http://isms-core-garage:3900}
+      - GARAGE_ENDPOINT=${GARAGE_ENDPOINT:-https://isms-core-garage-tls:3900}
       - GARAGE_ACCESS_KEY=${GARAGE_ACCESS_KEY:-}
       - GARAGE_SECRET_KEY=${GARAGE_SECRET_KEY:-}
     healthcheck:
@@ -560,6 +1056,11 @@ services:
         condition: service_completed_successfully
       isms-core-backend:
         condition: service_healthy
+    # Container hardening — see isms-core-backend above.
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
     restart: unless-stopped
     networks:
       - isms-core-network
@@ -578,27 +1079,40 @@ services:
       - ${AI_HOST_PATH:-../isms-core-ai}:/app/isms-ai:ro
       - ${SEC_HOST_PATH:-../isms-core-sec}:/app/isms-sec:ro
       - ${EXT_HOST_PATH:-../isms-core-ext}:/app/isms-ext:ro
-      - isms-core-internal-certs:/certs:ro
+      - type: volume                                  # only the Postgres CA certificate; the volume also holds other services' keys
+        source: isms-core-internal-certs
+        target: /certs/postgres
+        volume: { subpath: postgres }
+        read_only: true
+      - type: volume                                  # only the OpenSearch CA certificate (never the CA key or any node key)
+        source: isms-core-internal-certs
+        target: /certs/opensearch-ca
+        volume: { subpath: opensearch-ca }
+        read_only: true
     environment:
       - TZ=${TZ:-Europe/Zurich}
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
       - DB_SSLMODE=${DB_SSLMODE:-verify-full}
       - DB_SSL_ROOT_CERT=${DB_SSL_ROOT_CERT:-/certs/postgres/server.crt}
       - REDIS_URL=redis://:${REDIS_PASSWORD}@isms-core-redis:6379/0
+      - REDIS_TLS=${REDIS_TLS:-false}      # true: the URL above is used as rediss:// and the certificate is verified against REDIS_CA_FILE (default: the platform CA below)
       - DATASETS_PATH=/app/datasets
-      - OPENSEARCH_URL=http://isms-core-opensearch:9200
+      - OPENSEARCH_URL=${OPENSEARCH_URL:-http://isms-core-opensearch:9200}
       - OPENSEARCH_USE_SSL=${OPENSEARCH_USE_SSL:-false}
       - OPENSEARCH_VERIFY_CERTS=${OPENSEARCH_VERIFY_CERTS:-false}
-      - OPENSEARCH_CA_CERT=${OPENSEARCH_CA_CERT:-}
+      - OPENSEARCH_CA_CERT=${OPENSEARCH_CA_CERT:-/certs/opensearch-ca/ca.crt}
+      - OPENSEARCH_ALLOW_UNVERIFIED_TLS=${OPENSEARCH_ALLOW_UNVERIFIED_TLS:-false}
       - OPENSEARCH_USERNAME=${OPENSEARCH_USERNAME:-}
       - OPENSEARCH_PASSWORD=${OPENSEARCH_PASSWORD:-}
       - MAIL_HOST=${MAIL_HOST:-}
       - MAIL_PORT=${MAIL_PORT:-1025}
       - MAIL_USERNAME=${MAIL_USERNAME:-}
       - MAIL_PASSWORD=${MAIL_PASSWORD:-}
+      - MAIL_REQUIRE_TLS=${MAIL_REQUIRE_TLS:-false}
+      - MAIL_CA_FILE=${MAIL_CA_FILE:-}
       - NOTIFICATION_EMAIL=${NOTIFICATION_EMAIL:-}
       - PLATFORM_URL=${PLATFORM_URL}
-      - GARAGE_ENDPOINT=${GARAGE_ENDPOINT:-http://isms-core-garage:3900}
+      - GARAGE_ENDPOINT=${GARAGE_ENDPOINT:-https://isms-core-garage-tls:3900}
       - GARAGE_ACCESS_KEY=${GARAGE_ACCESS_KEY:-}
       - GARAGE_SECRET_KEY=${GARAGE_SECRET_KEY:-}
     depends_on:
@@ -622,6 +1136,11 @@ services:
       timeout: 10s
       retries: 3
       start_period: 30s
+    # Container hardening — see isms-core-backend above.
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
     restart: unless-stopped
     networks:
       - isms-core-network
@@ -635,6 +1154,11 @@ services:
     depends_on:
       isms-core-backend:
         condition: service_healthy
+    # Container hardening — see isms-core-backend above.
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
     restart: unless-stopped
     networks:
       - isms-core-network
@@ -699,6 +1223,11 @@ services:
     depends_on:
       isms-core-backend:
         condition: service_healthy
+    # Container hardening — see isms-core-backend above.
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
     restart: unless-stopped
     networks:
       - isms-core-network
@@ -710,16 +1239,26 @@ services:
     platform: linux/amd64
     container_name: isms-core-feeds
     volumes:
-      - isms-core-internal-certs:/certs:ro
+      - type: volume                                  # only the Postgres CA certificate; the volume also holds other services' keys
+        source: isms-core-internal-certs
+        target: /certs/postgres
+        volume: { subpath: postgres }
+        read_only: true
+      - type: volume                                  # only the OpenSearch CA certificate (never the CA key or any node key)
+        source: isms-core-internal-certs
+        target: /certs/opensearch-ca
+        volume: { subpath: opensearch-ca }
+        read_only: true
     environment:
       - TZ=${TZ:-Europe/Zurich}
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
       - DB_SSLMODE=${DB_SSLMODE:-verify-full}
       - DB_SSL_ROOT_CERT=${DB_SSL_ROOT_CERT:-/certs/postgres/server.crt}
-      - OPENSEARCH_URL=http://isms-core-opensearch:9200
+      - OPENSEARCH_URL=${OPENSEARCH_URL:-http://isms-core-opensearch:9200}
       - OPENSEARCH_USE_SSL=${OPENSEARCH_USE_SSL:-false}
       - OPENSEARCH_VERIFY_CERTS=${OPENSEARCH_VERIFY_CERTS:-false}
-      - OPENSEARCH_CA_CERT=${OPENSEARCH_CA_CERT:-}
+      - OPENSEARCH_CA_CERT=${OPENSEARCH_CA_CERT:-/certs/opensearch-ca/ca.crt}
+      - OPENSEARCH_ALLOW_UNVERIFIED_TLS=${OPENSEARCH_ALLOW_UNVERIFIED_TLS:-false}
       - OPENSEARCH_USERNAME=${OPENSEARCH_USERNAME:-}
       - OPENSEARCH_PASSWORD=${OPENSEARCH_PASSWORD:-}
       - FEEDS_RUN_ON_START=${FEEDS_RUN_ON_START:-false}
@@ -731,13 +1270,21 @@ services:
       - FEEDS_CPE_FULL=${FEEDS_CPE_FULL:-false}
       - FEEDS_EXPLOITDB_ENABLED=${FEEDS_EXPLOITDB_ENABLED:-true}
       - FEEDS_VULNCHECK_ENABLED=${FEEDS_VULNCHECK_ENABLED:-true}
+      # API keys: the WebUI (Admin -> API keys) wins while its row is enabled; these environment variables are the fallback.
       - VULNCHECK_API_KEY=${VULNCHECK_API_KEY:-}
       - NIST_API_KEY=${NIST_API_KEY:-}
+      - PLATFORM_KEY_ENCRYPTION_SECRET=${PLATFORM_KEY_ENCRYPTION_SECRET:-}
       - ISMS_API_URL=http://isms-core-backend:8000
-      - CONNECTORS_WORKER_SECRET=${CONNECTORS_WORKER_SECRET}
+      # Own secret for the backend <-> this container channel; falls back to the shared one when not set.
+      - FEEDS_TRIGGER_SECRET=${FEEDS_TRIGGER_SECRET:-${CONNECTORS_WORKER_SECRET}}
     depends_on:
       isms-core-backend:
         condition: service_healthy
+    # Container hardening — see isms-core-backend above.
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
     restart: unless-stopped
     networks:
       - isms-core-network
@@ -754,14 +1301,16 @@ services:
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
       - DB_SSLMODE=${DB_SSLMODE:-verify-full}
       - DB_SSL_ROOT_CERT=${DB_SSL_ROOT_CERT:-/certs/postgres/server.crt}
-      - OPENSEARCH_URL=http://isms-core-opensearch:9200
+      - OPENSEARCH_URL=${OPENSEARCH_URL:-http://isms-core-opensearch:9200}
       - OPENSEARCH_USE_SSL=${OPENSEARCH_USE_SSL:-false}
       - OPENSEARCH_VERIFY_CERTS=${OPENSEARCH_VERIFY_CERTS:-false}
-      - OPENSEARCH_CA_CERT=${OPENSEARCH_CA_CERT:-}
+      - OPENSEARCH_CA_CERT=${OPENSEARCH_CA_CERT:-/certs/opensearch-ca/ca.crt}
+      - OPENSEARCH_ALLOW_UNVERIFIED_TLS=${OPENSEARCH_ALLOW_UNVERIFIED_TLS:-false}
       - OPENSEARCH_USERNAME=${OPENSEARCH_USERNAME:-}
       - OPENSEARCH_PASSWORD=${OPENSEARCH_PASSWORD:-}
       - ISMS_API_URL=http://isms-core-backend:8000
-      - CONNECTORS_WORKER_SECRET=${CONNECTORS_WORKER_SECRET}
+      # Own secret for the backend <-> this container channel; falls back to the shared one when not set.
+      - TI_TRIGGER_SECRET=${TI_TRIGGER_SECRET:-${CONNECTORS_WORKER_SECRET}}
       # Source enable flags
       - TI_MISP_CIRCL_ENABLED=${TI_MISP_CIRCL_ENABLED:-true}
       - TI_MISP_BOTVRIJ_ENABLED=${TI_MISP_BOTVRIJ_ENABLED:-true}
@@ -776,7 +1325,8 @@ services:
       - TI_ALIENVAULT_ENABLED=${TI_ALIENVAULT_ENABLED:-true}
       - TI_VIRUSTOTAL_ENABLED=${TI_VIRUSTOTAL_ENABLED:-true}
       - TI_MALPEDIA_ENABLED=${TI_MALPEDIA_ENABLED:-true}
-      # API keys (leave empty to disable that source)
+      # API keys: the WebUI (Admin -> API keys) wins while its row is enabled; these environment variables are the fallback (leave both empty to disable that source).
+      - PLATFORM_KEY_ENCRYPTION_SECRET=${PLATFORM_KEY_ENCRYPTION_SECRET:-}
       - ABUSEIPDB_API_KEY=${ABUSEIPDB_API_KEY:-}
       - SHODAN_API_KEY=${SHODAN_API_KEY:-}
       - MALPEDIA_API_KEY=${MALPEDIA_API_KEY:-}
@@ -794,12 +1344,26 @@ services:
       - TI_RUN_ON_START=${TI_RUN_ON_START:-false}
     volumes:
       - ti-data:/data/ti   # persistent store for MMDB files + future TI downloads
-      - isms-core-internal-certs:/certs:ro
+      - type: volume                                  # only the Postgres CA certificate; the volume also holds other services' keys
+        source: isms-core-internal-certs
+        target: /certs/postgres
+        volume: { subpath: postgres }
+        read_only: true
+      - type: volume                                  # only the OpenSearch CA certificate (never the CA key or any node key)
+        source: isms-core-internal-certs
+        target: /certs/opensearch-ca
+        volume: { subpath: opensearch-ca }
+        read_only: true
     expose:
       - "9002"          # on-demand trigger server (backend → TI container)
     depends_on:
       isms-core-backend:
         condition: service_healthy
+    # Container hardening — see isms-core-backend above.
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
     restart: unless-stopped
     networks:
       - isms-core-network
@@ -807,7 +1371,7 @@ services:
   # ── Email options (optional profiles) ─────────────────────────────────────
 
   isms-core-mailpit:
-    image: axllent/mailpit:latest
+    image: axllent/mailpit:v1.31.6
     container_name: isms-core-mailpit
     profiles: [mailpit]
     ports:
@@ -838,9 +1402,15 @@ services:
       # relay of spoofed mail through the org's M365 identity. Defaults to
       # the same MAIL_USERNAME/MAIL_PASSWORD the backend/worker/beat services
       # already authenticate with, so one credential pair configures both
-      # sides.
+      # sides. (With MAIL_HOST pointing at this bridge those ARE the bridge
+      # credentials; overriding them here requires the same values in MAIL_*.)
       - SMTP_USERNAME=${SMTP_BRIDGE_USERNAME:-${MAIL_USERNAME:-}}
       - SMTP_PASSWORD=${SMTP_BRIDGE_PASSWORD:-${MAIL_PASSWORD:-}}
+    # Container hardening — see isms-core-backend above.
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
     restart: unless-stopped
     networks:
       - isms-core-network
@@ -853,14 +1423,6 @@ services:
   # Archives land at BACKUP_ARCHIVE_PATH on the host (default /var/backups/isms-core).
   # Create the host dir first: sudo mkdir -p /var/backups/isms-core
 
-  # Mediates Docker API access for the backup container below: a raw
-  # docker.sock mount is Docker-daemon-equivalent root regardless of `:ro`
-  # (that flag only governs the *mount*, not calls made over the socket) —
-  # one POST /containers/create with a host-root bind mount is an instant
-  # host escape from inside the backup container. This proxy allows only
-  # container list/inspect (needed to enumerate the target for backup) and
-  # start/stop (needed for the stop-during-backup label) — POST is denied by
-  # default, blocking container-create and every other write operation.
   # Docker API proxy for the backup tool, which has to stop Postgres briefly so
   # the archive is consistent. Two things are non-obvious:
   #  - The tool queries /info and the Swarm /services API before it stops
@@ -909,6 +1471,10 @@ services:
 networks:
   isms-core-network:
     driver: bridge
+  # Garage and its TLS proxy only. `internal` means no route to or from the outside either.
+  isms-core-garage-network:
+    driver: bridge
+    internal: true
   # Only the backup tool and its Docker API proxy — see isms-core-docker-proxy.
   isms-core-backup-network:
     driver: bridge

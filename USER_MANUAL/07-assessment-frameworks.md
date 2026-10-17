@@ -1,6 +1,6 @@
 # Assessment Frameworks
 
-<!-- ISMS-CORE:USER-MANUAL:07-assessment-frameworks:v1.0:2026-04-16 -->
+<!-- ISMS-CORE:USER-MANUAL:07-assessment-frameworks:v1.3:2026-10-17 -->
 
 ---
 
@@ -21,10 +21,10 @@ Navigate to any framework from the **Compliance** section of the sidebar or from
 | Framework | Module | Scope |
 |-----------|--------|-------|
 | **NIS2 Directive** | EU 2022/2555 | 10 Art. 21 security measures + 5 Art. 23 reporting obligations. Applies to essential and important entities in the EU. Maturity 0–4. |
-| **DORA** | EU 2022/2554 | 25 articles across 4 chapters: ICT Risk Management, Incident Management, Resilience Testing, Third-Party ICT Risk. Applies to financial sector entities. Maturity 0–4. |
+| **DORA** | EU 2022/2554 | 27 articles across 5 pillars: ICT Risk Management, Incident Reporting, Resilience Testing, Third-Party ICT Risk, Information Sharing. Applies to financial sector entities. Maturity 0–4. |
 | **EU Cyber Resilience Act (CRA)** | EU 2024/2847 | 26 essential cybersecurity requirements across 6 groups. Applies to manufacturers of products with digital elements. Maturity 0–4. |
-| **EU AI Act** | EU 2024/1689 | 25 articles across 6 groups: Risk Management, Data Governance, Transparency, Human Oversight, Robustness, Accountability. Applies to providers of high-risk AI systems. Maturity 0–4. |
-| **EU Cloud Sovereignty** | Cloud sovereignty framework | 8 requirements for cloud service providers and users. |
+| **EU AI Act** | EU 2024/1689 | 9 articles from Chapter III (Art. 8–15 and Art. 27): the high-risk AI system requirements and the fundamental-rights impact assessment. Applies to providers and deployers of high-risk AI systems. Maturity 0–4. |
+| **EU Cloud Sovereignty** | Cloud sovereignty framework | 8 Sovereignty Objectives (SOV-1 to SOV-8) scored on the SEAL-0 to SEAL-4 scale, for cloud service providers and users. |
 
 ### Regulatory — Switzerland
 
@@ -32,7 +32,7 @@ Navigate to any framework from the **Compliance** section of the sidebar or from
 |-----------|--------|-------|
 | **Swiss ISG (SR 128)** | Federal Act on Information Security 2024 | 27 requirements across 8 sections. Mandatory for federal bodies; de facto standard for critical infrastructure. Includes 24h cyberattack reporting to BACS/OFCS (Art. 74e). ISO 27001 crosswalk: 40 mappings. Maturity 0–4. |
 | **Swiss nDSG** | Federal Act on Data Protection 2023 | 25 provisions across 6 chapters. Switzerland's revised data protection law, equivalent to GDPR for Swiss-domiciled organisations. Maturity 0–4. |
-| **FINMA** | FINMA circulars (08/21, 23/1, 2023) | 19 requirements for Swiss financial institutions. Covers operational risk, outsourcing, ICT security. |
+| **FINMA** | FINMA circulars (08/21, 23/1, 2023) | 21 requirements for Swiss financial institutions from three sources: Circular 2023/1 (operational risks and resilience), Circular 2018/3 (outsourcing) and Guidance 03/2024 (cyber risks). |
 | **CSRM (NCSC CH)** | BACS Cybersecurity Reference Model | Object-centric, binary assessment: IT Protection Objects, 20 NIST CSF 2.0 baseline requirements, 6 Control Objectives. Includes BACS limitation notes from official comparison documents. |
 
 ### Regulatory — Country-Specific
@@ -51,7 +51,7 @@ Navigate to any framework from the **Compliance** section of the sidebar or from
 | Framework | Module | Scope |
 |-----------|--------|-------|
 | **NIST CSF 2.0** | NIST Cybersecurity Framework 2.0 | 106 subcategories across 6 Functions (GV, ID, PR, DE, RS, RC). Tiered profiles (1–4), radar + bar chart report, XLSX import from official NIST template, XLSX/CSV export. |
-| **NIST AI RMF 1.0** | NIST AI 100-1 | 72 subcategories across 4 Functions (GOVERN, MAP, MEASURE, MANAGE). Maturity 0–4. ISO 42001 crosswalk: 32 mappings. EU AI Act crosswalk: 72 mappings. |
+| **NIST AI RMF 1.0** | NIST AI 100-1 | 72 subcategories across 4 Functions (GOVERN, MAP, MEASURE, MANAGE). Maturity 0–4. ISO 42001 crosswalk: 32 mappings. No direct EU AI Act axis — the two are connected through ISO 42001. |
 | **NIST SP 800-53 Rev 5** | NIST SP 800-53r5 | 324 base controls across 20 families. Assessed at base-control level. Maturity 0–4. |
 | **CIS Controls v8** | CIS Critical Security Controls v8 | 153 safeguards across 18 controls. Industry standard baseline for technical security hygiene. Maturity 0–4. |
 | **CSA CCM v4.1** | Cloud Security Alliance CCM | 207 controls across 17 domains. Cloud-specific security controls for cloud service providers and customers. |
@@ -59,9 +59,9 @@ Navigate to any framework from the **Compliance** section of the sidebar or from
 | **COBIT 2019** | ISACA COBIT 2019 | 40 governance and management objectives. IT governance capability scoring (0–4). |
 | **TISAX** | VDA ISA 6.0 | 79 requirements across 9 domains: IS Policies and Organization, Physical Security, Prototype Protection, and more. Automotive industry standard (VDA/ENX). Maturity 0–4. |
 | **BSI IT-Grundschutz** | BSI Kompendium | 111 Bausteine across 10 layers. German Federal Office for Information Security baseline. ISO 27001 + ISO 27701 + ISO 27018 crosswalk: 538 total mappings. |
-| **BSI C5:2026** | BSI Cloud Computing Compliance Criteria Catalogue 2026 | 130+ criteria across 17 domains. German Federal Office for Information Security cloud security standard, 2026 edition. Successor to BSI C5:2020. |
-| **BSI C3A** | BSI Cybersecurity and Cloud Criteria for AI 2025 | AI-specific cloud security criteria overlaying BSI C5. For cloud-based AI deployments. |
-| **PCI DSS v4.0.1** | PCI SSC Payment Card Industry Data Security Standard | 12 requirements across 323 sub-requirements with 6 prioritised milestones. Applies to organisations that handle cardholder data. Maturity 0–4. |
+| **BSI C5:2026** | BSI Cloud Computing Compliance Criteria Catalogue 2026 | 168 criteria across 17 domains. German Federal Office for Information Security cloud security standard, 2026 edition (v1.0.1). Successor to BSI C5:2020. |
+| **BSI C3A** | BSI Criteria enabling Cloud Computing Autonomy (v1.0, 2026) | 30 criterion groups across 6 sovereignty domains. Companion to C5:2026 for cloud sovereignty; presupposes C5 compliance. Maturity 0–4. |
+| **PCI DSS v4.0.1** | PCI SSC Payment Card Industry Data Security Standard | 198 assessed sub-requirements across 12 requirements, with 6 prioritised milestones. Applies to organisations that handle cardholder data. Maturity 0–4. |
 
 ---
 
@@ -122,4 +122,4 @@ When you complete your ISO 27001 framework assessment, the platform automaticall
 
 See [Cross-Framework Mapping](15-cross-framework-mapping.md) for detail.
 
-<!-- QA_VERIFIED: 2026-04-16 -->
+<!-- QA_VERIFIED: 2026-10-17 -->

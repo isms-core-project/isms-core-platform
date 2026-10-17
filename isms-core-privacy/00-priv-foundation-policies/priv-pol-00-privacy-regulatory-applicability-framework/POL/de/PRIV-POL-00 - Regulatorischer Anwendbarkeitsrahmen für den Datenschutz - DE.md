@@ -294,7 +294,7 @@ Diese Verordnungen und Standards gelten **nur wenn bestimmte Bedingungen erfüll
 
 **PIMS-Auswirkungen**:
 
-- Vollständige Umsetzung aller PRIV-POL-A.x.x-Kontrollgruppen-Richtlinien in 51-isms-core-privacy/
+- Vollständige Umsetzung aller PRIV-POL-A.x.x-Kontrollgruppen-Richtlinien in isms-core-privacy/
 - Rollendetermination dokumentiert (Verantwortlicher, Auftragsverarbeiter oder beides pro Verarbeitungsaktivität)
 - PIMS in ISO 27001 ISMS integriert oder darauf aufgebaut
 

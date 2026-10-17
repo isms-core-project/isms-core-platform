@@ -1,6 +1,6 @@
 # Gap Management
 
-<!-- ISMS-CORE:USER-MANUAL:08-gap-management:v1.0:2026-04-16 -->
+<!-- ISMS-CORE:USER-MANUAL:08-gap-management:v1.3:2026-10-17 -->
 
 ---
 
@@ -8,7 +8,7 @@
 
 A gap is a documented deficiency — a control that is not implemented, partially implemented, or where evidence is missing. Gaps are the primary action items of your ISMS: they represent work that needs to be done before your controls are fully effective.
 
-Gaps in ISMS CORE are scoped to your active project. Navigate to **Risk & Operations → Gaps** in the sidebar.
+Gaps in ISMS CORE are scoped to your active project. Navigate to **Gaps** (in the product tab, for example **ISMS → Gaps**) in the sidebar.
 
 ---
 
@@ -22,7 +22,7 @@ When assessing a control and marking an item as Non-compliant or Partial, click 
 
 ### Manually
 
-1. Navigate to **Risk & Operations → Gaps**
+1. Navigate to **Gaps** (in the product tab, for example **ISMS → Gaps**)
 2. Click **New Gap**
 3. Fill in the gap form:
 
@@ -56,7 +56,7 @@ Open → In Progress → Resolved → Closed
 | **Closed** | Verified and closed — evidence confirmed |
 | **Risk Accepted** | Organisation has formally accepted this gap as a residual risk |
 
-Update the state as work progresses. Only ISMS Manager and Admin roles can close or risk-accept a gap.
+Update the state as work progresses. ISMS Managers and Admins can change the state of any gap; a Control Owner can change the state of gaps in the control groups assigned to them. An Auditor can raise a gap (a finding) but cannot change an existing one.
 
 ---
 
@@ -138,4 +138,4 @@ Significant gaps can be escalated to the Risk Register as formal risk scenarios.
 
 See [Risk Register](11-risk-register.md) for how risk scenarios are managed.
 
-<!-- QA_VERIFIED: 2026-04-16 -->
+<!-- QA_VERIFIED: 2026-10-17 -->

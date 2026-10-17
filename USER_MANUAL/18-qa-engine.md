@@ -1,6 +1,6 @@
 # QA Engine
 
-<!-- ISMS-CORE:USER-MANUAL:18-qa-engine:v1.0:2026-04-16 -->
+<!-- ISMS-CORE:USER-MANUAL:18-qa-engine:v1.3:2026-10-17 -->
 
 ---
 
@@ -8,13 +8,13 @@
 
 The QA Engine validates that all expected policy and implementation artefacts are present and contain the minimum required content. It is an internal quality control tool — useful before audits, after content imports, or when onboarding new users who need to verify their project is complete.
 
-Navigate to **Tools → QA Engine** in the sidebar.
+Navigate to **Tools → QA** in the sidebar.
 
 ---
 
 ## What the QA Engine Checks
 
-The QA Engine runs two types of checks:
+The QA Engine runs three layers of checks — existence, keyword/content, and an optional Claude AI semantic check (below):
 
 ### Existence Check
 
@@ -43,9 +43,21 @@ For each document, the content check returns:
 
 ---
 
+### Claude AI Semantic Check (optional)
+
+Besides the built-in checks, a project's documents can be checked with Claude AI (**Tools → Claude AI QA**, ISMS Manager and above; the library-wide sweep is for the platform operator). It reads each document against the Gold Standard and reports meaning-level gaps that a keyword check cannot see. It needs the Anthropic key to be set under **Admin → API keys → System**, and it sends document text to an external AI service on the platform's shared key, so it is limited in how often it can be started:
+
+| Feature | Limit |
+|---------|-------|
+| AI assistant (chat) | 20 messages per minute |
+| ISMS Compass analysis | 20 analyses per minute |
+| Claude AI QA run on a project | 10 runs per minute, and only one run at a time per project |
+
+The limits apply per network address, not per user. If you reach one the page shows *Too many requests* — wait a minute and try again. There is no daily spending cap: the platform operator controls the AI key and its usage with the provider.
+
 ## Running the QA Engine
 
-1. Navigate to **Tools → QA Engine**
+1. Navigate to **Tools → QA**
 2. Select the **scope**:
    - **Product family** — ISMS / Privacy / Cloud / AI
    - **Control groups** — all, or select specific groups from the list
@@ -113,4 +125,4 @@ The keyword translation sets are seeded during the bootstrap process and can be 
 
 Use the QA Engine first (quick inventory), then ISMS Compass for detailed gap analysis on flagged documents.
 
-<!-- QA_VERIFIED: 2026-04-16 -->
+<!-- QA_VERIFIED: 2026-10-17 -->

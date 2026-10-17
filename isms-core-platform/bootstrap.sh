@@ -39,6 +39,14 @@ echo "==========================================================================
 echo " ISMS CORE Platform — First Boot Bootstrap"
 echo "============================================================================"
 
+# Quick-start default: OpenSearch with no authentication and no TLS. Fine for a local evaluation, not for anything else.
+if [ "$(grep -E '^OPENSEARCH_DISABLE_SECURITY=' .env 2>/dev/null | cut -d= -f2- | tr -d "'\" ")" = "true" ]; then
+    echo -e "${RED}  !! OPENSEARCH_DISABLE_SECURITY=true — OpenSearch runs WITHOUT authentication or TLS.${NC}"
+    echo -e "${RED}  !! Local evaluation only. Before real use switch it on: the OpenSearch block in .env.example lists${NC}"
+    echo -e "${RED}  !! the lines to change (OPENSEARCH_DISABLE_SECURITY=false, passwords, https URL), then recreate the OpenSearch stack.${NC}"
+    echo
+fi
+
 # ---- Wait for backend health -----------------------------------------------
 info "Waiting for backend to be healthy..."
 for i in $(seq 1 60); do

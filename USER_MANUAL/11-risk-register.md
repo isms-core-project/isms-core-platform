@@ -1,6 +1,6 @@
 # Risk Register
 
-<!-- ISMS-CORE:USER-MANUAL:11-risk-register:v1.0:2026-04-16 -->
+<!-- ISMS-CORE:USER-MANUAL:11-risk-register:v1.3:2026-10-17 -->
 
 ---
 
@@ -8,7 +8,7 @@
 
 The Risk Register implements ISO 27001:2022 Clause 6.1.2 — the information security risk assessment process. It provides a structured way to document, score, treat, and track information security risks scoped to your active project.
 
-Navigate to **Risk & Operations → Risk Register** in the sidebar.
+Navigate to **Risk & Compliance → Risk Register** in the sidebar.
 
 ---
 
@@ -124,4 +124,4 @@ Two KPI Dashboard metrics are derived from the Risk Register:
 
 See [KPI Dashboard](19-kpi-dashboard.md) for detail.
 
-<!-- QA_VERIFIED: 2026-04-16 -->
+<!-- QA_VERIFIED: 2026-10-17 -->

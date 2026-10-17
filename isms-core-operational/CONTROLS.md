@@ -20,7 +20,7 @@
 
 ```
 isms-core-operational/
-├── A.5-organizational-controls/     # 21 control packs (covers 37 Annex A controls)
+├── A.5-organisational-controls/     # 21 control packs (covers 37 Annex A controls)
 ├── A.6-people-controls/             # 4 control packs (covers 8 Annex A controls)
 ├── A.7-physical-controls/           # 6 control packs (covers 14 Annex A controls)
 └── A.8-technological-controls/      # 22 control packs (covers 34 Annex A controls)
@@ -45,31 +45,31 @@ isms-a.X.X-control-name/
 <img src="https://img.shields.io/badge/100%25_Complete-00AA00?style=flat-square" alt="100% Complete"/>
 </p>
 
-📁 **[A.5-organizational-controls/](A.5-organizational-controls/)**
+📁 **[A.5-organisational-controls/](A.5-organisational-controls/)**
 
 | Control | Name | Artifacts |
 |---------|------|-----------|
-| [A.5.1-2, 6.1-2](A.5-organizational-controls/isms-a.5.1-2-6.1-2-secure-employment-and-roles/) | Secure Employment and Roles | POL, SCR, WKBK |
-| [A.5.3](A.5-organizational-controls/isms-a.5.3-segregation-of-duties/) | Segregation of Duties | POL, SCR, WKBK |
-| [A.5.4](A.5-organizational-controls/isms-a.5.4-management-responsibilities/) | Management Responsibilities | POL, SCR, WKBK |
-| [A.5.5-6](A.5-organizational-controls/isms-a.5.5-6-external-communications/) | External Communications | POL, SCR, WKBK |
-| [A.5.7](A.5-organizational-controls/isms-a.5.7-threat-intelligence/) | Threat Intelligence | POL, SCR, WKBK |
-| [A.5.8](A.5-organizational-controls/isms-a.5.8-information-security-in-project-management/) | Information Security in Project Management | POL, SCR, WKBK |
-| [A.5.9](A.5-organizational-controls/isms-a.5.9-inventory-of-information-and-assets/) | Inventory of Information and Assets | POL, SCR, WKBK |
-| [A.5.10-11](A.5-organizational-controls/isms-a.5.10-11-asset-usage-lifecycle/) | Asset Usage Lifecycle | POL, SCR, WKBK |
-| [A.5.12-13](A.5-organizational-controls/isms-a.5.12-13-classification-and-labelling/) | Classification and Labelling | POL, SCR, WKBK |
-| [A.5.14](A.5-organizational-controls/isms-a.5.14-information-transfer/) | Information Transfer | POL, SCR, WKBK |
-| [A.5.15-16, 18](A.5-organizational-controls/isms-a.5.15-16-18-identity-access-management/) | Identity Access Management | POL, SCR, WKBK |
-| [A.5.17](A.5-organizational-controls/isms-a.5.17-authentication-information/) | Authentication Information | POL, SCR, WKBK |
-| [A.5.19-23](A.5-organizational-controls/isms-a.5.19-23-cloud-services/) | Cloud Services | POL, SCR, WKBK |
-| [A.5.24-28](A.5-organizational-controls/isms-a.5.24-28-incident-management-lifecycle/) | Incident Management Lifecycle | POL, SCR, WKBK |
-| [A.5.29](A.5-organizational-controls/isms-a.5.29-security-during-disruption/) | Security During Disruption | POL, SCR, WKBK |
-| [A.5.30, 8.13-14](A.5-organizational-controls/isms-a.5.30-8.13-14-business-continuity-dr/) | Business Continuity & DR | POL, SCR, WKBK |
-| [A.5.31](A.5-organizational-controls/isms-a.5.31-legal-statutory-regulatory-contractual-requirements/) | Legal, Statutory, Regulatory & Contractual | POL, SCR, WKBK |
-| [A.5.32-33](A.5-organizational-controls/isms-a.5.32-33-information-protection/) | Records and Information Protection | POL, SCR, WKBK |
-| [A.5.34](A.5-organizational-controls/isms-a.5.34-privacy-and-pii/) | Privacy and PII | POL, SCR, WKBK |
-| [A.5.35-36](A.5-organizational-controls/isms-a.5.35-36-compliance-review/) | Compliance Review | POL, SCR, WKBK |
-| [A.5.37](A.5-organizational-controls/isms-a.5.37-documented-procedures/) | Documented Operating Procedures | POL, SCR, WKBK |
+| [A.5.1-2, 6.1-2](A.5-organisational-controls/isms-a.5.1-2-6.1-2-secure-employment-and-roles/) | Secure Employment and Roles | POL, SCR, WKBK |
+| [A.5.3](A.5-organisational-controls/isms-a.5.3-segregation-of-duties/) | Segregation of Duties | POL, SCR, WKBK |
+| [A.5.4](A.5-organisational-controls/isms-a.5.4-management-responsibilities/) | Management Responsibilities | POL, SCR, WKBK |
+| [A.5.5-6](A.5-organisational-controls/isms-a.5.5-6-external-communications/) | External Communications | POL, SCR, WKBK |
+| [A.5.7](A.5-organisational-controls/isms-a.5.7-threat-intelligence/) | Threat Intelligence | POL, SCR, WKBK |
+| [A.5.8](A.5-organisational-controls/isms-a.5.8-information-security-in-project-management/) | Information Security in Project Management | POL, SCR, WKBK |
+| [A.5.9](A.5-organisational-controls/isms-a.5.9-inventory-of-information-and-assets/) | Inventory of Information and Assets | POL, SCR, WKBK |
+| [A.5.10-11](A.5-organisational-controls/isms-a.5.10-11-asset-usage-lifecycle/) | Asset Usage Lifecycle | POL, SCR, WKBK |
+| [A.5.12-13](A.5-organisational-controls/isms-a.5.12-13-classification-and-labelling/) | Classification and Labelling | POL, SCR, WKBK |
+| [A.5.14](A.5-organisational-controls/isms-a.5.14-information-transfer/) | Information Transfer | POL, SCR, WKBK |
+| [A.5.15-16, 18](A.5-organisational-controls/isms-a.5.15-16-18-identity-access-management/) | Identity Access Management | POL, SCR, WKBK |
+| [A.5.17](A.5-organisational-controls/isms-a.5.17-authentication-information/) | Authentication Information | POL, SCR, WKBK |
+| [A.5.19-23](A.5-organisational-controls/isms-a.5.19-23-cloud-services/) | Cloud Services | POL, SCR, WKBK |
+| [A.5.24-28](A.5-organisational-controls/isms-a.5.24-28-incident-management-lifecycle/) | Incident Management Lifecycle | POL, SCR, WKBK |
+| [A.5.29](A.5-organisational-controls/isms-a.5.29-security-during-disruption/) | Security During Disruption | POL, SCR, WKBK |
+| [A.5.30, 8.13-14](A.5-organisational-controls/isms-a.5.30-8.13-14-business-continuity-dr/) | Business Continuity & DR | POL, SCR, WKBK |
+| [A.5.31](A.5-organisational-controls/isms-a.5.31-legal-statutory-regulatory-contractual-requirements/) | Legal, Statutory, Regulatory & Contractual | POL, SCR, WKBK |
+| [A.5.32-33](A.5-organisational-controls/isms-a.5.32-33-information-protection/) | Records and Information Protection | POL, SCR, WKBK |
+| [A.5.34](A.5-organisational-controls/isms-a.5.34-privacy-and-pii/) | Privacy and PII | POL, SCR, WKBK |
+| [A.5.35-36](A.5-organisational-controls/isms-a.5.35-36-compliance-review/) | Compliance Review | POL, SCR, WKBK |
+| [A.5.37](A.5-organisational-controls/isms-a.5.37-documented-procedures/) | Documented Operating Procedures | POL, SCR, WKBK |
 
 ---
 

@@ -33,7 +33,7 @@
 **Related Documents**:
 
 - CLD-SEC-POL-A.5.38, CLD-SEC-POL-A.5.39, CLD-SEC-POL-A.8.35, CLD-SEC-POL-A.8.36 (the 4 standalone Cloud Sec controls)
-- `50-isms-core-framework/` — the ISO/IEC 27001:2022 Annex A control packs this addendum layers onto
+- `isms-core-framework/` — the ISO/IEC 27001:2022 Annex A control packs this addendum layers onto
 - ISO/IEC 27017:2026 (full standard)
 - ISO/IEC 27002:2022 (Information security controls)
 
@@ -43,7 +43,7 @@
 
 ISO/IEC 27017:2026 restructures cloud security guidance around the same 93-control clause structure as ISO/IEC 27002:2022 (Organisational 5.1–5.39, People 6.1–6.8, Physical 7.1–7.14, Technological 8.1–8.36). For most of those 93 controls, ISO/IEC 27017:2026 simply states "the guidance in ISO/IEC 27002:2022 applies" with nothing cloud-specific to add. For **38 controls**, however, it adds a genuine cloud-specific layer — a split table of additional guidance for the organisation acting as a **cloud service customer (CSC)** and/or a **cloud service provider (CSP)**.
 
-Those 38 controls are not new controls. Each one is already fully implemented, with its own binding policy and implementation guides, in `50-isms-core-framework/`. This document exists so that the cloud-specific guidance is not lost — but it is captured **once, here**, rather than duplicated into 38 near-identical parallel POL/IMP document sets, which would mostly restate Framework boilerplate that already exists. (The 4 controls that *are* genuinely new — 5.38, 5.39, 8.35, 8.36 — received full standalone POL/IMP/SCR/WKBK treatment; see the Related Documents above.)
+Those 38 controls are not new controls. Each one is already fully implemented, with its own binding policy and implementation guides, in `isms-core-framework/`. This document exists so that the cloud-specific guidance is not lost — but it is captured **once, here**, rather than duplicated into 38 near-identical parallel POL/IMP document sets, which would mostly restate Framework boilerplate that already exists. (The 4 controls that *are* genuinely new — 5.38, 5.39, 8.35, 8.36 — received full standalone POL/IMP/SCR/WKBK treatment; see the Related Documents above.)
 
 **How to use this document**: When implementing or auditing a Framework A.x.xx control for a service that involves cloud computing (as CSC or CSP), consult this addendum for the additional cloud-specific expectations, in addition to — not instead of — the binding Framework POL/IMP for that control. In practice, this happens at four points: during cloud service selection and risk assessment, during supplier due diligence and contracting, during internal audit of a cloud-involved control, and during the Cloud Security Manager's periodic review of Shared Responsibility Matrices under CLD-SEC-POL-A.5.38 — where a row in this addendum is relevant to a specific cloud service relationship, its CSC or CSP guidance is reflected in that service's matrix entry, not tracked as a separate open item. Compliance with the considerations in this addendum is therefore evidenced through the existing Framework, risk assessment, and Shared Responsibility Matrix records, not through separate artefacts unique to this document.
 

@@ -1,6 +1,6 @@
 # Evidence Management
 
-<!-- ISMS-CORE:USER-MANUAL:09-evidence-management:v1.0:2026-04-16 -->
+<!-- ISMS-CORE:USER-MANUAL:09-evidence-management:v1.3:2026-10-17 -->
 
 ---
 
@@ -12,7 +12,7 @@ Evidence is the proof that a control is operating effectively. Without evidence,
 
 ## The Evidence Tracker
 
-Navigate to **Evidence → Evidence Tracker** in the sidebar.
+Navigate to **Evidence** (in the product tab, for example **ISMS → Evidence**) in the sidebar.
 
 The tracker shows all evidence items in your active project, with:
 
@@ -28,7 +28,7 @@ The tracker shows all evidence items in your active project, with:
 
 ## Adding Evidence Manually
 
-1. Navigate to **Evidence → Evidence Tracker**
+1. Navigate to **Evidence** (in the product tab, for example **ISMS → Evidence**)
 2. Click **New Evidence**
 3. Fill in the evidence form:
 
@@ -123,4 +123,13 @@ Evidence items can be marked as:
 
 Only verified evidence counts fully towards the `evidence_freshness` KPI metric. Mark connector-promoted evidence as verified once you have confirmed it is accurate and relevant.
 
-<!-- QA_VERIFIED: 2026-04-16 -->
+### Audit review
+
+An **Auditor** reviews evidence independently of the manager's verification above. For each evidence item the auditor can:
+
+- **Accept** it as audit evidence, or
+- **Flag** it for follow-up — a flag needs a comment saying what needs follow-up.
+
+The result is shown next to the item as *Audit: accepted* or *Audit: flagged* and is recorded in the audit log. It does not replace the manager's verification, and the people who upload and submit the evidence (Control Owners, ISMS Managers) cannot record it.
+
+<!-- QA_VERIFIED: 2026-10-17 -->

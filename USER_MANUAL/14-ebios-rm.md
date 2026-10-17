@@ -1,6 +1,6 @@
 # EBIOS RM
 
-<!-- ISMS-CORE:USER-MANUAL:14-ebios-rm:v1.0:2026-04-16 -->
+<!-- ISMS-CORE:USER-MANUAL:14-ebios-rm:v1.3:2026-10-17 -->
 
 ---
 
@@ -10,7 +10,7 @@ EBIOS RM (Expression of Needs and Identification of Security Objectives — Risk
 
 EBIOS RM structures risk analysis into five workshops that progressively build a picture of your risk landscape — from the assets you want to protect to the attack paths that could compromise them.
 
-Navigate to **Risk & Operations → EBIOS RM** in the sidebar.
+Navigate to **Risk & Compliance → EBIOS RM** in the sidebar.
 
 ---
 
@@ -61,7 +61,7 @@ Decompose strategic scenarios into concrete attack paths.
 - Existing security measures that block or detect each step
 - Residual likelihood for each attack path given current measures
 
-The MITRE ATT&CK integration here is direct: when you add a step to an attack path, you can search and select the specific technique from the full ATT&CK v19 library (15 tactics, 697 techniques and sub-techniques).
+The MITRE ATT&CK integration here is direct: when you add a step to an attack path, you can search and select the specific technique from the full ATT&CK v20 library (15 tactics, 706 techniques and sub-techniques).
 
 ### Workshop 5 — Risk Treatment
 
@@ -102,4 +102,4 @@ When building Workshop 4 attack paths, each step links to the MITRE ATT&CK techn
 
 The EBIOS RM section provides an export that covers all five workshops in a structured format suitable for ANSSI review or management reporting. Export as PDF from the EBIOS RM summary view.
 
-<!-- QA_VERIFIED: 2026-04-16 -->
+<!-- QA_VERIFIED: 2026-10-17 -->

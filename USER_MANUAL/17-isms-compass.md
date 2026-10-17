@@ -1,6 +1,6 @@
 # ISMS Compass
 
-<!-- ISMS-CORE:USER-MANUAL:17-isms-compass:v1.0:2026-04-16 -->
+<!-- ISMS-CORE:USER-MANUAL:17-isms-compass:v1.3:2026-10-17 -->
 
 ---
 
@@ -8,9 +8,9 @@
 
 ISMS Compass is an AI-powered gap analysis tool. Paste or upload any policy, procedure, or security document, and Compass compares it against the ISMS CORE Gold Standard — the curated corpus of ISO 27001:2022 policy and implementation content. It returns a structured gap analysis identifying what is present, what is missing, and what does not align.
 
-Navigate to **Tools → ISMS Compass** in the sidebar.
+Navigate to **Tools → Compass** in the sidebar.
 
-> ISMS Compass requires the `ANTHROPIC_API_KEY` environment variable to be set by your administrator. If Compass shows a "not available" message, contact your administrator.
+> ISMS Compass needs an Anthropic (Claude) API key, which the platform operator (Super Admin) enters under **Admin → API keys → System** (or sets in the platform's `.env`). If Compass shows a "not available" message, contact your administrator.
 
 ---
 
@@ -28,7 +28,7 @@ Compass is designed for three use cases:
 
 ## Using ISMS Compass
 
-1. Navigate to **Tools → ISMS Compass**
+1. Navigate to **Tools → Compass**
 2. Select the **product family** the document belongs to (ISMS / Privacy / Cloud / AI)
 3. Optionally select the specific **control group** — narrowing the context produces more precise results
 4. Paste the document text into the input area, or upload a file (plain text, Markdown, or PDF)
@@ -80,4 +80,4 @@ Compass compares your document against a curated corpus of ~12,987 indexed chunk
 
 The corpus is updated whenever your administrator reloads it with updated content (via **Admin → System → Reload QA Corpus**).
 
-<!-- QA_VERIFIED: 2026-04-16 -->
+<!-- QA_VERIFIED: 2026-10-17 -->

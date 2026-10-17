@@ -354,7 +354,7 @@ Queste normative e questi standard si applicano **solo al verificarsi di condizi
 - Allegato A (normativo): 36 controlli in 9 domini (A.2–A.10)
 - Allegato B (normativo): Orientamenti di implementazione per tutti i controlli dell'Allegato A
 
-**Erogazione AIMS**: Il set completo di controlli dell'Allegato A di ISO 42001 è erogato tramite le politiche di gruppo di controllo AI-POL-A.x.x in `53-isms-core-ai/`. La Dichiarazione di Applicabilità (DDA) dell'[Organizzazione] deve fare riferimento a queste politiche.
+**Erogazione AIMS**: Il set completo di controlli dell'Allegato A di ISO 42001 è erogato tramite le politiche di gruppo di controllo AI-POL-A.x.x in `isms-core-ai/`. La Dichiarazione di Applicabilità (DDA) dell'[Organizzazione] deve fare riferimento a queste politiche.
 
 **Integrazione con ISO 27001**: ISO 42001 utilizza la stessa struttura di alto livello (HLS/Annex SL) di ISO 27001:2022. Le organizzazioni in possesso della certificazione ISO 27001 possono integrare o combinare i processi AIMS e ISMS sotto un sistema di gestione condiviso. Le aree di clausola comuni (7, 9, 10) possono riutilizzare l'infrastruttura ISMS esistente.
 
@@ -381,7 +381,7 @@ Queste normative e questi standard si applicano **solo al verificarsi di condizi
 
 **Impatto sull'AIMS**:
 
-- Tutti i modelli VISIA in `53-isms-core-ai/` devono essere costruiti rispetto ai requisiti di documentazione della Clausola 6 di ISO 42005:2025
+- Tutti i modelli VISIA in `isms-core-ai/` devono essere costruiti rispetto ai requisiti di documentazione della Clausola 6 di ISO 42005:2025
 - La metodologia VISIA nei documenti AIMS deve fare riferimento a ISO 42005:2025, non a orientamenti generici
 - La VISIA di ISO 42005:2025 è allineata con la Valutazione d'Impatto sui Diritti Fondamentali (VIDF) del Regolamento IA UE — le organizzazioni soggette a entrambe dovrebbero documentare il riferimento incrociato
 

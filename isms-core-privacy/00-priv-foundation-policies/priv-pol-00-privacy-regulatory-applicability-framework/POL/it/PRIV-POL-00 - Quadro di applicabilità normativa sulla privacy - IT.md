@@ -292,7 +292,7 @@ Queste normative e standard si applicano **solo quando vengono soddisfatte condi
 
 **Impatto sul SGDP** :
 
-- Implementazione completa di tutte le politiche dei gruppi di controllo PRIV-POL-A.x.x in 51-isms-core-privacy/
+- Implementazione completa di tutte le politiche dei gruppi di controllo PRIV-POL-A.x.x in isms-core-privacy/
 - Determinazione del ruolo documentata (titolare del trattamento, responsabile del trattamento, o entrambi per attività di trattamento)
 - SGDP integrato con o sovrapposto all'ISO 27001 SGSI
 

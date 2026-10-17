@@ -23,6 +23,9 @@ replication_factor = 1
 rpc_bind_addr   = "0.0.0.0:3901"
 rpc_public_addr = "isms-core-garage:3901"
 
+# Plain HTTP on purpose: Garage cannot terminate TLS (its reference manual: "This endpoint does not support TLS: a reverse proxy should be used to
+# provide it"). The platform therefore keeps Garage on a private network (isms-core-garage-network) that only the TLS proxy isms-core-garage-tls
+# can reach, and every client talks HTTPS to that proxy (see garage/tls-proxy.conf).
 [s3_api]
 api_bind_addr = "0.0.0.0:3900"
 s3_region     = "garage"

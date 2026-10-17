@@ -26,7 +26,9 @@ from collections import OrderedDict
 
 # Engine: 51-isms-core-privacy/00-checklist-engine/priv_checklist_engine.py
 _REPO_ROOT = Path(__file__).resolve().parents[4]
-sys.path.insert(0, str(_REPO_ROOT / '51-isms-core-privacy' / '00-checklist-engine'))
+# The privacy product folder is '51-isms-core-privacy' in the development tree and 'isms-core-privacy' in the published repository.
+_ENGINE_DIR = next(p / '00-checklist-engine' for p in (_REPO_ROOT / 'isms-core-privacy', _REPO_ROOT / '51-isms-core-privacy') if (p / '00-checklist-engine').is_dir())
+sys.path.insert(0, str(_ENGINE_DIR))
 from priv_checklist_engine import generate_checklist
 
 # =============================================================================

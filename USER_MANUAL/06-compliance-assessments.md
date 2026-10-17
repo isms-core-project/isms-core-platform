@@ -1,14 +1,14 @@
 # Compliance Assessments
 
-<!-- ISMS-CORE:USER-MANUAL:06-compliance-assessments:v1.0:2026-04-16 -->
+<!-- ISMS-CORE:USER-MANUAL:06-compliance-assessments:v1.3:2026-10-17 -->
 
 ---
 
 ## Overview
 
-The **Compliance Assessments** section contains per-product checklists — the control-by-control self-assessment for your ISMS. These are distinct from the 23 framework assessment modules (NIS2, DORA, NIST CSF 2.0, etc.) covered in the next chapter.
+The **Compliance Assessments** section contains per-product checklists — the control-by-control self-assessment for your ISMS. These are distinct from the 29 framework assessment modules (NIS2, DORA, NIST CSF 2.0, etc.) covered in the next chapter.
 
-Navigate to **Compliance → Assessments** in the sidebar.
+Navigate to **Assessments** (in the product tab, for example **ISMS → Assessments**) in the sidebar.
 
 ---
 
@@ -21,7 +21,7 @@ Each product family has its own set of assessment checklists derived from the co
 | **ISMS Framework** | 188 workbooks | One per generator — detailed technical and process checks per control group |
 | **ISMS Operational** | 53 checklists | Lightweight checklist per Annex A group |
 | **Privacy** | 21 checklists | One per ISO 27701:2025 control group |
-| **Cloud** | 12 checklists | One per ISO 27018:2025 control group |
+| **Cloud** | 16 checklists | One per control group: 12 ISO 27018:2025 (Cloud PII) and 4 ISO 27017:2026 (Cloud Sec) |
 | **AI** | 10 checklists | One per ISO 42001:2023 control group |
 
 Use the product switcher to navigate between assessment sets.
@@ -74,7 +74,7 @@ Group multiple assessments into a named collection for reporting. Use collection
 
 ### Creating a Collection
 
-1. Navigate to **Compliance → Assessment Collections**
+1. Navigate to **Assessments → Collections** (in the product tab)
 2. Click **New Collection**
 3. Give it a name and description
 4. Add assessments to the collection from the checklist library
@@ -112,4 +112,4 @@ From any assessment list or collection:
 
 All exports include the assessment name, date, and assessor information for audit traceability.
 
-<!-- QA_VERIFIED: 2026-04-16 -->
+<!-- QA_VERIFIED: 2026-10-17 -->

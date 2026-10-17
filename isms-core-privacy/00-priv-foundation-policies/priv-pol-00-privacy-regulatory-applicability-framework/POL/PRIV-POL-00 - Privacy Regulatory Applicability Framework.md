@@ -291,7 +291,7 @@ These regulations and standards apply **only when specific conditions are met**.
 
 **PIMS Impact**:
 
-- Full implementation of all PRIV-POL-A.x.x control group policies in 51-isms-core-privacy/
+- Full implementation of all PRIV-POL-A.x.x control group policies in isms-core-privacy/
 - Role determination documented (controller, processor, or both per processing activity)
 - PIMS integrated with or layered on top of ISO 27001 ISMS
 

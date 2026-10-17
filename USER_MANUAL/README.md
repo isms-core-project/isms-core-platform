@@ -5,11 +5,11 @@
 <h1 align="center">ISMS CORE Platform — User Manual</h1>
 
 <p align="center">
-  <strong>Version 1.1 &nbsp;·&nbsp; For ISMS Managers, Auditors, and Control Owners</strong>
+  <strong>Version 1.3 &nbsp;·&nbsp; For ISMS Managers, Auditors, Control Owners, and Admins</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Platform-v1.2-00AA00?style=flat-square" alt="v1.2"/>
+  <img src="https://img.shields.io/badge/Platform-v1.3-00AA00?style=flat-square" alt="v1.3"/>
   <img src="https://img.shields.io/badge/Audience-ISMS_Manager_%7C_Auditor_%7C_Control_Owner-0066CC?style=flat-square" alt="Audience"/>
 </p>
 
@@ -32,7 +32,7 @@
 | [07](07-assessment-frameworks.md) | Assessment Frameworks | All 29 frameworks: NIS2, DORA, NIST CSF 2.0, BSI, TISAX, COBIT and more |
 | [08](08-gap-management.md) | Gap Management | Creating gaps, assigning owners, SLA tracking, remediation |
 | [09](09-evidence-management.md) | Evidence Management | Manual evidence, connector evidence, expiry, verification |
-| [10](10-connectors.md) | Automated Evidence Connectors | What connectors do, 44 supported systems, how to configure |
+| [10](10-connectors.md) | Automated Evidence Connectors | What connectors do, 46 supported systems, certificate trust, schedules |
 | [11](11-risk-register.md) | Risk Register | Risk scenarios, 5×5 heatmap, treatment workflow, risk acceptance |
 | [12](12-bia.md) | Business Impact Analysis | Assets, RTO/RPO/MTPD, impact scoring, recovery testing |
 | [13](13-tprm.md) | Third-Party Risk (TPRM) | Vendor register, DORA ICT fields, assessments, contract tracking |
@@ -42,7 +42,7 @@
 | [17](17-isms-compass.md) | ISMS Compass | AI-powered gap analysis against the ISMS CORE Gold Standard |
 | [18](18-qa-engine.md) | QA Engine | Existence checker, corpus validation, multilingual support |
 | [19](19-kpi-dashboard.md) | KPI Dashboard | 9 named metrics, sparklines, audit readiness score |
-| [20](20-organisations-users.md) | Organisations & Users | RBAC roles, MFA, org settings, multi-tenant administration |
+| [20](20-organisations-users.md) | Organisations & Users | The six roles and what each can do, control-group assignment, user groups, several organisations, MFA, org settings, third-party API keys |
 | [21](21-reports-exports.md) | Reports & Exports | What exports are available per section and in what formats |
 
 ---
@@ -55,20 +55,21 @@
 | **Auditor** | 03, 05, 06, 07, 09, 15, 18, 19, 21 |
 | **Control Owner** | 03, 04, 08, 09, 11 |
 | **CISO** | 02, 06, 07, 11, 14, 19 |
+| **Admin** | 02, 10, 20, 21 |
 
 ---
 
 ## A Note on the Five Products
 
-ISMS CORE Platform brings together five product families under one roof. You will see a product switcher at the top of most pages. Each product maps to an ISO standard:
+ISMS CORE Platform brings together five product families (ISMS, Privacy, Cloud PII, Cloud Sec and AI) under one roof. You will see a product switcher at the top of most pages. Each product maps to an ISO standard:
 
 | Product | ISO Standard | What it covers |
 |---------|-------------|----------------|
-| **ISMS Framework** | ISO 27001:2022 | 54 ISMS control groups — the core |
-| **ISMS Operational** | ISO 27001:2022 | Lightweight policies for SMEs |
-| **Privacy** | ISO 27701:2025 | 21 privacy control groups (controller + processor) |
-| **Cloud** | ISO 27018:2025 | 12 PII-in-cloud control groups |
-| **AI** | ISO 42001:2023 + ISO 42005:2025 | 12 AI management system control groups |
+| **ISMS** (Framework and Operational content) | ISO 27001:2022 | 54 control groups (53 Annex A packs plus the foundation group) — the core |
+| **Privacy** | ISO 27701:2025 | 21 privacy control groups (controller, processor, shared) plus foundation policies |
+| **Cloud PII** | ISO 27018:2025 | 12 PII-in-cloud control groups |
+| **Cloud Sec** | ISO 27017:2026 | 4 standalone cloud-security extension controls plus a guidance addendum |
+| **AI** | ISO 42001:2023 + ISO 42005:2025 | 10 AI management system control groups plus foundation policies |
 
 ---
 

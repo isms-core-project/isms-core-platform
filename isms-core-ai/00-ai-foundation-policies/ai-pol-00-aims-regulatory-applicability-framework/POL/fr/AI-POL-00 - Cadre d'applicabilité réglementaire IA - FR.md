@@ -353,7 +353,7 @@ Ces réglementations et normes s'appliquent **uniquement lorsque des conditions 
 - Annexe A (normative) : 36 contrôles dans 9 domaines (A.2–A.10)
 - Annexe B (normative) : Orientations de mise en œuvre pour tous les contrôles de l'Annexe A
 
-**Déploiement AIMS** : L'ensemble des contrôles de l'Annexe A d'ISO 42001 est déployé à travers les politiques de groupes de contrôle AI-POL-A.x.x dans `53-isms-core-ai/`. La Déclaration d'applicabilité (DDA) de l'organisation DOIT référencer ces politiques.
+**Déploiement AIMS** : L'ensemble des contrôles de l'Annexe A d'ISO 42001 est déployé à travers les politiques de groupes de contrôle AI-POL-A.x.x dans `isms-core-ai/`. La Déclaration d'applicabilité (DDA) de l'organisation DOIT référencer ces politiques.
 
 **Intégration avec ISO 27001** : ISO 42001 utilise la même structure de haut niveau (HLS/Annexe SL) qu'ISO 27001:2022. Les organisations certifiées ISO 27001 peuvent intégrer ou combiner les processus AIMS et SMSI dans un système de management partagé. Les domaines de clause partagés (7, 9, 10) peuvent réutiliser l'infrastructure SMSI existante.
 
@@ -380,7 +380,7 @@ Ces réglementations et normes s'appliquent **uniquement lorsque des conditions 
 
 **Impact sur l'AIMS** :
 
-- Tous les modèles ÉISIA dans `53-isms-core-ai/` DOIVENT être construits conformément aux exigences de documentation de la Clause 6 d'ISO 42005:2025
+- Tous les modèles ÉISIA dans `isms-core-ai/` DOIVENT être construits conformément aux exigences de documentation de la Clause 6 d'ISO 42005:2025
 - La méthodologie ÉISIA dans les documents AIMS doit référencer ISO 42005:2025, non des orientations génériques
 - L'ÉISIA d'ISO 42005:2025 est alignée avec l'Évaluation d'Impact sur les Droits Fondamentaux (EIDF) du Règlement IA de l'UE — les organisations soumises aux deux DOIVENT documenter la cross-référence
 

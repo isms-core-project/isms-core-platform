@@ -353,7 +353,7 @@ These regulations and standards apply **only when specific conditions are met**.
 - Annex A (normative): 36 controls across 9 domains (A.2–A.10)
 - Annex B (normative): Implementation guidance for all Annex A controls
 
-**AIMS Delivery**: The full ISO 42001 Annex A control set is delivered through the AI-POL-A.x.x control group policies in `53-isms-core-ai/`. The organisation's Statement of Applicability (SoA) shall reference these policies.
+**AIMS Delivery**: The full ISO 42001 Annex A control set is delivered through the AI-POL-A.x.x control group policies in `isms-core-ai/`. The organisation's Statement of Applicability (SoA) shall reference these policies.
 
 **Integration with ISO 27001**: ISO 42001 uses the same High-Level Structure (HLS/Annex SL) as ISO 27001:2022. Organisations holding ISO 27001 certification can integrate or combine AIMS and ISMS processes under a shared management system. Shared clause areas (7, 9, 10) can reuse existing ISMS infrastructure.
 
@@ -380,7 +380,7 @@ These regulations and standards apply **only when specific conditions are met**.
 
 **AIMS Impact**:
 
-- All AISIA templates in 53-isms-core-ai/ shall be built against ISO 42005:2025 Clause 6 documentation requirements
+- All AISIA templates in isms-core-ai/ shall be built against ISO 42005:2025 Clause 6 documentation requirements
 - AISIA methodology in AIMS documents must reference ISO 42005:2025, not general guidance
 - ISO 42005:2025 AISIA aligns with EU AI Act Fundamental Rights Impact Assessment (FRIA) — organisations subject to both should document the cross-reference
 

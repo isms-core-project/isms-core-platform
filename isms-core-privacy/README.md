@@ -2,7 +2,7 @@
 
 **Status:** v1.0 Complete (2026-03-09)
 **Standards:** ISO/IEC 27701:2025 (Ed. 2) + ISO/IEC 27018:2025 (Annex A overlay)
-**Prerequisite:** ISMS CORE Framework (50-isms-core-framework/) must be installed
+**Prerequisite:** an ISO/IEC 27001 ISMS in place (ISMS CORE Framework or Operational recommended; ISO 27701 extends ISO 27001)
 
 ---
 

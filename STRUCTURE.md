@@ -53,8 +53,9 @@ factory_isms/
 ├── isms-core-cloud/           # ☁️ ISO 27018:2025 Cloud Extension Pack + ISO 27017:2026 Cloud Sec
 ├── isms-core-ai/              # 🤖 ISO 42001:2023 — AI Extension Pack
 ├── isms-core-platform/        # 🖥️ Platform Deployment Package — own LICENSE (Apache 2.0)
-├── USER_MANUAL/               # 📖 Full user manual (21 chapters) — served in-app at /docs/user-manual.md
-├── COMPLIANCE.md              # 📋 Assessment module coverage
+├── USER_MANUAL/               # 📖 Full user manual (21 chapters)
+├── CREDITS.md                 # Third-party tools and acknowledgements
+├── COPYRIGHT                  # Copyright notice
 └── screenshots/               # Platform UI screenshots
 ```
 
@@ -74,18 +75,18 @@ isms-core-framework/
 ├── STACKING.md                            # Control grouping and stacking methodology
 ├── CHANGELOG.md                           # Version history
 │
-├── 00-foundation-policies/                # Regulatory framework baseline
-│   ├── isms-pol-00-regulatory-framework/
+├── 00-foundation-policies/                # Regulatory and governance baseline
+│   ├── isms-pol-00-regulatory-applicability-framework/
 │   │   └── POL/                           # ISMS-POL-00 (EN + FR + DE + IT)
-│   └── isms-pol-01-isms-scope/
-│       └── POL/                           # ISMS-POL-01 (EN + FR + DE + IT)
+│   ├── isms-pol-01-isms-governance-and-decision-making-framework/
+│   │   └── POL/                           # ISMS-POL-01 (EN + FR + DE + IT)
+│   └── isms-ref-00-regulatory-applicability-framework/
+│       └── REF/                           # Regulatory requirement references (DORA, NIS2, PCI DSS, FINMA, EU AI Act)
 │
 ├── A.5-organisational-controls/           # 21 control packs
 │   └── isms-a.5.X-X-control-name/
 │       ├── POL/                           # Governance policy (EN + fr/ + de/ + it/)
-│       ├── IMP/
-│       │   ├── IMP-UG/                    # User Guide — ISMS Manager
-│       │   └── IMP-TG/                    # Technical Guide — Engineer
+│       ├── IMP/                           # IMP-UG (User Guide — ISMS Manager) and IMP-TG (Technical Guide — Engineer) files, side by side
 │       ├── SCR/                           # Python assessment generator(s)
 │       ├── WKBK/                          # Generated Excel workbook(s)
 │       ├── REF/                           # ISO standard reference extracts
@@ -142,17 +143,15 @@ isms-core-privacy/
 ├── 00-checklist-engine/                   # Shared privacy checklist engine
 │
 ├── 00-priv-foundation-policies/           # Foundation policies
-│   ├── priv-pol-00-privacy-regulatory-framework/
+│   ├── priv-pol-00-privacy-regulatory-applicability-framework/
 │   │   └── POL/                           # PRIV-POL-00 (EN + fr/ + de/ + it/)
-│   └── priv-pol-01-privacy-governance/
+│   └── priv-pol-01-privacy-governance-and-decision-making/
 │       └── POL/                           # PRIV-POL-01 (EN + fr/ + de/ + it/)
 │
 ├── privacy-controller/                    # 8 controller control groups (a.1.x)
 │   └── priv-a.1.X.X-X-control-name/
 │       ├── POL/                           # PRIV-POL (EN + fr/ + de/ + it/)
-│       ├── IMP/
-│       │   ├── IMP-UG/
-│       │   └── IMP-TG/
+│       ├── IMP/                           # IMP-UG + IMP-TG files, side by side
 │       ├── SCR/
 │       └── WKBK/
 │
@@ -179,17 +178,13 @@ isms-core-cloud/
 ├── iso27018-pii-cloud/
 │   └── cld-a.X-control-name/              # 12 Annex A control groups
 │       ├── POL/                           # CLD-POL (EN + fr/ + de/ + it/)
-│       ├── IMP/
-│       │   ├── IMP-UG/
-│       │   └── IMP-TG/
+│       ├── IMP/                           # IMP-UG + IMP-TG files, side by side
 │       ├── SCR/
 │       └── WKBK/
 └── iso27017-sec-cloud/
     ├── cld-sec-a.X-control-name/           # 4 standalone extension controls
     │   ├── POL/                            # CLD-SEC-POL (EN + fr/ + de/ + it/)
-    │   ├── IMP/
-    │   │   ├── IMP-UG/
-    │   │   └── IMP-TG/
+    │   ├── IMP/                            # IMP-UG + IMP-TG files, side by side
     │   └── SCR/
     └── cld-sec-guidance-addendum/
         └── REF/                            # existing-control guidance for the 38 remaining Annex A controls
@@ -208,16 +203,14 @@ isms-core-ai/
 ├── 00-checklist-engine/                   # Shared AI checklist engine
 │
 ├── 00-ai-foundation-policies/             # Foundation policies
-│   ├── ai-pol-00-ai-regulatory-applicability/
+│   ├── ai-pol-00-aims-regulatory-applicability-framework/
 │   │   └── POL/                           # AI-POL-00 (EN + fr/ + de/ + it/)
 │   └── ai-pol-01-aims-governance-and-decision-making/
 │       └── POL/                           # AI-POL-01 (EN + fr/ + de/ + it/)
 │
 └── ai-a.X.X-X-control-name/              # 10 Annex A control groups
     ├── POL/                               # AI-POL (EN + fr/ + de/ + it/)
-    ├── IMP/
-    │   ├── IMP-UG/                        # User Guide — ISMS Manager
-    │   └── IMP-TG/                        # Technical Guide — Engineer
+    ├── IMP/                               # IMP-UG (User Guide) + IMP-TG (Technical Guide) files
     └── SCR/                               # Python compliance checklist generator
 ```
 
@@ -238,8 +231,11 @@ isms-core-platform/
 ├── LICENSE                                # Apache 2.0 — governs this directory only (see README §License)
 ├── .gitignore
 │
+├── .env.connector-certs.example           # Template for the legacy connector-certificate file (certificates are normally trusted in the WebUI)
+│
 ├── garage/                                # Garage S3 object store (optional profile) — upstream image, config only
-│   └── garage.toml                        # Garage configuration, bind-mounted into dxflrs/garage
+│   ├── garage.toml                        # Garage configuration, bind-mounted into dxflrs/garage
+│   └── tls-proxy.conf                     # TLS proxy in front of Garage (HTTPS-only S3, v1.3)
 │
 ├── schemas/
 │   └── init_db.sql                        # PostgreSQL initial schema, bind-mounted into postgres:18-alpine
@@ -262,17 +258,17 @@ isms-core-platform/
 | `isms-core-worker` | Celery worker — background import and sync tasks |
 | `isms-core-beat` | Celery Beat — nightly evidence archive (02:00 UTC), daily KPI snapshot (06:00 UTC) |
 | `isms-core-feeds` | Threat intelligence scheduler — MITRE ATT&CK, ATLAS, CISA KEV, EPSS, NVD CVE/CPE, ENISA EUVD |
-| `isms-core-connectors` | Automated evidence runner — 44 connectors, runs continuously |
-| `isms-core-dashboards-setup` | One-shot OpenSearch Dashboards provisioning — imports 19 automated dashboards at startup |
+| `isms-core-connectors` | Automated evidence runner — 46 connectors, runs continuously |
+| `isms-core-dashboards-setup` | One-shot OpenSearch Dashboards provisioning — imports 20 automated dashboards at startup |
 
-Optional profiles (add to deploy command as needed):
-- `--profile opensearch-single` — **required** for standard deployment (starts OpenSearch)
-- `--profile threat-intel` — OSINT IOC feeds (CIRCL MISP, Botvrij, AbuseIPDB, URLhaus, ThreatFox, SSLBL, AlienVault OTX, Feodo Tracker, RFD, Stopforumspam, MalwareBazaar, Malpedia); requires `THREAT_INTEL_ENABLED=true` in `.env`
-- `--profile opensearch-cluster` — 3-node OpenSearch cluster (enterprise)
-- `--profile dashboards` — OpenSearch Dashboards UI on port 5601
-- `--profile garage` — Garage S3 object store
-- `--profile mailpit` — local email catcher (dev)
-- `--profile smtp-bridge` — Microsoft 365 / OAuth email relay
+Compose profiles — set `COMPOSE_PROFILES` in `.env` (no `--profile` flags needed on the command line):
+- `opensearch-single` — **required** for standard deployment (starts OpenSearch)
+- `threat-intel` — OSINT IOC feeds (CIRCL MISP, Botvrij, AbuseIPDB, URLhaus, ThreatFox, SSLBL, AlienVault OTX, Feodo Tracker, RFD, Stopforumspam, MalwareBazaar, Malpedia); requires `THREAT_INTEL_ENABLED=true` in `.env`
+- `opensearch-cluster` — 3-node OpenSearch cluster (enterprise)
+- `dashboards` — OpenSearch Dashboards UI on port 5601
+- `garage` — Garage S3 object store
+- `mailpit` — local email catcher (dev)
+- `smtp-bridge` — Microsoft 365 / OAuth email relay
 
 ---
 

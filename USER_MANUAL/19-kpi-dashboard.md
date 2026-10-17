@@ -1,6 +1,6 @@
 # KPI Dashboard
 
-<!-- ISMS-CORE:USER-MANUAL:19-kpi-dashboard:v1.0:2026-04-16 -->
+<!-- ISMS-CORE:USER-MANUAL:19-kpi-dashboard:v1.3:2026-10-17 -->
 
 ---
 
@@ -8,7 +8,7 @@
 
 The KPI Dashboard tracks nine named metrics that collectively represent the health of your ISMS programme. It is the primary tool for CISO-level reporting and management review under ISO 27001:2022 Clause 9.1 (Monitoring, measurement, analysis, and evaluation).
 
-Navigate to **Analytics → KPI Dashboard** in the sidebar.
+Navigate to **Risk & Compliance → KPI Metrics** in the sidebar.
 
 ---
 
@@ -88,7 +88,7 @@ KPI snapshots are taken daily at 06:00 UTC by the Celery Beat scheduler. If the 
 
 ## Metrics Portfolio (Super Admin)
 
-If you have the Super Admin role, navigate to **Analytics → Metrics Portfolio** for a cross-organisation view of all nine KPIs across every organisation in the platform.
+If you have the Super Admin role, navigate to the **Portfolio** tab of **Risk & Compliance → KPI Metrics** for a cross-organisation view of all nine KPIs across every organisation in the platform.
 
 This is the board-level CISO view for organisations running multiple entities — group companies, subsidiaries, or separate organisational scopes — on a single platform instance.
 
@@ -108,4 +108,4 @@ Export the KPI summary from the dashboard for inclusion in your management revie
 2. Select the date range
 3. Download as XLSX (nine metrics, daily values, trend data) or PDF (formatted report)
 
-<!-- QA_VERIFIED: 2026-04-16 -->
+<!-- QA_VERIFIED: 2026-10-17 -->

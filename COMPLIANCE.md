@@ -51,14 +51,14 @@ All compliance assessment modules live under the **Compliance Assessments** side
 | [UK NIS Regulations](#uk-nis-regulations-2018) | UK law | 13 requirements | 3 Objectives | 0–4 | UK network and information systems operators |
 | [UK Operational Resilience (FCA/PRA)](#uk-operational-resilience-fcapra) | UK FCA/PRA | 12 requirements | 4 Objectives | 0–4 | UK financial sector — banks, insurers, FMIs |
 | [COBIT 2019 (ISACA)](#cobit-2019-isaca) | ISACA EGIT | 40 objectives | 5 Domains (EDM/APO/BAI/DSS/MEA) | 0–4 | Enterprise IT governance, audit, CISM/CISA/CGEIT holders |
-| [NIST SP 800-53 R5](#nist-sp-800-53-rev-5) | NIST | 20 control families | 3 Classes (Technical/Operational/Management) | 0–4 | US federal agencies, contractors, and any organisation seeking comprehensive security controls |
+| [NIST SP 800-53 R5](#nist-sp-800-53-rev-5) | NIST | 324 base controls | 20 Control families | 0–4 | US federal agencies, contractors, and any organisation seeking comprehensive security controls |
 | [CSA CCM v4.1](#csa-cloud-controls-matrix-v41) | CSA | 207 control specifications | 17 Domains | 0–4 | Cloud service providers, cloud consumers — any sector |
 | [CSA AICM v1.1](#csa-ai-controls-matrix-v11) | CSA | 247 controls | 18 Domains | 0–4 | Organisations developing, deploying, or procuring AI systems |
 | [NCSC CAF v4.0 (UK)](#ncsc-caf-v40-uk) | NCSC UK | 41 Contributing Outcomes | 14 Principles / 4 Objectives | 0/2/4 | UK operators of essential services / CNI |
 | [ReCyF v2.5 — France NIS2](#recyf-v25--france-nis2-anssi) | ANSSI | 20 Security Objectives | 4 Pillars | 0–4 | French NIS2 entities (EI & EE) — transposition pending |
 | [BSI C5:2026](#bsi-c52026) | BSI (Germany) | 168 criteria | 17 Domains | 0–4 | Cloud service providers (DE/EU) seeking C5 attestation |
 | [BSI C3A](#bsi-c3a-criteria-enabling-cloud-computing-autonomy) | BSI (Germany) | 30 criterion groups | 6 SOV Domains | 0–4 | Cloud CSPs + customers evaluating cloud sovereignty |
-| [PCI DSS v4.0.1](#pci-dss-v401) | PCI SSC | 323 sub-requirements | 12 requirements / 6 milestones | Milestone | Organisations handling cardholder data |
+| [PCI DSS v4.0.1](#pci-dss-v401) | PCI SSC | 198 sub-requirements | 12 requirements / 6 milestones | Milestone | Organisations handling cardholder data |
 | [FINMA](#finma) | Swiss regulator | 21 requirements | 3 circulars/guidance | 0–4 | Swiss financial institutions (banks, insurers) |
 | [Custom (YAML)](#custom-frameworks-yaml-import) | User-defined | User-defined | User-defined | User-defined | All |
 
@@ -128,7 +128,7 @@ Each collection shows derived statistics: completion %, compliance %, per-status
 
 **Platform features:**
 - 72 subcategory practices grouped by Category (GOV-1 through MNG-4), maturity 0–4
-- No direct NIST AI RMF ↔ EU AI Act crosswalk axis — the two are connected transitively via ISO 42001 (NIST AI RMF ↔ ISO 42001: 32 mappings; ISO 42001 ↔ EU AI Act: 31 mappings) or via ISO 27001 (NIST AI RMF ↔ ISO 27001: 56 mappings; ISO 27001 ↔ EU AI Act: 58 mappings)
+- No direct NIST AI RMF ↔ EU AI Act crosswalk axis — the two are connected transitively via ISO 42001 (NIST AI RMF ↔ ISO 42001: 32 mappings; ISO 42001 ↔ EU AI Act: 13 mappings) or via ISO 27001 (NIST AI RMF ↔ ISO 27001: 56 mappings; ISO 27001 ↔ EU AI Act: 30 mappings)
 - Assessment Collections — group AI RMF assessments alongside EU AI Act assessments
 
 **Coverage notes:**
@@ -164,7 +164,7 @@ Each collection shows derived statistics: completion %, compliance %, per-status
 **Coverage notes:**
 - Covers the core operational resilience obligations of DORA
 - Does not replace engagement with your national competent authority (NCA) under DORA
-- Level-1 articles covered — does not include all RTS/ITS delegated acts (ongoing regulatory development as of 2025)
+- Level-1 articles covered — does not include all RTS/ITS delegated acts (regulatory development of delegated acts continues — check the current RTS/ITS status)
 
 ---
 
@@ -276,7 +276,7 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 - **ISB/RSSI appointment** — formal information security officer with advisory, directive, and compliance monitoring responsibility (Art. 81)
 - **Administrative sanction** — failure to report a cyberattack: up to CHF 100,000 (Art. 74h)
 
-**ISO 27001 crosswalk:** 40 mappings — ISO 27001:2022 controls map directly to ISG requirements; ISO 27001 is the recognised implementation vehicle for ISG compliance in practice.
+**ISO 27001 crosswalk:** 27 mappings — ISO 27001:2022 controls map directly to ISG requirements; ISO 27001 is the recognised implementation vehicle for ISG compliance in practice.
 
 **Coverage notes:**
 - This module is relevant primarily to Swiss federal bodies and operators of critical infrastructure listed in Art. 74b
@@ -309,7 +309,7 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 **Audience:** Manufacturers and importers of products with digital elements (hardware and software) sold in the EU market
 
 **Coverage notes:**
-- The CRA is phased: market surveillance provisions apply from mid-2025, vulnerability/incident reporting from late 2025, full application from late 2027
+- The CRA is phased: it entered into force on 10 December 2024; the rules for notified (conformity assessment) bodies apply from 11 June 2026; the manufacturer reporting duty for actively exploited vulnerabilities and severe incidents (Art. 14) applies from 11 September 2026; the remaining obligations, including the essential requirements, apply from 11 December 2027 *(dates to be re-checked against Regulation (EU) 2024/2847 Art. 71 before publication)*
 - Essential requirements in Annex I (Part I and Part II) are the primary compliance target — this module covers both
 - Conformity assessment route depends on product criticality class (Class I, II, or critical product) — self-declaration vs. third-party assessment
 - This module provides a readiness self-assessment; formal conformity assessment involves a notified body for Class II and critical products
@@ -327,7 +327,7 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 - This module covers Chapter 3 obligations for **high-risk AI systems** — the most substantive compliance tier
 - Prohibited AI practices (Article 5) are not an assessment target; they require absolute avoidance
 - General-purpose AI model obligations (Title VIII) are not covered in this module version
-- The AI Act is phased: prohibited practices apply from February 2025; high-risk obligations in stages through 2026–2027
+- The AI Act is phased: prohibited practices apply from February 2025; the AI Omnibus (in force July 2026) moved the high-risk obligations to 2 December 2027 for stand-alone systems (Annex III) and 2 August 2028 for AI embedded in regulated products *(to be re-checked against the Official Journal text before publication)*
 - Formal conformity assessment for high-risk AI systems involves notified bodies or self-assessment with standardised testing
 
 ---
@@ -451,15 +451,15 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 ### NIST SP 800-53 Rev. 5
 
 **Source:** NIST Special Publication 800-53 Revision 5 — Security and Privacy Controls for Information Systems and Organizations (September 2020)
-**Scope:** 20 control families covering the full security and privacy control catalogue for federal information systems. Families include Access Control (AC), Audit and Accountability (AU), Configuration Management (CM), Identification and Authentication (IA), Incident Response (IR), System and Communications Protection (SC), and more.
+**Scope:** 324 base controls across 20 control families covering the full security and privacy control catalogue for federal information systems. Families include Access Control (AC), Audit and Accountability (AU), Configuration Management (CM), Identification and Authentication (IA), Incident Response (IR), System and Communications Protection (SC), and more.
 **Scoring:** Maturity levels 0–4 (Not Implemented → Initial → Managed → Defined → Optimizing)
 **Audience:** US federal agencies and contractors required under FISMA; organisations seeking FedRAMP authorization; any sector wanting a comprehensive, baseline-driven control framework. Cross-referenced against ISO 27001:2022 Annex A.
 
 **Coverage notes:**
-- Control families map directly to ISO 27001:2022 Annex A domains — 474+ individual controls condensed to 20 scored families on the platform
+- Control families map directly to ISO 27001:2022 Annex A domains — the 324 base controls of the catalogue are assessed individually, grouped into the 20 families (control enhancements are not scored separately)
 - NIST SP 800-53 Rev. 5 integrates privacy controls (previously separate in 800-53A) for the first time
 - ISO 27001:2022 ↔ NIST SP 800-53 Rev. 5 crosswalk available in the Crosswalk Viewer
-- Baseline tailoring (Low/Moderate/High) is not automated — the platform scores all 20 families uniformly
+- Baseline tailoring (Low/Moderate/High) is not automated — the platform scores all 324 base controls uniformly
 
 ---
 
@@ -488,7 +488,7 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 - AICM is designed as a companion to CCM v4.1 — focuses exclusively on AI system security and governance
 - Aligned to EU AI Act, ISO/IEC 42001:2023, NIST AI RMF 1.0, and OECD AI Principles
 - ISO 42001 (AI product) and AICM are complementary — ISO 42001 is a management system standard; AICM provides detailed technical controls
-- Particularly useful alongside the platform's ISO 42001 crosswalk mappings (NIST AI RMF: 32, EU AI Act: 31, OECD AI: 14)
+- Particularly useful alongside the platform's ISO 42001 crosswalk mappings (NIST AI RMF: 32, EU AI Act: 13, OECD AI: 14)
 
 ---
 
@@ -501,7 +501,7 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 
 **Coverage notes:**
 - CAF v4.0 (2024) introduced Objective D (Minimising the Impact) and restructured several outcomes from v3.1 — platform implements v4.0 only
-- 65 ISO 27001:2022 crosswalk mappings available in the Crosswalk Viewer (ISO27001_2022 → NCSC_CAF axis)
+- 41 ISO 27001:2022 crosswalk mappings available in the Crosswalk Viewer (ISO27001_2022 → NCSC_CAF axis)
 - Organisations subject to both NIS Regulations and CAF should maintain both modules — NIS provides the legal baseline, CAF provides the technical assessment methodology
 
 ---
@@ -515,7 +515,7 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 
 **Coverage notes:**
 - Document de travail ANSSI version 2.5 (17/03/2026) — subject to revision before final adoption
-- 50 ISO 27001:2022 crosswalk mappings available in the Crosswalk Viewer (ISO27001_2022 → FR_NIS2_RECYF axis)
+- 20 ISO 27001:2022 crosswalk mappings available in the Crosswalk Viewer (ISO27001_2022 → FR_NIS2_RECYF axis)
 - EE-only objectives (OS-16 to OS-20) are included in the assessment and clearly labelled; EI-only organisations may use them as an aspirational target
 - Assessment interface uses official ANSSI French terminology throughout
 
@@ -567,7 +567,7 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 ### PCI DSS v4.0.1
 
 **Source:** PCI Security Standards Council — Payment Card Industry Data Security Standard, v4.0.1, published June 2024.
-**Scope:** 323 sub-requirements grouped into 12 top-level requirements, organised across 6 prioritised implementation milestones: (1) Remove sensitive authentication data and limit data retention, (2) Protect systems and networks and be prepared to respond to a breach, (3) Secure payment card applications, (4) Monitor and control access to your systems, (5) Protect stored cardholder data, (6) Finalise remaining compliance efforts and ensure all controls are in place.
+**Scope:** 12 top-level requirements; the module assesses 198 sub-requirements (the "x.y.z" level), organised across 6 prioritised implementation milestones: (1) Remove sensitive authentication data and limit data retention, (2) Protect systems and networks and be prepared to respond to a breach, (3) Secure payment card applications, (4) Monitor and control access to your systems, (5) Protect stored cardholder data, (6) Finalise remaining compliance efforts and ensure all controls are in place.
 **Scoring:** Milestone-based progress tracking; sub-requirements assessed individually and grouped by milestone in the platform UI.
 **Audience:** Any organisation that stores, processes, or transmits cardholder data — merchants, service providers, payment processors.
 
@@ -592,7 +592,7 @@ The NCSC's own comparison document is unusually candid about CSRM's limitations.
 
 **Coverage notes:**
 - FINMA explicitly calibrated Circular 2023/1 for institutions with EU group subsidiaries running DORA in parallel — operational resilience, ICT risk framework, incident management, third-party risk, and cyber exercises (TLPT) overlap substantially
-- ISO 27001 crosswalk: 60 mappings. ISO 27018 and ISO 27701 crosswalk mappings also available for cloud PII and privacy-relevant FINMA obligations (outsourcing, data location, critical data risk)
+- ISO 27001 crosswalk: 73 mappings. ISO 27018 and ISO 27701 crosswalk mappings also available for cloud PII and privacy-relevant FINMA obligations (outsourcing, data location, critical data risk)
 - This module is a compliance readiness self-assessment — it does not replace FINMA's own supervisory review or a licensed audit
 
 ---
@@ -628,9 +628,9 @@ controls:
 All compliance assessment modules benefit from the Platform's Crosswalk Viewer, which shows cross-framework mappings between:
 
 - ISO 27001:2022 ↔ NIST CSF 2.0
-- NIST AI RMF 1.0 ↔ ISO 27001:2022 (56 mappings) and ↔ ISO 42001:2023 (32 mappings) — no direct NIST AI RMF ↔ EU AI Act axis; connected transitively via ISO 42001 (31 mappings to EU AI Act)
+- NIST AI RMF 1.0 ↔ ISO 27001:2022 (56 mappings) and ↔ ISO 42001:2023 (32 mappings) — no direct NIST AI RMF ↔ EU AI Act axis; connected transitively via ISO 42001 (13 mappings to EU AI Act)
 - ISO 27001:2022 ↔ NIST SP 800-53 Rev. 5
-- ISO 27001:2022 ↔ MITRE ATT&CK v19
+- ISO 27001:2022 ↔ MITRE ATT&CK v20 (45 mappings) and v19 (36 mappings, kept alongside)
 - ISO 27001:2022 ↔ DORA
 - ISO 27001:2022 ↔ NIS2
 - ISO 27001:2022 ↔ CIS Controls v8
@@ -643,11 +643,11 @@ All compliance assessment modules benefit from the Platform's Crosswalk Viewer, 
 - ISO 27001:2022 ↔ ACN Guidelines IT (43 mappings)
 - ISO 27001:2022 ↔ UK NIS Regulations (51 mappings)
 - ISO 27001:2022 ↔ UK Operational Resilience (34 mappings)
-- ISO 27001:2022 ↔ NCSC CAF v4.0 (65 mappings)
-- ISO 27001:2022 ↔ ReCyF v2.5 / FR NIS2 (50 mappings)
+- ISO 27001:2022 ↔ NCSC CAF v4.0 (41 mappings)
+- ISO 27001:2022 ↔ ReCyF v2.5 / FR NIS2 (20 mappings)
 - ISO 27017:2026 ↔ CSA CCM v4.1 (11), NIST CSF 2.0 (9), FINMA (7), ISO 27001:2022 (4), DORA (4), NIS2 (2) — curated mappings for the 4 CLD-prefixed standalone controls (5.38, 5.39, 8.35, 8.36); no Swiss nDSG axis, as those controls have no PII content
 
-Total: **4,671 crosswalk objects across 59 axes** available in the Crosswalk Viewer.
+Total: **4,632 crosswalk objects across 60 axes** in the core crosswalk, plus the ISO 42001 / ISO 42005 and EU-country crosswalk files, available in the Crosswalk Viewer.
 
 ---
 

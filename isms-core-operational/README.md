@@ -80,7 +80,7 @@ Every operational policy follows a consistent structure:
 
 ```
 isms-core-operational/
-├── A.5-organizational-controls/        # 21 control groups
+├── A.5-organisational-controls/        # 21 control groups
 │   └── isms-a.5.X-control-name/
 │       ├── POL/
 │       │   └── ISMS-OP-POL-A.5.X - Policy Title.md

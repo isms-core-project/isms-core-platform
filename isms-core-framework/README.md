@@ -52,8 +52,8 @@ ISMS CORE Framework (SSE — Secure Systems Engineering) is the **full SSE engin
 
 ```
 isms-core-framework/
-├── 00-foundation-policies/             # 1 regulatory framework pack
-├── A.5-organizational-controls/        # 21 control packs (covers 37 Annex A controls)
+├── 00-foundation-policies/             # Foundation: POL-00 (regulatory applicability), POL-01 (governance), REF-00 (requirement references)
+├── A.5-organisational-controls/        # 21 control packs (covers 37 Annex A controls)
 │   └── isms-a.5.X-control-name/
 │       ├── POL/                        # Governance policies
 │       ├── IMP/                        # UG (User Guide) + TG (Technical Spec)

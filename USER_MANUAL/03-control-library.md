@@ -1,6 +1,6 @@
 # Control Library
 
-<!-- ISMS-CORE:USER-MANUAL:03-control-library:v1.0:2026-04-16 -->
+<!-- ISMS-CORE:USER-MANUAL:03-control-library:v1.3:2026-10-17 -->
 
 ---
 
@@ -8,7 +8,7 @@
 
 The **Control Library** is the authoritative list of all control groups in the platform. It is the starting point for understanding your compliance posture — every policy, assessment, gap, and piece of evidence traces back to a control group.
 
-Navigate to **ISMS → Control Library** in the sidebar.
+Navigate to **ISMS → Controls Library** in the sidebar.
 
 ---
 
@@ -135,4 +135,4 @@ Use the search bar at the top of the Control Library to filter by:
 
 Full-text search across policy and implementation document content is available via **ISMS → Policies** (see [Policies & Documents](05-policies-documents.md)).
 
-<!-- QA_VERIFIED: 2026-04-16 -->
+<!-- QA_VERIFIED: 2026-10-17 -->

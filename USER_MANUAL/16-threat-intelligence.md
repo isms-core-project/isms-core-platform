@@ -1,12 +1,12 @@
 # Threat Intelligence
 
-<!-- ISMS-CORE:USER-MANUAL:16-threat-intelligence:v1.3:2026-08-22 -->
+<!-- ISMS-CORE:USER-MANUAL:16-threat-intelligence:v1.3:2026-10-17 -->
 
 ---
 
 ## Overview
 
-The Threat Intelligence section gives you live access to 18+ threat and vulnerability intelligence sources integrated directly into the platform. This supports ISO 27001:2022 control A.5.7 (Threat intelligence) and provides the technical depth needed to assess your exposure to current adversary techniques, actively exploited vulnerabilities, and real-world IOC data from public OSINT feeds.
+The Threat Intelligence section gives you live access to 21+ threat and vulnerability intelligence sources integrated directly into the platform. This supports ISO 27001:2022 control A.5.7 (Threat intelligence) and provides the technical depth needed to assess your exposure to current adversary techniques, actively exploited vulnerabilities, and real-world IOC data from public OSINT feeds.
 
 Navigate to **Intelligence** in the sidebar.
 
@@ -19,7 +19,7 @@ Navigate to **Intelligence** in the sidebar.
 The platform runs two dedicated feed containers:
 
 - **`isms-core-feeds`** — vulnerability and adversary intelligence (always active with the standard stack)
-- **`isms-core-threat-intel`** — OSINT IOC feeds (optional; enabled with `--profile threat-intel` + `THREAT_INTEL_ENABLED=true` in `.env`)
+- **`isms-core-threat-intel`** — OSINT IOC feeds (optional; enabled with `threat-intel` in `COMPOSE_PROFILES` and `THREAT_INTEL_ENABLED=true` in `.env`)
 
 ---
 
@@ -29,16 +29,15 @@ These feeds run in the `isms-core-feeds` container and are always active.
 
 | Feed | Schedule (UTC) | What it provides |
 |------|----------------|-----------------|
-| **MITRE ATT&CK v19** | Weekly, Sun 00:00 | Full ATT&CK framework — tactics, techniques, sub-techniques, mitigations, adversary groups, software, campaigns |
-| **MITRE ATLAS** | Weekly, Sun 00:30 | AI/ML-specific adversary techniques (adversarial machine learning threat landscape) |
-| **CISA KEV** | Daily 02:00 | CISA's Known Exploited Vulnerabilities catalogue — CVEs actively exploited in the wild |
-| **FIRST EPSS** | Daily 02:30 | Exploit Prediction Scoring System — probability score (0–1) for each CVE being exploited in the next 30 days |
+| **MITRE ATT&CK v20** | Weekly, Sun 02:00 | Full ATT&CK framework — tactics, techniques, sub-techniques, mitigations, adversary groups, software, campaigns |
+| **MITRE ATLAS** | Weekly, Sun 02:30 | AI/ML-specific adversary techniques (adversarial machine learning threat landscape) |
+| **CISA KEV** | Daily 03:00 | CISA's Known Exploited Vulnerabilities catalogue — CVEs actively exploited in the wild |
+| **FIRST EPSS** | Daily 03:30 | Exploit Prediction Scoring System — probability score (0–1) for each CVE being exploited in the next 30 days |
 | **NVD CVE** | Daily delta 03:00 / Full weekly Sun 01:00 | ~250,000 CVEs from the NIST NVD with CVSS v2/v3/v4 scores, CWEs, and CPE applicability |
 | **NVD CPE** | Weekly, Sun 01:30 | Software/hardware product identifiers — enables correlating CVEs to specific products |
-| **ENISA EUVD** | Daily | EU Vulnerability Database — exploited-flag CVEs and high-severity (CVSS ≥ 4.0) EU-assigned entries; cross-enriched into NVD CVE docs with `in_euvd` flag |
-| **Exploit-DB** | Daily | ~52,000 public exploits; cross-enriches CVEs with `edb_id`, `edb_verified` (Metasploit flag), and `edb_description` |
-| **VulnCheck KEV** | Daily 04:45 | VulnCheck's own Known Exploited Vulnerabilities catalogue — broader than CISA's; ~67% of its entries aren't in CISA KEV. Adds `in_vulncheck_kev` flag on CVE Explorer, separate from CISA's `in_kev`. Requires `VULNCHECK_API_KEY` (free Community tier) |
-| **MaxMind GeoLite2** | Weekly, Tue 01:00 | GeoIP database used for IP-to-country resolution across all feeds |
+| **ENISA EUVD** | Daily delta 04:00 / full weekly Sun 02:45 | EU Vulnerability Database — exploited-flag CVEs and high-severity (CVSS ≥ 4.0) EU-assigned entries; cross-enriched into NVD CVE docs with `in_euvd` flag |
+| **Exploit-DB** | Daily 04:30 | ~52,000 public exploits; cross-enriches CVEs with `edb_id`, `edb_verified` (Metasploit flag), and `edb_description` |
+| **VulnCheck KEV** | Daily 04:45 | VulnCheck's own Known Exploited Vulnerabilities catalogue — broader than CISA's; ~67% of its entries aren't in CISA KEV. Adds `in_vulncheck_kev` flag on CVE Explorer, separate from CISA's `in_kev`. Requires a VulnCheck key (free Community tier) — **Admin → API keys → Vuln Feeds** |
 
 ---
 
@@ -50,18 +49,19 @@ These feeds run in the `isms-core-threat-intel` container. All feeds run automat
 |------|----------------|---------|-----------------|
 | **CIRCL MISP** | Every 6h: 00:00, 06:00, 12:00, 18:00 | None | Public OSINT MISP feed from Luxembourg CIRCL — IOCs (IPs, domains, URLs, hashes) with ATT&CK TIDs, Malpedia family + actor tags |
 | **Botvrij MISP** | Every 6h: 01:00, 07:00, 13:00, 19:00 (staggered) | None | Public OSINT feed (botvrij.eu) — same schema as CIRCL, deduplicated by IOC value + source |
-| **AbuseIPDB** | Daily 02:00 | `ABUSEIPDB_API_KEY` | Top 10,000 highest-confidence abusive IPs; on-demand single-IP enrichment with 24h cache |
+| **AbuseIPDB** | Daily 02:00 | AbuseIPDB key | Top 10,000 highest-confidence abusive IPs; on-demand single-IP enrichment with 24h cache |
 | **URLhaus** | Daily 03:00 | None | Malicious URLs hosting malware payloads, from abuse.ch |
-| **ThreatFox** | Every 6h: 03:00, 09:00, 15:00, 21:00 | `THREATFOX_API_KEY` (optional) | IOCs (IPs, domains, URLs, hashes) linked to named malware families with confidence scores |
+| **ThreatFox** | Every 6h: 03:00, 09:00, 15:00, 21:00 | ThreatFox key (required) | IOCs (IPs, domains, URLs, hashes) linked to named malware families with confidence scores |
 | **SSLBL** | Daily 04:00 | None | SSL certificate blacklist — SHA1 fingerprints of certificates used by malware C2 infrastructure |
-| **AlienVault OTX** | Daily 04:30 | `OTX_API_KEY` | Open Threat Exchange pulses — IOCs with TLP labels, ATT&CK TIDs, and confidence scores derived from pulse subscriber count |
+| **AlienVault OTX** | Daily 04:30 | AlienVault OTX key | Open Threat Exchange pulses — IOCs with TLP labels, ATT&CK TIDs, and confidence scores derived from pulse subscriber count |
 | **Feodo Tracker** | Every 6h: 04:30, 10:30, 16:30, 22:30 | None | C2 IP blocklist for Emotet, QakBot, TrickBot, and Dridex botnets (confidence 85) |
 | **Red Flag Domains** | Daily 05:00 | None | Newly registered suspicious domains flagged for phishing, malware, and C2 |
 | **Stopforumspam** | Daily 05:30 | None | ~140,000 IPs reported for spam, botnet activity, and forum abuse |
-| **MalwareBazaar** | Every 6h: 02:00, 08:00, 14:00, 20:00 | `MALWAREBAZAAR_API_KEY` | Recent malware sample hashes (MD5/SHA1/SHA256) with family attribution |
+| **MalwareBazaar** | Every 6h: 02:00, 08:00, 14:00, 20:00 | MalwareBazaar key | Recent malware sample hashes (MD5/SHA1/SHA256) with family attribution |
 | **Malpedia** | Weekly, Sun 03:00 | None | Malware family knowledge base (aliases, ATT&CK TIDs, associated actors) and threat actor directory |
-| **VirusTotal** (enrichment) | Daily 07:00 | `VT_API_KEY` (optional) | Enriches existing IOCs with VT detection ratios — updates `confidence` field only; does not add new IOCs |
-| **IPInfo** (enrichment) | After AbuseIPDB | `IPINFO_API_KEY` (optional) | Geo-enriches AbuseIPDB IPs with city, country, and ASN; 120s time budget per run |
+| **VirusTotal** (enrichment) | Daily 07:00 | VirusTotal key (optional) | Enriches existing IOCs with VT detection ratios — updates `confidence` field only; does not add new IOCs |
+| **MaxMind GeoLite2** | Weekly, Tue 01:00 | MaxMind account ID + licence key | GeoIP database used for IP-to-country resolution |
+| **IPInfo** (enrichment) | After AbuseIPDB | IPinfo key (optional) | Geo-enriches AbuseIPDB IPs with city, country, and ASN; 120s time budget per run |
 
 > **First-boot note:** All OSINT feeds run once immediately on startup to seed the database. Large feeds (CIRCL MISP ~133K IOCs, Stopforumspam ~140K IPs, AlienVault OTX ~90K IOCs) take several minutes each. The scheduler handles subsequent delta updates automatically.
 
@@ -274,7 +274,7 @@ Enter any IP address to retrieve on-demand enrichment from five sources:
 
 ### Shodan Data
 
-If `SHODAN_API_KEY` is configured:
+If a Shodan key is configured (Admin → API keys):
 
 - Open ports and service banners
 - Hostnames and reverse DNS
@@ -292,11 +292,11 @@ If `MAXMIND_ACCOUNT_ID` and `MAXMIND_LICENSE_KEY` are configured: country, city,
 
 ### IPInfo Privacy
 
-If `IPINFO_API_KEY` is configured: a privacy classification (Clean / VPN / Proxy / Tor / Relay / Hosting) plus the underlying service name.
+If an IPinfo key is configured: a privacy classification (Clean / VPN / Proxy / Tor / Relay / Hosting) plus the underlying service name.
 
 ### GreyNoise
 
-If `GREYNOISE_API_KEY` is configured: internet-noise/scanner classification (benign / malicious / unknown), whether the IP is a known internet-wide scanner, and RIOT status (a known, legitimate business service — search engines, CDNs — rather than a threat). GreyNoise's free Community tier is limited to 50 lookups/week (business email required for the API key), so this source is deliberately on-demand only, never part of a scheduled bulk feed.
+If a GreyNoise key is configured: internet-noise/scanner classification (benign / malicious / unknown), whether the IP is a known internet-wide scanner, and RIOT status (a known, legitimate business service — search engines, CDNs — rather than a threat). GreyNoise's free Community tier is limited to 50 lookups/week (business email required for the API key), so this source is deliberately on-demand only, never part of a scheduled bulk feed.
 
 Enrichment results are cached to respect each source's rate limits — 24 hours for AbuseIPDB and Shodan, 30 days for MaxMind, IPInfo, and GreyNoise (all lower-volume or stricter-quota sources).
 
@@ -354,26 +354,35 @@ Threat intelligence data integrates with the Evidence Tracker:
 
 Feed configuration is an administrator function. See your administrator if a feed is not running or if you need to change feed settings.
 
-| Variable | Required for | Free registration |
-|----------|-------------|-------------------|
-| `NIST_API_KEY` | Faster NVD seeding (raises rate limit from 5→50 req/30s) | nvd.nist.gov |
-| `ABUSEIPDB_API_KEY` | AbuseIPDB blacklist + IP enrichment | abuseipdb.com |
-| `SHODAN_API_KEY` | Shodan paid enrichment (InternetDB free fallback used if absent) | shodan.io |
-| `OTX_API_KEY` | AlienVault OTX feed | otx.alienvault.com |
-| `OTX_IMPORT_DAYS` | OTX history depth on first run (default: `90` days) | — |
-| `THREATFOX_API_KEY` | Higher rate limits for ThreatFox (works at lower limits without key) | threatfox.abuse.ch |
-| `MALWAREBAZAAR_API_KEY` | MalwareBazaar sample feed | bazaar.abuse.ch |
-| `VT_API_KEY` | VirusTotal IOC enrichment (free tier: ~500 req/day) | virustotal.com |
-| `VT_DAILY_LIMIT` | Max IOCs enriched per VT run (default: `450`, free-tier safe cap) | — |
-| `MAXMIND_ACCOUNT_ID` / `MAXMIND_LICENSE_KEY` | GeoLite2 database for IP geolocation | maxmind.com |
-| `IPINFO_API_KEY` | Enhanced geo + ASN enrichment for AbuseIPDB IPs | ipinfo.io |
-| `VULNCHECK_API_KEY` | VulnCheck KEV feed (free tier: 1,000 req/min) | console.vulncheck.com |
-| `GREYNOISE_API_KEY` | GreyNoise on-demand IP lookup on the IP Enrichment page (free tier: 50 lookups/week, business email required) | greynoise.io |
-| `TI_MISP_IMPORT_FROM_DATE` | MISP first-run date floor (default `2024-01-01`) | — |
-| `TI_RUN_ON_START` | Force all OSINT feeds to run on every container start | — |
+### API keys
+
+The keys the feeds and IP look-ups use are entered by the platform operator (**Super Admin**) under **Admin → API keys**, in three tabs: **Vuln Feeds** (NIST NVD, VulnCheck), **TI Feeds** (AbuseIPDB, Shodan, IPinfo, MaxMind account ID and licence key, ThreatFox, MalwareBazaar, AlienVault OTX, VirusTotal, GreyNoise) and **System** (Anthropic). Each key has an **Enabled** switch; saved values are stored encrypted and are never shown again, and a key takes effect at the next feed run — no restart. Keys already set in the platform's `.env` file when an installation is upgraded are imported into the page once; after that the page is the source of truth.
+
+| Key | Used for | Free registration |
+|-----|----------|-------------------|
+| NIST NVD | Faster NVD seeding (raises rate limit from 5→50 req/30s) | nvd.nist.gov |
+| AbuseIPDB | AbuseIPDB blacklist + IP enrichment | abuseipdb.com |
+| Shodan | Shodan paid enrichment (InternetDB free fallback used if absent) | shodan.io |
+| AlienVault OTX | AlienVault OTX feed | otx.alienvault.com |
+| ThreatFox | ThreatFox feed (the key is required; the feed stays off without it) | threatfox.abuse.ch |
+| MalwareBazaar | MalwareBazaar sample feed | bazaar.abuse.ch |
+| VirusTotal | VirusTotal IOC enrichment (free tier: ~500 req/day) | virustotal.com |
+| MaxMind (account ID + licence key) | GeoLite2 database for IP geolocation | maxmind.com |
+| IPinfo | Enhanced geo + ASN enrichment for AbuseIPDB IPs | ipinfo.io |
+| VulnCheck | VulnCheck KEV feed (free tier: 1,000 req/min) | console.vulncheck.com |
+| GreyNoise | GreyNoise on-demand IP lookup on the IP Enrichment page (free tier: 50 lookups/week, business email required) | greynoise.io |
+
+Settings that are not keys stay in the platform's `.env`:
+
+| Variable | Purpose |
+|----------|---------|
+| `OTX_IMPORT_DAYS` | OTX history depth on first run (default: `90` days) |
+| `VT_DAILY_LIMIT` | Max IOCs enriched per VT run (default: `450`, free-tier safe cap) |
+| `TI_MISP_IMPORT_FROM_DATE` | MISP first-run date floor (default `2024-01-01`) |
+| `TI_RUN_ON_START` | Force all OSINT feeds to run on every container start |
 
 > **VirusTotal enrichment:** VT does not add new IOCs — it queries IOCs already in the database (NULL confidence first, then oldest check) and updates their `confidence` field only when the VT score is higher than the existing value. IOCs are re-checked every 30 days. The free tier allows ~500 requests/day; the default cap of 450 stays safely under that limit.
 
 The **CPE Option B** toggle in **Intelligence → Threat Feeds** allows an administrator to switch the NVD CPE pull strategy between KEV-vendor CPEs (lightweight) and full CPE library (comprehensive) without restarting containers. The setting is stored in the platform database and overrides the `FEEDS_CPE_FULL` environment variable.
 
-<!-- QA_VERIFIED: 2026-05-02 -->
+<!-- QA_VERIFIED: 2026-10-17 -->

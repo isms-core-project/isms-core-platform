@@ -42,7 +42,7 @@ We will:
 ISMS CORE supports TOTP-based MFA (RFC 6238) for all user accounts. We recommend:
 - Enabling MFA on all admin and super_admin accounts before production use
 - Rotating the `SECRET_KEY` environment variable when deploying to a new environment
-- Using strong, unique values for `POSTGRES_PASSWORD` and `SECRET_KEY` (minimum 32 characters, randomly generated)
+- Using strong, unique values for `POSTGRES_PASSWORD`, `SECRET_KEY` and `PLATFORM_KEY_ENCRYPTION_SECRET` (minimum 32 characters, randomly generated); the last one encrypts the third-party API keys saved under Admin → API keys, so keep it with your backups
 
 ## Proactive Security Reviews
 
@@ -50,7 +50,7 @@ Beyond responding to external reports, we periodically run the platform's own co
 through [Visa's Vulnerability Agentic Harness (VVAH)](https://github.com/visa/visa-vulnerability-agentic-harness),
 an open-source agentic SAST tool, and fix every independently-verified finding before
 it ships. The most recent full pass (backend, frontend, and every connector/feed/
-threat-intel/SMTP-bridge service) landed in v1.2 — see
+threat-intel/SMTP-bridge service) landed in v1.2, and the October 2026 follow-up (roles, transport security, hardening) in v1.3 — see
 [isms-core-platform/CHANGELOG.md](isms-core-platform/CHANGELOG.md) for the summary.
 
 ## Safe Handling

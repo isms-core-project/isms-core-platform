@@ -27,7 +27,7 @@
 > **TL;DR for people who skim:**
 > - ISMS CORE moves compliance judgment from audit time to design time — policies state explicit, testable requirements; auditors verify documented decisions rather than making them for you
 > - Five content products: **Framework** (full SSE engineering, regulated industries, multi-framework), **Operational** (SME-focused, ISO 27001 + GDPR, practical checklists), **Privacy** (ISO 27701:2025 Privacy Information Management), **Cloud** (ISO 27018:2025 PII protection in cloud), and **AI** (ISO 42001:2023 Artificial Intelligence Management System)
-> - Framework and Operational cover all 93 ISO 27001:2022 Annex A controls in 53 control packs; Privacy adds 21 control groups; Cloud adds 12 control groups; AI adds 12 control groups
+> - Framework and Operational cover all 93 ISO 27001:2022 Annex A controls in 53 control packs; Privacy adds 21 control groups; Cloud adds 16 control groups (12 PII + 4 Cloud Security); AI adds 10 control groups (plus 2 foundation policies)
 > - A **Platform** (WebUI + API) sits on top and turns static files into a live compliance management system — all five products managed in one place
 > - Self-hosted, on-premises by design — your compliance evidence stays under your control and jurisdiction
 > - This is not plug-and-play. You need a qualified CISO, Python execution capability, and willingness to make documented decisions
@@ -60,7 +60,7 @@ But within the domain of ISMS *implementation*, there is a genuine architectural
 <img src="https://img.shields.io/badge/🔒_PRIVACY-ISO_27701_2025-7030A0?style=flat-square" alt="PRIVACY"/>
 <img src="https://img.shields.io/badge/☁️_CLOUD-ISO_27018_2025-00897B?style=flat-square" alt="CLOUD"/>
 <img src="https://img.shields.io/badge/🤖_AI-ISO_42001_2023-FF6B35?style=flat-square" alt="AI"/>
-<img src="https://img.shields.io/badge/Controls-99_Groups_/_4_Standards-32CD32?style=flat-square" alt="99 Groups"/>
+<img src="https://img.shields.io/badge/Controls-104_Groups_/_5_Standards-32CD32?style=flat-square" alt="104 Groups"/>
 </p>
 
 ISMS CORE provides **five distinct compliance products** designed for different organisational needs:
@@ -68,8 +68,8 @@ ISMS CORE provides **five distinct compliance products** designed for different 
 - **FRAMEWORK (SSE — Secure Systems Engineering)**: Engineered compliance system for regulated industries with complex multi-regulatory requirements (ISO 27001:2022)
 - **OPERATIONAL**: Classical ISMS for SMEs seeking ISO 27001 certification with automation-assisted compliance (ISO 27001:2022)
 - **PRIVACY**: Privacy Information Management System extension covering 21 control groups (ISO 27701:2025) across controller, processor, and shared responsibility domains
-- **CLOUD**: PII protection in cloud services extension covering 12 ISO 27018:2025 Annex A control groups for cloud service providers and processors
-- **AI**: Artificial Intelligence Management System extension covering 12 control groups (ISO 42001:2023) for organisations developing or deploying AI systems
+- **CLOUD**: PII protection in cloud services (12 ISO 27018:2025 Annex A control groups) plus four standalone cloud-security extension controls (ISO 27017:2026) — 16 control groups for cloud service providers and processors
+- **AI**: Artificial Intelligence Management System extension covering 10 control groups plus 2 foundation policies (ISO 42001:2023) for organisations developing or deploying AI systems
 
 All five products use code-driven, evidence-automated, engineer-designed approaches. If you are looking for Word document templates, generic guidance like "implement appropriate security measures", or annual compliance snapshots with manual evidence collection — this is not the right tool for you.
 
@@ -275,11 +275,11 @@ FRAMEWORK prioritises rigour across all scores. Higher-score controls produce wo
 
 **What you get:**
 - **Architecture**: CLD-POL (policy) → Compliance Checklist Workbook (Python-generated)
-- **Coverage**: 12 control groups covering the ISO 27018:2025 Annex A controls
+- **Coverage**: 12 control groups covering the ISO 27018:2025 Annex A controls, plus 4 standalone ISO 27017:2026 cloud-security controls (A.5.38, A.5.39, A.8.35, A.8.36) and a guidance addendum for the 38 existing Annex A controls that already apply in the cloud
   - A.1 General | A.2 Consent | A.3 Purpose | A.4 Collection | A.5 Data Minimisation
   - A.6 Use/Retention/Disclosure | A.7 Accuracy | A.8 Openness | A.9 Individual Participation
   - A.10 Accountability | A.11 Information Security | A.12 Privacy Compliance
-- **Governance**: 12 CLD-POL documents, one per control group
+- **Governance**: 16 CLD-POL / CLD-SEC-POL documents, one per control group
 - **Evidence**: Python-generated compliance checklist workbooks
 
 **Prerequisites:**
@@ -295,9 +295,9 @@ FRAMEWORK prioritises rigour across all scores. Higher-score controls produce wo
 
 | Feature | FRAMEWORK (SSE) | OPERATIONAL | PRIVACY | CLOUD | AI |
 |---------|----------------|-------------|---------|-------|----|
-| **Standard** | ISO 27001:2022 | ISO 27001:2022 | ISO 27701:2025 | ISO 27018:2025 | ISO 42001:2023 |
+| **Standard** | ISO 27001:2022 | ISO 27001:2022 | ISO 27701:2025 | ISO 27018:2025 + ISO 27017:2026 | ISO 42001:2023 |
 | **Target** | Regulated industries | SMEs | PII controllers/processors | Cloud PII processors | AI developers/deployers |
-| **Control Groups** | 53 groups / 93 controls | 53 groups / 93 controls | 21 groups | 12 groups | 12 groups |
+| **Control Groups** | 53 groups / 93 controls | 53 groups / 93 controls | 21 groups | 16 groups (12 PII + 4 Sec) | 10 groups |
 | **Policy Format** | POL + IMP (UG/TG) | OP-POL | PRIV-POL | CLD-POL | AI-POL |
 | **Workbook Type** | Control-derived assessment workbooks | Policy-derived checklists | Privacy compliance checklists | Cloud PII compliance checklists | AI governance policies |
 | **Foundation Governance** | POL-00 + POL-01 (Tier 1/2/3, authority boundaries, exception handling) | Classical ISMS (no meta-layer) | PRIV-POL-00 + PRIV-POL-01 | Embedded in CLD-POL | AI-POL-00 + AI-POL-01 |
@@ -628,7 +628,7 @@ Open an issue with: (1) the specific document or script, (2) the exact error or 
 
 Framework and Operational are **content products** — policies, workbooks, and guides that work perfectly as static files. You can clone this repository, run the Python generators, fill in the Excel workbooks, and have a fully functional, audit-ready ISMS without anything else.
 
-The **ISMS CORE Platform** is the operational layer built on top. It ingests both products and turns them into a live compliance management system:
+The **ISMS CORE Platform** is the operational layer built on top. It ingests all five products and turns them into a live compliance management system:
 
 | Without Platform | With Platform |
 |-----------------|---------------|
@@ -641,7 +641,7 @@ The **ISMS CORE Platform** is the operational layer built on top. It ingests bot
 
 The Platform is a Docker Compose stack deployed on-premises. The core services are FastAPI + PostgreSQL + Redis + OpenSearch + Celery + Angular 22 + nginx TLS + Celery Beat + a dedicated vulnerability feed container (MITRE ATT&CK, CISA KEV, EPSS, NVD CVE, ENISA EUVD, Exploit-DB) + an automated connector runner (44 native connectors). An optional OSINT feed container adds 12 live threat intelligence sources. **v1.2 is live.** Same data sovereignty principle applies — your compliance data does not leave your infrastructure.
 
-The Platform also includes 44 native connectors (Microsoft, network, identity, vulnerability, ITSM, monitoring, cloud posture, threat intel) that push live evidence directly into the compliance database — no manual evidence collection for supported systems.
+The Platform also includes 46 native connectors (Microsoft, network, identity, vulnerability, ITSM, monitoring, cloud posture, threat intel) that push live evidence directly into the compliance database — no manual evidence collection for supported systems.
 
 **Platform is additive, never mandatory.** Framework and Operational are the product. Platform is the engine that makes it operational at scale.
 

@@ -34,6 +34,9 @@ backend/cache/
 
 # VVAH scan output (93-isms-core-vvah/run-scan.sh writes here) — never commit exploit detail
 */security-scan/
+# The integrations leg of the security scan writes its report directly into this folder (not one level down), which the
+# pattern above does not match — reports contain exploit detail and must never be committed.
+/security-scan/
 */security-remediation/
 
 # vvaharness v1.5.0 (2026-10-10) injects its 17 detection skills directly into the scanned

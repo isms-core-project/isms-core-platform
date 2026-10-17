@@ -353,7 +353,7 @@ Diese Vorschriften und Normen gelten **nur bei Erfüllung spezifischer Bedingung
 - Anhang A (normativ): 36 Massnahmen in 9 Domänen (A.2–A.10)
 - Anhang B (normativ): Umsetzungsleitfaden für alle Massnahmen des Anhangs A
 
-**AIMS-Bereitstellung**: Das vollständige ISO 42001 Anhang A-Massnahmenset wird durch die AI-POL-A.x.x-Kontrollgruppen-Richtlinien in `53-isms-core-ai/` bereitgestellt. Die Anwendbarkeitserklärung (SoA) der Organisation MUSS diese Richtlinien referenzieren.
+**AIMS-Bereitstellung**: Das vollständige ISO 42001 Anhang A-Massnahmenset wird durch die AI-POL-A.x.x-Kontrollgruppen-Richtlinien in `isms-core-ai/` bereitgestellt. Die Anwendbarkeitserklärung (SoA) der Organisation MUSS diese Richtlinien referenzieren.
 
 **Integration mit ISO 27001**: ISO 42001 verwendet die gleiche Struktur der hohen Ebene (HLS/Anhang SL) wie ISO 27001:2022. Organisationen mit ISO 27001-Zertifizierung können AIMS- und ISMS-Prozesse unter einem gemeinsamen Managementsystem integrieren oder kombinieren. Gemeinsame Klauselbereiche (7, 9, 10) können bestehende ISMS-Infrastruktur wiederverwenden.
 
@@ -380,7 +380,7 @@ Diese Vorschriften und Normen gelten **nur bei Erfüllung spezifischer Bedingung
 
 **Auswirkungen auf das AIMS**:
 
-- Alle AISIA-Vorlagen in `53-isms-core-ai/` MÜSSEN gemäss den Dokumentationsanforderungen von ISO 42005:2025 Klausel 6 erstellt werden
+- Alle AISIA-Vorlagen in `isms-core-ai/` MÜSSEN gemäss den Dokumentationsanforderungen von ISO 42005:2025 Klausel 6 erstellt werden
 - Die AISIA-Methodik in AIMS-Dokumenten muss ISO 42005:2025 referenzieren, nicht allgemeine Orientierungen
 - Die ISO 42005:2025 AISIA ist auf die Grundrechte-Folgenabschätzung (GIFA) der EU-KI-Verordnung ausgerichtet — Organisationen, die beiden unterliegen, SOLLTEN die Querverweise dokumentieren
 

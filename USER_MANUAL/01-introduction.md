@@ -1,6 +1,6 @@
 # Introduction
 
-<!-- ISMS-CORE:USER-MANUAL:01-introduction:v1.0:2026-04-16 -->
+<!-- ISMS-CORE:USER-MANUAL:01-introduction:v1.3:2026-10-17 -->
 
 ---
 
@@ -30,7 +30,7 @@ The platform hosts five product families, each covering a different ISO standard
 
 ### ISMS Framework
 
-The core product. Covers all 54 ISO 27001:2022 Annex A control groups with full documentation: policy (POL), implementation guides for users (IMP-UG) and technical teams (IMP-TG), self-assessment scorecard (SCR), and assessment workbook (WKBK). Available in EN, FR, DE, and IT.
+The core product. Covers all 93 ISO 27001:2022 Annex A controls in 54 control groups (53 Annex A packs plus the foundation group) with full documentation: policy (POL), implementation guides for users (IMP-UG) and technical teams (IMP-TG), self-assessment scorecard (SCR), and assessment workbook (WKBK). Available in EN, FR, DE, and IT.
 
 ### ISMS Operational
 
@@ -40,9 +40,9 @@ A lightweight policy set for smaller organisations or those who need a faster pa
 
 21 control groups covering the ISO 27701:2025 Privacy Information Management System extension. Split into controller, processor, and shared controls. Designed to complement the ISMS Framework — not replace it.
 
-### Cloud Extension (ISO 27018:2025)
+### Cloud Extensions (ISO 27018:2025 and ISO 27017:2026)
 
-12 control groups covering PII protection in public cloud environments under ISO 27018:2025. Relevant for any organisation processing personal data using IaaS, PaaS, or SaaS cloud services.
+12 control groups covering PII protection in public cloud environments under ISO 27018:2025 (**Cloud PII**), plus four standalone cloud-security extension controls from ISO 27017:2026 — shared roles and responsibilities, cloud service partner agreements, segregation in virtual environments, detection of unauthorised use (**Cloud Sec**). Relevant for any organisation processing personal data using IaaS, PaaS, or SaaS cloud services.
 
 ### AI Extension (ISO 42001:2023 + ISO 42005:2025)
 
@@ -55,7 +55,7 @@ A lightweight policy set for smaller organisations or those who need a faster pa
 ```
 Design            →  Control Library, Projects Workspace
 Implement         →  Policies, Implementation Guides, Document Editor
-Assess            →  Assessment Checklists, 23 Compliance Frameworks
+Assess            →  Assessment Checklists, 29 Compliance Frameworks
 Monitor           →  Evidence Connectors, KPI Dashboard, Threat Intelligence
 Review            →  Gap Management, Risk Register, EBIOS RM
 Improve           →  Remediation Tracking, TPRM, BIA
@@ -101,4 +101,4 @@ This is configured by your administrator in **Admin → Organisation**.
 
 Start with [Getting Started](02-getting-started.md) to orient yourself in the platform — the dashboard, navigation, and the product switcher.
 
-<!-- QA_VERIFIED: 2026-04-16 -->
+<!-- QA_VERIFIED: 2026-10-17 -->

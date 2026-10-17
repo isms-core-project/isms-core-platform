@@ -1,6 +1,6 @@
 # Third-Party Risk Management (TPRM)
 
-<!-- ISMS-CORE:USER-MANUAL:13-tprm:v1.0:2026-04-16 -->
+<!-- ISMS-CORE:USER-MANUAL:13-tprm:v1.3:2026-10-17 -->
 
 ---
 
@@ -8,7 +8,7 @@
 
 The **TPRM** module manages third-party and supplier risk under ISO 27001:2022 controls A.5.19 (Information security in supplier relationships) through A.5.22 (Monitoring and review of supplier services). It includes dedicated DORA ICT third-party risk fields for financial sector organisations.
 
-Navigate to **Risk & Operations → TPRM** in the sidebar.
+Navigate to **Suppliers → TPRM** in the sidebar.
 
 ---
 
@@ -111,4 +111,4 @@ Export the vendor register and assessment history as:
 - **CSV** — all vendor records with DORA fields
 - **XLSX** — formatted vendor register with assessment status and contract expiry dates
 
-<!-- QA_VERIFIED: 2026-04-16 -->
+<!-- QA_VERIFIED: 2026-10-17 -->

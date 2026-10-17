@@ -1,6 +1,6 @@
 # Business Impact Analysis
 
-<!-- ISMS-CORE:USER-MANUAL:12-bia:v1.0:2026-04-16 -->
+<!-- ISMS-CORE:USER-MANUAL:12-bia:v1.3:2026-10-17 -->
 
 ---
 
@@ -8,7 +8,7 @@
 
 The **Business Impact Analysis (BIA)** module supports ISO 27001:2022 controls A.5.29 (Information security during disruption) and A.5.30 (ICT readiness for business continuity). It provides a structured way to assess the impact of disruption on business activities and establish recovery time objectives.
 
-Navigate to **Risk & Operations → BIA** in the sidebar, or access it via the BIA tab on control groups A.5.29 and A.5.30 in the Control Library.
+Navigate to **Risk & Compliance → BIA** in the sidebar, or access it via the BIA tab on control groups A.5.29 and A.5.30 in the Control Library.
 
 ---
 
@@ -39,7 +39,7 @@ The relationship: **RTO ≤ MTPD** always. If your RTO exceeds MTPD, your recove
 
 ## Creating a BIA Record
 
-1. Navigate to **Risk & Operations → BIA**
+1. Navigate to **Risk & Compliance → BIA**
 2. Click **New Business Activity**
 3. Complete the record:
 
@@ -101,4 +101,4 @@ Export the BIA register from the BIA list view as:
 - **CSV** — all records with all fields, suitable for spreadsheet analysis
 - **XLSX** — formatted spreadsheet with impact scoring and recovery test history
 
-<!-- QA_VERIFIED: 2026-04-16 -->
+<!-- QA_VERIFIED: 2026-10-17 -->

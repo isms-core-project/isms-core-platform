@@ -9,12 +9,12 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Status-Live_(v1.2)-00AA00?style=flat-square" alt="Live"/>
+  <img src="https://img.shields.io/badge/Status-Live_(v1.3)-00AA00?style=flat-square" alt="Live"/>
   <img src="https://img.shields.io/badge/Backend-FastAPI-0066CC?style=flat-square" alt="FastAPI"/>
   <img src="https://img.shields.io/badge/Database-PostgreSQL_18-336791?style=flat-square" alt="PostgreSQL 18"/>
   <img src="https://img.shields.io/badge/Frontend-Angular_22_+_Material_3-DD0031?style=flat-square" alt="Angular"/>
   <img src="https://img.shields.io/badge/Deployment-Docker_Compose-2496ED?style=flat-square" alt="Docker"/>
-  <img src="https://img.shields.io/badge/Services-11_containers-2E8B57?style=flat-square" alt="11 Services"/>
+  <img src="https://img.shields.io/badge/Services-10_core_services-2E8B57?style=flat-square" alt="10 core services"/>
 </p>
 
 <p align="center">
@@ -94,7 +94,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms the ISMS CORE 
                         │  ┌──────────────────┐  ┌──────────────────┐   │
                         │  │ isms-core-feeds  │  │ isms-core-       │   │
                         │  │ Threat intel     │  │ connectors       │   │
-                        │  │ MITRE · KEV ·    │  │ 44 evidence      │   │
+                        │  │ MITRE · KEV ·    │  │ 46 evidence      │   │
                         │  │ EPSS · NVD CVE · │  │ connectors       │   │
                         │  │ ENISA EUVD · EDB │  │                  │   │
                         │  └──────────────────┘  └──────────────────┘   │
@@ -109,13 +109,13 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms the ISMS CORE 
 | `isms-core-backend` | FastAPI 0.109+ | REST API, auth (JWT), business logic, import orchestration. Internal only — nginx proxies it. |
 | `isms-core-frontend` | Angular 22 + Material 3 | WebUI — dashboards, control explorer, evidence management. Internal only — nginx proxies it. |
 | `isms-core-postgres` | PostgreSQL 18 Alpine | Primary data store — all compliance data. Internal only (no exposed port in prod). |
-| `isms-core-redis` | Redis 8 Alpine | Session cache + Celery task broker. Internal only. |
+| `isms-core-redis` | Redis 8 Alpine | Session cache + Celery task broker. Internal only. Optional TLS: `REDIS_TLS=true` (certificate from the platform CA) — see *Encrypted Redis and mail* below. |
 | `isms-core-opensearch` | OpenSearch 3.x | Full-text search over policy and IMP content + NVD CVE/CPE indices. Internal only. |
-| `isms-core-worker` | Celery 5.3 | Background tasks — import, sync, compliance recalculation. Queue: `isms`. |
+| `isms-core-worker` | Celery 5.6 | Background tasks — import, sync, compliance recalculation. Queue: `isms`. |
 | `isms-core-beat` | Celery Beat | Scheduled jobs — nightly evidence archive at 02:00 UTC; daily KPI snapshots at 06:00 UTC. No healthcheck (by design). |
-| `isms-core-feeds` | Python 3.12 + schedule | Threat intelligence scheduler — MITRE ATT&CK, MITRE ATLAS, CISA KEV, VulnCheck KEV, FIRST EPSS, NVD CVE/CPE, ENISA EUVD, Exploit-DB (~52K exploits daily). Writes to Postgres and OpenSearch. Env: `FEEDS_CVE_ENABLED`, `FEEDS_CPE_FULL`, `FEEDS_EUVD_ENABLED`, `FEEDS_VULNCHECK_ENABLED`, `NIST_API_KEY`, `VULNCHECK_API_KEY`. |
-| `isms-core-threat-intel` | Python 3.12 + schedule | **Optional** (activate via `COMPOSE_PROFILES=...,threat-intel`) OSINT IOC feed container — 12 sources: CIRCL MISP, Botvrij MISP, AbuseIPDB, URLhaus, ThreatFox, SSLBL, AlienVault OTX, Red Flag Domains, Stopforumspam, MalwareBazaar, Feodo Tracker, Malpedia. VirusTotal enrichment (optional). On-demand trigger server on port 9002. Env: `THREAT_INTEL_ENABLED`, `ABUSEIPDB_API_KEY`, `OTX_API_KEY`, `MALWAREBAZAAR_API_KEY`, `VT_API_KEY`, `SHODAN_API_KEY`, `TI_MISP_IMPORT_FROM_DATE`. |
-| `isms-core-connectors` | Python 3.12 | Automated evidence runner — loads all 44 connectors dynamically, pushes evidence to `connector_evidence` table. Env: `CONNECTORS_WORKER_SECRET`. |
+| `isms-core-feeds` | Python 3.12 + schedule | Threat intelligence scheduler — MITRE ATT&CK, MITRE ATLAS, CISA KEV, VulnCheck KEV, FIRST EPSS, NVD CVE/CPE, ENISA EUVD, Exploit-DB (~52K exploits daily). Writes to Postgres and OpenSearch. Env: `FEEDS_CVE_ENABLED`, `FEEDS_CPE_FULL`, `FEEDS_EUVD_ENABLED`, `FEEDS_VULNCHECK_ENABLED`, `PLATFORM_KEY_ENCRYPTION_SECRET` (the NVD and VulnCheck keys are entered on Admin → API keys). |
+| `isms-core-threat-intel` | Python 3.12 + schedule | **Optional** (activate via `COMPOSE_PROFILES=...,threat-intel`) OSINT IOC feed container — 12 sources: CIRCL MISP, Botvrij MISP, AbuseIPDB, URLhaus, ThreatFox, SSLBL, AlienVault OTX, Red Flag Domains, Stopforumspam, MalwareBazaar, Feodo Tracker, Malpedia. VirusTotal enrichment (optional). On-demand trigger server on port 9002. Env: `THREAT_INTEL_ENABLED`, `PLATFORM_KEY_ENCRYPTION_SECRET`, `TI_MISP_IMPORT_FROM_DATE` (the feed API keys are entered on Admin → API keys). |
+| `isms-core-connectors` | Python 3.12 | Automated evidence runner — loads all 46 connectors dynamically, pushes evidence to `connector_evidence` table. Env: `CONNECTORS_WORKER_SECRET`. |
 | `isms-core-backup` | offen/docker-volume-backup v2 | **Optional** (activate via `COMPOSE_PROFILES=...,backup`) Daily volume backup — archives `postgres-data`, `garage-meta`, `garage-data` to `BACKUP_ARCHIVE_PATH` on the host. Runs on cron (default 03:30 UTC), stops postgres briefly for consistency. Config: `backup.env`. No healthcheck (by design). |
 
 > **Access in production:** `https://{HOST_IP}` via nginx. Do NOT access `:3000` or `:8000` directly — those ports are not exposed in production.
@@ -148,15 +148,15 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms the ISMS CORE 
 
 | Entity | Description |
 |--------|-------------|
-| **Control Groups** | 100 groups — 54 ISMS (ISO 27001), 21 Privacy (ISO 27701), 12 Cloud PII (ISO 27018), 1 Cloud Sec (ISO 27017), 12 AI (ISO 42001) |
+| **Control Groups** | 104 groups — 54 ISMS (ISO 27001), 22 Privacy (ISO 27701), 12 Cloud PII (ISO 27018), 5 Cloud Sec (ISO 27017), 11 AI (ISO 42001); each count includes the product's foundation group |
 | **Policies** | POL, OP-POL, PRIV-POL, CLD-POL, CLD-SEC-POL, AI-POL, INS, REF, CTX, FORM — typed, product-tagged, state-tracked |
 | **Implementations** | IMP-UG/TG documents, indexed into OpenSearch for full-text search |
 | **Assessments** | Excel workbook contents: sheets, items, compliance status per item; Framework, Operational, Privacy, Cloud PII, Cloud Sec, and AI checklists |
 | **Gaps** | Identified compliance gaps with severity, owner, SLA, and remediation tracking |
 | **Evidence** | Evidence items linked to control groups and assessment items — manual upload + automated connector ingestion |
 | **Connector Evidence** | Automated evidence from connectors — timestamped, classified, source-labelled |
-| **Frameworks** | 39 reference datasets: ISO 27001, NIST CSF 2.0, NIST AI RMF 1.0, MITRE ATT&CK v19, GDPR, DORA, NIS2, CIS Controls v8, BSI IT-Grundschutz Kompendium, TISAX/VDA ISA 6.0, Swiss nDSG 2023, Swiss ISG (SR 128), EU CRA 2024, EU AI Act, CyberFundamentals BE, BaFin BAIT DE, CSSF 20-750 LU, ACN IT, UK NIS, UK Operational Resilience, NCSC CAF v4.0, ReCyF v2.5 (France NIS2), FINMA, COBIT 2019, and more |
-| **Crosswalk Mappings** | Cross-framework relationships: 4,671 objects / 59 axes — including ISO 27001 ↔ MITRE ATT&CK v19 (36), ISO 27001 ↔ FINMA (73), ISO 27001 ↔ OWASP ASVS 5.0 (22), NIST SP 800-53 R5 ↔ MITRE ATT&CK v19 (590), BSI IT-Grundschutz (ISO 27001 ↔ BSI: 386, ISO 27701 ↔ BSI: 101, ISO 27018 ↔ BSI: 51), NCSC CAF v4.0 (41), ReCyF v2.5 / FR NIS2 (20), Swiss ISG (27), ISO 27017 ↔ CSA CCM v4.1/NIST CSF 2.0/FINMA/ISO 27001/DORA/NIS2 (37), and EU country frameworks (CyberFundamentals BE: 107, BaFin BAIT: 69, CSSF LU: 47, ACN IT: 43, UK NIS: 51, UK Op. Resilience: 34) |
+| **Frameworks** | 42 reference frameworks: ISO 27001, NIST CSF 2.0, NIST AI RMF 1.0, MITRE ATT&CK v19 and v20, GDPR, DORA, NIS2, CIS Controls v8, BSI IT-Grundschutz Kompendium, TISAX/VDA ISA 6.0, Swiss nDSG 2023, Swiss ISG (SR 128), EU CRA 2024, EU AI Act, CyberFundamentals BE, BaFin BAIT DE, CSSF 20-750 LU, ACN IT, UK NIS, UK Operational Resilience, NCSC CAF v4.0, ReCyF v2.5 (France NIS2), FINMA, COBIT 2019, and more |
+| **Crosswalk Mappings** | Cross-framework relationships: 4,632 objects / 60 axes — including ISO 27001 ↔ MITRE ATT&CK v19 (36) and v20 (45), ISO 27001 ↔ FINMA (73), ISO 27001 ↔ OWASP ASVS 5.0 (22), NIST SP 800-53 R5 ↔ MITRE ATT&CK v19 (590), BSI IT-Grundschutz (ISO 27001 ↔ BSI: 386, ISO 27701 ↔ BSI: 101, ISO 27018 ↔ BSI: 51), NCSC CAF v4.0 (41), ReCyF v2.5 / FR NIS2 (20), Swiss ISG (27), ISO 27017 ↔ CSA CCM v4.1/NIST CSF 2.0/FINMA/ISO 27001/DORA/NIS2 (37), and EU country frameworks (CyberFundamentals BE: 107, BaFin BAIT: 69, CSSF LU: 47, ACN IT: 43, UK NIS: 51, UK Op. Resilience: 34) |
 | **NIST CSF 2.0 Profiles** | Named assessment profiles — tier 1–4 ratings for all 106 subcategories, per-function scoring, gap analysis, XLSX import/export |
 | **Compliance Assessments** | 29 frameworks — see [COMPLIANCE.md](COMPLIANCE.md) for full coverage |
 | **Projects** | Workspace layer — named projects own a curated subset of policies, implementations, assessments, gaps, and evidence; doc-vars substitution (org name, CISO, effective date) applied on add; active/inactive/draft/archived lifecycle |
@@ -192,16 +192,16 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms the ISMS CORE 
 
 | Feature | Description |
 |---------|-------------|
-| **Control Explorer** | Browse all 99 control groups (ISMS + Privacy + Cloud + AI) with compliance scores, policy status, assessment history |
+| **Control Explorer** | Browse all 104 control groups (ISMS + Privacy + Cloud PII + Cloud Sec + AI) with compliance scores, policy status, assessment history |
 | **Compliance Dashboard** | Aggregated scores across all four products with section breakdown; ISMS / Privacy / Cloud / AI product switcher |
 | **Coverage Heatmap** | Policy and assessment coverage by control group and section |
 | **Policy Manager** | Browse, filter, preview, and manage all POL/OP-POL/PRIV-POL/CLD-POL/AI-POL/INS/REF/CTX documents |
-| **Assessment Tracker** | Framework (188 workbooks), Operational (53 checklists), Privacy (21), Cloud (12), AI (10) with per-item compliance status |
+| **Assessment Tracker** | Framework (188 workbooks), Operational (53 checklists), Privacy (21), Cloud (16: 12 PII + 4 Sec), AI (10) with per-item compliance status |
 | **Gap Management** | Full gap lifecycle: create, assign, track, close — severity, SLA monitoring, BSI 200-3 automatic risk calculator (likelihood × impact → risk level, pre-mapped threat codes per ISO section) |
 | **Evidence Tracker** | Evidence items with expiry tracking, verification status, and freshness alerts |
-| **Connectors** | Automated evidence ingestion from 44 systems — continuous compliance signals from real infrastructure |
+| **Connectors** | Automated evidence ingestion from 46 systems — continuous compliance signals from real infrastructure |
 | **Nightly Evidence Archive** | Celery Beat job archives stale connector evidence at 02:00 UTC daily |
-| **Crosswalk Viewer** | Cross-framework mappings: 4,671 objects / 59 axes — ISO 27001 ↔ NIST CSF ↔ MITRE ATT&CK v19 ↔ GDPR ↔ DORA ↔ BSI IT-Grundschutz ↔ FINMA ↔ OWASP ASVS 5.0 ↔ NCSC CAF ↔ ReCyF v2.5 and more |
+| **Crosswalk Viewer** | Cross-framework mappings: 4,632 objects / 60 axes — ISO 27001 ↔ NIST CSF ↔ MITRE ATT&CK v19 / v20 ↔ GDPR ↔ DORA ↔ BSI IT-Grundschutz ↔ FINMA ↔ OWASP ASVS 5.0 ↔ NCSC CAF ↔ ReCyF v2.5 and more |
 | **QA / Existence Checker** | Validate that all expected artifacts are present (Framework, Operational, Privacy, Cloud PII, Cloud Sec, AI) |
 | **System Event Log** | Full audit log of all platform actions |
 | **Admin Panel** | User management (CRUD), system info, service health, DB stats, import triggers |
@@ -219,7 +219,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms the ISMS CORE 
 | **Swiss nDSG Assessment** | Swiss Federal Act on Data Protection 2023 — 25 provisions across 6 chapters, maturity 0–4 |
 | **EU Cyber Resilience Act Assessment** | EU 2024/2847 — 26 essential requirements across 6 groups, maturity 0–4 |
 | **EU AI Act Assessment** | EU 2024/1689 — 9 articles from Chapter III high-risk AI system requirements (Art. 8–15, Art. 27), maturity 0–4 |
-| **NIST AI RMF 1.0 Assessment** | 72 subcategories across 4 functions (GOVERN, MAP, MEASURE, MANAGE), maturity 0–4; ISO 42001 crosswalk: 32 mappings, EU AI Act: 31 mappings |
+| **NIST AI RMF 1.0 Assessment** | 72 subcategories across 4 functions (GOVERN, MAP, MEASURE, MANAGE), maturity 0–4; ISO 42001 crosswalk: 32 mappings, EU AI Act: 13 mappings |
 | **EU Cloud Sovereignty Framework** | 8 Sovereignty Objectives (SOV-1 to SOV-8), SEAL-0 to SEAL-4 scoring, weighted Sovereignty Score |
 | **COBIT 2019 Assessment** | 40 governance/management objectives, capability scoring 0–4 |
 | **CyberFundamentals (BE)** | 41 NIST CSF 2.0 aligned practices, maturity 0–4; ISO 27001 crosswalk: 107 mappings |
@@ -235,7 +235,8 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms the ISMS CORE 
 | **Document Editor** | TipTap v3 WYSIWYG + raw source toggle; grid table auto-conversion (RST → GFM); metadata comment stripping |
 | **Connector Evidence Promote** | Promote automated connector evidence into the Evidence Tracker scoped to the active project |
 | **Collapsible Sidebar** | Azure Portal-style icon-only sidebar — collapses to 52 px strip, full tooltips, state persisted in localStorage |
-| **RBAC** | Role-based access: Super Admin / Admin / ISMS Manager / Auditor / Control Owner / Viewer |
+| **RBAC** | Role-based access: Super Admin / Admin / ISMS Manager / Auditor (read-only plus findings and evidence review) / Control Owner (assigned control groups only) / Viewer; one login can hold a role in several organisations |
+| **Third-Party API Keys** | Admin → API keys (Super Admin): NVD, VulnCheck, the threat-intelligence feed keys and the Anthropic key, in three tabs with an Enabled switch per key; stored encrypted, never shown again; keys already in `.env` are imported once on upgrade |
 | **Approval Workflow** | Content state lifecycle: draft → review → approved → published |
 | **Risk Register** | Project-scoped risk scenarios with 5×5 probability/impact matrix and visual risk heatmap |
 | **Risk Heatmap** | Colour-coded 5×5 grid — view all risks at a glance, drill into any cell |
@@ -250,7 +251,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms the ISMS CORE 
 | **Country Localisation** | Policy rendering adapts regulatory references for 8 jurisdictions: CH (default), FR, BE, LU, DE, AT, IT, GB — applied at request time from `org.country` |
 | **Cross-Framework Coverage** | BFS inference maps ISO 27001 assessment coverage to NIS2, DORA, and GDPR; Mapping Matrix and Inferred Coverage tabs |
 | **MFA** | TOTP-based 2FA — Google Authenticator / Authy compatible; QR code setup; 8 single-use backup codes; auto-submits on 6-digit entry |
-| **Threat Intelligence Feeds** | Two dedicated containers pulling 21+ sources. `isms-core-feeds` (9): MITRE ATT&CK v19 (weekly — 697 techniques, 15 tactics), MITRE ATLAS (weekly), CISA KEV (daily), VulnCheck KEV (daily — VulnCheck's own, broader KEV catalogue; ~67% of entries not in CISA's), FIRST EPSS (daily — 10K limit, daily OpenSearch sync), NVD CVE full+delta (weekly/daily — ~250K CVEs, CVSS 4.0 supported), NVD CPE Option B (weekly), ENISA EUVD (daily — exploited + critical CVEs), Exploit-DB (daily — ~52K exploit entries cross-referenced to NVD CVE by CVE ID; adds EDB chip + Metasploit badge to CVE Explorer). `isms-core-threat-intel` (optional profile, 12 sources): CIRCL MISP + Botvrij MISP (6-hourly delta, 120K+ IOCs), AbuseIPDB (daily), URLhaus (daily — malware URLs), ThreatFox (6-hourly — malware IOCs), SSLBL (daily — malicious SSL cert fingerprints), AlienVault OTX (daily — pulses with TLP labels + confidence scores), Red Flag Domains (daily), Stopforumspam (daily), MalwareBazaar (6-hourly — malware hashes), Feodo Tracker (6-hourly — C2 botnet IPs), Malpedia (weekly — malware families + actors). VirusTotal enrichment (daily — optional, updates IOC confidence scores). GreyNoise (on-demand IP lookup only, `isms-core-backend` — not a scheduled feed, 50 lookups/week free tier). All OSINT IOCs cross-enriched at ingest with ATT&CK TIDs, family slugs, actor slugs, TLP labels. |
+| **Threat Intelligence Feeds** | Two dedicated containers pulling 21+ sources. `isms-core-feeds` (9): MITRE ATT&CK v20 (weekly — 706 techniques, 15 tactics; v19 kept alongside), MITRE ATLAS (weekly), CISA KEV (daily), VulnCheck KEV (daily — VulnCheck's own, broader KEV catalogue; ~67% of entries not in CISA's), FIRST EPSS (daily — 10K limit, daily OpenSearch sync), NVD CVE full+delta (weekly/daily — ~250K CVEs, CVSS 4.0 supported), NVD CPE Option B (weekly), ENISA EUVD (daily — exploited + critical CVEs), Exploit-DB (daily — ~52K exploit entries cross-referenced to NVD CVE by CVE ID; adds EDB chip + Metasploit badge to CVE Explorer). `isms-core-threat-intel` (optional profile, 12 sources): CIRCL MISP + Botvrij MISP (6-hourly delta, 120K+ IOCs), AbuseIPDB (daily), URLhaus (daily — malware URLs), ThreatFox (6-hourly — malware IOCs), SSLBL (daily — malicious SSL cert fingerprints), AlienVault OTX (daily — pulses with TLP labels + confidence scores), Red Flag Domains (daily), Stopforumspam (daily), MalwareBazaar (6-hourly — malware hashes), Feodo Tracker (6-hourly — C2 botnet IPs), Malpedia (weekly — malware families + actors). VirusTotal enrichment (daily — optional, updates IOC confidence scores). GreyNoise (on-demand IP lookup only, `isms-core-backend` — not a scheduled feed, 50 lookups/week free tier). All OSINT IOCs cross-enriched at ingest with ATT&CK TIDs, family slugs, actor slugs, TLP labels. |
 | **CVE / CPE Explorer** | Search and filter ~250K NVD CVE entries by severity, EPSS score, CVSS version (v2/v3/v4), year, KEV-only, VulnCheck-only, EUVD flag, EDB-only (Exploit-DB cross-reference filter). Detail panel: CVSS scores (v2/v3/v4), CPE applicability, CWEs, NVD references, CISA KEV badge, VulnCheck KEV badge (independent of CISA's), EUVD badge, EDB/EDB✓ chip (Metasploit badge when `edb_verified`). Separate CPE tab. |
 | **EUVD Explorer** | ENISA European Vulnerability Database — browse exploited and critical vulnerabilities; filter by score, exploited-only toggle, critical-only toggle, EU-assigned toggle (mutually exclusive); detail panel with vendors, products, EPSS, aliases. |
 | **KEV Audit Report (A.8.8)** | Audit trail for ISO 27001:2022 A.8.8 using CISA KEV feed — remediation status by CVE, per-vendor summary, CSV export for auditor evidence. |
@@ -365,6 +366,9 @@ REDIS_PASSWORD=                       # REQUIRED
 SECRET_KEY=                           # REQUIRED — min 32 chars random hex
 CONNECTORS_WORKER_SECRET=             # REQUIRED — generate same as SECRET_KEY
 
+# Third-party API keys are entered later in the WebUI (Admin → API keys); this secret encrypts them.
+PLATFORM_KEY_ENCRYPTION_SECRET=       # recommended — generate like SECRET_KEY
+
 # Admin account
 ADMIN_EMAIL=admin@isms-core.dev
 ADMIN_PASSWORD=                       # REQUIRED — no default; platform refuses to start if blank
@@ -408,6 +412,7 @@ isms-core-beat              Up
 ```
 
 > `isms-core-beat` shows `Up` without `(healthy)` — this is normal. Celery Beat has no HTTP endpoint.
+> Three one-shot jobs — `isms-core-internal-certs-init`, `isms-core-opensearch-setup` and `isms-core-data-init` — run once and then show `Exited (0)` in `docker compose ps -a`; that is also normal.
 > If the `backup` profile is active, `isms-core-backup` also appears as `Up` (no healthcheck — it runs on a cron schedule).
 
 **Alembic migrations run automatically.** The backend applies all pending migrations via `entrypoint.sh` on startup. No manual `alembic upgrade head` needed.
@@ -426,10 +431,10 @@ volumes:
   # - ../isms-core-privacy:/app/isms-privacy:ro       # comment out = not imported
   # - ../isms-core-cloud:/app/isms-cloud:ro
   # - ../isms-core-ai:/app/isms-ai:ro
-  - ../isms-core-external:/app/isms-external:ro       # optional — your own docs
+  - ../isms-core-ext:/app/isms-ext:ro                 # optional — your own docs (EXT_HOST_PATH)
 ```
 
-A fifth mount — `isms-core-external` — accepts your own existing policy documents for ISMS Compass gap analysis against the ISMS CORE Gold Standard.
+Another optional mount — `isms-core-ext` (override with `EXT_HOST_PATH`) — accepts your own existing policy documents for ISMS Compass gap analysis against the ISMS CORE Gold Standard.
 
 #### Option A — bootstrap.sh (recommended for first deploy)
 
@@ -456,7 +461,7 @@ Log in as admin → **Admin → First-Run Setup**. Run in order, top to bottom:
 
 | Step | Button | What it does |
 |------|--------|-------------|
-| 1 | **Load Reference Frameworks** | Seeds control groups + loads all 37 reference datasets. **Always run first.** |
+| 1 | **Load Reference Frameworks** | Seeds control groups + loads all 42 reference frameworks. **Always run first.** |
 | 2 | **Import Policies** | Imports all POL, OP-POL, PRIV-POL, CLD-POL, REF, CTX, FORM documents from mounted volumes. |
 | 3 | **Import Implementations (IMP)** | Imports IMP-UG and IMP-TG documents + indexes them into OpenSearch. |
 | 4 | **Import Assessment Workbooks** | Parses Framework assessment workbook structures from generator scripts. |
@@ -468,9 +473,9 @@ Log in as admin → **Admin → First-Run Setup**. Run in order, top to bottom:
 | Section | What's there |
 |---------|-------------|
 | **Dashboard** | Compliance overview, audit readiness score, top gaps; ISMS / Privacy / Cloud / AI product switcher |
-| **Controls** | 99 control groups (54 ISMS + 21 Privacy + 12 Cloud + 12 AI) with policy/assessment/gap status |
+| **Controls** | 104 control groups (54 ISMS + 22 Privacy + 12 Cloud PII + 5 Cloud Sec + 11 AI) with policy/assessment/gap status |
 | **Policies** | Imported documents (POL + OP-POL + PRIV-POL + CLD-POL + AI-POL + foundation + REF/CTX/INS) |
-| **Assessments** | 188 framework + 53 operational + 21 privacy + 12 cloud + 10 AI workbook structures with per-item compliance status |
+| **Assessments** | 188 framework + 53 operational + 21 privacy + 16 cloud (12 PII + 4 Sec) + 10 AI workbook structures with per-item compliance status |
 | **Gaps** | Identified compliance gaps — create, assign, track |
 | **Evidence** | Upload and link evidence to control groups and requirements |
 | **Coverage** | Heatmap of Framework and Operational coverage |
@@ -512,8 +517,8 @@ Open `https://{HOST_IP}`, accept the self-signed cert warning, and log in.
 
 We strongly recommend enabling MFA on all admin accounts before going live.
 
-1. Log in → navigate to **System** (admin sidebar)
-2. In the **Security** section, click **Enable MFA**
+1. Log in → open **System** (Admin group in the sidebar)
+2. In the two-factor authentication section, click **Set up two-factor authentication**
 3. Scan the QR code with Google Authenticator, Authy, or any TOTP app
 4. Enter the 6-digit code to confirm
 5. **Copy your 8 backup codes** and store them securely — they are shown once
@@ -583,20 +588,22 @@ Then `docker compose up -d`.
 
 `isms-core-connectors` starts automatically with the main stack. Set `CONNECTORS_WORKER_SECRET` in `.env` (same value on backend and connector runner).
 
-### Supported Connectors (44 systems)
+### Supported Connectors (46 systems)
 
 | Category | Connectors |
 |----------|-----------|
 | **Microsoft** | Entra ID, Microsoft Defender, Microsoft Sentinel, Microsoft Intune, Microsoft 365, Microsoft Purview, Azure CSPM |
 | **Network & Firewall** | FortiGate, FortiAnalyzer, FortiManager, Palo Alto PAN-OS, Cisco ASA, Cisco ISE, Zscaler |
 | **ITSM** | ServiceNow (bidirectional), Jira / Jira Service Management (bidirectional), GLPI |
-| **Vulnerability & EDR** | Qualys, Tenable.sc, Tenable.io, CrowdStrike Falcon, SentinelOne, Wazuh, OpenVAS |
+| **Vulnerability & EDR** | Qualys VMDR, Tenable Security Center (on-prem), Tenable Vulnerability Management (SaaS), Nessus, OpenVAS / Greenbone (GVM), CrowdStrike Falcon, SentinelOne, Wazuh |
 | **Identity & PAM** | Windows Active Directory, LDAP, FreeIPA, Authentik, Keycloak, CyberArk, HashiCorp Vault, Devolutions Server |
-| **Monitoring & SIEM** | PRTG Network Monitor, Graylog, Zabbix, Generic SIEM |
+| **Monitoring, SIEM & CMDB** | PRTG Network Monitor, Graylog, Zabbix, NetBox, Generic SIEM |
 | **Cloud Security** | AWS Security Hub, Google Cloud SCC |
 | **Threat Intelligence** | OpenCTI, OpenAEV, Threat Intel Feed |
-| **DevOps** | GitHub, GitLab |
+| **DevOps & Infrastructure** | GitHub, GitLab, Kubernetes (Dashboard) |
 
+> **Certificates and schedules:** every connector that talks to a URL or host has **Fetch Certificate** under the address field (**Admin → Connectors → Configure**, Super Admin to trust). You review the fingerprint and **Trust** it; the platform pins that one certificate for that connector (a self-signed or CA-issued appliance certificate works whatever name or IP the host is reached by, and a different certificate is still refused). Vulnerability scanners (Qualys, Tenable, Nessus, OpenVAS / Greenbone) default to **Manual only** (run with *Sync now*) and can be scheduled Daily to Bi-annual. OpenVAS / Greenbone is read through GVM's own GMP service (port 9390, not the web UI port 9392); gvmd must be set to listen on the network.
+>
 > **Jira and ServiceNow:** In addition to evidence collection, both support outbound ITSM push. Gap records and remediation actions can be pushed as tickets from the Gap Management and Remediation pages. Push is idempotent (no duplicates) and ticket status syncs back to the platform.
 
 ---
@@ -620,7 +627,7 @@ Then `docker compose up -d`. The `THREAT_INTEL_ENABLED=true` flag enables the **
 | **Botvrij MISP** | Every 6h: 01:00, 07:00, 13:00, 19:00 UTC (staggered delta) | None (public) | Same schema — deduplicated against CIRCL by `(ioc_type, value, source)` |
 | **AbuseIPDB blacklist** | Daily 02:00 UTC | `ABUSEIPDB_API_KEY` | Top 10,000 confidence=100 abusive IPs → `ti_iocs` + `ti-abuseipdb-blacklist` OpenSearch index |
 | **URLhaus** | Daily 03:00 UTC | None | Malware download URLs + payload hashes (abuse.ch) |
-| **ThreatFox** | Every 6h: 03:00, 09:00, 15:00, 21:00 UTC | `THREATFOX_API_KEY` (optional) | Malware IOCs (IPs, domains, URLs, hashes) with confidence scores and malware family labels |
+| **ThreatFox** | Every 6h: 03:00, 09:00, 15:00, 21:00 UTC | `THREATFOX_API_KEY` (required) | Malware IOCs (IPs, domains, URLs, hashes) with confidence scores and malware family labels |
 | **SSL Blacklist (SSLBL)** | Daily 04:00 UTC | None | SHA1 fingerprints of SSL certificates used by malware C2 infrastructure |
 | **AlienVault OTX** | Daily 04:30 UTC | `OTX_API_KEY` | Open Threat Exchange pulses — IOCs with TLP labels, ATT&CK TIDs, confidence scores derived from pulse subscriber count |
 | **Feodo Tracker** | Every 6h: 04:30, 10:30, 16:30, 22:30 UTC | None | C2 IPs for Emotet, QakBot, TrickBot, Dridex botnets (confidence 85); `ti-feodotracker` |
@@ -643,7 +650,7 @@ On first start (or when `TI_RUN_ON_START=true`), each feed runs immediately rath
 
 Control the MISP history depth on first run:
 ```env
-TI_MISP_IMPORT_FROM_DATE=2024-01-01   # default — 2-year window
+TI_MISP_IMPORT_FROM_DATE=2024-01-01   # default first-run date floor
 # TI_MISP_IMPORT_FROM_DATE=2000-01-01  # full history (slow first run)
 ```
 
@@ -717,7 +724,7 @@ COMPOSE_PROFILES=opensearch-cluster
 OPENSEARCH_HEAP=4g   # heap per node — e.g. 2g for a 16 GB host, 4g for 32 GB
 ```
 
-Then `docker compose up -d`. Expected: 12 containers — `isms-core-os01/02/03` replace the single node.
+Then `docker compose up -d`. Expected: 12 containers — `isms-core-opensearch-node1/2/3` replace the single node.
 
 ```
 NAME                        STATUS
@@ -726,16 +733,16 @@ isms-core-backend           Up (healthy)
 isms-core-frontend          Up (healthy)
 isms-core-postgres          Up (healthy)
 isms-core-redis             Up (healthy)
-isms-core-os01              Up (healthy)
-isms-core-os02              Up (healthy)
-isms-core-os03              Up (healthy)
+isms-core-opensearch-node1   Up (healthy)
+isms-core-opensearch-node2   Up (healthy)
+isms-core-opensearch-node3   Up (healthy)
 isms-core-worker            Up (healthy)
 isms-core-connectors        Up (healthy)
 isms-core-feeds             Up (healthy)
 isms-core-beat              Up
 ```
 
-> `isms-core-os01` is the elected cluster manager. All three nodes form a single cluster named `isms-core-cluster`. The backend connects to `isms-core-os01:9200` — no backend config change needed.
+> All three nodes form a single cluster named `isms-core-cluster`. The backend reaches it through the same `isms-core-opensearch:9200` name as the single-node setup — no backend config change needed.
 
 ### Option C — 3-node cluster + OpenSearch Dashboards
 
@@ -746,7 +753,7 @@ OPENSEARCH_HEAP=4g
 DASHBOARDS_BIND=0.0.0.0   # 0.0.0.0 = reachable from LAN; 127.0.0.1 = localhost only
 ```
 
-Then `docker compose up -d`. Dashboards UI: `http://{HOST_IP}:5601` — no login required when `OPENSEARCH_DISABLE_SECURITY=true` (default).
+Then `docker compose up -d`. Dashboards UI: `http://{HOST_IP}:5601` — no login while `OPENSEARCH_DISABLE_SECURITY=true` (default). With OpenSearch security switched on (see *OpenSearch security and TLS* below) Dashboards is served over `https://` with a login.
 
 > Dashboards is for infrastructure monitoring and index inspection. The platform WebUI at `https://{HOST_IP}` does not depend on it.
 
@@ -791,7 +798,52 @@ GARAGE_SECRET_KEY=<generated above>
 GARAGE_BIND=127.0.0.1   # set to 0.0.0.0 only if external S3 access is needed
 ```
 
-Then `docker compose up -d`. Garage initialises its buckets (`isms-evidence`, `isms-snapshots`, `isms-exports`) automatically on first boot via the `isms-core-garage-setup` container. The S3 API listens on port 3900.
+Then `docker compose up -d`. Garage initialises its buckets (`isms-evidence`, `isms-snapshots`, `isms-exports`) automatically on first boot via the `isms-core-garage-setup` container.
+
+Since v1.3 Garage is **HTTPS-only**: a TLS proxy (`isms-core-garage-tls`) sits in front of it, the other containers reach it at `GARAGE_ENDPOINT=https://isms-core-garage-tls:3900`, and the admin API is bound to `127.0.0.1` only. When upgrading from an earlier version, copy the new `garage/tls-proxy.conf` along with the new `docker-compose.yml`, and set `GARAGE_ENDPOINT` as above (or delete the line); existing data and snapshots are untouched.
+
+---
+
+## OpenSearch Security and TLS (optional, recommended for real use)
+
+The quick-start default (`OPENSEARCH_DISABLE_SECURITY=true`) runs OpenSearch with **no authentication and no TLS** — fine for a local evaluation, not for anything real. Switching security on gives you HTTPS everywhere (REST and node-to-node, using certificates from the platform's own certificate authority, created by `isms-core-internal-certs-init`), a login for every request, and OpenSearch Dashboards over HTTPS with its own login. Exactly two accounts exist (`admin` and `kibanaserver`); the security plugin's public demo accounts are not created.
+
+Set all of these together in `.env` (the `.env.example` block "Enterprise — OpenSearch" explains each line), then recreate the OpenSearch stack:
+
+```env
+OPENSEARCH_DISABLE_SECURITY=false
+OPENSEARCH_ADMIN_PASSWORD=<strong password>
+OPENSEARCH_DASHBOARDS_PASSWORD=<another one>      # only with the dashboards profile
+OPENSEARCH_URL=https://isms-core-opensearch:9200
+OPENSEARCH_USERNAME=admin
+OPENSEARCH_PASSWORD=<same value as OPENSEARCH_ADMIN_PASSWORD>
+OPENSEARCH_USE_SSL=true
+OPENSEARCH_VERIFY_CERTS=true
+```
+
+- Use passwords **without a dollar sign (`$`)** — `.env` treats it as a variable reference.
+- Switching security on or off needs a **full restart of all OpenSearch nodes together** (about half a minute in testing); existing indices keep their data.
+- The initial passwords are read **once**, when the security plugin first initialises. Later changes go through its API, or wipe the OpenSearch data volume to start over.
+- With TLS on, the certificate is always checked. Only for an external OpenSearch whose certificate you cannot trust properly, `OPENSEARCH_ALLOW_UNVERIFIED_TLS=true` skips the check (logged).
+- Dashboards is then at `https://{HOST_IP}:5601`. Your browser warns until the platform CA (`opensearch-ca/ca.crt` in the `isms-core-internal-certs` volume) is trusted; set `DASHBOARDS_TLS_EXTRA_SAN` (for example `DNS:isms.example.com,IP:192.0.2.10`) to the names people type in the browser.
+
+---
+
+## Encrypted Redis and mail (optional)
+
+Both are **off by default** so an existing install keeps working; both are a single setting.
+
+- **Redis (`REDIS_TLS=true`).** Redis carries the Celery task queue and results. It is reachable only on the private Docker network, and TLS is worth switching on when the services are spread over several hosts. The server certificate comes from the platform's own CA (the one OpenSearch already uses, created by `isms-core-internal-certs-init`); the backend, worker and beat verify it and still send the password; the plain port is closed. To switch: set `REDIS_TLS=true` in `.env`, then `docker compose up -d --force-recreate isms-core-redis isms-core-backend isms-core-worker isms-core-beat` — the data is kept, and all of them must change together.
+- **Mail (`MAIL_REQUIRE_TLS=true`).** The backend then talks to the mail relay only over verified TLS: STARTTLS on any port, implicit TLS on port 465. A relay that offers no TLS is refused — nothing is sent and the credentials never leave in clear text. Use it for an external or internet-facing relay; leave it off for the bundled SMTP bridge and plain internal relays. For a relay with a private CA, mount the CA file into the backend, worker and beat containers and set `MAIL_CA_FILE` to its path.
+
+## Third-Party API Keys (Admin → API keys)
+
+The keys the platform uses for outside services — NIST NVD, VulnCheck, the threat-intelligence feeds (AbuseIPDB, Shodan, IPinfo, MaxMind, ThreatFox, MalwareBazaar, AlienVault OTX, VirusTotal, GreyNoise) and Anthropic (Claude AI) — are managed by the **Super Admin** on **Admin → API keys**, in three tabs (*Vuln Feeds*, *TI Feeds*, *System*). Each key has an **Enabled** switch; saved values are stored encrypted and are never shown again.
+
+- **New installations:** leave the key variables in `.env` empty and enter the keys on the page.
+- **Upgraded installations:** keys already set in `.env` are imported into the page **once**, automatically, at the first backend start with `PLATFORM_KEY_ENCRYPTION_SECRET` set (they show as *Migrated from .env*). Those `.env` lines are then no longer needed and can be deleted. Until they are, a key that is switched off or removed on the page still falls back to its `.env` value.
+- **`PLATFORM_KEY_ENCRYPTION_SECRET`** encrypts the stored keys. Generate it with `python3 -c "import secrets; print(secrets.token_hex(32))"` (at least 32 characters). Only the backend, feeds and threat-intel containers receive it — never `SECRET_KEY`. Without it the page warns and refuses to save; keys in `.env` keep working. Changing it later makes the stored keys unreadable (the `.env` fallback then applies), so keep it with your backups.
+- A key saved on the page applies at the next feed run or request — no restart.
 
 ---
 
@@ -807,12 +859,14 @@ bash bootstrap.sh         # CLI — safe to run any time, idempotent
 ### Update the Platform
 
 ```bash
-git pull
+git pull                 # new docker-compose.yml, .env.example, bootstrap.sh
 docker compose pull
 docker compose up -d
 ```
 
-No data loss — PostgreSQL and OpenSearch data live in named Docker volumes. Reference datasets are reloaded automatically on every container start.
+No data loss — PostgreSQL and OpenSearch data live in named Docker volumes. Reference datasets are reloaded automatically on every container start; database migrations run automatically.
+
+**Read the release notes first** ([CHANGELOG.md](isms-core-platform/CHANGELOG.md)): a release can change `docker-compose.yml` or add `.env` settings, so compare your `.env` against the new `.env.example` after every update (for example v1.3 added the OpenSearch security block and the Garage TLS proxy; v1.3.1 adds `PLATFORM_KEY_ENCRYPTION_SECRET`).
 
 ### View Logs
 
@@ -885,23 +939,22 @@ docker compose down -v    # DESTROYS all data — only for clean reinstall
 
 ## RBAC — Roles
 
-| Role | Capabilities |
-|------|-------------|
-| **Super Admin** | Cross-organisation access — creates and manages organisations, views Metrics Portfolio across all orgs. |
-| **Admin** | Full access within their organisation — user management, system config, sync triggers, content approval, admin panel. |
-| **ISMS Manager** | All controls, assessments, gaps, evidence. Cannot manage users or system config. |
-| **Auditor** | Read-only access to everything. Can export reports. |
-| **Control Owner** | Read/write on assigned control groups only. |
-| **Viewer** | Read-only on non-confidential items. |
+Six roles; a person has **one role per organisation**, and one login can belong to several organisations (a Super Admin gives access; each organisation sets its own role). The interface shows each role only what it can use, and the API refuses the rest. The complete permission tables are in the in-app **Help → Roles & permissions** and in [USER_MANUAL/20-organisations-users.md](USER_MANUAL/20-organisations-users.md).
+
+| Role | In short |
+|------|----------|
+| **Viewer** | Reads everything in the organisation; changes nothing except their own account. |
+| **Auditor** | Reads everything; raises findings (gaps); accepts or flags evidence. Cannot create, edit or delete the records being audited. |
+| **Control Owner** | Reads everything; works on evidence, gaps, assessment items and remediation actions of the **control groups assigned to them** (read-only without an assignment). |
+| **ISMS Manager** | All compliance work on all control groups: projects, assessments, risks, BIA, EBIOS RM, TPRM, approvals. |
+| **Admin** | ISMS Manager rights plus users and groups, organisation settings, connectors, custom frameworks, and the event and audit logs. |
+| **Super Admin** | Everything in every organisation, plus platform-wide operations: organisations, access to other organisations, library content, feeds and threat-intelligence sources, library-wide QA, the System page, connector certificate trust, and the **API keys** page. |
 
 ---
 
 ## API Documentation
 
-- **Swagger UI:** `https://{HOST_IP}/api/docs`
-- **ReDoc:** `https://{HOST_IP}/api/redoc`
-
-Authenticated endpoints require a Bearer token from `POST /api/v1/auth/login`.
+The interactive API documentation (Swagger UI at `/api/docs`, ReDoc at `/api/redoc`, `/openapi.json`) is **switched off in production** and only available when the backend runs with `DEBUG=true` — a deliberate hardening choice. Authenticated endpoints require a Bearer token from `POST /api/v1/auth/login`.
 
 ---
 
@@ -963,25 +1016,28 @@ docker compose logs isms-core-beat --tail=20   # Confirm scheduler is running
 | `CORS_ORIGINS` | Yes | CORS allowed origins — typically same as `PLATFORM_URL` |
 | `POSTGRES_PASSWORD` | Yes | PostgreSQL password |
 | `REDIS_PASSWORD` | Yes | Redis password |
+| `REDIS_TLS` | No | `true` encrypts the connection to Redis (certificate from the platform CA, verified by backend, worker and beat). Default `false`. See *Encrypted Redis and mail*. |
+| `MAIL_REQUIRE_TLS` / `MAIL_CA_FILE` | No | `true` sends mail only over verified TLS (STARTTLS, or implicit TLS on port 465); `MAIL_CA_FILE` trusts a private CA. Default `false` (the bundled SMTP bridge has no TLS). |
 | `SECRET_KEY` | Yes | JWT signing key — minimum 32 chars random hex |
 | `ADMIN_EMAIL` | Yes | Admin account email |
 | `ADMIN_PASSWORD` | Yes | Admin account password — **no default; platform refuses to start if blank** |
 | `CONNECTORS_WORKER_SECRET` | Yes | Shared secret for connector runner and backend API authentication |
-| `ANTHROPIC_API_KEY` | No | Enables ISMS Compass AI gap analysis |
+| `PLATFORM_KEY_ENCRYPTION_SECRET` | Recommended | Encrypts the API keys saved on **Admin → API keys** (at least 32 random characters; backend, feeds and threat-intel only). Without it the page cannot save keys. |
+| `ANTHROPIC_API_KEY` | No | Fallback for the Anthropic key (AI assistant, ISMS Compass, Claude QA) — normally entered on **Admin → API keys** instead |
 | `FEEDS_RUN_ON_START` | No | Set `true` to run all feeds immediately on container start (default: true) |
 | `FEEDS_CVE_ENABLED` | No | Set `true` to enable NVD CVE ingestion (default: false — large initial download) |
 | `FEEDS_CPE_FULL` | No | Set `true` to enable NVD CPE Option B |
 | `FEEDS_EUVD_ENABLED` | No | Set `false` to disable ENISA EUVD feed (default: true) |
 | `FEEDS_EXPLOITDB_ENABLED` | No | Set `false` to disable Exploit-DB feed (default: true) |
 | `FEEDS_VULNCHECK_ENABLED` | No | Set `false` to disable VulnCheck KEV feed (default: true — no-ops cleanly without `VULNCHECK_API_KEY`) |
-| `VULNCHECK_API_KEY` | No | VulnCheck KEV feed — free Community tier (1,000 req/min); register at console.vulncheck.com |
-| `NIST_API_KEY` | No | NVD API key — raises rate limit from 5 to 50 req/30s; register free at nvd.nist.gov |
+| `VULNCHECK_API_KEY` | No | (fallback — normally entered on Admin → API keys) VulnCheck KEV feed — free Community tier (1,000 req/min); register at console.vulncheck.com |
+| `NIST_API_KEY` | No | (fallback — normally entered on Admin → API keys) NVD API key — raises rate limit from 5 to 50 req/30s; register free at nvd.nist.gov |
 | `THREAT_INTEL_ENABLED` | No | Set `true` to enable IOC Explorer / IP Enrichment / Malware Atlas / Threat Exposure in frontend — requires `threat-intel` in `COMPOSE_PROFILES` |
 | `ABUSEIPDB_API_KEY` | No | Required for AbuseIPDB blacklist pull + on-demand IP enrichment |
 | `SHODAN_API_KEY` | No | Shodan paid API for IP enrichment — free InternetDB fallback used if absent |
 | `OTX_API_KEY` | No | AlienVault OTX feed — required for OTX IOC ingestion |
 | `OTX_IMPORT_DAYS` | No | OTX history depth on first run (default: `90` days) |
-| `THREATFOX_API_KEY` | No | ThreatFox API key — optional, enables higher rate limits |
+| `THREATFOX_API_KEY` | No | ThreatFox API key — required for the feed (abuse.ch Auth-Key); without it the feed stays disabled |
 | `MALWAREBAZAAR_API_KEY` | No | MalwareBazaar API key — required for the feed |
 | `VT_API_KEY` | No | VirusTotal API key — enables daily IOC confidence enrichment (free tier: ~500 req/day) |
 | `VT_DAILY_LIMIT` | No | Max IOCs enriched per VirusTotal run (default: `450`) |
@@ -1004,13 +1060,25 @@ docker compose logs isms-core-beat --tail=20   # Confirm scheduler is running
 | `SMTP_BRIDGE_CLIENT_SECRET` | No | Azure AD app secret — required when `smtp-bridge` is in `COMPOSE_PROFILES` |
 | `SMTP_BRIDGE_FROM_ADDRESS` | No | Sender address — required when `smtp-bridge` is in `COMPOSE_PROFILES` |
 | `OPENSEARCH_HEAP` | No | Heap per OpenSearch node — e.g. `1g` (default) or `4g` for 3-node cluster |
-| `OPENSEARCH_DISABLE_SECURITY` | No | Set `false` to enable OpenSearch Security plugin (requires `OPENSEARCH_ADMIN_PASSWORD`) |
-| `OPENSEARCH_ADMIN_PASSWORD` | No | Required when `OPENSEARCH_DISABLE_SECURITY=false` (OpenSearch 2.12+) |
+| `OPENSEARCH_DISABLE_SECURITY` | No | `true` (quick-start default: no login, no TLS) or `false` to enable the security plugin with TLS — see *OpenSearch Security and TLS* |
+| `OPENSEARCH_ADMIN_PASSWORD` | No | Password of the `admin` user; required when `OPENSEARCH_DISABLE_SECURITY=false` (no `$` in it) |
+| `OPENSEARCH_DASHBOARDS_PASSWORD` | No | Password of the Dashboards account (`kibanaserver`); required for the `dashboards` profile when security is on |
+| `OPENSEARCH_URL` / `OPENSEARCH_USERNAME` / `OPENSEARCH_PASSWORD` | No | Where the backend, workers and feeds reach OpenSearch and the login they use (`https://isms-core-opensearch:9200`, `admin`, same password as `OPENSEARCH_ADMIN_PASSWORD` when security is on) |
+| `OPENSEARCH_USE_SSL` / `OPENSEARCH_VERIFY_CERTS` / `OPENSEARCH_CA_CERT` | No | Client-side TLS to OpenSearch (CA defaults to the platform CA); with TLS on the certificate is always checked |
+| `OPENSEARCH_ALLOW_UNVERIFIED_TLS` | No | Explicit, logged opt-out of the certificate check for an external OpenSearch you cannot validate (default `false`) |
+| `DASHBOARDS_TLS_EXTRA_SAN` | No | Names/IPs added to the Dashboards certificate, e.g. `DNS:isms.example.com,IP:192.0.2.10` |
+| `FEEDS_TRIGGER_SECRET` / `TI_TRIGGER_SECRET` | No | Separate secrets for the feeds and threat-intel containers (backend ↔ container calls); empty = `CONNECTORS_WORKER_SECRET` is used |
+| `DB_SSLMODE` / `DB_SSL_ROOT_CERT` / `ALLOW_UNVERIFIED_INTERNAL_TLS` | No | Postgres TLS (default `verify-full` against the platform CA); the opt-out is explicit and logged |
+| `COOKIE_SECURE` | No | `true` (default); `false` only for local HTTP development |
+| `PLATFORM_REGISTRY` / `PLATFORM_TAG` | No | Image registry and tag to pull (defaults: GHCR, `latest`) |
+| `FRAMEWORK_HOST_PATH` / `OPERATIONAL_HOST_PATH` / `PRIVACY_HOST_PATH` / `CLOUD_HOST_PATH` / `AI_HOST_PATH` / `SEC_HOST_PATH` / `EXT_HOST_PATH` | No | Where the content folders live if not beside `isms-core-platform/` |
 | `EVIDENCE_STORE` | No | `postgres` (default) or `opensearch` — opensearch requires `garage` + `opensearch-cluster` in `COMPOSE_PROFILES` |
 | `GARAGE_RPC_SECRET` | No | Garage cluster secret — required when `garage` is in `COMPOSE_PROFILES` |
 | `GARAGE_ACCESS_KEY` | No | Garage S3 access key — required when `garage` is in `COMPOSE_PROFILES` |
 | `GARAGE_SECRET_KEY` | No | Garage S3 secret key — required when `garage` is in `COMPOSE_PROFILES` |
-| `GARAGE_BUCKET_EVIDENCE` | No | Garage bucket for evidence files (default: `isms-evidence`) |
+| `GARAGE_ENDPOINT` | No | S3 endpoint the platform uses (`https://isms-core-garage-tls:3900`) |
+| `GARAGE_ADMIN_TOKEN` | No | Garage admin API token — required when `garage` is in `COMPOSE_PROFILES` |
+| `GARAGE_BUCKET_EVIDENCE` / `GARAGE_BUCKET_SNAPSHOTS` / `GARAGE_BUCKET_EXPORTS` | No | Garage buckets (defaults: `isms-evidence`, `isms-snapshots`, `isms-exports`) |
 | `GARAGE_BIND` | No | Garage S3 API bind address — `0.0.0.0` to expose externally (default: `127.0.0.1`) |
 | `DASHBOARDS_BIND` | No | OpenSearch Dashboards bind address — `0.0.0.0` to expose on LAN (default: `127.0.0.1`) |
 
@@ -1035,8 +1103,8 @@ docker compose logs isms-core-beat --tail=20   # Confirm scheduler is running
 - [ ] Admin password changed (**Admin → Users → Edit admin user**)
 - [ ] TLS mode configured (self-signed / custom cert / Let's Encrypt)
 - [ ] Email configured if needed — set `COMPOSE_PROFILES=opensearch-single,mailpit` (dev) or `opensearch-single,smtp-bridge` (prod) in `.env`
-- [ ] `ANTHROPIC_API_KEY` set if using ISMS Compass
-- [ ] MFA enabled on all admin accounts (**System → Two-factor authentication**)
+- [ ] `PLATFORM_KEY_ENCRYPTION_SECRET` set, and the API keys you need entered under **Admin → API keys** (Anthropic key if using ISMS Compass / AI assistant / Claude QA)
+- [ ] MFA enabled on all admin accounts (**System → Set up two-factor authentication**)
 
 ---
 

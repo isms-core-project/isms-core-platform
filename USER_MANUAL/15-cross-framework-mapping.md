@@ -1,6 +1,6 @@
 # Cross-Framework Mapping
 
-<!-- ISMS-CORE:USER-MANUAL:15-cross-framework-mapping:v1.0:2026-04-16 -->
+<!-- ISMS-CORE:USER-MANUAL:15-cross-framework-mapping:v1.3:2026-10-17 -->
 
 ---
 
@@ -8,13 +8,13 @@
 
 Most organisations subject to ISO 27001 also have obligations under other frameworks — NIS2, DORA, GDPR, a national standard, or an industry baseline. Managing these as separate silos is expensive and creates inconsistency. Cross-framework mapping lets you use your ISO 27001 compliance work to automatically populate an initial score for other frameworks.
 
-Navigate to **Analytics → Cross-Framework Mapping** in the sidebar.
+Navigate to **ISMS → Coverage** (the Mapping Matrix and Inferred Coverage tabs) in the sidebar.
 
 ---
 
 ## What Cross-Framework Mapping Does
 
-The platform contains 2,880 pre-built, curated crosswalk mappings between ISO 27001:2022 controls and other frameworks (out of 4,671 total crosswalk mappings across all 59 framework-pair axes, including non-ISO-27001-anchored pairs like NIST AI RMF ↔ ISO 42001). When you complete your ISO 27001 assessment, those scores are automatically inferred into the mapped frameworks.
+The platform ships **5,249 curated crosswalk mappings on 85 framework-pair axes** (4,632 on 60 axes in the core crosswalk, plus the ISO 42001 / ISO 42005 and EU-country mapping files); **3,277** of them are anchored on ISO 27001:2022 controls, the rest connect other pairs such as NIST AI RMF ↔ ISO 42001 or ISO 27701 ↔ GDPR. When you complete your ISO 27001 assessment, the platform uses these mappings to infer coverage for the related frameworks.
 
 This means:
 
@@ -68,25 +68,42 @@ This view is a starting point, not a compliance certificate. Inferred scores nee
 
 ## Mapping Coverage by Framework
 
-| Target framework | Mappings | Key source |
+| Target framework | Mappings from ISO 27001 | Notes |
 |-----------------|---------|-----------|
-| NIST CSF 2.0 | ~350 | ISO 27001 → NIST (bidirectional) |
-| MITRE ATT&CK v19 | ~220 | ISO 27001 → ATT&CK techniques |
-| NIS2 | ~90 | ISO 27001 → NIS2 Article 21 |
-| DORA | ~80 | ISO 27001 → DORA chapters |
-| GDPR | ~60 | ISO 27001 → GDPR articles |
-| BSI IT-Grundschutz | 269 | ISO 27001/27701/27018 → BSI Bausteine |
-| CyberFundamentals BE | 107 | ISO 27001 → CCB practices |
-| BaFin BAIT | 69 | ISO 27001 → BAIT modules |
-| CIS Controls v8 | ~90 | ISO 27001 → CIS safeguards |
-| OWASP ASVS | ~60 | ISO 27001 → ASVS requirements |
-| ISO 42001 → NIST AI RMF | 32 | ISO 42001 → NIST AI RMF |
-| ISO 42001 → EU AI Act | 31 | ISO 42001 → AI Act articles |
-| ISO 42001 → EU GDPR | 19 | ISO 42001 → GDPR articles (Art. 5/24/25/28/30/35/36/44) |
-| ISO 42001 → CH nDSG | 21 | ISO 42001 → Swiss nDSG provisions |
-| ISO 42001 → OECD AI | 14 | ISO 42001 → OECD AI Principles |
-| ISO 42001 → ISO 42005 | 5 | ISO 42001 → ISO 42005 |
-| EU country frameworks | 351 | ISO 27001 → AT/BE/DE/FR/IT/LU/GB |
+| NIST SP 800-53 Rev 5 | 443 | |
+| BSI IT-Grundschutz | 386 | plus 101 from ISO 27701 and 51 from ISO 27018 (538 in total) |
+| CSA AICM v1.1 | 352 | |
+| CIS Controls v8 | 295 | |
+| NIST CSF 2.0 | 244 | |
+| CSA CCM v4.1 | 207 | |
+| BSI C5:2026 | 168 | |
+| CyberFundamentals BE | 107 | |
+| FINMA | 73 | |
+| BaFin BAIT | 69 | |
+| TISAX | 65 | |
+| GDPR | 57 | ISO 27701 → GDPR has 100 more |
+| NIS2 | 54 | |
+| UK NIS | 51 | |
+| DORA | 50 | |
+| CSSF 20-750 | 47 | |
+| COBIT 2019 | 45 | |
+| MITRE ATT&CK v20 / v19 | 45 / 36 | v19 kept alongside v20 |
+| ACN (IT) | 43 | |
+| Swiss nDSG | 41 | |
+| NCSC CAF v4.0 | 41 | |
+| PCI DSS v4.0.1 | 39 | |
+| UK Operational Resilience | 34 | |
+| OWASP Top 10 / ASVS 5.0 | 31 / 22 | |
+| EU AI Act | 30 | |
+| NIST AI RMF | 28 | |
+| Swiss ISG | 27 | |
+| BSI C3A | 26 | |
+| ISO 42001 | 26 | |
+| EU Cyber Resilience Act | 26 | |
+| ReCyF (FR NIS2) | 20 | |
+| ISO 42001 → NIST AI RMF / EU AI Act / GDPR / Swiss nDSG / OECD AI / ISO 42005 | 32 / 13 / 19 / 21 / 14 / 5 | AI-anchored axes |
+| EU country frameworks (CyberFundamentals, BAIT, CSSF, ACN, UK NIS, UK Operational Resilience) | 351 | already counted in the rows above |
+
 
 ---
 
@@ -106,7 +123,7 @@ The crosswalk export shows exactly which ISO controls map to which regulatory re
 
 If you have an internal framework, sector-specific standard, or a framework not yet in the platform, you can upload it as a **Custom Framework** using a YAML template.
 
-Navigate to **Tools → Custom Frameworks**. Download the YAML template, fill in your framework controls and any ISO 27001 mappings, and upload. The custom framework is then available in the Coverage Matrix and as an assessment module.
+Navigate to **Admin → Custom Frameworks**. Download the YAML template, fill in your framework controls and any ISO 27001 mappings, and upload. The custom framework is then available in the Coverage Matrix and as an assessment module.
 
 ---
 
@@ -125,4 +142,4 @@ If all control groups have complete artefacts, a green banner confirms full cove
 
 This section is not available for Privacy, Cloud, or AI products — those products have their own artefact structures managed separately.
 
-<!-- QA_VERIFIED: 2026-04-16 -->
+<!-- QA_VERIFIED: 2026-10-17 -->

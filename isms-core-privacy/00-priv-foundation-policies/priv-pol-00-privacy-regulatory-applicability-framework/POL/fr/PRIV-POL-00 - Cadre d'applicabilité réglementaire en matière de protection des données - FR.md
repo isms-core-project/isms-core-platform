@@ -292,7 +292,7 @@ Ces réglementations et normes s'appliquent **uniquement lorsque des conditions 
 
 **Impact sur le SGDP** :
 
-- Mise en œuvre complète de toutes les politiques de groupes de contrôle PRIV-POL-A.x.x dans 51-isms-core-privacy/
+- Mise en œuvre complète de toutes les politiques de groupes de contrôle PRIV-POL-A.x.x dans isms-core-privacy/
 - Détermination du rôle documentée (responsable du traitement, sous-traitant, ou les deux par activité de traitement)
 - SGDP intégré ou superposé à l'ISO 27001 SGSI
 
