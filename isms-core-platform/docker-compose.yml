@@ -856,13 +856,20 @@ services:
   # ── QA reference corpus — one-shot init (extracts into the datasets-data volume) ──
   # Same shape as the K8s content-image pattern: data ships baked into a small
   # dedicated image, not as raw files in this repo. Runs once before backend/
-  # beat/worker start; idempotent (cp -r just overwrites on every run).
+  # beat/worker start; idempotent (cp -r overwrites on every run; stale top-level bundles are removed first).
 
   isms-core-data-init:
     image: ${PLATFORM_REGISTRY:-ghcr.io/isms-core-project/isms-core-platform}:isms-core-data-${PLATFORM_TAG:-latest}
     platform: linux/amd64
     container_name: isms-core-data-init
-    entrypoint: ["sh", "-c", "cp -r /content/. /app/datasets/"]
+    # Files that were removed from the image (a renamed or retired dataset) are removed from the volume too: they used to stay, and the loader then
+    # loaded the old and the new file for the same framework on every start. Only top-level *.json bundles are checked; sub-directories are left alone.
+    entrypoint:
+      - sh
+      - -c
+      - |
+        for f in /app/datasets/*.json; do [ -e "$$f" ] || continue; [ -e "/content/$$(basename "$$f")" ] || { echo "removing stale dataset $$(basename "$$f")"; rm -f "$$f"; }; done
+        cp -r /content/. /app/datasets/
     volumes:
       - datasets-data:/app/datasets
     restart: "no"

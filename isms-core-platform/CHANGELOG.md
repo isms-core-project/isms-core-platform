@@ -71,6 +71,7 @@ Scanner connectors, certificate trust, third-party API keys in the WebUI, and th
 
 #### Data and module fixes
 - **EU AI Act crosswalk now loads** (30 ISO 27001, 13 ISO 42001 and 7 ISO 42005 mappings to the nine articles). Before, the crosswalk pointed at control ids the EU AI Act dataset no longer has, so every EU AI Act mapping was silently skipped. 85 further mappings that cited ISO 27701 clauses or an ISO 42001 control that does not exist were removed — they never loaded. The four crosswalk files now hold **5,249** mappings on 85 axes, all of which load.
+- **Removed datasets no longer linger after an upgrade:** the data job now deletes dataset files that are not in the new image before copying, instead of loading an old and a new file for the same framework on every start.
 - **Updating a framework dataset keeps your assessments:** the loader used to delete all controls of a framework when its content changed, taking the ratings with them; it now updates in place and removes only controls that left the standard.
 - **ISO 42001 control codes repaired:** the two life-cycle controls are now `A.6.1.2-3` and `A.6.2.2-8` in every installation (an older edit was never picked up), which lets 47 more crosswalk mappings load — 5,478 mappings on 86 axes in total, including 229 control dependencies.
 - **EU AI Act assessment** lists its 9 articles; **CyberFundamentals (BE)** lists all 41 practices (it showed 12).
