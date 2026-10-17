@@ -79,8 +79,8 @@ if __name__ == "__main__":
 
 
 # =============================================================================
-# QA_VERIFIED: 2026-08-01
+# QA_VERIFIED: 2026-10-17
 # QA_STATUS: PASSED
-# QA_TOOL: Claude Code Production Scripts QA Methodology
-# CHANGES: Initial generation for Cloud Sec product launch
+# QA_TOOL: Claude Code — qa/scr_generators/cloud_generators_regression.py (workbook cells identical before and after the edit)
+# CHANGES: 2026-10-17 engine lookup works in the development and the published layout (generator content unchanged); 2026-08-01: Initial generation for Cloud Sec product launch
 # =============================================================================
