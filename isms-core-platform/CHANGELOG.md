@@ -25,6 +25,7 @@ It is a minor release, not a patch: the role changes alter what existing users c
 - **Claude AI QA that grades the right thing:** fewer false failures, the configured model, and replies that are no longer lost to model thinking.
 - **TLS for OpenSearch, Garage, and optionally Redis and mail.**
 - **MITRE ATT&CK v20**, repaired EU AI Act and ISO 42001 data, and Assessment Collections back in the interface.
+- **Three security scan rounds, no Critical finding in the last two**, and every image scanned before release (see Security review of v1.3).
 
 
 ### Roles and access rights
@@ -239,6 +240,20 @@ Rollback: set `OPENSEARCH_DISABLE_SECURITY=true`, put the plain `OPENSEARCH_URL`
 - If an Active Directory connector relied on a `ca_cert_file` entry in its configuration, move that file to the connector container as `AD_CA_CERT_FILE` (or pin the certificate in the web interface).
 - A connector configured with an address but without its own credentials is refused; re-enter the credentials in the connector settings if one stops syncing.
 - The QA and Claude AI QA pages are visible to ISMS_MANAGER and above only; the library-wide QA sweeps, synonym rules, the library "Full Sync" and generator editing need SUPER_ADMIN.
+
+### Security review of v1.3
+Three independent security scans (VVAH) of the v1.3 sources ran during the release cycle, each finding checked by hand against the code before anything was changed:
+
+| Scan | Backend | Connectors, feeds, threat-intel, SMTP bridge | Frontend |
+|---|---:|---:|---:|
+| Round 1 | 61 | 40 | 1 |
+| Round 2 | 20 (15 distinct) | 58 | 2 |
+| Round 3 (final) | 12 | 41 | 3 |
+
+- **No Critical finding in the last two rounds.** The backend count fell from 61 to 12 as fixes landed. The connectors count rose in round 2 because the scanner then also covered the per-connector Dockerfiles and example configuration files.
+- **Every finding was sorted** into fixed, a documented design decision, accepted hardening, or not a real issue. The ones that were real are fixed in this release (see Roles, Sign-in lockout, Connectors and Transport security above); the decided and accepted ones stay documented as known limits.
+- **Images were scanned before release.** Each image we build was scanned for known vulnerabilities and the Critical findings fixed (two in `curl`). The remaining findings are in upstream base images and wait for the upstream fix.
+- Dependency fix: `pdfplumber` 0.11.10, which brings `pdfminer.six` 20260107 and closes two High advisories (CVE-2025-64512, CVE-2025-70559) in the PDF import.
 
 ### Verification
 - **Roles and tenants:** every route's role gate was compared with what the running backend does, and cross-organisation access was attempted with real objects from a second organisation on every resource type: no gate mismatches and no cross-organisation leaks.
