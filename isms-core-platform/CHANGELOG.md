@@ -113,7 +113,7 @@ It is a minor release, not a patch: the role changes alter what existing users c
 - **New secret `PLATFORM_KEY_ENCRYPTION_SECRET`** (backend, feeds and threat-intel only, never `SECRET_KEY`): at least 32 random characters, for example `openssl rand -hex 32`. It is required only to store keys in the web interface; without it the page says so and every `.env` key keeps working. Changing it makes saved keys unreadable (the `.env` fallback applies), so keep it with your backups.
 - **New installations** enter keys on the page only. **Upgraded installations** have their `.env` keys imported **once**, at the first backend start with the secret set, as enabled rows marked "migrated from .env"; after that a key you remove is not brought back and a rotated key is not touched. Those `.env` lines can then be deleted.
 - Not on the page on purpose: the session signing key, database, Redis and OpenSearch passwords and the trigger secrets (they protect the platform's own authentication and storage). Malpedia has no entry, because its feed needs no key.
-- New database table `platform_api_keys` (automatic). Rebuild the feeds and threat-intel images (they gain the `cryptography` library).
+- New database table `platform_api_keys` (automatic).
 
 
 ### Transport security and hardening
@@ -173,7 +173,7 @@ It is a minor release, not a patch: the role changes alter what existing users c
 - An organisation Admin saw an endless spinner on the System page; now they get the cards they can use.
 - **The browser refreshes an expired session again and keeps the selected organisation.** The refresh-and-replay after a 401 had never run (an injection-context error that the pages' own retry hid), and the replay dropped the organisation header. Organisation and project data is cleared from the browser when a session has expired.
 - SIEM evidence no longer reports "compliant" when the alert fields could not be read; SIEM and threat-intel sync failures are reported to the platform.
-- OpenSearch Dashboards: *Entra ID Entity Analytics* and *Microsoft Defender* count distinct objects instead of documents, and *Audit Logs — Top Users* no longer includes events with no user. Takes effect when `dashboards-setup` is rebuilt and re-run.
+- OpenSearch Dashboards: *Entra ID Entity Analytics* and *Microsoft Defender* count distinct objects instead of documents, and *Audit Logs — Top Users* no longer includes events with no user. Takes effect when the new `dashboards-setup` image has been pulled and run again.
 
 
 ### What each role can do in v1.3
@@ -202,7 +202,7 @@ A person can additionally hold a role of their own in other organisations.
 **Before you upgrade**
 - **Review who uses which role.** If anyone uses AUDITOR as a general editing role, give them CONTROL_OWNER or ISMS_MANAGER first. API clients or scripts that call write routes as VIEWER or AUDITOR will start receiving 403.
 - **Every connector address must be `https://`.** Plain `http://` addresses are refused, including the SIEM and threat-intel (TAXII / MISP / JSON) connectors. A system with a self-signed certificate stays on `https://`; use **Fetch Certificate → Trust** once.
-- **Copy the new `docker-compose.yml` and `.env.example`** and pull all images (rebuild feeds and threat-intel if you build yourself). The compose file carries the container hardening, the new secrets and a changed command for the scheduler (`beat`).
+- **Copy the new `docker-compose.yml` and `.env.example`** and pull all images. The compose file carries the container hardening, the new secrets and a changed command for the scheduler (`beat`).
 
 **Automatic at start-up**
 - Database migrations: `096` (`feed_schedule_overrides`, `ti_schedule_overrides`), `097` (`organisation_memberships`), `098` (the audit log permits only the foreign-key detach when a user or organisation is deleted), `099` (`platform_api_keys`) and `100` (`login_attempts`). All are additive.
