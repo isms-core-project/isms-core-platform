@@ -866,7 +866,7 @@ docker compose up -d
 
 No data loss — PostgreSQL and OpenSearch data live in named Docker volumes. Reference datasets are reloaded automatically on every container start; database migrations run automatically.
 
-**Read the release notes first** ([CHANGELOG.md](isms-core-platform/CHANGELOG.md)): a release can change `docker-compose.yml` or add `.env` settings, so compare your `.env` against the new `.env.example` after every update (for example v1.3 added the OpenSearch security block and the Garage TLS proxy; v1.3.1 adds `PLATFORM_KEY_ENCRYPTION_SECRET`).
+**Read the release notes first** ([CHANGELOG.md](isms-core-platform/CHANGELOG.md)): a release can change `docker-compose.yml` or add `.env` settings, so compare your `.env` against the new `.env.example` after every update (for example v1.3 added the OpenSearch security block, the Garage TLS proxy and `PLATFORM_KEY_ENCRYPTION_SECRET`).
 
 ### View Logs
 
