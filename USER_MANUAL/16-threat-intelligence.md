@@ -50,7 +50,7 @@ These feeds run in the `isms-core-threat-intel` container. All feeds run automat
 | **CIRCL MISP** | Every 6h: 00:00, 06:00, 12:00, 18:00 | None | Public OSINT MISP feed from Luxembourg CIRCL — IOCs (IPs, domains, URLs, hashes) with ATT&CK TIDs, Malpedia family + actor tags |
 | **Botvrij MISP** | Every 6h: 01:00, 07:00, 13:00, 19:00 (staggered) | None | Public OSINT feed (botvrij.eu) — same schema as CIRCL, deduplicated by IOC value + source |
 | **AbuseIPDB** | Daily 02:00 | AbuseIPDB key | Top 10,000 highest-confidence abusive IPs; on-demand single-IP enrichment with 24h cache |
-| **URLhaus** | Daily 03:00 | None | Malicious URLs hosting malware payloads, from abuse.ch |
+| **URLhaus** | Daily 03:00 | abuse.ch key (required; the ThreatFox or MalwareBazaar key is used) | Malicious URLs hosting malware payloads, from abuse.ch |
 | **ThreatFox** | Every 6h: 03:00, 09:00, 15:00, 21:00 | ThreatFox key (required) | IOCs (IPs, domains, URLs, hashes) linked to named malware families with confidence scores |
 | **SSLBL** | Daily 04:00 | None | SSL certificate blacklist — SHA1 fingerprints of certificates used by malware C2 infrastructure |
 | **AlienVault OTX** | Daily 04:30 | AlienVault OTX key | Open Threat Exchange pulses — IOCs with TLP labels, ATT&CK TIDs, and confidence scores derived from pulse subscriber count |
