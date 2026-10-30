@@ -61,6 +61,7 @@ It is a minor release, not a patch: the role changes alter what existing users c
 #### Tenant scoping and sessions
 - An EBIOS measure can no longer point at another organisation's scenario, a NIST CSF profile can no longer be re-linked to another organisation's project, and evidence can only be linked to an assessment item of the same project. The status of a control group no longer mixes organisations. Dashboard counts are scoped to the caller's organisation.
 - Resetting or deactivating a user also invalidates that user's already-issued access tokens. MFA backup-code regeneration is audit-logged. The "active project" can only be a project of the organisation you work in.
+- **A refresh token that is used twice ends the session.** Rotating a refresh token now keeps the used one on record. If the same token comes back more than 30 seconds later (a copied token), every session of that user is revoked, their access tokens stop working and an audit entry is written; inside 30 seconds (two browser tabs refreshing together) the request is only refused. *Behaviour change: anything that replays an old session cookie signs the user out everywhere.* A wrong code entered while enabling or disabling MFA, or regenerating backup codes, is now audit-logged like a failed sign-in.
 
 
 ### Sign-in lockout per address, with admin unlock
@@ -95,6 +96,7 @@ It is a minor release, not a patch: the role changes alter what existing users c
 - **Feeds no longer all re-run at every container start.** `FEEDS_RUN_ON_START` now defaults to `false`: it forced every enabled feed to run again whenever the feeds container was recreated, which re-triggered the NVD full pull (about 400,000 records) on every redeploy. A feed that has never run is still seeded automatically. The weekly and daily feed times are documented in the user manual exactly as the scheduler runs them.
 
 #### Other connector fixes
+- **Smaller connector fixes:** Devolutions takes all of its credentials from the web interface when its address comes from there (none from the environment); Kubernetes Dashboard calls no longer follow redirects; OpenVAS / GVM uses one spelling of the host name everywhere and refuses an XML document type declaration anywhere in a reply; PAN-OS and Qualys replies are size-capped and refuse a document type declaration; Keycloak failed-sign-in evidence no longer carries the attempted user name, e-mail address or redirect address; a connector crash report no longer carries URL query strings. The on-prem connector examples build again from their compose file and run with all Linux capabilities dropped.
 - **A connector that crashes while it is being created no longer restarts every few seconds forever.** A bad address (for example a Kubernetes Dashboard URL copied with its `#/…` part) used to crash on every refresh cycle, invisible in the admin interface because the connector did not exist yet to report it. The runner now reports such a crash to the platform, so it shows on the connector, and backs off exponentially (up to 30 minutes) while the same error repeats, retrying at once when the configuration changes.
 - **Backend CPU spikes during connector polling are gone.** The key used to protect stored connector credentials was re-derived (a 600,000-iteration derivation) on every call; it is derived once per process now, with the same result and the same security.
 - **PAN-OS, FortiGate and HashiCorp Vault connectors could never start from the worker** (the connector map named a class that did not exist). Fixed; a wrong name is now logged as an error. *Configured connectors of these three types start polling after the upgrade.*
@@ -135,6 +137,7 @@ It is a minor release, not a patch: the role changes alter what existing users c
 - The Redis password is no longer visible in the process list; the OpenSearch URL can be set from `.env`. The frontend image installs dependencies with plain `npm ci`.
 - The feeds and threat-intel containers can use their own trigger secrets (`FEEDS_TRIGGER_SECRET`, `TI_TRIGGER_SECRET`) instead of the connectors' shared secret.
 - The background-task engine (Celery) is updated to 5.6.3. The semantic QA model is built into the backend image instead of being downloaded on first use (the image is about 450 MB larger).
+- The certificate-generation job in `docker-compose.yml` also runs with all Linux capabilities dropped except the three it needs, and without privilege escalation. This only matters if you copy the new compose file; the images work with the old one.
 
 #### Limits, validation and audit trail
 - Rate limits and size caps on previously unbounded routes (model list, workbook generation, KPI metrics, QA result paging, connector ingest, the PDF parser); Compass and Claude QA runs are rate limited like the AI chat, and a rate-limited feature shows one readable message on every page.
@@ -142,6 +145,7 @@ It is a minor release, not a patch: the role changes alter what existing users c
 - The SSRF filter also rejects hostnames resolving into the carrier-grade-NAT range and Kubernetes cluster-local names.
 - Audit trail for connector interval, rename and retention changes, platform-wide content loads, imports and re-indexing; a failed sign-in is recorded under the organisation of the account that was guessed.
 - Generated spreadsheets can no longer be abused through names that start with `=`, `+`, `-` or `@`, and the workbook script runs with a minimal environment. Downloads of feeds and archives have size ceilings.
+- **Upload and download limits tightened.** Word and Excel files that decompress to more than 150 MB, or compress better than 50:1, are refused (it was 500 MB and 100:1; the largest real document we have is 13 MB). Feed downloads that were read without a limit (Malpedia, SSL Blacklist, Red Flag Domains, URLhaus, EPSS, EUVD, MITRE ATLAS) are now cut off past a size cap and a time limit. IP addresses taken from threat feeds are validated before they are used in a lookup.
 
 
 ### AI features and Claude QA
@@ -166,9 +170,13 @@ It is a minor release, not a patch: the role changes alter what existing users c
 ### Content and dependencies
 - **Documentation clean-up:** internal tooling references were removed from 203 implementation guides, the A.5.7 threat-intelligence assessment cites MITRE v20, a stale Sheet 5 formula description was corrected, and the A.8.35 guide now spells out its schema fields instead of pointing at a document auditors do not see.
 - **Dependency updates:** the Angular packages were aligned to one version (this also clears two advisories in the development server's tooling, which never ship in the production build), `multidict` in the threat-intel image and the website's `source-map-js` and `sharp` were updated.
+- **Security updates inside the images:** `certifi` 2026.10.19 (removes certificate authorities whose intermediate keys were compromised from the trust list), `pdfminer.six` 20260107 via `pdfplumber` 0.11.10 (two High advisories in PDF import), `aiohttp` 3.14.4, `markdown-it` 15.0.3 and `vite` 8.3.3 (development server only).
 
 ### Fixes
 - Evidence: the **Approve** and **Reject** buttons did nothing (wrong HTTP method, answered 405). Fixed.
+- **URLhaus feed works again.** abuse.ch ended the open download of its URL list and now requires its free key; the feed was failing every night with "410 Gone". It now uses the abuse.ch key saved for ThreatFox or MalwareBazaar (one key works for all of them) and stays off if none is saved.
+- Creating or editing a user shows the real reason when a password is refused (it showed `[object Object]`), and browsers no longer offer to fill your own saved password into another user's "New Password" field.
+- The nightly backup moved to 03:45 UTC so it no longer lands on the minute the feed schedulers start (it briefly stops PostgreSQL). Change `BACKUP_CRON_EXPRESSION` in `backup.env` if you copied the old file.
 - **Help page:** the contents list stays in view and scrolls to sections, links inside the guide scroll instead of leaving the page, and the permission tables are real tables.
 - An organisation Admin saw an endless spinner on the System page; now they get the cards they can use.
 - **The browser refreshes an expired session again and keeps the selected organisation.** The refresh-and-replay after a 401 had never run (an injection-context error that the pages' own retry hid), and the replay dropped the organisation header. Organisation and project data is cleared from the browser when a session has expired.
@@ -205,7 +213,7 @@ A person can additionally hold a role of their own in other organisations.
 - **Copy the new `docker-compose.yml` and `.env.example`** and pull all images. The compose file carries the container hardening, the new secrets and a changed command for the scheduler (`beat`).
 
 **Automatic at start-up**
-- Database migrations: `096` (`feed_schedule_overrides`, `ti_schedule_overrides`), `097` (`organisation_memberships`), `098` (the audit log permits only the foreign-key detach when a user or organisation is deleted), `099` (`platform_api_keys`) and `100` (`login_attempts`). All are additive.
+- Database migrations: `096` (`feed_schedule_overrides`, `ti_schedule_overrides`), `097` (`organisation_memberships`), `098` (the audit log permits only the foreign-key detach when a user or organisation is deleted), `099` (`platform_api_keys`), `100` (`login_attempts`) and `101` (a `rotated_at` column on `sessions`). All are additive.
 - Keys that are in `.env` are imported into Admin → API keys once, if `PLATFORM_KEY_ENCRYPTION_SECRET` is set.
 - Dataset repairs (ISO 42001 codes, thirteen datasets get their first content hash, removed dataset files are cleaned up) are applied at the first start with the new data image.
 
@@ -233,6 +241,7 @@ Rollback: put the old compose file and `.env` back and run the old `opensearch-s
 Rollback: set `OPENSEARCH_DISABLE_SECURITY=true`, put the plain `OPENSEARCH_URL` back and recreate all nodes together.
 
 **After you upgrade**
+- **URLhaus:** make sure an abuse.ch key is saved (Admin → API keys → ThreatFox or MalwareBazaar) so the URLhaus feed runs.
 - **The backend image is about 450 MB larger** (the semantic-QA model is inside it); nothing is downloaded at run time any more. To confirm the hardening: `docker exec isms-core-backend grep -E 'CapEff|NoNewPrivs' /proc/1/status` should show `CapEff: 0000000000000000` and `NoNewPrivs: 1`.
 - **Recommended:** give the feeds and threat-intel containers their own secrets (`FEEDS_TRIGGER_SECRET` and `TI_TRIGGER_SECRET`, each a different random value) and recreate the stack. Until you do, they keep using `CONNECTORS_WORKER_SECRET`.
 - **Assign control groups to every CONTROL_OWNER** (Admin → Users). Until then a control owner can read everything but cannot change anything.
@@ -254,6 +263,7 @@ Three independent security scans (VVAH) of the v1.3 sources ran during the relea
 - **Every finding was sorted** into fixed, a documented design decision, accepted hardening, or not a real issue. The ones that were real are fixed in this release (see Roles, Sign-in lockout, Connectors and Transport security above); the decided and accepted ones stay documented as known limits.
 - **Images were scanned before release.** Each image we build was scanned for known vulnerabilities and the Critical findings fixed (two in `curl`). The remaining findings are in upstream base images and wait for the upstream fix.
 - Dependency fix: `pdfplumber` 0.11.10, which brings `pdfminer.six` 20260107 and closes two High advisories (CVE-2025-64512, CVE-2025-70559) in the PDF import.
+- A further scan, run after the images were first published, found no new critical or high issue; its small real findings are fixed in the current images (see the entries above).
 
 ### Verification
 - **Roles and tenants:** every route's role gate was compared with what the running backend does, and cross-organisation access was attempted with real objects from a second organisation on every resource type: no gate mismatches and no cross-organisation leaks.
