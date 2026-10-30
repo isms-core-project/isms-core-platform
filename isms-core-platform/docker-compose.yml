@@ -42,6 +42,17 @@ services:
     image: alpine:3.20@sha256:d9e853e87e55526f6b2917df91a2115c36dd7c696a35be12163d44e6e2a4b6bc
     container_name: isms-core-internal-certs-init
     entrypoint: ["/bin/sh", "-c"]
+    # Container hardening: the job runs as root only to create the certificates and to set ownership and modes on the key files, so it keeps the
+    # three capabilities that needs (change owner, read / change files owned by other users) and drops everything else. Same recipe as the postgres
+    # service above.
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_OVERRIDE
+      - FOWNER
+    security_opt:
+      - no-new-privileges:true
     command:
       - |
         set -e
