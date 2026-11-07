@@ -27,13 +27,13 @@ The platform runs two dedicated feed containers:
 
 These feeds run in the `isms-core-feeds` container and are always active.
 
-| Feed | Schedule (UTC) | What it provides |
+| Feed | Schedule (container local time) | What it provides |
 |------|----------------|-----------------|
 | **MITRE ATT&CK v20** | Weekly, Sun 02:00 | Full ATT&CK framework — tactics, techniques, sub-techniques, mitigations, adversary groups, software, campaigns |
 | **MITRE ATLAS** | Weekly, Sun 02:30 | AI/ML-specific adversary techniques (adversarial machine learning threat landscape) |
 | **CISA KEV** | Daily 03:00 | CISA's Known Exploited Vulnerabilities catalogue — CVEs actively exploited in the wild |
 | **FIRST EPSS** | Daily 03:30 | Exploit Prediction Scoring System — probability score (0–1) for each CVE being exploited in the next 30 days |
-| **NVD CVE** | Daily delta 03:00 / Full weekly Sun 01:00 | ~250,000 CVEs from the NIST NVD with CVSS v2/v3/v4 scores, CWEs, and CPE applicability |
+| **NVD CVE** | Daily delta 03:00 / Full weekly Sun 01:00 | ~420,000 CVEs from the NIST NVD with CVSS v2/v3/v4 scores, CWEs, and CPE applicability |
 | **NVD CPE** | Weekly, Sun 01:30 | Software/hardware product identifiers — enables correlating CVEs to specific products |
 | **ENISA EUVD** | Daily delta 04:00 / full weekly Sun 02:45 | EU Vulnerability Database — exploited-flag CVEs and high-severity (CVSS ≥ 4.0) EU-assigned entries; cross-enriched into NVD CVE docs with `in_euvd` flag |
 | **Exploit-DB** | Daily 04:30 | ~52,000 public exploits; cross-enriches CVEs with `edb_id`, `edb_verified` (Metasploit flag), and `edb_description` |
@@ -45,7 +45,7 @@ These feeds run in the `isms-core-feeds` container and are always active.
 
 These feeds run in the `isms-core-threat-intel` container. All feeds run automatically on first boot if no previous successful run exists.
 
-| Feed | Schedule (UTC) | API key | What it provides |
+| Feed | Schedule (container local time) | API key | What it provides |
 |------|----------------|---------|-----------------|
 | **CIRCL MISP** | Every 6h: 00:00, 06:00, 12:00, 18:00 | None | Public OSINT MISP feed from Luxembourg CIRCL — IOCs (IPs, domains, URLs, hashes) with ATT&CK TIDs, Malpedia family + actor tags |
 | **Botvrij MISP** | Every 6h: 01:00, 07:00, 13:00, 19:00 (staggered) | None | Public OSINT feed (botvrij.eu) — same schema as CIRCL, deduplicated by IOC value + source |
@@ -151,7 +151,7 @@ Navigate to **Intelligence → CVE Explorer**.
 
 ### CVE Search
 
-Search and filter the NVD CVE index (~250,000 entries):
+Search and filter the NVD CVE index (~420,000 entries):
 
 | Filter | Options |
 |--------|---------|

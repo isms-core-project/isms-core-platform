@@ -133,7 +133,7 @@ Each collection shows derived statistics: completion %, compliance %, per-status
 
 **Coverage notes:**
 - Subcategory descriptions sourced from the official NIST AI RMF Playbook (72 suggested actions)
-- ISO 27001 ↔ AI RMF crosswalk exists (56 mappings); ISO 42001 ↔ AI RMF crosswalk exists (32 mappings) — both are viable mapping paths
+- ISO 27001 ↔ AI RMF crosswalk exists (28 mappings); ISO 42001 ↔ AI RMF crosswalk exists (32 mappings) — both are viable mapping paths
 - Framework is voluntary — not a regulatory compliance requirement in any jurisdiction
 - Related: NIST CSF 2.0 GOVERN function directly mirrors AI RMF GOVERN structure
 
@@ -628,7 +628,7 @@ controls:
 All compliance assessment modules benefit from the Platform's Crosswalk Viewer, which shows cross-framework mappings between:
 
 - ISO 27001:2022 ↔ NIST CSF 2.0
-- NIST AI RMF 1.0 ↔ ISO 27001:2022 (56 mappings) and ↔ ISO 42001:2023 (32 mappings) — no direct NIST AI RMF ↔ EU AI Act axis; connected transitively via ISO 42001 (13 mappings to EU AI Act)
+- NIST AI RMF 1.0 ↔ ISO 27001:2022 (28 mappings) and ↔ ISO 42001:2023 (32 mappings) — no direct NIST AI RMF ↔ EU AI Act axis; connected transitively via ISO 42001 (13 mappings to EU AI Act)
 - ISO 27001:2022 ↔ NIST SP 800-53 Rev. 5
 - ISO 27001:2022 ↔ MITRE ATT&CK v20 (45 mappings) and v19 (36 mappings, kept alongside)
 - ISO 27001:2022 ↔ DORA

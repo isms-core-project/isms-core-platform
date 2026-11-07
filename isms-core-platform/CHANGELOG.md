@@ -165,7 +165,7 @@ It is a minor release, not a patch: the role changes alter what existing users c
 - **ISO 42001 control codes repaired:** the two life-cycle controls are `A.6.1.2-3` and `A.6.2.2-8` in every installation (an older edit was never picked up), which lets 47 more mappings load. The platform now holds **5,478 mappings on 86 axes** (4,632 on 60 axes in the core crosswalk, the ISO 42001 / ISO 42005 and country crosswalks, and 229 control dependencies); mappings that cited controls that do not exist were removed.
 - **Updating a framework dataset keeps your assessments.** The loader used to delete every control of a framework whenever its content changed, and the ratings with them. It now updates in place and deletes only controls that left the standard. Thirteen framework datasets that were reloaded on every start now skip when unchanged, and dataset files that were removed from the image no longer linger in the data volume.
 - **Assessment Collections are back in the interface:** Assessments → Collections lists, creates and deletes collections (open one to add assessments and export CSV, XLSX or PDF).
-- **Cloud checklist generators run from the published repository**, internal folder names are gone from policy documents, and 44 broken links in the control lists are fixed. The public documentation was re-measured against the code (connectors 46, frameworks 42, 29 assessment modules).
+- **Cloud checklist generators run from the published repository**, internal folder names are gone from policy documents, and 44 broken links in the control lists are fixed. The public documentation was re-measured against the code (connectors 46, frameworks 41, 29 assessment modules).
 
 ### Content and dependencies
 - **Documentation clean-up:** internal tooling references were removed from 203 implementation guides, the A.5.7 threat-intelligence assessment cites MITRE v20, a stale Sheet 5 formula description was corrected, and the A.8.35 guide now spells out its schema fields instead of pointing at a document auditors do not see.
@@ -176,7 +176,11 @@ It is a minor release, not a patch: the role changes alter what existing users c
 - Evidence: the **Approve** and **Reject** buttons did nothing (wrong HTTP method, answered 405). Fixed.
 - **URLhaus feed works again.** abuse.ch ended the open download of its URL list and now requires its free key; the feed was failing every night with "410 Gone". It now uses the abuse.ch key saved for ThreatFox or MalwareBazaar (one key works for all of them) and stays off if none is saved.
 - Creating or editing a user shows the real reason when a password is refused (it showed `[object Object]`), and browsers no longer offer to fill your own saved password into another user's "New Password" field.
-- The nightly backup moved to 03:45 UTC so it no longer lands on the minute the feed schedulers start (it briefly stops PostgreSQL). Change `BACKUP_CRON_EXPRESSION` in `backup.env` if you copied the old file.
+- The nightly backup moved to 03:20 UTC so it no longer lands on the minute the feed schedulers start (it briefly stops PostgreSQL). Change `BACKUP_CRON_EXPRESSION` in `backup.env` if you copied the old file.
+- Feeds and threat-intel containers wait for PostgreSQL for up to ~40 seconds when they start a job, instead of failing the run if the database is briefly down.
+- The connector worker's configuration reads are audited once per hour per connector instead of on every poll (the audit log grew by ~40,000 rows a day).
+- The dataset loader runs once per start instead of twice; a duplicate Swiss NDSG framework no longer reappears; search boxes on the collection, generator, project-library and gap-dialog pages react as you type; ten relationships (e.g. a control group's controls) are real lists.
+- The edge nginx no longer announces its version, and the public `/health` response no longer carries the platform version. `COOKIE_SECURE`, `ALLOW_UNVERIFIED_INTERNAL_TLS` and `FEEDS_EUVD_ENABLED` from `.env.example` now reach the containers. The feed and threat-intel trigger servers cap their failed-login memory.
 - **Help page:** the contents list stays in view and scrolls to sections, links inside the guide scroll instead of leaving the page, and the permission tables are real tables.
 - An organisation Admin saw an endless spinner on the System page; now they get the cards they can use.
 - **The browser refreshes an expired session again and keeps the selected organisation.** The refresh-and-replay after a 401 had never run (an injection-context error that the pages' own retry hid), and the replay dropped the organisation header. Organisation and project data is cleared from the browser when a session has expired.
@@ -213,7 +217,7 @@ A person can additionally hold a role of their own in other organisations.
 - **Copy the new `docker-compose.yml` and `.env.example`** and pull all images. The compose file carries the container hardening, the new secrets and a changed command for the scheduler (`beat`).
 
 **Automatic at start-up**
-- Database migrations: `096` (`feed_schedule_overrides`, `ti_schedule_overrides`), `097` (`organisation_memberships`), `098` (the audit log permits only the foreign-key detach when a user or organisation is deleted), `099` (`platform_api_keys`), `100` (`login_attempts`) and `101` (a `rotated_at` column on `sessions`). All are additive.
+- Database migrations: `096` (`feed_schedule_overrides`, `ti_schedule_overrides`), `097` (`organisation_memberships`), `098` (the audit log permits only the foreign-key detach when a user or organisation is deleted), `099` (`platform_api_keys`), `100` (`login_attempts`) and `101` (a `rotated_at` column on `sessions`) and `102` (removes the duplicate Swiss NDSG framework that an older data file brought back; the Swiss data-protection act stays under CH_NDSG). Migrations 096–101 are additive.
 - Keys that are in `.env` are imported into Admin → API keys once, if `PLATFORM_KEY_ENCRYPTION_SECRET` is set.
 - Dataset repairs (ISO 42001 codes, thirteen datasets get their first content hash, removed dataset files are cleaned up) are applied at the first start with the new data image.
 

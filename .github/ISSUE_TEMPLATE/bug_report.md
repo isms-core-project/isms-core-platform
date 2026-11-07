@@ -11,13 +11,13 @@ assignees: ''
 
 ## Component
 
-<!-- e.g. OpenCTI connector, Kubescape integration, Dashboard summary endpoint, ISO control mapping -->
+<!-- e.g. a connector, a threat-intel feed, a platform page, the API, a framework crosswalk -->
 
 ## Environment
 
-- **Deployment:** (Kubernetes / Docker / bare-metal)
+- **Deployment:** (Docker Compose / other)
 - **ISMS CORE version:**
-- **Connected tools:** (OpenCTI / Kubescape / Kubernetes Dashboard / other)
+- **Connected tools:** (which connectors / feeds are enabled)
 
 ## Error output
 

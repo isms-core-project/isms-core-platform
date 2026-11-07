@@ -431,7 +431,7 @@ April 2026:         ISMS CORE AI (ISO 42001:2023) -> 12 Control Groups Completed
 April 2026:         FR + DE + IT Translations -> All 5 Packs Complete
 April 2026:         Threat Intelligence Expansion -> Phases 39–49
                     Per-connector OpenSearch indices, ENISA EUVD, Exploit-DB,
-                    MITRE ATT&CK v19, AlienVault OTX (12th OSINT source),
+                    MITRE ATT&CK v20, AlienVault OTX (12th OSINT source),
                     VirusTotal enrichment, TLP labels, Threat Exposure page,
                     20 OSD dashboards, EBIOS RM, notification system, security audit
 May 2026:           User Manual Updated -> Chapter 16 (Threat Intelligence) fully rewritten

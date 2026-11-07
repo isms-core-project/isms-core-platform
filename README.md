@@ -53,7 +53,7 @@
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/BSI_C5:2026-Assessment_Tool-C62828?style=flat-square" alt="BSI C5:2026"/></a>
   <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/BSI_C3A-Assessment_Tool-AD1457?style=flat-square" alt="BSI C3A"/></a>
   <a href="#-framework-integration"><img src="https://img.shields.io/badge/MITRE_ATT&CK_v20-Mapped-DC143C?style=flat-square" alt="MITRE ATT&CK"/></a>
-  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/4%2C716_Crosswalk_Objects_%2F_60_Axes-Linked-2E8B57?style=flat-square" alt="Crosswalk Mappings"/></a>
+  <a href="COMPLIANCE.md"><img src="https://img.shields.io/badge/4%2C632_Crosswalk_Objects_%2F_60_Axes-Linked-2E8B57?style=flat-square" alt="Crosswalk Mappings"/></a>
 </p>
 </details>
 

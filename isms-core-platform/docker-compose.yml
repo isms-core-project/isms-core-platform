@@ -918,6 +918,8 @@ services:
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
       - DB_SSLMODE=${DB_SSLMODE:-verify-full}
       - DB_SSL_ROOT_CERT=${DB_SSL_ROOT_CERT:-/certs/postgres/server.crt}
+      - ALLOW_UNVERIFIED_INTERNAL_TLS=${ALLOW_UNVERIFIED_INTERNAL_TLS:-false}   # true: connect to Postgres without verifying its certificate (logged)
+      - COOKIE_SECURE=${COOKIE_SECURE:-true}   # false only for local HTTP development (no HTTPS)
       - REDIS_URL=redis://:${REDIS_PASSWORD}@isms-core-redis:6379/0
       - REDIS_TLS=${REDIS_TLS:-false}      # true: the URL above is used as rediss:// and the certificate is verified against REDIS_CA_FILE (default: the platform CA below)
       - DATASETS_PATH=/app/datasets
@@ -1042,6 +1044,7 @@ services:
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
       - DB_SSLMODE=${DB_SSLMODE:-verify-full}
       - DB_SSL_ROOT_CERT=${DB_SSL_ROOT_CERT:-/certs/postgres/server.crt}
+      - ALLOW_UNVERIFIED_INTERNAL_TLS=${ALLOW_UNVERIFIED_INTERNAL_TLS:-false}   # true: connect to Postgres without verifying its certificate (logged)
       - REDIS_URL=redis://:${REDIS_PASSWORD}@isms-core-redis:6379/0
       - REDIS_TLS=${REDIS_TLS:-false}      # true: the URL above is used as rediss:// and the certificate is verified against REDIS_CA_FILE (default: the platform CA below)
       - DATASETS_PATH=/app/datasets
@@ -1112,6 +1115,7 @@ services:
       - DATABASE_URL=postgresql://isms_user:${POSTGRES_PASSWORD}@isms-core-postgres:5432/isms_db
       - DB_SSLMODE=${DB_SSLMODE:-verify-full}
       - DB_SSL_ROOT_CERT=${DB_SSL_ROOT_CERT:-/certs/postgres/server.crt}
+      - ALLOW_UNVERIFIED_INTERNAL_TLS=${ALLOW_UNVERIFIED_INTERNAL_TLS:-false}   # true: connect to Postgres without verifying its certificate (logged)
       - REDIS_URL=redis://:${REDIS_PASSWORD}@isms-core-redis:6379/0
       - REDIS_TLS=${REDIS_TLS:-false}      # true: the URL above is used as rediss:// and the certificate is verified against REDIS_CA_FILE (default: the platform CA below)
       - DATASETS_PATH=/app/datasets
@@ -1288,6 +1292,7 @@ services:
       - FEEDS_CPE_FULL=${FEEDS_CPE_FULL:-false}
       - FEEDS_EXPLOITDB_ENABLED=${FEEDS_EXPLOITDB_ENABLED:-true}
       - FEEDS_VULNCHECK_ENABLED=${FEEDS_VULNCHECK_ENABLED:-true}
+      - FEEDS_EUVD_ENABLED=${FEEDS_EUVD_ENABLED:-true}
       # API keys: the WebUI (Admin -> API keys) wins while its row is enabled; these environment variables are the fallback.
       - VULNCHECK_API_KEY=${VULNCHECK_API_KEY:-}
       - NIST_API_KEY=${NIST_API_KEY:-}
