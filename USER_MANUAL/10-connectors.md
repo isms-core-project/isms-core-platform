@@ -29,95 +29,97 @@ The Connectors dashboard shows all 46 available connectors with their current st
 
 ## Supported Connectors (46 systems)
 
+The *ISO Controls* column lists every control of the control groups a connector posts evidence to (a group such as Network Security covers A.8.20, A.8.21 and A.8.22 together).
+
 ### Microsoft
 
 | Connector | ISO Controls | Evidence type |
 |-----------|-------------|---------------|
-| Microsoft Entra ID | A.5.15, A.5.16, A.5.17, A.8.2 | User accounts, group memberships, MFA status, conditional access policies |
-| Microsoft Defender XDR | A.8.7, A.8.8, A.8.16 | Endpoint threat detections, vulnerability findings, patch status |
-| Microsoft Sentinel | A.8.15, A.8.16 | SIEM alert summary, log ingestion status |
-| Microsoft Intune | A.8.9, A.8.10 | Device compliance status, MDM policy deployment |
-| Microsoft 365 | A.5.14, A.5.15 | Licence assignments, secure score summary |
-| Microsoft Purview | A.5.12, A.5.33 | Data classification labels, retention policy status |
-| Azure CSPM | A.8.9, A.8.23 | Cloud security posture score, misconfiguration findings |
+| Microsoft Entra ID | A.5.3, A.5.15, A.5.16, A.5.18, A.8.1, A.8.2, A.8.3, A.8.5, A.8.7, A.8.18, A.8.19 | User accounts, group memberships, MFA status, conditional access policies |
+| Microsoft Defender XDR | A.8.1, A.8.7, A.8.8, A.8.18, A.8.19 | Endpoint threat detections, vulnerability findings, patch status |
+| Microsoft Sentinel | A.5.7, A.8.16 | SIEM alert summary, log ingestion status |
+| Microsoft Intune | A.8.1, A.8.7, A.8.9, A.8.18, A.8.19 | Device compliance status, MDM policy deployment |
+| Microsoft 365 | A.5.15, A.5.16, A.5.18, A.8.1, A.8.2, A.8.3, A.8.5, A.8.7, A.8.18, A.8.19 | Licence assignments, secure score summary |
+| Microsoft Purview | A.8.10, A.8.12 | Data classification labels, retention policy status |
+| Azure CSPM | A.8.2, A.8.3, A.8.5, A.8.8, A.8.20, A.8.21, A.8.22 | Cloud security posture score, misconfiguration findings |
 
 ### Network & Firewall
 
 | Connector | ISO Controls | Evidence type |
 |-----------|-------------|---------------|
-| FortiGate | A.8.20, A.8.21 | Firewall policy summary, traffic logs |
-| FortiAnalyzer | A.8.15, A.8.16 | Log aggregation status, event summary |
-| FortiManager | A.8.9 | Configuration compliance |
-| Palo Alto PAN-OS | A.8.20, A.8.21 | Security policy status, threat logs |
-| Cisco ASA | A.8.20 | Access control policy export |
-| Cisco ISE | A.5.15, A.8.20 | Network access control policy status |
-| Zscaler | A.8.23 | Web filtering policy, user activity summary |
+| FortiGate | A.6.7, A.6.8, A.8.15, A.8.20, A.8.21, A.8.22 | Firewall policy summary, traffic logs |
+| FortiAnalyzer | A.8.1, A.8.7, A.8.15, A.8.16, A.8.18, A.8.19 | Log aggregation status, event summary |
+| FortiManager | A.8.1, A.8.7, A.8.18, A.8.19, A.8.20, A.8.21, A.8.22 | Configuration compliance |
+| Palo Alto PAN-OS | A.6.7, A.6.8, A.8.15, A.8.20, A.8.21, A.8.22 | Security policy status, threat logs |
+| Cisco ASA | A.6.7, A.6.8, A.8.20, A.8.21, A.8.22 | Access control policy export |
+| Cisco ISE | A.5.15, A.5.16, A.5.18, A.8.20, A.8.21, A.8.22 | Network access control policy status |
+| Zscaler | A.5.15, A.5.16, A.5.18, A.8.20, A.8.21, A.8.22, A.8.23 | Web filtering policy, user activity summary |
 
 ### ITSM
 
 | Connector | ISO Controls | Evidence type |
 |-----------|-------------|---------------|
-| ServiceNow | A.5.26, A.5.37 | Incident tickets, change records, CMDB asset counts |
-| Jira / Jira Service Management | A.5.26 | Issue counts by status, security-tagged ticket summary |
-| GLPI | A.5.26, A.8.10 | Asset inventory, incident records |
+| ServiceNow | A.5.24, A.5.25, A.5.26, A.5.27, A.5.28, A.8.32 | Incident tickets, change records, CMDB asset counts |
+| Jira / Jira Service Management | A.5.24, A.5.25, A.5.26, A.5.27, A.5.28, A.8.32 | Issue counts by status, security-tagged ticket summary |
+| GLPI | A.5.9, A.5.24, A.5.25, A.5.26, A.5.27, A.5.28 | Asset inventory, incident records |
 
 ### Vulnerability & EDR
 
 | Connector | ISO Controls | Evidence type |
 |-----------|-------------|---------------|
-| Qualys VMDR (SaaS) | A.8.8 | Vulnerability scan results, patch compliance |
-| Tenable Security Center (on-prem) | A.8.8 | Vulnerability scan results |
-| Tenable Vulnerability Management (SaaS) | A.8.8 | Cloud vulnerability scan results, severity counts |
-| Nessus (Professional / Expert / Essentials) | A.8.8, A.5.9 | Severity counts, worst findings with CVEs, most affected hosts, hosts reached |
-| CrowdStrike Falcon | A.8.7, A.8.16 | Endpoint protection status, threat detections |
-| SentinelOne | A.8.7 | Endpoint detection summary |
-| Wazuh | A.8.7, A.8.15 | HIDS alert summary, file integrity monitoring |
-| OpenVAS / Greenbone (GVM) | A.8.8, A.5.9 | Latest scan report per task: result counts by severity, CVEs, hosts |
+| Qualys VMDR (SaaS) | A.5.9, A.8.8 | Vulnerability scan results, patch compliance |
+| Tenable Security Center (on-prem) | A.8.1, A.8.7, A.8.8, A.8.18, A.8.19 | Vulnerability scan results |
+| Tenable Vulnerability Management (SaaS) | A.5.9, A.8.8 | Cloud vulnerability scan results, severity counts |
+| Nessus (Professional / Expert / Essentials) | A.5.9, A.8.8 | Severity counts, worst findings with CVEs, most affected hosts, hosts reached |
+| CrowdStrike Falcon | A.8.1, A.8.7, A.8.8, A.8.18, A.8.19 | Endpoint protection status, threat detections |
+| SentinelOne | A.8.1, A.8.7, A.8.18, A.8.19 | Endpoint detection summary |
+| Wazuh | A.8.1, A.8.7, A.8.8, A.8.18, A.8.19 | HIDS alert summary, file integrity monitoring |
+| OpenVAS / Greenbone (GVM) | A.5.9, A.8.8 | Latest scan report per task: result counts by severity, CVEs, hosts |
 
 ### Identity & PAM
 
 | Connector | ISO Controls | Evidence type |
 |-----------|-------------|---------------|
-| Windows Active Directory | A.5.15, A.5.16 | User account status, group membership, password policy |
-| LDAP | A.5.15 | Directory service health, user account counts |
-| FreeIPA | A.5.15 | Identity management status |
-| Authentik | A.5.15, A.5.16 | SSO provider health, MFA enrolment stats |
-| Keycloak | A.5.15, A.5.16 | Realm configuration, user session stats |
-| CyberArk | A.5.17 | Privileged account counts, vault health |
-| HashiCorp Vault | A.5.17, A.8.24 | Secret rotation status, policy compliance |
-| Devolutions Server | A.5.17 | PAM vault health |
+| Windows Active Directory | A.5.3, A.5.15, A.5.16, A.5.18, A.8.2, A.8.3, A.8.5 | User account status, group membership, password policy |
+| LDAP | A.5.3, A.5.15, A.5.16, A.5.18, A.8.9 | Directory service health, user account counts |
+| FreeIPA | A.5.3, A.5.15, A.5.16, A.5.18, A.8.2, A.8.3, A.8.5 | Identity management status |
+| Authentik | A.5.3, A.5.15, A.5.16, A.5.18, A.8.2, A.8.3, A.8.5 | SSO provider health, MFA enrolment stats |
+| Keycloak | A.5.3, A.5.15, A.5.16, A.5.18, A.8.2, A.8.3, A.8.5 | Realm configuration, user session stats |
+| CyberArk | A.5.3, A.5.15, A.5.16, A.5.18, A.8.2, A.8.3, A.8.5 | Privileged account counts, vault health |
+| HashiCorp Vault | A.5.17, A.8.2, A.8.3, A.8.5, A.8.15 | Secret rotation status, policy compliance |
+| Devolutions Server | A.5.3, A.5.15, A.5.16, A.5.18, A.8.2, A.8.3, A.8.5, A.8.15 | PAM vault health |
 
 ### Monitoring & SIEM
 
 | Connector | ISO Controls | Evidence type |
 |-----------|-------------|---------------|
-| PRTG Network Monitor | A.8.16 | Sensor health, uptime statistics |
-| Graylog | A.8.15 | Log stream status, retention policy |
+| PRTG Network Monitor | A.8.16, A.8.20, A.8.21, A.8.22 | Sensor health, uptime statistics |
+| Graylog | A.8.15, A.8.16 | Log stream status, retention policy |
 | Zabbix | A.8.16 | Host monitoring status, alert summary |
-| NetBox | A.5.9, A.8.20 | Device and IP inventory, CMDB asset counts |
-| Generic SIEM | A.8.15 | Configurable — log ingestion counts and alert summary |
+| NetBox | A.5.9, A.8.20, A.8.21, A.8.22 | Device and IP inventory, CMDB asset counts |
+| Generic SIEM | A.8.15, A.8.16 | Configurable — log ingestion counts and alert summary |
 
 ### Cloud Security
 
 | Connector | ISO Controls | Evidence type |
 |-----------|-------------|---------------|
-| AWS Security Hub | A.8.23, A.8.9 | Security Hub findings, compliance score |
-| Google Cloud SCC | A.8.23 | Security Command Center findings |
+| AWS Security Hub | A.8.8, A.8.20, A.8.21, A.8.22 | Security Hub findings, compliance score |
+| Google Cloud SCC | A.5.9, A.8.8 | Security Command Center findings |
 
 ### Threat Intelligence
 
 | Connector | ISO Controls | Evidence type |
 |-----------|-------------|---------------|
-| OpenCTI | A.5.7 | Threat intelligence platform status, indicator counts |
-| OpenAEV | A.5.7 | External threat feed summary |
-| Threat Intel Feed | A.5.7 | Generic threat intelligence feed |
+| OpenCTI | A.5.7, A.5.24, A.5.25, A.5.26, A.5.27, A.5.28, A.8.8 | Threat intelligence platform status, indicator counts |
+| OpenAEV | A.5.24, A.5.25, A.5.26, A.5.27, A.5.28, A.5.35, A.5.36, A.6.3 | External threat feed summary |
+| Threat Intel Feed | A.5.7, A.8.16 | Generic threat intelligence feed |
 
 ### DevOps
 
 | Connector | ISO Controls | Evidence type |
 |-----------|-------------|---------------|
-| GitHub | A.8.25, A.8.28 | Repository security settings, secret scanning alerts |
-| GitLab | A.8.25, A.8.28 | Repository security settings, CI/CD pipeline status |
+| GitHub | A.5.3, A.8.25, A.8.26, A.8.28, A.8.29 | Repository security settings, secret scanning alerts |
+| GitLab | A.5.3, A.8.25, A.8.26, A.8.28, A.8.29 | Repository security settings, CI/CD pipeline status |
 
 ### Infrastructure
 
