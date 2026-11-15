@@ -218,7 +218,7 @@ isms-core-ai/
 
 ## 🖥️ isms-core-platform/ — Platform Deployment Package
 
-The Docker Compose deployment package. **Images-only distribution** — this directory ships no application source, only what's needed to *run* the stack. `docker-compose.yml` pulls pre-built images (`isms-core-backend`, `-frontend`, `-nginx`, `-opensearch`, `-connectors`, `-feeds`, `-threat-intel`, `-smtp-bridge`, plus one-shot setup/data images) from GHCR, Docker Hub, and a private registry. Full application source (backend, frontend, connectors, feeds, threat-intel, smtp-bridge, nginx, opensearch, datasets) lives in the private `factory_isms_project` working repo and is built into those images — it is not part of this public repo.
+The Docker Compose deployment package. **Images-only distribution** — this directory ships no application source, only what's needed to *run* the stack. `docker-compose.yml` pulls pre-built images (`isms-core-backend`, `-frontend`, `-nginx`, `-opensearch`, `-connectors`, `-feeds`, `-threat-intel`, `-smtp-bridge`, plus one-shot setup/data images) from GHCR and a private registry. Full application source (backend, frontend, connectors, feeds, threat-intel, smtp-bridge, nginx, opensearch, datasets) lives in the private `factory_isms_project` working repo and is built into those images — it is not part of this public repo.
 
 ```
 isms-core-platform/

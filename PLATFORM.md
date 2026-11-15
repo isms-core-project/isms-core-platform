@@ -388,7 +388,7 @@ docker compose up -d
 
 > `COMPOSE_PROFILES` in `.env` tells Docker Compose which services to start. The default (`opensearch-single`) is already active in `.env.example`. No `--profile` flags needed on the command line.
 
-First run pulls all images (no local build step — backend/frontend/etc. ship as pre-built images from GHCR/Docker Hub). This takes **3–5 minutes** depending on connection speed. Subsequent restarts take ~60 seconds.
+First run pulls all images (no local build step — backend/frontend/etc. ship as pre-built images from GHCR). This takes **3–5 minutes** depending on connection speed. Subsequent restarts take ~60 seconds.
 
 ```bash
 docker compose logs -f    # Watch progress (Ctrl+C stops watching)
