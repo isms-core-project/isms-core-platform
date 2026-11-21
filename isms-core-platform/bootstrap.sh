@@ -26,10 +26,9 @@ ok()   { echo -e "${GREEN}  ✓ $*${NC}"; }
 info() { echo -e "${YELLOW}  → $*${NC}"; }
 fail() { echo -e "${RED}  ✗ $*${NC}"; exit 1; }
 
-# VVAH scan 2026-09-29, integrations finding #8 (CWE-214): the admin password
-# and bearer token used to be passed to curl as literal -d/-H argv strings,
-# visible to any other local user via `ps aux` for the run's duration. Both
-# now go through 0600 temp files instead, cleaned up on exit.
+# The admin password and bearer token reach curl through 0600 temp files, never as
+# literal -d/-H arguments: those would be visible to any other local user via
+# `ps aux` for the run's duration (CWE-214). The files are removed on exit.
 LOGIN_BODY_FILE=$(mktemp)
 AUTH_CONFIG_FILE=$(mktemp)
 chmod 600 "$LOGIN_BODY_FILE" "$AUTH_CONFIG_FILE"
