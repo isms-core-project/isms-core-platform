@@ -32,7 +32,7 @@
 --
 -- Generated: 2026-02-08
 -- Updated:   2026-03-08 — Synced with Alembic migrations 001–005
--- Generator: Claude Code (Opus 4.6) — Task 0.21
+-- Generator: Claude Code (Opus 4.6)
 -- ============================================================================
 
 -- ============================================================================
@@ -346,12 +346,12 @@ CREATE TABLE policies (
     word_count INTEGER,
     requirements_count INTEGER DEFAULT 0,
     last_parsed TIMESTAMPTZ,
-    -- Phase 6: language code ('en', 'de', 'fr', 'it') and optional origin label for external docs
+    -- language code ('en', 'de', 'fr', 'it') and optional origin label for external docs
     language VARCHAR(5) NOT NULL DEFAULT 'en',
     source_label VARCHAR(200),
-    -- Phase 7.17: approval workflow state (default 'published' for import pipeline)
+    -- approval workflow state (default 'published' for import pipeline)
     content_state content_state NOT NULL DEFAULT 'published',
-    -- Phase 7.18: audit trail
+    -- audit trail
     edit_source edit_source NOT NULL DEFAULT 'import',
     metadata JSONB DEFAULT '{}',
     created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
@@ -389,11 +389,11 @@ CREATE TABLE implementations (
     content_hash VARCHAR(64),
     word_count INTEGER,
     last_parsed TIMESTAMPTZ,
-    -- Phase 6: language code for FR/IT translation files
+    -- language code for FR/IT translation files
     language VARCHAR(5) NOT NULL DEFAULT 'en',
-    -- Phase 7.17: approval workflow state
+    -- approval workflow state
     content_state content_state NOT NULL DEFAULT 'published',
-    -- Phase 7.18: audit trail
+    -- audit trail
     edit_source edit_source NOT NULL DEFAULT 'import',
     metadata JSONB DEFAULT '{}',
     created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
@@ -403,12 +403,12 @@ CREATE TABLE implementations (
 );
 
 -- ============================================================================
--- 6b. GENERATOR DEFINITION TABLE (Phase 7)
+-- 6b. GENERATOR DEFINITION TABLE
 -- ============================================================================
 
 -- Structural metadata extracted from each QA'd Python generator script.
 -- One row per generator file (one per assessment domain / workbook).
--- Populated by the generator import pipeline (Phase 7.2) from 188 Framework
+-- Populated by the generator import pipeline from 188 Framework
 -- + 53 Operational generator scripts.  Used by the WebUI form renderer (7.7)
 -- and the script regeneration engine (7.11).
 CREATE TABLE generator_definitions (
@@ -433,12 +433,12 @@ CREATE TABLE generator_definitions (
     sheet_count INTEGER NOT NULL DEFAULT 0,
     -- "docstring" or "code" — how sheet names were extracted
     sheet_source VARCHAR(20),
-    -- Relative path from 50-isms-core-framework/ root
+    -- Relative path from the framework folder root
     source_file TEXT,
     parsed_at TIMESTAMPTZ,
     -- When true, the importer will not overwrite this record on re-import
     user_override BOOLEAN NOT NULL DEFAULT false,
-    -- Full workbook schema extracted from produced .xlsx (Phase 7.5)
+    -- Full workbook schema extracted from produced .xlsx
     -- [{sheet_name, sheet_type, position, header_row, data_start_row, freeze_panes,
     --   hide_gridlines, status_column_index, status_column_letter,
     --   columns: [{index, letter, header, header_raw, width, dv_values, required, is_status_col}]}]
@@ -974,7 +974,7 @@ BEGIN
     RAISE NOTICE '  Reference:  frameworks, framework_controls, cross_framework_mappings';
     RAISE NOTICE '  Groups:     control_groups, control_group_controls';
     RAISE NOTICE '  Content:    policies, requirements, implementations';
-    RAISE NOTICE '  Generator:  generator_definitions  (Phase 7)';
+    RAISE NOTICE '  Generator:  generator_definitions';
     RAISE NOTICE '  Assessment: assessments, assessment_sheets, assessment_items';
     RAISE NOTICE '  Compliance: evidence, gaps';
     RAISE NOTICE '  QA:         correlation_results';
@@ -993,6 +993,6 @@ BEGIN
     RAISE NOTICE 'Seed data: Foundation Policies control group (00)';
     RAISE NOTICE 'Admin user is seeded at runtime by the backend from ADMIN_PASSWORD env var.';
     RAISE NOTICE '';
-    RAISE NOTICE 'Next: Load Phase 0 bundles with framework_loader task.';
+    RAISE NOTICE 'Next: load the framework bundles with the framework_loader task.';
     RAISE NOTICE '============================================================';
 END $$;
