@@ -50,7 +50,7 @@ Beyond responding to external reports, we periodically run the platform's own co
 through [Visa's Vulnerability Agentic Harness (VVAH)](https://github.com/visa/visa-vulnerability-agentic-harness),
 an open-source agentic SAST tool, and fix every independently-verified finding before
 it ships. The most recent full pass (backend, frontend, and every connector/feed/
-threat-intel/SMTP-bridge service) landed in v1.2, and the October 2026 follow-up (roles, transport security, hardening) in v1.3 — see
+threat-intel/SMTP-bridge service) landed in v1.2, the October 2026 follow-up (roles, transport security, hardening) in v1.3, and four further rounds in v1.4 (the last two on scanner version 1.6.0) — see
 [isms-core-platform/CHANGELOG.md](isms-core-platform/CHANGELOG.md) for the summary.
 
 ## Safe Handling

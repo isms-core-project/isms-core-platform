@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Status-Live_(v1.3)-00AA00?style=flat-square" alt="Live"/>
+  <img src="https://img.shields.io/badge/Status-Live_(v1.4)-00AA00?style=flat-square" alt="Live"/>
   <img src="https://img.shields.io/badge/Backend-FastAPI-0066CC?style=flat-square" alt="FastAPI"/>
   <img src="https://img.shields.io/badge/Database-PostgreSQL_18-336791?style=flat-square" alt="PostgreSQL 18"/>
   <img src="https://img.shields.io/badge/Frontend-Angular_22_+_Material_3-DD0031?style=flat-square" alt="Angular"/>
@@ -156,7 +156,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms the ISMS CORE 
 | **Evidence** | Evidence items linked to control groups and assessment items — manual upload + automated connector ingestion |
 | **Connector Evidence** | Automated evidence from connectors — timestamped, classified, source-labelled |
 | **Frameworks** | 41 reference frameworks: ISO 27001, NIST CSF 2.0, NIST AI RMF 1.0, MITRE ATT&CK v19 and v20, GDPR, DORA, NIS2, CIS Controls v8, BSI IT-Grundschutz Kompendium, TISAX/VDA ISA 6.0, Swiss nDSG 2023, Swiss ISG (SR 128), EU CRA 2024, EU AI Act, CyberFundamentals BE, BaFin BAIT DE, CSSF 20-750 LU, ACN IT, UK NIS, UK Operational Resilience, NCSC CAF v4.0, ReCyF v2.5 (France NIS2), FINMA, COBIT 2019, and more |
-| **Crosswalk Mappings** | Cross-framework relationships: 4,632 objects / 60 axes — including ISO 27001 ↔ MITRE ATT&CK v19 (36) and v20 (45), ISO 27001 ↔ FINMA (73), ISO 27001 ↔ OWASP ASVS 5.0 (22), NIST SP 800-53 R5 ↔ MITRE ATT&CK v19 (590), BSI IT-Grundschutz (ISO 27001 ↔ BSI: 386, ISO 27701 ↔ BSI: 101, ISO 27018 ↔ BSI: 51), NCSC CAF v4.0 (41), ReCyF v2.5 / FR NIS2 (20), Swiss ISG (27), ISO 27017 ↔ CSA CCM v4.1/NIST CSF 2.0/FINMA/ISO 27001/DORA/NIS2 (37), and EU country frameworks (CyberFundamentals BE: 107, BaFin BAIT: 69, CSSF LU: 47, ACN IT: 43, UK NIS: 51, UK Op. Resilience: 34) |
+| **Crosswalk Mappings** | Cross-framework relationships: 5,478 mappings / 86 axes — including ISO 27001 ↔ MITRE ATT&CK v19 (36) and v20 (45), ISO 27001 ↔ FINMA (73), ISO 27001 ↔ OWASP ASVS 5.0 (22), NIST SP 800-53 R5 ↔ MITRE ATT&CK v19 (590), BSI IT-Grundschutz (ISO 27001 ↔ BSI: 386, ISO 27701 ↔ BSI: 101, ISO 27018 ↔ BSI: 51), NCSC CAF v4.0 (41), ReCyF v2.5 / FR NIS2 (20), Swiss ISG (27), ISO 27017 ↔ CSA CCM v4.1/NIST CSF 2.0/FINMA/ISO 27001/DORA/NIS2 (37), and EU country frameworks (CyberFundamentals BE: 107, BaFin BAIT: 69, CSSF LU: 47, ACN IT: 43, UK NIS: 51, UK Op. Resilience: 34) |
 | **NIST CSF 2.0 Profiles** | Named assessment profiles — tier 1–4 ratings for all 106 subcategories, per-function scoring, gap analysis, XLSX import/export |
 | **Compliance Assessments** | 29 frameworks — see [COMPLIANCE.md](COMPLIANCE.md) for full coverage |
 | **Projects** | Workspace layer — named projects own a curated subset of policies, implementations, assessments, gaps, and evidence; doc-vars substitution (org name, CISO, effective date) applied on add; active/inactive/draft/archived lifecycle |
@@ -201,7 +201,7 @@ ISMS CORE Platform is the **API and WebUI layer** that transforms the ISMS CORE 
 | **Evidence Tracker** | Evidence items with expiry tracking, verification status, and freshness alerts |
 | **Connectors** | Automated evidence ingestion from 46 systems — continuous compliance signals from real infrastructure |
 | **Nightly Evidence Archive** | Celery Beat job archives stale connector evidence at 02:00 UTC daily |
-| **Crosswalk Viewer** | Cross-framework mappings: 4,632 objects / 60 axes — ISO 27001 ↔ NIST CSF ↔ MITRE ATT&CK v19 / v20 ↔ GDPR ↔ DORA ↔ BSI IT-Grundschutz ↔ FINMA ↔ OWASP ASVS 5.0 ↔ NCSC CAF ↔ ReCyF v2.5 and more |
+| **Crosswalk Viewer** | Cross-framework mappings: 5,478 mappings / 86 axes — ISO 27001 ↔ NIST CSF ↔ MITRE ATT&CK v19 / v20 ↔ GDPR ↔ DORA ↔ BSI IT-Grundschutz ↔ FINMA ↔ OWASP ASVS 5.0 ↔ NCSC CAF ↔ ReCyF v2.5 and more |
 | **QA / Existence Checker** | Validate that all expected artifacts are present (Framework, Operational, Privacy, Cloud PII, Cloud Sec, AI) |
 | **System Event Log** | Full audit log of all platform actions |
 | **Admin Panel** | User management (CRUD), system info, service health, DB stats, import triggers |

@@ -3,6 +3,127 @@
 All notable changes to the ISMS CORE Platform (backend, frontend, connectors, feeds,
 threat-intel, SMTP bridge) will be documented here.
 
+## [1.4] - 2026-11-23 — the "Outlands Release"
+
+Write-up: [release overview](https://isms-core.com/blog/isms-core-v1-4-outlands-release/).
+
+v1.4 is a **hardening and reliability release** on top of v1.3. It adds no framework module and no connector. It changes how the platform behaves when something goes wrong (a feed times out, a connector is configured badly, a password was never changed) and records how thoroughly it has been checked: a scan on a newer version of the scanner, a static-analysis scan, and a dependency audit with **no open advisory** at the time of writing.
+
+Why "Outlands"? v1.4 is about everything that touches the outside: connector addresses, feeds that live on someone else's servers, defaults nobody changed, and what leaves a container in a log. (Like v1.3, the name is a Daft Punk track: *Outlands*, from the TRON: Legacy soundtrack.)
+
+It is a minor release because a few things behave differently (see **Before you upgrade**). The images are the release; update `docker-compose.yml` and `.env.example` together with them.
+
+> **If you still run the images from release day (18 October):** the v1.3 images were refreshed under the same tag several times afterwards, and the v1.3 changelog was extended each time (refresh-token reuse detection, migrations `101`–`103`, the 03:20 UTC backup, the backend framework upgrade, OpenSearch retention, URLhaus and NVD hardening, and more). Read those additions as well; this file does not repeat them.
+
+### Before you upgrade
+
+- **Placeholder passwords are refused at start-up.** If `POSTGRES_PASSWORD` or `GARAGE_SECRET_KEY` in your `.env` still carries the placeholder text from `.env.example` (`change_this_db_password`, `CHANGE_run_generation_command_above`), the backend will not start and names the variable. The same already applied to `SECRET_KEY` and the Redis password. **Change the value in `.env` and in the running database or Garage first** (PostgreSQL: `ALTER USER isms_user PASSWORD '…'`), then pull the new images.
+- **A connector whose address comes from its own settings needs its own credentials, with content.** An empty password or key box no longer counts as "supplied", and nothing is borrowed from the environment any more. Affects Tenable Security Center (empty keys), **GLPI** and **PRTG**. After the upgrade such a connector reports "supplied via config but no credential": enter the credentials in the connector settings.
+- **Two silent fall-backs are gone.** A GCP Security Command Center connector with an unreadable service-account key now stops with an error instead of using the host's own cloud identity; a SIEM connector with an unknown `auth_type` is refused at start.
+- **Rate limits:** the three local QA runs (existence, keyword, semantic) are limited to 10 a minute per client address, IP enrichment to 30 a minute, the full-text search to 60 a minute and the connector worker listing to 30 a minute.
+- **Who may do what:** re-indexing the KEV corpus for QA is now for the platform operator (super admin) only, and generator sheet names may not start with `=`, `+`, `-` or `@`.
+- **Python 3.12 everywhere.** The backend and the SMTP bridge move from Python 3.11 to 3.12 like the other images; nothing to do, but images you built on top of them need a rebuild.
+- **Copy the new `docker-compose.yml` and `.env.example`** and pull all images. The two new settings `ANTHROPIC_PRICE_INPUT_PER_MTOK` and `ANTHROPIC_PRICE_OUTPUT_PER_MTOK` are optional (a cost estimate in the Claude QA run record); a `CONNECTORS_WORKER_SECRET` shorter than 32 characters is now reported in the log, so generate a long one (`openssl rand -hex 32`).
+
+### Highlights
+
+| | |
+|---|---|
+| ⏱️ **An NVD feed that survives a bad night** | The first request is retried and waits up to 90 seconds (it was 30 and not retried, and failed three nights in a row), a page that fails after every retry marks the run **failed** instead of "successful with a hole", and the pull has hard ceilings (500 pages, 4 GiB in memory, 128 MB a page). |
+| 🧾 **Honest CVSS scores** | When NVD lists a vendor's score before its own analysis, the platform now stores NVD's own (5 of 478 recent CVEs differed, one by 2.7 points) and records whether a stored score is NVD's or a vendor's. |
+| 🔐 **Sessions and connectors tightened** | Resetting MFA ends the user's sessions, the browser sends its token only to the platform's own API, connectors refuse `0.0.0.0`, multicast and (GitHub) redirects, and credentials no longer reach the container log. |
+| 🪪 **No default passwords** | The platform refuses to start with the placeholder database or Garage password. |
+| 🛡️ **Four security scan rounds since v1.3, the last two on VVAH 1.6.0** | No Critical or High finding that was not already a documented design choice; the last two rounds produced twenty-one small fixes, each with a test that fails on the old code. Semgrep found nothing real, twice. |
+| 🗄️ **Evidence no longer disappears at day 90** | The daily archive job archived current-state records (users, devices, policies) 90 days after they were first created, although the connector refreshed them every day, and the refresh never brought them back: the Evidence page then showed 0 for connectors that were running fine. Fixed, and records archived by mistake are restored. |
+| ✅ **Automatic quality checks on every build** | Static analysis, a test suite on the real database schema and a browser walk of 52 pages against a real API, a start-up check of your `.env` and a dependency and image scan now run before and after every build; a failing check stops it. |
+| 📨 **A failing QA run now tells you** | A QA run that ends with failures sends the QA failure e-mail (it existed but nothing ever sent it). Library runs go to the platform operators, project runs to that organisation's admins and ISMS managers; the per-user opt-out still applies. |
+| 🧮 **Every Claude QA run leaves a record** | One audit entry per run: the control groups scored and the ones skipped as unchanged, pass / warning / fail counts, the tokens used, who started it, and an optional cost estimate (two new optional settings in `.env.example`). A failed run leaves an entry too. |
+| 🧱 **No open dependency advisory in what we build** | GitHub Dependabot, an OSV audit of every Python component and `npm audit` of both web projects were clean, and so was the scan of every running container **except the Java libraries bundled in the upstream OpenSearch image** (ten High findings that only an upstream release can fix; accepted and tracked, see *Quality checks on every build*); a hidden `setuptools` advisory in the backend image is pinned away. |
+| 🪟 **Clones on Windows** | Four file names with a `:` broke `git clone` on Windows; renamed (reported by an outside contributor, thank you *corzinen*). |
+
+### Security
+
+#### Scans since the v1.3 review
+| Scan | Scanner | Backend | Connectors, feeds, threat-intel, SMTP bridge, compose | Frontend |
+|---|---|---:|---:|---:|
+| 30 Oct | VVAH 1.5.1 | 23 | 80 | 7 |
+| 7 Nov | VVAH 1.5.1 | 13 | 80 | 3 |
+| 21 Nov | **VVAH 1.6.0** | 12 | 59 | 4 |
+| 22 Nov | **VVAH 1.6.0** | 24 | 48 | 1 |
+
+- Every finding was checked by hand against the code before anything was changed. **No Critical or High issue that was not already a documented decision**; the two highest-severity reports of the last scan are the certificate job's unpinned Alpine packages and the images pulled by tag (both listed under *Design choices that remain*).
+- The 7 November scan produced eighteen small fixes, the 21 November scan ten more and the 22 November scan eleven more (the scanner is an AI model: the same code gives a different list each time, and several reports are one finding repeated). Each fix has a test, and each test was run against the old code to prove that it fails there.
+- A **Semgrep** scan of backend, connectors, feeds, threat-intel, SMTP bridge and both front ends found **no real issue** (five reports were safe by construction and are marked with their reason in the code); the 22 November run found nothing at all.
+
+#### Fixed (new in v1.4)
+**Sign-in and sessions**
+- **Resetting a user's MFA ends that user's sessions** and invalidates already-issued access tokens (before, a stolen session survived the reset).
+- The browser sends the bearer token **only to the platform's own API** (`/api/…`), and a 401 from anything else is not refreshed and replayed with the token.
+
+**Connectors**
+- **Credential pairing:** Tenable Security Center, GLPI and PRTG treated an empty box as a supplied credential and then read the real one from the environment (see *Before you upgrade*). GCP SCC and SIEM misconfigurations are refused instead of falling back silently.
+- **Address checks:** `0.0.0.0` and multicast addresses are refused for connector targets (loopback and cloud-metadata addresses already were); an upper-case host name can no longer miss the DNS pin; the GitHub client **refuses redirects** (a 3xx is an error with a clear message, not an empty list).
+- **Logs:** query strings (some tools carry keys there) are removed from the connector error text sent to the backend **and** from the container log, tracebacks included.
+- One malformed object no longer drops a whole TAXII batch; Azure Sentinel workspace names are validated; "Sync now" and stop work at once for OpenAEV and OpenCTI instead of waiting out the poll interval; pre-signed download URLs are stripped from stored feed errors.
+
+**Backend and front end**
+- **Placeholder secrets refused** (see *Before you upgrade*).
+- The real-address middleware looks up the proxy address off the event loop and keeps it for 30 seconds (it did a blocking lookup on every request).
+- Failed one-time codes on MFA enable, disable and backup-code regeneration are audited; one Material confirmation dialog replaces all 13 browser `confirm()` pop-ups.
+- **"Trust this certificate"** at connector registration starts unticked **every** time the dialog opens, and a preview for a host you have since changed is not pinned.
+- **The connector worker listing is rate limited** (30 a minute per address; the runner asks about once a minute), a wrong worker secret is audited (at most one entry a minute per address), and a worker secret shorter than 32 characters is reported in the log. The refresh endpoint answers an invalid token with a fixed text instead of the library's exception.
+- **Smaller access fixes:** the raw error text of a feed run is shown to the platform operator only (everyone else gets the redacted form); the platform-wide KEV re-index is for the platform operator (super admin) only; the full-text search is limited to 60 a minute; **all user-group changes are audited** (create, rename, delete, add and remove member); an audit entry whose target is not a UUID keeps it in the details instead of dropping it.
+- **A BIA record's "recovery tested" flag is no longer reset** when another field of the record is edited.
+- **Workbook generator names** that start with `=`, `+`, `-` or `@` are refused (a spreadsheet would read them as a formula).
+
+### Reliability and data
+
+- **NVD CVE feed:** retry, 90-second wait, failed-page handling and ceilings, as described above; the real total is logged on every pull, and the first weekly full pull after the upgrade corrects stored scores.
+- **Evidence archive (a bug since the first 90 days of a connector's life):** the daily job archives evidence older than the retention period (90 days by default). It judged age by the day a record was *created*, so a current-state record (a user, a device, a policy, a secure score) that the connector refreshes in place at every sync was archived on day 90 and then stayed archived for ever (at best until the next sync, every night again). The Evidence page counts only live records, so it showed 0 for such connectors while they kept syncing. Records now carry **`last_seen_at`** (new column, set when a connector inserts or refreshes a record, whether or not the connector sends an event date), and the job ages a record from the later of its creation and `last_seen_at`. A historical event is never refreshed and still ages from the day it was created. A refresh also brings back a record that was archived, so records archived by mistake come back at the next sync.
+- **QA failure e-mail, Claude QA run record, Assessments page:** see the highlights; the Assessments page's collection list answered 404 and now loads (the API accepts the path with and without a trailing slash).
+- **VirusTotal enrichment** no longer marks an IOC as checked when VirusTotal did not answer (rate limit or error): it is tried again at the next run instead of waiting 30 days.
+- **CVSS provenance:** new fields `cvss_v3_source` and `cvss_v4_source` (`primary` or `secondary`) on every CVE in the search index; an existing index gets the mapping automatically.
+
+### Dependencies and images
+
+- **Backend:** `setuptools` 84.1.0 pinned (the PyTorch CPU index had been supplying an old copy with a High advisory); Python 3.12.
+- **Connectors:** OpenTelemetry 1.45.2 and `setuptools` 84.1.0 past the OpenCTI library's own pins (installed with hashes and verified), clearing sixteen Dependabot alerts.
+- **Base images:** the four Python service images (connectors, feeds, threat-intel, SMTP bridge) now apply OS security updates at build time (a High advisory in `zlib1g` was still in the newest Python base image); OpenSearch moves from 3.9.0 to **3.10.0** (a rolling upgrade of the three nodes; pull and recreate them one at a time).
+- **Architecture:** the images are built for `linux/amd64`; on Apple silicon Docker Desktop runs them through its emulation (Rosetta).
+- **Front ends:** `fast-uri`, `zod`, `seroval` updated, the two unused packages `marked` and `ngx-markdown` removed; `npm audit` is clean.
+- **SMTP bridge:** Python 3.12, requirements regenerated.
+
+### Quality checks on every build
+Both build scripts (the everyday one and the multi-architecture publishing one) run the same checks from one shared file, and a failing one stops the build before the first image is built (each can be skipped on purpose, once, and the skip is announced):
+- **Static analysis** of the Python code (undefined names, unused code, insecure calls such as `shell=True`, `eval`, fixed `/tmp` paths and blocking calls inside async code), **type checking** and **Angular lint** of the web interface with a "may only get better" count, a check that every UI word uses the project's spelling, and checks that no file name Windows cannot create, no scan-tool name and no internal note ends up in what is published.
+- **A pytest suite and a browser walk** run on the production image's own Python against a throwaway PostgreSQL with the real schema (the walk opens 52 pages in Chromium against a real API with the real datasets): migrations up, down and up again; access-control rules; refresh-token reuse; sign-in lockout; upload limits; every connector and feed guard (credential pairing, https only, redirects, log redaction, NVD, database retry); and now the evidence archive.
+- **A start-up check of your `.env`** against `.env.example` before a deploy (key names only, no value is read), and a helper that brings an existing `.env` up to date with the current comments while keeping every value.
+- **Wiring and coverage checks:** every connector, feed and framework is registered everywhere it must be (menu, schedules, catalogues, translations, manual); every page of the menu is named in the user manual and every Help link resolves; the framework, control and mapping counts are held in a baseline that fails a build when one moves by accident; a report lists database columns and search-index fields that are written and never read.
+- **Dynamic security checks** on a throwaway stack (never production): the rate limiters fire, the role and tenant access matrix of every API route is run live (no role gets through that should not, no organisation sees another's data), every location of the web server sends the security headers, and every connector client refuses internal and metadata addresses before any network call.
+- **A dependency and image scan** after the build: every Python and npm dependency, and every image (`amd64`; the images are published for `amd64`), checked for a fixed High or Critical advisory. The scanner is verified (signature and checksum) before it runs.
+Two real findings of the first run are in this release: the `zlib1g` advisory above and the OpenSearch base image (3.9.0 carried 36 fixed High or Critical advisories in its bundled Java libraries; 3.10.0 leaves 10, all in upstream components, tracked).
+
+### Web interface
+- The About page and the Help page show **v1.4 · Outlands**.
+- The page-count pills on the Evidence page are readable in the dark and the light theme.
+
+### Upgrade notes
+
+**Automatic at start-up**
+- **Database migration `104`** adds `connector_evidence.last_seen_at` (a quick change on a large table: no rewrite). It runs by itself at start-up; records archived before the upgrade stay archived until their connector's next sync.
+- The search index `nvd-cve` gains the two provenance fields at the next feed run.
+
+**After you upgrade**
+- The first weekly NVD full pull (Sunday 01:00, container time) re-indexes every CVE with the corrected scores; to run it earlier use the **Run** button on the NVD row of the Threat Feeds page.
+- **Evidence archived by mistake comes back by itself:** a record the connector still reports is restored at its next sync (within a day), so nothing needs to be done. Only a connector that is paused or no longer syncing keeps its wrongly archived records; to restore those at once (after the upgrade), run `docker exec isms-core-backend python -c "from src.database.session import SessionLocal; from src.services import connector_service as s; db = SessionLocal(); print(s.unarchive_refreshed_evidence(db))"` once. It prints how many records it restored, does nothing the second time, and leaves records that really are older than the retention period archived.
+- URLhaus still needs an abuse.ch key (Admin → API keys); unchanged from v1.3.
+
+### Design choices that remain
+Unchanged from v1.3 and documented in the repository: the quick-start default runs OpenSearch without its security plugin (switch it on as described in `.env.example`), the feeds and threat-intel containers use the application database role and a shared worker secret unless you set their own secrets, the platform images are pulled by tag, the certificate job installs `openssl` from Alpine's repository when it starts, and private network ranges are allowed for connector addresses on purpose (appliances live there).
+
+### Thanks
+*corzinen* for finding that four file names broke `git clone` on Windows.
+
 ## [1.3] - 2026-10-18 — the "Veridis Quo Release"
 
 Write-ups: [release overview](https://isms-core.com/blog/isms-core-v1-3-veridis-quo-release/),

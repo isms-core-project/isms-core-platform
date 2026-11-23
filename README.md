@@ -155,10 +155,10 @@ EN · FR · DE · IT
 
 **Live compliance management system** — turns all content products into dashboards, gap tracking, evidence ingestion, risk registers, and audit reports. Docker Compose, 10 services, self-hosted.
 
-**46** connectors · **29** assessment modules · **4,632** crosswalk objects / 60 axes<br/>
+**46** connectors · **29** assessment modules · **5,478** mappings / 86 axes<br/>
 8 country jurisdictions · **21+** threat intelligence sources
 
-<img src="https://img.shields.io/badge/v1.3-Live-2E8B57?style=flat-square" alt="Live"/>
+<img src="https://img.shields.io/badge/v1.4-Live-2E8B57?style=flat-square" alt="Live"/>
 
 </td>
 </tr>
@@ -480,7 +480,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 | 🔒 Privacy | 21 / 21 | 23 PRIV-POL · 42 IMPs · 21 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-7030A0?style=flat-square) |
 | ☁️ Cloud | 16 / 16 | 16 CLD-POL · 32 IMPs · 16 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-00897B?style=flat-square) |
 | 🤖 AI | 12 / 12 | 12 AI-POL · 20 IMPs · 10 generators | EN FR DE IT | ![v1.0](https://img.shields.io/badge/v1.0-Complete-FF6B35?style=flat-square) |
-| 🖥️ Platform | 104 total | 46 connectors · 29 assessments · 4,632 mappings / 60 axes | 8 jurisdictions | ![Live v1.3](https://img.shields.io/badge/Live-v1.3-2E8B57?style=flat-square) |
+| 🖥️ Platform | 104 total | 46 connectors · 29 assessments · 5,478 mappings / 86 axes | 8 jurisdictions | ![Live v1.4](https://img.shields.io/badge/Live-v1.4-2E8B57?style=flat-square) |
 
 ---
 

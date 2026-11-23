@@ -944,6 +944,8 @@ services:
       - ADMIN_EMAIL=${ADMIN_EMAIL:-admin@isms-core.dev}
       - ADMIN_PASSWORD=${ADMIN_PASSWORD}
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - ANTHROPIC_PRICE_INPUT_PER_MTOK=${ANTHROPIC_PRICE_INPUT_PER_MTOK:-}
+      - ANTHROPIC_PRICE_OUTPUT_PER_MTOK=${ANTHROPIC_PRICE_OUTPUT_PER_MTOK:-}
       - NIST_API_KEY=${NIST_API_KEY:-}
       # Encrypts the third-party API keys saved in the WebUI (Admin -> API keys). Only backend, feeds and threat-intel get it (never SECRET_KEY).
       - PLATFORM_KEY_ENCRYPTION_SECRET=${PLATFORM_KEY_ENCRYPTION_SECRET:-}
